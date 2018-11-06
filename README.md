@@ -1,2 +1,2 @@
-# go-leetcode
-用go刷leetcode
+# Leetcode
+- https://leetcode-cn.com/
