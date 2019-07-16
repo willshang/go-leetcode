@@ -3,22 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	widths := []int{4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10}
+	widths := []int{4, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10}
 	S := "bbbcccdddaaa"
-	fmt.Println(numberOfLines(widths,S))
+	fmt.Println(numberOfLines(widths, S))
 }
 func numberOfLines(widths []int, S string) []int {
-	res := []int{0,0}
-	if len(S) == 0{
+	res := []int{0, 0}
+	if len(S) == 0 {
 		return res
 	}
 	res[0] = 1
 
-	for i := 0; i < len(S); i++{
-		if res[1] + widths[S[i]-'a'] > 100{
+	for i := 0; i < len(S); i++ {
+		if res[1]+widths[S[i]-'a'] > 100 {
 			res[0]++
 			res[1] = widths[S[i]-'a']
-		}else {
+		} else {
 			res[1] = res[1] + widths[S[i]-'a']
 		}
 	}

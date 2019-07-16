@@ -27,27 +27,28 @@ type TreeNode struct {
 type state struct {
 	minDiff, previous int
 }
+
 func getMinimumDifference(root *TreeNode) int {
-	st := state{1024,1024}
+	st := state{1024, 1024}
 	search(root, &st)
 	return st.minDiff
 }
 
-func search(root *TreeNode, st *state)  {
-	if root == nil{
+func search(root *TreeNode, st *state) {
+	if root == nil {
 		return
 	}
-	search(root.Left,st)
+	search(root.Left, st)
 
-	newDiff := diff(st.previous,root.Val)
-	if st.minDiff > newDiff{
+	newDiff := diff(st.previous, root.Val)
+	if st.minDiff > newDiff {
 		st.minDiff = newDiff
 	}
 	st.previous = root.Val
-	search(root.Right,st)
+	search(root.Right, st)
 }
 
-func diff(a,b int)int  {
+func diff(a, b int) int {
 	if a > b {
 		return a - b
 	}

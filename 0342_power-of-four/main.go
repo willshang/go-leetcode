@@ -8,11 +8,11 @@ func main() {
 	fmt.Println(isPowerOfFour(30))
 }
 func isPowerOfFour(num int) bool {
-	if num <= 0{
+	if num <= 0 {
 		return false
 	}
 
-	for num % 4 == 0{
+	for num%4 == 0 {
 		num = num / 4
 	}
 	return num == 1

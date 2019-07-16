@@ -3,10 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{0,0,1,1,1,2,2,3,3,4}
+	arr := []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
 	fmt.Println(removeDuplicates(arr))
 	fmt.Println(arr)
 }
+
 /*
 //执行用时：124 ms
 func removeDuplicates(nums []int) int {
@@ -23,10 +24,10 @@ func removeDuplicates(nums []int) int {
 
 func removeDuplicates(nums []int) int {
 	count := 0
-	for i := 1; i < len(nums); i++{
-		if nums[i-1] == nums[i]{
+	for i := 1; i < len(nums); i++ {
+		if nums[i-1] == nums[i] {
 			count++
-		}else {
+		} else {
 			nums[i-count] = nums[i]
 		}
 	}

@@ -16,8 +16,7 @@ func main() {
 	root.Right = &right
 	res := levelOrderBottom(&root)
 
-
-	for _, v := range res{
+	for _, v := range res {
 		fmt.Println(v)
 	}
 
@@ -28,7 +27,6 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
-
 
 /*func levelOrderBottom(root *TreeNode) [][]int {
 	res := [][]int{}
@@ -53,30 +51,32 @@ type TreeNode struct {
 */
 
 func levelOrderBottom(root *TreeNode) [][]int {
-	if root == nil{return nil}
+	if root == nil {
+		return nil
+	}
 	queue := []*TreeNode{}
 	out := [][]int{}
 	queue = append(queue, root)
 
-	for len(queue) != 0{
+	for len(queue) != 0 {
 		l := len(queue)
 		arr := []int{}
-		for i := 0; i < l; i++{
+		for i := 0; i < l; i++ {
 			pop := queue[i]
-			arr = append(arr,pop.Val)
-			if pop.Left != nil{
-				queue = append(queue,pop.Left)
+			arr = append(arr, pop.Val)
+			if pop.Left != nil {
+				queue = append(queue, pop.Left)
 			}
-			if pop.Right != nil{
+			if pop.Right != nil {
 				queue = append(queue, pop.Right)
 			}
 		}
-		out = append(out,arr)
+		out = append(out, arr)
 		queue = queue[l:]
 	}
 
-	out2 := make([][]int,len(out))
-	for i := 0; i < len(out); i++{
+	out2 := make([][]int, len(out))
+	for i := 0; i < len(out); i++ {
 		out2[len(out)-1-i] = out[i]
 	}
 

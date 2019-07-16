@@ -7,6 +7,7 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
 func main() {
 	root := TreeNode{}
 	root.Val = 1
@@ -24,18 +25,18 @@ func main() {
 }
 
 func minDepth(root *TreeNode) int {
-	if root == nil{
+	if root == nil {
 		return 0
-	}else if root.Left == nil{
+	} else if root.Left == nil {
 		return 1 + minDepth(root.Right)
-	}else if root.Right == nil{
+	} else if root.Right == nil {
 		return 1 + minDepth(root.Left)
-	}else {
-		return 1 + min(minDepth(root.Left),minDepth(root.Right))
+	} else {
+		return 1 + min(minDepth(root.Left), minDepth(root.Right))
 	}
 }
 
-func min(a, b int)int  {
+func min(a, b int) int {
 	if a < b {
 		return a
 	}

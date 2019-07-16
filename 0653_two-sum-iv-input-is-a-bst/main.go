@@ -9,24 +9,26 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
-func findTarget(root *TreeNode, k int) bool{
-	if root == nil{
+
+func findTarget(root *TreeNode, k int) bool {
+	if root == nil {
 		return false
 	}
 	m := map[int]int{}
-	return helper(root,k,m)
+	return helper(root, k, m)
 }
 
-func helper(node *TreeNode,k int, m map[int]int) bool  {
-	if node == nil{
+func helper(node *TreeNode, k int, m map[int]int) bool {
+	if node == nil {
 		return false
 	}
-	if _,ok := m[k-node.Val]; ok {
+	if _, ok := m[k-node.Val]; ok {
 		return true
 	}
 	m[node.Val] = node.Val
-	return helper(node.Left,k,m) || helper(node.Right,k,m)
+	return helper(node.Left, k, m) || helper(node.Right, k, m)
 }
+
 /*func findTarget(root *TreeNode, k int) bool {
 	return helper(root,root,k)
 }

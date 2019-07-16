@@ -7,15 +7,15 @@ import (
 func main() {
 	//fmt.Println(checkPossibility([]int{4,2,3}))
 	//fmt.Println(checkPossibility([]int{4,2,1}))
-	fmt.Println(checkPossibility([]int{1,2,3,5,4,6}))
+	fmt.Println(checkPossibility([]int{1, 2, 3, 5, 4, 6}))
 }
 
 func checkPossibility(nums []int) bool {
-	for i := 0; i < len(nums); i++{
+	for i := 0; i < len(nums); i++ {
 		res := []int{}
-		res = append(res,nums[0:i]...)
-		res = append(res,nums[i+1:]...)
-		if isSort(res){
+		res = append(res, nums[0:i]...)
+		res = append(res, nums[i+1:]...)
+		if isSort(res) {
 			return true
 		}
 	}
@@ -23,13 +23,14 @@ func checkPossibility(nums []int) bool {
 }
 
 func isSort(nums []int) bool {
-	for i := 0; i < len(nums)-1; i++{
-		if nums[i] > nums[i+1]{
+	for i := 0; i < len(nums)-1; i++ {
+		if nums[i] > nums[i+1] {
 			return false
 		}
 	}
 	return true
 }
+
 /*func checkPossibility(nums []int) bool {
 	for i := 1; i < len(nums); i++{
 		if nums[i-1] > nums[i]{

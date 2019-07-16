@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	flowerbed := []int{1,0,0,0,0,1}
+	flowerbed := []int{1, 0, 0, 0, 0, 1}
 	n := 2
-	fmt.Println(canPlaceFlowers(flowerbed,n))
+	fmt.Println(canPlaceFlowers(flowerbed, n))
 }
 func canPlaceFlowers(flowerbed []int, n int) bool {
 	l := len(flowerbed)

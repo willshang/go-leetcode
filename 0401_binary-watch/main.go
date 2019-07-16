@@ -8,16 +8,16 @@ func main() {
 	fmt.Println(readBinaryWatch(1))
 }
 
-func bincount(num int) int  {
+func bincount(num int) int {
 	count := []int{}
-	for num != 0{
+	for num != 0 {
 		temp := num % 2
-		count = append(count,temp)
+		count = append(count, temp)
 		num = num / 2
 	}
 	count_num := 0
-	for i := 0; i < len(count); i++{
-		if count[i] == 1{
+	for i := 0; i < len(count); i++ {
+		if count[i] == 1 {
 			count_num++
 		}
 	}
@@ -26,16 +26,15 @@ func bincount(num int) int  {
 
 func readBinaryWatch(num int) []string {
 	res := []string{}
-	for i := 0; i < 12; i++{
-		for j := 0; j < 60; j++{
-			if bincount(i) + bincount(j) == num{
-				res = append(res,fmt.Sprintf("%d:%02d",i,j))
+	for i := 0; i < 12; i++ {
+		for j := 0; j < 60; j++ {
+			if bincount(i)+bincount(j) == num {
+				res = append(res, fmt.Sprintf("%d:%02d", i, j))
 			}
 		}
 	}
 	return res
 }
-
 
 /*func readBinaryWatch(num int) []string {
 	res := make([]string, 0, 8)

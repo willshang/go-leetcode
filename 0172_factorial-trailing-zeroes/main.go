@@ -8,7 +8,7 @@ func main() {
 
 func trailingZeroes(n int) int {
 	res := 0
-	for n >= 5{
+	for n >= 5 {
 		n = n / 5
 		res = res + n
 	}

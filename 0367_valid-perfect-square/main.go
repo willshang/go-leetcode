@@ -9,7 +9,7 @@ func main() {
 }
 func isPerfectSquare(num int) bool {
 	i := 1
-	for num > 0{
+	for num > 0 {
 		num = num - i
 		i = i + 2
 	}

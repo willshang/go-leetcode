@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{5,5,5,10,20}
+	arr := []int{5, 5, 5, 10, 20}
 	fmt.Println(lemonadeChange(arr))
 }
 func lemonadeChange(bills []int) bool {
-	fives, tens := 0,0
+	fives, tens := 0, 0
 
-	for _, b := range bills{
+	for _, b := range bills {
 		switch b {
 		case 5:
 			fives++
@@ -17,14 +17,14 @@ func lemonadeChange(bills []int) bool {
 			fives--
 			tens++
 		case 20:
-			if tens > 0{
+			if tens > 0 {
 				tens--
 				fives--
-			}else {
+			} else {
 				fives = fives - 3
 			}
 		}
-		if fives < 0 || tens < 0{
+		if fives < 0 || tens < 0 {
 			return false
 		}
 	}

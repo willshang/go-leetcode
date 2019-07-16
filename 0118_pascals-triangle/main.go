@@ -4,28 +4,29 @@ import "fmt"
 
 func main() {
 	res := generate(5)
-	for _,v :=range res{
+	for _, v := range res {
 		fmt.Println(v)
 	}
 }
 
 func generate(numRows int) [][]int {
 	var result [][]int
-	for i := 0; i < numRows; i++{
+	for i := 0; i < numRows; i++ {
 		var row []int
-		for j := 0; j <= i; j++{
+		for j := 0; j <= i; j++ {
 			tmp := 1
-			if j == 0 || j == i{
+			if j == 0 || j == i {
 
-			}else {
+			} else {
 				tmp = result[i-1][j-1] + result[i-1][j]
 			}
-			row = append(row,tmp)
+			row = append(row, tmp)
 		}
-		result = append(result,row)
+		result = append(result, row)
 	}
 	return result
 }
+
 /*func generate(numRows int) [][]int {
 	res := [][]int{}
 	if numRows == 0{

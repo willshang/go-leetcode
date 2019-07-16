@@ -8,30 +8,30 @@ import (
 func main() {
 	pattern := "abba"
 	str := "dog cat cat dog"
-	fmt.Println(wordPattern(pattern,str))
+	fmt.Println(wordPattern(pattern, str))
 }
 
 func wordPattern(pattern string, str string) bool {
-	pa := strings.Split(pattern,"")
-	sa := strings.Split(str," ")
-	if len(pa) != len(sa){
+	pa := strings.Split(pattern, "")
+	sa := strings.Split(str, " ")
+	if len(pa) != len(sa) {
 		return false
 	}
 	length := len(pa)
-	m := make(map[string]string,length)
-	n := make(map[string]string,length)
+	m := make(map[string]string, length)
+	n := make(map[string]string, length)
 
-	for i := 0; i < length; i++{
-		if w, ok := m[pa[i]]; ok{
-			if y, ok := n[sa[i]]; ok{
-				if w != sa[i] && y != pa[i]{
+	for i := 0; i < length; i++ {
+		if w, ok := m[pa[i]]; ok {
+			if y, ok := n[sa[i]]; ok {
+				if w != sa[i] && y != pa[i] {
 					return false
 				}
-			}else {
+			} else {
 				return false
 			}
-		}else {
-			if _,ok := m[pa[i]];!ok && n[sa[i]] != ""{
+		} else {
+			if _, ok := m[pa[i]]; !ok && n[sa[i]] != "" {
 				return false
 			}
 			m[pa[i]] = sa[i]
@@ -40,6 +40,7 @@ func wordPattern(pattern string, str string) bool {
 	}
 	return true
 }
+
 /*func wordPattern(pattern string, str string) bool {
 	pa := strings.Split(pattern,"")
 	sa := strings.Split(str," ")

@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int{1,2,3,4,10}
+	arr := []int{1, 2, 3, 4, 10}
 	fmt.Println(minMoves(arr))
 }
 
@@ -22,9 +22,9 @@ m = sum - min * n
 */
 func minMoves(nums []int) int {
 	sum, min := 0, nums[0]
-	for _, n := range nums{
+	for _, n := range nums {
 		sum += n
-		if min > n{
+		if min > n {
 			min = n
 		}
 	}

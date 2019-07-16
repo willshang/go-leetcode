@@ -5,41 +5,42 @@ import (
 )
 
 func main() {
-	arr := []int{1,0,0,0,1,0,1}
+	arr := []int{1, 0, 0, 0, 1, 0, 1}
 	fmt.Println(maxDistToClosest(arr))
-	fmt.Println(maxDistToClosest([]int{1,0,0,0}))
+	fmt.Println(maxDistToClosest([]int{1, 0, 0, 0}))
 }
 func maxDistToClosest(seats []int) int {
 	size := len(seats)
 	var lists []int
-	for i := 0; i < size;i++{
-		if seats[i] == 1{
-			lists = append(lists,i)
+	for i := 0; i < size; i++ {
+		if seats[i] == 1 {
+			lists = append(lists, i)
 		}
 	}
 	max := -1
-	for i := 0; i < len(lists)-1;i++{
-		if abs(lists[i],lists[i+1]) > max{
-			max = abs(lists[i],lists[i+1])
+	for i := 0; i < len(lists)-1; i++ {
+		if abs(lists[i], lists[i+1]) > max {
+			max = abs(lists[i], lists[i+1])
 		}
 	}
 	max = max / 2
 
-	if lists[0] > max{
+	if lists[0] > max {
 		max = lists[0]
 	}
-	if size - lists[len(lists)-1]-1 > max{
-		max = size - lists[len(lists)-1]-1
+	if size-lists[len(lists)-1]-1 > max {
+		max = size - lists[len(lists)-1] - 1
 	}
 	return max
 }
 
-func abs(a,b int)int  {
+func abs(a, b int) int {
 	if a > b {
 		return a - b
 	}
 	return b - a
 }
+
 /*func maxDistToClosest(seats []int) int {
 	size := len(seats)
 	maxDis := 0

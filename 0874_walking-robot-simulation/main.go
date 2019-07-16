@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
-	"strings"
 	"strconv"
+	"strings"
 )
 
 func main() {
-	commands := []int{4,-1,4,-2,4}
-	obstacles := [][]int{{2,4}}
+	commands := []int{4, -1, 4, -2, 4}
+	obstacles := [][]int{{2, 4}}
 
-	fmt.Println(robotSim(commands,obstacles))
+	fmt.Println(robotSim(commands, obstacles))
 }
-var dx = []int{0,1,0,-1}
-var dy = []int{1,0,-1,0}
+
+var dx = []int{0, 1, 0, -1}
+var dy = []int{1, 0, -1, 0}
 
 func robotSim(commands []int, obstacles [][]int) int {
 	i := 0
@@ -22,31 +23,31 @@ func robotSim(commands []int, obstacles [][]int) int {
 	maxdis := 0
 	ob := map[string]bool{}
 
-	for _,v := range obstacles{
+	for _, v := range obstacles {
 
 		key := ""
 		for _, k := range v {
 			key = key + strconv.Itoa(k) + ","
 		}
-		ob[strings.Trim(key,",")] = true
+		ob[strings.Trim(key, ",")] = true
 	}
-	
-	for _, v := range commands{
-		if v == -2{
-			i = (i+3)%4 //左转
-		}else if v == -1{
-			i = (i+1)%4 //右转
-		}else {
-			for v > 0{
+
+	for _, v := range commands {
+		if v == -2 {
+			i = (i + 3) % 4 //左转
+		} else if v == -1 {
+			i = (i + 1) % 4 //右转
+		} else {
+			for v > 0 {
 				ddx := x + dx[i]
 				ddy := y + dy[i]
-				tp := strconv.Itoa(ddx)+","+strconv.Itoa(ddy)
-				if _,ok := ob[tp]; ok{
+				tp := strconv.Itoa(ddx) + "," + strconv.Itoa(ddy)
+				if _, ok := ob[tp]; ok {
 					break
-				}else {
+				} else {
 					x = ddx
 					y = ddy
-					maxdis = max(maxdis,x*x+y*y)
+					maxdis = max(maxdis, x*x+y*y)
 				}
 				v--
 			}
@@ -55,12 +56,13 @@ func robotSim(commands []int, obstacles [][]int) int {
 	return maxdis
 }
 
-func max(a, b int)int  {
+func max(a, b int) int {
 	if a > b {
 		return a
 	}
 	return b
 }
+
 /*var dxs = []int{0,1,0,-1}
 var dys = []int{1,0,-1,0}
 //上、右、下、左

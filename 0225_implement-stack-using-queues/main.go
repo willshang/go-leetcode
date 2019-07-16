@@ -1,38 +1,38 @@
 package main
 
 func main() {
-	
+
 }
 
 type MyStack struct {
 	a []int
 }
 
-func Constructor() MyStack  {
+func Constructor() MyStack {
 	return MyStack{}
 }
 
-func (this *MyStack) Push(x int)  {
-	this.a = append(this.a,x)
+func (this *MyStack) Push(x int) {
+	this.a = append(this.a, x)
 }
 func (this *MyStack) Pop() int {
-	if len(this.a) == 0{
+	if len(this.a) == 0 {
 		return 0
 	}
 	last := this.a[len(this.a)-1]
-	this.a = this.a[0:len(this.a)-1]
+	this.a = this.a[0 : len(this.a)-1]
 	return last
 }
 
-func (this *MyStack) Top() int  {
-	if len(this.a) == 0{
+func (this *MyStack) Top() int {
+	if len(this.a) == 0 {
 		return 0
 	}
 	return this.a[len(this.a)-1]
 }
 
-func (this *MyStack) Empty() bool  {
-	if len(this.a) == 0{
+func (this *MyStack) Empty() bool {
+	if len(this.a) == 0 {
 		return true
 	}
 	return false

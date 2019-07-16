@@ -19,8 +19,7 @@ func main() {
 	root.Right = &right
 	res := binaryTreePaths(&root)
 
-
-	for _, v := range res{
+	for _, v := range res {
 		fmt.Println(v)
 	}
 }
@@ -32,32 +31,32 @@ type TreeNode struct {
 }
 
 func binaryTreePaths(root *TreeNode) []string {
-	if root == nil{
+	if root == nil {
 		return nil
 	}
 
-	res := make([]string,0,16)
+	res := make([]string, 0, 16)
 	var dfs func(string, *TreeNode)
 	dfs = func(pre string, root *TreeNode) {
-		if pre == ""{
+		if pre == "" {
 			pre = strconv.Itoa(root.Val)
-		}else {
+		} else {
 			pre += "->" + strconv.Itoa(root.Val)
 		}
 
-		if root.Left != nil{
-			dfs(pre,root.Left)
+		if root.Left != nil {
+			dfs(pre, root.Left)
 		}
 
-		if root.Right != nil{
-			dfs(pre,root.Right)
+		if root.Right != nil {
+			dfs(pre, root.Right)
 		}
 
-		if root.Left == nil && root.Right == nil{
-			res = append(res,pre)
+		if root.Left == nil && root.Right == nil {
+			res = append(res, pre)
 		}
 	}
 
-	dfs("",root)
+	dfs("", root)
 	return res
 }

@@ -3,16 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	first := TreeNode{Val:1}
-	second := TreeNode{Val:2}
-	third := TreeNode{Val:4}
-	secondRight := TreeNode{Val:3}
+	first := TreeNode{Val: 1}
+	second := TreeNode{Val: 2}
+	third := TreeNode{Val: 4}
+	secondRight := TreeNode{Val: 3}
 
 	first.Left = &second
 	first.Right = &secondRight
 	second.Left = &third
 	fmt.Println(averageOfLevels(&first))
 }
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -20,20 +21,20 @@ type TreeNode struct {
 }
 
 func averageOfLevels(root *TreeNode) []float64 {
-	res := make([]float64,0,128)
+	res := make([]float64, 0, 128)
 	nodes := make([]*TreeNode, 1, 1024)
 	nodes[0] = root
 
-	for len(nodes) > 0{
+	for len(nodes) > 0 {
 		n := len(nodes)
 		sum := 0
-		for i := 0; i < n; i++{
+		for i := 0; i < n; i++ {
 			sum = sum + nodes[i].Val
-			if nodes[i].Left != nil{
-				nodes = append(nodes,nodes[i].Left)
+			if nodes[i].Left != nil {
+				nodes = append(nodes, nodes[i].Left)
 			}
-			if nodes[i].Right != nil{
-				nodes = append(nodes,nodes[i].Right)
+			if nodes[i].Right != nil {
+				nodes = append(nodes, nodes[i].Right)
 			}
 		}
 

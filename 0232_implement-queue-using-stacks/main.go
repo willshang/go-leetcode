@@ -1,23 +1,23 @@
 package main
 
 func main() {
-	
+
 }
 
 type MyQueue struct {
 	a []int
 }
 
-func Constructor() MyQueue  {
+func Constructor() MyQueue {
 	return MyQueue{}
 }
 
-func (this *MyQueue) Push(x int)  {
-	this.a = append(this.a,x)
+func (this *MyQueue) Push(x int) {
+	this.a = append(this.a, x)
 }
 
-func (this *MyQueue) Pop() int  {
-	if len(this.a) == 0{
+func (this *MyQueue) Pop() int {
+	if len(this.a) == 0 {
 		return 0
 	}
 	first := this.a[0]
@@ -25,14 +25,14 @@ func (this *MyQueue) Pop() int  {
 	return first
 }
 
-func (this *MyQueue) Peek() int  {
-	if len(this.a) == 0{
+func (this *MyQueue) Peek() int {
+	if len(this.a) == 0 {
 		return 0
 	}
 	return this.a[0]
 }
-func (this *MyQueue) Empty() bool  {
-	if len(this.a) == 0{
+func (this *MyQueue) Empty() bool {
+	if len(this.a) == 0 {
 		return true
 	}
 	return false
@@ -110,4 +110,3 @@ func (s *Stack) IsEmpty() bool  {
  * param_3 := obj.Peek();
  * param_4 := obj.Empty();
  */
-

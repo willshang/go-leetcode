@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	first := TreeNode{Val:4}
-	second := TreeNode{Val:6}
-	third := TreeNode{Val:2}
+	first := TreeNode{Val: 4}
+	second := TreeNode{Val: 6}
+	third := TreeNode{Val: 2}
 
 	first.Left = &third
 	first.Right = &second
@@ -21,6 +21,7 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
 /*func minDiffInBST(root *TreeNode) int {
 	res := math.MaxInt64
 	pre := 1 >> 63
@@ -50,27 +51,27 @@ func min(a, b int)int  {
 }*/
 func minDiffInBST(root *TreeNode) int {
 	res := []int{}
-	BST(root,&res)
+	BST(root, &res)
 	//sort.Ints(res)
 	min := math.MaxInt32
-	for i := 0; i < len(res)-1;i++{
-		if abs(res[i],res[i+1]) < min{
-			min = abs(res[i],res[i+1])
+	for i := 0; i < len(res)-1; i++ {
+		if abs(res[i], res[i+1]) < min {
+			min = abs(res[i], res[i+1])
 		}
 	}
 	return min
 }
-func abs(a,b int)  int{
-	if a > b{
+func abs(a, b int) int {
+	if a > b {
 		return a - b
 	}
 	return b - a
 }
-func BST(root *TreeNode, res *[]int )  {
-	if root == nil{
+func BST(root *TreeNode, res *[]int) {
+	if root == nil {
 		return
 	}
-	BST(root.Left,res)
-	*res = append(*res,root.Val)
-	BST(root.Right,res)
+	BST(root.Left, res)
+	*res = append(*res, root.Val)
+	BST(root.Right, res)
 }

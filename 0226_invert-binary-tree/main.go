@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	first := TreeNode{Val:1}
-	second := TreeNode{Val:2}
-	third := TreeNode{Val:3}
+	first := TreeNode{Val: 1}
+	second := TreeNode{Val: 2}
+	third := TreeNode{Val: 3}
 	first.Left = &second
 	first.Right = &third
 
@@ -22,7 +22,7 @@ type TreeNode struct {
 }
 
 func invertTree(root *TreeNode) *TreeNode {
-	if root == nil || (root.Left == nil && root.Right == nil){
+	if root == nil || (root.Left == nil && root.Right == nil) {
 		return root
 	}
 	root.Left, root.Right = invertTree(root.Right), invertTree(root.Left)

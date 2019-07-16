@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	first := TreeNode{Val:2}
-	second := TreeNode{Val:2}
-	third := TreeNode{Val:2}
+	first := TreeNode{Val: 2}
+	second := TreeNode{Val: 2}
+	third := TreeNode{Val: 2}
 
 	first.Left = &third
 	first.Right = &second
@@ -23,31 +23,32 @@ type TreeNode struct {
 }
 
 func findSecondMinimumValue(root *TreeNode) int {
-	var arr  []int
-	helper(root,&arr)
-	min, second := math.MaxInt32,math.MaxInt32
-	for i := 0; i < len(arr); i++{
-		if arr[i] < min{
+	var arr []int
+	helper(root, &arr)
+	min, second := math.MaxInt32, math.MaxInt32
+	for i := 0; i < len(arr); i++ {
+		if arr[i] < min {
 			second = min
 			min = arr[i]
-		}else if min < arr[i] && arr[i] < second{
+		} else if min < arr[i] && arr[i] < second {
 			second = arr[i]
 		}
 	}
-	if second == math.MaxInt32{
+	if second == math.MaxInt32 {
 		return -1
 	}
 	return second
 }
 
-func helper(root *TreeNode,arr *[]int)  {
-	if root == nil{
+func helper(root *TreeNode, arr *[]int) {
+	if root == nil {
 		return
 	}
-	*arr = append(*arr,root.Val)
-	helper(root.Left,arr)
-	helper(root.Right,arr)
+	*arr = append(*arr, root.Val)
+	helper(root.Left, arr)
+	helper(root.Right, arr)
 }
+
 /*const intMax  = 1 << 63 -1
 func findSecondMinimumValue(root *TreeNode) int {
 	res := intMax

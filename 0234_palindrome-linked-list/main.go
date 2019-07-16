@@ -17,11 +17,11 @@ func main() {
 
 	fmt.Println(isPalindrome(first))
 	for {
-		if first == nil{
+		if first == nil {
 			break
 		}
-		fmt.Print(first.Val," ")
-		first =first.Next
+		fmt.Print(first.Val, " ")
+		first = first.Next
 	}
 }
 
@@ -32,13 +32,13 @@ type ListNode struct {
 
 func isPalindrome(head *ListNode) bool {
 	m := []int{}
-	for head != nil{
-		m = append(m,head.Val)
+	for head != nil {
+		m = append(m, head.Val)
 		head = head.Next
 	}
-	i,j := 0,len(m)-1
-	for i < j{
-		if m[i] != m[j]{
+	i, j := 0, len(m)-1
+	for i < j {
+		if m[i] != m[j] {
 			return false
 		}
 		i++

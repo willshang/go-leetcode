@@ -10,18 +10,18 @@ func main() {
 }
 
 func judgeSquareSum(c int) bool {
-	if c < 0{
+	if c < 0 {
 		return false
 	}
 
 	left, right := 0, int(math.Sqrt(float64(c)))
-	for left <= right{
+	for left <= right {
 		current := left*left + right*right
-		if current < c{
+		if current < c {
 			left++
-		}else if current > c{
+		} else if current > c {
 			right--
-		}else {
+		} else {
 			return true
 		}
 	}

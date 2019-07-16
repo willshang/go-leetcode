@@ -9,6 +9,7 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
 func main() {
 	root := TreeNode{}
 	root.Val = 1
@@ -21,19 +22,19 @@ func main() {
 
 	root.Left = &left
 	left.Right = &right
-	res := hasPathSum(&root,5)
+	res := hasPathSum(&root, 5)
 	fmt.Println(res)
 }
 
 func hasPathSum(root *TreeNode, sum int) bool {
-	if root == nil{
+	if root == nil {
 		return false
 	}
 	sum = sum - root.Val
 
-	if root.Left == nil && root.Right == nil{
+	if root.Left == nil && root.Right == nil {
 		return sum == 0
 	}
 
-	return hasPathSum(root.Left,sum) || hasPathSum(root.Right,sum)
+	return hasPathSum(root.Left, sum) || hasPathSum(root.Right, sum)
 }

@@ -8,10 +8,10 @@ func main() {
 }
 func validPalindrome(s string) bool {
 	i := 0
-	j := len(s)-1
-	for i < j{
-		if s[i] != s[j]{
-			return isPalindrome(s,i,j-1) || isPalindrome(s,i+1,j)
+	j := len(s) - 1
+	for i < j {
+		if s[i] != s[j] {
+			return isPalindrome(s, i, j-1) || isPalindrome(s, i+1, j)
 		}
 		i++
 		j--
@@ -19,9 +19,9 @@ func validPalindrome(s string) bool {
 	return true
 }
 
-func isPalindrome(s string, i, j int)  bool{
-	for i < j{
-		if s[i] != s[j]{
+func isPalindrome(s string, i, j int) bool {
+	for i < j {
+		if s[i] != s[j] {
 			return false
 		}
 		i++

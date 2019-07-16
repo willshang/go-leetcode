@@ -25,19 +25,19 @@ type TreeNode struct {
 }
 
 func isSymmetric(root *TreeNode) bool {
-	if root == nil{
+	if root == nil {
 		return true
 	}
-	return recur(root.Left,root.Right)
+	return recur(root.Left, root.Right)
 }
 
-func recur(left, right *TreeNode) bool  {
-	if left == nil && right == nil{
+func recur(left, right *TreeNode) bool {
+	if left == nil && right == nil {
 		return true
 	}
-	if left == nil || right == nil{
+	if left == nil || right == nil {
 		return false
 	}
 
-	return left.Val == right.Val && recur(left.Left,right.Right) && recur(left.Right,right.Left)
+	return left.Val == right.Val && recur(left.Left, right.Right) && recur(left.Right, right.Left)
 }

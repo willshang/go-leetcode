@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(sortedArrayToBST([]int{-10,-3,0,5,9}))
+	fmt.Println(sortedArrayToBST([]int{-10, -3, 0, 5, 9}))
 }
 
 type TreeNode struct {
@@ -13,15 +13,15 @@ type TreeNode struct {
 }
 
 func sortedArrayToBST(nums []int) *TreeNode {
-	if len(nums) == 0{
+	if len(nums) == 0 {
 		return nil
 	}
 
-	mid := len(nums)/2
+	mid := len(nums) / 2
 
 	return &TreeNode{
-		Val:nums[mid],
-		Left:sortedArrayToBST(nums[:mid]),
-		Right:sortedArrayToBST(nums[mid+1:]),
+		Val:   nums[mid],
+		Left:  sortedArrayToBST(nums[:mid]),
+		Right: sortedArrayToBST(nums[mid+1:]),
 	}
 }

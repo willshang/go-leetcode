@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-	arr := []int{-1,2,3,4,5,-1}
+	arr := []int{-1, 2, 3, 4, 5, -1}
 	fmt.Println(maximumProduct(arr))
 
-	fmt.Println(maximumProduct([]int{-1,-1,4,-4,-1}))
-	fmt.Println(maximumProduct([]int{-1,1,2}))
+	fmt.Println(maximumProduct([]int{-1, -1, 4, -4, -1}))
+	fmt.Println(maximumProduct([]int{-1, 1, 2}))
 
 }
 func maximumProduct(nums []int) int {
@@ -19,8 +19,8 @@ func maximumProduct(nums []int) int {
 		nums[len(nums)-3]*nums[len(nums)-2]*nums[len(nums)-1])
 }
 
-func max(a,b int)int  {
-	if a > b{
+func max(a, b int) int {
+	if a > b {
 		return a
 	}
 	return b

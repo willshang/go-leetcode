@@ -3,34 +3,28 @@ package main
 import "fmt"
 
 func main() {
-	var nums = []int{2,7,9,3,1}
+	var nums = []int{2, 7, 9, 3, 1}
 	fmt.Println(rob(nums))
 }
 
-func rob(nums []int) int  {
+func rob(nums []int) int {
 	var a, b int
-	for i, v := range nums{
-		if i % 2 == 0{
+	for i, v := range nums {
+		if i%2 == 0 {
 			a = max(a+v, b)
-		}else {
+		} else {
 			b = max(a, b+v)
 		}
 	}
-	return max(a,b)
+	return max(a, b)
 }
 
-func max(a,b int) int  {
+func max(a, b int) int {
 	if a > b {
 		return a
 	}
 	return b
 }
-
-
-
-
-
-
 
 /*
 State:      dp[i]，表示到第i个房子时能够抢到的最大金额。

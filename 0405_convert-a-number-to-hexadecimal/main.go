@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	fmt.Println(toHex(-254))
 }
+
 var h = []string{
 	"0",
 	"1",
@@ -23,13 +24,14 @@ var h = []string{
 	"e",
 	"f",
 }
+
 func toHex(num int) string {
 	hex := ""
-	if num == 0{
+	if num == 0 {
 		return "0"
 	}
 
-	for i := 0; i < 8 && num != 0; i++{
+	for i := 0; i < 8 && num != 0; i++ {
 		hex = h[num&15] + hex
 		num = num >> 4
 	}

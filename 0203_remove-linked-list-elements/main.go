@@ -23,13 +23,13 @@ func main() {
 	fourth.Next = fifth
 	fifth.Next = sixth
 	sixth.Next = seventh
-	removeElements(first,6)
+	removeElements(first, 6)
 	for {
 		fmt.Println(first.Val)
-		if first.Next == nil{
+		if first.Next == nil {
 			break
 		}
-		first =first.Next
+		first = first.Next
 	}
 }
 
@@ -39,14 +39,14 @@ type ListNode struct {
 }
 
 func removeElements(head *ListNode, val int) *ListNode {
-	headPre := ListNode{Next:head}
+	headPre := ListNode{Next: head}
 	temp := &headPre
 
-	for temp.Next != nil{
-		if temp.Next.Val == val{
+	for temp.Next != nil {
+		if temp.Next.Val == val {
 			//delete
 			temp.Next = temp.Next.Next
-		}else {
+		} else {
 			temp = temp.Next
 		}
 	}

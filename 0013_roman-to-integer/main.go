@@ -27,7 +27,7 @@ func romanToInt(s string) int {
 		if current < last {
 			flag = -1
 		}
-		result = result + flag * current
+		result = result + flag*current
 		last = current
 	}
 	return result

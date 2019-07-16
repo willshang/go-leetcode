@@ -10,6 +10,7 @@ func main() {
 	fmt.Println(findNthDigit(13))
 	fmt.Println(findNthDigit(11))
 }
+
 /**
  * 这里是找第n个数字(这里的数和数字有区别，数字可以理解为将所有数拼合成一个字符串后的第n为对应的数字（0-9)）
  * 这里首先分析一下位数和规律
@@ -23,18 +24,18 @@ func main() {
 func findNthDigit(n int) int {
 	digitType := 1
 	digitNum := 9
-	for n > digitNum*digitType{
-		n = n - digitNum * digitType
+	for n > digitNum*digitType {
+		n = n - digitNum*digitType
 		digitType++
 		digitNum = digitNum * 10
 	}
 
-	indexInSubRange := (n-1) / digitType
-	indexInNum := (n-1) % digitType
+	indexInSubRange := (n - 1) / digitType
+	indexInNum := (n - 1) % digitType
 	num := int(math.Pow10(digitType-1)) + indexInSubRange
 	arr := []int{}
-	for num > 0{
-		arr = append(arr,num%10)
+	for num > 0 {
+		arr = append(arr, num%10)
 		num = num / 10
 	}
 	return arr[len(arr)-1-indexInNum]

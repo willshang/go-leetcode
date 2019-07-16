@@ -26,10 +26,10 @@ func main() {
 	first = reverseList(first)
 	for {
 		fmt.Println(first.Val)
-		if first.Next == nil{
+		if first.Next == nil {
 			break
 		}
-		first =first.Next
+		first = first.Next
 	}
 }
 
@@ -41,7 +41,7 @@ type ListNode struct {
 func reverseList(head *ListNode) *ListNode {
 	var result *ListNode
 	var temp *ListNode
-	for head != nil{
+	for head != nil {
 		temp = head.Next
 		head.Next = result
 		result = head

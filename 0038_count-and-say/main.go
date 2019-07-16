@@ -7,18 +7,18 @@ func main() {
 }
 func countAndSay(n int) string {
 	strs := []byte{'1'}
-	for i := 1; i < n; i++{
+	for i := 1; i < n; i++ {
 		strs = say(strs)
 	}
 	return string(strs)
 }
 
 func say(strs []byte) []byte {
-	result := make([]byte,0,len(strs)*2)
+	result := make([]byte, 0, len(strs)*2)
 
-	i, j := 0,1
-	for i < len(strs){
-		for j < len(strs) && strs[i] == strs[j]{
+	i, j := 0, 1
+	for i < len(strs) {
+		for j < len(strs) && strs[i] == strs[j] {
 			j++
 		}
 		//几个几

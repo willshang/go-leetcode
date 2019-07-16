@@ -8,6 +8,7 @@ func main() {
 	fmt.Println(findComplement(5))
 	fmt.Println(findComplement(8))
 }
+
 /*func findComplement(num int) int {
 	temp := num
 	res := 0
@@ -21,20 +22,20 @@ func main() {
 
 func findComplement(num int) int {
 	res := 0
-	if num == 0{
+	if num == 0 {
 		return 1
 	}
-	if num == 1{
+	if num == 1 {
 		return 0
 	}
 
 	exp := 1
-	for num > 0{
+	for num > 0 {
 		temp := num % 2
-		if temp == 0{
+		if temp == 0 {
 			res = res + exp
 			exp = exp * 2
-		}else {
+		} else {
 			exp = exp * 2
 		}
 

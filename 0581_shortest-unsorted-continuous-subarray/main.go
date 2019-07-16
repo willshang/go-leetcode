@@ -13,17 +13,17 @@ func findUnsortedSubarray(nums []int) int {
 	left, right := 0, -1
 	min, max := nums[n-1], nums[0]
 
-	for i := 1; i < n; i++{
-		if max <= nums[i]{
+	for i := 1; i < n; i++ {
+		if max <= nums[i] {
 			max = nums[i]
-		}else {
+		} else {
 			right = i
 		}
 
 		j := n - i - 1
-		if min >= nums[j]{
+		if min >= nums[j] {
 			min = nums[j]
-		}else {
+		} else {
 			left = j
 		}
 	}

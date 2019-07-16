@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	root := TreeNode{Val:5}
-	rootLeft := TreeNode{Val:4}
-	rootRight := TreeNode{Val:5}
-	rootLeftLeft := TreeNode{Val:1}
-	rootLeftRight := TreeNode{Val:1}
-	rootRightRight := TreeNode{Val:5}
+	root := TreeNode{Val: 5}
+	rootLeft := TreeNode{Val: 4}
+	rootRight := TreeNode{Val: 5}
+	rootLeftLeft := TreeNode{Val: 1}
+	rootLeftRight := TreeNode{Val: 1}
+	rootRightRight := TreeNode{Val: 5}
 
 	root.Left = &rootLeft
 	root.Right = &rootRight
@@ -24,42 +24,44 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
+
 func longestUnivaluePath(root *TreeNode) int {
-maxLen := 0
-helper(root,&maxLen)
-return maxLen
+	maxLen := 0
+	helper(root, &maxLen)
+	return maxLen
 }
 
-func helper(n *TreeNode, maxLen *int)int  {
-	if n == nil{
+func helper(n *TreeNode, maxLen *int) int {
+	if n == nil {
 		return 0
 	}
-	l := helper(n.Left,maxLen)
-	r := helper(n.Right,maxLen)
+	l := helper(n.Left, maxLen)
+	r := helper(n.Right, maxLen)
 
-	if n.Left != nil && n.Val == n.Left.Val{
+	if n.Left != nil && n.Val == n.Left.Val {
 		l++
-	}else {
+	} else {
 		l = 0
 	}
 
-	if n.Right != nil && n.Val == n.Right.Val{
+	if n.Right != nil && n.Val == n.Right.Val {
 		r++
-	}else {
+	} else {
 		r = 0
 	}
-	if l + r > *maxLen{
+	if l+r > *maxLen {
 		*maxLen = l + r
 	}
-	return max(l,r)
+	return max(l, r)
 }
 
-func max(a, b int)int  {
+func max(a, b int) int {
 	if a > b {
 		return a
 	}
 	return b
 }
+
 /*func longestUnivaluePath(root *TreeNode) int {
 	maxLen := 0
 	helper(root,&maxLen)

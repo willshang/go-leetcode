@@ -9,7 +9,7 @@ func main() {
 	strs := []string{"Hello", "Alaska", "Dad", "Peace"}
 	fmt.Println(findWords(strs))
 }
-func findWords(words []string) []string  {
+func findWords(words []string) []string {
 	m := make(map[byte]int)
 	m['q'] = 1
 	m['w'] = 1
@@ -40,22 +40,23 @@ func findWords(words []string) []string  {
 
 	res := []string{}
 
-	for i := 0; i < len(words); i++{
+	for i := 0; i < len(words); i++ {
 		b := []byte(strings.ToLower(words[i]))
 		level := m[b[0]]
 		flag := true
-		for j := 1; j < len(b); j++{
-			if m[b[j]] != level{
+		for j := 1; j < len(b); j++ {
+			if m[b[j]] != level {
 				flag = false
 				break
 			}
 		}
-		if flag{
-			res = append(res,words[i])
+		if flag {
+			res = append(res, words[i])
 		}
 	}
 	return res
 }
+
 /*
 var qRow = map[byte]bool{
 	'q' : true,

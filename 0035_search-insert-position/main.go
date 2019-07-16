@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{1,3,5,6}
+	nums := []int{1, 3, 5, 6}
 	target := 7
-	fmt.Println(searchInsert(nums,target))
+	fmt.Println(searchInsert(nums, target))
 }
 
 /*
@@ -21,12 +21,11 @@ func searchInsert(nums []int, target int) int {
 	return i
 }*/
 
-
 func searchInsert(nums []int, target int) int {
-	low, high := 0, len(nums) - 1
-	for low <= high{
-		mid := (low+high)/2
-		switch  {
+	low, high := 0, len(nums)-1
+	for low <= high {
+		mid := (low + high) / 2
+		switch {
 		case nums[mid] < target:
 			low = mid + 1
 		case nums[mid] > target:

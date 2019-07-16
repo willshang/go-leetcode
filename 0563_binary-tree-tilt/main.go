@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	first := TreeNode{Val:1}
-	second := TreeNode{Val:2}
-	third := TreeNode{Val:3}
+	first := TreeNode{Val: 1}
+	second := TreeNode{Val: 2}
+	third := TreeNode{Val: 3}
 	first.Left = &second
 	first.Right = &third
 
@@ -20,21 +20,21 @@ type TreeNode struct {
 
 func findTilt(root *TreeNode) int {
 	var total int
-	helper(root,&total)
+	helper(root, &total)
 	return total
 }
 
-func helper(root *TreeNode, total *int)int  {
-	if root == nil{
+func helper(root *TreeNode, total *int) int {
+	if root == nil {
 		return 0
 	}
 
-	l := helper(root.Left,total)
-	r := helper(root.Right,total)
+	l := helper(root.Left, total)
+	r := helper(root.Right, total)
 
 	if l > r {
 		*total = *total + l - r
-	}else {
+	} else {
 		*total = *total + r - l
 	}
 
