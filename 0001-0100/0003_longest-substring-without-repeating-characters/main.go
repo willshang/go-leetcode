@@ -15,8 +15,9 @@ func lengthOfLongestSubstring(s string) int {
 	maxLen, left := 0, 0
 
 	for i := 0; i < len(s); i++ {
-		fmt.Println(left)
+		fmt.Println(left,maxLen)
 		if location[s[i]] >= left {
+			//fmt.Println("重复了:\t",s[i:],string(s[i]),location[s[i]],left)
 			left = location[s[i]] + 1
 		} else if i+1-left > maxLen {
 			maxLen = i + 1 - left
@@ -25,10 +26,10 @@ func lengthOfLongestSubstring(s string) int {
 		location[s[i]] = i
 	}
 
-	for k, v := range location {
-		if v != -1 {
-			fmt.Println(k, v)
-		}
-	}
+	//for k, v := range location {
+	//	if v != -1 {
+	//		fmt.Println(k, v)
+	//	}
+	//}
 	return maxLen
 }
