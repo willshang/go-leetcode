@@ -8,6 +8,7 @@ import (
 func main() {
 	fmt.Println(reverse(-123))
 }
+
 func reverse(x int) int {
 	flag := 1
 	if x < 0 {
