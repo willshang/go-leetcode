@@ -9,7 +9,6 @@ func main() {
 }
 
 func romanToInt(s string) int {
-	result := 0
 	m := map[byte]int{
 		'I': 1,
 		'V': 5,
@@ -19,8 +18,9 @@ func romanToInt(s string) int {
 		'D': 500,
 		'M': 1000,
 	}
-
+	result := 0
 	last := 0
+
 	for i := len(s) - 1; i >= 0; i-- {
 		current := m[s[i]]
 		flag := 1

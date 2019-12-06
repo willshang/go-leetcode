@@ -209,5 +209,336 @@ func isPalindrome(x int) bool {
 }
 ```
 
+## 13.罗马数字转整数
+
+### 题目
+
+```
+罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
+
+字符          数值
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：
+    I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
+    X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 
+    C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
+
+给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。
+
+示例 1:输入: "III" 输出: 3
+
+示例 2:	输入: "IV" 输出: 4
+
+示例 3:	输入: "IX"	输出: 9
+
+示例 4:	输入: "LVIII"	输出: 58
+解释: L = 50, V= 5, III = 3.
+
+示例 5:
+输入: "MCMXCIV"	输出: 1994
+解释: M = 1000, CM = 900, XC = 90, IV = 4.
+```
 
 
+
+### 解答思路
+
+| No.      | 思路                                                         | 时间复杂度 | 空间复杂度 |
+| -------- | ------------------------------------------------------------ | ---------- | ---------- |
+| 01(最优) | 本质上其实就是全部累加，然后遇到特殊的就做判断。使用一个字段记录递增 | O(n)       | O(1)       |
+| 02(最优) | 从右到左遍历字符串，如果当前字符代表的值不小于其右边，就加上该值；否则就减去该值。 | O(n)       | O(1)       |
+
+```go
+// 带标记位
+func romanToInt(s string) int {
+	m := map[byte]int{
+		'I': 1,
+		'V': 5,
+		'X': 10,
+		'L': 50,
+		'C': 100,
+		'D': 500,
+		'M': 1000,
+	}
+	result := 0
+	last := 0
+
+	for i := len(s) - 1; i >= 0; i-- {
+		current := m[s[i]]
+		flag := 1
+		if current < last {
+			flag = -1
+		}
+		result = result + flag*current
+		last = current
+	}
+	return result
+}
+
+// 不带标记位，小于则减去2倍数
+func romanToInt(s string) int {
+	m := map[byte]int{
+		'I': 1,
+		'V': 5,
+		'X': 10,
+		'L': 50,
+		'C': 100,
+		'D': 500,
+		'M': 1000,
+	}
+	result := 0
+	last := 0
+
+	for i := len(s) - 1; i >= 0; i-- {
+		current := m[s[i]]
+		if current < last {
+			result = result - current
+		}else {
+			result = result + current
+		}
+		last = current
+	}
+	return result
+}
+```
+
+## 14.最长公共前缀
+
+### 题目
+
+```
+编写一个函数来查找字符串数组中的最长公共前缀。
+如果不存在公共前缀，返回空字符串 ""。
+
+示例 1:
+输入: ["flower","flow","flight"]
+输出: "fl"
+
+示例 2:
+输入: ["dog","racecar","car"]
+输出: ""
+解释: 输入不存在公共前缀。
+
+说明:
+所有输入只包含小写字母 a-z 。
+```
+
+
+
+### 解答思路
+
+| No.  | 思路                                                         | 时间复杂度    | 空间复杂度 |
+| ---- | ------------------------------------------------------------ | ------------- | ---------- |
+| 01   | 先找最短的一个字符串，依次比较最短字符串子串是否是其他字符串子串 | O(n^2)/O(n*m) | O(1)       |
+| 02   | 纵向扫描(暴力法):直接取第一个字符串作为最长公共前缀，将其每个字符遍历过一次 | O(n^2)/O(n*m) | O(1)       |
+| 03   | 排序后，然后计算第一个，和最后一个字符串的最长前缀           | O(nlog(n))    | O(1)       |
+| 04   | trie树                                                       | O(n^2)        | O(n^2)     |
+| 05   | 水平扫描法:比较前2个字符串得到最长前缀，然后跟第3个比较得到一个新的最长前缀，继续比较，直到最后 | O(n^2)/O(n*m) | O(1)       |
+| 06   | 分治法                                                       | O(n^2)        | O(1)       |
+
+```go
+// 先找最短的一个字符串，依次比较最短字符串子串是否是其他字符串子串
+func longestCommonPrefix(strs []string) string {
+	if len(strs) == 0{
+		return ""
+	}
+	if len(strs) == 1{
+		return strs[0]
+	}
+
+	short := strs[0]
+	for _, s := range strs{
+		if len(short) > len(s){
+			short = s
+		}
+	}
+
+	for i := range short{
+		shortest := short[:i+1]
+		for _,str := range strs{
+			if strings.Index(str,shortest) != 0{
+				return short[:i]
+			}
+		}
+	}
+	return short
+}
+
+// 暴力法:直接依次遍历
+func longestCommonPrefix(strs []string) string {
+	if len(strs) == 0 {
+		return ""
+	}
+	if len(strs) == 1 {
+		return strs[0]
+	}
+
+	length := 0
+
+	for i := 0; i < len(strs[0]); i++ {
+		char := strs[0][i]
+		for j := 1; j < len(strs); j++ {
+			if i >= len(strs[j]) || char != strs[j][i] {
+				return strs[0][:length]
+			}
+		}
+		length++
+	}
+	return strs[0][:length]
+}
+
+// 排序后，遍历比较第一个，和最后一个字符串
+func longestCommonPrefix(strs []string) string {
+	if len(strs) == 0{
+		return ""
+	}
+	if len(strs) == 1{
+		return strs[0]
+	}
+
+	sort.Strings(strs)
+	first := strs[0]
+	last := strs[len(strs)-1]
+	i := 0
+	length := len(first)
+	if len(last) < length{
+		length = len(last)
+	}
+	for i < length{
+		if first[i] != last[i]{
+			return first[:i]
+		}
+		i++
+	}
+
+	return first[:i]
+}
+
+
+// trie树
+var trie [][]int
+var index int
+
+func longestCommonPrefix(strs []string) string {
+	if len(strs) == 0 {
+		return ""
+	}
+	if len(strs) == 1 {
+		return strs[0]
+	}
+
+	trie = make([][]int, 2000)
+	for k := range trie {
+		value := make([]int, 26)
+		trie[k] = value
+	}
+	insert(strs[0])
+
+	minValue := math.MaxInt32
+	for i := 1; i < len(strs); i++ {
+		retValue := insert(strs[i])
+		if minValue > retValue {
+			minValue = retValue
+		}
+	}
+	return strs[0][:minValue]
+}
+
+func insert(str string) int {
+	p := 0
+	count := 0
+	for i := 0; i < len(str); i++ {
+		ch := str[i] - 'a'
+		// fmt.Println(string(str[i]),p,ch,trie[p][ch])
+		if value := trie[p][ch]; value == 0 {
+			index++
+			trie[p][ch] = index
+		} else {
+			count++
+		}
+		p = trie[p][ch]
+	}
+	return count
+}
+
+//
+func longestCommonPrefix(strs []string) string {
+	if len(strs) == 0 {
+		return ""
+	}
+	if len(strs) == 1 {
+		return strs[0]
+	}
+
+	commonStr := common(strs[0], strs[1])
+	if commonStr == "" {
+		return ""
+	}
+	for i := 2; i < len(strs); i++ {
+		if commonStr == "" {
+			return ""
+		}
+		commonStr = common(commonStr, strs[i])
+	}
+	return commonStr
+}
+
+func common(str1, str2 string) string {
+	length := 0
+	for i := 0; i < len(str1); i++ {
+		char := str1[i]
+		if i >= len(str2) || char != str2[i] {
+			return str1[:length]
+		}
+		length++
+	}
+	return str1[:length]
+}
+
+// 分治法
+func longestCommonPrefix(strs []string) string {
+	if len(strs) == 0 {
+		return ""
+	}
+	if len(strs) == 1 {
+		return strs[0]
+	}
+
+	return commonPrefix(strs, 0, len(strs)-1)
+}
+
+func commonPrefix(strs []string, left, right int) string {
+	if left == right {
+		return strs[left]
+	}
+
+	middle := (left + right) / 2
+	leftStr := commonPrefix(strs, left, middle)
+	rightStr := commonPrefix(strs, middle+1, right)
+	return commonPrefixWord(leftStr, rightStr)
+}
+
+func commonPrefixWord(leftStr, rightStr string) string {
+	if len(leftStr) > len(rightStr) {
+		leftStr = leftStr[:len(rightStr)]
+	}
+
+	if len(leftStr) < 1 {
+		return leftStr
+	}
+
+	for i := 0; i < len(leftStr); i++ {
+		if leftStr[i] != rightStr[i] {
+			return leftStr[:i]
+		}
+	}
+	return leftStr
+}
+```
