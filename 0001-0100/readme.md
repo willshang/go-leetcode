@@ -468,7 +468,7 @@ func insert(str string) int {
 	return count
 }
 
-//
+// 水平扫描法:比较前2个字符串得到最长前缀，然后跟第3个比较得到一个新的最长前缀，继续比较，直到最后
 func longestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
 		return ""
