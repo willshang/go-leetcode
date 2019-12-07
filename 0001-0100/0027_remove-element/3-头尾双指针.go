@@ -8,24 +8,14 @@ func main() {
 	fmt.Println(nums)
 }
 
-/*func removeElement(nums []int, val int) int {
-	count := 0
-	for i := 0; i < len(nums); i++{
-		if nums[i] == val{
-			count++
-			continue
-		}
-		nums[i-count] = nums[i]
-	}
-	return len(nums)-count
-}*/
-
 func removeElement(nums []int, val int) int {
 	i, j := 0, len(nums)-1
 	for {
+		// 从左向右找到等于 val 的位置
 		for i < len(nums) && nums[i] != val {
 			i++
 		}
+		// 从右向左找到不等于 val 的位置
 		for j >= 0 && nums[j] == val {
 			j--
 		}

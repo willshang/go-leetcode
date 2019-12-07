@@ -542,3 +542,391 @@ func commonPrefixWord(leftStr, rightStr string) string {
 	return leftStr
 }
 ```
+
+## 20.有效的括号
+
+### 题目
+
+```
+给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+有效字符串需满足：
+    左括号必须用相同类型的右括号闭合。
+    左括号必须以正确的顺序闭合。
+注意空字符串可被认为是有效字符串。
+
+示例 1:
+输入: "()"
+输出: true
+
+示例 2:
+输入: "()[]{}"
+输出: true
+
+示例 3:
+输入: "(]"
+输出: false
+
+示例 4:
+输入: "([)]"
+输出: false
+
+示例 5:
+输入: "{[]}"
+输出: true
+```
+
+### 解题思路
+
+| No.  | 思路                               | 时间复杂度 | 空间复杂度 |
+| ---- | ---------------------------------- | ---------- | ---------- |
+| 01   | 使用栈结构实现栈                   | O(n)       | O(n)       |
+| 02   | 借助数组实现栈                     | O(n)       | O(n)       |
+| 03   | 借助数组实现栈，使用数字表示来匹配 | O(n)       | O(n)       |
+
+```go
+// 使用栈结构实现
+func isValid(s string) bool {
+	st := new(stack)
+	for _, char := range s {
+		switch char {
+		case '(', '[', '{':
+			st.push(char)
+		case ')', ']', '}':
+			ret, ok := st.pop()
+			if !ok || ret != match[char] {
+				return false
+			}
+		}
+	}
+
+	if len(*st) > 0 {
+		return false
+	}
+	return true
+}
+
+var match = map[rune]rune{
+	')': '(',
+	']': '[',
+	'}': '{',
+}
+
+type stack []rune
+
+func (s *stack) push(b rune) {
+	*s = append(*s, b)
+}
+func (s *stack) pop() (rune, bool) {
+	if len(*s) > 0 {
+		res := (*s)[len(*s)-1]
+		*s = (*s)[:len(*s)-1]
+		return res, true
+	}
+	return 0, false
+}
+
+// 借助数组实现栈
+func isValid(s string) bool {
+	if s == "" {
+		return true
+	}
+
+	stack := make([]rune, len(s))
+	length := 0
+	var match = map[rune]rune{
+		')': '(',
+		']': '[',
+		'}': '{',
+	}
+
+	for _, char := range s {
+		switch char {
+		case '(', '[', '{':
+			stack[length] = char
+			length++
+		case ')', ']', '}':
+			if length == 0 {
+				return false
+			}
+			if stack[length-1] != match[char]{
+				return false
+			} else {
+				length--
+			}
+		}
+	}
+	return length == 0
+}
+
+// 借助数组实现栈，使用数字表示来匹配
+func isValid(s string) bool {
+	if s == "" {
+		return true
+	}
+
+	stack := make([]int, len(s))
+	length := 0
+	var match = map[rune]int{
+		')': 1,
+		'(': -1,
+		']': 2,
+		'[': -2,
+		'}': 3,
+		'{': -3,
+	}
+
+	for _, char := range s {
+		switch char {
+		case '(', '[', '{':
+			stack[length] = match[char]
+			length++
+		case ')', ']', '}':
+			if length == 0 {
+				return false
+			}
+			if stack[length-1]+match[char] != 0 {
+				return false
+			} else {
+				length--
+			}
+		}
+	}
+	return length == 0
+}
+```
+
+## 21.合并两个有序链表
+
+### 题目
+
+```
+将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+
+示例：
+输入：1->2->4, 1->3->4
+输出：1->1->2->3->4->4
+```
+
+### 解题思路
+
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01(最优) | 迭代遍历 | O(n)       | O(1)       |
+| 02       | 递归实现 | O(n)       | O(n)       |
+
+```go
+// 迭代遍历
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	if l1 == nil {
+		return l2
+	}
+	if l2 == nil {
+		return l1
+	}
+
+	var head, node *ListNode
+	if l1.Val < l2.Val {
+		head = l1
+		node = l1
+		l1 = l1.Next
+	} else {
+		head = l2
+		node = l2
+		l2 = l2.Next
+	}
+
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			node.Next = l1
+			l1 = l1.Next
+		} else {
+			node.Next = l2
+			l2 = l2.Next
+		}
+		node = node.Next
+	}
+	if l1 != nil {
+		node.Next = l1
+	}
+	if l2 != nil {
+		node.Next = l2
+	}
+	return head
+}
+
+
+// 递归遍历
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	if l1 == nil {
+		return l2
+	}
+	if l2 == nil {
+		return l1
+	}
+
+	if l1.Val < l2.Val{
+		l1.Next = mergeTwoLists(l1.Next,l2)
+		return l1
+	}else {
+		l2.Next = mergeTwoLists(l1,l2.Next)
+		return l2
+	}
+}
+```
+
+## 26.删除排序数组中的重复项
+
+### 题目
+
+```
+给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+
+示例 1:
+给定数组 nums = [1,1,2], 
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 
+你不需要考虑数组中超出新长度后面的元素。
+
+示例 2:
+给定 nums = [0,0,1,1,1,2,2,3,3,4],
+函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+你不需要考虑数组中超出新长度后面的元素。
+
+说明:
+为什么返回数值是整数，但输出的答案是数组呢?
+请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+你可以想象内部操作如下:
+// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+int len = removeDuplicates(nums);
+
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
+for (int i = 0; i < len; i++) {
+    print(nums[i]);
+}
+```
+
+### 解题思路
+
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01       | 双指针法 | O(n)       | O(1)       |
+| 02(最优) | 计数法   | O(n)       | O(1)       |
+
+```go
+// 双指针法
+func removeDuplicates(nums []int) int {
+	i , j , length := 0, 1, len(nums)
+	for ; j < length; j++{
+		if nums[i] == nums[j]{
+			continue
+		}
+		i++
+		nums[i] = nums[j]
+	}
+	return i+1
+}
+
+// 计数法
+func removeDuplicates(nums []int) int {
+	count := 1
+	for i := 0; i < len(nums)-1; i++ {
+		if nums[i] != nums[i+1] {
+			nums[count] = nums[i+1]
+			count++
+		}
+	}
+	return count
+}
+```
+
+## 27.移除元素
+
+### 题目
+
+```
+给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
+不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+
+示例 1:
+给定 nums = [3,2,2,3], val = 3,
+函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。
+你不需要考虑数组中超出新长度后面的元素。
+
+示例 2:
+给定 nums = [0,1,2,2,3,0,4,2], val = 2,
+函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。
+注意这五个元素可为任意顺序。
+你不需要考虑数组中超出新长度后面的元素。
+说明:
+为什么返回数值是整数，但输出的答案是数组呢?
+请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
+你可以想象内部操作如下:
+// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝
+int len = removeElement(nums, val);
+// 在函数里修改输入数组对于调用者是可见的。
+// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
+for (int i = 0; i < len; i++) {
+    print(nums[i]);
+}
+```
+
+### 解题思路
+
+| No.      | 思路                         | 时间复杂度 | 空间复杂度 |
+| -------- | ---------------------------- | ---------- | ---------- |
+| 01(最优) | 双指针，数字前移             | O(n)       | O(1)       |
+| 02       | 双指针，出现重复最后数字前移 | O(n)       | O(1)       |
+| 03       | 首位指针法                   | O(n)       | O(1)       |
+
+```go
+// 双指针，数字前移
+func removeElement(nums []int, val int) int {
+	i := 0
+	for j := 0; j < len(nums); j++{
+		if nums[j] != val{
+			nums[i] = nums[j]
+			i++
+		}
+	}
+	return i
+}
+
+// 双指针，出现重复最后数字前移
+func removeElement(nums []int, val int) int {
+	i := 0
+	n := len(nums)
+	for i < n{
+		if nums[i] == val{
+			nums[i] = nums[n-1]
+			n--
+		}else {
+			i++
+		}
+	}
+	return n
+}
+
+// 首位指针法
+func removeElement(nums []int, val int) int {
+	i, j := 0, len(nums)-1
+	for {
+		// 从左向右找到等于 val 的位置
+		for i < len(nums) && nums[i] != val {
+			i++
+		}
+		// 从右向左找到不等于 val 的位置
+		for j >= 0 && nums[j] == val {
+			j--
+		}
+		if i >= j {
+			break
+		}
+		// fmt.Println(i,j)
+		nums[i], nums[j] = nums[j], nums[i]
+	}
+	return i
+}
+```
+
