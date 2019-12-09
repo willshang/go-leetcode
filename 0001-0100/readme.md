@@ -1,5 +1,3 @@
-
-
 # 0001-0100
 
 [TOC]
@@ -1169,6 +1167,267 @@ func countAndSay(n int) string {
 		i = j
 	}
 	return string(result)
+}
+```
+
+## 53.最大子序和
+
+### 题目
+
+```
+给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+
+示例:
+输入: [-2,1,-3,4,-1,2,1,-5,4],
+输出: 6
+解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+
+进阶:
+如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
+```
+
+### 解题思路
+
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01(最优) | 贪心法   | O(n)       | O(1)       |
+| 02       | 暴力法   | O(n^2)     | O(1)       |
+| 03       | 动态规划 | O(n)       | O(n)       |
+| 04       | 动态规划 | O(n)       | O(1)       |
+| 05       | 分治     | O(nlog(n)) | O(log(n))  |
+
+```go
+// 贪心法
+func maxSubArray(nums []int) int {
+	result := nums[0]
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		if sum > 0 {
+			sum += nums[i]
+		} else {
+			sum = nums[i]
+		}
+		if sum > result {
+			result = sum
+		}
+	}
+	return result
+}
+
+// 暴力法
+func maxSubArray(nums []int) int {
+	result := math.MinInt32
+
+	for i := 0; i < len(nums); i++ {
+		sum := 0
+		for j := i; j < len(nums); j++ {
+			sum += nums[j]
+			if sum > result {
+				result = sum
+			}
+		}
+	}
+	return result
+}
+
+// 
+func maxSubArray(nums []int) int {
+	dp := make([]int, len(nums))
+	dp[0] = nums[0]
+	result := nums[0]
+
+	for i := 1; i < len(nums); i++ {
+		if dp[i-1]+nums[i] > nums[i] {
+			dp[i] = dp[i-1] + nums[i]
+		} else {
+			dp[i] = nums[i]
+		}
+
+		if dp[i] > result {
+			result = dp[i]
+		}
+	}
+	return result
+}
+
+// 动态规划
+func maxSubArray(nums []int) int {
+	dp := nums[0]
+	result := dp
+
+	for i := 1; i < len(nums); i++ {
+		if dp+nums[i] > nums[i] {
+			dp = dp + nums[i]
+		} else {
+			dp = nums[i]
+		}
+
+		if dp > result {
+			result = dp
+		}
+	}
+	return result
+}
+
+// 分治法
+func maxSubArray(nums []int) int {
+	result := maxSubArr(nums, 0, len(nums)-1)
+	return result
+}
+
+func maxSubArr(nums []int, left, right int) int {
+	if left == right {
+		return nums[left]
+	}
+
+	mid := (left + right) / 2
+	leftSum := maxSubArr(nums, left, mid)        // 最大子序在左边
+	rightSum := maxSubArr(nums, mid+1, right)    // 最大子序在右边
+	midSum := findMaxArr(nums, left, mid, right) // 跨中心
+	result := max(leftSum, rightSum)
+	result = max(result, midSum)
+	return result
+}
+
+func findMaxArr(nums []int, left, mid, right int) int {
+	leftSum := math.MinInt32
+	sum := 0
+	// 从右到左
+	for i := mid; i >= left; i-- {
+		sum += nums[i]
+		leftSum = max(leftSum, sum)
+	}
+
+	rightSum := math.MinInt32
+	sum = 0
+	// 从左到右
+	for i := mid + 1; i <= right; i++ {
+		sum += nums[i]
+		rightSum = max(rightSum, sum)
+	}
+	return leftSum + rightSum
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 58.最后一个单词的长度
+
+### 题目
+
+```
+给定一个仅包含大小写字母和空格 ' ' 的字符串，返回其最后一个单词的长度。
+如果不存在最后一个单词，请返回 0 。
+说明：一个单词是指由字母组成，但不包含任何空格的字符串。
+
+示例:
+输入: "Hello World"
+输出: 5
+```
+
+### 解题思路
+
+| No.      | 思路                                 | 时间复杂度 | 空间复杂度 |
+| -------- | ------------------------------------ | ---------- | ---------- |
+| 01(最优) | 调用系统函数，切割为数组取最后一个值 | O(n)       | O(1)       |
+| 02       | 遍历统计                             | O(n)       | O(1)       |
+
+```go
+// 调用系统函数，切割为数组取最后一个值
+func lengthOfLastWord(s string) int {
+	arr := strings.Split(strings.Trim(s, " "), " ")
+	return len(arr[len(arr)-1])
+}
+
+// 遍历统计
+func lengthOfLastWord(s string) int {
+	length := len(s)
+	if length == 0 {
+		return 0
+	}
+
+	result := 0
+	for i := length - 1; i >= 0; i-- {
+		if s[i] == ' ' {
+			if result > 0 {
+				return result
+			}
+			continue
+		}
+		result++
+	}
+	return result
+}
+```
+
+## 66.加一
+
+### 题目
+
+```
+给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
+你可以假设除了整数 0 之外，这个整数不会以零开头。
+
+示例 1:
+输入: [1,2,3]
+输出: [1,2,4]
+解释: 输入数组表示数字 123。
+
+示例 2:
+输入: [4,3,2,1]
+输出: [4,3,2,2]
+解释: 输入数组表示数字 4321。
+```
+
+### 解题思路 
+
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01       | 直接模拟 | O(n)       | O(1)       |
+| 02(最优) | 直接模拟 | O(n)       | O(1)       |
+
+```go
+// 模拟进位
+func plusOne(digits []int) []int {
+	length := len(digits)
+	if length == 0 {
+		return []int{1}
+	}
+
+	digits[length-1]++
+	for i := length - 1; i > 0; i-- {
+		if digits[i] < 10 {
+			break
+		}
+		digits[i] = digits[i] - 10
+		digits[i-1]++
+	}
+
+	if digits[0] > 9 {
+		digits[0] = digits[0] - 10
+		digits = append([]int{1}, digits...)
+	}
+
+	return digits
+}
+
+// 模拟进位
+func plusOne(digits []int) []int {
+	for i := len(digits) - 1; i >= 0; i-- {
+		if digits[i] < 9 {
+			digits[i]++
+			return digits
+		} else {
+			digits[i] = 0
+		}
+	}
+	return append([]int{1}, digits...)
 }
 ```
 

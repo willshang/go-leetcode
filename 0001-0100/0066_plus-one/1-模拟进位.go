@@ -6,6 +6,7 @@ func main() {
 	fmt.Println(plusOne([]int{2, 2, 3, 4}))
 	fmt.Println(plusOne([]int{9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9}))
 }
+
 func plusOne(digits []int) []int {
 	length := len(digits)
 	if length == 0 {
@@ -13,7 +14,6 @@ func plusOne(digits []int) []int {
 	}
 
 	digits[length-1]++
-
 	for i := length - 1; i > 0; i-- {
 		if digits[i] < 10 {
 			break
