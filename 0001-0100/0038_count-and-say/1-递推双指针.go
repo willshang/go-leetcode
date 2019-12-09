@@ -5,6 +5,8 @@ import "fmt"
 func main() {
 	fmt.Println(countAndSay(8))
 }
+
+// leetcode 38 计数
 func countAndSay(n int) string {
 	strs := []byte{'1'}
 	for i := 1; i < n; i++ {
@@ -21,8 +23,8 @@ func say(strs []byte) []byte {
 		for j < len(strs) && strs[i] == strs[j] {
 			j++
 		}
-		//几个几
-		result = append(result, byte(j-i+'0'), strs[i])
+		result = append(result, byte(j-i+'0'))
+		result = append(result, strs[i])
 		i = j
 	}
 	return result

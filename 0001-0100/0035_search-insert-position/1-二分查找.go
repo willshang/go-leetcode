@@ -8,19 +8,7 @@ func main() {
 	fmt.Println(searchInsert(nums, target))
 }
 
-/*
-//执行用时：8 ms
-func searchInsert(nums []int, target int) int {
-	i := 0
-	for i < len(nums) && nums[i] < target{
-		if nums[i] == target{
-			return i
-		}
-		i++
-	}
-	return i
-}*/
-
+// leetcode 35 搜索插入位置
 func searchInsert(nums []int, target int) int {
 	low, high := 0, len(nums)-1
 	for low <= high {

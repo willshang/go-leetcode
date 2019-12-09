@@ -1,4 +1,7 @@
+
+
 # 0001-0100
+
 [TOC]
 ## 1. 两数之和
 ### 题目
@@ -927,6 +930,245 @@ func removeElement(nums []int, val int) int {
 		nums[i], nums[j] = nums[j], nums[i]
 	}
 	return i
+}
+```
+
+## 28.实现strStr()
+
+### 题目
+
+```
+实现 strStr() 函数。
+给定一个 haystack 字符串和一个 needle 字符串，
+在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。
+如果不存在，则返回-1。
+
+示例 1:
+输入: haystack = "hello", needle = "ll"
+输出: 2
+
+示例 2:
+输入: haystack = "aaaaa", needle = "bba"
+输出: -1
+
+说明:
+当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。
+对于本题而言，当 needle 是空字符串时我们应当返回 0 。
+这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。
+```
+
+### 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | Sunday算法 | O(n)       | O(1)       |
+|      |            |            |            |
+
+- Sunday算法
+```
+
+```
+
+```go
+// Sunday算法
+func strStr(haystack string, needle string) int {
+	if needle == ""{
+		return 0
+	}
+	if len(needle) > len(haystack){
+		return -1
+	}
+	// 计算模式串needle的偏移量
+	m := make(map[int32]int)
+	for k,v := range needle{
+		m[v] = len(needle)-k
+	}
+
+	index := 0
+	for index+len(needle) <= len(haystack){
+		// 匹配字符串
+		str := haystack[index:index+len(needle)]
+		if str == needle{
+			return index
+		}else {
+			if index + len(needle) >= len(haystack){
+				return -1
+			}
+			// 后一位字符串
+			next := haystack[index+len(needle)]
+			if nextStep,ok := m[int32(next)];ok{
+				index = index+nextStep
+			}else {
+				index = index+len(needle)+1
+			}
+		}
+	}
+	if index + len(needle) >= len(haystack){
+		return -1
+	}else {
+		return index
+	}
+}
+```
+
+## 35.搜索插入位置
+
+### 题目
+
+```
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+
+你可以假设数组中无重复元素。
+
+示例 1:
+输入: [1,3,5,6], 5
+输出: 2
+
+示例 2:
+输入: [1,3,5,6], 2
+输出: 1
+
+示例 3:
+输入: [1,3,5,6], 7
+输出: 4
+
+示例 4:
+输入: [1,3,5,6], 0
+输出: 0
+```
+
+### 解题思路
+
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01(最优) | 二分查找 | O(log(n))  | O(1)       |
+| 02       | 顺序查找 | O(n)       | O(1)       |
+| 03       | 顺序查找 | O(n)       | O(1)       |
+
+```go
+// 二分查找
+func searchInsert(nums []int, target int) int {
+	low, high := 0, len(nums)-1
+	for low <= high {
+		mid := (low + high) / 2
+		switch {
+		case nums[mid] < target:
+			low = mid + 1
+		case nums[mid] > target:
+			high = mid - 1
+		default:
+			return mid
+		}
+	}
+	return low
+}
+
+// 顺序查找
+func searchInsert(nums []int, target int) int {
+	i := 0
+	for i < len(nums) && nums[i] < target {
+		if nums[i] == target {
+			return i
+		}
+		i++
+	}
+	return i
+}
+
+// 顺序查找
+func searchInsert(nums []int, target int) int {
+	for i := 0; i < len(nums); i++ {
+		if nums[i] >= target {
+			return i
+		}
+	}
+	return len(nums)
+}
+```
+
+## 38.报数
+
+### 题目
+
+```
+报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下：
+1.     1
+2.     11
+3.     21
+4.     1211
+5.     111221
+
+1 被读作  "one 1"  ("一个一") , 即 11。
+11 被读作 "two 1s" ("两个一"）, 即 21。
+21 被读作 "one 2",  "one 1" （"一个二" ,  "一个一") , 即 1211。
+
+给定一个正整数 n（1 ≤ n ≤ 30），输出报数序列的第 n 项。
+注意：整数顺序将表示为一个字符串。
+
+ 
+
+示例 1:
+输入: 1
+输出: "1"
+
+示例 2:
+输入: 4
+输出: "1211"
+```
+
+### 解题思路
+
+| No.       | 思路            | 时间复杂度 | 空间复杂度 |
+| --------- | --------------- | ---------- | ---------- |
+| 01 (最优) | 递推+双指针计数 | O(n^2)     | O(1)       |
+| 02        | 递归+双指针计数 | O(n^2)     | O(n)       |
+
+```go
+// 递推+双指针计数
+func countAndSay(n int) string {
+	strs := []byte{'1'}
+	for i := 1; i < n; i++ {
+		strs = say(strs)
+	}
+	return string(strs)
+}
+
+func say(strs []byte) []byte {
+	result := make([]byte, 0, len(strs)*2)
+
+	i, j := 0, 1
+	for i < len(strs) {
+		for j < len(strs) && strs[i] == strs[j] {
+			j++
+		}
+		// 几个几
+		result = append(result, byte(j-i+'0'))
+		result = append(result, strs[i])
+		i = j
+	}
+	return result
+}
+
+// 递归+双指针计数
+func countAndSay(n int) string {
+	if n == 1 {
+		return "1"
+	}
+	strs := countAndSay(n - 1)
+
+	result := make([]byte, 0, len(strs)*2)
+
+	i, j := 0, 1
+	for i < len(strs) {
+		for j < len(strs) && strs[i] == strs[j] {
+			j++
+		}
+		// 几个几
+		result = append(result, byte(j-i+'0'))
+		result = append(result, strs[i])
+		i = j
+	}
+	return string(result)
 }
 ```
 
