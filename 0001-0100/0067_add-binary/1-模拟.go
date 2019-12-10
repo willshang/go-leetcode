@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	fmt.Println(addBinary("11", "1"))
 }
+
 func addBinary(a string, b string) string {
 	if len(a) < len(b) {
 		a, b = b, a
@@ -14,7 +15,6 @@ func addBinary(a string, b string) string {
 	A := transToInt(a, length)
 	B := transToInt(b, length)
 
-	fmt.Println(A, B)
 	return makeString(add(A, B))
 }
 

@@ -1431,3 +1431,541 @@ func plusOne(digits []int) []int {
 }
 ```
 
+## 67.二进制求和
+
+### 题目
+
+```
+给定两个二进制字符串，返回他们的和（用二进制表示）。
+
+输入为非空字符串且只包含数字 1 和 0。
+
+示例 1:
+
+输入: a = "11", b = "1"
+输出: "100"
+
+示例 2:
+
+输入: a = "1010", b = "1011"
+输出: "10101"
+```
+
+### 解题思路
+
+| No.      | 思路           | 时间复杂度 | 空间复杂度 |
+| -------- | -------------- | ---------- | ---------- |
+| 01       | 转换成数组模拟 | O(n)       | O(n)       |
+| 02(最优) | 直接模拟       | O(n)       | O(1)       |
+
+```go
+// 转换成数组模拟
+func addBinary(a string, b string) string {
+	if len(a) < len(b) {
+		a, b = b, a
+	}
+	length := len(a)
+
+	A := transToInt(a, length)
+	B := transToInt(b, length)
+
+	return makeString(add(A, B))
+}
+
+func transToInt(s string, length int) []int {
+	result := make([]int, length)
+	ls := len(s)
+	for i, b := range s {
+		result[length-ls+i] = int(b - '0')
+	}
+	return result
+}
+
+func add(a, b []int) []int {
+	length := len(a) + 1
+	result := make([]int, length)
+	for i := length - 1; i >= 1; i-- {
+		temp := result[i] + a[i-1] + b[i-1]
+		result[i] = temp % 2
+		result[i-1] = temp / 2
+	}
+	i := 0
+	for i < length-1 && result[i] == 0 {
+		i++
+	}
+	return result[i:]
+}
+
+func makeString(nums []int) string {
+	bytes := make([]byte, len(nums))
+	for i := range bytes {
+		bytes[i] = byte(nums[i]) + '0'
+	}
+	return string(bytes)
+}
+
+// 直接模拟
+func addBinary(a string, b string) string {
+	i := len(a) - 1
+	j := len(b) - 1
+	result := ""
+	flag := 0
+	current := 0
+
+	for i >= 0 || j >= 0 {
+		intA, intB := 0, 0
+		if i >= 0 {
+			intA = int(a[i] - '0')
+		}
+		if j >= 0 {
+			intB = int(b[j] - '0')
+		}
+		current = intA + intB + flag
+		flag = 0
+		if current >= 2 {
+			flag = 1
+			current = current - 2
+		}
+		cur := strconv.Itoa(current)
+		result = cur + result
+		i--
+		j--
+	}
+	if flag == 1 {
+		result = "1" + result
+	}
+	return result
+}
+```
+
+## 69.x的平方跟
+
+### 题目
+
+```
+实现 int sqrt(int x) 函数。
+计算并返回 x 的平方根，其中 x 是非负整数。
+由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。
+
+示例 1:
+输入: 4
+输出: 2
+
+示例 2:
+输入: 8
+输出: 2
+说明: 8 的平方根是 2.82842..., 
+     由于返回类型是整数，小数部分将被舍去。
+```
+
+### 解题思路
+
+| No.      | 思路        | 时间复杂度 | 空间复杂度 |
+| -------- | ----------- | ---------- | ---------- |
+| 01       | 系统函数    | O(log(n))  | O(1)       |
+| 02       | 系统函数    | O(log(n))  | O(1)       |
+| 03(最优) | 牛顿迭代法  | O(log(n))  | O(1)       |
+| 04       | 二分查找法  | O(log(n))  | O(1)       |
+| 05       | 暴力法:遍历 | O(n)       | O(1)       |
+
+```go
+// 系统函数
+func mySqrt(x int) int {
+	result := int(math.Sqrt(float64(x)))
+	return result
+}
+
+// 系统函数
+func mySqrt(x int) int {
+	result := math.Floor(math.Sqrt(float64(x)))
+	return int(result)
+}
+
+// 牛顿迭代法
+func mySqrt(x int) int {
+	result := x
+	for result*result > x {
+		result = (result + x/result) / 2
+	}
+	return result
+}
+
+// 二分查找法
+func mySqrt(x int) int {
+	left := 1
+	right := x
+	for left <= right {
+		mid := (left + right) / 2
+		if mid == x/mid {
+			return mid
+		} else if mid < x/mid {
+			left = mid + 1
+		} else {
+			right = mid - 1
+		}
+	}
+	if left * left <= x{
+		return left
+	}else {
+		return left-1
+	}
+}
+
+// 暴力法:遍历
+func mySqrt(x int) int {
+	result := 0
+	for i := 1; i <= x/i; i++ {
+		if i*i == x {
+			return i
+		}
+		result = i
+	}
+	return result
+}
+```
+
+## 70.爬楼梯
+
+### 题目
+
+```
+假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+注意：给定 n 是一个正整数。
+
+示例 1：
+输入： 2
+输出： 2
+解释： 有两种方法可以爬到楼顶。
+1.  1 阶 + 1 阶
+2.  2 阶
+
+示例 2：
+输入： 3
+输出： 3
+解释： 有三种方法可以爬到楼顶。
+1.  1 阶 + 1 阶 + 1 阶
+2.  1 阶 + 2 阶
+3.  2 阶 + 1 阶
+```
+
+### 解题思路
+
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01       | 递归     | O(n)       | O(n)       |
+| 02       | 动态规划 | O(n)       | O(n)       |
+| 03(最优) | 斐波那契 | O(n)       | O(1)       |
+
+```go
+// 递归
+func climbStart(i, n int) int {
+	if i > n {
+		return 0
+	}
+	if i == n {
+		return 1
+	}
+	if arr[i] > 0 {
+		return arr[i]
+	}
+
+	arr[i] = climbStart(i+1, n) + climbStart(i+2, n)
+	return arr[i]
+}
+
+// 动态规划
+func climbStairs(n int) int {
+	if n == 1 {
+		return 1
+	}
+	if n == 2 {
+		return 2
+	}
+	dp := make([]int, n+1)
+	dp[1] = 1
+	dp[2] = 2
+	for i := 3; i <= n; i++ {
+		dp[i] = dp[i-1] + dp[i-2]
+	}
+	return dp[n]
+}
+
+// 斐波那契
+func climbStairs(n int) int {
+	if n == 1 {
+		return 1
+	}
+	first := 1
+	second := 2
+	for i := 3; i <= n; i++ {
+		third := first + second
+		first = second
+		second = third
+	}
+	return second
+}
+```
+
+## 83.删除排序链表中的重复元素
+
+### 题目
+
+```
+给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。
+
+示例 1:
+输入: 1->1->2
+输出: 1->2
+
+示例 2:
+输入: 1->1->2->3->3
+输出: 1->2->3
+```
+
+### 解题思路
+
+| No.       | 思路     | 时间复杂度 | 空间复杂度 |
+| --------- | -------- | ---------- | ---------- |
+| 01( 最优) | 直接法   | O(n)       | O(1)       |
+| 02        | 递归法   | O(n)       | O(1)       |
+| 03        | 双指针法 | O(n)       | O(1)       |
+
+
+
+```go
+// 直接法
+func deleteDuplicates(head *ListNode) *ListNode {
+	if head == nil {
+		return nil
+	}
+	temp := head
+	for temp.Next != nil {
+		if temp.Val == temp.Next.Val {
+			temp.Next = temp.Next.Next
+		} else {
+			temp = temp.Next
+		}
+	}
+	return head
+}
+
+// 递归法
+func deleteDuplicates(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil{
+		return head
+	}
+	head.Next = deleteDuplicates(head.Next)
+	if head.Val == head.Next.Val{
+		head = head.Next
+	}
+	return head
+}
+
+// 双指针法
+func deleteDuplicates(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil{
+		return head
+	}
+	p := head
+	q := head.Next
+	for p.Next != nil{
+		if p.Val == q.Val{
+			if q.Next == nil{
+				p.Next = nil
+			}else {
+				p.Next = q.Next
+				q = q.Next
+			}
+		}else {
+			p = p.Next
+			q = q.Next
+		}
+	}
+	return head
+}
+```
+
+## 88.合并两个有序数组
+
+### 题目
+
+```
+给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
+说明:
+    初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
+    你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
+
+示例:
+输入:
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6],       n = 3
+输出: [1,2,2,3,5,6]
+```
+
+### 解题思路
+
+| No.      | 思路       | 时间复杂度 | 空间复杂度 |
+| -------- | ---------- | ---------- | ---------- |
+| 01       | 合并后排序 | O(nlog(n)) | O(1)       |
+| 02(最优) | 双指针法   | O(n)       | O(1)       |
+| 03       | 拷贝后插入 | O(n)       | O(n)       |
+
+```go
+// 合并后排序
+func merge(n ums1 []int, m int, nums2 []int, n int) {
+	nums1 = nums1[:m]
+	nums1 = append(nums1, nums2[:n]...)
+	sort.Ints(nums1)
+}
+
+// 双指针法
+func merge(nums1 []int, m int, nums2 []int, n int) {
+	for m > 0 && n > 0 {
+		if nums1[m-1] < nums2[n-1] {
+			nums1[m+n-1] = nums2[n-1]
+			n--
+		} else {
+			nums1[m+n-1] = nums1[m-1]
+			m--
+		}
+	}
+	if m == 0 && n > 0 {
+		for n > 0 {
+			nums1[n-1] = nums2[n-1]
+			n--
+		}
+	}
+}
+
+// 拷贝后插入
+func merge(nums1 []int, m int, nums2 []int, n int) {
+	temp := make([]int, m)
+	copy(temp, nums1)
+
+	if n == 0 {
+		return
+	}
+	first, second := 0, 0
+	for i := 0; i < len(nums1); i++ {
+		if second >= n {
+			nums1[i] = temp[first]
+			first++
+			continue
+		}
+		if first >= m {
+			nums1[i] = nums2[second]
+			second++
+			continue
+		}
+		if temp[first] < nums2[second] {
+			nums1[i] = temp[first]
+			first++
+		} else {
+			nums1[i] = nums2[second]
+			second++
+		}
+	}
+}
+```
+
+## 100.相同的树
+
+### 题目
+
+```
+给定两个二叉树，编写一个函数来检验它们是否相同。
+如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+
+示例 1:
+输入:       1         1
+          / \       / \
+         2   3     2   3
+        [1,2,3],   [1,2,3]
+输出: true
+
+示例 2:
+输入:      1          1
+          /           \
+         2             2
+        [1,2],     [1,null,2]
+输出: false
+
+示例 3:
+输入:       1         1
+          / \       / \
+         2   1     1   2
+        [1,2,1],   [1,1,2]
+输出: false
+```
+
+### 解题思路
+
+| No.  | 思路               | 时间复杂度 | 空间复杂度 |
+| ---- | ------------------ | ---------- | ---------- |
+| 01   | 递归(深度优先)     | O(n)       | O(log(n))  |
+| 02   | 层序遍历(宽度优先) | O(n)       | O(log(n))  |
+
+```go
+// 递归(深度优先)
+func isSameTree(p *TreeNode, q *TreeNode) bool {
+	if p == nil && q == nil {
+		return true
+	}
+
+	if p == nil || q == nil {
+		return false
+	}
+
+	return p.Val == q.Val && isSameTree(p.Left, q.Left) &&
+		isSameTree(p.Right, q.Right)
+}
+
+// 层序遍历(宽度优先)
+func isSameTree(p *TreeNode, q *TreeNode) bool {
+	if p == nil && q == nil {
+		return true
+	}
+	if p == nil || q == nil {
+		return false
+	}
+
+	var queueP, queueQ []*TreeNode
+	if p != nil {
+		queueP = append(queueP, p)
+		queueQ = append(queueQ, q)
+	}
+
+	for len(queueP) > 0 && len(queueQ) > 0 {
+		tempP := queueP[0]
+		queueP = queueP[1:]
+
+		tempQ := queueQ[0]
+		queueQ = queueQ[1:]
+
+		if tempP.Val != tempQ.Val {
+			return false
+		}
+
+		if (tempP.Left != nil && tempQ.Left == nil) ||
+			(tempP.Left == nil && tempQ.Left != nil) {
+			return false
+		}
+		if tempP.Left != nil {
+			queueP = append(queueP, tempP.Left)
+			queueQ = append(queueQ, tempQ.Left)
+		}
+
+		if (tempP.Right != nil && tempQ.Right == nil) ||
+			(tempP.Right == nil && tempQ.Right != nil) {
+			return false
+		}
+		if tempP.Right != nil {
+			queueP = append(queueP, tempP.Right)
+			queueQ = append(queueQ, tempQ.Right)
+		}
+	}
+	return true
+}
+```
+
