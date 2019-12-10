@@ -27,5 +27,5 @@
 | [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs) | 动态规划                 | Easy | 完成     |
 | [83.删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list) | 链表                     | Easy | 完成     |
 | [88.合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array) | 数组、双指针             | Easy | 完成     |
-| [100.相同的树](https://leetcode-cn.com/problems/same-tree/)  | 数、深度优先搜索         | Easy | 完成     |
+| [100.相同的树](https://leetcode-cn.com/problems/same-tree/)  | 树、深度优先搜索         | Easy | 完成     |
 
