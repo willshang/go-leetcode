@@ -17,7 +17,7 @@
 | [26.删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) | 数组、双指针             | Easy | 完成     |
 | [27.移除元素](https://leetcode-cn.com/problems/remove-element) | 数组、双指针             | Easy | 完成     |
 | [28.实现 strStr()](https://leetcode-cn.com/problems/implement-strstr) | 双指针、字符串           | Easy | 完成     |
-|                                                              |                          |      |          |
+| 第一期                                                       |                          |      |          |
 | [35.搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | 数组、二分查找           | Easy | 完成     |
 | [38.报数](https://leetcode-cn.com/problems/count-and-say)    | 字符串                   | Easy | 完成     |
 | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) | 数组、分治算法、动态规划 | Easy | 完成     |
@@ -28,6 +28,6 @@
 | [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs) | 动态规划                 | Easy | 完成     |
 | [83.删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list) | 链表                     | Easy | 完成     |
 | [88.合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array) | 数组、双指针             | Easy | 完成     |
-|                                                              |                          |      |          |
+| 第二期                                                       |                          |      |          |
 | [100.相同的树](https://leetcode-cn.com/problems/same-tree/)  | 树、深度优先搜索         | Easy | 完成     |
 
