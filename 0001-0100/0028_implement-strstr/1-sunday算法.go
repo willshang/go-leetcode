@@ -15,7 +15,7 @@ func strStr(haystack string, needle string) int {
 	if len(needle) > len(haystack) {
 		return -1
 	}
-	// 计算模式串needle的偏移量
+	// 01.计算模式串needle的偏移量
 	m := make(map[int32]int)
 	for k, v := range needle {
 		m[v] = len(needle) - k

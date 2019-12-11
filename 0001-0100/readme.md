@@ -957,15 +957,14 @@ func removeElement(nums []int, val int) int {
 
 ### 解题思路
 
-| No.  | 思路       | 时间复杂度 | 空间复杂度 |
-| ---- | ---------- | ---------- | ---------- |
-| 01   | Sunday算法 | O(n)       | O(1)       |
-|      |            |            |            |
+| No.      | 思路       | 时间复杂度 | 空间复杂度 |
+| -------- | ---------- | ---------- | ---------- |
+| 01(最优) | Sunday算法 | O(n)       | O(1)       |
+| 02       | 直接匹配   | O(n)       | O(1)       |
+| 03       | 系统函数   | O(n)       | O(1)       |
+| 04       | kmp算法    | O(n)       | O(n)       |
 
-- Sunday算法
-```
 
-```
 
 ```go
 // Sunday算法
@@ -1006,6 +1005,67 @@ func strStr(haystack string, needle string) int {
 	}else {
 		return index
 	}
+}
+
+// 
+func strStr(haystack string, needle string) int {
+	hlen, nlen := len(haystack), len(needle)
+	for i := 0; i <= hlen-nlen; i++ {
+		if haystack[i:i+nlen] == needle {
+			return i
+		}
+	}
+	return -1
+}
+
+//
+func strStr(haystack string, needle string) int {
+	return strings.Index(haystack, needle)
+}
+
+//
+func strStr(haystack string, needle string) int {
+	if len(needle) == 0 {
+		return 0
+	}
+
+	next := getNext(needle)
+
+	i := 0
+	j := 0
+	for i < len(haystack) && j < len(needle) {
+		if j == -1 || haystack[i] == needle[j] {
+			i++
+			j++
+		} else {
+			j = next[j]
+		}
+	}
+
+	if j == len(needle) {
+		return i - j
+	}
+	return -1
+}
+
+// 求next数组
+func getNext(str string) []int {
+	var next = make([]int, len(str))
+	next[0] = -1
+
+	i := 0
+	j := -1
+
+	for i < len(str)-1 {
+		if j == -1 || str[i] == str[j] {
+			i++
+			j++
+			next[i] = j
+		} else {
+			j = next[j]
+		}
+	}
+	return next
 }
 ```
 
