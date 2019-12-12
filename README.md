@@ -37,4 +37,5 @@
 | [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) | 树、深度优先搜索               | Easy | 完成     |
 | [110.平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree) | 树、深度优先搜索               | Easy | 完成     |
 | [111.二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree) | 树、深度优先搜索、广度优先搜索 | Easy | 完成     |
+| [112.路径总和](https://leetcode-cn.com/problems/path-sum)    | 树、深度优先搜索               | Easy | 完成     |
 
