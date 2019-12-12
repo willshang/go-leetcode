@@ -24,6 +24,7 @@ func main() {
 	fmt.Println(res)
 }
 
+// leetcode 111 二叉树的最小深度
 func minDepth(root *TreeNode) int {
 	if root == nil {
 		return 0

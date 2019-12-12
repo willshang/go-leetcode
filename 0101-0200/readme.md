@@ -317,3 +317,162 @@ func sortedArrayToBST(nums []int) *TreeNode {
 }
 ```
 
+## 110.平衡二叉树(缺少多种思路)
+
+### 题目
+
+```
+给定一个二叉树，判断它是否是高度平衡的二叉树。
+
+本题中，一棵高度平衡二叉树定义为：
+
+    一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。
+
+示例 1:
+
+给定二叉树 [3,9,20,null,null,15,7]
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+返回 true 。
+
+示例 2:
+
+给定二叉树 [1,2,2,3,3,null,null,4,4]
+
+       1
+      / \
+     2   2
+    / \
+   3   3
+  / \
+ 4   4
+
+返回 false 。
+```
+
+### 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+
+```go
+func isBalanced(root *TreeNode) bool {
+	_, isBalanced := recur(root)
+	return isBalanced
+
+}
+
+func recur(root *TreeNode) (int, bool) {
+	if root == nil {
+		return 0, true
+	}
+
+	leftDepth, leftIsBalanced := recur(root.Left)
+	if leftIsBalanced == false{
+		return 0,false
+	}
+	rightDepth, rightIsBalanced := recur(root.Right)
+	if rightIsBalanced == false{
+		return 0,false
+	}
+
+	if -1 <= leftDepth-rightDepth &&
+		leftDepth-rightDepth <= 1 {
+		return max(leftDepth, rightDepth) + 1, true
+	}
+	return 0, false
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+##  111.二叉树的最小深度
+
+### 题目
+
+```
+给定一个二叉树，找出其最小深度。
+
+最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
+说明: 叶子节点是指没有子节点的节点。
+
+示例:
+给定二叉树 [3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+返回它的最小深度  2.
+```
+
+### 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 递归     | O(n)       | O(log(n))  |
+| 02   | 广度优先 | O(n)       | O(n)       |
+
+```go
+// 递归
+func minDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	} else if root.Left == nil {
+		return 1 + minDepth(root.Right)
+	} else if root.Right == nil {
+		return 1 + minDepth(root.Left)
+	} else {
+		return 1 + min(minDepth(root.Left), minDepth(root.Right))
+	}
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+// 广度优先搜索
+func minDepth(root *TreeNode) int {
+	if root == nil{
+		return 0
+	}
+
+	list := make([]*TreeNode,0)
+	list = append(list,root)
+	depth := 1
+
+	for len(list) > 0{
+		length := len(list)
+		for i := 0; i < length; i++{
+			node := list[0]
+			list = list[1:]
+			if node.Left == nil && node.Right == nil{
+				return depth
+			}
+			if node.Left != nil{
+				list = append(list,node.Left)
+			}
+			if node.Right != nil{
+				list = append(list,node.Right)
+			}
+		}
+		depth++
+	}
+	return depth
+}
+```
+

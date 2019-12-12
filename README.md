@@ -36,4 +36,5 @@
 | [107.二叉树的层次遍历 II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii) | 树、广度优先搜索               | Easy | 完成     |
 | [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) | 树、深度优先搜索               | Easy | 完成     |
 | [110.平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree) | 树、深度优先搜索               | Easy | 完成     |
+| [111.二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree) | 树、深度优先搜索、广度优先搜索 | Easy | 完成     |
 
