@@ -12,6 +12,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode 108 将有序数组转换为二叉搜索树
 func sortedArrayToBST(nums []int) *TreeNode {
 	if len(nums) == 0 {
 		return nil

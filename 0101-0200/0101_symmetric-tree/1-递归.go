@@ -24,6 +24,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode 101 递归
 func isSymmetric(root *TreeNode) bool {
 	if root == nil {
 		return true
@@ -39,5 +40,7 @@ func recur(left, right *TreeNode) bool {
 		return false
 	}
 
-	return left.Val == right.Val && recur(left.Left, right.Right) && recur(left.Right, right.Left)
+	return left.Val == right.Val &&
+		recur(left.Left, right.Right) &&
+		recur(left.Right, right.Left)
 }

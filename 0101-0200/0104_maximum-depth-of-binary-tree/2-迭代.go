@@ -30,14 +30,24 @@ func maxDepth(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	left := maxDepth(root.Left)
-	right := maxDepth(root.Right)
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+	depth := 0
 
-	return max(left, right) + 1
-}
-func max(a, b int) int {
-	if a > b {
-		return a
+	for len(queue) > 0 {
+		length := len(queue)
+
+		for i := 0; i < length; i++ {
+			node := queue[0]
+			queue = queue[1:]
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+		depth++
 	}
-	return b
+	return depth
 }
