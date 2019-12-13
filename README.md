@@ -1,7 +1,3 @@
-|      | [杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) |
-| ---- | ------------------------------------------------------------ |
-|      |                                                              |
-
 # Leetcode
 - https://leetcode-cn.com/
 
