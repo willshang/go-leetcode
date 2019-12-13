@@ -1,3 +1,7 @@
+|      | [杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) |
+| ---- | ------------------------------------------------------------ |
+|      |                                                              |
+
 # Leetcode
 - https://leetcode-cn.com/
 
@@ -38,4 +42,8 @@
 | [110.平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree) | 树、深度优先搜索               | Easy | 完成     |
 | [111.二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree) | 树、深度优先搜索、广度优先搜索 | Easy | 完成     |
 | [112.路径总和](https://leetcode-cn.com/problems/path-sum)    | 树、深度优先搜索               | Easy | 完成     |
+| [118.杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) | 数组                           | Easy | 完成     |
+| [119.杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组                           | Easy | 完成     |
+| 第四期                                                       |                                |      |          |
+| [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | 数组、动态规划                 | Easy | 完成     |
 

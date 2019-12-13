@@ -37,12 +37,12 @@ func recur(root *TreeNode) (int, bool) {
 	}
 
 	leftDepth, leftIsBalanced := recur(root.Left)
-	if leftIsBalanced == false{
-		return 0,false
+	if leftIsBalanced == false {
+		return 0, false
 	}
 	rightDepth, rightIsBalanced := recur(root.Right)
-	if rightIsBalanced == false{
-		return 0,false
+	if rightIsBalanced == false {
+		return 0, false
 	}
 
 	if -1 <= leftDepth-rightDepth &&

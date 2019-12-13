@@ -419,10 +419,10 @@ func max(a, b int) int {
 
 ### 解题思路
 
-| No.  | 思路     | 时间复杂度 | 空间复杂度 |
-| ---- | -------- | ---------- | ---------- |
-| 01   | 递归     | O(n)       | O(log(n))  |
-| 02   | 广度优先 | O(n)       | O(n)       |
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01(最优) | 递归     | O(n)       | O(log(n))  |
+| 02       | 广度优先 | O(n)       | O(n)       |
 
 ```go
 // 递归
@@ -473,6 +473,78 @@ func minDepth(root *TreeNode) int {
 		depth++
 	}
 	return depth
+}
+```
+
+## 112.路径总和
+
+### 题目
+
+```
+给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。
+说明: 叶子节点是指没有子节点的节点。
+示例: 
+给定如下二叉树，以及目标和 sum = 22，
+              5
+             / \
+            4   8
+           /   / \
+          11  13  4
+         /  \      \
+        7    2      1
+返回 true, 因为存在目标和为 22 的根节点到叶子节点的路径 5->4->11->2。
+```
+
+### 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+// 递归
+func hasPathSum(root *TreeNode, sum int) bool {
+	if root == nil {
+		return false
+	}
+	sum = sum - root.Val
+	if root.Left == nil && root.Right == nil {
+		return sum == 0
+	}
+	return hasPathSum(root.Left, sum) || hasPathSum(root.Right, sum)
+}
+
+// 迭代
+func hasPathSum(root *TreeNode, sum int) bool {
+	if root == nil {
+		return false
+	}
+	list1 := list.New()
+	list2 := list.New()
+
+	list1.PushFront(root)
+	list2.PushFront(sum - root.Val)
+	for list1.Len() > 0 {
+		length := list1.Len()
+
+		for i := 0; i < length; i++ {
+			node := list1.Remove(list1.Back()).(*TreeNode)
+			currentSum := list2.Remove(list2.Back()).(int)
+			if node.Left == nil && node.Right == nil && currentSum == 0 {
+				return true
+			}
+			if node.Left != nil {
+				list1.PushFront(node.Left)
+				list2.PushFront(currentSum - node.Left.Val)
+			}
+			if node.Right != nil {
+				list1.PushFront(node.Right)
+				list2.PushFront(currentSum - node.Right.Val)
+			}
+		}
+	}
+	return false
 }
 ```
 

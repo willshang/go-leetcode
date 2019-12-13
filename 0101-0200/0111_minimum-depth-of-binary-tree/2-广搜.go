@@ -25,31 +25,30 @@ func main() {
 }
 
 func minDepth(root *TreeNode) int {
-	if root == nil{
+	if root == nil {
 		return 0
 	}
 
-	list := make([]*TreeNode,0)
-	list = append(list,root)
+	list := make([]*TreeNode, 0)
+	list = append(list, root)
 	depth := 1
 
-	for len(list) > 0{
+	for len(list) > 0 {
 		length := len(list)
-		for i := 0; i < length; i++{
+		for i := 0; i < length; i++ {
 			node := list[0]
 			list = list[1:]
-			if node.Left == nil && node.Right == nil{
+			if node.Left == nil && node.Right == nil {
 				return depth
 			}
-			if node.Left != nil{
-				list = append(list,node.Left)
+			if node.Left != nil {
+				list = append(list, node.Left)
 			}
-			if node.Right != nil{
-				list = append(list,node.Right)
+			if node.Right != nil {
+				list = append(list, node.Right)
 			}
 		}
 		depth++
 	}
 	return depth
 }
-
