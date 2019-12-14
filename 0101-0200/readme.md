@@ -548,3 +548,79 @@ func hasPathSum(root *TreeNode, sum int) bool {
 }
 ```
 
+##  118.杨辉三角
+
+###  题目
+
+```
+给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
+在杨辉三角中，每个数是它左上方和右上方的数的和。
+
+示例:
+输入: 5
+输出:
+[
+     [1],
+    [1,1],
+   [1,2,1],
+  [1,3,3,1],
+ [1,4,6,4,1]
+]
+```
+
+### 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+| 02   | 递推     | O(n^2)     | O(n^2)     |
+
+```go
+// 动态规划
+func generate(numRows int) [][]int {
+	var result [][]int
+	for i := 0; i < numRows; i++ {
+		var row []int
+		for j := 0; j <= i; j++ {
+			tmp := 1
+			if j == 0 || j == i {
+
+			} else {
+				tmp = result[i-1][j-1] + result[i-1][j]
+			}
+			row = append(row, tmp)
+		}
+		result = append(result, row)
+	}
+	return result
+}
+
+// 递推
+func generate(numRows int) [][]int {
+	res := make([][]int, 0)
+	if numRows == 0 {
+		return res
+	}
+
+	res = append(res, []int{1})
+	if numRows == 1 {
+		return res
+	}
+
+	for i := 1; i < numRows; i++ {
+		res = append(res, genNext(res[i-1]))
+	}
+	return res
+}
+
+func genNext(p []int) []int {
+	res := make([]int, 1, len(p)+1)
+	res = append(res, p...)
+
+	for i := 0; i < len(res)-1; i++ {
+		res[i] = res[i] + res[i+1]
+	}
+	return res
+}
+```
+
