@@ -23,10 +23,10 @@
 如果你可以运用递归和迭代两种方法解决这个问题，会很加分。
 ```
 ### 解答思路
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 递归 | O(n)       | O(n)       |
-| 02   | 迭代 | O(n)       | O(n)       |
+| No.      | 思路 | 时间复杂度 | 空间复杂度 |
+| -------- | ---- | ---------- | ---------- |
+| 01(最优) | 递归 | O(n)       | O(n)       |
+| 02       | 迭代 | O(n)       | O(n)       |
 
 ```go
 // 递归
@@ -82,10 +82,10 @@ func isSymmetric(root *TreeNode) bool {
 
 ### 题目
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 递归 | O(n)       | O(log(n))  |
-| 02   | 迭代 | O(n)       | O(n)       |
+| No.      | 思路 | 时间复杂度 | 空间复杂度 |
+| -------- | ---- | ---------- | ---------- |
+| 01(最优) | 递归 | O(n)       | O(log(n))  |
+| 02       | 迭代 | O(n)       | O(n)       |
 
 ### 解答思路
 
@@ -162,10 +162,10 @@ func maxDepth(root *TreeNode) int {
 
 ### 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 递归 | O(n)       | O(n)       |
-| 02   | 迭代 | O(n)       | O(n)       |
+| No.      | 思路 | 时间复杂度 | 空间复杂度 |
+| -------- | ---- | ---------- | ---------- |
+| 01(最优) | 递归 | O(n)       | O(n)       |
+| 02       | 迭代 | O(n)       | O(n)       |
 
 ```go
 // 迭代
@@ -260,10 +260,10 @@ func orderBottom(root *TreeNode, result *[][]int, level int) {
 
 ### 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 递归 | O(n)       | O(log(n))  |
-| 02   | 迭代 | O(n)       | O(n)       |
+| No.      | 思路 | 时间复杂度 | 空间复杂度 |
+| -------- | ---- | ---------- | ---------- |
+| 01(最优) | 递归 | O(n)       | O(log(n))  |
+| 02       | 迭代 | O(n)       | O(n)       |
 
 ```go
 // 递归
@@ -497,10 +497,10 @@ func minDepth(root *TreeNode) int {
 
 ### 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 递归 | O(n)       | O(log(n))  |
-| 02   | 迭代 | O(n)       | O(n)       |
+| No.      | 思路 | 时间复杂度 | 空间复杂度 |
+| -------- | ---- | ---------- | ---------- |
+| 01(最优) | 递归 | O(n)       | O(log(n))  |
+| 02       | 迭代 | O(n)       | O(n)       |
 
 ```go
 // 递归
@@ -570,10 +570,10 @@ func hasPathSum(root *TreeNode, sum int) bool {
 
 ### 解题思路
 
-| No.  | 思路     | 时间复杂度 | 空间复杂度 |
-| ---- | -------- | ---------- | ---------- |
-| 01   | 动态规划 | O(n^2)     | O(n^2)     |
-| 02   | 递推     | O(n^2)     | O(n^2)     |
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01       | 动态规划 | O(n^2)     | O(n^2)     |
+| 02(最优) | 递推     | O(n^2)     | O(n^2)     |
 
 ```go
 // 动态规划
@@ -621,6 +621,178 @@ func genNext(p []int) []int {
 		res[i] = res[i] + res[i+1]
 	}
 	return res
+}
+```
+
+## 119.杨辉三角II
+
+### 题目
+
+```
+给定一个非负索引 k，其中 k ≤ 33，返回杨辉三角的第 k 行。
+在杨辉三角中，每个数是它左上方和右上方的数的和。
+
+示例:
+输入: 3
+输出: [1,3,3,1]
+
+进阶：
+你可以优化你的算法到 O(k) 空间复杂度吗？
+```
+
+### 解题思路
+
+| No.      | 思路       | 时间复杂度 | 空间复杂度 |
+| -------- | ---------- | ---------- | ---------- |
+| 01       | 动态规划   | O(n^2)     | O(n^2)     |
+| 02       | 递推       | O(n^2)     | O(n)       |
+| 03(最优) | 二项式定理 | O(n)       | O(n)       |
+
+```go
+// 动态规划
+func getRow(rowIndex int) []int {
+	var result [][]int
+	for i := 0; i < rowIndex+1; i++ {
+		var row []int
+		for j := 0; j <= i; j++ {
+			tmp := 1
+			if j == 0 || j == i {
+
+			} else {
+				tmp = result[i-1][j-1] + result[i-1][j]
+			}
+			row = append(row, tmp)
+		}
+		result = append(result, row)
+	}
+	return result[rowIndex]
+}
+
+// 递推
+func getRow(rowIndex int) []int {
+	res := make([]int,1,rowIndex+1)
+	res[0] = 1
+	if rowIndex == 0{
+		return res
+	}
+
+	for i := 0; i < rowIndex; i++{
+		res = append(res,1)
+		for j := len(res) -2 ; j > 0; j--{
+			res[j] = res[j] + res[j-1]
+		}
+
+	}
+	return res
+}
+
+// 二项式定理
+func getRow(rowIndex int) []int {
+	res := make([]int,rowIndex+1)
+	res[0] = 1
+	if rowIndex == 0{
+		return res
+	}
+
+	// 公式
+	// C(n,k）= n! /(k! * (n-k)!)
+	// C(n,k) = (n-k+1)/k * C(n,k-1)
+	for i := 1; i <= rowIndex; i++{
+		res[i] = res[i-1] * (rowIndex-i+1)/i
+	}
+	return res
+}
+```
+
+## 121.买卖股票的最佳时机
+
+### 题目
+
+```
+给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+
+如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。
+
+注意你不能在买入股票前卖出股票。
+
+示例 1:
+
+输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+
+示例 2:
+
+输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+```
+
+### 解题思路
+
+| No.      | 思路                                                         | 时间复杂度 | 空间复杂度 |
+| -------- | ------------------------------------------------------------ | ---------- | ---------- |
+| 01       | 暴力法                                                       | O(n^2)     | O(1)       |
+| 02(最优) | 动态规划(从前到后) <br />最大利润=max{前一天最大利润, 今天的价格 - 之前最低价格} | O(n)       | O(1)       |
+| 03       | 动态规划(从后到前)                                           | O(n)       | O(1)       |
+
+```go
+// 暴力法
+func maxProfit(prices []int) int {
+	max := 0
+	length := len(prices)
+
+	for i := 0; i < length-1 ; i++{
+		for j := i+1; j <= length-1; j++{
+			if prices[j] - prices[i] > max{
+				max = prices[j] - prices[i]
+			}
+		}
+	}
+	return max
+}
+
+// 动态规划(从前到后)
+func maxProfit(prices []int) int {
+	if len(prices) < 2 {
+		return 0
+	}
+
+	min := prices[0]
+	profit := 0
+
+	for i := 1; i < len(prices); i++ {
+		if prices[i] < min {
+			min = prices[i]
+		}
+		if profit < prices[i]-min {
+			profit = prices[i] - min
+		}
+	}
+	return profit
+}
+
+
+// 动态规划(从后到前)
+func maxProfit(prices []int) int {
+	if len(prices) < 2 {
+		return 0
+	}
+
+	max := 0
+	profit := 0
+
+	for i := len(prices) - 1; i >= 0; i-- {
+		if max < prices[i] {
+			max = prices[i]
+		}
+		if profit < max-prices[i] {
+			profit = max - prices[i]
+		}
+	}
+
+	return profit
 }
 ```
 
