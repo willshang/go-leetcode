@@ -9,6 +9,7 @@ func main() {
 	str := "A man, a plan, a canal: Panama"
 	fmt.Println(isPalindrome(str))
 }
+
 func isPalindrome(s string) bool {
 	s = strings.ToLower(s)
 	i, j := 0, len(s)-1

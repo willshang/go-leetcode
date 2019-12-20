@@ -42,4 +42,6 @@
 | [119.杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组                           | Easy | 完成     |
 | 第四期                                                       |                                |      |          |
 | [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | 数组、动态规划                 | Easy | 完成     |
+| [122.买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) | 贪心算法、数组                 | Easy | 完成     |
+| [125验证回文串](https://leetcode-cn.com/problems/valid-palindrome) | 双指针、字符串                 | Easy | 完成     |
 
