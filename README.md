@@ -44,4 +44,7 @@
 | [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | 数组、动态规划                 | Easy | 完成     |
 | [122.买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) | 贪心算法、数组                 | Easy | 完成     |
 | [125.验证回文串](https://leetcode-cn.com/problems/valid-palindrome) | 双指针、字符串                 | Easy | 完成     |
+| [136.只出现一次的数字](https://leetcode-cn.com/problems/single-number) | 位运算、哈希表                 | Easy | 完成     |
+| [141.环形链表](https://leetcode-cn.com/problems/linked-list-cycle) | 链表、双指针                   | Easy | 完成     |
+| [155.最小栈](https://leetcode-cn.com/problems/min-stack)     |                                |      |          |
 

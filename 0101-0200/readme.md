@@ -865,3 +865,168 @@ func maxProfit(prices []int) int {
 }
 ```
 
+## 125.验证回文串
+
+### 题目
+
+```
+给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
+说明：本题中，我们将空字符串定义为有效的回文串。
+
+示例 1:
+输入: "A man, a plan, a canal: Panama"
+输出: true
+
+示例 2:
+输入: "race a car"
+输出: false
+```
+
+### 解题思路
+
+| No.       | 思路     | 时间复杂度 | 空间复杂度 |
+| --------- | -------- | ---------- | ---------- |
+| 01( 最优) | 双指针法 | O(n)       | O(1)       |
+| 02        | 双指针法 | O(n)       | O(n)       |
+
+```go
+func isPalindrome(s string) bool {
+	s = strings.ToLower(s)
+	i, j := 0, len(s)-1
+
+	for i < j {
+		for i < j && !isChar(s[i]) {
+			i++
+		}
+		for i < j && !isChar(s[j]) {
+			j--
+		}
+		if s[i] != s[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
+}
+
+func isChar(c byte) bool {
+	if ('a' <= c && c <= 'z') || ('0' <= c && c <= '9') {
+		return true
+	}
+	return false
+}
+
+//
+func isPalindrome(s string) bool {
+	str := ""
+	s = strings.ToLower(s)
+	for _, value := range s {
+		if (value >= '0' && value <= '9') || (value >= 'a' && value <= 'z') {
+			str += string(value)
+		}
+	}
+	if len(str) == 0 {
+		return true
+	}
+	i := 0
+	j := len(str) - 1
+	for i <= j {
+		if str[i] != str[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
+}
+```
+
+## 136.只出现一次的数字
+
+### 题目
+
+```
+给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+说明：
+你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+
+示例 1:
+输入: [2,2,1]
+输出: 1
+
+示例 2:
+输入: [4,1,2,1,2]
+输出: 4
+```
+
+### 解题思路
+
+| No.      | 思路     | 时间复杂度 | 空间复杂度 |
+| -------- | -------- | ---------- | ---------- |
+| 01(最优) | 异或     | O(n)       | O(1)       |
+| 02       | 哈希     | O(n)       | O(n)       |
+| 03       | 暴力法   | O(n^2)     | O(1)       |
+| 04       | 排序遍历 | O(nlog(n)) | O(1)       |
+
+
+
+```go
+// 异或
+func singleNumber(nums []int) int {
+	res := 0
+	for _, n := range nums {
+		res = res ^ n
+	}
+	return res
+}
+
+// 哈希
+func singleNumber(nums []int) int {
+	m := make(map[int]int)
+
+	for _,v := range nums{
+		m[v]++
+	}
+
+	for k,v := range m{
+		if v == 1{
+			return k
+		}
+	}
+	return -1
+}
+
+// 暴力法
+func singleNumber(nums []int) int {
+	for i := 0; i < len(nums); i++ {
+		flag := false
+		for j := 0; j < len(nums); j++ {
+			if nums[i] == nums[j] && i != j {
+				flag = true
+				break
+			}
+		}
+		if flag == false {
+			return nums[i]
+		}
+
+	}
+	return -1
+}
+
+// 排序遍历
+func singleNumber(nums []int) int {
+	sort.Ints(nums)
+	for i := 0; i < len(nums);i = i+2{
+		if i+1 == len(nums){
+			return nums[i]
+		}
+		if nums[i] != nums[i+1]{
+			return nums[i]
+		}
+	}
+	return -1
+}
+```
+
