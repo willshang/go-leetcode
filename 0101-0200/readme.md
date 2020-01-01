@@ -1030,3 +1030,174 @@ func singleNumber(nums []int) int {
 }
 ```
 
+## 141.环形链表
+
+### 题目
+
+```
+给定一个链表，判断链表中是否有环。
+为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 
+如果 pos 是 -1，则在该链表中没有环。
+
+示例 1：
+输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。
+
+示例 2：
+输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。
+
+示例 3：
+输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+```
+
+### 解题思路
+
+| No.      | 思路             | 时间复杂度 | 空间复杂度 |
+| -------- | ---------------- | ---------- | ---------- |
+| 01       | 哈希法           | O(n)       | O(n)       |
+| 02(最优) | 双指针(快慢指针) | O(n)       | O(1)       |
+
+```go
+func hasCycle(head *ListNode) bool {
+	m := make(map[*ListNode]bool)
+	for head != nil {
+		if m[head] {
+			return true
+		}
+		m[head] = true
+		head = head.Next
+	}
+	return false
+}
+
+// 双指针(快慢指针)
+func hasCycle(head *ListNode) bool {
+	if head == nil {
+		return false
+	}
+	fast := head.Next
+	for fast != nil && head != nil && fast.Next != nil {
+		if fast == head {
+			return true
+		}
+		fast = fast.Next.Next
+		head = head.Next
+	}
+	return false
+}
+```
+
+## 155.最小栈
+
+### 题目
+
+```
+设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。
+    push(x) -- 将元素 x 推入栈中。
+    pop() -- 删除栈顶的元素。
+    top() -- 获取栈顶元素。
+    getMin() -- 检索栈中的最小元素。
+    
+示例:
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> 返回 -3.
+minStack.pop();
+minStack.top();      --> 返回 0.
+minStack.getMin();   --> 返回 -2.
+```
+
+
+
+### 解题思路
+
+| No.  | 思路                                               | 时间复杂度 | 空间复杂度 |
+| ---- | -------------------------------------------------- | ---------- | ---------- |
+| 01   | 使用数组模拟栈，保存数据的时候同时保存当前的最小值 | O(n)       | O(n)       |
+| 02   | 使用双栈                                           | O(n)       | O(n)       |
+
+```go
+type item struct {
+	min, x int
+}
+type MinStack struct {
+	stack []item
+}
+
+func Constructor() MinStack {
+	return MinStack{}
+}
+
+func (this *MinStack) Push(x int) {
+	min := x
+	if len(this.stack) > 0 && this.GetMin() < x {
+		min = this.GetMin()
+	}
+	this.stack = append(this.stack, item{
+		min: min,
+		x:   x,
+	})
+}
+
+func (this *MinStack) Pop() {
+	this.stack = this.stack[:len(this.stack)-1]
+}
+
+func (this *MinStack) Top() int {
+	if len(this.stack) == 0 {
+		return 0
+	}
+	return this.stack[len(this.stack)-1].x
+}
+
+func (this *MinStack) GetMin() int {
+	if len(this.stack) == 0 {
+		return 0
+	}
+	return this.stack[len(this.stack)-1].min
+}
+
+//
+type MinStack struct {
+	data []int
+	min  []int
+}
+
+func Constructor() MinStack {
+	return MinStack{[]int{}, []int{}}
+}
+
+func (this *MinStack) Push(x int) {
+	if len(this.data) == 0 || x <= this.GetMin() {
+		this.min = append(this.min, x)
+	}
+	this.data = append(this.data, x)
+}
+
+func (this *MinStack) Pop() {
+	x := this.data[len(this.data)-1]
+	this.data = this.data[:len(this.data)-1]
+	if x == this.GetMin() {
+		this.min = this.min[:len(this.min)-1]
+	}
+}
+
+func (this *MinStack) Top() int {
+	if len(this.data) == 0 {
+		return 0
+	}
+	return this.data[len(this.data)-1]
+}
+
+func (this *MinStack) GetMin() int {
+	return this.min[len(this.min)-1]
+}
+```
+

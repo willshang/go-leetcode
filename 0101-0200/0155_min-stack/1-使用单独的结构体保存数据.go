@@ -12,14 +12,15 @@ func main() {
 	fmt.Println(param_3, param_4)
 }
 
+// leetcode 155 最小栈
 type item struct {
 	min, x int
 }
+
 type MinStack struct {
 	stack []item
 }
 
-/** initialize your data structure here. */
 func Constructor() MinStack {
 	return MinStack{}
 }
@@ -29,7 +30,10 @@ func (this *MinStack) Push(x int) {
 	if len(this.stack) > 0 && this.GetMin() < x {
 		min = this.GetMin()
 	}
-	this.stack = append(this.stack, item{min: min, x: x})
+	this.stack = append(this.stack, item{
+		min: min,
+		x:   x,
+	})
 }
 
 func (this *MinStack) Pop() {
