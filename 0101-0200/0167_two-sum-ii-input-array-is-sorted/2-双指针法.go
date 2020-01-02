@@ -8,10 +8,10 @@ func main() {
 	fmt.Println(twoSum(numbers, target))
 }
 
+// leetcode 167 两数之和 II - 输入有序数组
 func twoSum(numbers []int, target int) []int {
 	first := 0
 	last := len(numbers) - 1
-
 	result := make([]int, 2)
 
 	for {
@@ -25,17 +25,4 @@ func twoSum(numbers []int, target int) []int {
 			first++
 		}
 	}
-	return result
 }
-
-/*func twoSum(numbers []int, target int) []int {
-	m := make(map[int]int, len(numbers))
-
-	for i, n := range numbers{
-		if m[target-n] != 0{
-			return []int{m[target-n],i+1}
-		}
-		m[n] = i + 1
-	}
-	return nil
-}*/

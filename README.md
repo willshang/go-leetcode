@@ -47,5 +47,10 @@
 | [136.只出现一次的数字](https://leetcode-cn.com/problems/single-number) | 位运算、哈希表                 | Easy | 完成     |
 | [141.环形链表](https://leetcode-cn.com/problems/linked-list-cycle) | 链表、双指针                   | Easy | 完成     |
 | [155.最小栈](https://leetcode-cn.com/problems/min-stack)     | 栈、设计                       | Easy | 完成     |
-| [160.相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists) |                                |      |          |
+| [160.相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists) | 链表                           | Easy | 完成     |
+| [167.两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted) | 数组、双指针、二分查找         | Easy | 完成     |
+| [168.Excel表列名称](https://leetcode-cn.com/problems/excel-sheet-column-title) | 数学                           | Easy | 完成     |
+| [169.多数元素](https://leetcode-cn.com/problems/majority-element) | 位运算、数组、分治算法         | Easy | 完成     |
+| 第五期                                                       |                                |      |          |
+|                                                              |                                |      |          |
 

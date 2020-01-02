@@ -1118,10 +1118,10 @@ minStack.getMin();   --> 返回 -2.
 
 ### 解题思路
 
-| No.  | 思路                                               | 时间复杂度 | 空间复杂度 |
-| ---- | -------------------------------------------------- | ---------- | ---------- |
-| 01   | 使用数组模拟栈，保存数据的时候同时保存当前的最小值 | O(n)       | O(n)       |
-| 02   | 使用双栈                                           | O(n)       | O(n)       |
+| No.      | 思路                                               | 时间复杂度 | 空间复杂度 |
+| -------- | -------------------------------------------------- | ---------- | ---------- |
+| 01(最优) | 使用数组模拟栈，保存数据的时候同时保存当前的最小值 | O(n)       | O(n)       |
+| 02       | 使用双栈                                           | O(n)       | O(n)       |
 
 ```go
 type item struct {
@@ -1198,6 +1198,295 @@ func (this *MinStack) Top() int {
 
 func (this *MinStack) GetMin() int {
 	return this.min[len(this.min)-1]
+}
+```
+
+## 160.相交链表
+
+### 题目
+
+```go
+编写一个程序，找到两个单链表相交的起始节点。
+如下面的两个链表：
+在节点 c1 开始相交。
+
+示例 1：
+输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+输出：Reference of the node with value = 8
+输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。
+从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
+在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
+
+示例 2：
+输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+输出：Reference of the node with value = 2
+输入解释：相交节点的值为 2 （注意，如果两个列表相交则不能为 0）。
+从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。
+在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。
+
+示例 3：
+输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+输出：null
+输入解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。
+由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。
+解释：这两个链表不相交，因此返回 null。
+
+注意：
+    如果两个链表没有交点，返回 null.
+    在返回结果后，两个链表仍须保持原有的结构。
+    可假定整个链表结构中没有循环。
+    程序尽量满足 O(n) 时间复杂度，且仅用 O(1) 内存。
+```
+
+### 解题思路
+
+| No.      | 思路                       | 时间复杂度 | 空间复杂度 |
+| -------- | -------------------------- | ---------- | ---------- |
+| 01       | 计算长度后，对齐长度再比较 | O(n)       | O(1)       |
+| 02(最优) | 交换后相连，再比较         | O(n)       | O(1)       |
+| 03       | 暴力法                     | O(n^2)     | O(1)       |
+| 04       | 哈希法                     | O(n)       | O(n)       |
+
+```go
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	ALength := 0
+	A := headA
+	for A != nil {
+		ALength++
+		A = A.Next
+	}
+	BLength := 0
+	B := headB
+	for B != nil {
+		BLength++
+		B = B.Next
+	}
+
+	pA := headA
+	pB := headB
+	if ALength > BLength {
+		n := ALength - BLength
+		for n > 0 {
+			pA = pA.Next
+			n--
+		}
+	} else {
+		n := BLength - ALength
+		for n > 0 {
+			pB = pB.Next
+			n--
+		}
+	}
+
+	for pA != pB {
+		pA = pA.Next
+		pB = pB.Next
+	}
+	return pA
+}
+
+//
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	A, B := headA, headB
+	for A != B {
+		if A != nil {
+			A = A.Next
+		} else {
+			A = headB
+		}
+		if B != nil {
+			B = B.Next
+		} else {
+			B = headA
+		}
+	}
+	return A
+}
+
+// 暴力法 
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	A, B := headA, headB
+	for A != nil {
+		for B != nil {
+			if A == B {
+				return A
+			}
+			B = B.Next
+		}
+		A = A.Next
+		B = headB
+	}
+	return nil
+}
+
+// 哈希表法
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	m := make(map[*ListNode]bool)
+	for headA != nil {
+		m[headA] = true
+		headA = headA.Next
+	}
+
+	for headB != nil {
+		if _, ok := m[headB]; ok {
+			return headB
+		}
+		headB = headB.Next
+	}
+	return nil
+}
+```
+
+## 167.两数之和 II - 输入有序数组
+
+### 题目
+
+```
+给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。
+函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。
+
+说明:
+    返回的下标值（index1 和 index2）不是从零开始的。
+    你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。
+
+示例:
+输入: numbers = [2, 7, 11, 15], target = 9
+输出: [1,2]
+解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
+```
+
+### 解题思路
+
+| No.      | 思路                | 时间复杂度 | 空间复杂度 |
+| -------- | ------------------- | ---------- | ---------- |
+| 01       | 暴力法: 2层循环遍历 | O(n^2)     | O(1)       |
+| 02       | 两遍哈希遍历        | O(n)       | O(n)       |
+| 03       | 一遍哈希遍历        | O(n)       | O(n)       |
+| 04(最优) | 一遍哈希遍历        | O(n)       | O(1)       |
+
+```go
+// 暴力法: 2层循环遍历
+func twoSum(nums []int, target int) []int {
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			if nums[i]+nums[j] == target {
+				return []int{i + 1, j + 1}
+			}
+		}
+	}
+	return []int{}
+}
+
+// 两遍哈希遍历
+func twoSum(nums []int, target int) []int {
+	m := make(map[int]int, len(nums))
+	for k, v := range nums {
+		m[v] = k
+	}
+
+	for i := 0; i < len(nums); i++ {
+		b := target - nums[i]
+		if num, ok := m[b]; ok && num != i {
+			return []int{i + 1, m[b] + 1}
+		}
+	}
+	return []int{}
+}
+
+// 一遍哈希遍历
+func twoSum(numbers []int, target int) []int {
+	m := make(map[int]int, len(numbers))
+
+	for i, n := range numbers {
+		if m[target-n] != 0 {
+			return []int{m[target-n], i + 1}
+		}
+		m[n] = i + 1
+	}
+	return nil
+}
+
+// 双指针法
+func twoSum(numbers []int, target int) []int {
+	first := 0
+	last := len(numbers) - 1
+
+	result := make([]int, 2)
+
+	for {
+		if numbers[first]+numbers[last] == target {
+			result[0] = first + 1
+			result[1] = last + 1
+			return result
+		} else if numbers[first]+numbers[last] > target {
+			last--
+		} else {
+			first++
+		}
+	}
+}
+```
+
+## 168.Excel表列名称
+
+### 题目
+
+```
+给定一个正整数，返回它在 Excel 表中相对应的列名称。
+例如，
+
+    1 -> A
+    2 -> B
+    3 -> C
+    ...
+    26 -> Z
+    27 -> AA
+    28 -> AB 
+    ...
+示例 1:
+输入: 1
+输出: "A"
+
+示例 2:
+输入: 28
+输出: "AB"
+
+示例 3:
+输入: 701
+输出: "ZY"
+```
+
+### 解题思路
+
+| No.      | 思路         | 时间复杂度 | 空间复杂度 |
+| -------- | ------------ | ---------- | ---------- |
+| 01(最优) | 求余模拟进制 | O(log(n))  | O(1)       |
+| 02       | 递归计算     | O(log(n))  | O(log(n))  |
+
+```go
+// 求余模拟进制
+func convertToTitle(n int) string {
+	str := ""
+
+	for n > 0 {
+		n--
+		str = string(byte(n%26)+'A') + str
+		n /= 26
+	}
+	return str
+}
+
+// 递归计算
+func convertToTitle(n int) string {
+	if n <= 26{
+		return string('A'+n-1)
+	}
+	y := n % 26
+	if y == 0{
+		// 26的倍数 如52%26=0 => AZ
+		return convertToTitle((n-y-1)/26)+convertToTitle(26)
+	}
+	return convertToTitle((n-y)/26)+convertToTitle(y)
 }
 ```
 

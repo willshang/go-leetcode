@@ -5,6 +5,8 @@ import "fmt"
 func main() {
 	fmt.Println(convertToTitle(28))
 }
+
+// leetcode 168 Excel表列名称
 func convertToTitle(n int) string {
 	str := ""
 
