@@ -57,5 +57,6 @@
 | [175.组合两个表](https://leetcode-cn.com/problems/combine-two-tables) | Mysql                          | Easy | 完成     |
 | [176.第二高的薪水](https://leetcode-cn.com/problems/second-highest-salary) | Mysql                          | Easy | 完成     |
 | [181.超过经理收入的员工](https://leetcode-cn.com/problems/employees-earning-more-than-their-managers) | Mysql                          | Easy | 完成     |
+| [182.查找重复的电子邮箱](https://leetcode-cn.com/problems/duplicate-emails) | Mysql                          | Easy | 完成     |
 |                                                              |                                |      |          |
 
