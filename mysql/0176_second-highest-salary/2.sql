@@ -1,5 +1,3 @@
-
-
 ## leetcode 176 第二高的薪水
 select ifnull(
     (select distinct Salary

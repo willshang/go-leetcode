@@ -41,7 +41,7 @@ FirstName, LastName, City, State
 select FirstName, LastName, City, State 
 from Person left join Address on Person.PersonId = Address.PersonId
 
-// 
+#
 select A.FirstName, A.LastName, B.City, B.State
 from Person A
 left join (select distinct PersonId, City, State from Address) B
@@ -88,7 +88,7 @@ select(
     limit 1 offset 1
 ) as SecondHighestSalary;
 
-//
+#
 select ifnull(
     (select distinct Salary 
     from Employee 
@@ -96,9 +96,62 @@ select ifnull(
     limit 1 offset 1),null
 ) as SecondHighestSalary;
 
-//
+# 
 select max(Salary) as SecondHighestSalary 
 from Employee 
 where Salary < (select max(Salary) from Employee);
+```
+
+## 181.超过经理收入的员工
+
+### 题目
+
+```
+SQL架构
+Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, ManagerId int)
+Truncate table Employee
+insert into Employee (Id, Name, Salary, ManagerId) values ('1', 'Joe', '70000', '3')
+insert into Employee (Id, Name, Salary, ManagerId) values ('2', 'Henry', '80000', '4')
+insert into Employee (Id, Name, Salary, ManagerId) values ('3', 'Sam', '60000', 'None')
+insert into Employee (Id, Name, Salary, ManagerId) values ('4', 'Max', '90000', 'None')
+
+Employee 表包含所有员工，他们的经理也属于员工。
+每个员工都有一个 Id，此外还有一列对应员工的经理的 Id。
+
++----+-------+--------+-----------+
+| Id | Name  | Salary | ManagerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | NULL      |
+| 4  | Max   | 90000  | NULL      |
++----+-------+--------+-----------+
+
+给定 Employee 表，编写一个 SQL 查询，该查询可以获取收入超过他们经理的员工的姓名。
+在上面的表格中，Joe 是唯一一个收入超过他的经理的员工。
+
++----------+
+| Employee |
++----------+
+| Joe      |
++----------+
+```
+
+### 解题思路
+
+```sql
+SELECT a.Name AS 'Employee'
+FROM Employee AS a, Employee AS b
+WHERE a.ManagerId = b.Id AND a.Salary > b.Salary;
+
+##
+SELECT a.Name AS 'Employee'
+FROM Employee AS a join Employee AS b
+on a.ManagerId = b.Id AND a.Salary > b.Salary;
+
+## 
+select name as Employee 
+from employee a 
+where salary > (select salary from employee where a.managerid = id);
 ```
 

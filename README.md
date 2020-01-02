@@ -56,5 +56,6 @@
 | [172.阶乘后的零](https://leetcode-cn.com/problems/factorial-trailing-zeroes) | 数学                           | Easy | 完成     |
 | [175.组合两个表](https://leetcode-cn.com/problems/combine-two-tables) | Mysql                          | Easy | 完成     |
 | [176.第二高的薪水](https://leetcode-cn.com/problems/second-highest-salary) | Mysql                          | Easy | 完成     |
-| [181.超过经理收入的员工](https://leetcode-cn.com/problems/employees-earning-more-than-their-managers) |                                |      |          |
+| [181.超过经理收入的员工](https://leetcode-cn.com/problems/employees-earning-more-than-their-managers) | Mysql                          | Easy | 完成     |
+|                                                              |                                |      |          |
 
