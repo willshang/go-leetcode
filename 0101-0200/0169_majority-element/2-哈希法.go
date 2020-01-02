@@ -12,13 +12,13 @@ func main() {
 func majorityElement(nums []int) int {
 	m := make(map[int]int)
 	result := 0
-	for _, v := range nums{
-		if _,ok := m[v];ok{
+	for _, v := range nums {
+		if _, ok := m[v]; ok {
 			m[v]++
-		}else {
-			m[v]=1
+		} else {
+			m[v] = 1
 		}
-		if m[v] > (len(nums)/2){
+		if m[v] > (len(nums) / 2) {
 			result = v
 		}
 	}

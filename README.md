@@ -52,5 +52,8 @@
 | [168.Excel表列名称](https://leetcode-cn.com/problems/excel-sheet-column-title) | 数学                           | Easy | 完成     |
 | [169.多数元素](https://leetcode-cn.com/problems/majority-element) | 位运算、数组、分治算法         | Easy | 完成     |
 | 第五期                                                       |                                |      |          |
+| [171.Excel表列序号](https://leetcode-cn.com/problems/excel-sheet-column-number) | 数学                           | Easy | 完成     |
+| [172.阶乘后的零](https://leetcode-cn.com/problems/factorial-trailing-zeroes) | 数学                           | Easy | 完成     |
+| [175.组合两个表](https://leetcode-cn.com/problems/combine-two-tables) | Mysql                          | Easy | 完成     |
 |                                                              |                                |      |          |
 

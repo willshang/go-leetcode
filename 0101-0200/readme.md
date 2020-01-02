@@ -1490,3 +1490,222 @@ func convertToTitle(n int) string {
 }
 ```
 
+## 169.多数元素
+
+### 题目
+
+```
+给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+
+示例 1:
+输入: [3,2,3]
+输出: 3
+
+示例 2:
+输入: [2,2,1,1,1,2,2]
+输出: 2
+```
+
+### 解题思路
+
+| No.      | 思路                | 时间复杂度 | 空间复杂度 |
+| -------- | ------------------- | ---------- | ---------- |
+| 01       | 排序取半            | O(log(n))  | O(1)       |
+| 02       | 哈希法              | O(n)       | O(n)       |
+| 03(最优) | Boyer-Moore投票算法 | O(n)       | O(1)       |
+| 04       | 位运算              | O(n)       | O(1)       |
+| 05       | 分治法              | O(nlog(n)) | O(log(n))  |
+
+```go
+// 排序取半
+func majorityElement(nums []int) int {
+	sort.Ints(nums)
+	return nums[len(nums)/2]
+}
+
+// 哈希法
+func majorityElement(nums []int) int {
+	m := make(map[int]int)
+	result := 0
+	for _, v := range nums{
+		if _,ok := m[v];ok{
+			m[v]++
+		}else {
+			m[v]=1
+		}
+		if m[v] > (len(nums)/2){
+			result = v
+		}
+	}
+	return result
+}
+
+// Boyer-Moore投票算法
+func majorityElement(nums []int) int {
+	result, count := 0, 0
+	for i := 0; i < len(nums); i++ {
+		if count == 0 {
+			result = nums[i]
+			count++
+		} else if result == nums[i] {
+			count++
+		} else {
+			count--
+		}
+	}
+	return result
+}
+
+// 位运算
+func majorityElement(nums []int) int {
+	if len(nums) == 1 {
+		return nums[0]
+	}
+	result := int32(0)
+	// 64位有坑
+	mask := int32(1)
+	for i := 0; i < 32; i++ {
+		count := 0
+		for j := 0; j < len(nums); j++ {
+			if mask&int32(nums[j]) == mask {
+				count++
+			}
+		}
+		if count > len(nums)/2 {
+			result = result | mask
+		}
+		mask = mask << 1
+	}
+	return int(result)
+}
+
+// 分治法
+func majorityElement(nums []int) int {
+	return majority(nums, 0, len(nums)-1)
+}
+
+func count(nums []int, target int, start int, end int) int {
+	countNum := 0
+	for i := start; i <= end; i++ {
+		if nums[i] == target {
+			countNum++
+		}
+	}
+	return countNum
+}
+
+func majority(nums []int, start, end int) int {
+	if start == end {
+		return nums[start]
+	}
+
+	mid := (start + end) / 2
+
+	left := majority(nums, start, mid)
+	right := majority(nums, mid+1, end)
+	if left == right {
+		return left
+	}
+
+	leftCount := count(nums, left, start, end)
+	rightCount := count(nums, right, start, end)
+	if leftCount > rightCount {
+		return left
+	}
+	return right
+}
+```
+
+## 171.Excel表列序号
+
+### 题目
+
+```
+给定一个Excel表格中的列名称，返回其相应的列序号。
+例如，
+    A -> 1
+    B -> 2
+    C -> 3
+    ...
+    Z -> 26
+    AA -> 27
+    AB -> 28 
+    ...
+
+示例 1:
+输入: "A"
+输出: 1
+
+示例 2:
+输入: "AB"
+输出: 28
+
+示例 3:
+输入: "ZY"
+输出: 701
+```
+
+
+
+### 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 26进制计算 | O(log(n))  | O(1)       |
+
+```go
+func titleToNumber(s string) int {
+	result := 0
+	for i := 0; i < len(s); i++ {
+		temp := int(s[i] - 'A' + 1)
+		result = result*26 + temp
+	}
+	return result
+}
+```
+
+## 172.阶乘后的零
+
+### 题目
+
+```
+给定一个整数 n，返回 n! 结果尾数中零的数量。
+
+示例 1:
+输入: 3
+输出: 0
+解释: 3! = 6, 尾数中没有零。
+
+示例 2:
+输入: 5
+输出: 1
+解释: 5! = 120, 尾数中有 1 个零.
+
+说明: 你算法的时间复杂度应为 O(log n) 。
+```
+
+### 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 数学，找规律 | O(log(n))  | O(1)       |
+
+```go
+func trailingZeroes(n int) int {
+	result := 0
+	for n >= 5 {
+		n = n / 5
+		result = result + n
+	}
+	return result
+}
+```
+
+## 175.组合两个表
+
+### 题目
+
+
+
+### 解题思路
