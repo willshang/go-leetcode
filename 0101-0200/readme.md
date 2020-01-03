@@ -1702,53 +1702,131 @@ func trailingZeroes(n int) int {
 }
 ```
 
-## 182.查找重复的电子邮箱
+## 189.旋转数组
 
 ### 题目
 
 ```
-SQL架构
-Create table If Not Exists Person (Id int, Email varchar(255))
-Truncate table Person
-insert into Person (Id, Email) values ('1', 'a@b.com')
-insert into Person (Id, Email) values ('2', 'c@d.com')
-insert into Person (Id, Email) values ('3', 'a@b.com')
+给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
 
-编写一个 SQL 查询，查找 Person 表中所有重复的电子邮箱。
-示例：
-+----+---------+
-| Id | Email   |
-+----+---------+
-| 1  | a@b.com |
-| 2  | c@d.com |
-| 3  | a@b.com |
-+----+---------+
+示例 1:
+输入: [1,2,3,4,5,6,7] 和 k = 3
+输出: [5,6,7,1,2,3,4]
+解释:
+向右旋转 1 步: [7,1,2,3,4,5,6]
+向右旋转 2 步: [6,7,1,2,3,4,5]
+向右旋转 3 步: [5,6,7,1,2,3,4]
 
-根据以上输入，你的查询应返回以下结果：
-+---------+
-| Email   |
-+---------+
-| a@b.com |
-+---------+
+示例 2:
+输入: [-1,-100,3,99] 和 k = 2
+输出: [3,99,-1,-100]
+解释: 
+向右旋转 1 步: [99,-1,-100,3]
+向右旋转 2 步: [3,99,-1,-100]
 
-说明：所有电子邮箱都是小写字母。
+说明:
+    尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
+    要求使用空间复杂度为 O(1) 的 原地 算法。
 ```
 
 ### 解题思路
 
-```sql
-select Email from
-(
-    select Email, count(Email) as num
-    from Person 
-    Group by Email
-) as temp_table 
-where num > 1;
+| No.      | 思路           | 时间复杂度 | 空间复杂度 |
+| -------- | -------------- | ---------- | ---------- |
+| 01       | 暴力法         | O(n^2)     | O(1)       |
+| 02       | 三次反转法     | O(n)       | O(1)       |
+| 03       | 使用额外的数组 | O(n)       | O(n)       |
+| 04(最优) | 环形替换       | O(n)       | O(1)       |
 
-//
-select Email 
-from Person
-group by Email
-having count(Email) > 1;
+```go
+// 暴力法
+func rotate(nums []int, k int) {
+	n := len(nums)
+
+	if k > n {
+		k = k % n
+	}
+	if k == 0 || k == n {
+		return
+	}
+	for i := 0; i < k; i++ {
+		last := nums[len(nums)-1]
+		for j := 0; j < len(nums); j++ {
+			nums[j], last = last, nums[j]
+		}
+	}
+}
+
+// 三次反转法
+func rotate(nums []int, k int) {
+	n := len(nums)
+
+	if k > n {
+		k = k % n
+	}
+	if k == 0 || k == n {
+		return
+	}
+	reverse(nums, 0, n-1)
+	reverse(nums, 0, k-1)
+	reverse(nums, k, n-1)
+}
+
+func reverse(nums []int, i, j int) {
+	for i < j {
+		nums[i], nums[j] = nums[j], nums[i]
+		i++
+		j--
+	}
+}
+
+// 使用额外的数组
+func rotate(nums []int, k int) {
+	n := len(nums)
+
+	if k > n {
+		k = k % n
+	}
+	if k == 0 || k == n {
+		return
+	}
+
+	arr := make([]int, len(nums))
+	for i := 0; i < len(nums); i++ {
+		arr[(i+k)%len(nums)] = nums[i]
+	}
+
+	for i := 0; i < len(nums); i++ {
+		nums[i] = arr[i]
+	}
+}
+
+// 环形替换
+func rotate(nums []int, k int) {
+	n := len(nums)
+
+	if k > n {
+		k = k % n
+	}
+	if k == 0 || k == n {
+		return
+	}
+	count := 0
+
+	for i := 0; count < len(nums); i++ {
+		current := i
+		prev := nums[i]
+		for {
+			next := (current + k) % len(nums)
+			nums[next], prev = prev, nums[next]
+			current = next
+			// fmt.Println(nums, prev)
+			count++
+			if i == current {
+				break
+			}
+		}
+	}
+}
 ```
 

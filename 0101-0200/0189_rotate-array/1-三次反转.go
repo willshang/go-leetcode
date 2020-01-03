@@ -7,25 +7,8 @@ func main() {
 	rotate(nums, 3)
 	fmt.Println(nums)
 }
+
 func rotate(nums []int, k int) {
-	n := len(nums)
-
-	if k > n {
-		k = k % n
-	}
-	if k == 0 || k == n {
-		return
-	}
-	for i := 0; i < k; i++ {
-		temp := nums[n-1]
-		for j := n - 1; j > 0; j-- {
-			nums[j] = nums[j-1]
-		}
-		nums[0] = temp
-	}
-}
-
-/*func rotate(nums []int, k int) {
 	n := len(nums)
 
 	if k > n {
@@ -45,4 +28,4 @@ func reverse(nums []int, i, j int) {
 		i++
 		j--
 	}
-}*/
+}
