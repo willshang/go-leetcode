@@ -60,4 +60,7 @@
 | [182.查找重复的电子邮箱](https://leetcode-cn.com/problems/duplicate-emails) | Mysql                          | Easy | 完成     |
 | [183.从不订购的客户](https://leetcode-cn.com/problems/customers-who-never-order) | Mysql                          | Easy | 完成     |
 | [189.旋转数组](https://leetcode-cn.com/problems/rotate-array) | 数组                           | Easy | 完成     |
+| [190.颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits) | 位运算                         | Easy | 完成     |
+| [191.位1的个数](https://leetcode-cn.com/problems/number-of-1-bits) | 位运算                         | Easy | 完成     |
+| 第六期                                                       |                                |      |          |
 
