@@ -1,4 +1,5 @@
 # Leetcode
+[![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/en/latest/?badge=latest)
 - https://leetcode-cn.com/
 
 ## 参考
