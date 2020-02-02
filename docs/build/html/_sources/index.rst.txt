@@ -10,6 +10,9 @@ Welcome to go-leetcode's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   0000-0100
+   0101-0200
+
 
 
 Indices and tables
