@@ -1,7 +1,7 @@
 # go-Leetcode
 [![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/en/latest/?badge=latest)
 
-
+[gitbook](https://willshang.github.io/go-leetcode/)
 ## 0.参考
 - https://leetcode-cn.com/
 
@@ -65,4 +65,6 @@
 | [190.颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits) | 位运算                         | Easy | 完成     |
 | [191.位1的个数](https://leetcode-cn.com/problems/number-of-1-bits) | 位运算                         | Easy | 完成     |
 | 第六期                                                       |                                |      |          |
+| [193. 有效电话号码](https://leetcode-cn.com/problems/valid-phone-numbers/) | Bash                           | Easy | 完成     |
+| [195. 第十行](https://leetcode-cn.com/problems/tenth-line/)  | Bash                           | Easy | 完成     |
 
