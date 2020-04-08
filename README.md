@@ -1,10 +1,11 @@
-# Leetcode
+# go-Leetcode
 [![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/en/latest/?badge=latest)
+
+
+## 0.参考
 - https://leetcode-cn.com/
 
-## 参考
-
-## 完成的题目
+## 1.完成的题目
 
 | Title                                                        | Tag                            | 难度 | 完成情况 |
 | ------------------------------------------------------------ | ------------------------------ | ---- | -------- |
