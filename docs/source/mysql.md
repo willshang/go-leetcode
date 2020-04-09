@@ -1,6 +1,6 @@
-## 175.组合两个表
+## 175.组合两个表(2)
 
-### 题目
+- 题目
 
 ```
 SQL架构
@@ -10,6 +10,7 @@ Truncate table Person
 insert into Person (PersonId, LastName, FirstName) values ('1', 'Wang', 'Allen')
 Truncate table Address
 insert into Address (AddressId, PersonId, City, State) values ('1', '2', 'New York City', 'New York')
+
 表1: Person
 +-------------+---------+
 | 列名         | 类型     |
@@ -35,7 +36,12 @@ AddressId 是上表主键
 FirstName, LastName, City, State
 ```
 
-### 解题思路
+- 解题思路
+
+| No.  | 思路               |
+| ---- | ------------------ |
+| 01   | 考察join的基本使用 |
+| 02   | 考察join的基本使用 |
 
 ```mysql
 select FirstName, LastName, City, State 
@@ -48,9 +54,9 @@ left join (select distinct PersonId, City, State from Address) B
 on A.PersonId=B.PersonId;
 ```
 
-## 176.第二高的薪水
+## 176.第二高的薪水(3)
 
-### 题目
+- 题目
 
 ```
 SQL架构
@@ -78,7 +84,13 @@ insert into Employee (Id, Salary) values ('3', '300')
 +---------------------+
 ```
 
-### 解题思路
+- 解题思路
+
+| No.  | 思路                                 |
+| ---- | ------------------------------------ |
+| 01   | 把select语句包起来，使空的时候为null |
+| 02   | 使用ifnull                           |
+| 03   | 先查出最大的，然后查出比最大小的     |
 
 ```sql
 select(
@@ -102,9 +114,9 @@ from Employee
 where Salary < (select max(Salary) from Employee);
 ```
 
-## 181.超过经理收入的员工
+## 181.超过经理收入的员工(3)
 
-### 题目
+- 题目
 
 ```
 SQL架构
@@ -137,27 +149,33 @@ Employee 表包含所有员工，他们的经理也属于员工。
 +----------+
 ```
 
-### 解题思路
+- 解题思路
+
+| No.  | 思路                        |
+| ---- | --------------------------- |
+| 01   | 使用笛卡尔乘积，和方法2一样 |
+| 02   | 使用内链接                  |
+| 03   | 子查询                      |
 
 ```sql
 SELECT a.Name AS 'Employee'
 FROM Employee AS a, Employee AS b
 WHERE a.ManagerId = b.Id AND a.Salary > b.Salary;
 
-##
+#
 SELECT a.Name AS 'Employee'
 FROM Employee AS a join Employee AS b
 on a.ManagerId = b.Id AND a.Salary > b.Salary;
 
-## 
+#
 select name as Employee 
 from employee a 
 where salary > (select salary from employee where a.managerid = id);
 ```
 
-## 182.查找重复的电子邮箱
+## 182.查找重复的电子邮箱(2)
 
-### 题目
+- 题目
 
 ```
 SQL架构
@@ -187,7 +205,12 @@ insert into Person (Id, Email) values ('3', 'a@b.com')
 说明：所有电子邮箱都是小写字母。
 ```
 
-### 解题思路
+- 解题思路
+
+| No.  | 思路           |
+| ---- | -------------- |
+| 01   | 使用临时表     |
+| 02   | 使用having子句 |
 
 ```sql
 select Email from
@@ -205,9 +228,9 @@ group by Email
 having count(Email) > 1;
 ```
 
-## 183.从不订购的客户
+## 183.从不订购的客户(3)
 
-### 题目
+- 题目
 
 ```
 SQL架构
@@ -250,9 +273,13 @@ Orders 表：
 +-----------+
 ```
 
+- 解题思路
 
-
-### 解题思路
+| No.  | 思路           |
+| ---- | -------------- |
+| 01   | 使用not in     |
+| 02   | 左连接         |
+| 03   | 使用not exists |
 
 ```sql
 select Customers.Name as Customers

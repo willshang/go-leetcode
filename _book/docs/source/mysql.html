@@ -1,0 +1,707 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>mysql · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bash.html" />
+    
+    
+    <link rel="prev" href="0201-0300.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    题目
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="0000-0100.html">
+            
+                <a href="0000-0100.html">
+            
+                    
+                    0001-0100
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="0101-0200.html">
+            
+                <a href="0101-0200.html">
+            
+                    
+                    0100-0200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="0201-0300.html">
+            
+                <a href="0201-0300.html">
+            
+                    
+                    0201-0300
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="mysql.html">
+            
+                <a href="mysql.html">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="bash.html">
+            
+                <a href="bash.html">
+            
+                    
+                    bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    书籍
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="offer.html">
+            
+                <a href="offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >mysql</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="175&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x8868;2">175.&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x8868;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table Person (PersonId int, FirstName varchar(255), LastName varchar(255))
+Create table Address (AddressId int, PersonId int, City varchar(255), State varchar(255))
+Truncate table Person
+insert into Person (PersonId, LastName, FirstName) values (&apos;1&apos;, &apos;Wang&apos;, &apos;Allen&apos;)
+Truncate table Address
+insert into Address (AddressId, PersonId, City, State) values (&apos;1&apos;, &apos;2&apos;, &apos;New York City&apos;, &apos;New York&apos;)
+
+&#x8868;1: Person
++-------------+---------+
+| &#x5217;&#x540D;         | &#x7C7B;&#x578B;     |
++-------------+---------+
+| PersonId    | int     |
+| FirstName   | varchar |
+| LastName    | varchar |
++-------------+---------+
+PersonId &#x662F;&#x4E0A;&#x8868;&#x4E3B;&#x952E;
+
+&#x8868;2: Address
++-------------+---------+
+| &#x5217;&#x540D;         | &#x7C7B;&#x578B;    |
++-------------+---------+
+| AddressId   | int     |
+| PersonId    | int     |
+| City        | varchar |
+| State       | varchar |
++-------------+---------+
+AddressId &#x662F;&#x4E0A;&#x8868;&#x4E3B;&#x952E;
+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF1A;&#x65E0;&#x8BBA; person &#x662F;&#x5426;&#x6709;&#x5730;&#x5740;&#x4FE1;&#x606F;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x4E24;&#x8868;&#x63D0;&#x4F9B; person &#x7684;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;
+FirstName, LastName, City, State
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x8003;&#x5BDF;join&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x8003;&#x5BDF;join&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-mysql">select FirstName, LastName, City, State 
+from Person left join Address on Person.PersonId = Address.PersonId
+
+#
+select A.FirstName, A.LastName, B.City, B.State
+from Person A
+left join (select distinct PersonId, City, State from Address) B
+on A.PersonId=B.PersonId;
+</code></pre>
+<h2 id="176&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;3">176.&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Employee (Id int, Salary int)
+Truncate table Employee
+insert into Employee (Id, Salary) values (&apos;1&apos;, &apos;100&apos;)
+insert into Employee (Id, Salary) values (&apos;2&apos;, &apos;200&apos;)
+insert into Employee (Id, Salary) values (&apos;3&apos;, &apos;300&apos;)
+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x83B7;&#x53D6; Employee &#x8868;&#x4E2D;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;&#xFF08;Salary&#xFF09; &#x3002;
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+
+&#x4F8B;&#x5982;&#x4E0A;&#x8FF0; Employee &#x8868;&#xFF0C;SQL&#x67E5;&#x8BE2;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE; 200 &#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;&#x3002;
+&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;&#xFF0C;&#x90A3;&#x4E48;&#x67E5;&#x8BE2;&#x5E94;&#x8FD4;&#x56DE; null&#x3002;
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x628A;select&#x8BED;&#x53E5;&#x5305;&#x8D77;&#x6765;&#xFF0C;&#x4F7F;&#x7A7A;&#x7684;&#x65F6;&#x5019;&#x4E3A;null</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x4F7F;&#x7528;ifnull</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x5148;&#x67E5;&#x51FA;&#x6700;&#x5927;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x67E5;&#x51FA;&#x6BD4;&#x6700;&#x5927;&#x5C0F;&#x7684;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span>(
+    <span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> Salary 
+    <span class="hljs-keyword">from</span> Employee 
+    <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> Salary <span class="hljs-keyword">desc</span>
+    <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span> <span class="hljs-keyword">offset</span> <span class="hljs-number">1</span>
+) <span class="hljs-keyword">as</span> SecondHighestSalary;
+
+#
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">ifnull</span>(
+    (<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> Salary 
+    <span class="hljs-keyword">from</span> Employee 
+    <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> Salary <span class="hljs-keyword">desc</span>
+    <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span> <span class="hljs-keyword">offset</span> <span class="hljs-number">1</span>),<span class="hljs-literal">null</span>
+) <span class="hljs-keyword">as</span> SecondHighestSalary;
+
+# 
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(Salary) <span class="hljs-keyword">as</span> SecondHighestSalary 
+<span class="hljs-keyword">from</span> Employee 
+<span class="hljs-keyword">where</span> Salary &lt; (<span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(Salary) <span class="hljs-keyword">from</span> Employee);
+</code></pre>
+<h2 id="181&#x8D85;&#x8FC7;&#x7ECF;&#x7406;&#x6536;&#x5165;&#x7684;&#x5458;&#x5DE5;3">181.&#x8D85;&#x8FC7;&#x7ECF;&#x7406;&#x6536;&#x5165;&#x7684;&#x5458;&#x5DE5;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, ManagerId int)
+Truncate table Employee
+insert into Employee (Id, Name, Salary, ManagerId) values (&apos;1&apos;, &apos;Joe&apos;, &apos;70000&apos;, &apos;3&apos;)
+insert into Employee (Id, Name, Salary, ManagerId) values (&apos;2&apos;, &apos;Henry&apos;, &apos;80000&apos;, &apos;4&apos;)
+insert into Employee (Id, Name, Salary, ManagerId) values (&apos;3&apos;, &apos;Sam&apos;, &apos;60000&apos;, &apos;None&apos;)
+insert into Employee (Id, Name, Salary, ManagerId) values (&apos;4&apos;, &apos;Max&apos;, &apos;90000&apos;, &apos;None&apos;)
+
+Employee &#x8868;&#x5305;&#x542B;&#x6240;&#x6709;&#x5458;&#x5DE5;&#xFF0C;&#x4ED6;&#x4EEC;&#x7684;&#x7ECF;&#x7406;&#x4E5F;&#x5C5E;&#x4E8E;&#x5458;&#x5DE5;&#x3002;
+&#x6BCF;&#x4E2A;&#x5458;&#x5DE5;&#x90FD;&#x6709;&#x4E00;&#x4E2A; Id&#xFF0C;&#x6B64;&#x5916;&#x8FD8;&#x6709;&#x4E00;&#x5217;&#x5BF9;&#x5E94;&#x5458;&#x5DE5;&#x7684;&#x7ECF;&#x7406;&#x7684; Id&#x3002;
+
++----+-------+--------+-----------+
+| Id | Name  | Salary | ManagerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | NULL      |
+| 4  | Max   | 90000  | NULL      |
++----+-------+--------+-----------+
+
+&#x7ED9;&#x5B9A; Employee &#x8868;&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x8BE5;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x6536;&#x5165;&#x8D85;&#x8FC7;&#x4ED6;&#x4EEC;&#x7ECF;&#x7406;&#x7684;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;&#x3002;
+&#x5728;&#x4E0A;&#x9762;&#x7684;&#x8868;&#x683C;&#x4E2D;&#xFF0C;Joe &#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x6536;&#x5165;&#x8D85;&#x8FC7;&#x4ED6;&#x7684;&#x7ECF;&#x7406;&#x7684;&#x5458;&#x5DE5;&#x3002;
+
++----------+
+| Employee |
++----------+
+| Joe      |
++----------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x4F7F;&#x7528;&#x7B1B;&#x5361;&#x5C14;&#x4E58;&#x79EF;&#xFF0C;&#x548C;&#x65B9;&#x6CD5;2&#x4E00;&#x6837;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x4F7F;&#x7528;&#x5185;&#x94FE;&#x63A5;</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x5B50;&#x67E5;&#x8BE2;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> a.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">AS</span> <span class="hljs-string">&apos;Employee&apos;</span>
+<span class="hljs-keyword">FROM</span> Employee <span class="hljs-keyword">AS</span> a, Employee <span class="hljs-keyword">AS</span> b
+<span class="hljs-keyword">WHERE</span> a.ManagerId = b.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">AND</span> a.Salary &gt; b.Salary;
+
+#
+<span class="hljs-keyword">SELECT</span> a.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">AS</span> <span class="hljs-string">&apos;Employee&apos;</span>
+<span class="hljs-keyword">FROM</span> Employee <span class="hljs-keyword">AS</span> a <span class="hljs-keyword">join</span> Employee <span class="hljs-keyword">AS</span> b
+<span class="hljs-keyword">on</span> a.ManagerId = b.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">AND</span> a.Salary &gt; b.Salary;
+
+#
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">as</span> Employee 
+<span class="hljs-keyword">from</span> employee a 
+<span class="hljs-keyword">where</span> salary &gt; (<span class="hljs-keyword">select</span> salary <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> a.managerid = <span class="hljs-keyword">id</span>);
+</code></pre>
+<h2 id="182&#x67E5;&#x627E;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;2">182.&#x67E5;&#x627E;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Person (Id int, Email varchar(255))
+Truncate table Person
+insert into Person (Id, Email) values (&apos;1&apos;, &apos;a@b.com&apos;)
+insert into Person (Id, Email) values (&apos;2&apos;, &apos;c@d.com&apos;)
+insert into Person (Id, Email) values (&apos;3&apos;, &apos;a@b.com&apos;)
+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x67E5;&#x627E; Person &#x8868;&#x4E2D;&#x6240;&#x6709;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#x3002;
+&#x793A;&#x4F8B;&#xFF1A;
++----+---------+
+| Id | Email   |
++----+---------+
+| 1  | a@b.com |
+| 2  | c@d.com |
+| 3  | a@b.com |
++----+---------+
+
+&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x8F93;&#x5165;&#xFF0C;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x5E94;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;
++---------+
+| Email   |
++---------+
+| a@b.com |
++---------+
+
+&#x8BF4;&#x660E;&#xFF1A;&#x6240;&#x6709;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#x90FD;&#x662F;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x4F7F;&#x7528;&#x4E34;&#x65F6;&#x8868;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x4F7F;&#x7528;having&#x5B50;&#x53E5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> Email <span class="hljs-keyword">from</span>
+(
+    <span class="hljs-keyword">select</span> Email, <span class="hljs-keyword">count</span>(Email) <span class="hljs-keyword">as</span> <span class="hljs-keyword">num</span>
+    <span class="hljs-keyword">from</span> Person 
+    <span class="hljs-keyword">Group</span> <span class="hljs-keyword">by</span> Email
+) <span class="hljs-keyword">as</span> temp_table 
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">num</span> &gt; <span class="hljs-number">1</span>;
+
+//
+<span class="hljs-keyword">select</span> Email 
+<span class="hljs-keyword">from</span> Person
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Email
+<span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(Email) &gt; <span class="hljs-number">1</span>;
+</code></pre>
+<h2 id="183&#x4ECE;&#x4E0D;&#x8BA2;&#x8D2D;&#x7684;&#x5BA2;&#x6237;3">183.&#x4ECE;&#x4E0D;&#x8BA2;&#x8D2D;&#x7684;&#x5BA2;&#x6237;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Customers (Id int, Name varchar(255))
+Create table If Not Exists Orders (Id int, CustomerId int)
+Truncate table Customers
+insert into Customers (Id, Name) values (&apos;1&apos;, &apos;Joe&apos;)
+insert into Customers (Id, Name) values (&apos;2&apos;, &apos;Henry&apos;)
+insert into Customers (Id, Name) values (&apos;3&apos;, &apos;Sam&apos;)
+insert into Customers (Id, Name) values (&apos;4&apos;, &apos;Max&apos;)
+Truncate table Orders
+insert into Orders (Id, CustomerId) values (&apos;1&apos;, &apos;3&apos;)
+insert into Orders (Id, CustomerId) values (&apos;2&apos;, &apos;1&apos;)
+&#x67D0;&#x7F51;&#x7AD9;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x8868;&#xFF0C;Customers &#x8868;&#x548C; Orders &#x8868;&#x3002;&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x627E;&#x51FA;&#x6240;&#x6709;&#x4ECE;&#x4E0D;&#x8BA2;&#x8D2D;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#x7684;&#x5BA2;&#x6237;&#x3002;
+
+Customers &#x8868;&#xFF1A;
++----+-------+
+| Id | Name  |
++----+-------+
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
++----+-------+
+
+Orders &#x8868;&#xFF1A;
++----+------------+
+| Id | CustomerId |
++----+------------+
+| 1  | 3          |
+| 2  | 1          |
++----+------------+
+
+&#x4F8B;&#x5982;&#x7ED9;&#x5B9A;&#x4E0A;&#x8FF0;&#x8868;&#x683C;&#xFF0C;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x5E94;&#x8FD4;&#x56DE;&#xFF1A;
++-----------+
+| Customers |
++-----------+
+| Henry     |
+| Max       |
++-----------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x4F7F;&#x7528;not in</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x5DE6;&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x4F7F;&#x7528;not exists</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> Customers.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> Customers
+<span class="hljs-keyword">from</span> Customers
+<span class="hljs-keyword">where</span> Customers.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (
+    <span class="hljs-keyword">select</span> CustomerId <span class="hljs-keyword">from</span> Orders
+);
+
+#
+<span class="hljs-keyword">select</span> a.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> Customers
+<span class="hljs-keyword">from</span> Customers <span class="hljs-keyword">as</span> a <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> Orders <span class="hljs-keyword">as</span> b <span class="hljs-keyword">on</span> a.<span class="hljs-keyword">Id</span>=b.CustomerId
+<span class="hljs-keyword">where</span> b.CustomerId <span class="hljs-keyword">is</span> <span class="hljs-literal">null</span>;
+
+#
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span> Customers 
+<span class="hljs-keyword">from</span> customers c 
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (
+    <span class="hljs-keyword">select</span> <span class="hljs-number">1</span> <span class="hljs-keyword">from</span> orders o 
+    <span class="hljs-keyword">where</span> o.customerid=c.<span class="hljs-keyword">id</span>
+)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="0201-0300.html" class="navigation navigation-prev " aria-label="Previous page: 0201-0300">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bash.html" class="navigation navigation-next " aria-label="Next page: bash">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"mysql","level":"1.2.4","depth":2,"next":{"title":"bash","level":"1.2.5","depth":2,"path":"docs/source/bash.md","ref":"docs/source/bash.md","articles":[]},"previous":{"title":"0201-0300","level":"1.2.3","depth":2,"path":"docs/source/0201-0300.md","ref":"docs/source/0201-0300.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/mysql.md","mtime":"2020-04-08T23:52:08.179Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-08T23:38:47.995Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
