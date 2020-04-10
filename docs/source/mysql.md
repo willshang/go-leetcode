@@ -311,3 +311,116 @@ where not exists (
 )
 ```
 
+## 193.删除重复的电子邮箱(2)
+
+- 题目
+
+```
+编写一个 SQL 查询，来删除 Person 表中所有重复的电子邮箱，重复的邮箱里只保留 Id 最小 的那个。
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
+| 3  | john@example.com |
++----+------------------+
+Id 是这个表的主键。
+例如，在运行你的查询语句之后，上面的 Person 表应返回以下几行:
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
++----+------------------+
+提示：
+    执行 SQL 之后，输出是整个 Person 表。
+    使用 delete 语句。
+```
+
+- 解题思路
+
+| No.  | 思路                                          |
+| ---- | --------------------------------------------- |
+| 01   | 使用delete+自连接                             |
+| 02   | 使用delete，根据group by和min()查询出最小的id |
+
+```sql
+# 
+delete p1 from Person p1, Person P2 
+where p1.Email = p2.Email and p1.Id > p2.Id
+
+#
+delete from Person
+where id not in (
+    select id from (
+        select min(id) as id
+        from Person
+        group by Email
+    ) as temp_table
+)
+```
+
+## 197.上升的温度(4)
+
+- 题目
+
+```
+SQL架构
+Create table If Not Exists Weather (Id int, RecordDate date, Temperature int)
+Truncate table Weather
+insert into Weather (Id, RecordDate, Temperature) values ('1', '2015-01-01', '10')
+insert into Weather (Id, RecordDate, Temperature) values ('2', '2015-01-02', '25')
+insert into Weather (Id, RecordDate, Temperature) values ('3', '2015-01-03', '20')
+insert into Weather (Id, RecordDate, Temperature) values ('4', '2015-01-04', '30')
+
+给定一个 Weather 表，编写一个 SQL 查询，来查找与之前（昨天的）日期相比温度更高的所有日期的 Id。
++---------+------------------+------------------+
+| Id(INT) | RecordDate(DATE) | Temperature(INT) |
++---------+------------------+------------------+
+|       1 |       2015-01-01 |               10 |
+|       2 |       2015-01-02 |               25 |
+|       3 |       2015-01-03 |               20 |
+|       4 |       2015-01-04 |               30 |
++---------+------------------+------------------+
+
+例如，根据上述给定的 Weather 表格，返回如下 Id:
++----+
+| Id |
++----+
+|  2 |
+|  4 |
++----+
+```
+
+- 解题思路
+
+| No.  | 思路                           |
+| ---- | ------------------------------ |
+| 01   | 自连接和datediff()的使用       |
+| 02   | 自连接和adddate()的使用        |
+| 03   | 自连接和unix_timestamp()的使用 |
+| 04   | 自连接和subdate()的使用        |
+
+```sql
+#
+select A.Id as "Id"
+from Weather A join Weather B
+on datediff(A.RecordDate, B.RecordDate) = 1 and A.Temperature > B.Temperature
+
+#
+select A.Id as "Id"
+from Weather A join Weather B
+on A.Temperature > B.Temperature and A.RecordDate = adddate(B.RecordDate, 1) 
+
+#
+select A.Id as "Id"
+from Weather A join Weather B
+on unix_timestamp(A.RecordDate) = unix_timestamp(B.RecordDate) + 86400
+and A.Temperature > B.Temperature
+
+#
+select A.Id as "Id"
+from Weather A join Weather B
+on A.Temperature > B.Temperature and B.RecordDate = subdate(A.RecordDate, 1)
+```
+

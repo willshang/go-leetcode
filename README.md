@@ -67,4 +67,10 @@
 | 第六期                                                       |                                |      |          |
 | [193. 有效电话号码](https://leetcode-cn.com/problems/valid-phone-numbers/) | Bash                           | Easy | 完成     |
 | [195. 第十行](https://leetcode-cn.com/problems/tenth-line/)  | Bash                           | Easy | 完成     |
+| [196. 删除重复的电子邮箱](https://leetcode-cn.com/problems/delete-duplicate-emails/) | Mysql                          | Easy | 完成     |
+| [197.上升的温度](https://leetcode-cn.com/problems/rising-temperature/) | Mysql                          | Easy | 完成     |
+| [198.打家劫舍](https://leetcode-cn.com/problems/house-robber) | 动态规划                       | Easy | 完成     |
+| [202.快乐数](https://leetcode-cn.com/problems/happy-number/) | 哈希表、数学                   | Easy | 完成     |
+| [203.移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/) | 链表                           | Easy | 完成     |
+| [204. 计数质数](https://leetcode-cn.com/problems/count-primes/) | 哈希表、数学                   | Easy | 完成     |
 

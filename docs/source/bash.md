@@ -85,14 +85,20 @@ Line 10
 
 - 解题思路分析
 
-| No.  | 思路                |
-| ---- | ------------------- |
-| 01   | 正则表达式_cat_grep |
-| 02   | 正则表达式_grep     |
-| 03   | 正则表达式_awk      |
-| 04   | 正则表达式_grep     |
+| No.  | 思路      |
+| ---- | --------- |
+| 01   | awk NR    |
+| 02   | tail head |
+| 03   | sed       |
 
-```
+```bash
+# 
+awk 'NR==10' file.txt
 
+#
+tail -n +10 file.txt | head -1
+
+#
+sed -n 10p file.txt
 ```
 
