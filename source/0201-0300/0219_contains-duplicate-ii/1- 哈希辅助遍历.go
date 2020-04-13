@@ -7,15 +7,12 @@ func main() {
 	k := 4
 	fmt.Println(containsNearbyDuplicate(nums, k))
 }
-func containsNearbyDuplicate(nums []int, k int) bool {
-	if k <= 0 {
-		return false
-	}
 
-	m := make(map[int]int, len(nums))
+func containsNearbyDuplicate(nums []int, k int) bool {
+	m := make(map[int]int)
 
 	for i, n := range nums {
-		if m[n] != 0 && i+1-m[n] <= k {
+		if m[n] != 0 && (i+1)-m[n] <= k {
 			return true
 		}
 		m[n] = i + 1

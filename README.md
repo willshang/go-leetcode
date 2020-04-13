@@ -9,7 +9,7 @@
 
 | Title                                                        | Tag                            | 难度 | 完成情况 |
 | ------------------------------------------------------------ | ------------------------------ | ---- | -------- |
-| 第一期                                                       |                                |      |          |
+| 第1期                                                      |                                |      |          |
 | [1.两数之和](https://leetcode-cn.com/problems/two-sum/)      | 数组、哈希表                   | Easy | 完成     |
 | [7.整数反转](https://leetcode-cn.com/problems/reverse-integer) | 数学                           | Easy | 完成     |
 | [9.回文数](https://leetcode-cn.com/problems/palindrome-number) | 数学                           | Easy | 完成     |
@@ -20,7 +20,7 @@
 | [26.删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) | 数组、双指针                   | Easy | 完成     |
 | [27.移除元素](https://leetcode-cn.com/problems/remove-element) | 数组、双指针                   | Easy | 完成     |
 | [28.实现 strStr()](https://leetcode-cn.com/problems/implement-strstr) | 双指针、字符串                 | Easy | 完成     |
-| 第二期                                                       |                                |      |          |
+| 第2期                                                      |                                |      |          |
 | [35.搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | 数组、二分查找                 | Easy | 完成     |
 | [38.报数](https://leetcode-cn.com/problems/count-and-say)    | 字符串                         | Easy | 完成     |
 | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) | 数组、分治算法、动态规划       | Easy | 完成     |
@@ -31,7 +31,7 @@
 | [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs) | 动态规划                       | Easy | 完成     |
 | [83.删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list) | 链表                           | Easy | 完成     |
 | [88.合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array) | 数组、双指针                   | Easy | 完成     |
-| 第三期                                                       |                                |      |          |
+| 第3期                                                      |                                |      |          |
 | [100.相同的树](https://leetcode-cn.com/problems/same-tree/)  | 树、深度优先搜索               | Easy | 完成     |
 | [101.对称二叉树](https://leetcode-cn.com/problems/symmetric-tree) | 树、深度优先搜索、广度优先搜索 | Easy | 完成     |
 | [104.二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree) | 树、深度优先搜索               | Easy | 完成     |
@@ -42,7 +42,7 @@
 | [112.路径总和](https://leetcode-cn.com/problems/path-sum)    | 树、深度优先搜索               | Easy | 完成     |
 | [118.杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) | 数组                           | Easy | 完成     |
 | [119.杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组                           | Easy | 完成     |
-| 第四期                                                       |                                |      |          |
+| 第4期                                                      |                                |      |          |
 | [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | 数组、动态规划                 | Easy | 完成     |
 | [122.买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) | 贪心算法、数组                 | Easy | 完成     |
 | [125.验证回文串](https://leetcode-cn.com/problems/valid-palindrome) | 双指针、字符串                 | Easy | 完成     |
@@ -53,7 +53,7 @@
 | [167.两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted) | 数组、双指针、二分查找         | Easy | 完成     |
 | [168.Excel表列名称](https://leetcode-cn.com/problems/excel-sheet-column-title) | 数学                           | Easy | 完成     |
 | [169.多数元素](https://leetcode-cn.com/problems/majority-element) | 位运算、数组、分治算法         | Easy | 完成     |
-| 第五期                                                       |                                |      |          |
+| 第5期                                                      |                                |      |          |
 | [171.Excel表列序号](https://leetcode-cn.com/problems/excel-sheet-column-number) | 数学                           | Easy | 完成     |
 | [172.阶乘后的零](https://leetcode-cn.com/problems/factorial-trailing-zeroes) | 数学                           | Easy | 完成     |
 | [175.组合两个表](https://leetcode-cn.com/problems/combine-two-tables) | Mysql                          | Easy | 完成     |
@@ -64,13 +64,18 @@
 | [189.旋转数组](https://leetcode-cn.com/problems/rotate-array) | 数组                           | Easy | 完成     |
 | [190.颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits) | 位运算                         | Easy | 完成     |
 | [191.位1的个数](https://leetcode-cn.com/problems/number-of-1-bits) | 位运算                         | Easy | 完成     |
-| 第六期                                                       |                                |      |          |
-| [193. 有效电话号码](https://leetcode-cn.com/problems/valid-phone-numbers/) | Bash                           | Easy | 完成     |
-| [195. 第十行](https://leetcode-cn.com/problems/tenth-line/)  | Bash                           | Easy | 完成     |
-| [196. 删除重复的电子邮箱](https://leetcode-cn.com/problems/delete-duplicate-emails/) | Mysql                          | Easy | 完成     |
+| 第6期                                                      |                                |      |          |
+| [193.有效电话号码](https://leetcode-cn.com/problems/valid-phone-numbers/) | Bash                           | Easy | 完成     |
+| [195.第十行](https://leetcode-cn.com/problems/tenth-line/)  | Bash                           | Easy | 完成     |
+| [196.删除重复的电子邮箱](https://leetcode-cn.com/problems/delete-duplicate-emails/) | Mysql                          | Easy | 完成     |
 | [197.上升的温度](https://leetcode-cn.com/problems/rising-temperature/) | Mysql                          | Easy | 完成     |
 | [198.打家劫舍](https://leetcode-cn.com/problems/house-robber) | 动态规划                       | Easy | 完成     |
 | [202.快乐数](https://leetcode-cn.com/problems/happy-number/) | 哈希表、数学                   | Easy | 完成     |
 | [203.移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/) | 链表                           | Easy | 完成     |
-| [204. 计数质数](https://leetcode-cn.com/problems/count-primes/) | 哈希表、数学                   | Easy | 完成     |
+| [204.计数质数](https://leetcode-cn.com/problems/count-primes/) | 哈希表、数学                   | Easy | 完成     |
+| [205.同构字符串](https://leetcode-cn.com/problems/isomorphic-strings/) | 哈希表                         | Easy    | 完成   |
+| [206.反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 链表 | Easy | 完成 |
+| 第7期 |  |  |  |
+| [217.存在重复元素](https://leetcode-cn.com/problems/contains-duplicate/) | 数组、哈希表 | Easy | 完成 |
+| [219.存在重复元素 II](https://leetcode-cn.com/problems/contains-duplicate-ii/) |  |  |  |
 

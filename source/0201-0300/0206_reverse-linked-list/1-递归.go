@@ -39,13 +39,12 @@ type ListNode struct {
 }
 
 func reverseList(head *ListNode) *ListNode {
-	var result *ListNode
-	var temp *ListNode
-	for head != nil {
-		temp = head.Next
-		head.Next = result
-		result = head
-		head = temp
+	if head == nil || head.Next == nil {
+		return head
 	}
+
+	result := reverseList(head.Next)
+	head.Next.Next = head
+	head.Next = nil
 	return result
 }
