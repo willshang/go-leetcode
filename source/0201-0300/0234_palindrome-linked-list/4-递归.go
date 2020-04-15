@@ -30,19 +30,21 @@ type ListNode struct {
 	Next *ListNode
 }
 
+var p *ListNode
+
 func isPalindrome(head *ListNode) bool {
-	m := []int{}
-	for head != nil {
-		m = append(m, head.Val)
-		head = head.Next
+	if head == nil {
+		return true
 	}
-	i, j := 0, len(m)-1
-	for i < j {
-		if m[i] != m[j] {
-			return false
-		}
-		i++
-		j--
+	if p == nil {
+		p = head
 	}
-	return true
+	// 关键在于head因为递归的特性是从后往前比较
+	// p是从前往后比较
+	if isPalindrome(head.Next) && (p.Val == head.Val) {
+		p = p.Next
+		return true
+	}
+	p = nil
+	return false
 }

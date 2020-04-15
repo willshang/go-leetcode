@@ -77,5 +77,16 @@
 | [206.反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 链表 | Easy | 完成 |
 | 第7期 |  |  |  |
 | [217.存在重复元素](https://leetcode-cn.com/problems/contains-duplicate/) | 数组、哈希表 | Easy | 完成 |
-| [219.存在重复元素 II](https://leetcode-cn.com/problems/contains-duplicate-ii/) |  |  |  |
+| [219.存在重复元素 II](https://leetcode-cn.com/problems/contains-duplicate-ii/) | 数组、哈希表 | Easy | 完成 |
+| [225.用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/) | 栈、设计 | Easy | 完成 |
+| [226.翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/) | 树 | Easy | 完成 |
+| [231.2的幂](https://leetcode-cn.com/problems/power-of-two/) | 位运算、数学 | Easy | 完成 |
+| [232.用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) | 栈、设计 | Easy | 完成 |
+| [234.回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/) | 链表、双指针 | Easy | 完成 |
+| [235.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | 树 | Easy | 完成 |
+| [237.删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/) | 链表 | Easy | 完成 |
+| [242.有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/) | 排序、哈希 | Easy | 完成 |
+| 第8期 |  |  |  |
+| [257.二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) | 树、深度优先搜索 | Easy | 完成 |
+|  |  |  |  |
 

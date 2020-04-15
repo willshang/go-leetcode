@@ -21,6 +21,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode226_翻转二叉树
 func invertTree(root *TreeNode) *TreeNode {
 	if root == nil || (root.Left == nil && root.Right == nil) {
 		return root

@@ -6,15 +6,17 @@ func main() {
 	fmt.Println(isPowerOfTwo(218))
 	fmt.Println(isPowerOfTwo(1024))
 }
+
+// leetcode231_2的幂
 func isPowerOfTwo(n int) bool {
 	if n < 1 {
 		return false
 	}
-	for n > 1 {
-		if n%2 == 1 {
-			return false
-		}
-		n = n / 2
+	if n == 1 {
+		return true
 	}
-	return true
+	if n%2 != 0 {
+		return false
+	}
+	return isPowerOfTwo(n / 2)
 }

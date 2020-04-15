@@ -8,6 +8,7 @@ func main() {
 	fmt.Println(containsNearbyDuplicate(nums, k))
 }
 
+// leetcode219_存在重复元素 II
 func containsNearbyDuplicate(nums []int, k int) bool {
 	m := make(map[int]int)
 
