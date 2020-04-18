@@ -7,6 +7,7 @@ func main() {
 	moveZeroes(nums)
 	fmt.Println(nums)
 }
+
 func moveZeroes(nums []int) {
 	length := 0
 	for i := 0; i < len(nums); i++ {

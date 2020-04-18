@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	fmt.Println(isPowerOfThree(27))
@@ -12,8 +14,11 @@ func isPowerOfThree(n int) bool {
 	if n <= 0 {
 		return false
 	}
-	for n%3 == 0 {
-		n = n / 3
+	if n == 1 {
+		return true
 	}
-	return n == 1
+	if n%3 != 0 {
+		return false
+	}
+	return isPowerOfThree(n / 3)
 }

@@ -7,5 +7,7 @@
     - [0201-0300](docs/source/0201-0300.md)
     - [mysql](docs/source/mysql.md)
     - [bash](docs/source/bash.md)
+* 分类
+    - [初级算法](docs/source/junior.md)
 * 书籍
     - [剑指offer](docs/source/offer.md)

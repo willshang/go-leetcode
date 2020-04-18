@@ -19,7 +19,7 @@
 | [21.合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists) | 链表                           | Easy | 完成     |
 | [26.删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) | 数组、双指针                   | Easy | 完成     |
 | [27.移除元素](https://leetcode-cn.com/problems/remove-element) | 数组、双指针                   | Easy | 完成     |
-| [28.实现 strStr()](https://leetcode-cn.com/problems/implement-strstr) | 双指针、字符串                 | Easy | 完成     |
+| [28.实现strStr()](https://leetcode-cn.com/problems/implement-strstr) | 双指针、字符串                 | Easy | 完成     |
 | 第2期                                                      |                                |      |          |
 | [35.搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) | 数组、二分查找                 | Easy | 完成     |
 | [38.报数](https://leetcode-cn.com/problems/count-and-say)    | 字符串                         | Easy | 完成     |
@@ -88,5 +88,21 @@
 | [242.有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/) | 排序、哈希 | Easy | 完成 |
 | 第8期 |  |  |  |
 | [257.二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) | 树、深度优先搜索 | Easy | 完成 |
+| [258.各位相加](https://leetcode-cn.com/problems/add-digits/) | 数学 | Easy | 完成 |
+| [263.丑数](https://leetcode-cn.com/problems/ugly-number/) | 数学 | Easy | 完成 |
+| [268.缺失数字](https://leetcode-cn.com/problems/missing-number/) | 位运算、数组、数学 | Easy | 完成 |
+| [278.第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/) | 二分查找 | Easy | 完成 |
+| [283.移动零](https://leetcode-cn.com/problems/move-zeroes/) | 数组、双指针 | Easy | 完成 |
+| [290.单词规律](https://leetcode-cn.com/problems/word-pattern/) | 哈希表 | Easy | 完成 |
+| [292.Nim 游戏](https://leetcode-cn.com/problems/nim-game/) | 脑筋急转弯、极小化极大 | Easy | 完成 |
+| [299.猜数字游戏](https://leetcode-cn.com/problems/bulls-and-cows/) | 哈希表 | Easy | 完成 |
+| [303.区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划 | Easy | 完成 |
+| 第9期 |  |  |  |
+| [326.3的幂](https://leetcode-cn.com/problems/power-of-three/) | 数学 | Easy | 完成 |
+| [342.4的幂](https://leetcode-cn.com/problems/power-of-four/) | 位运算 | Easy | 完成 |
+| [344.反转字符串](https://leetcode-cn.com/problems/reverse-string/) | 双指针、字符串 | Easy | 完成 |
+| [345.反转字符串中的元音字母](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/) | 双指针、字符串 | Easy | 完成 |
+| [349.两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/) | 排序、哈希表、双指针、二分查找 | Easy | 完成 |
+| [350.两个数组的交集 II](https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/) | 排序、哈希表、双指针、二分查找 | Easy | 完成 |
 |  |  |  |  |
 

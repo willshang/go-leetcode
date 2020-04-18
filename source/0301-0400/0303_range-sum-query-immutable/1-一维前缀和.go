@@ -15,6 +15,7 @@ func main() {
 	fmt.Println(obj.SumRange(0, 0))
 }
 
+// leetcode303_区域和检索-数组不可变
 type NumArray struct {
 	arr []int
 }
@@ -28,6 +29,6 @@ func Constructor(nums []int) NumArray {
 	return NumArray{arr: arr}
 }
 
-func (this *NumArray) SumRange(i int, j int) int {
-	return this.arr[j+1] - this.arr[i]
+func (n *NumArray) SumRange(i int, j int) int {
+	return n.arr[j+1] - n.arr[i]
 }

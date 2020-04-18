@@ -8,6 +8,7 @@ func main() {
 	fmt.Println(isUgly(9))
 	fmt.Println(isUgly(11))
 }
+
 func isUgly(num int) bool {
 	if num <= 0 {
 		return false
