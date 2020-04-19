@@ -6,6 +6,8 @@ func main() {
 	fmt.Println(canConstruct("aa", "aab"))
 	fmt.Println(canConstruct("aaa", "aab"))
 }
+
+// leetcode383_赎金信
 func canConstruct(ransomNote string, magazine string) bool {
 	index := [26]int{}
 	for i := 0; i < len(magazine); i++ {

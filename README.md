@@ -98,11 +98,19 @@
 | [299.猜数字游戏](https://leetcode-cn.com/problems/bulls-and-cows/) | 哈希表 | Easy | 完成 |
 | [303.区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划 | Easy | 完成 |
 | 第9期 |  |  |  |
-| [326.3的幂](https://leetcode-cn.com/problems/power-of-three/) | 数学 | Easy | 完成 |
+| [326. 3的幂](https://leetcode-cn.com/problems/power-of-three/) | 数学                           | Easy | 完成     |
 | [342.4的幂](https://leetcode-cn.com/problems/power-of-four/) | 位运算 | Easy | 完成 |
 | [344.反转字符串](https://leetcode-cn.com/problems/reverse-string/) | 双指针、字符串 | Easy | 完成 |
 | [345.反转字符串中的元音字母](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/) | 双指针、字符串 | Easy | 完成 |
 | [349.两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/) | 排序、哈希表、双指针、二分查找 | Easy | 完成 |
 | [350.两个数组的交集 II](https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/) | 排序、哈希表、双指针、二分查找 | Easy | 完成 |
+| [367.有效的完全平方数](https://leetcode-cn.com/problems/valid-perfect-square/) | 数学、二分查找 | Easy | 完成 |
+| [371.两整数之和](https://leetcode-cn.com/problems/sum-of-two-integers/) | 位运算 | Easy | 完成 |
+| [374.猜数字大小](https://leetcode-cn.com/problems/guess-number-higher-or-lower/) | 二分查找 | Easy | 完成 |
+| [383.赎金信](https://leetcode-cn.com/problems/ransom-note/) | 字符串 | Easy | 完成 |
+| 第10期 |  |  |  |
+| [387.字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/) | 哈希表、字符串 | Easy | 完成 |
+| [389.找不同](https://leetcode-cn.com/problems/find-the-difference/) | 位运算、哈希表 | Easy | 完成 |
+| [392.判断子序列](https://leetcode-cn.com/problems/is-subsequence/) | 贪心算法、二分查找、动态规划 | Easy | 完成 |
 |  |  |  |  |
 
