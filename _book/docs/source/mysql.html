@@ -60,7 +60,7 @@
     <link rel="next" href="bash.html" />
     
     
-    <link rel="prev" href="0201-0300.html" />
+    <link rel="prev" href="0301-0400.html" />
     
 
     </head>
@@ -155,7 +155,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4" data-path="mysql.html">
+        <li class="chapter " data-level="1.2.4" data-path="0301-0400.html">
+            
+                <a href="0301-0400.html">
+            
+                    
+                    0301-0400
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="mysql.html">
             
                 <a href="mysql.html">
             
@@ -168,7 +181,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="bash.html">
+        <li class="chapter " data-level="1.2.6" data-path="bash.html">
             
                 <a href="bash.html">
             
@@ -191,6 +204,38 @@
                 <span>
             
                     
+                    分类
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="junior.html">
+            
+                <a href="junior.html">
+            
+                    
+                    初级算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
                     书籍
             
                 </span>
@@ -200,7 +245,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="offer.html">
+        <li class="chapter " data-level="1.4.1" data-path="offer.html">
             
                 <a href="offer.html">
             
@@ -632,6 +677,143 @@ Orders &#x8868;&#xFF1A;
     <span class="hljs-keyword">where</span> o.customerid=c.<span class="hljs-keyword">id</span>
 )
 </code></pre>
+<h2 id="193&#x5220;&#x9664;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;2">193.&#x5220;&#x9664;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x6765;&#x5220;&#x9664; Person &#x8868;&#x4E2D;&#x6240;&#x6709;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#xFF0C;&#x91CD;&#x590D;&#x7684;&#x90AE;&#x7BB1;&#x91CC;&#x53EA;&#x4FDD;&#x7559; Id &#x6700;&#x5C0F; &#x7684;&#x90A3;&#x4E2A;&#x3002;
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
+| 3  | john@example.com |
++----+------------------+
+Id &#x662F;&#x8FD9;&#x4E2A;&#x8868;&#x7684;&#x4E3B;&#x952E;&#x3002;
+&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4E4B;&#x540E;&#xFF0C;&#x4E0A;&#x9762;&#x7684; Person &#x8868;&#x5E94;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x51E0;&#x884C;:
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
++----+------------------+
+&#x63D0;&#x793A;&#xFF1A;
+    &#x6267;&#x884C; SQL &#x4E4B;&#x540E;&#xFF0C;&#x8F93;&#x51FA;&#x662F;&#x6574;&#x4E2A; Person &#x8868;&#x3002;
+    &#x4F7F;&#x7528; delete &#x8BED;&#x53E5;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x4F7F;&#x7528;delete+&#x81EA;&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x4F7F;&#x7528;delete&#xFF0C;&#x6839;&#x636E;group by&#x548C;min()&#x67E5;&#x8BE2;&#x51FA;&#x6700;&#x5C0F;&#x7684;id</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"># 
+<span class="hljs-keyword">delete</span> p1 <span class="hljs-keyword">from</span> Person p1, Person P2 
+<span class="hljs-keyword">where</span> p1.Email = p2.Email <span class="hljs-keyword">and</span> p1.<span class="hljs-keyword">Id</span> &gt; p2.<span class="hljs-keyword">Id</span>
+
+#
+<span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> Person
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (
+    <span class="hljs-keyword">select</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">from</span> (
+        <span class="hljs-keyword">select</span> <span class="hljs-keyword">min</span>(<span class="hljs-keyword">id</span>) <span class="hljs-keyword">as</span> <span class="hljs-keyword">id</span>
+        <span class="hljs-keyword">from</span> Person
+        <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Email
+    ) <span class="hljs-keyword">as</span> temp_table
+)
+</code></pre>
+<h2 id="197&#x4E0A;&#x5347;&#x7684;&#x6E29;&#x5EA6;4">197.&#x4E0A;&#x5347;&#x7684;&#x6E29;&#x5EA6;(4)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Weather (Id int, RecordDate date, Temperature int)
+Truncate table Weather
+insert into Weather (Id, RecordDate, Temperature) values (&apos;1&apos;, &apos;2015-01-01&apos;, &apos;10&apos;)
+insert into Weather (Id, RecordDate, Temperature) values (&apos;2&apos;, &apos;2015-01-02&apos;, &apos;25&apos;)
+insert into Weather (Id, RecordDate, Temperature) values (&apos;3&apos;, &apos;2015-01-03&apos;, &apos;20&apos;)
+insert into Weather (Id, RecordDate, Temperature) values (&apos;4&apos;, &apos;2015-01-04&apos;, &apos;30&apos;)
+
+&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A; Weather &#x8868;&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x6765;&#x67E5;&#x627E;&#x4E0E;&#x4E4B;&#x524D;&#xFF08;&#x6628;&#x5929;&#x7684;&#xFF09;&#x65E5;&#x671F;&#x76F8;&#x6BD4;&#x6E29;&#x5EA6;&#x66F4;&#x9AD8;&#x7684;&#x6240;&#x6709;&#x65E5;&#x671F;&#x7684; Id&#x3002;
++---------+------------------+------------------+
+| Id(INT) | RecordDate(DATE) | Temperature(INT) |
++---------+------------------+------------------+
+|       1 |       2015-01-01 |               10 |
+|       2 |       2015-01-02 |               25 |
+|       3 |       2015-01-03 |               20 |
+|       4 |       2015-01-04 |               30 |
++---------+------------------+------------------+
+
+&#x4F8B;&#x5982;&#xFF0C;&#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x7ED9;&#x5B9A;&#x7684; Weather &#x8868;&#x683C;&#xFF0C;&#x8FD4;&#x56DE;&#x5982;&#x4E0B; Id:
++----+
+| Id |
++----+
+|  2 |
+|  4 |
++----+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x81EA;&#x8FDE;&#x63A5;&#x548C;datediff()&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x81EA;&#x8FDE;&#x63A5;&#x548C;adddate()&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x81EA;&#x8FDE;&#x63A5;&#x548C;unix_timestamp()&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>04</td>
+<td>&#x81EA;&#x8FDE;&#x63A5;&#x548C;subdate()&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql">#
+<span class="hljs-keyword">select</span> A.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;Id&quot;</span>
+<span class="hljs-keyword">from</span> Weather A <span class="hljs-keyword">join</span> Weather B
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">datediff</span>(A.RecordDate, B.RecordDate) = <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> A.Temperature &gt; B.Temperature
+
+#
+<span class="hljs-keyword">select</span> A.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;Id&quot;</span>
+<span class="hljs-keyword">from</span> Weather A <span class="hljs-keyword">join</span> Weather B
+<span class="hljs-keyword">on</span> A.Temperature &gt; B.Temperature <span class="hljs-keyword">and</span> A.RecordDate = adddate(B.RecordDate, <span class="hljs-number">1</span>) 
+
+#
+<span class="hljs-keyword">select</span> A.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;Id&quot;</span>
+<span class="hljs-keyword">from</span> Weather A <span class="hljs-keyword">join</span> Weather B
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">unix_timestamp</span>(A.RecordDate) = <span class="hljs-keyword">unix_timestamp</span>(B.RecordDate) + <span class="hljs-number">86400</span>
+<span class="hljs-keyword">and</span> A.Temperature &gt; B.Temperature
+
+#
+<span class="hljs-keyword">select</span> A.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;Id&quot;</span>
+<span class="hljs-keyword">from</span> Weather A <span class="hljs-keyword">join</span> Weather B
+<span class="hljs-keyword">on</span> A.Temperature &gt; B.Temperature <span class="hljs-keyword">and</span> B.RecordDate = <span class="hljs-keyword">subdate</span>(A.RecordDate, <span class="hljs-number">1</span>)
+</code></pre>
 
                                 
                                 </section>
@@ -659,7 +841,7 @@ Orders &#x8868;&#xFF1A;
 
             
                 
-                <a href="0201-0300.html" class="navigation navigation-prev " aria-label="Previous page: 0201-0300">
+                <a href="0301-0400.html" class="navigation navigation-prev " aria-label="Previous page: 0301-0400">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -675,7 +857,7 @@ Orders &#x8868;&#xFF1A;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mysql","level":"1.2.4","depth":2,"next":{"title":"bash","level":"1.2.5","depth":2,"path":"docs/source/bash.md","ref":"docs/source/bash.md","articles":[]},"previous":{"title":"0201-0300","level":"1.2.3","depth":2,"path":"docs/source/0201-0300.md","ref":"docs/source/0201-0300.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/mysql.md","mtime":"2020-04-09T00:12:04.648Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-09T00:07:43.512Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"mysql","level":"1.2.5","depth":2,"next":{"title":"bash","level":"1.2.6","depth":2,"path":"docs/source/bash.md","ref":"docs/source/bash.md","articles":[]},"previous":{"title":"0301-0400","level":"1.2.4","depth":2,"path":"docs/source/0301-0400.md","ref":"docs/source/0301-0400.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/mysql.md","mtime":"2020-04-20T01:20:54.914Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-20T01:21:03.905Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
