@@ -115,5 +115,12 @@
 | [401.二进制手表](https://leetcode-cn.com/problems/binary-watch/) | 位运算、回溯算法 | Easy | 完成 |
 | [404.左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) | 树 | Easy | 完成 |
 | [405.数字转换为十六进制数](https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal/) | 位运算 | Easy | 完成 |
+| [409.最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) | 哈希表 | Easy | 完成 |
+| [412.Fizz Buzz](https://leetcode-cn.com/problems/fizz-buzz/) |  | Easy | 完成 |
+| [414.第三大的数](https://leetcode-cn.com/problems/third-maximum-number/) | 数组 | Easy | 完成 |
+| [415.字符串相加](https://leetcode-cn.com/problems/add-strings/) | 字符串 | Easy | 完成 |
+| 第11期 |  |  |  |
+| [434.字符串中的单词数](https://leetcode-cn.com/problems/number-of-segments-in-a-string/) | 字符串 | Easy | 完成 |
+| [437.路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/) | 树 | Easy | 完成 |
 |  |  |  |  |
 

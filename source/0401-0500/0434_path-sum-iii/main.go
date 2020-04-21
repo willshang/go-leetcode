@@ -29,21 +29,18 @@ func pathSum(root *TreeNode, sum int) int {
 	}
 	cnt := 0
 	var dfs func(*TreeNode, int)
-
 	dfs = func(node *TreeNode, sum int) {
 		if node == nil {
 			return
 		}
-
 		sum = sum - node.Val
+		// 路径不需要从根节点开始，也不需要在叶子节点结束
 		if sum == 0 {
 			cnt++
 		}
 		dfs(node.Left, sum)
 		dfs(node.Right, sum)
 	}
-
 	dfs(root, sum)
-
 	return cnt + pathSum(root.Left, sum) + pathSum(root.Right, sum)
 }

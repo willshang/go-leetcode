@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	fmt.Println(longestPalindrome("abcccdd"))
 }
+
 func longestPalindrome(s string) int {
 	ret := 0
 	a := [123]int{}
@@ -13,11 +14,7 @@ func longestPalindrome(s string) int {
 	}
 	hasOdd := 0
 	for i := range a {
-		if a[i] == 0 {
-			continue
-		}
-
-		if a[i]&1 == 0 {
+		if a[i]%2 == 0 {
 			ret += a[i]
 		} else {
 			ret += a[i] - 1

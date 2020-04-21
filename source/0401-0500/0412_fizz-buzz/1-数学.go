@@ -8,6 +8,8 @@ import (
 func main() {
 	fmt.Println(fizzBuzz(15))
 }
+
+// leetcode412_FizzBuzz
 func fizzBuzz(n int) []string {
 	ret := make([]string, n)
 	for i := range ret {

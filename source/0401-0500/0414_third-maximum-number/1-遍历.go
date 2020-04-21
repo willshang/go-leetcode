@@ -9,6 +9,8 @@ func main() {
 	nums := []int{2, 2, 3, 1, 1}
 	fmt.Println(thirdMax(nums))
 }
+
+// leetcode414_第三大的数
 func thirdMax(nums []int) int {
 	max1, max2, max3 := math.MinInt64, math.MinInt64, math.MinInt64
 	for _, n := range nums {
