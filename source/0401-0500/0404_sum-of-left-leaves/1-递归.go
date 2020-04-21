@@ -17,6 +17,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode404_左叶子之和
 func sumOfLeftLeaves(root *TreeNode) int {
 	if root == nil {
 		return 0

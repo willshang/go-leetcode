@@ -112,5 +112,8 @@
 | [387.字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/) | 哈希表、字符串 | Easy | 完成 |
 | [389.找不同](https://leetcode-cn.com/problems/find-the-difference/) | 位运算、哈希表 | Easy | 完成 |
 | [392.判断子序列](https://leetcode-cn.com/problems/is-subsequence/) | 贪心算法、二分查找、动态规划 | Easy | 完成 |
+| [401.二进制手表](https://leetcode-cn.com/problems/binary-watch/) | 位运算、回溯算法 | Easy | 完成 |
+| [404.左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) | 树 | Easy | 完成 |
+| [405.数字转换为十六进制数](https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal/) | 位运算 | Easy | 完成 |
 |  |  |  |  |
 
