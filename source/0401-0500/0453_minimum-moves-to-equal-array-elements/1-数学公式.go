@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	arr := []int{1, 2, 3, 4, 10}
@@ -16,12 +18,11 @@ x = min + m
 => sum + mn - m = min*n + mn
 => sum - m = min*n
 通过以上两个等式，可得
-
 m = sum - min * n
-
 */
 func minMoves(nums []int) int {
-	sum, min := 0, nums[0]
+	sum := 0
+	min := nums[0]
 	for _, n := range nums {
 		sum += n
 		if min > n {

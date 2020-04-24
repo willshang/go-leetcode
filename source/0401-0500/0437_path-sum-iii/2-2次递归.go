@@ -23,24 +23,21 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+func helper(node *TreeNode, sum int) int {
+	if node == nil {
+		return 0
+	}
+	sum = sum - node.Val
+	res := 0
+	if sum == 0 {
+		res = 1
+	}
+	return res + helper(node.Left, sum) + helper(node.Right, sum)
+}
+
 func pathSum(root *TreeNode, sum int) int {
 	if root == nil {
 		return 0
 	}
-	cnt := 0
-	var dfs func(*TreeNode, int)
-	dfs = func(node *TreeNode, sum int) {
-		if node == nil {
-			return
-		}
-		sum = sum - node.Val
-		// 路径不需要从根节点开始，也不需要在叶子节点结束
-		if sum == 0 {
-			cnt++
-		}
-		dfs(node.Left, sum)
-		dfs(node.Right, sum)
-	}
-	dfs(root, sum)
-	return cnt + pathSum(root.Left, sum) + pathSum(root.Right, sum)
+	return helper(root, sum) + pathSum(root.Left, sum) + pathSum(root.Right, sum)
 }

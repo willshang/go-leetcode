@@ -98,7 +98,7 @@
 | [299.猜数字游戏](https://leetcode-cn.com/problems/bulls-and-cows/) | 哈希表 | Easy | 完成 |
 | [303.区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划 | Easy | 完成 |
 | 第9期 |  |  |  |
-| [326. 3的幂](https://leetcode-cn.com/problems/power-of-three/) | 数学                           | Easy | 完成     |
+| [326.3的幂](https://leetcode-cn.com/problems/power-of-three/) | 数学                           | Easy | 完成     |
 | [342.4的幂](https://leetcode-cn.com/problems/power-of-four/) | 位运算 | Easy | 完成 |
 | [344.反转字符串](https://leetcode-cn.com/problems/reverse-string/) | 双指针、字符串 | Easy | 完成 |
 | [345.反转字符串中的元音字母](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/) | 双指针、字符串 | Easy | 完成 |
@@ -122,5 +122,13 @@
 | 第11期 |  |  |  |
 | [434.字符串中的单词数](https://leetcode-cn.com/problems/number-of-segments-in-a-string/) | 字符串 | Easy | 完成 |
 | [437.路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/) | 树 | Easy | 完成 |
+| [441.排列硬币](https://leetcode-cn.com/problems/arranging-coins/) | 数学、二分查找 | Easy | 完成 |
+| [443.压缩字符串](https://leetcode-cn.com/problems/string-compression/) | 字符串 | Easy | 完成 |
+| [447.回旋镖的数量](https://leetcode-cn.com/problems/number-of-boomerangs/) | 哈希表 | Easy | 完成 |
+| [448.找到所有数组中消失的数字](https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/) | 数组 | Easy | 完成 |
+| [453.最小移动次数使数组元素相等](https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements/) | 数学 | Easy | 完成 |
+| [455.分发饼干](https://leetcode-cn.com/problems/assign-cookies/) | 贪心算法 | Easy | 完成 |
+| [459.重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 字符串 | Easy | 完成 |
+| [461.汉明距离](https://leetcode-cn.com/problems/hamming-distance/) | 位运算 | Easy | 完成 |
+| 第12期 |  |  |  |
 |  |  |  |  |
-

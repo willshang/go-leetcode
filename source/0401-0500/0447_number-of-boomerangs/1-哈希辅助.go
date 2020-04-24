@@ -12,21 +12,20 @@ func main() {
 
 	fmt.Println(numberOfBoomerangs(points))
 }
+
+// leetcode447_回旋镖的数量
 func numberOfBoomerangs(points [][]int) int {
 	res := 0
 	size := len(points)
 	if size < 3 {
 		return 0
 	}
-
 	for i := 0; i < size; i++ {
 		dMap := make(map[int]int, size)
-
 		for j := 0; j < size; j++ {
 			if i == j {
 				continue
 			}
-
 			d := dSquare(points[i], points[j])
 			if _, ok := dMap[d]; ok {
 				dMap[d]++
@@ -34,9 +33,7 @@ func numberOfBoomerangs(points [][]int) int {
 				dMap[d] = 1
 			}
 		}
-
-		// 相同距离的 v 个点
-		// 总共有 v * (v - 1) 种排列
+		// 相同距离的v个点，总共有 v*(v-1)种排列
 		for _, v := range dMap {
 			res = res + v*(v-1)
 		}
