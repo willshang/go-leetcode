@@ -6,6 +6,7 @@ func main() {
 	fmt.Println(convertToBase7(10))
 	fmt.Println(convertToBase7(-7))
 }
+
 func convertToBase7(num int) string {
 	if num == 0 {
 		return "0"

@@ -6,6 +6,8 @@ func main() {
 	fmt.Println(detectCapitalUse("FlaG"))
 	fmt.Println(detectCapitalUse("Flag"))
 }
+
+// leetcode520_检测大写字母
 func detectCapitalUse(word string) bool {
 	if word == "" {
 		return false
@@ -17,7 +19,8 @@ func detectCapitalUse(word string) bool {
 		}
 	}
 
-	if count == len(word) || (count == 1 && word[0] >= 'A' && word[0] <= 'Z') || count == 0 {
+	if count == 0 || count == len(word) ||
+		(count == 1 && word[0] >= 'A' && word[0] <= 'Z') {
 		return true
 	}
 	return false

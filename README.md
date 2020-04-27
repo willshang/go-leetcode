@@ -131,4 +131,23 @@
 | [459.重复的子字符串](https://leetcode-cn.com/problems/repeated-substring-pattern/) | 字符串 | Easy | 完成 |
 | [461.汉明距离](https://leetcode-cn.com/problems/hamming-distance/) | 位运算 | Easy | 完成 |
 | 第12期 |  |  |  |
+| [463.岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/) | 哈希表 | Easy | 完成 |
+| [475.供暖器](https://leetcode-cn.com/problems/heaters/) | 二分查找 | Easy | 完成 |
+| [476.数字的补数](https://leetcode-cn.com/problems/number-complement/) | 位运算 | Easy | 完成 |
+| [482.密钥格式化](https://leetcode-cn.com/problems/license-key-formatting/) |  | Easy | 完成 |
+| [485.最大连续1的个数](https://leetcode-cn.com/problems/max-consecutive-ones/) | 数组 | Easy | 完成 |
+| [492.构造矩形](https://leetcode-cn.com/problems/construct-the-rectangle/) |  | Easy | 完成 |
+| [496.下一个更大元素 I](https://leetcode-cn.com/problems/next-greater-element-i/) | 栈 | Easy | 完成 |
+| [500.键盘行](https://leetcode-cn.com/problems/keyboard-row/) | 哈希表 | Easy | 完成 |
+| [501.二叉搜索树中的众数](https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/) | 树 | Easy | 完成 |
+| [504.七进制数](https://leetcode-cn.com/problems/base-7/) |  | Easy | 完成 |
+| 第13期 |  |  |  |
+| [506.相对名次](https://leetcode-cn.com/problems/relative-ranks/) |  | Easy | 完成 |
+| [507.完美数](https://leetcode-cn.com/problems/perfect-number/) | 数学 | Easy | 完成 |
+| [509.斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) | 数组 | Easy | 完成 |
+| [520.检测大写字母](https://leetcode-cn.com/problems/detect-capital/) | 字符串 | Easy | 完成 |
+| [521.最长特殊序列Ⅰ](https://leetcode-cn.com/problems/longest-uncommon-subsequence-i/) | 字符串 | Easy | 完成 |
+| [530.二叉搜索树的最小绝对差](https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/) | 树 | Easy | 完成 |
+| [532.数组中的K-diff数对](https://leetcode-cn.com/problems/k-diff-pairs-in-an-array/) | 数组、双指针 | Easy | 完成 |
 |  |  |  |  |
+

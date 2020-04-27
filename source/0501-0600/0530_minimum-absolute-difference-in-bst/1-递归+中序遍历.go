@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	root := TreeNode{}
@@ -24,28 +27,26 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-type state struct {
-	minDiff, previous int
-}
+var minDiff, previous int
 
 func getMinimumDifference(root *TreeNode) int {
-	st := state{1024, 1024}
-	search(root, &st)
-	return st.minDiff
+	minDiff, previous = math.MaxInt32, math.MaxInt32
+	dfs(root)
+	return minDiff
 }
 
-func search(root *TreeNode, st *state) {
+func dfs(root *TreeNode) {
 	if root == nil {
 		return
 	}
-	search(root.Left, st)
+	dfs(root.Left)
 
-	newDiff := diff(st.previous, root.Val)
-	if st.minDiff > newDiff {
-		st.minDiff = newDiff
+	newDiff := diff(previous, root.Val)
+	if minDiff > newDiff {
+		minDiff = newDiff
 	}
-	st.previous = root.Val
-	search(root.Right, st)
+	previous = root.Val
+	dfs(root.Right)
 }
 
 func diff(a, b int) int {

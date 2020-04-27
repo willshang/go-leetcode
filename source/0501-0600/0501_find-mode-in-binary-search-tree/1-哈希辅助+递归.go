@@ -25,30 +25,29 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode501_二叉搜索树中的众数
 func findMode(root *TreeNode) []int {
-	r := map[int]int{}
-	search(root, r)
-
+	m := map[int]int{}
+	dfs(root, m)
 	max := -1
-	res := []int{}
-	for n, v := range r {
+	res := make([]int, 0)
+	for i, v := range m {
 		if max <= v {
 			if max < v {
 				max = v
 				res = res[0:0]
 			}
-			res = append(res, n)
+			res = append(res, i)
 		}
 	}
 	return res
 }
 
-func search(root *TreeNode, rec map[int]int) {
+func dfs(root *TreeNode, rec map[int]int) {
 	if root == nil {
 		return
 	}
-
 	rec[root.Val]++
-	search(root.Left, rec)
-	search(root.Right, rec)
+	dfs(root.Left, rec)
+	dfs(root.Right, rec)
 }

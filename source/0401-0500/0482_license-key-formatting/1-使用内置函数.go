@@ -13,19 +13,16 @@ func main() {
 	S = "2-5g-3-J"
 	K = 2
 	fmt.Println(licenseKeyFormatting(S, K))
-
 }
+
 func licenseKeyFormatting(S string, K int) string {
 	arr := strings.Join(strings.Split(strings.ToUpper(S), "-"), "")
-
 	count := len(arr) / K
 	first := len(arr) % K
 	if first > 0 {
 		count++
 	}
-
 	str := arr[:first]
-
 	if first != 0 {
 		count = count - 1
 	}

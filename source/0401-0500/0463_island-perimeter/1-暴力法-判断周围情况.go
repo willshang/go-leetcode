@@ -12,10 +12,9 @@ func main() {
 	fmt.Println(islandPerimeter(nums))
 }
 
-var dx = []int{-1, 1, 0, 0}
-var dy = []int{0, 0, -1, 1}
-
 func islandPerimeter(grid [][]int) int {
+	var dx = []int{-1, 1, 0, 0}
+	var dy = []int{0, 0, -1, 1}
 	m, n := len(grid), len(grid[0])
 	res := 0
 	for i := 0; i < m; i++ {

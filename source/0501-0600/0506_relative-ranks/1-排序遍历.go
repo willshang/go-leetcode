@@ -12,6 +12,8 @@ func main() {
 	fmt.Println(findRelativeRanks(nums))
 	fmt.Println(findRelativeRanks([]int{5, 4, 3, 2, 1}))
 }
+
+// leetcode506_相对名次
 func findRelativeRanks(nums []int) []string {
 	temp := make([]int, len(nums))
 	copy(temp, nums)
@@ -28,10 +30,9 @@ func findRelativeRanks(nums []int) []string {
 			m[temp[i]] = strconv.Itoa(len(temp) - i)
 		}
 	}
-	res := []string{}
+	res := make([]string, 0)
 	for i := 0; i < len(nums); i++ {
 		res = append(res, m[nums[i]])
 	}
-
 	return res
 }
