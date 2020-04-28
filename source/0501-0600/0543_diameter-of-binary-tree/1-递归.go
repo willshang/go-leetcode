@@ -24,21 +24,24 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode543_二叉树的直径
+var res int
+
 func diameterOfBinaryTree(root *TreeNode) int {
-	_, res := helper(root)
+	res = 0
+	dfs(root)
 	return res
 }
 
-func helper(root *TreeNode) (length, diameter int) {
+func dfs(root *TreeNode) int {
 	if root == nil {
-		return
+		return 0
 	}
-	leftLen, leftDia := helper(root.Left)
-	rightLen, rightDia := helper(root.Right)
-
-	length = max(leftLen, rightLen) + 1
-	diameter = max(leftLen+rightLen+1, max(leftDia, rightDia))
-	return
+	left := dfs(root.Left)
+	right := dfs(root.Right)
+	path := max(left, right)
+	res = max(left+right, res) // 当前节点最大直径与当前保存最大值比较
+	return path + 1            // 以该节点为根的最大深度
 }
 
 func max(a, b int) int {

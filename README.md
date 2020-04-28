@@ -149,5 +149,11 @@
 | [521.最长特殊序列Ⅰ](https://leetcode-cn.com/problems/longest-uncommon-subsequence-i/) | 字符串 | Easy | 完成 |
 | [530.二叉搜索树的最小绝对差](https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/) | 树 | Easy | 完成 |
 | [532.数组中的K-diff数对](https://leetcode-cn.com/problems/k-diff-pairs-in-an-array/) | 数组、双指针 | Easy | 完成 |
+| [538.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) | 树 | Easy | 完成 |
+| [541.反转字符串 II](https://leetcode-cn.com/problems/reverse-string-ii/) | 字符串 | Easy | 完成 |
+| [543.二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 树 | Easy | 完成 |
+| 第14期 |  |  |  |
+| [551.学生出勤记录 I](https://leetcode-cn.com/problems/student-attendance-record-i/) | 字符串 | Easy | 完成 |
+| [557.反转字符串中的单词 III](https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/) | 字符串 | Easy | 完成 |
 |  |  |  |  |
 

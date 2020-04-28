@@ -24,18 +24,19 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode538_把二叉搜索树转换为累加树
 func convertBST(root *TreeNode) *TreeNode {
 	sum := 0
-	travel(root, &sum)
+	dfs(root, &sum)
 	return root
 }
 
-func travel(root *TreeNode, sum *int) {
+func dfs(root *TreeNode, sum *int) {
 	if root == nil {
 		return
 	}
-	travel(root.Right, sum)
+	dfs(root.Right, sum)
 	*sum = *sum + root.Val
 	root.Val = *sum
-	travel(root.Left, sum)
+	dfs(root.Left, sum)
 }

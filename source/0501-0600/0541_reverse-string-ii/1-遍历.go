@@ -5,20 +5,21 @@ import "fmt"
 func main() {
 	fmt.Println(reverseStr("abcdefg", 2))
 }
-func reverseStr(s string, k int) string {
-	bytes := []byte(s)
 
+// leetcode541_反转字符串II
+func reverseStr(s string, k int) string {
+	arr := []byte(s)
 	for i := 0; i < len(s); i = i + 2*k {
 		j := min(i+k, len(s))
-		reverse(bytes[i:j])
+		reverse(arr[i:j])
 	}
-	return string(bytes)
+	return string(arr)
 }
 
-func reverse(bytes []byte) {
-	i, j := 0, len(bytes)-1
+func reverse(arr []byte) {
+	i, j := 0, len(arr)-1
 	for i < j {
-		bytes[i], bytes[j] = bytes[j], bytes[i]
+		arr[i], arr[j] = arr[j], arr[i]
 		i++
 		j--
 	}
