@@ -18,25 +18,28 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode563_二叉树的坡度
+var total int
+
 func findTilt(root *TreeNode) int {
-	var total int
-	helper(root, &total)
+	total = 0
+	dfs(root)
 	return total
 }
 
-func helper(root *TreeNode, total *int) int {
+func dfs(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
+	left := dfs(root.Left)
+	right := dfs(root.Right)
+	total = total + abs(left, right)
+	return left + right + root.Val // 返回节点之和
+}
 
-	l := helper(root.Left, total)
-	r := helper(root.Right, total)
-
-	if l > r {
-		*total = *total + l - r
-	} else {
-		*total = *total + r - l
+func abs(a, b int) int {
+	if a > b {
+		return a - b
 	}
-
-	return l + r + root.Val
+	return b - a
 }

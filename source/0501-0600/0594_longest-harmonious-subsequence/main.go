@@ -6,6 +6,7 @@ func main() {
 	arr := []int{1, 3, 2, 2, 5, 2, 3, 7}
 	fmt.Println(findLHS(arr))
 }
+
 func findLHS(nums []int) int {
 	r := make(map[int]int, len(nums))
 	for _, n := range nums {

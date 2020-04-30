@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	first := TreeNode{Val: 1}
@@ -24,27 +27,16 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode572_另一个树的子树
 func isSubtree(s *TreeNode, t *TreeNode) bool {
-	if isSame(s, t) {
-		return true
-	}
-
-	if s == nil {
-		return false
-	}
-	return isSubtree(s.Left, t) || isSubtree(s.Right, t)
+	sStr := dfs(s, "")
+	tStr := dfs(t, "")
+	return strings.Contains(sStr, tStr)
 }
 
-func isSame(s *TreeNode, t *TreeNode) bool {
+func dfs(s *TreeNode, pre string) string {
 	if s == nil {
-		return t == nil
+		return pre
 	}
-	if t == nil {
-		return false
-	}
-	if s.Val != t.Val {
-		return false
-	}
-
-	return isSame(s.Left, t.Left) && isSame(s.Right, t.Right)
+	return fmt.Sprintf("#%d%s%s", s.Val, dfs(s.Left, "l"), dfs(s.Right, "r"))
 }

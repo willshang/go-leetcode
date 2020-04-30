@@ -155,5 +155,17 @@
 | 第14期 |  |  |  |
 | [551.学生出勤记录 I](https://leetcode-cn.com/problems/student-attendance-record-i/) | 字符串 | Easy | 完成 |
 | [557.反转字符串中的单词 III](https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/) | 字符串 | Easy | 完成 |
-|  |  |  |  |
+| [559.N叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/) | 树、深度优先搜索、广度优先搜索 | Easy | 完成 |
+| [561.数组拆分 I](https://leetcode-cn.com/problems/array-partition-i/) | 数组 | Easy | 完成 |
+| [563.二叉树的坡度](https://leetcode-cn.com/problems/binary-tree-tilt/) | 树 | Easy | 完成 |
+| [566.重塑矩阵](https://leetcode-cn.com/problems/reshape-the-matrix/) | 数组 | Easy | 完成 |
+| [572.另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/) | 树 | Easy | 完成 |
+| [575.分糖果](https://leetcode-cn.com/problems/distribute-candies/) | 哈希表 | Easy | 完成 |
+| [581.最短无序连续子数组](https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/) | 数组 | Easy | 完成 |
+| [589.N叉树的前序遍历](https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/) | 树 | Easy | 完成 |
+| 第15期 |  |  |  |
+| [590.N叉树的后序遍历](https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/) | 树 | Easy | 完成 |
+| [594.最长和谐子序列](https://leetcode-cn.com/problems/longest-harmonious-subsequence/) | 哈希表 | Easy | 完成 |
+| [595.大的国家](https://leetcode-cn.com/problems/big-countries/) | Mysql | Easy | 完成 |
+| [596.超过5名学生的课](https://leetcode-cn.com/problems/classes-more-than-5-students/) | Mysql | Easy | 完成 |
 

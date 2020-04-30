@@ -424,3 +424,124 @@ from Weather A join Weather B
 on A.Temperature > B.Temperature and B.RecordDate = subdate(A.RecordDate, 1)
 ```
 
+## 595.大的国(2)
+
+- 题目
+
+```
+Create table If Not Exists World (name varchar(255), continent varchar(255), area int, population int, gdp int)
+Truncate table World
+insert into World (name, continent, area, population, gdp) values ('Afghanistan', 'Asia', '652230', '25500100', '20343000000')
+insert into World (name, continent, area, population, gdp) values ('Albania', 'Europe', '28748', '2831741', '12960000000')
+insert into World (name, continent, area, population, gdp) values ('Algeria', 'Africa', '2381741', '37100000', '188681000000')
+insert into World (name, continent, area, population, gdp) values ('Andorra', 'Europe', '468', '78115', '3712000000')
+insert into World (name, continent, area, population, gdp) values ('Angola', 'Africa', '1246700', '20609294', '100990000000')
+
+这里有张 World 表
+
++-----------------+------------+------------+--------------+---------------+
+| name            | continent  | area       | population   | gdp           |
++-----------------+------------+------------+--------------+---------------+
+| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |
+| Albania         | Europe     | 28748      | 2831741      | 12960000      |
+| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |
+| Andorra         | Europe     | 468        | 78115        | 3712000       |
+| Angola          | Africa     | 1246700    | 20609294     | 100990000     |
++-----------------+------------+------------+--------------+---------------+
+
+如果一个国家的面积超过300万平方公里，或者人口超过2500万，那么这个国家就是大国家。
+编写一个SQL查询，输出表中所有大国家的名称、人口和面积。
+例如，根据上表，我们应该输出:
++--------------+-------------+--------------+
+| name         | population  | area         |
++--------------+-------------+--------------+
+| Afghanistan  | 25500100    | 652230       |
+| Algeria      | 37100000    | 2381741      |
++--------------+-------------+--------------+
+```
+
+- 解题思路
+
+| No.  | 思路        |
+| ---- | ----------- |
+| 01   | or的使用    |
+| 02   | union的使用 |
+
+```sql
+select name, population, area from world
+where area > 3000000 or population > 25000000
+
+#
+# or具有全表扫描机制
+# union具有索引列查询速度快
+# Union：对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；
+# Union All：对两个结果集进行并集操作，包括重复行，不进行排序；
+select name, population, area from world where area > 3000000
+union
+select name, population, area from world where population > 25000000
+```
+
+## 596.超过5名学生的课(2)
+
+- 题目
+
+```
+Create table If Not Exists courses (student varchar(255), class varchar(255))
+Truncate table courses
+insert into courses (student, class) values ('A', 'Math')
+insert into courses (student, class) values ('B', 'English')
+insert into courses (student, class) values ('C', 'Math')
+insert into courses (student, class) values ('D', 'Biology')
+insert into courses (student, class) values ('E', 'Math')
+insert into courses (student, class) values ('F', 'Computer')
+insert into courses (student, class) values ('G', 'Math')
+insert into courses (student, class) values ('H', 'Math')
+insert into courses (student, class) values ('I', 'Math')
+
+有一个courses 表 ，有: student (学生) 和 class (课程)。
+
+请列出所有超过或等于5名学生的课。
+
+例如,表:
++---------+------------+
+| student | class      |
++---------+------------+
+| A       | Math       |
+| B       | English    |
+| C       | Math       |
+| D       | Biology    |
+| E       | Math       |
+| F       | Computer   |
+| G       | Math       |
+| H       | Math       |
+| I       | Math       |
++---------+------------+
+
+应该输出:
++---------+
+| class   |
++---------+
+| Math    |
++---------+
+Note:
+学生在每个课中不应被重复计算。
+```
+
+- 解题思路
+
+| No.  | 思路              |
+| ---- | ----------------- |
+| 01   | group by + having |
+| 02   | group by + 临时表 |
+
+```sql
+select class from courses
+group by class
+having count(distinct student) >= 5
+
+#
+select class from 
+(select class, count(distinct student) as num from courses group by class) as temp_table
+where num >= 5
+```
+
