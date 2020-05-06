@@ -168,4 +168,20 @@
 | [594.最长和谐子序列](https://leetcode-cn.com/problems/longest-harmonious-subsequence/) | 哈希表 | Easy | 完成 |
 | [595.大的国家](https://leetcode-cn.com/problems/big-countries/) | Mysql | Easy | 完成 |
 | [596.超过5名学生的课](https://leetcode-cn.com/problems/classes-more-than-5-students/) | Mysql | Easy | 完成 |
+| [598.范围求和 II](https://leetcode-cn.com/problems/range-addition-ii/) | 数学 | Easy | 完成 |
+| [599.两个列表的最小索引总和](https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists/) | 哈希表 | Easy | 完成 |
+| [605.种花问题](https://leetcode-cn.com/problems/can-place-flowers/) | 数组 | Easy | 完成 |
+| [606.根据二叉树创建字符串](https://leetcode-cn.com/problems/construct-string-from-binary-tree/) | 树、字符串 | Easy | 完成 |
+| [617.合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/) | 树 | Easy | 完成 |
+| [620.有趣的电影](https://leetcode-cn.com/problems/not-boring-movies/) | Mysql | Easy | 完成 |
+| 第16期 |  |  |  |
+| [627.交换工资](https://leetcode-cn.com/problems/swap-salary/) | Mysql | Easy | 完成 |
+| [628.三个数的最大乘积](https://leetcode-cn.com/problems/maximum-product-of-three-numbers/) | 数组、数学 | Easy | 完成 |
+| [633.平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers/) | 数学 | Easy | 完成 |
+| [637.二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) | 树 | Easy | 完成 |
+| [643.子数组最大平均数 I](https://leetcode-cn.com/problems/maximum-average-subarray-i/) | 数组 | Easy | 完成 |
+| [645.错误的集合](https://leetcode-cn.com/problems/set-mismatch/) | 哈希表、数学 | Easy | 完成 |
+| [653.两数之和 IV - 输入 BST](https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/) | 树 | Easy | 完成 |
+| [657.机器人能否返回原点](https://leetcode-cn.com/problems/robot-return-to-origin/) | 字符串 | Easy | 完成 |
+|  |  |  |  |
 

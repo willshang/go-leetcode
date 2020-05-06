@@ -20,26 +20,25 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode637_二叉树的层平均值
 func averageOfLevels(root *TreeNode) []float64 {
-	res := make([]float64, 0, 128)
-	nodes := make([]*TreeNode, 1, 1024)
-	nodes[0] = root
-
-	for len(nodes) > 0 {
-		n := len(nodes)
+	res := make([]float64, 0)
+	list := make([]*TreeNode, 0)
+	list = append(list, root)
+	for len(list) > 0 {
+		length := len(list)
 		sum := 0
-		for i := 0; i < n; i++ {
-			sum = sum + nodes[i].Val
-			if nodes[i].Left != nil {
-				nodes = append(nodes, nodes[i].Left)
+		for i := 0; i < length; i++ {
+			sum = sum + list[i].Val
+			if list[i].Left != nil {
+				list = append(list, list[i].Left)
 			}
-			if nodes[i].Right != nil {
-				nodes = append(nodes, nodes[i].Right)
+			if list[i].Right != nil {
+				list = append(list, list[i].Right)
 			}
 		}
-
-		res = append(res, float64(sum)/float64(n))
-		nodes = nodes[n:]
+		res = append(res, float64(sum)/float64(length))
+		list = list[length:]
 	}
 	return res
 }
