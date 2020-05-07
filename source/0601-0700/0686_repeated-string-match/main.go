@@ -11,6 +11,7 @@ func main() {
 	fmt.Println(repeatedStringMatch(A, B))
 	fmt.Println(repeatedStringMatch("abc", "cabcabca"))
 }
+
 func repeatedStringMatch(A string, B string) int {
 	times := max(len(B)/len(A), 1)
 	for i := 1; i <= times+2; i++ {

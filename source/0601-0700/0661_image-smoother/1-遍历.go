@@ -8,9 +8,9 @@ func main() {
 		{1, 0, 1},
 		{1, 1, 1},
 	}
-
 	fmt.Println(imageSmoother(arr))
 }
+
 func imageSmoother(M [][]int) [][]int {
 	res := make([][]int, len(M))
 	for i := range res {

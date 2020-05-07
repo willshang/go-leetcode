@@ -183,5 +183,14 @@
 | [645.错误的集合](https://leetcode-cn.com/problems/set-mismatch/) | 哈希表、数学 | Easy | 完成 |
 | [653.两数之和 IV - 输入 BST](https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/) | 树 | Easy | 完成 |
 | [657.机器人能否返回原点](https://leetcode-cn.com/problems/robot-return-to-origin/) | 字符串 | Easy | 完成 |
+| [661.图片平滑器](https://leetcode-cn.com/problems/image-smoother/) | 数组 | Easy | 完成 |
+| [665.非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) | 数组 | Easy | 完成 |
+| 第17期 |  |  |  |
+| [669.修剪二叉搜索树](https://leetcode-cn.com/problems/trim-a-binary-search-tree/) | 树 | Easy | 完成 |
+| [671.二叉树中第二小的节点](https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/) | 树 | Easy | 完成 |
+| [674.最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/) | 数组 | Easy | 完成 |
+| [680.验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 字符串 | Easy | 完成 |
+| [682.棒球比赛](https://leetcode-cn.com/problems/baseball-game/) | 栈 | Easy | 完成 |
+| [686.重复叠加字符串匹配](https://leetcode-cn.com/problems/repeated-string-match/) | 字符串 | Easy | 完成 |
 |  |  |  |  |
 

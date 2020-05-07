@@ -9,8 +9,10 @@ func main() {
 	arr := []string{"5", "-2", "4", "C", "D", "9", "+", "+"}
 	fmt.Println(calPoints(arr))
 }
+
+// leetcode682_棒球比赛
 func calPoints(ops []string) int {
-	stacks := make([]int, 0, len(ops))
+	stacks := make([]int, 0)
 	for i := range ops {
 		switch ops[i] {
 		case "+":
@@ -28,8 +30,8 @@ func calPoints(ops []string) int {
 		}
 	}
 	res := 0
-	for _, p := range stacks {
-		res = res + p
+	for _, value := range stacks {
+		res = res + value
 	}
 	return res
 }
