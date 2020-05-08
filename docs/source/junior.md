@@ -27,7 +27,7 @@
 | [7.整数反转](https://leetcode-cn.com/problems/reverse-integer) | 数学           | Easy | 完成     |
 | [387.字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/) | 哈希表、字符串 | Easy | 完成     |
 | 有效的字母异位词                                             |                |      |          |
-| 验证回文字符串\|[125.验证回文串](https://leetcode-cn.com/problems/valid-palindrome) | 双指针、字符串 | Easy | 完成     |
+| 验证回文字符串[125.验证回文串](https://leetcode-cn.com/problems/valid-palindrome) | 双指针、字符串 | Easy | 完成     |
 | 字符串转换整数 (atoi)                                        |                |      |          |
 | 实现 strStr()                                                |                |      |          |
 | 外观数列                                                     |                |      |          |
