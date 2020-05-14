@@ -11,6 +11,7 @@ func main() {
 	banned := []string{"bob", "hit"}
 	fmt.Println(mostCommonWord(paragraph, banned))
 }
+
 func mostCommonWord(paragraph string, banned []string) string {
 	isBanned := make(map[string]bool)
 	for _, b := range banned {

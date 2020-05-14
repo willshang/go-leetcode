@@ -192,5 +192,39 @@
 | [680.验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 字符串 | Easy | 完成 |
 | [682.棒球比赛](https://leetcode-cn.com/problems/baseball-game/) | 栈 | Easy | 完成 |
 | [686.重复叠加字符串匹配](https://leetcode-cn.com/problems/repeated-string-match/) | 字符串 | Easy | 完成 |
-|  |  |  |  |
+| [687.最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/) | 树 | Easy | 完成 |
+| [690.员工的重要性](https://leetcode-cn.com/problems/employee-importance/) | 深度优先搜索、广度优先搜索、哈希表 | Easy | 完成 |
+| [693.交替位二进制数](https://leetcode-cn.com/problems/binary-number-with-alternating-bits/) | 位运算 | Easy | 完成 |
+| [696.计数二进制子串](https://leetcode-cn.com/problems/count-binary-substrings/) | 字符串 | Easy | 完成 |
+| 第18期 |  |  |  |
+| [697.数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) | 数组 | Easy | 完成 |
+| [700.二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/) | 树 | Easy | 完成 |
+| [703.数据流中的第K大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/) | 堆 | Easy | 完成 |
+| [704.二分查找](https://leetcode-cn.com/problems/binary-search/) | 二分查找 | Easy | 完成 |
+| [705.设计哈希集合](https://leetcode-cn.com/problems/design-hashset/) | 设计、哈希表 | Easy | 完成 |
+| [706.设计哈希映射](https://leetcode-cn.com/problems/design-hashmap/) | 设计、哈希表 | Easy | 完成 |
+| [709.转换成小写字母](https://leetcode-cn.com/problems/to-lower-case/) | 字符串 | Easy | 完成 |
+| [717.1比特与2比特字符](https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/) | 数组 | Easy | 完成 |
+| [720.词典中最长的单词](https://leetcode-cn.com/problems/longest-word-in-dictionary/) | 字典树、哈希表 | Easy | 完成 |
+| [724.寻找数组的中心索引](https://leetcode-cn.com/problems/find-pivot-index/) | 数组 | Easy | 完成 |
+| 第19期 |  |  |  |
+| [728.自除数](https://leetcode-cn.com/problems/self-dividing-numbers/) | 数学 | Easy | 完成 |
+| [733.图像渲染](https://leetcode-cn.com/problems/flood-fill/) | 深度优先搜索 | Easy | 完成 |
+| [744.寻找比目标字母大的最小字母](https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/) | 二分查找 | Easy | 完成 |
+| [746.使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) | 数组、动态规划 | Easy | 完成 |
+| [747.至少是其他数字两倍的最大数](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/) | 数组 | Easy | 完成 |
+| [748.最短完整词](https://leetcode-cn.com/problems/shortest-completing-word/) | 哈希表 | Easy | 完成 |
+| [762.二进制表示中质数个计算置位](https://leetcode-cn.com/problems/prime-number-of-set-bits-in-binary-representation/) | 位运算 | Easy | 完成 |
+| [766.托普利茨矩阵](https://leetcode-cn.com/problems/toeplitz-matrix/) | 数组 | Easy | 完成 |
+| [771.宝石与石头](https://leetcode-cn.com/problems/jewels-and-stones/) | 哈希表 | Easy | 完成 |
+| [783.二叉搜索树节点最小距离](https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/) | 树、递归 | Easy | 完成 |
+| 第20期 |  |  |  |
+| [784.字母大小写全排列](https://leetcode-cn.com/problems/letter-case-permutation/) | 位运算、回溯算法 | Easy | 完成 |
+| [788.旋转数字](https://leetcode-cn.com/problems/rotated-digits/) | 字符串 | Easy | 完成 |
+| [796.旋转字符串](https://leetcode-cn.com/problems/rotate-string/) |  | Easy | 完成 |
+| [804.唯一摩尔斯密码词](https://leetcode-cn.com/problems/unique-morse-code-words/) | 字符串 | Easy | 完成 |
+| [806.写字符串需要的行数](https://leetcode-cn.com/problems/number-of-lines-to-write-string/) |  | Easy | 完成 |
+| [811.子域名访问计数](https://leetcode-cn.com/problems/subdomain-visit-count/) | 哈希表 | Easy | 完成 |
+| [812.最大三角形面积](https://leetcode-cn.com/problems/largest-triangle-area/) | 数学 | Easy | 完成 |
+| [819.最常见的单词](https://leetcode-cn.com/problems/most-common-word/) | 字符串 | Easy | 完成 |
 

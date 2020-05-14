@@ -10,9 +10,9 @@ func main() {
 	arr := []string{"900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"}
 	fmt.Println(subdomainVisits(arr))
 }
-func subdomainVisits(cpdomains []string) []string {
-	m := make(map[string]int, len(cpdomains))
 
+func subdomainVisits(cpdomains []string) []string {
+	m := make(map[string]int)
 	for _, domain := range cpdomains {
 		d, n := parse(domain)
 		isNew := true
@@ -29,6 +29,7 @@ func parse(s string) (string, int) {
 	n, _ := strconv.Atoi(ss[0])
 	return ss[1], n
 }
+
 func cut(s string) (string, bool) {
 	index := strings.Index(s, ".")
 	if index == -1 {

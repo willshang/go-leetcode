@@ -9,8 +9,11 @@
     - [0401-0500](docs/source/0401-0500.md)
     - [0501-0600](docs/source/0501-0600.md)
     - [0601-0700](docs/source/0601-0700.md)
+    - [0701-0800](docs/source/0701-0800.md)
+    - [0801-0900](docs/source/0801-0900.md)
     - [mysql](docs/source/mysql.md)
     - [bash](docs/source/bash.md)
+    - [重复题目](docs/source/same.md)
 * 分类
     - [初级算法](docs/source/junior.md)
 * 书籍
