@@ -12,6 +12,7 @@ func main() {
 	fmt.Println(longestWord(str_1))
 }
 
+// leetcode720_词典中最长的单词
 func longestWord(words []string) string {
 	if len(words) == 0 {
 		return ""

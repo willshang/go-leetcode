@@ -201,8 +201,8 @@
 | [700.二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/) | 树 | Easy | 完成 |
 | [703.数据流中的第K大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/) | 堆 | Easy | 完成 |
 | [704.二分查找](https://leetcode-cn.com/problems/binary-search/) | 二分查找 | Easy | 完成 |
-| [705.设计哈希集合](https://leetcode-cn.com/problems/design-hashset/) | 设计、哈希表 | Easy | 完成 |
-| [706.设计哈希映射](https://leetcode-cn.com/problems/design-hashmap/) | 设计、哈希表 | Easy | 完成 |
+| [705.设计哈希集合](https://leetcode-cn.com/problems/design-hashset/) | 设计、哈希表 | Easy |  |
+| [706.设计哈希映射](https://leetcode-cn.com/problems/design-hashmap/) | 设计、哈希表 | Easy |  |
 | [709.转换成小写字母](https://leetcode-cn.com/problems/to-lower-case/) | 字符串 | Easy | 完成 |
 | [717.1比特与2比特字符](https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/) | 数组 | Easy | 完成 |
 | [720.词典中最长的单词](https://leetcode-cn.com/problems/longest-word-in-dictionary/) | 字典树、哈希表 | Easy | 完成 |
@@ -227,4 +227,40 @@
 | [811.子域名访问计数](https://leetcode-cn.com/problems/subdomain-visit-count/) | 哈希表 | Easy | 完成 |
 | [812.最大三角形面积](https://leetcode-cn.com/problems/largest-triangle-area/) | 数学 | Easy | 完成 |
 | [819.最常见的单词](https://leetcode-cn.com/problems/most-common-word/) | 字符串 | Easy | 完成 |
+| [821.字符的最短距离](https://leetcode-cn.com/problems/shortest-distance-to-a-character/) |  | Easy | 完成 |
+| [824.山羊拉丁文](https://leetcode-cn.com/problems/goat-latin/) | 字符串 | Easy | 完成 |
+| 第21期 |  |  |  |
+| [830.较大分组的位置](https://leetcode-cn.com/problems/positions-of-large-groups/) | 数组 | Easy | 完成 |
+| [832.翻转图像](https://leetcode-cn.com/problems/flipping-an-image/) | 数组 | Easy | 完成 |
+| [836.矩形重叠](https://leetcode-cn.com/problems/rectangle-overlap/) | 数学 | Easy | 完成 |
+| [840.矩阵中的幻方](https://leetcode-cn.com/problems/magic-squares-in-grid/) | 数组 | Easy | 完成 |
+| [844.比较含退格的字符串](https://leetcode-cn.com/problems/backspace-string-compare/) | 栈、双指针 | Easy | 完成 |
+| [849.到最近的人的最大距离](https://leetcode-cn.com/problems/maximize-distance-to-closest-person/) | 数组 | Easy | 完成 |
+| [852.山脉数组的峰顶索引](https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/) | 二分查找 | Easy | 完成 |
+| [859.亲密字符串](https://leetcode-cn.com/problems/buddy-strings/) | 字符串 | Easy | 完成 |
+| [860.柠檬水找零](https://leetcode-cn.com/problems/lemonade-change/) | 贪心算法 | Easy | 完成 |
+| [867.转置矩阵](https://leetcode-cn.com/problems/transpose-matrix/) | 数组 | Easy | 完成 |
+| 第22期 |  |  |  |
+| [868.二进制间距](https://leetcode-cn.com/problems/binary-gap/) | 数学 | Easy | 完成 |
+| [872.叶子相似的树](https://leetcode-cn.com/problems/leaf-similar-trees/) | 树、深度优先搜索 | Easy | 完成 |
+| [874.模拟行走机器人](https://leetcode-cn.com/problems/walking-robot-simulation/) | 贪心算法 | Easy | 完成 |
+| [876.链表的中间结点](https://leetcode-cn.com/problems/middle-of-the-linked-list/) | 链表 | Easy | 完成 |
+| [883.三维形体投影面积](https://leetcode-cn.com/problems/projection-area-of-3d-shapes/) | 数学 | Easy | 完成 |
+| [884.两句话中的不常见单词](https://leetcode-cn.com/problems/uncommon-words-from-two-sentences/) | 哈希表 | Easy | 完成 |
+| [888.公平的糖果交换](https://leetcode-cn.com/problems/fair-candy-swap/) | 数组 | Easy | 完成 |
+| [892.三维形体的表面积](https://leetcode-cn.com/problems/surface-area-of-3d-shapes/) | 几何、数学 | Easy | 完成 |
+| [893.特殊等价字符串组](https://leetcode-cn.com/problems/groups-of-special-equivalent-strings/) | 字符串 | Easy | 完成 |
+| [896.单调数列](https://leetcode-cn.com/problems/monotonic-array/) | 数组 | Easy | 完成 |
+| 第23期 |  |  |  |
+| [897.递增顺序查找树](https://leetcode-cn.com/problems/increasing-order-search-tree/) | 树、深度优先搜索 | Easy | 完成 |
+| [905.按奇偶排序数组](https://leetcode-cn.com/problems/sort-array-by-parity/) | 数组 | Easy | 完成 |
+| [908.最小差值I](https://leetcode-cn.com/problems/smallest-range-i/) | 数学 | Easy | 完成 |
+| [914.卡牌分组](https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards/) | 数组、数学 | Easy | 完成 |
+| [917.仅仅反转字母](https://leetcode-cn.com/problems/reverse-only-letters/) | 字符串 | Easy | 完成 |
+| [922.按奇偶排序数组 II](https://leetcode-cn.com/problems/sort-array-by-parity-ii/) | 排序、数组 | Easy | 完成 |
+| [925.长按键入](https://leetcode-cn.com/problems/long-pressed-name/) | 双指针、字符串 | Easy | 完成 |
+| [929.独特的电子邮件地址](https://leetcode-cn.com/problems/unique-email-addresses/) | 字符串 | Easy | 完成 |
+| [933.最近的请求次数](https://leetcode-cn.com/problems/number-of-recent-calls/) | 队列 | Easy |  |
+| [937.重新排列日志文件](https://leetcode-cn.com/problems/reorder-data-in-log-files/) | 字符串 | Easy | 完成 |
+| 第24期 |  |  |  |
 

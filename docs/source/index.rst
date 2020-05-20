@@ -7,12 +7,18 @@ Welcome to go-leetcode's documentation!
 =======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
-   0000-0100
-   0101-0200
-   0201-0300
+   question/0000-0100
+   question/0101-0200
+   question/0201-0300
+   question/0301-0400
+   question/0401-0500
+   question/0501-0600
+   question/0601-0700
+   question/0701-0800
+   question/0801-0900
    offer
 
 
