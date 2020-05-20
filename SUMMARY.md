@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * 题目
-    - [0001-0100](docs/source/question/0000-0100.md)
+    - [0001-0100](docs/source/question/0001-0100.md)
     - [0100-0200](docs/source/question/0101-0200.md)
     - [0201-0300](docs/source/question/0201-0300.md)
     - [0301-0400](docs/source/question/0301-0400.md)
