@@ -3,7 +3,6 @@ package main
 import (
 	"container/heap"
 	"fmt"
-	"sort"
 )
 
 func main() {

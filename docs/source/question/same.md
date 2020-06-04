@@ -8,7 +8,7 @@
 | 04 | 154 | [面试题11.旋转数组的最小数字](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/) Easy |
 | 05 | 105 | [面试题07.重建二叉树](https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/) Medium |
 | 06 | 79 | [面试题12.矩阵中的路径 ](https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/) Medium |
-| 07 | 343 | [面试题14- I.剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/) Medium |
+| 07 | 343 | [面试题14- I.剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/) Medium<br />[面试题14-II.剪绳子 II](https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/) Medium |
 | 08 | 240 | [面试题04.二维数组中的查找](https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/) Easy |
 | 09 | [191.位1的个数](https://leetcode-cn.com/problems/number-of-1-bits) Easy | [面试题15.二进制中1的个数](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/) Easy |
 | 10 | 50 | [面试题16.数值的整数次方](https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/) Medium |
@@ -46,4 +46,6 @@
 | 42       | 138                                                          | [面试题35.复杂链表的复制](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/) Medium |
 | 43       | 113                                                          | [面试题34.二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/) Medium |
 | 44       | 65                                                           | [面试题20.表示数值的字符串](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/) Medium |
+| 45 | 10 | [面试题19.正则表达式匹配](https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/) Hard |
+| 46 | 295 | [面试题41.数据流中的中位数](https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/) Hard |
 

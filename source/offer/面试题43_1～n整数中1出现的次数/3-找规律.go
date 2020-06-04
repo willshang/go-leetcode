@@ -8,6 +8,7 @@ func main() {
 	fmt.Println(countDigitOne(12))
 }
 
+// 剑指offer_面试题43_1～n整数中1出现的次数
 func countDigitOne(n int) int {
 	if n <= 0 {
 		return 0

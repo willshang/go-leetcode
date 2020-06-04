@@ -1,4 +1,4 @@
-# O(log(n))剑指offer
+# 剑指offer
 
 ## 参考资料
 
@@ -527,9 +527,9 @@ func helper(preorder []int, inorder []int) *TreeNode {
 }
 ```
 
-## 面试题09.用两个栈实现队列
+## 面试题09.用两个栈实现队列(1)
 
-### 题目
+- 题目
 
 ```
 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，
@@ -546,14 +546,50 @@ func helper(preorder []int, inorder []int) *TreeNode {
     最多会对 appendTail、deleteHead 进行 10000 次调用
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 递归 | O(n)       | O(n)       |
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 栈模拟队列 | O(n)       | O(n)       |
 
 ```go
+type stack []int
 
+func (s *stack) Push(value int) {
+	*s = append(*s, value)
+}
+func (s *stack) Pop() int {
+	value := (*s)[len(*s)-1]
+	*s = (*s)[:len(*s)-1]
+	return value
+}
+
+type CQueue struct {
+	tail stack
+	head stack
+}
+
+func Constructor() CQueue {
+	return CQueue{}
+}
+
+// 1.入队，tail栈保存
+// 2.出队, head不为空，出head；head为空，tail出到head里，最后出head
+func (this *CQueue) AppendTail(value int) {
+	this.tail.Push(value)
+}
+
+func (this *CQueue) DeleteHead() int {
+	if len(this.head) != 0 {
+		return this.head.Pop()
+	} else if len(this.tail) != 0 {
+		for len(this.tail) > 0 {
+			this.head.Push(this.tail.Pop())
+		}
+		return this.head.Pop()
+	}
+	return -1
+}
 ```
 
 ## 面试题10- I.斐波那契数列(5)
@@ -1201,9 +1237,9 @@ func getDigiSum(num int) int {
 }
 ```
 
-## 面试题14- I.剪绳子
+## 面试题14- I.剪绳子(2)
 
-### 题目
+- 题目
 
 ```
 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n>1并且m>1），
@@ -1218,14 +1254,140 @@ func getDigiSum(num int) int {
 注意：本题与主站 343 题相同：https://leetcode-cn.com/problems/integer-break/
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路                   | 时间复杂度 | 空间复杂度 |
-| ---- | ---------------------- | ---------- | ---------- |
-| 01   | 深度优先搜索(书上方法) | O(n^2)     | O(n^2)     |
+| No.  | 思路               | 时间复杂度 | 空间复杂度 |
+| ---- | ------------------ | ---------- | ---------- |
+| 01   | 动态规划(书上方法) | O(n^2)     | O(n)       |
+| 02   | 贪心法             | O(1)       | O(1)       |
 
 ```go
+func cuttingRope(n int) int {
+	if n < 2 {
+		return 0
+	}
+	if n == 2 {
+		return 1
+	}
+	if n == 3 {
+		return 2
+	}
+	dp := make([]int, n+1)
+	dp[0] = 0
+	dp[1] = 1
+	dp[2] = 2
+	dp[3] = 3
+	for i := 4; i <= n; i++ {
+		max := 0
+		for j := 1; j <= i/2; j++ {
+			length := dp[j] * dp[i-j]
+			if length > max {
+				max = length
+			}
+			dp[i] = max
+		}
+	}
+	return dp[n]
+}
 
+#
+func cuttingRope(n int) int {
+	if n < 2 {
+		return 0
+	}
+	if n == 2 {
+		return 1
+	}
+	if n == 3 {
+		return 2
+	}
+	timesOf3 := n / 3
+	if n-timesOf3*3 == 1 {
+		timesOf3 = timesOf3 - 1
+	}
+	timesOf2 := (n - timesOf3*3) / 2
+	return int(math.Pow(float64(2), float64(timesOf2))) *
+		int(math.Pow(float64(3), float64(timesOf3)))
+}
+```
+
+## 面试题14-II.剪绳子 II(2)
+
+- 题目
+
+```
+给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n>1并且m>1），
+每段绳子的长度记为 k[0],k[1]...k[m] 。请问 k[0]*k[1]*...*k[m] 可能的最大乘积是多少？
+例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
+答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+示例 1：输入: 2 输出: 1 解释: 2 = 1 + 1, 1 × 1 = 1
+示例 2:输入: 10 输出: 36 解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36
+提示：2 <= n <= 1000
+注意：本题与主站 343 题相同：https://leetcode-cn.com/problems/integer-break/
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n)       | O(n)       |
+| 02   | 贪心法   | O(n)       | O(1)       |
+
+```go
+func cuttingRope(n int) int {
+	if n < 2 {
+		return 0
+	}
+	if n == 2 {
+		return 1
+	}
+	if n == 3 {
+		return 2
+	}
+	timesOf3 := n / 3
+	if n-timesOf3*3 == 1 {
+		timesOf3 = timesOf3 - 1
+	}
+	timesOf2 := (n - timesOf3*3) / 2
+	return int(math.Pow(float64(2), float64(timesOf2))) *
+		myPow3(timesOf3) % 1000000007
+}
+
+func myPow3(n int) int {
+	res := 1
+	for i := 0; i < n; i++{
+		res = (res * 3) % 1000000007
+	}
+	return res
+}
+
+#
+func cuttingRope(n int) int {
+	if n < 2 {
+		return 0
+	}
+	if n == 2 {
+		return 1
+	}
+	if n == 3 {
+		return 2
+	}
+	timesOf3 := n / 3
+	if n-timesOf3*3 == 1 {
+		timesOf3 = timesOf3 - 1
+	}
+	timesOf2 := (n - timesOf3*3) / 2
+	return int(math.Pow(float64(2), float64(timesOf2))) *
+		myPow3(timesOf3) % 1000000007
+}
+
+func myPow3(n int) int {
+	res := 1
+	for i := 0; i < n; i++ {
+		res = (res * 3) % 1000000007
+	}
+	return res
+}
 ```
 
 ## 面试题15.二进制中1的个数(4)
@@ -1295,9 +1457,9 @@ func hammingWeight(num uint32) int {
 }
 ```
 
-## 面试题16.数值的整数次方
+## 面试题16.数值的整数次方(2)
 
-### 题目
+- 题目
 
 ```
 实现函数double Power(double base, int exponent)，求base的exponent次方。
@@ -1309,17 +1471,35 @@ func hammingWeight(num uint32) int {
 说明:
     -100.0 < x < 100.0
     n 是 32 位有符号整数，其数值范围是 [−231, 231 − 1] 。
-注意：本题与主站 50 题相同：https://leetcode-cn.com/problems/powx-n/
+注意：本题与主站 50 题相同：
+https://leetcode-cn.com/problems/powx-n/
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路       | 时间复杂度 | 空间复杂度 |
-| ---- | ---------- | ---------- | ---------- |
-| 01   | 循环位计算 | O(1)       | O(1)       |
+| No.  | 思路           | 时间复杂度 | 空间复杂度 |
+| ---- | -------------- | ---------- | ---------- |
+| 01   | 递归(书上方法) | O(log(n))  | O(log(n))  |
+| 02   | 迭代           | O(log(n))  | O(1)       |
 
 ```go
-
+func myPow(x float64, n int) float64 {
+	if n == 0 {
+		return 1
+	}
+	if n == 1 {
+		return x
+	}
+	res := 1.0
+	if n > 0 {
+		res = myPow(x, n/2)
+		return res * res * myPow(x, n%2)
+	} else {
+		res = myPow(x, -n/2)
+		res = res * res * myPow(x, -n%2)
+		return 1 / res
+	}
+}
 ```
 
 ## 面试题17.打印从1到最大的n位数(4)
@@ -1533,6 +1713,162 @@ func deleteNode(head *ListNode, val int) *ListNode {
 	}
 	return head
 }
+```
+
+## 面试题19.正则表达式匹配(2)
+
+- 题目
+
+```
+请实现一个函数用来匹配包含'. '和'*'的正则表达式。模式中的字符'.'表示任意一个字符，
+而'*'表示它前面的字符可以出现任意次（含0次）。
+在本题中，匹配是指字符串的所有字符匹配整个模式。
+例如，字符串"aaa"与模式"a.a"和"ab*ac*a"匹配，但与"aa.a"和"ab*a"均不匹配。
+
+示例 1:输入: s = "aa" p = "a" 输出: false
+解释: "a" 无法匹配 "aa" 整个字符串。
+示例 2:输入: s = "aa" p = "a*" 输出: true
+解释: 因为 '*' 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 'a'。
+因此，字符串 "aa" 可被视为 'a' 重复了一次。
+示例 3:输入:s = "ab" p = ".*" 输出: true
+解释: ".*" 表示可匹配零个或多个（'*'）任意字符（'.'）。
+示例 4: 输入:s = "aab" p = "c*a*b" 输出: true
+解释: 因为 '*' 表示零个或多个，这里 'c' 为 0 个, 'a' 被重复一次。因此可以匹配字符串 "aab"。
+示例 5: 输入: s = "mississippi" p = "mis*is*p*." 输出: false
+    s 可能为空，且只包含从 a-z 的小写字母。
+    p 可能为空，且只包含从 a-z 的小写字母以及字符 . 和 *，无连续的 '*'。
+注意：本题与主站 10 题相同：
+https://leetcode-cn.com/problems/regular-expression-matching/
+```
+
+- 解题思路
+
+| No.  | 思路           | 时间复杂度 | 空间复杂度 |
+| ---- | -------------- | ---------- | ---------- |
+| 01   | 递归(书上方法) | O(n)       | O(n)       |
+| 02   | 动态规划       | O(n^2)     | O(n^2)     |
+
+```go
+func isMatch(s string, p string) bool {
+	return dfs(s, p, 0, 0)
+}
+
+func dfs(s string, p string, i, j int) bool {
+	if i >= len(s) && j >= len(p) {
+		return true
+	}
+	if i <= len(s) && j >= len(p) {
+		return false
+	}
+	if j+1 < len(p) && p[j+1] == '*' {
+		if (i < len(s) && p[j] == s[i]) || (p[j] == '.' && i < len(s)) {
+			return dfs(s, p, i+1, j+2) ||
+				dfs(s, p, i+1, j) ||
+				dfs(s, p, i, j+2)
+		} else {
+			return dfs(s, p, i, j+2)
+		}
+	}
+	if (i < len(s) && s[i] == p[j]) || (p[j] == '.' && i < len(s)) {
+		return dfs(s, p, i+1, j+1)
+	}
+	return false
+}
+
+#
+func isMatch(s string, p string) bool {
+	// dp[i][j]表示p[:i]能否正则匹配s[:j]
+	dp := make([][]bool, len(p)+1)
+	for i := 0; i < len(p)+1; i++ {
+		dp[i] = make([]bool, len(s)+1)
+	}
+	// 1.初始化
+	dp[0][0] = true
+	for i := 2; i < len(p)+1; i++ {
+		if i%2 == 0 && p[i-1] == '*' {
+			dp[i][0] = dp[i-2][0]
+		}
+	}
+	// 2.dp状态转移
+	for i := 1; i < len(p)+1; i++ {
+		for j := 1; j < len(s)+1; j++ {
+			// 2.1 相同或者 .
+			if p[i-1] == s[j-1] || p[i-1] == '.' {
+				dp[i][j] = dp[i-1][j-1]
+			} else if p[i-1] == '*' {
+				if i > 1 {
+					if p[i-2] == s[j-1] || p[i-2] == '.' {
+						dp[i][j] = dp[i][j-1] || dp[i-2][j-1] || dp[i-2][j]
+					} else {
+						dp[i][j] = dp[i-2][j]
+					}
+				}
+			}
+		}
+	}
+	return dp[len(p)][len(s)]
+}
+```
+
+## 面试题20.表示数值的字符串(1)
+
+- 题目
+
+```
+请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串"+100"、"5e2"、"-123"、"3.1416"、"0123"都表示数值，
+但"12e"、"1a3.14"、"1.2.3"、"+-5"、"-1E-16"及"12e+5.4"都不是。
+注意：本题与主站 65 题相同：https://leetcode-cn.com/problems/valid-number/
+```
+
+- 解题思路
+
+| No.  | 思路                  | 时间复杂度 | 空间复杂度 |
+| ---- | --------------------- | ---------- | ---------- |
+| 01   | 遍历-找规律(书上方法) | O(n)       | O(1)       |
+
+```go
+func isNumber(s string) bool {
+	s = strings.Trim(s, " ")
+	if s == "" || len(s) == 0 || len(s) == 0 {
+		return false
+	}
+	arr := []byte(s)
+	i := 0
+	numeric := scanInteger(&arr, &i)
+	if i < len(arr) && arr[i] == '.' {
+		i++
+		numeric = scanUnsignedInteger(&arr, &i) || numeric
+	}
+	if i < len(arr) && (arr[i] == 'e' || arr[i] == 'E') {
+		i++
+		numeric = numeric && scanInteger(&arr, &i)
+	}
+	return numeric && len(arr) == i
+}
+
+func scanInteger(arr *[]byte, index *int) bool {
+	if len(*arr) <= *index {
+		return false
+	}
+	if (*arr)[*index] == '+' || (*arr)[*index] == '-' {
+		*index++
+	}
+	return scanUnsignedInteger(arr, index)
+}
+
+func scanUnsignedInteger(arr *[]byte, index *int) bool {
+	j := *index
+	for *index < len(*arr) {
+		if (*arr)[*index] < '0' || (*arr)[*index] > '9' {
+			break
+		}
+		*index++
+	}
+	return j < *index
+}
+
+#
+
 ```
 
 ## 面试题21.调整数组顺序使奇数位于偶数前面(4)
@@ -3344,14 +3680,119 @@ func partition(arr []int, left, right int) int {
 }
 ```
 
-## 面试题41.数据流中的中位数
+## 面试题41.数据流中的中位数(1)
 
-### 题目
+- 题目
 
-### 解题思路
+```
+如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。
+如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
+例如，
+[2,3,4] 的中位数是 3
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5
+设计一个支持以下两种操作的数据结构：
+    void addNum(int num) - 从数据流中添加一个整数到数据结构中。
+    double findMedian() - 返回目前所有元素的中位数。
+
+示例 1：输入：
+["MedianFinder","addNum","addNum","findMedian","addNum","findMedian"]
+[[],[1],[2],[],[3],[]]
+输出：[null,null,null,1.50000,null,2.00000]
+
+示例 2： 输入：
+["MedianFinder","addNum","findMedian","addNum","findMedian"]
+[[],[2],[],[3],[]]
+输出：[null,null,2.00000,null,2.50000]
+
+限制：最多会对 addNum、findMedia进行 50000 次调用。
+注意：本题与主站 295 题相同：
+https://leetcode-cn.com/problems/find-median-from-data-stream/
+```
+
+- 解题思路
+
+| No.  | 思路                  | 时间复杂度 | 空间复杂度 |
+| ---- | --------------------- | ---------- | ---------- |
+| 01   | 大小根堆-内置heap接口 | O(log(n))  | O(n)       |
 
 ```go
+type MinHeap []int
 
+func (i MinHeap) Len() int {
+	return len(i)
+}
+
+func (i MinHeap) Less(x, y int) bool {
+	return i[x] < i[y]
+}
+
+func (i MinHeap) Swap(x, y int) {
+	i[x], i[y] = i[y], i[x]
+}
+func (i *MinHeap) Push(v interface{}) {
+	*i = append(*i, v.(int))
+}
+
+func (i *MinHeap) Pop() interface{} {
+	value := (*i)[len(*i)-1]
+	*i = (*i)[:len(*i)-1]
+	return value
+}
+
+type MaxHeap []int
+
+func (i MaxHeap) Len() int {
+	return len(i)
+}
+
+func (i MaxHeap) Less(x, y int) bool {
+	return i[x] > i[y]
+}
+
+func (i MaxHeap) Swap(x, y int) {
+	i[x], i[y] = i[y], i[x]
+}
+func (i *MaxHeap) Push(v interface{}) {
+	*i = append(*i, v.(int))
+}
+
+func (i *MaxHeap) Pop() interface{} {
+	value := (*i)[len(*i)-1]
+	*i = (*i)[:len(*i)-1]
+	return value
+}
+
+type MedianFinder struct {
+	minArr *MinHeap
+	maxArr *MaxHeap
+}
+
+func Constructor() MedianFinder {
+	res := new(MedianFinder)
+	res.minArr = new(MinHeap)
+	res.maxArr = new(MaxHeap)
+	heap.Init(res.minArr)
+	heap.Init(res.maxArr)
+	return *res
+}
+
+func (this *MedianFinder) AddNum(num int) {
+	if this.maxArr.Len() == this.minArr.Len() {
+		heap.Push(this.minArr, num)
+		heap.Push(this.maxArr, heap.Pop(this.minArr))
+	} else {
+		heap.Push(this.maxArr, num)
+		heap.Push(this.minArr, heap.Pop(this.maxArr))
+	}
+}
+
+func (this *MedianFinder) FindMedian() float64 {
+	if this.minArr.Len() == this.maxArr.Len() {
+		return (float64((*this.maxArr)[0]) + float64((*this.minArr)[0])) / 2
+	} else {
+		return float64((*this.maxArr)[0])
+	}
+}
 ```
 
 ## 面试题42.连续子数组的最大和(4)
@@ -3480,9 +3921,9 @@ func max(a, b int) int {
 }
 ```
 
-## 面试题43.1～n整数中1出现的次数
+## 面试题43.1～n整数中1出现的次数(3)
 
-### 题目
+- 题目
 
 ```
 输入一个整数 n ，求1～n这n个整数的十进制表示中1出现的次数。
@@ -3490,10 +3931,11 @@ func max(a, b int) int {
 示例 1：输入：n = 12 出：5
 示例 2：输入：n = 13 出：6
 限制： 1 <= n < 2^31
-注意：本题与主站 233 题相同：https://leetcode-cn.com/problems/number-of-digit-one/
+注意：本题与主站 233 题相同：
+https://leetcode-cn.com/problems/number-of-digit-one/
 ```
 
-### 解题思路
+- 解题思路
 
 | No.  | 思路                  | 时间复杂度 | 空间复杂度 |
 | ---- | --------------------- | ---------- | ---------- |
@@ -3502,7 +3944,68 @@ func max(a, b int) int {
 | 03   | 找规律                | O(log(n))  | O(1)       |
 
 ```go
+func countDigitOne(n int) int {
+	res := 0
+	digit := 1
+	high := n / 10
+	cur := n % 10
+	low := 0
+	for high != 0 || cur != 0 {
+		if cur == 0 {
+			res = res + high*digit
+		} else if cur == 1 {
+			res = res + high*digit + low + 1
+		} else {
+			res = res + (high+1)*digit
+		}
+		low = low + cur*digit
+		cur = high % 10
+		high = high / 10
+		digit = digit * 10
+	}
+	return res
+}
 
+#
+func dfs(str string) int {
+	if str == "" {
+		return 0
+	}
+	first := int(str[0] - '0')
+	if len(str) == 1 && first == 0 {
+		return 0
+	}
+	if len(str) == 1 && first >= 1 {
+		return 1
+	}
+	count := 0
+	if first > 1 {
+		count = int(math.Pow(float64(10), float64(len(str)-1)))
+	} else if first == 1 {
+		count, _ = strconv.Atoi(str[1:])
+		count = count + 1
+	}
+	other := first * (len(str) - 1) * int(math.Pow(float64(10), float64(len(str)-2)))
+	numLeft := dfs(str[1:])
+	return count + numLeft + other
+}
+
+#
+func countDigitOne(n int) int {
+	if n <= 0 {
+		return 0
+	}
+	res := 0
+	for i := 1; i <= n; i = i * 10 {
+		left := n / i
+		right := n % i
+		res = res + (left+8)/10*i
+		if left%10 == 1 {
+			res = res + right + 1
+		}
+	}
+	return res
+}
 ```
 
 ## 面试题44.数字序列中某一位的数字(2)
@@ -4177,9 +4680,9 @@ func firstUniqChar(s string) byte {
 }
 ```
 
-## 面试题51.数组中的逆序对
+## 面试题51.数组中的逆序对(1)
 
-### 题目
+- 题目
 
 ```
 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。
@@ -4188,14 +4691,52 @@ func firstUniqChar(s string) byte {
 限制：0 <= 数组长度 <= 50000
 ```
 
-### 解题思路
+- 解题思路
 
 | No.  | 思路               | 时间复杂度 | 空间复杂度 |
 | ---- | ------------------ | ---------- | ---------- |
-| 01   | 哈希辅助(书上方法) | O(n)       | O(1)       |
+| 01   | 归并排序(书上方法) | O(nlog(n)) | O(n)       |
 
 ```go
+var res int
 
+func reversePairs(nums []int) int {
+	res = 0
+	if len(nums) <= 1 {
+		return res
+	}
+	merge(nums, 0, len(nums)-1)
+	return res
+}
+
+func merge(nums []int, left, right int) {
+	if left >= right {
+		return
+	}
+	mid := (left + right) / 2
+	i, j := left, mid+1
+	merge(nums, left, mid)
+	merge(nums, mid+1, right)
+
+	temp := make([]int, 0)
+	for i <= mid && j <= right {
+		if nums[i] <= nums[j] {
+			temp = append(temp, nums[i])
+			i++
+		} else {
+			res = res + mid - i + 1
+			temp = append(temp, nums[j])
+			j++
+		}
+	}
+	temp = append(temp, nums[i:mid+1]...)
+	temp = append(temp, nums[j:right+1]...)
+	for key, value := range temp {
+		nums[left+key] = value
+	}
+}
+
+#
 ```
 
 
