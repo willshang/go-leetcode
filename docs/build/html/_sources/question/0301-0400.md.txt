@@ -11,7 +11,7 @@
 	* [371.两整数之和(2)](#371两整数之和2)
 	* [374.猜数字大小(2)](#374猜数字大小2)
 	* [383.赎金信(3)](#383赎金信3)
-	* [387.字符串中的第一个唯一字符(2)](#387字符串中的第一个唯一字符2)
+	* [387.字符串中的第一个唯一字符(3)](#387字符串中的第一个唯一字符3)
 	* [389.找不同(5)](#389找不同5)
 	* [392.判断子序列(4)](#392判断子序列4)
 
@@ -739,7 +739,7 @@ func canConstruct(ransomNote string, magazine string) bool {
 }
 ```
 
-## 387.字符串中的第一个唯一字符(2)
+## 387.字符串中的第一个唯一字符(3)
 
 - 题目
 
@@ -757,6 +757,7 @@ s = "loveleetcode",返回 2.
 | ---- | -------- | ---------- | ---------- |
 | 01   | 数组辅助 | O(n)       | O(1)       |
 | 02   | 哈希辅助 | O(n)       | O(1)       |
+| 03   | 暴力法   | O(n^2)     | O(1)       |
 
 ```go
 func firstUniqChar(s string) int {
@@ -780,6 +781,23 @@ func firstUniqChar(s string) int {
 	}
 	for i := 0; i < len(s); i++ {
 		if m[s[i]-'a'] == 1 {
+			return i
+		}
+	}
+	return -1
+}
+
+#
+func firstUniqChar(s string) int {
+	for i := 0; i < len(s); i++ {
+		flag := true
+		for j := 0; j < len(s); j++ {
+			if s[i] == s[j] && i != j {
+				flag = false
+				break
+			}
+		}
+		if flag {
 			return i
 		}
 	}
