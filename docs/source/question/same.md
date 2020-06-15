@@ -48,4 +48,5 @@
 | 44       | 65                                                           | [面试题20.表示数值的字符串](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/) Medium |
 | 45 | 10 | [面试题19.正则表达式匹配](https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/) Hard |
 | 46 | 295 | [面试题41.数据流中的中位数](https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/) Hard |
+| 47 | [476.数字的补数](https://leetcode-cn.com/problems/number-complement/) Easy | [1009.十进制整数的反码](https://leetcode-cn.com/problems/complement-of-base-10-integer/) Easy |
 

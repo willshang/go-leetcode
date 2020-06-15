@@ -23,5 +23,7 @@
     - [高级算法](docs/source/classification/hard.md)
     - [书籍-剑指offer](docs/source/classification/offer.md)
 * 算法
-    - [排序](docs/source/algorithm/sort.md)
-    - [查找](docs/source/algorithm/search.md)
+    - [查找](docs/source/algorithm/1-search.md)
+    - [排序](docs/source/algorithm/2-sort.md)
+    
+    

@@ -7,6 +7,8 @@
 
 ## 1.完成的题目
 
+### Easy系列
+
 | Title                                                        | Tag                            | 难度 | 完成情况 |
 | ------------------------------------------------------------ | ------------------------------ | ---- | -------- |
 | 第1期                                                      |                                |      |          |
@@ -260,7 +262,56 @@
 | [922.按奇偶排序数组 II](https://leetcode-cn.com/problems/sort-array-by-parity-ii/) | 排序、数组 | Easy | 完成 |
 | [925.长按键入](https://leetcode-cn.com/problems/long-pressed-name/) | 双指针、字符串 | Easy | 完成 |
 | [929.独特的电子邮件地址](https://leetcode-cn.com/problems/unique-email-addresses/) | 字符串 | Easy | 完成 |
-| [933.最近的请求次数](https://leetcode-cn.com/problems/number-of-recent-calls/) | 队列 | Easy |  |
+| [933.最近的请求次数](https://leetcode-cn.com/problems/number-of-recent-calls/) | 队列 | Easy | 完成 |
 | [937.重新排列日志文件](https://leetcode-cn.com/problems/reorder-data-in-log-files/) | 字符串 | Easy | 完成 |
 | 第24期 |  |  |  |
+| [938.二叉搜索树的范围和](https://leetcode-cn.com/problems/range-sum-of-bst/) | 树、递归 | Easy | 完成 |
+| [941.有效的山脉数组](https://leetcode-cn.com/problems/valid-mountain-array/) | 数组 | Easy | 完成 |
+| [942.增减字符串匹配](https://leetcode-cn.com/problems/di-string-match/) | 数学 | Easy | 完成 |
+| [944.删列造序](https://leetcode-cn.com/problems/delete-columns-to-make-sorted/) | 贪心算法 | Easy | 完成 |
+| [949.给定数字能组成的最大时间](https://leetcode-cn.com/problems/largest-time-for-given-digits/) | 数学 | Easy | 完成 |
+| [953.验证外星语词典](https://leetcode-cn.com/problems/verifying-an-alien-dictionary/) | 哈希表 | Easy | 完成 |
+| [961.重复 N 次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 哈希表 | Easy | 完成 |
+| [965.单值二叉树](https://leetcode-cn.com/problems/univalued-binary-tree/) | 树 | Easy | 完成 |
+| [970.强整数](https://leetcode-cn.com/problems/powerful-integers/) | 哈希表、数学 | Easy | 完成 |
+| [976.三角形的最大周长](https://leetcode-cn.com/problems/largest-perimeter-triangle/) | 排序、数学 | Easy | 完成 |
+| 第25期 |  |  |  |
+| [977.有序数组的平方](https://leetcode-cn.com/problems/squares-of-a-sorted-array/) | 数组、双指针 | Easy | 完成 |
+| [985.查询后的偶数和](https://leetcode-cn.com/problems/sum-of-even-numbers-after-queries/) | 数组 | Easy | 完成 |
+| [989.数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/) | 数组 | Easy | 完成 |
+| [993.二叉树的堂兄弟节点](https://leetcode-cn.com/problems/cousins-in-binary-tree/) | 树、广度优先搜索 | Easy | 完成 |
+| [997.找到小镇的法官](https://leetcode-cn.com/problems/find-the-town-judge/) | 图 | Easy | 完成 |
+| [999.可以被一步捕获的棋子数](https://leetcode-cn.com/problems/available-captures-for-rook/) | 数组 | Easy | 完成 |
+| [1002.查找常用字符](https://leetcode-cn.com/problems/find-common-characters/) | 数组、哈希表 | Easy | 完成 |
+| [1005.K 次取反后最大化的数组和](https://leetcode-cn.com/problems/maximize-sum-of-array-after-k-negations/) | 贪心算法 | Easy | 完成 |
+| [1009.十进制整数的反码](https://leetcode-cn.com/problems/complement-of-base-10-integer/) | 数学 | Easy | 完成 |
+| [1010.总持续时间可被 60 整除的歌曲](https://leetcode-cn.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/) | 数组 | Easy | 完成 |
+| 第26期 |  |  |  |
+| [1013.将数组分成和相等的三个部分](https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum/) | 数组 | Easy | 完成 |
+| [1018.可被5整除的二进制前缀](https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/) | 数组 | Easy | 完成 |
+| [1021.删除最外层的括号](https://leetcode-cn.com/problems/remove-outermost-parentheses/) | 栈 | Easy | 完成 |
+| [1022.从根到叶的二进制数之和](https://leetcode-cn.com/problems/sum-of-root-to-leaf-binary-numbers/) | 树 | Easy | 完成 |
+| [1025.除数博弈](https://leetcode-cn.com/problems/divisor-game/) | 数学、动态规划 | Easy | 完成 |
+| [1029.两地调度](https://leetcode-cn.com/problems/two-city-scheduling/) | 贪心算法 | Easy | 完成 |
+| [1030.距离顺序排列矩阵单元格](https://leetcode-cn.com/problems/matrix-cells-in-distance-order/) | 排序 | Easy | 完成     |
+| [1033.移动石子直到连续](https://leetcode-cn.com/problems/moving-stones-until-consecutive/) | 脑筋急转弯 | Easy | 完成 |
+| [1037.有效的回旋镖](https://leetcode-cn.com/problems/valid-boomerang/) | 数学 | Easy | 完成 |
+| [1042.不邻接植花](https://leetcode-cn.com/problems/flower-planting-with-no-adjacent/) | 图 | Easy |  |
+| 第27期 |  |  |  |
+| [1046.最后一块石头的重量](https://leetcode-cn.com/problems/last-stone-weight/) | 堆、贪心算法 | Easy | 完成 |
+| [1047.删除字符串中的所有相邻重复项](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/) | 栈 | Easy | 完成 |
+| [1051.高度检查器](https://leetcode-cn.com/problems/height-checker/) | 数组 | Easy | 完成 |
+| [1071.字符串的最大公因子](https://leetcode-cn.com/problems/greatest-common-divisor-of-strings/) | 字符串 | Easy | 完成 |
+| [1078.Bigram 分词](https://leetcode-cn.com/problems/occurrences-after-bigram/) | 哈希表 | Easy | 完成 |
+| [1089.复写零](https://leetcode-cn.com/problems/duplicate-zeros/) | 数组 | Easy | 完成 |
+| [1103.分糖果 II](https://leetcode-cn.com/problems/distribute-candies-to-people/) | 数学 | Easy | 完成 |
+| [1108.IP地址无效化](https://leetcode-cn.com/problems/defanging-an-ip-address/) | 字符串 | Easy | 完成 |
+| [1114.按序打印](https://leetcode-cn.com/problems/print-in-order/) |  | Easy |  |
+| [1122.数组的相对排序](https://leetcode-cn.com/problems/relative-sort-array/) | 排序、数组 | Easy | 完成 |
+| 第28期 |  |  |  |
+| [1128.等价多米诺骨牌对的数量](https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/) | 数组 | Easy | 完成 |
+| [1137.第N个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/) | 递归 | Easy | 完成 |
+| [1154.一年中的第几天](https://leetcode-cn.com/problems/day-of-the-year/) | 数学 | Easy | 完成 |
+| [1160.拼写单词](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/) | 数组、哈希表 | Easy | 完成 |
+| [1170.比较字符串最小字母出现频次](https://leetcode-cn.com/problems/compare-strings-by-frequency-of-the-smallest-character/) | 数组、字符串 | Easy |  |
 
