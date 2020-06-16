@@ -4,7 +4,7 @@
 	* [203.移除链表元素(2)](#203移除链表元素2)
 	* [204.计数质数(2)](#204计数质数2)
 	* [205.同构字符串(3)](#205同构字符串3)
-	* [206.反转链表(2)](#206反转链表2)
+	* [206.反转链表(4)](#206反转链表4)
 	* [217.存在重复元素(2)](#217存在重复元素2)
 	* [219.存在重复元素 II(2)](#219存在重复元素-ii2)
 	* [225.用队列实现栈(4)](#225用队列实现栈4)
@@ -24,6 +24,7 @@
 	* [290.单词规律(2)](#290单词规律2)
 	* [292.Nim 游戏(1)](#292nim-游戏1)
 	* [299.猜数字游戏(2)](#299猜数字游戏2)
+
 
 ## 202.快乐数(2)
 
@@ -299,7 +300,7 @@ func isIsomorphic(s string, t string) bool {
 }
 ```
 
-## 206.反转链表(2)
+## 206.反转链表(4)
 
 - 题目
 
@@ -314,10 +315,12 @@ func isIsomorphic(s string, t string) bool {
 
 - 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 递归 | O(n)       | O(n)       |
-| 02   | 迭代 | O(n)       | O(1)       |
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 递归          | O(n)       | O(n)       |
+| 02   | 迭代          | O(n)       | O(1)       |
+| 03   | 数组辅助      | O(n)       | O(n)       |
+| 04   | 迭代-新建节点 | O(n)       | O(1)       |
 
 ```go
 func reverseList(head *ListNode) *ListNode {
@@ -342,6 +345,36 @@ func reverseList(head *ListNode) *ListNode {
 		head = temp
 	}
 	return result
+}
+
+#
+func reverseList(head *ListNode) *ListNode {
+	result := &ListNode{}
+	arr := make([]*ListNode, 0)
+	for head != nil {
+		arr = append(arr, head)
+		head = head.Next
+	}
+	temp := result
+	for i := len(arr) - 1; i >= 0; i-- {
+		arr[i].Next = nil
+		temp.Next = arr[i]
+		temp = temp.Next
+	}
+	return result.Next
+}
+
+#
+func reverseList(head *ListNode) *ListNode {
+	var res *ListNode
+	for {
+		if head == nil {
+			break
+		}
+		res = &ListNode{head.Val, res}
+		head = head.Next
+	}
+	return res
 }
 ```
 
@@ -1469,7 +1502,7 @@ func isUgly(num int) bool {
 | No.  | 思路               | 时间复杂度 | 空间复杂度 |
 | ---- | ------------------ | ---------- | ---------- |
 | 01   | 数学计算           | O(n)       | O(1)       |
-| 02   | 排序遍历           | )          | O(1)       |
+| 02   | 排序遍历           | O(nlog(n))        | O(1)       |
 | 03   | 异或-位运算        | O(n)       | O(1)       |
 | 04   | 交换排序(就地排序) | O(n)       | O(1)       |
 | 05   | 哈希辅助           | O(n)       | O(n)       |

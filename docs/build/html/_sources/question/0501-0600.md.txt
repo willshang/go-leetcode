@@ -4,10 +4,10 @@
 	* [504.七进制数(3)](#504七进制数3)
 	* [506.相对名次(1)](#506相对名次1)
 	* [507.完美数(1)](#507完美数1)
-	* [509.斐波那契数(4)](#509斐波那契数4)
+	* [509.斐波那契数(6)](#509斐波那契数6)
 	* [520.检测大写字母(2)](#520检测大写字母2)
 	* [521.最长特殊序列Ⅰ(1)](#521最长特殊序列ⅰ1)
-	* [530.二叉搜索树的最小绝对差(2)](#530二叉搜索树的最小绝对差2)
+	* [530.二叉搜索树的最小绝对差(3)](#530二叉搜索树的最小绝对差3)
 	* [532.数组中的K-diff数对(3)](#532数组中的k-diff数对3)
 	* [538.把二叉搜索树转换为累加树(2)](#538把二叉搜索树转换为累加树2)
 	* [541.反转字符串II(2)](#541反转字符串ii2)
@@ -26,6 +26,7 @@
 	* [594.最长和谐子序列(2)](#594最长和谐子序列2)
 	* [598.范围求和 II(1)](#598范围求和-ii1)
 	* [599.两个列表的最小索引总和(2)](#599两个列表的最小索引总和2)
+
 
 
 ## 501.二叉搜索树中的众数(2)
@@ -258,7 +259,7 @@ func checkPerfectNumber(num int) bool {
 }
 ```
 
-## 509.斐波那契数(4)
+## 509.斐波那契数(6)
 
 - 题目
 
@@ -280,12 +281,14 @@ F(N) = F(N - 1) + F(N - 2), 其中 N > 1.
 
 - 解题思路
 
-| No.  | 思路      | 时间复杂度 | 空间复杂度 |
-| ---- | --------- | ---------- | ---------- |
-| 01   | 遍历      | O(n)       | O(1)       |
-| 02   | 遍历+数组 | O(n)       | O(n)       |
-| 03   | 递归      | O(2^n)     | O(n)       |
-| 04   | 公式法    | O(1)       | O(1)       |
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 遍历       | O(n)       | O(1)       |
+| 02   | 遍历+数组  | O(n)       | O(n)       |
+| 03   | 递归       | O(2^n)     | O(n)       |
+| 04   | 公式法     | O(1)       | O(1)       |
+| 05   | 矩阵快速幂 | O(log(n))  | O(1)       |
+| 06   | 矩阵快速幂 | O(n)       | O(1)       |
 
 ```go
 func fib(N int) int {
@@ -336,6 +339,113 @@ func fib(N int) int {
 	temp2 := (1 - math.Sqrt(5)) / 2
 	fn := math.Round((math.Pow(temp1, float64(N))- math.Pow(temp2, float64(N)))/ math.Sqrt(5))
 	return int(fn)
+}
+
+# 5
+func fib(N int) int {
+	if N == 0 {
+		return 0
+	}
+	/*
+		ans = [Fn+1 Fn
+			   Fn Fn-1]
+			= [ 1 0
+		 		0 1]
+	*/
+	ans := matrix{
+		a: 1,
+		b: 0,
+		c: 0,
+		d: 1,
+	}
+	m := matrix{
+		a: 1,
+		b: 1,
+		c: 1,
+		d: 0,
+	}
+	for N > 0 {
+		if N%2 == 1 {
+			ans = multi(ans, m)
+		}
+		m = multi(m, m)
+		N = N >> 1
+	}
+	return ans.b
+}
+
+/*
+a b
+c d
+*/
+type matrix struct {
+	a, b, c, d int
+}
+
+// 矩阵乘法
+func multi(x, y matrix) matrix {
+	newA := x.a*y.a + x.b*y.c
+	newB := x.a*y.b + x.b*y.d
+	newC := x.c*y.a + x.d*y.c
+	newD := x.c*y.b + x.d*y.d
+	return matrix{
+		a: newA,
+		b: newB,
+		c: newC,
+		d: newD,
+	}
+}
+
+# 6
+func fib(N int) int {
+	if N == 0 {
+		return 0
+	}
+	/*
+		ans = [Fn+1 Fn
+			   Fn Fn-1]
+			= [ 1 0
+		 		0 1]
+	*/
+	ans := matrix{
+		a: 1,
+		b: 0,
+		c: 0,
+		d: 1,
+	}
+	m := matrix{
+		a: 1,
+		b: 1,
+		c: 1,
+		d: 0,
+	}
+	for N > 0 {
+		ans = multi(ans, m)
+		N--
+	}
+	return ans.b
+}
+
+/*
+a b
+c d
+*/
+type matrix struct {
+	a, b, c, d int
+}
+
+// 矩阵乘法
+func multi(x, y matrix) matrix {
+	newA := x.a*y.a + x.b*y.c
+	newB := x.a*y.b + x.b*y.d
+	newC := x.c*y.a + x.d*y.c
+	newD := x.c*y.b + x.d*y.d
+	return matrix{
+		a: newA,
+		b: newB,
+		c: newC,
+		d: newD,
+	}
 }
 ```
 
@@ -1338,6 +1448,12 @@ func dfs(s *TreeNode, pre string) string {
 }
 
 #
+func isSubtree(s *TreeNode, t *TreeNode) bool {
+	sStr := preOrder(s)
+	tStr := preOrder(t)
+	return strings.Contains(sStr, tStr)
+}
+
 func preOrder(root *TreeNode) string {
 	if root == nil {
 		return ""
