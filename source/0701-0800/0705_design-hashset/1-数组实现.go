@@ -10,6 +10,7 @@ func main() {
 	fmt.Println(obj.table)
 }
 
+// leetcode705_设计哈希集合
 type MyHashSet struct {
 	table []bool
 }
