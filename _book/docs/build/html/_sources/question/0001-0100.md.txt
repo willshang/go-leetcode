@@ -6,7 +6,7 @@
 	* [13.罗马数字转整数(2)](#13罗马数字转整数2)
 	* [14.最长公共前缀(6)](#14最长公共前缀6)
 	* [20.有效的括号(3)](#20有效的括号3)
-	* [21.合并两个有序链表(2)](#21合并两个有序链表2)
+	* [21.合并两个有序链表(3)](#21合并两个有序链表3)
 	* [26.删除排序数组中的重复项(2)](#26删除排序数组中的重复项2)
 	* [27.移除元素(3)](#27移除元素3)
 	* [28.实现strStr()(4)](#28实现strstr4)
@@ -696,7 +696,7 @@ func isValid(s string) bool {
 }
 ```
 
-## 21.合并两个有序链表(2)
+## 21.合并两个有序链表(3)
 
 - 题目
 
@@ -714,6 +714,7 @@ func isValid(s string) bool {
 | -------- | -------- | ---------- | ---------- |
 | 01(最优) | 迭代遍历 | O(n)       | O(1)       |
 | 02       | 递归实现 | O(n)       | O(n)       |
+| 03       | 迭代     | O(n)       | O(1)       |
 
 ```go
 // 迭代遍历
@@ -771,6 +772,28 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		l2.Next = mergeTwoLists(l1,l2.Next)
 		return l2
 	}
+}
+
+#
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	res := &ListNode{}
+	temp := res
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			temp.Next = l1
+			l1 = l1.Next
+		} else {
+			temp.Next = l2
+			l2 = l2.Next
+		}
+		temp = temp.Next
+	}
+	if l1 != nil {
+		temp.Next = l1
+	} else {
+		temp.Next = l2
+	}
+	return res.Next
 }
 ```
 

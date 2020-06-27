@@ -259,7 +259,72 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.12" data-path="mysql.html">
+        <li class="chapter " data-level="1.2.12" data-path="1101-1200.html">
+            
+                <a href="1101-1200.html">
+            
+                    
+                    1101-1200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="1201-1300.html">
+            
+                <a href="1201-1300.html">
+            
+                    
+                    1201-1300
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="1301-1400.html">
+            
+                <a href="1301-1400.html">
+            
+                    
+                    1301-1400
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="1401-1500.html">
+            
+                <a href="1401-1500.html">
+            
+                    
+                    1401-1500
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="lcp.html">
+            
+                <a href="lcp.html">
+            
+                    
+                    lcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="mysql.html">
             
                 <a href="mysql.html">
             
@@ -272,7 +337,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.13" data-path="bash.html">
+        <li class="chapter " data-level="1.2.18" data-path="bash.html">
             
                 <a href="bash.html">
             
@@ -285,25 +350,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.14" data-path="offer.html">
+        <li class="chapter " data-level="1.2.19" data-path="offer.html">
             
                 <a href="offer.html">
             
                     
                     剑指offer
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.15" data-path="same.html">
-            
-                <a href="same.html">
-            
-                    
-                    重复题目
             
                 </a>
             
@@ -382,6 +434,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3.5" data-path="../classification/lcp.html">
+            
+                <a href="../classification/lcp.html">
+            
+                    
+                    lcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="same.html">
+            
+                <a href="same.html">
+            
+                    
+                    重复题目
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -401,12 +479,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../algorithm/sort.html">
+        <li class="chapter " data-level="1.4.1" data-path="../algorithm/1-search.html">
             
-                <a href="../algorithm/sort.html">
+                <a href="../algorithm/1-search.html">
             
                     
-                    排序
+                    查找
             
                 </a>
             
@@ -414,12 +492,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../algorithm/search.html">
+        <li class="chapter " data-level="1.4.2" data-path="../algorithm/2-sort.html">
             
-                <a href="../algorithm/search.html">
+                <a href="../algorithm/2-sort.html">
             
                     
-                    查找
+                    排序
             
                 </a>
             
@@ -782,7 +860,7 @@ type Interface interface {
     }
 }
 </code></pre>
-<h2 id="705&#x8BBE;&#x8BA1;&#x54C8;&#x5E0C;&#x96C6;&#x5408;">705.&#x8BBE;&#x8BA1;&#x54C8;&#x5E0C;&#x96C6;&#x5408;</h2>
+<h2 id="705&#x8BBE;&#x8BA1;&#x54C8;&#x5E0C;&#x96C6;&#x5408;2">705.&#x8BBE;&#x8BA1;&#x54C8;&#x5E0C;&#x96C6;&#x5408;(2)</h2>
 <ul>
 <li>&#x9898;&#x76EE;</li>
 </ul>
@@ -820,16 +898,78 @@ hashSet.contains(2);    // &#x8FD4;&#x56DE;  false (&#x5DF2;&#x7ECF;&#x88AB;&#x5
 <tbody>
 <tr>
 <td>01</td>
-<td>&#x4E8C;&#x5206;&#x67E5;&#x627E;</td>
-<td>O(log(n))</td>
+<td>&#x6570;&#x7EC4;&#x5B9E;&#x73B0;</td>
 <td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x6570;&#x7EC4;&#x5B9E;&#x73B0;</td>
+<td>O(n^1/2)</td>
+<td>)</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-go">
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> MyHashSet <span class="hljs-keyword">struct</span> {
+    table []<span class="hljs-keyword">bool</span>
+}
 
+<span class="hljs-keyword">func</span> Constructor() MyHashSet {
+    <span class="hljs-keyword">return</span> MyHashSet{
+        table: <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">bool</span>, <span class="hljs-number">1000001</span>),
+    }
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashSet) Add(key <span class="hljs-keyword">int</span>) {
+    m.table[key] = <span class="hljs-literal">true</span>
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashSet) Remove(key <span class="hljs-keyword">int</span>) {
+    m.table[key] = <span class="hljs-literal">false</span>
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashSet) Contains(key <span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">return</span> m.table[key]
+}
+
+#
+<span class="hljs-keyword">type</span> MyHashSet <span class="hljs-keyword">struct</span> {
+    table [<span class="hljs-number">10000</span>][]<span class="hljs-keyword">int</span>
+}
+
+<span class="hljs-keyword">func</span> Constructor() MyHashSet {
+    <span class="hljs-keyword">return</span> MyHashSet{
+        table: [<span class="hljs-number">10000</span>][]<span class="hljs-keyword">int</span>{},
+    }
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashSet) Add(key <span class="hljs-keyword">int</span>) {
+    <span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> m.table[key%<span class="hljs-number">10000</span>] {
+        <span class="hljs-keyword">if</span> v == key {
+            <span class="hljs-keyword">return</span>
+        }
+    }
+    m.table[key%<span class="hljs-number">10000</span>] = <span class="hljs-built_in">append</span>(m.table[key%<span class="hljs-number">10000</span>], key)
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashSet) Remove(key <span class="hljs-keyword">int</span>) {
+    <span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> m.table[key%<span class="hljs-number">10000</span>] {
+        <span class="hljs-keyword">if</span> v == key {
+            m.table[key%<span class="hljs-number">10000</span>] = <span class="hljs-built_in">append</span>(m.table[key%<span class="hljs-number">10000</span>][:k], m.table[key%<span class="hljs-number">10000</span>][k+<span class="hljs-number">1</span>:]...)
+        }
+    }
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashSet) Contains(key <span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> m.table[key%<span class="hljs-number">10000</span>] {
+        <span class="hljs-keyword">if</span> v == key {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+}
 </code></pre>
-<h2 id="706&#x8BBE;&#x8BA1;&#x54C8;&#x5E0C;&#x6620;&#x5C04;">706.&#x8BBE;&#x8BA1;&#x54C8;&#x5E0C;&#x6620;&#x5C04;</h2>
+<h2 id="706&#x8BBE;&#x8BA1;&#x54C8;&#x5E0C;&#x6620;&#x5C04;2">706.&#x8BBE;&#x8BA1;&#x54C8;&#x5E0C;&#x6620;&#x5C04;(2)</h2>
 <ul>
 <li>&#x9898;&#x76EE;</li>
 </ul>
@@ -854,9 +994,95 @@ hashMap.get(2);            // &#x8FD4;&#x56DE; -1 (&#x672A;&#x627E;&#x5230;)
 </code></pre><ul>
 <li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
 </ul>
-<pre><code>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+<th>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x6570;&#x7EC4;&#x5B9E;&#x73B0;</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x6570;&#x7EC4;&#x5B9E;&#x73B0;</td>
+<td>O(n^1/2)</td>
+<td>O(n^1/2)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> MyHashMap <span class="hljs-keyword">struct</span> {
+    table []<span class="hljs-keyword">int</span>
+}
 
-</code></pre><h2 id="709&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;2">709.&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;(2)</h2>
+<span class="hljs-keyword">func</span> Constructor() MyHashMap {
+    <span class="hljs-keyword">return</span> MyHashMap{
+        table: <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, <span class="hljs-number">1000001</span>),
+    }
+}
+
+<span class="hljs-keyword">func</span> (this *MyHashMap) Put(key <span class="hljs-keyword">int</span>, value <span class="hljs-keyword">int</span>) {
+    this.table[key] = value + <span class="hljs-number">1</span>
+}
+
+<span class="hljs-keyword">func</span> (this *MyHashMap) Get(key <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">return</span> this.table[key] - <span class="hljs-number">1</span>
+}
+
+<span class="hljs-keyword">func</span> (this *MyHashMap) Remove(key <span class="hljs-keyword">int</span>) {
+    this.table[key] = <span class="hljs-number">0</span>
+}
+
+#
+<span class="hljs-keyword">type</span> MyHashMap <span class="hljs-keyword">struct</span> {
+    keys  [<span class="hljs-number">10000</span>][]<span class="hljs-keyword">int</span>
+    value [<span class="hljs-number">10000</span>][]<span class="hljs-keyword">int</span>
+}
+
+<span class="hljs-keyword">func</span> Constructor() MyHashMap {
+    <span class="hljs-keyword">return</span> MyHashMap{
+        keys:  [<span class="hljs-number">10000</span>][]<span class="hljs-keyword">int</span>{},
+        value: [<span class="hljs-number">10000</span>][]<span class="hljs-keyword">int</span>{},
+    }
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashMap) Put(key <span class="hljs-keyword">int</span>, value <span class="hljs-keyword">int</span>) {
+    <span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> m.keys[key%<span class="hljs-number">10000</span>] {
+        <span class="hljs-keyword">if</span> v == key {
+            m.value[key%<span class="hljs-number">10000</span>][k] = value
+            <span class="hljs-keyword">return</span>
+        }
+    }
+    m.keys[key%<span class="hljs-number">10000</span>] = <span class="hljs-built_in">append</span>(m.keys[key%<span class="hljs-number">10000</span>], key)
+    m.value[key%<span class="hljs-number">10000</span>] = <span class="hljs-built_in">append</span>(m.value[key%<span class="hljs-number">10000</span>], value)
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashMap) Get(key <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> m.keys[key%<span class="hljs-number">10000</span>] {
+        <span class="hljs-keyword">if</span> v == key {
+            <span class="hljs-keyword">return</span> m.value[key%<span class="hljs-number">10000</span>][k]
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+}
+
+<span class="hljs-keyword">func</span> (m *MyHashMap) Remove(key <span class="hljs-keyword">int</span>) {
+    <span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> m.keys[key%<span class="hljs-number">10000</span>] {
+        <span class="hljs-keyword">if</span> v == key {
+            m.keys[key%<span class="hljs-number">10000</span>] = <span class="hljs-built_in">append</span>(m.keys[key%<span class="hljs-number">10000</span>][:k], m.keys[key%<span class="hljs-number">10000</span>][k+<span class="hljs-number">1</span>:]...)
+            m.value[key%<span class="hljs-number">10000</span>] = <span class="hljs-built_in">append</span>(m.value[key%<span class="hljs-number">10000</span>][:k], m.value[key%<span class="hljs-number">10000</span>][k+<span class="hljs-number">1</span>:]...)
+        }
+    }
+}
+</code></pre>
+<h2 id="709&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;2">709.&#x8F6C;&#x6362;&#x6210;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;(2)</h2>
 <ul>
 <li>&#x9898;&#x76EE;</li>
 </ul>
@@ -2632,7 +2858,7 @@ A &#x7684;&#x65CB;&#x8F6C;&#x64CD;&#x4F5C;&#x5C31;&#x662F;&#x5C06; A &#x6700;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"0701-0800","level":"1.2.8","depth":2,"next":{"title":"0801-0900","level":"1.2.9","depth":2,"path":"docs/source/question/0801-0900.md","ref":"docs/source/question/0801-0900.md","articles":[]},"previous":{"title":"0601-0700","level":"1.2.7","depth":2,"path":"docs/source/question/0601-0700.md","ref":"docs/source/question/0601-0700.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0701-0800.md","mtime":"2020-06-04T23:33:13.563Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-04T23:05:18.154Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"0701-0800","level":"1.2.8","depth":2,"next":{"title":"0801-0900","level":"1.2.9","depth":2,"path":"docs/source/question/0801-0900.md","ref":"docs/source/question/0801-0900.md","articles":[]},"previous":{"title":"0601-0700","level":"1.2.7","depth":2,"path":"docs/source/question/0601-0700.md","ref":"docs/source/question/0601-0700.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0701-0800.md","mtime":"2020-06-27T15:47:33.224Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-27T15:48:00.929Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

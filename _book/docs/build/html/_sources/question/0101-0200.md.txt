@@ -4,7 +4,7 @@
 	* [104.二叉树的最大深度(2)](#104二叉树的最大深度2)
 	* [107.二叉树的层次遍历II(2)](#107二叉树的层次遍历ii2)
 	* [108.将有序数组转换为二叉搜索树(2)](#108将有序数组转换为二叉搜索树2)
-	* [110.平衡二叉树(1)](#110平衡二叉树1)
+	* [110.平衡二叉树(2)](#110平衡二叉树2)
 	* [111.二叉树的最小深度(2)](#111二叉树的最小深度2)
 	* [112.路径总和(2)](#112路径总和2)
 	* [118.杨辉三角(2)](#118杨辉三角2)
@@ -23,8 +23,9 @@
 	* [172.阶乘后的零(1)](#172阶乘后的零1)
 	* [189.旋转数组(4)](#189旋转数组4)
 	* [190.颠倒二进制位(3)](#190颠倒二进制位3)
-	* [191.位1的个数(2)](#191位1的个数2)
+	* [191.位1的个数(4)](#191位1的个数4)
 	* [198.打家劫舍(4)](#198打家劫舍4)
+
 
 ## 101. 对称二叉树(2)
 - 题目
@@ -344,7 +345,7 @@ func sortedArrayToBST(nums []int) *TreeNode {
 }
 ```
 
-## 110.平衡二叉树(1)
+## 110.平衡二叉树(2)
 
 - 题目
 
@@ -387,6 +388,7 @@ func sortedArrayToBST(nums []int) *TreeNode {
 | No.  | 思路 | 时间复杂度 | 空间复杂度 |
 | ---- | ---- | ---------- | ---------- |
 | 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 递归 | O(n)       | O(log(n))  |
 
 ```go
 func isBalanced(root *TreeNode) bool {
@@ -421,6 +423,38 @@ func max(a, b int) int {
 		return a
 	}
 	return b
+}
+
+#
+func isBalanced(root *TreeNode) bool {
+	return dfs(root) != -1
+}
+
+func dfs(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	left := dfs(root.Left)
+	right := dfs(root.Right)
+	if left != -1 && right != -1 &&
+		abs(left, right) <= 1 {
+		return max(left, right) + 1
+	}
+	return -1
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func abs(a, b int) int {
+	if a > b {
+		return a - b
+	}
+	return b - a
 }
 ```
 
@@ -1534,7 +1568,7 @@ func convertToTitle(n int) string {
 
 | No.      | 思路                | 时间复杂度 | 空间复杂度 |
 | -------- | ------------------- | ---------- | ---------- |
-| 01       | 排序取半            | O(log(n))  | O(1)       |
+| 01       | 排序取半            | O(nlog(n)) | O(1)       |
 | 02       | 哈希法              | O(n)       | O(n)       |
 | 03(最优) | Boyer-Moore投票算法 | O(n)       | O(1)       |
 | 04       | 位运算              | O(n)       | O(1)       |
@@ -1929,7 +1963,7 @@ func reverseBits(num uint32) uint32 {
 }
 ```
 
-## 191.位1的个数(2)
+## 191.位1的个数(4)
 
 - 题目
 
@@ -1968,6 +2002,8 @@ func reverseBits(num uint32) uint32 {
 | -------- | ----------------------------------------------- | ---------- | ---------- |
 | 01       | 循环位计算                                      | O(1)       | O(1)       |
 | 02(最优) | 位计算<br />n&(n-1)，会把该整数的最右边的1变成0 | O(1)       | O(1)       |
+| 03       | 内置函数                                        | O(1)       | O(1)       |
+| 04       | 遍历                                            | O(1)       | O(1)       |
 
 ```go
 // 循环位计算
@@ -1992,6 +2028,24 @@ func hammingWeight(num uint32) int {
 	return count
 }
 
+#
+func hammingWeight(num uint32) int {
+	return strings.Count(strconv.FormatInt(int64(num),2),"1")
+	// return strings.Count(fmt.Sprintf("%b",num),"1")
+}
+
+#
+func hammingWeight(num uint32) int {
+	count := 0
+	flag := uint32(1)
+	for flag != 0 {
+		if num&flag == flag {
+			count++
+		}
+		flag = flag << 1
+	}
+	return count
+}
 ```
 
 ## 198.打家劫舍(4)

@@ -21,13 +21,13 @@
     - [mysql](docs/source/question/mysql.md)
     - [bash](docs/source/question/bash.md)
     - [剑指offer](docs/source/question/offer.md)
-    - [重复题目](docs/source/question/same.md)
 * 分类/书籍
     - [初级算法](docs/source/classification/easy.md)
     - [中级算法](docs/source/classification/medium.md)
     - [高级算法](docs/source/classification/hard.md)
     - [书籍-剑指offer](docs/source/classification/offer.md)
     - [lcp](docs/source/classification/lcp.md)
+    - [重复题目](docs/source/question/same.md)
 * 算法
     - [查找](docs/source/algorithm/1-search.md)
     - [排序](docs/source/algorithm/2-sort.md)
