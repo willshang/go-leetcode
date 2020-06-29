@@ -1,12 +1,12 @@
 # go-Leetcode
-[![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/en/latest/?badge=latest)
-
-[gitbook](https://willshang.github.io/go-leetcode/)
+- readthedoc [![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/en/latest/?badge=latest)
+- gitbook [gitbook](https://willshang.github.io/go-leetcode/)
 ## 0.参考
 - https://leetcode-cn.com/
-
+- 2.6k https://github.com/kylesliu/awesome-golang-leetcode
+- 2.5k https://github.com/aQuaYi/LeetCode-in-Go
+- 5.2k https://github.com/greyireland/algorithm-pattern
 ## 1.完成的题目
-
 ### Easy系列
 
 | No.                                                   | Title                                                        | Tag                            | 难度 | 完成情况 |
@@ -27,9 +27,9 @@
 | 0012 | [38.报数](https://leetcode-cn.com/problems/count-and-say)    | 字符串                         | Easy | 完成     |
 | 0013 | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) | 数组、分治算法、动态规划       | Easy | 完成     |
 | 0014 | [58.最后一个单词的长度](https://leetcode-cn.com/problems/length-of-last-word/) | 字符串                         | Easy | 完成     |
-| 0015     | [66.加一](https://leetcode-cn.com/problems/plus-one)         | 数组                           | Easy | 完成     |
+| 0015 | [66.加一](https://leetcode-cn.com/problems/plus-one)         | 数组                           | Easy | 完成     |
 | 0016 | [67.二进制求和](https://leetcode-cn.com/problems/add-binary) | 数字、字符串                   | Easy | 完成     |
-| 0017  | [69.x 的平方根](https://leetcode-cn.com/problems/sqrtx)      | 数学，二分查找                 | Easy | 完成     |
+| 0017 | [69.x 的平方根](https://leetcode-cn.com/problems/sqrtx)      | 数学，二分查找                 | Easy | 完成     |
 | 0018 | [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs) | 动态规划                       | Easy | 完成     |
 | 0019 | [83.删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list) | 链表                           | Easy | 完成     |
 | 0020 | [88.合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array) | 数组、双指针                   | Easy | 完成     |
