@@ -24,26 +24,20 @@ type ListNode struct {
 }
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	res := &ListNode{}
-	cur := res
-	carry := 0
-	for l1 != nil || l2 != nil || carry > 0 {
-		sum := carry
-		if l1 != nil {
-			sum += l1.Val
-			l1 = l1.Next
-		}
-
-		if l2 != nil {
-			sum += l2.Val
-			l2 = l2.Next
-		}
-
-		//进位
-		carry = sum / 10
-
-		cur.Next = &ListNode{Val: sum % 10}
-		cur = cur.Next
+	if l1 == nil && l2 == nil {
+		return nil
 	}
-	return res.Next
+	if l1 == nil {
+		return l2
+	}
+	if l2 == nil {
+		return l1
+	}
+	sum := l1.Val + l2.Val
+	res := &ListNode{Val: sum % 10}
+	if sum >= 10 {
+		l1.Next = addTwoNumbers(l1.Next, &ListNode{Val: 1})
+	}
+	res.Next = addTwoNumbers(l1.Next, l2.Next)
+	return res
 }

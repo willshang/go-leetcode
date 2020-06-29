@@ -381,10 +381,12 @@
 
 ### Medium
 
-| No.  | Title                                                        | Tag        | 难度   | 完成情况 |
-| ---- | ------------------------------------------------------------ | ---------- | ------ | -------- |
-|      | 第1期                                                        |            |        |          |
-| 0001 | [2.两数相加](https://leetcode-cn.com/problems/add-two-numbers/) | 链表、数学 | Medium |          |
+| No.  | Title                                                        | Tag                                        | 难度   | 完成情况 |
+| ---- | ------------------------------------------------------------ | ------------------------------------------ | ------ | -------- |
+|      | 第1期                                                        |                                            |        |          |
+| 0001 | [2.两数相加](https://leetcode-cn.com/problems/add-two-numbers/) | 链表、数学                                 | Medium | 完成     |
+| 0002 | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window | Medium | 完成     |
+| 0003 | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划                           | Medium |          |
 
 ### Hard
 

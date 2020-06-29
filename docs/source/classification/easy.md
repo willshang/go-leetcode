@@ -93,6 +93,6 @@
 | [191.位1的个数](https://leetcode-cn.com/problems/number-of-1-bits) | 位运算             | Easy | 完成     |
 | [461.汉明距离](https://leetcode-cn.com/problems/hamming-distance/) | 位运算             | Easy | 完成     |
 | [190.颠倒二进制位](https://leetcode-cn.com/problems/reverse-bits) | 位运算             | Easy | 完成     |
-| 帕斯卡三角形                                                 |                    |      |          |
+| 帕斯卡三角形 [118.杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) | 数组               | Easy | 完成     |
 | [20.有效的括号](https://leetcode-cn.com/problems/valid-parentheses) | 栈、字符串         | Easy | 完成     |
 | [268.缺失数字](https://leetcode-cn.com/problems/missing-number/) | 位运算、数组、数学 | Easy | 完成     |
