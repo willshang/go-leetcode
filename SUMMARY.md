@@ -31,10 +31,13 @@
     - [热题100](docs/source/classification/hot-100.md)
     - [数组与字符串](docs/source/classification/array_and_string.md)
     - [牛客-华为](docs/source/nowcoder/hw.md)
+    - [PAT-乙级](docs/source/classification/patB.md)
 * 算法
     - [查找](docs/source/algorithm/1-search.md)
     - [排序](docs/source/algorithm/2-sort.md)
 * 牛客
     - [华为机试](docs/source/classification/nowcoder_hw.md)
+* PAT
+    - [PAT-乙级](docs/source/question/patB.md)
     
     
