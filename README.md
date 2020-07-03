@@ -387,6 +387,10 @@
 | 0001 | [2.两数相加](https://leetcode-cn.com/problems/add-two-numbers/) | 链表、数学                                 | Medium | 完成     |
 | 0002 | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window | Medium | 完成     |
 | 0003 | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划                           | Medium |          |
+| 0004 | [6.Z字形变换](https://leetcode-cn.com/problems/zigzag-conversion/) | 字符串                                     | Medium |          |
+| 0005 | [8.字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 数字、字符串                               | Medium |          |
+| 0006 | [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针                               | Medium |          |
+| 0007 |                                                              |                                            |        |          |
 
 ### Hard
 
