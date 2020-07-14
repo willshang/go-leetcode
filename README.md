@@ -29,7 +29,7 @@
 | 0014 | [58.最后一个单词的长度](https://leetcode-cn.com/problems/length-of-last-word/) | 字符串                         | Easy | 完成     |
 | 0015 | [66.加一](https://leetcode-cn.com/problems/plus-one)         | 数组                           | Easy | 完成     |
 | 0016 | [67.二进制求和](https://leetcode-cn.com/problems/add-binary) | 数字、字符串                   | Easy | 完成     |
-| 0017 | [69.x 的平方根](https://leetcode-cn.com/problems/sqrtx)      | 数学，二分查找                 | Easy | 完成     |
+| 0017 | [69.x的平方根](https://leetcode-cn.com/problems/sqrtx)      | 数学，二分查找                 | Easy | 完成     |
 | 0018 | [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs) | 动态规划                       | Easy | 完成     |
 | 0019 | [83.删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list) | 链表                           | Easy | 完成     |
 | 0020 | [88.合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array) | 数组、双指针                   | Easy | 完成     |
@@ -37,22 +37,22 @@
 | 0021 | [100.相同的树](https://leetcode-cn.com/problems/same-tree/)  | 树、深度优先搜索               | Easy | 完成     |
 | 0022 | [101.对称二叉树](https://leetcode-cn.com/problems/symmetric-tree) | 树、深度优先搜索、广度优先搜索 | Easy | 完成     |
 | 0023 | [104.二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree) | 树、深度优先搜索               | Easy | 完成     |
-| 0024 | [107.二叉树的层次遍历 II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii) | 树、广度优先搜索               | Easy | 完成     |
+| 0024 | [107.二叉树的层次遍历II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii) | 树、广度优先搜索               | Easy | 完成     |
 | 0025 | [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) | 树、深度优先搜索               | Easy | 完成     |
 | 0026 | [110.平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree) | 树、深度优先搜索               | Easy | 完成     |
 | 0027 | [111.二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree) | 树、深度优先搜索、广度优先搜索 | Easy | 完成     |
 | 0028 | [112.路径总和](https://leetcode-cn.com/problems/path-sum)    | 树、深度优先搜索               | Easy | 完成     |
 | 0029 | [118.杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) | 数组                           | Easy | 完成     |
-| 0030 | [119.杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组                           | Easy | 完成     |
+| 0030 | [119.杨辉三角II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组                           | Easy | 完成     |
 |                                                       | 第4期                                                      |                                |      |          |
 | 0031 | [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | 数组、动态规划                 | Easy | 完成     |
-| 0032 | [122.买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) | 贪心算法、数组                 | Easy | 完成     |
+| 0032 | [122.买卖股票的最佳时机II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) | 贪心算法、数组                 | Easy | 完成     |
 | 0033 | [125.验证回文串](https://leetcode-cn.com/problems/valid-palindrome) | 双指针、字符串                 | Easy | 完成     |
 | 0034 | [136.只出现一次的数字](https://leetcode-cn.com/problems/single-number) | 位运算、哈希表                 | Easy | 完成     |
 | 0035 | [141.环形链表](https://leetcode-cn.com/problems/linked-list-cycle) | 链表、双指针                   | Easy | 完成     |
 | 0036 | [155.最小栈](https://leetcode-cn.com/problems/min-stack)     | 栈、设计                       | Easy | 完成     |
 | 0037 | [160.相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists) | 链表                           | Easy | 完成     |
-| 0038 | [167.两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted) | 数组、双指针、二分查找         | Easy | 完成     |
+| 0038 | [167.两数之和II-输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted) | 数组、双指针、二分查找         | Easy | 完成     |
 | 0039 | [168.Excel表列名称](https://leetcode-cn.com/problems/excel-sheet-column-title) | 数学                           | Easy | 完成     |
 | 0040 | [169.多数元素](https://leetcode-cn.com/problems/majority-element) | 位运算、数组、分治算法         | Easy | 完成     |
 |                                                       | 第5期                                                      |                                |      |          |
@@ -79,7 +79,7 @@
 | 0060 | [206.反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | 链表 | Easy | 完成 |
 |  | 第7期 |  |  |  |
 | 0061 | [217.存在重复元素](https://leetcode-cn.com/problems/contains-duplicate/) | 数组、哈希表 | Easy | 完成 |
-| 0062 | [219.存在重复元素 II](https://leetcode-cn.com/problems/contains-duplicate-ii/) | 数组、哈希表 | Easy | 完成 |
+| 0062 | [219.存在重复元素II](https://leetcode-cn.com/problems/contains-duplicate-ii/) | 数组、哈希表 | Easy | 完成 |
 | 0063 | [225.用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/) | 栈、设计 | Easy | 完成 |
 | 0064 | [226.翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/) | 树 | Easy | 完成 |
 | 0065 | [231.2的幂](https://leetcode-cn.com/problems/power-of-two/) | 位运算、数学 | Easy | 完成 |
@@ -96,16 +96,16 @@
 | 0075 | [278.第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/) | 二分查找 | Easy | 完成 |
 | 0076 | [283.移动零](https://leetcode-cn.com/problems/move-zeroes/) | 数组、双指针 | Easy | 完成 |
 | 0077 | [290.单词规律](https://leetcode-cn.com/problems/word-pattern/) | 哈希表 | Easy | 完成 |
-| 0078 | [292.Nim 游戏](https://leetcode-cn.com/problems/nim-game/) | 脑筋急转弯、极小化极大 | Easy | 完成 |
+| 0078 | [292.Nim游戏](https://leetcode-cn.com/problems/nim-game/) | 脑筋急转弯、极小化极大 | Easy | 完成 |
 | 0079 | [299.猜数字游戏](https://leetcode-cn.com/problems/bulls-and-cows/) | 哈希表 | Easy | 完成 |
-| 0080 | [303.区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划 | Easy | 完成 |
+| 0080 | [303.区域和检索-数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划 | Easy | 完成 |
 |  | 第9期 |  |  |  |
 | 0081 | [326.3的幂](https://leetcode-cn.com/problems/power-of-three/) | 数学                           | Easy | 完成     |
 | 0082 | [342.4的幂](https://leetcode-cn.com/problems/power-of-four/) | 位运算 | Easy | 完成 |
 | 0083 | [344.反转字符串](https://leetcode-cn.com/problems/reverse-string/) | 双指针、字符串 | Easy | 完成 |
 | 0084 | [345.反转字符串中的元音字母](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/) | 双指针、字符串 | Easy | 完成 |
 | 0085 | [349.两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/) | 排序、哈希表、双指针、二分查找 | Easy | 完成 |
-| 0086 | [350.两个数组的交集 II](https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/) | 排序、哈希表、双指针、二分查找 | Easy | 完成 |
+| 0086 | [350.两个数组的交集II](https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/) | 排序、哈希表、双指针、二分查找 | Easy | 完成 |
 | 0087 | [367.有效的完全平方数](https://leetcode-cn.com/problems/valid-perfect-square/) | 数学、二分查找 | Easy | 完成 |
 | 0088 | [371.两整数之和](https://leetcode-cn.com/problems/sum-of-two-integers/) | 位运算 | Easy | 完成 |
 | 0089 | [374.猜数字大小](https://leetcode-cn.com/problems/guess-number-higher-or-lower/) | 二分查找 | Easy | 完成 |
@@ -123,7 +123,7 @@
 | 0100 | [415.字符串相加](https://leetcode-cn.com/problems/add-strings/) | 字符串 | Easy | 完成 |
 |  | 第11期 |  |  |  |
 | 0101 | [434.字符串中的单词数](https://leetcode-cn.com/problems/number-of-segments-in-a-string/) | 字符串 | Easy | 完成 |
-| 0102 | [437.路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/) | 树 | Easy | 完成 |
+| 0102 | [437.路径总和III](https://leetcode-cn.com/problems/path-sum-iii/) | 树 | Easy | 完成 |
 | 0103 | [441.排列硬币](https://leetcode-cn.com/problems/arranging-coins/) | 数学、二分查找 | Easy | 完成 |
 | 0104 | [443.压缩字符串](https://leetcode-cn.com/problems/string-compression/) | 字符串 | Easy | 完成 |
 | 0105 | [447.回旋镖的数量](https://leetcode-cn.com/problems/number-of-boomerangs/) | 哈希表 | Easy | 完成 |
@@ -139,7 +139,7 @@
 | 0114 | [482.密钥格式化](https://leetcode-cn.com/problems/license-key-formatting/) |  | Easy | 完成 |
 | 0115 | [485.最大连续1的个数](https://leetcode-cn.com/problems/max-consecutive-ones/) | 数组 | Easy | 完成 |
 | 0116 | [492.构造矩形](https://leetcode-cn.com/problems/construct-the-rectangle/) |  | Easy | 完成 |
-| 0117 | [496.下一个更大元素 I](https://leetcode-cn.com/problems/next-greater-element-i/) | 栈 | Easy | 完成 |
+| 0117 | [496.下一个更大元素I](https://leetcode-cn.com/problems/next-greater-element-i/) | 栈 | Easy | 完成 |
 | 0118 | [500.键盘行](https://leetcode-cn.com/problems/keyboard-row/) | 哈希表 | Easy | 完成 |
 | 0119 | [501.二叉搜索树中的众数](https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/) | 树 | Easy | 完成 |
 | 0120 | [504.七进制数](https://leetcode-cn.com/problems/base-7/) |  | Easy | 完成 |
@@ -152,13 +152,13 @@
 | 0126 | [530.二叉搜索树的最小绝对差](https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/) | 树 | Easy | 完成 |
 | 0127 | [532.数组中的K-diff数对](https://leetcode-cn.com/problems/k-diff-pairs-in-an-array/) | 数组、双指针 | Easy | 完成 |
 | 0128 | [538.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) | 树 | Easy | 完成 |
-| 0129 | [541.反转字符串 II](https://leetcode-cn.com/problems/reverse-string-ii/) | 字符串 | Easy | 完成 |
+| 0129 | [541.反转字符串II](https://leetcode-cn.com/problems/reverse-string-ii/) | 字符串 | Easy | 完成 |
 | 0130 | [543.二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) | 树 | Easy | 完成 |
 |  | 第14期 |  |  |  |
-| 0131 | [551.学生出勤记录 I](https://leetcode-cn.com/problems/student-attendance-record-i/) | 字符串 | Easy | 完成 |
-| 0132 | [557.反转字符串中的单词 III](https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/) | 字符串 | Easy | 完成 |
+| 0131 | [551.学生出勤记录I](https://leetcode-cn.com/problems/student-attendance-record-i/) | 字符串 | Easy | 完成 |
+| 0132 | [557.反转字符串中的单词III](https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/) | 字符串 | Easy | 完成 |
 | 0133 | [559.N叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/) | 树、深度优先搜索、广度优先搜索 | Easy | 完成 |
-| 0134 | [561.数组拆分 I](https://leetcode-cn.com/problems/array-partition-i/) | 数组 | Easy | 完成 |
+| 0134 | [561.数组拆分I](https://leetcode-cn.com/problems/array-partition-i/) | 数组 | Easy | 完成 |
 | 0135 | [563.二叉树的坡度](https://leetcode-cn.com/problems/binary-tree-tilt/) | 树 | Easy | 完成 |
 | 0136 | [566.重塑矩阵](https://leetcode-cn.com/problems/reshape-the-matrix/) | 数组 | Easy | 完成 |
 | 0137 | [572.另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/) | 树 | Easy | 完成 |
@@ -170,7 +170,7 @@
 | 0142 | [594.最长和谐子序列](https://leetcode-cn.com/problems/longest-harmonious-subsequence/) | 哈希表 | Easy | 完成 |
 | 0143 | [595.大的国家](https://leetcode-cn.com/problems/big-countries/) | Mysql | Easy | 完成 |
 | 0144 | [596.超过5名学生的课](https://leetcode-cn.com/problems/classes-more-than-5-students/) | Mysql | Easy | 完成 |
-| 0145 | [598.范围求和 II](https://leetcode-cn.com/problems/range-addition-ii/) | 数学 | Easy | 完成 |
+| 0145 | [598.范围求和II](https://leetcode-cn.com/problems/range-addition-ii/) | 数学 | Easy | 完成 |
 | 0146 | [599.两个列表的最小索引总和](https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists/) | 哈希表 | Easy | 完成 |
 | 0147 | [605.种花问题](https://leetcode-cn.com/problems/can-place-flowers/) | 数组 | Easy | 完成 |
 | 0148 | [606.根据二叉树创建字符串](https://leetcode-cn.com/problems/construct-string-from-binary-tree/) | 树、字符串 | Easy | 完成 |
@@ -181,9 +181,9 @@
 | 0152 | [628.三个数的最大乘积](https://leetcode-cn.com/problems/maximum-product-of-three-numbers/) | 数组、数学 | Easy | 完成 |
 | 0153 | [633.平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers/) | 数学 | Easy | 完成 |
 | 0154 | [637.二叉树的层平均值](https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/) | 树 | Easy | 完成 |
-| 0155 | [643.子数组最大平均数 I](https://leetcode-cn.com/problems/maximum-average-subarray-i/) | 数组 | Easy | 完成 |
+| 0155 | [643.子数组最大平均数I](https://leetcode-cn.com/problems/maximum-average-subarray-i/) | 数组 | Easy | 完成 |
 | 0156 | [645.错误的集合](https://leetcode-cn.com/problems/set-mismatch/) | 哈希表、数学 | Easy | 完成 |
-| 0157 | [653.两数之和 IV - 输入 BST](https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/) | 树 | Easy | 完成 |
+| 0157 | [653.两数之和IV-输入BST](https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/) | 树 | Easy | 完成 |
 | 0158 | [657.机器人能否返回原点](https://leetcode-cn.com/problems/robot-return-to-origin/) | 字符串 | Easy | 完成 |
 | 0159 | [661.图片平滑器](https://leetcode-cn.com/problems/image-smoother/) | 数组 | Easy | 完成 |
 | 0160 | [665.非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) | 数组 | Easy | 完成 |
@@ -191,7 +191,7 @@
 | 0161 | [669.修剪二叉搜索树](https://leetcode-cn.com/problems/trim-a-binary-search-tree/) | 树 | Easy | 完成 |
 | 0162 | [671.二叉树中第二小的节点](https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/) | 树 | Easy | 完成 |
 | 0163 | [674.最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/) | 数组 | Easy | 完成 |
-| 0164 | [680.验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 字符串 | Easy | 完成 |
+| 0164 | [680.验证回文字符串Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 字符串 | Easy | 完成 |
 | 0165 | [682.棒球比赛](https://leetcode-cn.com/problems/baseball-game/) | 栈 | Easy | 完成 |
 | 0166 | [686.重复叠加字符串匹配](https://leetcode-cn.com/problems/repeated-string-match/) | 字符串 | Easy | 完成 |
 | 0167 | [687.最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/) | 树 | Easy | 完成 |
@@ -259,7 +259,7 @@
 | 0223 | [908.最小差值I](https://leetcode-cn.com/problems/smallest-range-i/) | 数学 | Easy | 完成 |
 | 0224 | [914.卡牌分组](https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards/) | 数组、数学 | Easy | 完成 |
 | 0225 | [917.仅仅反转字母](https://leetcode-cn.com/problems/reverse-only-letters/) | 字符串 | Easy | 完成 |
-| 0226 | [922.按奇偶排序数组 II](https://leetcode-cn.com/problems/sort-array-by-parity-ii/) | 排序、数组 | Easy | 完成 |
+| 0226 | [922.按奇偶排序数组II](https://leetcode-cn.com/problems/sort-array-by-parity-ii/) | 排序、数组 | Easy | 完成 |
 | 0227 | [925.长按键入](https://leetcode-cn.com/problems/long-pressed-name/) | 双指针、字符串 | Easy | 完成 |
 | 0228 | [929.独特的电子邮件地址](https://leetcode-cn.com/problems/unique-email-addresses/) | 字符串 | Easy | 完成 |
 | 0229 | [933.最近的请求次数](https://leetcode-cn.com/problems/number-of-recent-calls/) | 队列 | Easy | 完成 |
@@ -271,7 +271,7 @@
 | 0234 | [944.删列造序](https://leetcode-cn.com/problems/delete-columns-to-make-sorted/) | 贪心算法 | Easy | 完成 |
 | 0235 | [949.给定数字能组成的最大时间](https://leetcode-cn.com/problems/largest-time-for-given-digits/) | 数学 | Easy | 完成 |
 | 0236 | [953.验证外星语词典](https://leetcode-cn.com/problems/verifying-an-alien-dictionary/) | 哈希表 | Easy | 完成 |
-| 0237 | [961.重复 N 次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 哈希表 | Easy | 完成 |
+| 0237 | [961.重复N次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 哈希表 | Easy | 完成 |
 | 0238 | [965.单值二叉树](https://leetcode-cn.com/problems/univalued-binary-tree/) | 树 | Easy | 完成 |
 | 0239 | [970.强整数](https://leetcode-cn.com/problems/powerful-integers/) | 哈希表、数学 | Easy | 完成 |
 | 0240 | [976.三角形的最大周长](https://leetcode-cn.com/problems/largest-perimeter-triangle/) | 排序、数学 | Easy | 完成 |
@@ -283,9 +283,9 @@
 | 0245 | [997.找到小镇的法官](https://leetcode-cn.com/problems/find-the-town-judge/) | 图 | Easy | 完成 |
 | 0246 | [999.可以被一步捕获的棋子数](https://leetcode-cn.com/problems/available-captures-for-rook/) | 数组 | Easy | 完成 |
 | 0247 | [1002.查找常用字符](https://leetcode-cn.com/problems/find-common-characters/) | 数组、哈希表 | Easy | 完成 |
-| 0248 | [1005.K 次取反后最大化的数组和](https://leetcode-cn.com/problems/maximize-sum-of-array-after-k-negations/) | 贪心算法 | Easy | 完成 |
+| 0248 | [1005.K次取反后最大化的数组和](https://leetcode-cn.com/problems/maximize-sum-of-array-after-k-negations/) | 贪心算法 | Easy | 完成 |
 | 0249 | [1009.十进制整数的反码](https://leetcode-cn.com/problems/complement-of-base-10-integer/) | 数学 | Easy | 完成 |
-| 0250 | [1010.总持续时间可被 60 整除的歌曲](https://leetcode-cn.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/) | 数组 | Easy | 完成 |
+| 0250 | [1010.总持续时间可被60整除的歌曲](https://leetcode-cn.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/) | 数组 | Easy | 完成 |
 |  | 第26期 |  |  |  |
 | 0251 | [1013.将数组分成和相等的三个部分](https://leetcode-cn.com/problems/partition-array-into-three-parts-with-equal-sum/) | 数组 | Easy | 完成 |
 | 0252 | [1018.可被5整除的二进制前缀](https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/) | 数组 | Easy | 完成 |
@@ -304,7 +304,7 @@
 | 0264 | [1071.字符串的最大公因子](https://leetcode-cn.com/problems/greatest-common-divisor-of-strings/) | 字符串 | Easy | 完成 |
 | 0265 | [1078.Bigram分词](https://leetcode-cn.com/problems/occurrences-after-bigram/) | 哈希表 | Easy | 完成 |
 | 0266 | [1089.复写零](https://leetcode-cn.com/problems/duplicate-zeros/) | 数组 | Easy | 完成 |
-| 0267 | [1103.分糖果 II](https://leetcode-cn.com/problems/distribute-candies-to-people/) | 数学 | Easy | 完成 |
+| 0267 | [1103.分糖果II](https://leetcode-cn.com/problems/distribute-candies-to-people/) | 数学 | Easy | 完成 |
 | 0268 | [1108.IP地址无效化](https://leetcode-cn.com/problems/defanging-an-ip-address/) | 字符串 | Easy | 完成 |
 | 0269 | [1114.按序打印](https://leetcode-cn.com/problems/print-in-order/) |  | Easy | [提交没有Go语言] |
 | 0270 | [1122.数组的相对排序](https://leetcode-cn.com/problems/relative-sort-array/) | 排序、数组 | Easy | 完成 |
@@ -393,7 +393,7 @@
 | 0002 | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window | Medium | 完成     |
 | 0003 | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划                           | Medium |          |
 | 0004 | [6.Z字形变换](https://leetcode-cn.com/problems/zigzag-conversion/) | 字符串                                     | Medium |          |
-| 0005 | [8.字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 数字、字符串                               | Medium | 完成     |
+| 0005 | [8.字符串转换整数(atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 数字、字符串                               | Medium | 完成     |
 | 0006 | [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针                               | Medium | 完成     |
 | 0007 | [12.整数转罗马数字](https://leetcode-cn.com/problems/integer-to-roman/) | 数学、字符串                               | Medium | 完成     |
 | 0008 | [15.三数之和](https://leetcode-cn.com/problems/3sum/)        | 数组、双指针                               | Medium | 完成     |
@@ -414,7 +414,7 @@
 | 0021 | [40.组合总和II](https://leetcode-cn.com/problems/combination-sum-ii/) | 数组、回溯算法                             | Medium |          |
 | 0022 | [43.字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 数学、字符串                               | Medium |          |
 | 0023 | [46.全排列](https://leetcode-cn.com/problems/permutations/)  | 回溯算法                                   | Medium | 完成     |
-| 0024 | [47.全排列 II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯算法                                   | Medium |          |
+| 0024 | [47.全排列II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯算法                                   | Medium |          |
 | 0025 | [48.旋转图像](https://leetcode-cn.com/problems/rotate-image/) | 数组                                       | Medium | 完成     |
 | 0026 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) | 哈希表、字符串                             | Medium |          |
 | 0027 | [50.Pow(x,n)](https://leetcode-cn.com/problems/powx-n/)      | 数学、二分查找                             | Medium | 完成     |
@@ -422,13 +422,13 @@
 | 0029 | [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组                             | Medium | 完成     |
 | 0030 | [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 排序、数组                                 | Medium | 完成     |
 |      | 第4期                                                        |                                            |        |          |
-| 0031 | [59.螺旋矩阵 II](https://leetcode-cn.com/problems/spiral-matrix-ii/) | 数组                                       | Medium |          |
+| 0031 | [59.螺旋矩阵II](https://leetcode-cn.com/problems/spiral-matrix-ii/) | 数组                                       | Medium |          |
 | 0032 | [60.第k个排列](https://leetcode-cn.com/problems/permutation-sequence/) | 数学、回溯算法                             | Medium | 完成     |
 |      | 第x期                                                        |                                            |        |          |
 |      | [1418.点菜展示表](https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/) | 哈希表                                     | Medium | 完成     |
 |      | [1442.形成两个异或相等数组的三元组数目](https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/) | 位运算、数组、数学                         | Medium | 完成     |
 |      | [1492.n的第k个因子](https://leetcode-cn.com/problems/the-kth-factor-of-n/) | 数学                                       | Medium | 完成     |
-|      | [1493.删掉一个元素以后全为 1 的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | 数组                                       | Medium |          |
+|      | [1493.删掉一个元素以后全为1的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | 数组                                       | Medium |          |
 
 ### Hard
 
