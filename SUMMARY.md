@@ -17,6 +17,7 @@
     - [1201-1300](docs/source/question/1201-1300.md)
     - [1301-1400](docs/source/question/1301-1400.md)
     - [1401-1500](docs/source/question/1401-1500.md)
+    - [1501-1600](docs/source/question/1501-1600.md)
     - [lcp](docs/source/question/lcp.md)
     - [mysql](docs/source/question/mysql.md)
     - [bash](docs/source/question/bash.md)
@@ -27,16 +28,19 @@
     - [高级算法](docs/source/classification/hard.md)
     - [书籍-剑指offer](docs/source/classification/offer.md)
     - [lcp](docs/source/classification/lcp.md)
+    - [leetcode-竞赛](docs/source/classification/leetcode_contest.md)
     - [重复题目](docs/source/question/same.md)
     - [热题100](docs/source/classification/hot-100.md)
     - [数组与字符串](docs/source/classification/array_and_string.md)
-    - [牛客-华为](docs/source/nowcoder/hw.md)
+    - [队列与栈](docs/source/classification/queue-stack.md)
+    - [递归](docs/source/classification/recursion.md)
+    - [牛客-华为](docs/source/classification/nowcoder_hw.md)
     - [PAT-乙级](docs/source/classification/patB.md)
 * 算法
     - [查找](docs/source/algorithm/1-search.md)
     - [排序](docs/source/algorithm/2-sort.md)
 * 牛客
-    - [华为机试](docs/source/classification/nowcoder_hw.md)
+    - [华为机试](docs/source/nowcoder/hw.md)
 * PAT
     - [PAT-乙级](docs/source/question/patB.md)
     

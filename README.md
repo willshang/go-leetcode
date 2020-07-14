@@ -378,6 +378,11 @@
 | 0331 | [1475.商品折扣后的最终价格](https://leetcode-cn.com/problems/final-prices-with-a-special-discount-in-a-shop/) | 数组 | Easy | 完成 |
 | 0332 | [1480.一维数组的动态和](https://leetcode-cn.com/problems/running-sum-of-1d-array/) | 数组 | Easy | 完成 |
 | 0333 | [1486.数组异或操作](https://leetcode-cn.com/problems/xor-operation-in-an-array/) | 位运算、数组 | Easy | 完成 |
+| 0334 | [1491.去掉最低工资和最高工资后的工资平均值](https://leetcode-cn.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/) | 排序、数组 | Easy | 完成 |
+| 0335 | [1496.判断路径是否相交](https://leetcode-cn.com/problems/path-crossing/) | 字符串 | Easy | 完成 |
+| 0336 | [1502.判断能否形成等差数列](https://leetcode-cn.com/problems/can-make-arithmetic-progression-from-sequence/) | 排序、数组 | Easy | 完成 |
+| 0337 | [1507.转变日期格式](https://leetcode-cn.com/problems/reformat-date/) | 字符串 | Easy | 完成 |
+| 0338 | [1512.好数对的数目](https://leetcode-cn.com/problems/number-of-good-pairs/) | 数组、哈希表、数学 | Easy | 完成 |
 
 ### Medium
 
@@ -388,9 +393,42 @@
 | 0002 | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window | Medium | 完成     |
 | 0003 | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划                           | Medium |          |
 | 0004 | [6.Z字形变换](https://leetcode-cn.com/problems/zigzag-conversion/) | 字符串                                     | Medium |          |
-| 0005 | [8.字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 数字、字符串                               | Medium |          |
-| 0006 | [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针                               | Medium |          |
-| 0007 |                                                              |                                            |        |          |
+| 0005 | [8.字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 数字、字符串                               | Medium | 完成     |
+| 0006 | [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针                               | Medium | 完成     |
+| 0007 | [12.整数转罗马数字](https://leetcode-cn.com/problems/integer-to-roman/) | 数学、字符串                               | Medium | 完成     |
+| 0008 | [15.三数之和](https://leetcode-cn.com/problems/3sum/)        | 数组、双指针                               | Medium | 完成     |
+| 0009 | [16.最接近的三数之和](https://leetcode-cn.com/problems/3sum-closest/) | 数组、双指针                               | Medium | 完成     |
+| 0010 | [17.电话号码的字母组合](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/) | 字符串、回溯算法                           | Medium | 完成     |
+|      | 第2期                                                        |                                            |        |          |
+| 0011 | [18.四数之和](https://leetcode-cn.com/problems/4sum/)        | 数组、哈希表、双指针                       | Medium | 完成     |
+| 0012 | [19.删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | 链表、双指针                               | Medium | 完成     |
+| 0013 | [22.括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | 字符串、回溯算法                           | Medium | 完成     |
+| 0014 | [24.两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | 链表                                       | Medium | 完成     |
+| 0015 | [29.两数相除](https://leetcode-cn.com/problems/divide-two-integers/) | 数学、二分查找                             | Medium | 完成     |
+| 0016 | [31.下一个排列](https://leetcode-cn.com/problems/next-permutation/) | 数组                                       | Medium | 完成     |
+| 0017 | [33.搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 数组、二分查找                             | Medium | 完成     |
+| 0018 | [34.在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 数组、二分查找                             | Medium | 完成     |
+| 0019 | [36.有效的数独](https://leetcode-cn.com/problems/valid-sudoku/) | 哈希表                                     | Medium | 完成     |
+| 0020 | [39.组合总和](https://leetcode-cn.com/problems/combination-sum/) | 数组、回溯算法                             | Medium |          |
+|      | 第3期                                                        |                                            |        |          |
+| 0021 | [40.组合总和II](https://leetcode-cn.com/problems/combination-sum-ii/) | 数组、回溯算法                             | Medium |          |
+| 0022 | [43.字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 数学、字符串                               | Medium |          |
+| 0023 | [46.全排列](https://leetcode-cn.com/problems/permutations/)  | 回溯算法                                   | Medium | 完成     |
+| 0024 | [47.全排列 II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯算法                                   | Medium |          |
+| 0025 | [48.旋转图像](https://leetcode-cn.com/problems/rotate-image/) | 数组                                       | Medium | 完成     |
+| 0026 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) | 哈希表、字符串                             | Medium |          |
+| 0027 | [50.Pow(x,n)](https://leetcode-cn.com/problems/powx-n/)      | 数学、二分查找                             | Medium | 完成     |
+| 0028 | [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) | 数组                                       | Medium | 完成     |
+| 0029 | [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组                             | Medium | 完成     |
+| 0030 | [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 排序、数组                                 | Medium | 完成     |
+|      | 第4期                                                        |                                            |        |          |
+| 0031 | [59.螺旋矩阵 II](https://leetcode-cn.com/problems/spiral-matrix-ii/) | 数组                                       | Medium |          |
+| 0032 | [60.第k个排列](https://leetcode-cn.com/problems/permutation-sequence/) | 数学、回溯算法                             | Medium | 完成     |
+|      | 第x期                                                        |                                            |        |          |
+|      | [1418.点菜展示表](https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/) | 哈希表                                     | Medium | 完成     |
+|      | [1442.形成两个异或相等数组的三元组数目](https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/) | 位运算、数组、数学                         | Medium | 完成     |
+|      | [1492.n的第k个因子](https://leetcode-cn.com/problems/the-kth-factor-of-n/) | 数学                                       | Medium | 完成     |
+|      | [1493.删掉一个元素以后全为 1 的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | 数组                                       | Medium |          |
 
 ### Hard
 
