@@ -7,9 +7,9 @@
 |   03   | [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs) Easy | [面试题10- II.青蛙跳台阶问题](https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/) Easy |
 | 04 | 154 | [面试题11.旋转数组的最小数字](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/) Easy |
 | 05 | 105 | [面试题07.重建二叉树](https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/) Medium |
-| 06 | 79 | [面试题12.矩阵中的路径 ](https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/) Medium |
+| 06 | [79.单词搜索](https://leetcode-cn.com/problems/word-search/) Medium | [面试题12.矩阵中的路径 ](https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/) Medium |
 | 07 | 343 | [面试题14- I.剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/) Medium<br />[面试题14-II.剪绳子 II](https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/) Medium |
-| 08 | 240 | [面试题04.二维数组中的查找](https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/) Easy |
+| 08 | 240<br />[74.搜索二维矩阵](https://leetcode-cn.com/problems/search-a-2d-matrix/) Medium | [面试题04.二维数组中的查找](https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/) Easy |
 | 09 | [191.位1的个数](https://leetcode-cn.com/problems/number-of-1-bits) Easy | [面试题15.二进制中1的个数](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/) Easy |
 | 10 | [50.Pow(x,n)](https://leetcode-cn.com/problems/powx-n/) Medium | [面试题16.数值的整数次方](https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/) Medium |
 | 11(相似) | [203.移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/) Easy<br />[237.删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/) Easy | [面试题18.删除链表的节点](https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/) Easy |
@@ -21,7 +21,7 @@
 | 17       | [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) Medium | [面试题29.顺时针打印矩阵](https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/) Easy |
 | 18       | [155.最小栈](https://leetcode-cn.com/problems/min-stack) Easy | [面试题30.包含min函数的栈](https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/) Easy |
 | 19       | 946                                                          | [面试题31. 栈的压入弹出序列](https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/) Medium |
-| 20       | 102                                                          | [面试题32-II.从上到下打印二叉树II](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/) Easy |
+| 20       | [102.二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/) Medium | [面试题32-II.从上到下打印二叉树II](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/) Easy |
 | 21       | [169.多数元素](https://leetcode-cn.com/problems/majority-element) Easy | [面试题39.数组中出现次数超过一半的数字](https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/) Easy |
 | 22       | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) Easy | [面试题42.连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/) Easy |
 | 23       | 233                                                          | [面试题43.1～n整数中1出现的次数](https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/) Medium |
@@ -50,4 +50,5 @@
 | 46 | 295 | [面试题41.数据流中的中位数](https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/) Hard |
 | 47 | [476.数字的补数](https://leetcode-cn.com/problems/number-complement/) Easy | [1009.十进制整数的反码](https://leetcode-cn.com/problems/complement-of-base-10-integer/) Easy |
 | 48(相似) | [1037.有效的回旋镖](https://leetcode-cn.com/problems/valid-boomerang/) Easy | [1232.缀点成线](https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/) Easy |
+| 49 | [103.二叉树的锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/) Medium | [面试题32-III.从上到下打印二叉树III](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/) Medium |
 

@@ -5,14 +5,14 @@
 
 ## 1.数组和字符串(6)
 
-| Title                                                 | Tag          | 难度   | 完成情况 |
-| ----------------------------------------------------- | ------------ | ------ | -------- |
-| [15.三数之和](https://leetcode-cn.com/problems/3sum/) | 数组、双指针 | Medium | 完成     |
-| 矩阵置零                                              |              |        |          |
-| 字母异位词分组                                        |              |        |          |
-| 无重复字符的最长子串                                  |              |        |          |
-| 最长回文子串                                          |              |        |          |
-| 递增的三元子序列                                      |              |        |          |
+| Title                                                        | Tag            | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------- | ------ | -------- |
+| [15.三数之和](https://leetcode-cn.com/problems/3sum/)        | 数组、双指针   | Medium | 完成     |
+| [73.矩阵置零](https://leetcode-cn.com/problems/set-matrix-zeroes/) | 数组           | Medium | 完成     |
+| [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) | 哈希表、字符串 | Medium | 完成     |
+| 无重复字符的最长子串                                         |                |        |          |
+| 最长回文子串                                                 |                |        |          |
+| 递增的三元子序列                                             |                |        |          |
 
 ## 2.链表(3)
 
@@ -24,14 +24,14 @@
 
 ## 3.树和图(6)
 
-| Title                            | Tag  | 难度 | 完成情况 |
-| -------------------------------- | ---- | ---- | -------- |
-| 中序遍历二叉树                   |      |      |          |
-| 二叉树的锯齿形层次遍历           |      |      |          |
-| 从前序与中序遍历序列构造二叉树   |      |      |          |
-| 填充每个节点的下一个右侧节点指针 |      |      |          |
-| 二叉搜索树中第K小的元素          |      |      |          |
-| 岛屿数量                         |      |      |          |
+| Title                                                        | Tag                  | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------- | ------ | -------- |
+| 中序遍历二叉树 <br />[94.二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 栈、树、哈希表       | Medium | 完成     |
+| [103.二叉树的锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/) | 栈、树、广度优先搜索 | Medium | 完成     |
+| 从前序与中序遍历序列构造二叉树                               |                      |        |          |
+| 填充每个节点的下一个右侧节点指针                             |                      |        |          |
+| 二叉搜索树中第K小的元素                                      |                      |        |          |
+| 岛屿数量                                                     |                      |        |          |
 
 ## 4.回溯算法(5)
 
@@ -41,29 +41,29 @@
 | [22.括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | 字符串、回溯算法 | Medium | 完成     |
 | [46.全排列](https://leetcode-cn.com/problems/permutations/)  | 回溯算法         | Medium | 完成     |
 | 子集                                                         |                  |        |          |
-| 单词搜索                                                     |                  |        |          |
+| [79.单词搜索](https://leetcode-cn.com/problems/word-search/) | 数组、回溯算法   | Medium | 完成     |
 
 ## 5.排序和搜索(8)
 
-| Title                                                        | Tag            | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------- | ------ | -------- |
-| 颜色分类                                                     |                |        |          |
-| 前 K 个高频元素                                              |                |        |          |
-| 数组中的第K个最大元素                                        |                |        |          |
-| 寻找峰值                                                     |                |        |          |
-| [34.在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 数组、二分查找 | Medium | 完成     |
-| [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 排序、数组     | Medium | 完成     |
-| [33.搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 数组、二分查找 | Medium | 完成     |
-| 搜索二维矩阵 II                                              |                |        |          |
+| Title                                                        | Tag                | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------ | ------ | -------- |
+| [75.颜色分类](https://leetcode-cn.com/problems/sort-colors/) | 排序、数组、双指针 | Medium | 完成     |
+| 前 K 个高频元素                                              |                    |        |          |
+| 数组中的第K个最大元素                                        |                    |        |          |
+| 寻找峰值                                                     |                    |        |          |
+| [34.在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 数组、二分查找     | Medium | 完成     |
+| [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 排序、数组         | Medium | 完成     |
+| [33.搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 数组、二分查找     | Medium | 完成     |
+| 搜索二维矩阵 II                                              |                    |        |          |
 
 ## 6.动态规划(4)
 
-| Title                                                      | Tag            | 难度   | 完成情况 |
-| ---------------------------------------------------------- | -------------- | ------ | -------- |
-| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/) | 贪心算法、数组 | Medium | 完成     |
-| 不同路径                                                   |                |        |          |
-| 零钱兑换                                                   |                |        |          |
-| Longest Increasing Subsequence                             |                |        |          |
+| Title                                                        | Tag            | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------- | ------ | -------- |
+| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组 | Medium | 完成     |
+| [62.不同路径](https://leetcode-cn.com/problems/unique-paths/) | 数组、动态规划 | Medium | 完成     |
+| 零钱兑换                                                     |                |        |          |
+| Longest Increasing Subsequence                               |                |        |          |
 
 ## 7.设计问题(2)
 
@@ -81,7 +81,7 @@
 | [171.Excel表列序号](https://leetcode-cn.com/problems/excel-sheet-column-number) | 数学           | Easy   | 完成     |
 | [50.Pow(x,n)](https://leetcode-cn.com/problems/powx-n/)      | 数学、二分查找 | Medium | 完成     |
 | [69.x 的平方根](https://leetcode-cn.com/problems/sqrtx)      | 数学，二分查找 | Easy   | 完成     |
-| 两数相除                                                     |                |        |          |
+| [29.两数相除](https://leetcode-cn.com/problems/divide-two-integers/) | 数学、二分查找 | Medium | 完成     |
 | 分数到小数                                                   |                |        |          |
 
 ## 9.其他(4)

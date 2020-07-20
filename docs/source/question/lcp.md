@@ -104,6 +104,64 @@ func fraction(cont []int) []int {
 }
 ```
 
+## LCP03.机器人大冒险(1)
+
+- 题目
+
+```
+力扣团队买了一个可编程机器人，机器人初始位置在原点(0, 0)。
+小伙伴事先给机器人输入一串指令command，机器人就会无限循环这条指令的步骤进行移动。指令有两种：
+    U: 向y轴正方向移动一格
+    R: 向x轴正方向移动一格。
+不幸的是，在 xy 平面上还有一些障碍物，他们的坐标用obstacles表示。机器人一旦碰到障碍物就会被损毁。
+给定终点坐标(x, y)，返回机器人能否完好地到达终点。如果能，返回true；否则返回false。
+示例 1：输入：command = "URR", obstacles = [], x = 3, y = 2 输出：true
+解释：U(0, 1) -> R(1, 1) -> R(2, 1) -> U(2, 2) -> R(3, 2)。
+示例 2：输入：command = "URR", obstacles = [[2, 2]], x = 3, y = 2 输出：false
+解释：机器人在到达终点前会碰到(2, 2)的障碍物。
+示例 3：输入：command = "URR", obstacles = [[4, 2]], x = 3, y = 2 输出：true
+解释：到达终点后，再碰到障碍物也不影响返回结果。
+限制：
+    2 <= command的长度 <= 1000
+    command由U，R构成，且至少有一个U，至少有一个R
+    0 <= x <= 1e9, 0 <= y <= 1e9
+    0 <= obstacles的长度 <= 1000
+    obstacles[i]不为原点或者终点
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数学计算 | O(n)       | O(1)       |
+
+```go
+func robot(command string, obstacles [][]int, x int, y int) bool {
+	if judge(command, x, y) == false {
+		return false
+	}
+	for _, node := range obstacles {
+		if x >= node[0] && y >= node[1] && judge(command, node[0], node[1]) {
+			return false
+		}
+	}
+	return true
+}
+
+func judge(command string, x, y int) bool {
+	u := strings.Count(command, "U")
+	r := strings.Count(command, "R")
+	times := (x + y) / len(command)
+	last := command[:(x+y)%len(command)]
+	uNum := u*times + strings.Count(last, "U")
+	rNum := r*times + strings.Count(last, "R")
+	if uNum == y && rNum == x {
+		return true
+	}
+	return false
+}
+```
+
 ## LCP06.拿硬币(2)
 
 - 题目
@@ -249,7 +307,7 @@ func dfs(n int, relation [][]int, k int) {
 	}
 }
 
-#
+# 3
 func numWays(n int, relation [][]int, k int) int {
 	m := make(map[int][]int)
 	for i := 0; i < len(relation); i++ {
@@ -304,6 +362,121 @@ func numWays(n int, relation [][]int, k int) int {
 }
 ```
 
+## LCP08.剧情触发时间(2)
+
+- 题目
+
+```
+在战略游戏中，玩家往往需要发展自己的势力来触发各种新的剧情。一个势力的主要属性有三种，
+分别是文明等级（C），资源储备（R）以及人口数量（H）。在游戏开始时（第 0 天），三种属性的值均为 0。
+随着游戏进程的进行，每一天玩家的三种属性都会对应增加，我们用一个二维数组 increase 来表示每天的增加情况。
+这个二维数组的每个元素是一个长度为 3 的一维数组，
+例如 [[1,2,1],[3,4,2]] 表示第一天三种属性分别增加 1,2,1 而第二天分别增加 3,4,2。
+所有剧情的触发条件也用一个二维数组 requirements 表示。
+这个二维数组的每个元素是一个长度为 3 的一维数组，对于某个剧情的触发条件 c[i], r[i], h[i]，
+如果当前 C >= c[i] 且 R >= r[i] 且 H >= h[i] ，则剧情会被触发。
+根据所给信息，请计算每个剧情的触发时间，并以一个数组返回。
+如果某个剧情不会被触发，则该剧情对应的触发时间为 -1 。
+示例 1：
+    输入： increase = [[2,8,4],[2,5,0],[10,9,8]] 
+    requirements = [[2,11,3],[15,10,7],[9,17,12],[8,1,14]]
+    输出: [2,-1,3,-1]
+    解释：
+    初始时，C = 0，R = 0，H = 0
+    第 1 天，C = 2，R = 8，H = 4
+    第 2 天，C = 4，R = 13，H = 4，此时触发剧情 0
+    第 3 天，C = 14，R = 22，H = 12，此时触发剧情 2
+    剧情 1 和 3 无法触发。
+示例 2：
+    输入： increase = [[0,4,5],[4,8,8],[8,6,1],[10,10,0]] 
+    requirements = [[12,11,16],[20,2,6],[9,2,6],[10,18,3],[8,14,9]]
+    输出: [-1,4,3,3,3]
+示例 3：输入： increase = [[1,1,1]] requirements = [[0,0,0]] 输出: [0]
+限制：
+    1 <= increase.length <= 10000
+    1 <= requirements.length <= 100000
+    0 <= increase[i] <= 10
+    0 <= requirements[i] <= 100000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(nlog(n)) | O(n)       |
+| 02   | 内置函数 | O(nlog(n)) | O(n)       |
+
+```go
+func getTriggerTime(increase [][]int, requirements [][]int) []int {
+	for i := 1; i < len(increase); i++ {
+		increase[i][0] = increase[i][0] + increase[i-1][0]
+		increase[i][1] = increase[i][1] + increase[i-1][1]
+		increase[i][2] = increase[i][2] + increase[i-1][2]
+	}
+	res := make([]int, len(requirements))
+	for i := 0; i < len(requirements); i++ {
+		C, R, H := requirements[i][0], requirements[i][1], requirements[i][2]
+		if C == 0 && R == 0 && H == 0 {
+			res[i] = 0
+			continue
+		}
+		if C > increase[len(increase)-1][0] ||
+			R > increase[len(increase)-1][1] ||
+			H > increase[len(increase)-1][2] {
+			res[i] = -1
+			continue
+		}
+		left, right := 0, len(increase)-1
+		index := -1
+		for left <= right {
+			mid := left + (right-left)/2
+			if increase[mid][0] >= C && increase[mid][1] >= R && increase[mid][2] >= H {
+				index = mid + 1
+				right = mid - 1
+			} else {
+				left = mid + 1
+			}
+		}
+		res[i] = index
+	}
+	return res
+}
+
+#
+func getTriggerTime(increase [][]int, requirements [][]int) []int {
+	for i := 1; i < len(increase); i++ {
+		increase[i][0] = increase[i][0] + increase[i-1][0]
+		increase[i][1] = increase[i][1] + increase[i-1][1]
+		increase[i][2] = increase[i][2] + increase[i-1][2]
+	}
+
+	res := make([]int, len(requirements))
+	for i := 0; i < len(requirements); i++ {
+		C, R, H := requirements[i][0], requirements[i][1], requirements[i][2]
+		if C == 0 && R == 0 && H == 0 {
+			res[i] = 0
+			continue
+		}
+		if C > increase[len(increase)-1][0] ||
+			R > increase[len(increase)-1][1] ||
+			H > increase[len(increase)-1][2] {
+			res[i] = -1
+			continue
+		}
+		index := sort.Search(len(increase), func(j int) bool {
+			return increase[j][0] >= requirements[i][0] &&
+				increase[j][1] >= requirements[i][1] &&
+				increase[j][2] >= requirements[i][2]
+		})
+		if index == len(increase) {
+			index = -2
+		}
+		res[i] = index + 1
+	}
+	return res
+}
+```
+
 ## LCP11.期望个数统计(2)
 
 - 题目
@@ -354,6 +527,118 @@ func expectNumber(scores []int) int {
 		}
 	}
 	return len(scores) - count
+}
+```
+
+## LCP12.小张刷题计划(2)
+
+- 题目
+
+```
+为了提高自己的代码能力，小张制定了 LeetCode 刷题计划，他选中了 LeetCode 题库中的 n 道题，
+编号从 0 到 n-1，并计划在 m 天内按照题目编号顺序刷完所有的题目（注意，小张不能用多天完成同一题）。
+在小张刷题计划中，小张需要用 time[i] 的时间完成编号 i 的题目。此外，小张还可以使用场外求助功能，
+通过询问他的好朋友小杨题目的解法，可以省去该题的做题时间。为了防止“小张刷题计划”变成“小杨刷题计划”，
+小张每天最多使用一次求助。
+我们定义 m 天中做题时间最多的一天耗时为 T（小杨完成的题目不计入做题总时间）。
+请你帮小张求出最小的 T是多少。
+示例 1：
+    输入：time = [1,2,3,3], m = 2
+    输出：3
+    解释：第一天小张完成前三题，其中第三题找小杨帮忙；第二天完成第四题，并且找小杨帮忙。
+    这样做题时间最多的一天花费了 3 的时间，并且这个值是最小的。
+示例 2：输入：time = [999,999,999], m = 4 输出：0
+    解释：在前三天中，小张每天求助小杨一次，这样他可以在三天内完成所有的题目并不花任何时间。
+限制：
+    1 <= time.length <= 10^5
+    1 <= time[i] <= 10000
+    1 <= m <= 1000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(nlog(n)) | O(1)       |
+| 02   | 二分查找 | O(nlog(n)) | O(1)       |
+
+```go
+func minTime(time []int, m int) int {
+	left, right, mid := 0, 0, 0
+	for i := 0; i < len(time); i++ {
+		right = right + time[i]
+	}
+	// 二分查找一个数mid，使time数组能分割成m个和不小于mid的子数组
+	for left <= right {
+		mid = left + (right-left)/2
+		if check(time, mid, m) {
+			right = mid - 1
+		} else {
+			left = mid + 1
+		}
+	}
+	return left
+}
+
+func check(arr []int, mid, m int) bool {
+	maxValue := 0
+	sum := 0
+	count := 0
+	for i := 0; i < len(arr); i++ {
+		sum = sum + arr[i]
+		if arr[i] > maxValue {
+			maxValue = arr[i]
+		}
+		if sum-maxValue > mid {
+			count++
+			if count >= m {
+				return false
+			}
+			sum = arr[i]
+			maxValue = arr[i]
+		}
+	}
+	return true
+}
+
+#
+func minTime(time []int, m int) int {
+	left, right, mid := 0, 0, 0
+	for i := 0; i < len(time); i++ {
+		right = right + time[i]
+	}
+	// 二分查找一个数mid，使time数组能分割成m个和不小于mid的子数组
+	res := math.MaxInt32
+	for left <= right {
+		mid = left + (right-left)/2
+		if check(time, mid) <= m {
+			if mid < res {
+				res = mid
+			}
+			right = mid - 1
+		} else {
+			left = mid + 1
+		}
+	}
+	return res
+}
+
+func check(arr []int, mid int) int {
+	res := 1
+	maxValue := 0
+	sum := 0
+	for i := 0; i < len(arr); i++ {
+		sum = sum + arr[i]
+		if arr[i] > maxValue {
+			maxValue = arr[i]
+		}
+		if sum-maxValue > mid {
+			sum = arr[i]
+			maxValue = arr[i]
+			res++
+		}
+	}
+	return res
 }
 ```
 

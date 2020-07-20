@@ -18,7 +18,7 @@
 | Title                                                        | Tag  | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ---- | ------ | -------- |
 | 旋转矩阵 [48.旋转图像](https://leetcode-cn.com/problems/rotate-image/) | 数组 | Medium | 完成     |
-| 零矩阵                                                       |      |        |          |
+| 零矩阵 [73.矩阵置零](https://leetcode-cn.com/problems/set-matrix-zeroes/) | 数组 | Medium | 完成     |
 | 对角线遍历                                                   |      |        |          |
 
 ## 3-字符串简介(4)
