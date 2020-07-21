@@ -23,7 +23,7 @@
     - [bash](docs/source/question/bash.md)
     - [剑指offer](docs/source/question/offer.md)
 * 分类/书籍
-    - [初级算法](docs/source/classification/easy.md)
+    - [初级算法-完成](docs/source/classification/easy.md)
     - [中级算法](docs/source/classification/medium.md)
     - [高级算法](docs/source/classification/hard.md)
     - [书籍-剑指offer](docs/source/classification/offer.md)

@@ -6,7 +6,7 @@
 | 02   | [509.斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) Easy | [面试题10- I.斐波那契数列](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/) Easy |
 |   03   | [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs) Easy | [面试题10- II.青蛙跳台阶问题](https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/) Easy |
 | 04 | 154 | [面试题11.旋转数组的最小数字](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/) Easy |
-| 05 | 105 | [面试题07.重建二叉树](https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/) Medium |
+| 05 | [105.从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) Medium | [面试题07.重建二叉树](https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/) Medium |
 | 06 | [79.单词搜索](https://leetcode-cn.com/problems/word-search/) Medium | [面试题12.矩阵中的路径 ](https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/) Medium |
 | 07 | 343 | [面试题14- I.剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/) Medium<br />[面试题14-II.剪绳子 II](https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/) Medium |
 | 08 | 240<br />[74.搜索二维矩阵](https://leetcode-cn.com/problems/search-a-2d-matrix/) Medium | [面试题04.二维数组中的查找](https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/) Easy |
@@ -44,7 +44,7 @@
 | 40       | 297                                                          | [面试题37.序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/) [Hard] |
 | 41       | 426                                                          | [面试题36.二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) [Medium] |
 | 42       | 138                                                          | [面试题35.复杂链表的复制](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/) Medium |
-| 43       | 113                                                          | [面试题34.二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/) Medium |
+| 43       | [113.路径总和II](https://leetcode-cn.com/problems/path-sum-ii/) Medium | [面试题34.二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/) Medium |
 | 44       | 65                                                           | [面试题20.表示数值的字符串](https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/) Medium |
 | 45 | 10 | [面试题19.正则表达式匹配](https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/) Hard |
 | 46 | 295 | [面试题41.数据流中的中位数](https://leetcode-cn.com/problems/shu-ju-liu-zhong-de-zhong-wei-shu-lcof/) Hard |

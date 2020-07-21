@@ -46,13 +46,13 @@
 
 ## 4.树(5)
 
-| Title                                                        | Tag                            | 难度 | 完成情况 |
-| ------------------------------------------------------------ | ------------------------------ | ---- | -------- |
-| [104.二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree) | 树、深度优先搜索               | Easy | 完成     |
-| 验证二叉搜索树                                               |                                |      |          |
-| [101.对称二叉树](https://leetcode-cn.com/problems/symmetric-tree) | 树、深度优先搜索、广度优先搜索 | Easy | 完成     |
-| 二叉树的层序遍历                                             |                                |      |          |
-| [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) | 树、深度优先搜索               | Easy | 完成     |
+| Title                                                        | Tag                            | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------------------ | ------ | -------- |
+| [104.二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree) | 树、深度优先搜索               | Easy   | 完成     |
+| [98.验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | 树、深度优先搜索               | Medium | 完成     |
+| [101.对称二叉树](https://leetcode-cn.com/problems/symmetric-tree) | 树、深度优先搜索、广度优先搜索 | Easy   | 完成     |
+| [102.二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/) | 树、广度优先搜索               | Medium | 完成     |
+| [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) | 树、深度优先搜索               | Easy   | 完成     |
 
 ## 5.排序和搜索(2)
 
@@ -72,10 +72,10 @@
 
 ## 7.设计问题(2)
 
-| Title                                                    | Tag      | 难度 | 完成情况 |
-| -------------------------------------------------------- | -------- | ---- | -------- |
-| Shuffle an Array                                         |          |      |          |
-| [155.最小栈](https://leetcode-cn.com/problems/min-stack) | 栈、设计 | Easy | 完成     |
+| Title                                                        | Tag      | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------- | ------ | -------- |
+| Shuffle an Array [384.打乱数组](https://leetcode-cn.com/problems/shuffle-an-array/) |          | Medium | 完成     |
+| [155.最小栈](https://leetcode-cn.com/problems/min-stack)     | 栈、设计 | Easy   | 完成     |
 
 ## 8.数学(4)
 

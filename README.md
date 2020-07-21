@@ -456,9 +456,17 @@
 | 0060 | [106.从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | 树、深度优先搜索、数组                     | Medium | 完成     |
 |      | 第7期                                                        |                                            |        |          |
 | 0061 | [109.有序链表转换二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/) | 深度优先搜索、链表                         | Medium | 完成     |
-|      | [113.路径总和II](https://leetcode-cn.com/problems/path-sum-ii/) | 树、深度优先搜索                           | Medium |          |
-|      | [114.二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/) | 树、深度优先搜索                           | Medium |          |
+| 0062 | [113.路径总和II](https://leetcode-cn.com/problems/path-sum-ii/) | 树、深度优先搜索                           | Medium | 完成     |
+| 0063 | [114.二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/) | 树、深度优先搜索                           | Medium | 完成     |
+| 0064 | [116.填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) | 树、深度优先搜索                           | Medium |          |
+| 0065 | [117.填充每个节点的下一个右侧节点指针II](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/) | 树、深度优先搜索                           | Medium |          |
+| 0066 | [120.三角形最小路径和](https://leetcode-cn.com/problems/triangle/) | 数组、动态规划                             | Medium | 完成     |
+| 0067 | [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) | 广度优先搜索                               | Medium |          |
+| 0068 | [129.求根到叶子节点数字之和](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/) | 树、深度优先搜索                           | Medium | 完成     |
+| 0069 | [130.被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 深度优先搜索、广度优先搜索、并查集         | Medium |          |
+|      | [131.分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/) | 回溯算法                                   | Medium |          |
 |      | 第x期                                                        |                                            |        |          |
+|      | [384.打乱数组](https://leetcode-cn.com/problems/shuffle-an-array/) |                                            | Medium | 完成     |
 |      | [1418.点菜展示表](https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/) | 哈希表                                     | Medium | 完成     |
 |      | [1442.形成两个异或相等数组的三元组数目](https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/) | 位运算、数组、数学                         | Medium | 完成     |
 |      | [1487.保证文件名唯一](https://leetcode-cn.com/problems/making-file-names-unique/) | 哈希表、字符串                             | Medium | 完成     |
