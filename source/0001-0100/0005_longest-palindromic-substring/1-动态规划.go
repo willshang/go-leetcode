@@ -6,31 +6,31 @@ func main() {
 	fmt.Println(longestPalindrome("cbbd"))
 }
 
-// dp(i,j)=dp(i+1,j−1)∧(s[i]==s[j])
+// dp(l,r)=dp(l+1,r−1)&&(s[l]==s[r])
+// dp[l,r]：字符串s从索引l到r的子串是否是回文串
 func longestPalindrome(s string) string {
-	res := ""
-	dp := make([][]int, len(s))
-	for i := 0; i < len(s); i++ {
-		dp[i] = make([]int, len(s))
+	if len(s) <= 1 {
+		return s
 	}
-	for l := 0; l < len(s); l++ {
-		for i := 0; i+l < len(s); i++ {
-			j := i + l
-			if i == 0 {
-				dp[i][j] = 1
-			} else if l == 1 {
-				if s[i] == s[j] {
-					dp[i][j] = 1
-				}
+	dp := make([][]bool, len(s))
+	start := 0
+	max := 1
+	for r := 0; r < len(s); r++ {
+		dp[r] = make([]bool, len(s))
+		dp[r][r] = true
+		for l := 0; l < r; l++ {
+			if s[l] == s[r] && (r-l <= 2 || dp[l+1][r-1] == true) {
+				dp[l][r] = true
 			} else {
-				if s[i] == s[j] {
-					dp[i][j] = dp[i+1][j-1]
-				}
+				dp[l][r] = false
 			}
-			if dp[i][j] > 0 && l+1 > len(res) {
-				res = s[i : i+1+l]
+			if dp[l][r] == true {
+				if r-l+1 > max {
+					max = r - l + 1
+					start = l
+				}
 			}
 		}
 	}
-	return res
+	return s[start : start+max]
 }

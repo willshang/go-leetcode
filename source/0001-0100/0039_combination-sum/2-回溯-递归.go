@@ -26,12 +26,10 @@ func dfs(candidates []int, target int, arr []int, index int) {
 		res = append(res, temp)
 		return
 	}
-	if target < 0 {
-		return
-	}
 	for i := index; i < len(candidates); i++ {
-		arr = append(arr, candidates[i])
-		dfs(candidates, target-candidates[i], arr, i)
-		arr = arr[:len(arr)-1]
+		if target < candidates[i] {
+			return
+		}
+		dfs(candidates, target-candidates[i], append(arr, candidates[i]), i)
 	}
 }

@@ -14,7 +14,7 @@ func groupAnagrams(strs []string) [][]string {
 	res := make([][]string, 0)
 	for i := 0; i < len(strs); i++ {
 		arr := [26]int{}
-		for j := 0; j < len(strs[i]); j++{
+		for j := 0; j < len(strs[i]); j++ {
 			arr[strs[i][j]-'a']++
 		}
 		if _, ok := m[arr]; ok {

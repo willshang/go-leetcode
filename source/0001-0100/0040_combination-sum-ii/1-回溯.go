@@ -6,13 +6,13 @@ import (
 )
 
 func main() {
-	fmt.Println(combinationSum([]int{2, 3, 6, 7}, 7))
+	fmt.Println(combinationSum2([]int{10, 1, 2, 7, 6, 1, 5}, 8))
 }
 
-// leetcode39_组合总和
+// leetcode40_组合总和II
 var res [][]int
 
-func combinationSum(candidates []int, target int) [][]int {
+func combinationSum2(candidates []int, target int) [][]int {
 	res = make([][]int, 0)
 	sort.Ints(candidates)
 	dfs(candidates, target, []int{}, 0)
@@ -30,8 +30,12 @@ func dfs(candidates []int, target int, arr []int, index int) {
 		return
 	}
 	for i := index; i < len(candidates); i++ {
+		origin := i
+		for i < len(candidates)-1 && candidates[i] == candidates[i+1] {
+			i++
+		}
 		arr = append(arr, candidates[i])
-		dfs(candidates, target-candidates[i], arr, i)
+		dfs(candidates, target-candidates[i], arr, origin+1)
 		arr = arr[:len(arr)-1]
 	}
 }

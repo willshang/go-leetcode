@@ -383,6 +383,7 @@
 | 0336 | [1502.判断能否形成等差数列](https://leetcode-cn.com/problems/can-make-arithmetic-progression-from-sequence/) | 排序、数组 | Easy | 完成 |
 | 0337 | [1507.转变日期格式](https://leetcode-cn.com/problems/reformat-date/) | 字符串 | Easy | 完成 |
 | 0338 | [1512.好数对的数目](https://leetcode-cn.com/problems/number-of-good-pairs/) | 数组、哈希表、数学 | Easy | 完成 |
+| 0339 | [1518.换酒问题](https://leetcode-cn.com/problems/water-bottles/) | 贪心算法 | Easy | 完成 |
 
 ### Medium
 
@@ -391,8 +392,8 @@
 |      | 第1期                                                        |                                            |        |          |
 | 0001 | [2.两数相加](https://leetcode-cn.com/problems/add-two-numbers/) | 链表、数学                                 | Medium | 完成     |
 | 0002 | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window | Medium | 完成     |
-| 0003 | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划                           | Medium |          |
-| 0004 | [6.Z字形变换](https://leetcode-cn.com/problems/zigzag-conversion/) | 字符串                                     | Medium |          |
+| 0003 | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划                           | Medium | 完成     |
+| 0004 | [6.Z字形变换](https://leetcode-cn.com/problems/zigzag-conversion/) | 字符串                                     | Medium | 完成     |
 | 0005 | [8.字符串转换整数(atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 数字、字符串                               | Medium | 完成     |
 | 0006 | [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针                               | Medium | 完成     |
 | 0007 | [12.整数转罗马数字](https://leetcode-cn.com/problems/integer-to-roman/) | 数学、字符串                               | Medium | 完成     |
@@ -409,12 +410,12 @@
 | 0017 | [33.搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 数组、二分查找                             | Medium | 完成     |
 | 0018 | [34.在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 数组、二分查找                             | Medium | 完成     |
 | 0019 | [36.有效的数独](https://leetcode-cn.com/problems/valid-sudoku/) | 哈希表                                     | Medium | 完成     |
-| 0020 | [39.组合总和](https://leetcode-cn.com/problems/combination-sum/) | 数组、回溯算法                             | Medium |          |
+| 0020 | [39.组合总和](https://leetcode-cn.com/problems/combination-sum/) | 数组、回溯算法                             | Medium | 完成     |
 |      | 第3期                                                        |                                            |        |          |
-| 0021 | [40.组合总和II](https://leetcode-cn.com/problems/combination-sum-ii/) | 数组、回溯算法                             | Medium |          |
+| 0021 | [40.组合总和II](https://leetcode-cn.com/problems/combination-sum-ii/) | 数组、回溯算法                             | Medium | 完成     |
 | 0022 | [43.字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 数学、字符串                               | Medium |          |
 | 0023 | [46.全排列](https://leetcode-cn.com/problems/permutations/)  | 回溯算法                                   | Medium | 完成     |
-| 0024 | [47.全排列II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯算法                                   | Medium |          |
+| 0024 | [47.全排列II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯算法                                   | Medium | 完成     |
 | 0025 | [48.旋转图像](https://leetcode-cn.com/problems/rotate-image/) | 数组                                       | Medium | 完成     |
 | 0026 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) | 哈希表、字符串                             | Medium | 完成     |
 | 0027 | [50.Pow(x,n)](https://leetcode-cn.com/problems/powx-n/)      | 数学、二分查找                             | Medium | 完成     |
