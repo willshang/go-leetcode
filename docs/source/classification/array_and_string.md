@@ -26,8 +26,8 @@
 | Title                                                        | Tag              | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ---------------- | ------ | -------- |
 | [14.最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix) | 字符串           | Easy   | 完成     |
-| [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划 | Medium |          |
-| 151                                                          |                  |        |          |
+| [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划 | Medium | 完成     |
+| [151.翻转字符串里的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/) | 字符串           | Medium | 完成     |
 | [28.实现strStr()](https://leetcode-cn.com/problems/implement-strstr) | 双指针、字符串   | Easy   | 完成     |
 
 ## 4-双指针技巧(6)
@@ -43,11 +43,11 @@
 
 ## 5-小结(6)
 
-| Title                                                        | Tag          | 难度 | 完成情况 |
-| ------------------------------------------------------------ | ------------ | ---- | -------- |
-| [118.杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) | 数组         | Easy | 完成     |
-| [119.杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组         | Easy | 完成     |
-| [557.反转字符串中的单词 III](https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/) | 字符串       | Easy | 完成     |
-| 寻找旋转排序数组中的最小值                                   |              |      |          |
-| [26.删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) | 数组、双指针 | Easy | 完成     |
-| [283.移动零](https://leetcode-cn.com/problems/move-zeroes/)  | 数组、双指针 | Easy | 完成     |
+| Title                                                        | Tag            | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------- | ------ | -------- |
+| [118.杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) | 数组           | Easy   | 完成     |
+| [119.杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组           | Easy   | 完成     |
+| [557.反转字符串中的单词 III](https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/) | 字符串         | Easy   | 完成     |
+| [153.寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/) | 数组、二分查找 | Medium | 完成     |
+| [26.删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) | 数组、双指针   | Easy   | 完成     |
+| [283.移动零](https://leetcode-cn.com/problems/move-zeroes/)  | 数组、双指针   | Easy   | 完成     |

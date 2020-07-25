@@ -29,7 +29,7 @@ func dfs(nums []int, index int, visited []int, arr []int) {
 		if visited[i] == 1 {
 			continue
 		}
-		if i > 0 && nums[i] == nums[i-1] && visited[i-1] == 0{
+		if i > 0 && nums[i] == nums[i-1] && visited[i-1] == 0 {
 			continue
 		}
 		arr = append(arr, nums[i])

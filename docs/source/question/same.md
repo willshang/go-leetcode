@@ -51,4 +51,5 @@
 | 47 | [476.数字的补数](https://leetcode-cn.com/problems/number-complement/) Easy | [1009.十进制整数的反码](https://leetcode-cn.com/problems/complement-of-base-10-integer/) Easy |
 | 48(相似) | [1037.有效的回旋镖](https://leetcode-cn.com/problems/valid-boomerang/) Easy | [1232.缀点成线](https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/) Easy |
 | 49 | [103.二叉树的锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/) Medium | [面试题32-III.从上到下打印二叉树III](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/) Medium |
+| 50(相似) | [179.最大数](https://leetcode-cn.com/problems/largest-number/) Medium | [面试题45.把数组排成最小的数](https://leetcode-cn.com/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/) Medium |
 

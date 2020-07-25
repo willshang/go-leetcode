@@ -14,21 +14,22 @@ func combine(n int, k int) [][]int {
 	for i := 1; i <= n; i++ {
 		nums = append(nums, i)
 	}
-	dfs(nums, make([]int, k), 0, k)
+	dfs(nums, 0, k)
 	return res
 }
 
-func dfs(nums []int, arr []int, index, k int) {
+func dfs(nums []int, index, k int) {
 	if index == k {
-		temp := make([]int, len(arr))
-		copy(temp, arr)
+		temp := make([]int, k)
+		copy(temp, nums[:k])
 		res = append(res, temp)
 		return
 	}
 	for i := index; i < len(nums); i++ {
-		arr[index] = nums[i]
-		nums[i], nums[index] = nums[index], nums[i]
-		dfs(nums, arr, index+1, k)
-		nums[i], nums[index] = nums[index], nums[i]
+		if index == 0 || nums[i] > nums[index-1] {
+			nums[i], nums[index] = nums[index], nums[i]
+			dfs(nums, index+1, k)
+			nums[i], nums[index] = nums[index], nums[i]
+		}
 	}
 }

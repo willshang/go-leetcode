@@ -6,6 +6,7 @@ func main() {
 	fmt.Println(partition("aab"))
 }
 
+// leetcode131_分割回文串
 var res [][]string
 
 func partition(s string) [][]string {
@@ -19,15 +20,14 @@ func dfs(s string, level int, arr []string) {
 	if level == len(s) {
 		temp := make([]string, len(arr))
 		copy(temp, arr)
-		res = append(res, arr)
+		res = append(res, temp)
 		return
 	}
-	for i := 0; i < len(s)-level; i++ {
-		str := s[level : level+i+1]
-		if judge(str) == false {
-			continue
+	for i := level; i < len(s); i++ {
+		str := s[level : i+1]
+		if judge(str) == true {
+			dfs(s, i+1, append(arr, str))
 		}
-		dfs(s, level+i+1, append(arr, str))
 	}
 }
 
