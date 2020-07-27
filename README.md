@@ -497,12 +497,15 @@
 | 0096 | [192.统计词频](https://leetcode-cn.com/problems/word-frequency/) | Bash                                           | Medium |          |
 | 0097 | [194.转置文件](https://leetcode-cn.com/problems/transpose-file/) | Bash                                           | Medium |          |
 | 0098 | [199.二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) | 树、深度优先搜索、广度优先搜索                 | Medium | 完成     |
-| 0099 | [200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | 深度优先搜索、广度优先搜索、并查集             | Medium |          |
+| 0099 | [200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | 深度优先搜索、广度优先搜索、并查集             | Medium | 完成     |
 | 0100 | [201.数字范围按位与](https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/) | 位运算                                         | Medium |          |
 |      | 第11期                                                       |                                                |        |          |
 | 0101 | [207.课程表](https://leetcode-cn.com/problems/course-schedule/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium |          |
+| 0102 | [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树                                   | Medium |          |
+| 0103 | [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                         | Medium |          |
+|      | [216.组合总和III](https://leetcode-cn.com/problems/combination-sum-iii/) | 数组、回溯算法                                 | Medium | 完成     |
 |      | 第x期                                                        |                                                |        |          |
-|      | [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                         | Medium |          |
+|      |                                                              |                                                |        |          |
 |      | [384.打乱数组](https://leetcode-cn.com/problems/shuffle-an-array/) |                                                | Medium | 完成     |
 |      | [498.对角线遍历](https://leetcode-cn.com/problems/diagonal-traverse/) |                                                | Medium |          |
 |      | [1418.点菜展示表](https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/) | 哈希表                                         | Medium | 完成     |

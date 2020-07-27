@@ -1,0 +1,1035 @@
+# 0301-0400-Easy
+* [0301-0400-Easy](#0301-0400-easy)
+	* [303.区域和检索-数组不可变(2)](#303区域和检索-数组不可变2)
+	* [326.3的幂(3)](#3263的幂3)
+	* [342.4的幂(4)](#3424的幂4)
+	* [344.反转字符串(3)](#344反转字符串3)
+	* [345.反转字符串中的元音字母(2)](#345反转字符串中的元音字母2)
+	* [349.两个数组的交集(3)](#349两个数组的交集3)
+	* [350.两个数组的交集 II(3)](#350两个数组的交集-ii3)
+	* [367.有效的完全平方数(4)](#367有效的完全平方数4)
+	* [371.两整数之和(2)](#371两整数之和2)
+	* [374.猜数字大小(2)](#374猜数字大小2)
+	* [383.赎金信(3)](#383赎金信3)
+	* [387.字符串中的第一个唯一字符(3)](#387字符串中的第一个唯一字符3)
+	* [389.找不同(5)](#389找不同5)
+	* [392.判断子序列(4)](#392判断子序列4)
+
+## 303.区域和检索-数组不可变(2)
+
+- 题目
+
+```
+给定一个整数数组  nums，求出数组从索引 i 到 j  (i ≤ j) 范围内元素的总和，包含 i,  j 两点。
+示例：
+给定 nums = [-2, 0, 3, -5, 2, -1]，求和函数为 sumRange()
+sumRange(0, 2) -> 1
+sumRange(2, 5) -> -1
+sumRange(0, 5) -> -3
+
+说明:
+    你可以假设数组不可变。
+    会多次调用 sumRange 方法。
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 一维前缀和 | O(1)       | O(n)       |
+| 02   | 遍历计算   | O(n)       | O(1)       |
+
+```go
+type NumArray struct {
+	arr []int
+}
+
+func Constructor(nums []int) NumArray {
+	size := len(nums)
+	arr := make([]int, size+1)
+	for i := 1; i <= size; i++ {
+		arr[i] = arr[i-1] + nums[i-1]
+	}
+	return NumArray{arr: arr}
+}
+
+func (n *NumArray) SumRange(i int, j int) int {
+	return n.arr[j+1] - n.arr[i]
+}
+
+#
+type NumArray struct {
+	arr []int
+}
+
+func Constructor(nums []int) NumArray {
+	return NumArray{nums}
+}
+
+func (n *NumArray) SumRange(i int, j int) int {
+	sum := 0
+	for ; i <= j; i++ {
+		sum = sum + n.arr[i]
+	}
+	return sum
+}
+```
+
+## 326.3的幂(3)
+
+- 题目
+
+```
+给定一个整数，写一个函数来判断它是否是 3 的幂次方。
+示例 1: 输入: 27 输出: true
+示例 2: 输入: 0 输出: false
+示例 3: 输入: 9 输出: true
+示例 4: 输入: 45 输出: false
+进阶：你能不使用循环或者递归来完成本题吗？
+```
+
+- 解题思路
+
+| No.  | 思路        | 时间复杂度 | 空间复杂度 |
+| ---- | ----------- | ---------- | ---------- |
+| 01   | 迭代        | I          | O(1)       |
+| 02   | 转3进制判断 | O(log(n))  | O(1)       |
+| 03   | 递归        | O(log(n))  | O(log(n))  |
+
+```go
+func isPowerOfThree(n int) bool {
+	if n <= 0 {
+		return false
+	}
+	for n > 1 {
+		if n % 3 != 0{
+			return false
+		}
+		n = n / 3
+	}
+	return n == 1
+}
+
+#
+func isPowerOfThree(n int) bool {
+	if n <= 0 {
+		return false
+	}
+	str := strconv.FormatInt(int64(n), 3)
+	return str[0:1] == "1" && strings.Count(str, "0") == len(str)-1
+}
+
+
+#
+func isPowerOfThree(n int) bool {
+	if n <= 0 {
+		return false
+	}
+	if n == 1 {
+		return true
+	}
+	if n%3 != 0 {
+		return false
+	}
+	return isPowerOfThree(n / 3)
+}
+```
+
+## 342.4的幂(4)
+
+- 题目
+
+```
+给定一个整数 (32 位有符号整数)，请编写一个函数来判断它是否是 4 的幂次方。
+示例 1: 输入: 16 输出: true
+示例 2: 输入: 5 输出: false
+进阶：你能不使用循环或者递归来完成本题吗？
+```
+
+- 解题思路
+
+| No.  | 思路    | 时间复杂度 | 空间复杂度 |
+| ---- | ------- | ---------- | ---------- |
+| 01   | 迭代    | O(log(n))  | O(1)       |
+| 02   | 递归    | O(log(n))  | O(log(n))  |
+| 03   | 位运算  | O(1)       | O(1)       |
+| 04   | 转4进制 | O(log(n))  | O(1)       |
+
+```go
+func isPowerOfFour(num int) bool {
+	if num <= 0 {
+		return false
+	}
+
+	for num > 1 {
+		if num%4 != 0 {
+			return false
+		}
+		num = num / 4
+	}
+	return num == 1
+}
+
+#
+func isPowerOfFour(num int) bool {
+	if num <= 0 {
+		return false
+	}
+	if num == 1{
+		return true
+	}
+	if num % 4 != 0{
+		return false
+	}
+
+	return isPowerOfFour(num/4)
+}
+
+#
+func isPowerOfFour(num int) bool {
+	if num <= 0 {
+		return false
+	}
+	// return (num & (num-1) == 0) && (num-1)%3 == 0
+	return (num&(num-1) == 0) && (num&0xaaaaaaaa == 0)
+}
+
+#
+func isPowerOfFour(num int) bool {
+	if num <= 0 {
+		return false
+	}
+	str := strconv.FormatInt(int64(num), 4)
+	return str[0:1] == "1" && strings.Count(str, "0") == len(str)-1
+}
+```
+
+## 344.反转字符串(3)
+
+- 题目
+
+```
+编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。
+不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。
+你可以假设数组中的所有字符都是 ASCII 码表中的可打印字符。
+
+示例 1： 输入：["h","e","l","l","o"] 输出：["o","l","l","e","h"]
+示例 2： 输入：["H","a","n","n","a","h"] 输出：["h","a","n","n","a","H"]
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 双指针 | O(n)       | O(1)       |
+| 02   | 递归   | O(n)       | O(n)         |
+| 03   | 单指针 | O(n)       | O(1)           |
+
+```go
+func reverseString(s []byte) {
+	i, j := 0, len(s)-1
+	for i < j {
+		s[i], s[j] = s[j], s[i]
+		i++
+		j--
+	}
+}
+
+#
+func reverseString(s []byte) {
+	var reverse func(int, int)
+	reverse = func(left, right int) {
+		if left < right {
+			s[left], s[right] = s[right], s[left]
+			reverse(left+1, right-1)
+		}
+	}
+	reverse(0, len(s)-1)
+}
+
+#
+func reverseString(s []byte) {
+	for i := 0; i < len(s)/2; i++ {
+		s[i], s[len(s)-1-i] = s[len(s)-1-i], s[i]
+	}
+}
+```
+
+## 345.反转字符串中的元音字母(2)
+
+- 题目
+
+```
+编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
+
+示例 1:输入: "hello"输出: "holle"
+示例 2:输入: "leetcode"输出: "leotcede"
+说明:元音字母不包含字母"y"。
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 双指针       | O(n)       | O(1)       |
+| 02   | 数组辅助替换 | O(n)       | O(n)       |
+
+```go
+func reverseVowels(s string) string {
+	bytes := []byte(s)
+	length := len(s)
+	i, j := 0, length-1
+	for i < j {
+		if !isvowels(bytes[i]) {
+			i++
+			continue
+		}
+		if !isvowels(bytes[j]) {
+			j--
+			continue
+		}
+		bytes[i], bytes[j] = bytes[j], bytes[i]
+		i++
+		j--
+	}
+	return string(bytes)
+}
+
+func isvowels(b byte) bool {
+	return b == 'a' || b == 'e' || b == 'i' || b == 'o' || b == 'u' ||
+		b == 'A' || b == 'E' || b == 'I' || b == 'O' || b == 'U'
+}
+
+#
+func reverseVowels(s string) string {
+	bytes := []byte(s)
+	length := len(s)
+	temp := make([]byte, 0)
+	for i := 0; i < length; i++ {
+		if isvowels(bytes[i]) {
+			temp = append(temp, bytes[i])
+		}
+	}
+	count := 0
+	for i := 0; i < length; i++ {
+		if isvowels(bytes[i]) {
+			bytes[i] = temp[len(temp)-1-count]
+			count++
+		}
+	}
+	return string(bytes)
+}
+
+func isvowels(b byte) bool {
+	return b == 'a' || b == 'e' || b == 'i' || b == 'o' || b == 'u' ||
+		b == 'A' || b == 'E' || b == 'I' || b == 'O' || b == 'U'
+}
+```
+
+## 349.两个数组的交集(3)
+
+- 题目
+
+```
+给定两个数组，编写一个函数来计算它们的交集。
+示例 1:输入: nums1 = [1,2,2,1], nums2 = [2,2]输出: [2]
+示例 2:输入: nums1 = [4,9,5], nums2 = [9,4,9,8,4]输出: [9,4]
+说明:
+    输出结果中的每个元素一定是唯一的。
+    我们可以不考虑输出结果的顺序。
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 单哈希辅助 | O(n)       | O(n)       |
+| 02   | 双哈希辅助 | O(n)       | O(n)       |
+| 03   | 排序双指针 | O(nlog(n)) | O(n)       |
+
+```go
+func intersection(nums1 []int, nums2 []int) []int {
+	res := make([]int, 0)
+	m := make(map[int]int)
+	for _, v := range nums1 {
+		m[v] = 1
+	}
+	for _, v := range nums2 {
+		if m[v] == 1 {
+			res = append(res, v)
+			m[v] += 1
+		}
+	}
+	return res
+}
+
+#
+func intersection(nums1 []int, nums2 []int) []int {
+	m1 := make(map[int]bool)
+	m2 := make(map[int]bool)
+	res := make([]int, 0)
+	for _, v := range nums1 {
+		m1[v] = true
+	}
+
+	for _, v := range nums2 {
+		if m1[v] != false {
+			m2[v] = true
+		}
+	}
+
+	for k := range m2 {
+		res = append(res, k)
+	}
+	return res
+}
+
+#
+func intersection(nums1 []int, nums2 []int) []int {
+	sort.Ints(nums1)
+	sort.Ints(nums2)
+	res := make([]int, 0)
+	i := 0
+	j := 0
+	for i < len(nums1) && j < len(nums2) {
+		if nums1[i] < nums2[j] {
+			i++
+		} else if nums1[i] > nums2[j] {
+			j++
+		} else {
+			if len(res) == 0 || res[len(res)-1] != nums1[i] {
+				res = append(res, nums1[i])
+			}
+			i++
+			j++
+		}
+	}
+	return res
+}
+```
+
+## 350.两个数组的交集 II(3)
+
+- 题目
+
+```
+给定两个数组，编写一个函数来计算它们的交集。
+示例 1: 输入: nums1 = [1,2,2,1], nums2 = [2,2]  输出: [2,2]
+示例 2: 输入: nums1 = [4,9,5], nums2 = [9,4,9,8,4] 输出: [4,9]
+说明：输出结果中每个元素出现的次数，应与元素在两个数组中出现的次数一致。
+     我们可以不考虑输出结果的顺序。
+进阶:
+    如果给定的数组已经排好序呢？你将如何优化你的算法？
+    如果 nums1 的大小比 nums2 小很多，哪种方法更优？
+    如果 nums2 的元素存储在磁盘上，磁盘内存是有限的，并且你不能一次加载所有的元素到内存中，你该怎么办？
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 单哈希辅助 | O(n)       | O(n)       |
+| 02   | 双哈希辅助 | O(n)       | O(n)       |
+| 03   | 排序双指针 | O(nlog(n)) | O(n)       |
+
+```go
+func intersect(nums1 []int, nums2 []int) []int {
+	m1 := make(map[int]int)
+	res := make([]int, 0)
+	for _, v := range nums1 {
+		m1[v] += 1
+	}
+
+	for _, v := range nums2 {
+		if m1[v] > 0 {
+			res = append(res, v)
+			m1[v]--
+		}
+	}
+	return res
+}
+
+#
+func intersect(nums1 []int, nums2 []int) []int {
+	m1 := make(map[int]int)
+	m2 := make(map[int]int)
+	res := make([]int, 0)
+	for _, v := range nums1 {
+		m1[v]++
+	}
+
+	for _, v := range nums2 {
+		if m1[v] != 0 && m1[v] > m2[v] {
+			m2[v]++
+		}
+	}
+
+	for k := range m2 {
+		for i := 0; i < m2[k]; i++ {
+			res = append(res, k)
+		}
+	}
+	return res
+}
+
+#
+func intersect(nums1 []int, nums2 []int) []int {
+	sort.Ints(nums1)
+	sort.Ints(nums2)
+	res := make([]int, 0)
+	i := 0
+	j := 0
+	for i < len(nums1) && j < len(nums2) {
+		if nums1[i] < nums2[j] {
+			i++
+		} else if nums1[i] > nums2[j] {
+			j++
+		} else {
+			res = append(res, nums1[i])
+			i++
+			j++
+		}
+	}
+	return res
+}
+```
+
+## 367.有效的完全平方数(4)
+
+- 题目
+
+```
+给定一个正整数 num，编写一个函数，如果 num 是一个完全平方数，则返回 True，否则返回 False。
+说明：不要使用任何内置的库函数，如  sqrt。
+示例 1：输入：16 输出：True
+示例 2：输入：14 输出：False
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 二分查找   | O(log(n))  | O(1)       |
+| 02   | 牛顿迭代法 | O(log(n))  | O(1)       |
+| 03   | 数学法     | O(n^1/2)   | O(1)       |
+| 04   | 暴力法     | O(n^1/2)   | O(1)       |
+
+```go
+func isPerfectSquare(num int) bool {
+	if num < 2 {
+		return true
+	}
+	left := 2
+	right := num / 2
+	for left <= right {
+		mid := left + (right-left)/2
+		if mid*mid == num {
+			return true
+		} else if mid*mid > num {
+			right = mid - 1
+		} else {
+			left = mid + 1
+		}
+	}
+	return false
+}
+
+#
+func isPerfectSquare(num int) bool {
+	if num < 2 {
+		return true
+	}
+	x := num / 2
+	for x*x > num {
+		x = (x + num/x) / 2
+	}
+	return x*x == num
+}
+
+#
+func isPerfectSquare(num int) bool {
+	i := 1
+	for num > 0 {
+		num = num - i
+		i = i + 2
+	}
+	return num == 0
+}
+
+#
+func isPerfectSquare(num int) bool {
+	i := 1
+	for i * i < num{
+		i++
+	}
+	return i * i == num
+}
+```
+
+## 371.两整数之和(2)
+
+- 题目
+
+```
+不使用运算符 + 和 - ，计算两整数a,b之和。
+示例 1:输入: a = 1, b = 2 输出: 3
+示例 2:输入: a = -2, b = 3 输出: 1
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 迭代 | O(1)       | O(1)       |
+| 02   | 递归 | O(1)       | O(1)       |
+
+```go
+func getSum(a int, b int) int {
+	for b != 0 {
+		a, b = a^b, (a&b)<<1
+	}
+	return a
+}
+
+
+#
+func getSum(a int, b int) int {
+	if b == 0 {
+		return a
+	}
+	return getSum(a^b, (a&b)<<1)
+}
+```
+
+## 374.猜数字大小(2)
+
+- 题目
+
+```
+我们正在玩一个猜数字游戏。 游戏规则如下：
+我从 1 到 n 选择一个数字。 你需要猜我选择了哪个数字。
+每次你猜错了，我会告诉你这个数字是大了还是小了。
+你调用一个预先定义好的接口 guess(int num)，它会返回 3 个可能的结果（-1，1 或 0）：
+-1 : 我的数字比较小
+ 1 : 我的数字比较大
+ 0 : 恭喜！你猜对了！
+ 
+示例 :输入: n = 10, pick = 6 输出: 6
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(log(n))  | O(1)       |
+| 02   | 递归     | O(log(n))  | O(log(n))  |
+
+```go
+func guessNumber(n int) int {
+	low := 1
+	high := n
+	for low < high{
+		mid := low + (high-low)/2
+		if guess(mid) == 0{
+			return mid
+		}else if guess(mid) == 1{
+			low = mid + 1
+		}else {
+			high = mid - 1
+		}
+	}
+	return low
+}
+
+#
+func guessNumber(n int) int {
+	return binary(1, n)
+}
+
+func binary(left, right int) int {
+	mid := left + (right-left)/2
+	if guess(mid) == 1 {
+		return binary(mid+1, right)
+	} else if guess(mid) == -1 {
+		return binary(left, mid-1)
+	} else {
+		return mid
+	}
+}
+```
+
+## 383.赎金信(3)
+
+- 题目
+
+```
+给定一个赎金信 (ransom) 字符串和一个杂志(magazine)字符串，
+判断第一个字符串 ransom 能不能由第二个字符串 magazines 里面的字符构成。
+如果可以构成，返回 true ；否则返回 false。
+
+(题目说明：为了不暴露赎金信字迹，要从杂志上搜索各个需要的字母，组成单词来表达意思。
+杂志字符串中的每个字符只能在赎金信字符串中使用一次。)
+
+注意：你可以假设两个字符串均只含有小写字母。
+canConstruct("a", "b") -> false
+canConstruct("aa", "ab") -> false
+canConstruct("aa", "aab") -> true
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数组辅助 | O(n)       | O(1)       |
+| 02   | 哈希辅助 | O(n)       | O(1)        |
+| 03 | 排序双指针 | O(nlog(n)) | O(n) |
+
+```go
+func canConstruct(ransomNote string, magazine string) bool {
+	index := [26]int{}
+	for i := 0; i < len(magazine); i++ {
+		index[magazine[i]-'a']++
+	}
+
+	for i := 0; i < len(ransomNote); i++ {
+		index[ransomNote[i]-'a']--
+		if index[ransomNote[i]-'a'] < 0 {
+			return false
+		}
+	}
+	return true
+}
+
+#
+func canConstruct(ransomNote string, magazine string) bool {
+	index := make(map[uint8]int)
+	for i := 0; i < len(magazine); i++ {
+		index[magazine[i]-'a']++
+	}
+
+	for i := 0; i < len(ransomNote); i++ {
+		index[ransomNote[i]-'a']--
+		if index[ransomNote[i]-'a'] < 0 {
+			return false
+		}
+	}
+	return true
+}
+
+#
+func canConstruct(ransomNote string, magazine string) bool {
+	ransomNoteArr := strings.Split(ransomNote, "")
+	magazineArr := strings.Split(magazine, "")
+	sort.Strings(ransomNoteArr)
+	sort.Strings(magazineArr)
+
+	i := 0
+	j := 0
+	for i < len(ransomNoteArr) && j < len(magazineArr) {
+		if ransomNoteArr[i] > magazineArr[j] {
+			j++
+		} else if ransomNoteArr[i] < magazineArr[j] {
+			return false
+		} else {
+			i++
+			j++
+		}
+	}
+	return i == len(ransomNote)
+}
+```
+
+## 387.字符串中的第一个唯一字符(3)
+
+- 题目
+
+```
+给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
+案例:
+s = "leetcode"返回 0.
+s = "loveleetcode",返回 2.
+注意事项：您可以假定该字符串只包含小写字母。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数组辅助 | O(n)       | O(1)       |
+| 02   | 哈希辅助 | O(n)       | O(1)       |
+| 03   | 暴力法   | O(n^2)     | O(1)       |
+
+```go
+func firstUniqChar(s string) int {
+	m := [26]int{}
+	for i := 0; i < len(s); i++ {
+		m[s[i]-'a']++
+	}
+	for i := 0; i < len(s); i++ {
+		if m[s[i]-'a'] == 1 {
+			return i
+		}
+	}
+	return -1
+}
+
+#
+func firstUniqChar(s string) int {
+	m := make(map[uint8]int)
+	for i := 0; i < len(s); i++ {
+		m[s[i]-'a']++
+	}
+	for i := 0; i < len(s); i++ {
+		if m[s[i]-'a'] == 1 {
+			return i
+		}
+	}
+	return -1
+}
+
+#
+func firstUniqChar(s string) int {
+	for i := 0; i < len(s); i++ {
+		flag := true
+		for j := 0; j < len(s); j++ {
+			if s[i] == s[j] && i != j {
+				flag = false
+				break
+			}
+		}
+		if flag {
+			return i
+		}
+	}
+	return -1
+}
+```
+
+## 389.找不同(5)
+
+- 题目
+
+```
+给定两个字符串 s 和 t，它们只包含小写字母。
+字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。
+请找出在 t 中被添加的字母。 
+示例:输入：s = "abcd"t = "abcde"输出：e
+解释：'e' 是那个被添加的字母。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数组辅助 | O(n)       | O(1)       |
+| 02   | 哈希辅助 | O(n)       | O(1)       |
+| 03   | 位计算   | O(n)       | O(1)       |
+| 04   | 数学计算 | O(n)       | O(1)       |
+| 05   | 排序遍历 | O(nlog(n)) | O(1)       |
+
+```go
+func findTheDifference(s string, t string) byte {
+	m := [26]int{}
+	bytest := []byte(t)
+	bytess := []byte(s)
+	for _, v := range bytest {
+		m[v-'a']++
+	}
+	for _, v := range bytess {
+		m[v-'a']--
+	}
+	for k, _ := range m {
+		if m[k] == 1 {
+			return byte(k + 'a')
+		}
+	}
+	return 0
+}
+
+#
+func findTheDifference(s string, t string) byte {
+	m := make(map[byte]int)
+	bytest := []byte(t)
+	bytess := []byte(s)
+	for _, v := range bytest {
+		m[v]++
+	}
+	for _, v := range bytess {
+		m[v]--
+	}
+	for k, _ := range m {
+		if m[k] == 1 {
+			return k
+		}
+	}
+	return 0
+}
+
+#
+func findTheDifference(s string, t string) byte {
+	ch := byte(0)
+	for _, value := range s {
+		ch ^= byte(value)
+	}
+	for _, value := range t {
+		ch ^= byte(value)
+	}
+	return ch
+}
+
+#
+func findTheDifference(s string, t string) byte {
+	ch := byte(0)
+	for _, value := range t {
+		ch += byte(value)
+	}
+	for _, value := range s {
+		ch -= byte(value)
+	}
+	return ch
+}
+
+#
+func findTheDifference(s string, t string) byte {
+	sArr := strings.Split(s, "")
+	tArr := strings.Split(t, "")
+	sort.Strings(sArr)
+	sort.Strings(tArr)
+	for i := 0; i < len(sArr); i++{
+		if sArr[i] != tArr[i]{
+			return []byte(tArr[i])[0]
+		}
+	}
+	return []byte(tArr[len(tArr)-1])[0]
+}
+```
+
+## 392.判断子序列(4)
+
+- 题目
+
+```
+给定字符串 s 和 t ，判断 s 是否为 t 的子序列。
+你可以认为 s 和 t 中仅包含英文小写字母。
+字符串 t 可能会很长（长度 ~= 500,000），而 s 是个短字符串（长度 <=100）。
+
+字符串的一个子序列是原始字符串删除一些（也可以不删除）字符而不改变剩余字符相对位置形成的新字符串。
+（例如，"ace"是"abcde"的一个子序列，而"aec"不是）。
+
+示例 1:s = "abc", t = "ahbgdc"返回 true.
+示例 2:s = "axc", t = "ahbgdc"返回 false.
+
+后续挑战 :
+如果有大量输入的 S，称作S1, S2, ... , Sk 其中 k >= 10亿，
+你需要依次检查它们是否为 T 的子序列。在这种情况下，你会怎样改变代码？
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 双指针     | O(n)       | O(1)       |
+| 02   | 单指针遍历 | O(n^2)     | O(1)       |
+| 03   | 二分查找   | O(nlog(n)) | o          |
+| 04   | 动态规划   | O(n^2)     | O(n^2)     |
+
+```go
+func isSubsequence(s string, t string) bool {
+	if len(s) > len(t){
+		return false
+	}
+	i := 0
+	j := 0
+	for i < len(s) && j < len(t){
+		if s[i] == t[j]{
+			i++
+		}
+		j++
+	}
+	return i == len(s)
+}
+
+#
+func isSubsequence(s string, t string) bool {
+	for _, v := range s{
+		idx := strings.IndexRune(t, v)
+		if idx == -1{
+			return false
+		}
+		t = t[idx+1:]
+	}
+	return true
+}
+
+#
+func isSubsequence(s string, t string) bool {
+	m := make(map[uint8][]int)
+	for i := 0; i < len(t); i++ {
+		value := t[i] - 'a'
+		if m[value] == nil {
+			m[value] = make([]int, 0)
+		}
+		m[value] = append(m[value], i)
+	}
+	prev := -1
+	for i := 0; i < len(s); i++ {
+		value := s[i] - 'a'
+		left := 0
+		right := len(m[value]) - 1
+		if len(m[value]) == 0 {
+			return false
+		}
+		for left < right {
+			mid := left + (right-left)/2
+			if m[value][mid] > prev {
+				right = mid
+			} else {
+				left = mid + 1
+			}
+		}
+		if left > right || m[value][left] <= prev {
+			return false
+		}
+		prev = m[value][left]
+	}
+	return true
+}
+
+#
+/*
+状态定义: dp[i][j] 表示长度为i的字符串s是否为长度为j的字符串t的子序列
+状态转移方程: 如果s[i] == t[j]， 则dp[i][j] = dp[i-1][j-1]
+如果s[i] != t[j]，则dp[i][j] = dp[i][j-1]
+初始: dp[0][j] = true 表示空串s 是任意长度串t的子串
+dp[i][0] = false 表示任意长度非空串s 不是空串t的字串
+dp[i][0] = false 表示任意长度非空串s 不是空串t的字串
+*/
+func isSubsequence(s string, t string) bool {
+	if len(s) == 0 {
+		return true
+	} else if len(s) > len(t) {
+		return false
+	}
+
+	dp := make([][]bool, len(s)+1)
+	for i := 0; i < len(s)+1; i++ {
+		dp[i] = make([]bool, len(t)+1)
+		dp[i][0] = false
+	}
+	for i := 0; i <= len(t); i++ {
+		dp[0][i] = true
+	}
+
+	for i := 1; i <= len(s); i++ {
+		for j := 1; j <= len(t); j++ {
+			if s[i-1] == t[j-1] {
+				dp[i][j] = dp[i-1][j-1]
+			} else {
+				dp[i][j] = dp[i][j-1]
+			}
+		}
+	}
+	return dp[len(s)][len(t)]
+}
+```
+

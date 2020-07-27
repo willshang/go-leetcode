@@ -1,0 +1,1899 @@
+# 0201-0300-Easy
+* [0201-0300-Easy](#0201-0300-easy)
+	* [202.快乐数(2)](#202快乐数2)
+	* [203.移除链表元素(2)](#203移除链表元素2)
+	* [204.计数质数(2)](#204计数质数2)
+	* [205.同构字符串(3)](#205同构字符串3)
+	* [206.反转链表(4)](#206反转链表4)
+	* [217.存在重复元素(2)](#217存在重复元素2)
+	* [219.存在重复元素 II(2)](#219存在重复元素-ii2)
+	* [225.用队列实现栈(4)](#225用队列实现栈4)
+	* [226.翻转二叉树(2)](#226翻转二叉树2)
+	* [231.2的幂(3)](#2312的幂3)
+	* [232.用栈实现队列(3)](#232用栈实现队列3)
+	* [234.回文链表(4)](#234回文链表4)
+	* [235.二叉搜索树的最近公共祖先(2)](#235二叉搜索树的最近公共祖先2)
+	* [237.删除链表中的节点(1)](#237删除链表中的节点1)
+	* [242.有效的字母异位词(2)](#242有效的字母异位词2)
+	* [257.二叉树的所有路径(2)](#257二叉树的所有路径2)
+	* [258.各位相加(4)](#258各位相加4)
+	* [263.丑数(2)](#263丑数2)
+	* [268.缺失数字(5)](#268缺失数字5)
+	* [278.第一个错误的版本(2)](#278第一个错误的版本2)
+	* [283.移动零(3)](#283移动零3)
+	* [290.单词规律(2)](#290单词规律2)
+	* [292.Nim 游戏(1)](#292nim-游戏1)
+	* [299.猜数字游戏(2)](#299猜数字游戏2)
+
+
+## 202.快乐数(2)
+
+- 题目
+
+```
+编写一个算法来判断一个数 n 是不是快乐数。
+「快乐数」定义为：对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和，
+然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。
+如果 可以变为  1，那么这个数就是快乐数。
+如果 n 是快乐数就返回 True ；不是，则返回 False 。
+示例： 输入：19 输出：true 
+解释：
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 哈希+遍历       | O(log(n))  | O(log(n))  |
+| 02   | 遍历+快慢判断环 | O(log(n))  | O(1)       |
+
+```go
+func isHappy(n int) bool {
+	now, next := n, nextValue(n)
+	m := make(map[int]int)
+	m[now] = 1
+	for {
+		if next == 1 {
+			break
+		}
+		if _, ok := m[next]; ok {
+			break
+		} else {
+			m[next] = 1
+		}
+		next = nextValue(next)
+	}
+
+	if next == 1 {
+		return true
+	}
+
+	return false
+}
+
+func nextValue(n int) int {
+	ret := 0
+	for n != 0 {
+		ret = ret + (n%10)*(n%10)
+		n = n / 10
+	}
+	return ret
+}
+
+#
+func isHappy(n int) bool {
+	now, next := n, nextValue(n)
+	for now != next {
+		now = nextValue(now)
+		next = nextValue(nextValue(next))
+	}
+	if now == 1 {
+		return true
+	}
+	return false
+}
+
+func nextValue(n int) int {
+	ret := 0
+	for n != 0 {
+		ret = ret + (n%10)*(n%10)
+		n = n / 10
+	}
+	return ret
+}
+```
+
+## 203.移除链表元素(2)
+
+- 题目
+
+```
+删除链表中等于给定值 val 的所有节点。
+示例:
+输入: 1->2->6->3->4->5->6, val = 6
+输出: 1->2->3->4->5
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 哨兵结点+链表遍历 | O(n)       | O(1)       |
+| 02   | 递归              | O(n)       | O(n)       |
+
+```go
+func removeElements(head *ListNode, val int) *ListNode {
+	headPre := &ListNode{Next: head}
+	temp := headPre
+
+	for temp.Next != nil {
+		if temp.Next.Val == val {
+			//delete
+			temp.Next = temp.Next.Next
+		} else {
+			temp = temp.Next
+		}
+	}
+
+	return headPre.Next
+}
+
+# 递归
+func removeElements(head *ListNode, val int) *ListNode {
+	if head == nil {
+		return nil
+	}
+	head.Next = removeElements(head.Next, val)
+	if head.Val == val {
+		return head.Next
+	}
+	return head
+}
+```
+
+## 204.计数质数(2)
+
+- 题目
+
+```
+统计所有小于非负整数 n 的质数的数量。
+示例:
+输入: 10
+输出: 4
+解释: 小于 10 的质数一共有 4 个, 它们是 2, 3, 5, 7 。
+```
+
+- 解题思路
+
+| No.  | 思路                   | 时间复杂度 | 空间复杂度 |
+| ---- | ---------------------- | ---------- | ---------- |
+| 01   | 筛选质数(厄拉多塞筛法) | O(n^2)     | O(n)       |
+| 02   | 筛选质数优化           | O(n^(1/4)) | O(n)       |
+
+```go
+func countPrimes(n int) int {
+	if n < 3 {
+		return 0
+	}
+	notPrimes := make([]bool, n)
+	count := 0
+	for i := 2; i < n; i++ {
+		if notPrimes[i] {
+			continue
+		}
+		for j := i*2 ; j < n; j += i  {
+			notPrimes[j] = true
+		}
+		count++
+	}
+	return count
+}
+
+#
+func countPrimes(n int) int {
+	if n < 3 {
+		return 0
+	}
+	isPrimes := make([]bool, n)
+	for i := range isPrimes {
+		isPrimes[i] = true
+	}
+	for i := 2; i*i < n; i++ {
+		if !isPrimes[i] {
+			continue
+		}
+		for j := i * i; j < n; j += i {
+			isPrimes[j] = false
+		}
+	}
+	count := 0
+	for i := 2; i < n; i++ {
+		if isPrimes[i] {
+			count++
+		}
+	}
+	return count
+}
+```
+
+## 205.同构字符串(3)
+
+- 题目
+
+```
+给定两个字符串 s 和 t，判断它们是否是同构的。
+如果 s 中的字符可以被替换得到 t ，那么这两个字符串是同构的。
+所有出现的字符都必须用另一个字符替换，同时保留字符的顺序。
+两个字符不能映射到同一个字符上，但字符可以映射自己本身。
+
+示例 1: 输入: s = "egg", t = "add" 输出: true
+示例 2:输入: s = "foo", t = "bar" 输出: false
+示例 3: 输入: s = "paper", t = "title" 输出: true
+
+说明:你可以假设 s 和 t 具有相同的长度。
+```
+
+- 解题思路
+
+| No.  | 思路           | 时间复杂度 | 空间复杂度 |
+| ---- | -------------- | ---------- | ---------- |
+| 01   | 数组映射       | O(n)       | O(n)       |
+| 02   | 哈希映射       | O(n)       | O(n)       |
+| 03   | 字符串查找匹配 | O(n)       | O(1)       |
+
+```go
+func isIsomorphic(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	m1 := make([]int, 256)
+	m2 := make([]int, 256)
+
+	for i := 0; i < len(s); i++ {
+		a := int(s[i])
+		b := int(t[i])
+		if m1[a] != m2[b] {
+			return false
+		}
+		m1[a] = i + 1
+		m2[b] = i + 1
+	}
+	return true
+}
+
+#
+func isIsomorphic(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	m := make(map[int]int)
+	n := make(map[int]int)
+
+	for i := 0; i < len(s); i++ {
+		a := int(s[i])
+		b := int(t[i])
+		if m[a] == 0 && n[b] == 0 {
+			m[a] = b
+			n[b] = a
+		} else if m[a] != b || n[b] != a {
+			return false
+		}
+	}
+	return true
+}
+
+
+# 
+func isIsomorphic(s string, t string) bool {
+	for i := 0; i < len(s); i++ {
+		if strings.IndexByte(s[i+1:], s[i]) != strings.IndexByte(t[i+1:], t[i]) {
+			return false
+		}
+	}
+	return true
+}
+```
+
+## 206.反转链表(4)
+
+- 题目
+
+```
+反转一个单链表。
+示例:
+输入: 1->2->3->4->5->NULL
+输出: 5->4->3->2->1->NULL
+进阶:
+你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 递归          | O(n)       | O(n)       |
+| 02   | 迭代          | O(n)       | O(1)       |
+| 03   | 数组辅助      | O(n)       | O(n)       |
+| 04   | 迭代-新建节点 | O(n)       | O(1)       |
+
+```go
+func reverseList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+
+	result := reverseList(head.Next)
+	head.Next.Next = head
+	head.Next = nil
+	return result
+}
+
+//
+func reverseList(head *ListNode) *ListNode {
+	var result *ListNode
+	var temp *ListNode
+	for head != nil {
+		temp = head.Next
+		head.Next = result
+		result = head
+		head = temp
+	}
+	return result
+}
+
+#
+func reverseList(head *ListNode) *ListNode {
+	result := &ListNode{}
+	arr := make([]*ListNode, 0)
+	for head != nil {
+		arr = append(arr, head)
+		head = head.Next
+	}
+	temp := result
+	for i := len(arr) - 1; i >= 0; i-- {
+		arr[i].Next = nil
+		temp.Next = arr[i]
+		temp = temp.Next
+	}
+	return result.Next
+}
+
+#
+func reverseList(head *ListNode) *ListNode {
+	var res *ListNode
+	for {
+		if head == nil {
+			break
+		}
+		res = &ListNode{head.Val, res}
+		head = head.Next
+	}
+	return res
+}
+```
+
+## 217.存在重复元素(2)
+
+- 题目
+
+```
+给定一个整数数组，判断是否存在重复元素。
+如果任意一值在数组中出现至少两次，函数返回 true 。如果数组中每个元素都不相同，则返回 false 。
+
+示例 1:输入: [1,2,3,1] 输出: true
+示例 2:输入: [1,2,3,4] 输出: false
+示例 3:输入: [1,1,1,3,3,4,3,2,4,2] 输出: true
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 哈希辅助遍历 | O(n)       | O(n)       |
+| 02   | 排序后遍历   | O(nlog(n)) | O(1)       |
+
+```go
+func containsDuplicate(nums []int) bool {
+	m := make(map[int]int)
+	for i := 0; i < len(nums); i++ {
+		if _, ok := m[nums[i]]; ok {
+			return true
+		} else {
+			m[nums[i]] = 1
+		}
+	}
+	return false
+}
+
+#
+func containsDuplicate(nums []int) bool {
+	sort.Ints(nums)
+	for i := 0; i < len(nums)-1; i++{
+		if nums[i] == nums[i+1]{
+			return true
+		}
+	}
+	return false
+}
+```
+
+## 219.存在重复元素 II(2)
+
+- 题目
+
+```
+给定一个整数数组和一个整数 k，判断数组中是否存在两个不同的索引 i 和 j，
+使得 nums [i] = nums [j]，并且 i 和 j 的差的 绝对值 至多为 k。
+
+示例 1:输入: nums = [1,2,3,1], k = 3输出: true
+示例 2:输入: nums = [1,0,1,1], k = 1 输出: true
+示例 3:输入: nums = [1,2,3,1,2,3], k = 2 输出: false
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 哈希辅助遍历    | O(n)       | O(n)       |
+| 02   | 哈希表+滑动窗口 | O(n)       | O(n)       |
+
+```go
+#
+func containsNearbyDuplicate(nums []int, k int) bool {
+	m := make(map[int]int)
+
+	for i, n := range nums {
+		if m[n] != 0 && (i+1)-m[n] <= k {
+			return true
+		}
+		m[n] = i + 1
+	}
+	return false
+}
+
+#
+func containsNearbyDuplicate(nums []int, k int) bool {
+	m := make(map[int]int)
+
+	for i, n := range nums {
+		if m[n] != 0 {
+			return true
+		}
+		m[n] = i + 1
+		if len(m) > k {
+			delete(m, nums[i-k])
+		}
+	}
+	return false
+}
+```
+
+## 225.用队列实现栈(4)
+
+- 题目
+
+```
+使用队列实现栈的下列操作：
+    push(x) -- 元素 x 入栈
+    pop() -- 移除栈顶元素
+    top() -- 获取栈顶元素
+    empty() -- 返回栈是否为空
+
+注意:
+    你只能使用队列的基本操作-- 也就是 push to back, peek/pop from front, size, 
+    和 is empty 这些操作是合法的。
+    你所使用的语言也许不支持队列。 你可以使用 list 或者 deque（双端队列）来模拟一个队列 , 
+    只要是标准的队列操作即可。
+    你可以假设所有操作都是有效的（例如, 对一个空的栈不会调用 pop 或者 top 操作）。
+```
+
+- 解题思路
+
+| No.  | 思路                     | 时间复杂度 | 空间复杂度 |
+| ---- | ------------------------ | ---------- | ---------- |
+| 01   | 使用切片实现             | O(1)       | O(n)       |
+| 02   | 使用1个list实现          | O(1)       | O(n)       |
+| 03   | 使用2个list实现          | O(n)       | O(n)       |
+| 04   | 使用2个双端队列deque实现 | O(n)       | O(n)       |
+
+```go
+type MyStack struct {
+	arr []int
+}
+
+func Constructor() MyStack {
+	return MyStack{}
+}
+
+func (m *MyStack) Push(x int) {
+	m.arr = append(m.arr, x)
+}
+
+func (m *MyStack) Pop() int {
+	if len(m.arr) == 0 {
+		return 0
+	}
+	last := m.arr[len(m.arr)-1]
+	m.arr = m.arr[0 : len(m.arr)-1]
+	return last
+}
+
+func (m *MyStack) Top() int {
+	if len(m.arr) == 0 {
+		return 0
+	}
+	return m.arr[len(m.arr)-1]
+}
+
+func (m *MyStack) Empty() bool {
+	if len(m.arr) == 0 {
+		return true
+	}
+	return false
+}
+
+# 使用1个list实现
+type MyStack struct {
+	*list.List
+}
+func Constructor() MyStack {
+	return MyStack{
+		list.New(),
+	}
+}
+
+func (m *MyStack) Push(x int) {
+	m.PushBack(x)
+}
+
+func (m *MyStack) Pop() int {
+	if m.Len() == 0 {
+		return -1
+	}
+	return m.Remove(m.Back()).(int)
+}
+
+func (m *MyStack) Top() int {
+	if m.Len() == 0 {
+		return -1
+	}
+	return m.Back().Value.(int)
+}
+
+func (m *MyStack) Empty() bool {
+	return m.Len() == 0
+}
+
+#  使用2个list实现
+/*
+入栈过程：
+1、q1 为空，放入 q2，否则放入 q1
+出栈过程：
+1、q1为空：依次取出q2中的元素（除了最后一个），并且放入q1中 取出q2中的最后一个元素，返回结果
+否则 依次取出q1中的元素（除了最后一个），并且放入q2中 取出q1中的最后一个元素，返回结果
+*/
+type MyStack struct {
+	l1 *list.List
+	l2 *list.List
+}
+
+func Constructor() MyStack {
+	return MyStack{
+		l1: list.New(),
+		l2: list.New(),
+	}
+}
+
+func (m *MyStack) Push(x int) {
+	if m.l1.Len() == 0 {
+		m.l2.PushBack(x)
+	} else {
+		m.l1.PushBack(x)
+	}
+}
+
+func (m *MyStack) Pop() int {
+	var top int
+	if m.l1.Len() > 0 {
+		for m.l1.Len() > 1 {
+			m.l2.PushBack(m.l1.Remove(m.l1.Front()))
+		}
+		top = m.l1.Remove(m.l1.Front()).(int)
+	} else {
+		for m.l2.Len() > 1 {
+			m.l1.PushBack(m.l2.Remove(m.l2.Front()))
+		}
+		top = m.l2.Remove(m.l2.Front()).(int)
+	}
+	return top
+}
+
+func (m *MyStack) Top() int {
+	var top int
+	if m.l1.Len() > 0 {
+		for m.l1.Len() > 1 {
+			m.l2.PushBack(m.l1.Remove(m.l1.Front()))
+		}
+		top = m.l1.Back().Value.(int)
+		m.l2.PushBack(m.l1.Remove(m.l1.Front()))
+
+	} else {
+		for m.l2.Len() > 1 {
+			m.l1.PushBack(m.l2.Remove(m.l2.Front()))
+		}
+		top = m.l2.Back().Value.(int)
+		m.l1.PushBack(m.l2.Remove(m.l2.Front()))
+	}
+	return top
+}
+
+func (m *MyStack) Empty() bool {
+	return m.l1.Len() == 0 && m.l2.Len() == 0
+}
+
+# 使用2个双端队列deque实现
+type MyStack struct {
+	l1 *Queue
+	l2 *Queue
+}
+
+func Constructor() MyStack {
+	return MyStack{
+		l1: NewQueue(),
+		l2: NewQueue(),
+	}
+}
+
+func (m *MyStack) Push(x int) {
+	m.l1.Push(x)
+}
+
+func (m *MyStack) Pop() int {
+	if m.l2.Len() == 0 {
+		m.l1, m.l2 = m.l2, m.l1
+	}
+
+	for m.l2.Len() > 1 {
+		m.l1.Push(m.l2.Pop())
+	}
+	return m.l2.Pop()
+}
+
+func (m *MyStack) Top() int {
+	res := m.Pop()
+	m.l1.Push(res)
+	return res
+}
+
+func (m *MyStack) Empty() bool {
+	return (m.l1.Len() + m.l2.Len()) == 0
+}
+
+type Queue struct {
+	nums []int
+}
+
+func NewQueue() *Queue {
+	return &Queue{
+		nums: []int{},
+	}
+}
+
+func (q *Queue) Push(n int) {
+	q.nums = append(q.nums, n)
+}
+
+func (q *Queue) Pop() int {
+	if len(q.nums) == 0 {
+		return 0
+	}
+	res := q.nums[0]
+	q.nums = q.nums[1:]
+	return res
+}
+
+func (q *Queue) Len() int {
+	return len(q.nums)
+}
+
+func (q *Queue) IsEmpty() bool {
+	return q.Len() == 0
+}
+```
+
+## 226.翻转二叉树(2)
+
+- 题目
+
+```
+翻转一棵二叉树。
+
+示例：
+
+输入：
+
+     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+
+输出：
+
+     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+
+备注:
+这个问题是受到 Max Howell 的 原问题 启发的 ：
+    谷歌：我们90％的工程师使用您编写的软件(Homebrew)，
+    但是您却无法在面试时在白板上写出翻转二叉树这道题，这太糟糕了。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+func invertTree(root *TreeNode) *TreeNode {
+	if root == nil || (root.Left == nil && root.Right == nil) {
+		return root
+	}
+	root.Left, root.Right = invertTree(root.Right), invertTree(root.Left)
+	return root
+}
+
+# 
+func invertTree(root *TreeNode) *TreeNode {
+	if root == nil {
+		return root
+	}
+
+	var queue []*TreeNode
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		node.Left, node.Right = node.Right, node.Left
+		if node.Left != nil {
+			queue = append(queue, node.Left)
+		}
+		if node.Right != nil {
+			queue = append(queue, node.Right)
+		}
+	}
+	return root
+}
+```
+
+## 231.2的幂(3)
+
+- 题目
+
+```
+给定一个整数，编写一个函数来判断它是否是 2 的幂次方。
+
+示例 1:输入: 1 输出: true 解释: 2^0 = 1
+示例 2:输入: 16 输出: true 解释: 2^4 = 16
+示例 3:输入: 218 输出: false
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 迭代   | O(log(n))  | O(1)       |
+| 02   | 位运算 | O(1)       | O(1)       |
+| 03   | 递归   | O(log(n))  | O(log(n))  |
+
+```go
+func isPowerOfTwo(n int) bool {
+	if n < 1 {
+		return false
+	}
+	for n > 1 {
+		if n%2 == 1 {
+			return false
+		}
+		n = n / 2
+	}
+	return true
+}
+
+#
+func isPowerOfTwo(n int) bool {
+	if n < 1 {
+		return false
+	}
+	return n & (n-1) == 0
+}
+
+#
+func isPowerOfTwo(n int) bool {
+	if n < 1 {
+		return false
+	}
+	if n == 1{
+		return true
+	}
+	if n % 2 != 0{
+		return false
+	}
+	return isPowerOfTwo(n/2)
+}
+```
+
+## 232.用栈实现队列(3)
+
+- 题目
+
+```
+使用栈实现队列的下列操作：
+    push(x) -- 将一个元素放入队列的尾部。
+    pop() -- 从队列首部移除元素。
+    peek() -- 返回队列首部的元素。
+    empty() -- 返回队列是否为空。
+
+示例:
+MyQueue queue = new MyQueue();
+queue.push(1);
+queue.push(2);  
+queue.peek();  // 返回 1
+queue.pop();   // 返回 1
+queue.empty(); // 返回 false
+
+说明:
+你只能使用标准的栈操作 -- 也就是只有 push to top, peek/pop from top, size, 
+和 is empty 操作是合法的。
+你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。
+假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）。
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 使用切片实现    | O(1)       | O(n)       |
+| 02   | 使用2个栈实现   | O(n)       | O(n)       |
+| 03   | 使用2个切片实现 | O(n)       | O(n)       |
+
+```go
+type MyQueue struct {
+	a []int
+}
+
+func Constructor() MyQueue {
+	return MyQueue{}
+}
+
+func (m *MyQueue) Push(x int) {
+	m.a = append(m.a, x)
+}
+
+func (m *MyQueue) Pop() int {
+	if len(m.a) == 0 {
+		return 0
+	}
+	first := m.a[0]
+	m.a = m.a[1:]
+	return first
+}
+
+func (m *MyQueue) Peek() int {
+	if len(m.a) == 0 {
+		return 0
+	}
+	return m.a[0]
+}
+
+func (m *MyQueue) Empty() bool {
+	if len(m.a) == 0 {
+		return true
+	}
+	return false
+}
+
+# 使用2个栈实现
+/*
+入队: 直接入栈a
+出队: 栈b为空，则把栈a中全部数据出栈进入栈b，然后出栈b,不为空直接出栈b
+*/
+type MyQueue struct {
+	a, b *Stack
+}
+
+func Constructor() MyQueue {
+	return MyQueue{
+		a: NewStack(),
+		b: NewStack(),
+	}
+}
+
+func (m *MyQueue) Push(x int) {
+	m.a.Push(x)
+}
+
+func (m *MyQueue) Pop() int {
+	if m.b.Len() == 0 {
+		for m.a.Len() > 0 {
+			m.b.Push(m.a.Pop())
+		}
+	}
+	return m.b.Pop()
+}
+
+func (m *MyQueue) Peek() int {
+	res := m.Pop()
+	m.b.Push(res)
+	return res
+}
+
+func (m *MyQueue) Empty() bool {
+	return m.a.Len() == 0 && m.b.Len() == 0
+}
+
+type Stack struct {
+	nums []int
+}
+
+func NewStack() *Stack {
+	return &Stack{
+		nums: []int{},
+	}
+}
+
+func (s *Stack) Push(n int) {
+	s.nums = append(s.nums, n)
+}
+
+func (s *Stack) Pop() int {
+	res := s.nums[len(s.nums)-1]
+	s.nums = s.nums[:len(s.nums)-1]
+	return res
+}
+
+func (s *Stack) Len() int {
+	return len(s.nums)
+}
+
+func (s *Stack) IsEmpty() bool {
+	return s.Len() == 0
+}
+
+# 使用2个切片实现
+type MyQueue struct {
+	a []int
+	b []int
+}
+
+func Constructor() MyQueue {
+	return MyQueue{}
+}
+
+func (m *MyQueue) Push(x int) {
+	m.a = append(m.a, x)
+}
+
+func (m *MyQueue) Pop() int {
+	m.Peek()
+	temp := m.b[len(m.b)-1]
+	m.b = m.b[:len(m.b)-1]
+	return temp
+}
+
+func (m *MyQueue) Peek() int {
+	if len(m.b) == 0 {
+		for len(m.a) > 0 {
+			m.b = append(m.b, m.a[len(m.a)-1])
+			m.a = m.a[:len(m.a)-1]
+		}
+	}
+	if len(m.b) == 0 {
+		return -1
+	}
+	return m.b[len(m.b)-1]
+}
+
+func (m *MyQueue) Empty() bool {
+	return len(m.a) == 0 && len(m.b) == 0
+}
+```
+
+## 234.回文链表(4)
+
+- 题目
+
+```
+请判断一个链表是否为回文链表。
+示例 1:输入: 1->2 输出: false
+示例 2:输入: 1->2->2->1 输出: true
+```
+
+- 解题思路
+
+| No.  | 思路             | 时间复杂度 | 空间复杂度 |
+| ---- | ---------------- | ---------- | ---------- |
+| 01   | 哈希辅助遍历     | O(n)       | O(n)       |
+| 02   | 快慢指针反转链表 | O(n)       | O(1)       |
+| 03   | 栈辅助           | O(n)       | O(n)       |
+| 04   | 递归             | O(n)       | O(n)       |
+
+```go
+func isPalindrome(head *ListNode) bool {
+	m := make([]int, 0)
+	for head != nil {
+		m = append(m, head.Val)
+		head = head.Next
+	}
+	i, j := 0, len(m)-1
+	for i < j {
+		if m[i] != m[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
+}
+
+#
+func isPalindrome(head *ListNode) bool {
+	fast, slow := head, head
+	for fast != nil && fast.Next != nil {
+		fast = fast.Next.Next
+		slow = slow.Next
+	}
+	var pre *ListNode
+	cur := slow
+	for cur != nil{
+		next := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = next
+	}
+	for pre != nil{
+		if head.Val != pre.Val{
+			return false
+		}
+		pre = pre.Next
+		head = head.Next
+	}
+	return true
+}
+
+#
+func isPalindrome(head *ListNode) bool {
+	m := make([]int, 0)
+	temp := head
+	for temp != nil {
+		m = append(m, temp.Val)
+		temp = temp.Next
+	}
+	for head != nil {
+		val := m[len(m)-1]
+		m = m[:len(m)-1]
+		if head.Val != val {
+			return false
+		}
+		head = head.Next
+	}
+	return true
+}
+
+#
+var p *ListNode
+func isPalindrome(head *ListNode) bool {
+	if head == nil{
+		return true
+	}
+	if p == nil{
+		p = head
+	}
+	if isPalindrome(head.Next) && (p.Val == head.Val){
+		p = p.Next
+		return true
+	}
+	p = nil
+	return false
+}
+```
+
+## 235.二叉搜索树的最近公共祖先(2)
+
+- 题目
+
+```
+给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，
+满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]
+
+示例 1:输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8 输出: 6 
+解释: 节点 2 和节点 8 的最近公共祖先是 6。
+
+示例 2:输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4 输出: 2
+解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
+
+说明:
+    所有节点的值都是唯一的。
+    p、q 为不同节点且均存在于给定的二叉搜索树中。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(log(n))  | O(log(n))  |
+| 02   | 迭代 | O(log(n))  | O(1)       |
+
+```go
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+	if p.Val > root.Val && q.Val > root.Val{
+		return lowestCommonAncestor(root.Right, p, q)
+	}else if p.Val < root.Val && q.Val < root.Val{
+		return lowestCommonAncestor(root.Left, p, q)
+	}else {
+		return root
+	}
+}
+
+#
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+	for root != nil{
+		if p.Val > root.Val && q.Val > root.Val{
+			root = root.Right
+		}else if p.Val < root.Val && q.Val < root.Val{
+			root = root.Left
+		}else {
+			return root
+		}
+	}
+	return nil
+}
+```
+
+## 237.删除链表中的节点(1)
+
+- 题目
+
+```
+请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。
+现有一个链表 -- head = [4,5,1,9]，它可以表示为:
+
+示例 1: 输入: head = [4,5,1,9], node = 5  输出: [4,1,9]
+解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
+
+示例 2:输入: head = [4,5,1,9], node = 1 输出: [4,5,9]
+解释: 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
+
+说明:
+    链表至少包含两个节点。
+    链表中所有节点的值都是唯一的。
+    给定的节点为非末尾节点并且一定是链表中的一个有效节点。
+    不要从你的函数中返回任何结果。
+```
+
+- 解题思路
+
+| No.  | 思路                       | 时间复杂度 | 空间复杂度 |
+| ---- | -------------------------- | ---------- | ---------- |
+| 01   | 把当前节点替换成下一个节点 | O(1)       | O(1)       |
+
+```go
+func deleteNode(node *ListNode) {
+	node.Val = node.Next.Val
+	node.Next = node.Next.Next
+}
+```
+
+## 242.有效的字母异位词(2)
+
+- 题目
+
+```
+给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+示例 1:输入: s = "anagram", t = "nagaram"输出: true
+示例 2:输入: s = "rat", t = "car"输出: false
+
+说明:你可以假设字符串只包含小写字母。
+进阶:如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(1)       |
+| 02   | 排序比较 | O(nlog(n)) | O(n)       |
+
+```go
+func isAnagram(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	sr := []rune(s)
+	tr := []rune(t)
+
+	rec := make(map[rune]int, len(sr))
+	for i := range sr {
+		rec[sr[i]]++
+		rec[tr[i]]--
+	}
+
+	for _, n := range rec {
+		if n != 0 {
+			return false
+		}
+	}
+	return true
+}
+
+#
+func isAnagram(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+	sArr := make([]int, len(s))
+	tArr := make([]int, len(t))
+	for i := 0; i < len(s); i++ {
+		sArr[i] = int(s[i] - 'a')
+		tArr[i] = int(t[i] - 'a')
+	}
+	sort.Ints(sArr)
+	sort.Ints(tArr)
+	for i := 0; i < len(s); i++ {
+		if sArr[i] != tArr[i] {
+			return false
+		}
+	}
+	return true
+}
+```
+
+## 257.二叉树的所有路径(2)
+
+- 题目
+
+```
+给定一个二叉树，返回所有从根节点到叶子节点的路径。
+说明: 叶子节点是指没有子节点的节点。
+示例:
+输入:
+
+   1
+ /   \
+2     3
+ \
+  5
+输出: ["1->2->5", "1->3"]
+解释: 所有根节点到叶子节点的路径为: 1->2->5, 1->3
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+# 
+func binaryTreePaths(root *TreeNode) []string {
+	if root == nil {
+		return nil
+	}
+
+	res := make([]string, 0)
+	var dfs func(string, *TreeNode)
+	dfs = func(pre string, root *TreeNode) {
+		if pre == "" {
+			pre = strconv.Itoa(root.Val)
+		} else {
+			pre += "->" + strconv.Itoa(root.Val)
+		}
+
+		if root.Left != nil {
+			dfs(pre, root.Left)
+		}
+
+		if root.Right != nil {
+			dfs(pre, root.Right)
+		}
+
+		if root.Left == nil && root.Right == nil {
+			res = append(res, pre)
+		}
+	}
+
+	dfs("", root)
+	return res
+}
+
+#
+func binaryTreePaths(root *TreeNode) []string {
+	res := make([]string, 0)
+	if root == nil {
+		return res
+	}
+	var queue []*TreeNode
+	var stringQueue []string
+	queue = append(queue, root)
+	stringQueue = append(stringQueue, strconv.Itoa(root.Val))
+	for len(queue) > 0 {
+		node := queue[0]
+		path := stringQueue[0]
+		queue = queue[1:]
+		stringQueue = stringQueue[1:]
+		if node.Left == nil && node.Right == nil {
+			res = append(res, path)
+		}
+		if node.Left != nil {
+			queue = append(queue, node.Left)
+			stringQueue = append(stringQueue, path+"->"+strconv.Itoa(node.Left.Val))
+		}
+		if node.Right != nil {
+			queue = append(queue, node.Right)
+			stringQueue = append(stringQueue, path+"->"+strconv.Itoa(node.Right.Val))
+		}
+	}
+	return res
+}
+```
+
+## 258.各位相加(4)
+
+- 题目
+
+```
+给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。
+示例: 输入: 38 输出: 2  
+解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
+进阶:
+你可以不使用循环或者递归，且在 O(1) 时间复杂度内解决这个问题吗？
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 找规律1         | O(1)       | O(1)       |
+| 02   | 找规律2         | O(1)       | O(1)       |
+| 03   | 模拟计算-字符串 | O(log(n))  | O(1)       |
+| 04   | 模拟计算-递归   | O(log(n))  | O(log(n))  |
+
+```go
+# 找规律1
+func addDigits(num int) int {
+	if num < 10 {
+		return num
+	}
+	if num%9 == 0 {
+		return 9
+	}
+	return num % 9
+}
+
+# 找规律2
+func addDigits(num int) int {
+	return (num-1)%9 + 1
+}
+
+# 模拟计算-字符串
+func addDigits(num int) int {
+	for num >= 10 {
+		num = sumDigits(num)
+	}
+	return num
+}
+
+func sumDigits(num int) int {
+	sumVal := 0
+	str := strconv.Itoa(num)
+	for i := range str {
+		sumVal = sumVal + int(str[i]-'0')
+	}
+	return sumVal
+}
+
+# 模拟计算-递归
+func addDigits(num int) int {
+	sum := 0
+	for num != 0 {
+		sum = sum + num%10
+		num = num / 10
+	}
+	if sum/10 == 0 {
+		return sum
+	}
+	return addDigits(sum)
+}
+```
+
+## 263.丑数(2)
+
+- 题目
+
+```
+丑数就是只包含质因数 2, 3, 5 的正整数。
+
+示例 1:输入: 6 输出: true 解释: 6 = 2 × 3
+示例 2:输入: 8 输出: true 解释: 8 = 2 × 2 × 2
+示例 3: 输入: 14 输出: false  解释: 14 不是丑数，因为它包含了另外一个质因数 7。
+
+说明：
+1 是丑数。
+输入不会超过 32 位有符号整数的范围: [−231,  231 − 1]。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(log(n))  | O(log(n))  |
+| 02   | 迭代 | O(log(n))  | O(1)       |
+
+```go
+func isUgly(num int) bool {
+	if num <= 0 {
+		return false
+	}
+	if num <= 6 {
+		return true
+	}
+	if num%2 == 0 {
+		return isUgly(num / 2)
+	}
+	if num%3 == 0 {
+		return isUgly(num / 3)
+	}
+	if num%5 == 0 {
+		return isUgly(num / 5)
+	}
+	return false
+}
+
+# 迭代
+func isUgly(num int) bool {
+	if num <= 0 {
+		return false
+	}
+	for num != 1 {
+		if num%2 == 0 {
+			num = num / 2
+		} else if num%3 == 0 {
+			num = num / 3
+		} else if num%5 == 0 {
+			num = num / 5
+		} else {
+			return false
+		}
+	}
+	return true
+}
+```
+
+## 268.缺失数字(5)
+
+- 题目
+
+```
+给定一个包含 0, 1, 2, ..., n 中 n 个数的序列，找出 0 .. n 中没有出现在序列中的那个数。
+
+示例 1:输入: [3,0,1]输出: 2
+示例 2:输入: [9,6,4,2,3,5,7,0,1] 输出: 8
+
+说明:你的算法应具有线性时间复杂度。你能否仅使用额外常数空间来实现?
+```
+
+- 解题思路
+
+| No.  | 思路               | 时间复杂度 | 空间复杂度 |
+| ---- | ------------------ | ---------- | ---------- |
+| 01   | 数学计算           | O(n)       | O(1)       |
+| 02   | 排序遍历           | O(nlog(n))        | O(1)       |
+| 03   | 异或-位运算        | O(n)       | O(1)       |
+| 04   | 交换排序(就地排序) | O(n)       | O(1)       |
+| 05   | 哈希辅助           | O(n)       | O(n)       |
+
+```go
+func missingNumber(nums []int) int {
+	n := len(nums)
+	sum := n * (n + 1) / 2
+	for i := 0; i < n; i++ {
+		sum = sum - nums[i]
+	}
+	return sum
+}
+
+# 
+func missingNumber(nums []int) int {
+	sort.Ints(nums)
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != i {
+			return i
+		}
+	}
+	return len(nums)
+}
+
+#
+func missingNumber(nums []int) int {
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		res = res ^ (i+1) ^ nums[i]
+	}
+	return res
+}
+
+#
+func missingNumber(nums []int) int {
+	n := len(nums)
+	index := n
+	for i := 0; i < n; {
+		if nums[i] == n{
+			index = i
+			i++
+			continue
+		}
+		if i == nums[i]{
+			i++
+			continue
+		}
+		nums[i], nums[nums[i]] = nums[nums[i]], nums[i]
+ 	}
+	return index
+}
+
+#
+func missingNumber(nums []int) int {
+	n := len(nums)
+	// 假设index=n
+	index := n
+	for i := 0; i < n; {
+		// nums[i]到指定位置i后往后走
+		if i == nums[i] {
+			i++
+			continue
+		}
+		if nums[i] == n {
+			index = i
+			i++
+			continue
+		}
+		nums[i], nums[nums[i]] = nums[nums[i]], nums[i]
+	}
+	return index
+}
+
+#
+func missingNumber(nums []int) int {
+	m := make(map[int]bool)
+	for i := range nums{
+		m[nums[i]] = true
+	}
+	for i := 0; i <= len(nums); i++{
+		if m[i] == false{
+			return i
+		}
+	}
+	return 0
+}
+```
+
+## 278.第一个错误的版本(2)
+
+- 题目
+
+```
+你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。
+由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
+假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
+你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。
+实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
+
+示例:
+给定 n = 5，并且 version = 4 是第一个错误的版本。
+
+调用 isBadVersion(3) -> false
+调用 isBadVersion(5) -> true
+调用 isBadVersion(4) -> true
+所以，4 是第一个错误的版本。 
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(log(n))  | O(1)       |
+| 02   | 二分查找 | O(log(n))  | O(1)       |
+
+```go
+func firstBadVersion(n int) int {
+	low := 1
+	high := n
+	for low <= high {
+		mid := low + (high-low)/2
+		if isBadVersion(mid) == false {
+			low = mid + 1
+		} else if isBadVersion(mid) == true && isBadVersion(mid-1) == true {
+			high = mid - 1
+		} else if isBadVersion(mid) == true && isBadVersion(mid-1) == false {
+			return mid
+		}
+	}
+	return -1
+}
+
+#
+func firstBadVersion(n int) int {
+	low := 1
+	high := n
+	for low < high {
+		mid := low + (high-low)/2
+		if isBadVersion(mid) {
+			high = mid
+		} else {
+			low = mid + 1
+		}
+	}
+	return low
+}
+```
+
+## 283.移动零(3)
+
+- 题目
+
+```
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+示例:
+输入: [0,1,0,3,12]
+输出: [1,3,12,0,0]
+说明:
+    必须在原数组上操作，不能拷贝额外的数组。
+    尽量减少操作次数。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 前移补零 | O(n)       | O(1)       |
+| 02   | 遇零交换 | O(n)       | O(1)       |
+| 03   | 数组辅助 | O(n)       | O(n)       |
+
+```go
+func moveZeroes(nums []int) {
+	length := 0
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != 0 {
+			nums[length] = nums[i]
+			length++
+		}
+	}
+
+	for i := length; i < len(nums); i++ {
+		nums[i] = 0
+	}
+}
+
+#
+func moveZeroes(nums []int) {
+	length := 0
+	for i:= 0; i < len(nums); i++ {
+		nums[i], nums[length] = nums[length], nums[i]
+		if nums[length] != 0 {
+			length++
+		}
+	}
+}
+
+#
+func moveZeroes(nums []int) {
+	arr := make([]int,len(nums))
+	count := 0
+	for i := range nums{
+		if nums[i] != 0{
+			arr[count] = nums[i]
+			count++
+		}
+	}
+
+	copy(nums, arr)
+}
+```
+
+## 290.单词规律(2)
+
+- 题目
+
+```
+给定一种规律 pattern 和一个字符串 str ，判断 str 是否遵循相同的规律。
+
+这里的 遵循 指完全匹配，
+例如， pattern 里的每个字母和字符串 str 中的每个非空单词之间存在着双向连接的对应规律。
+
+示例1:输入: pattern = "abba", str = "dog cat cat dog"输出: true
+示例 2:输入:pattern = "abba", str = "dog cat cat fish"输出: false
+示例 3:输入: pattern = "aaaa", str = "dog cat cat dog"输出: false
+示例 4:输入: pattern = "abba", str = "dog dog dog dog" 输出: false
+
+说明:
+你可以假设 pattern 只包含小写字母， str 包含了由单个空格分隔的小写字母。  
+```
+
+- 解题思路
+
+| No.  | 思路           | 时间复杂度 | 空间复杂度 |
+| ---- | -------------- | ---------- | ---------- |
+| 01   | 双哈希相互映射 | O(n)       | O(n)       |
+| 02   | 单哈希相互映射 | O(n)       | O(n)       |
+
+```go 
+func wordPattern(pattern string, str string) bool {
+	pa := strings.Split(pattern, "")
+	sa := strings.Split(str, " ")
+	if len(pa) != len(sa) {
+		return false
+	}
+	length := len(pa)
+	pMap := make(map[string]string, length)
+	sMap := make(map[string]string, length)
+
+	for i := 0; i < length; i++ {
+		pStr, ok := pMap[pa[i]]
+		sStr, ok1 := sMap[sa[i]]
+
+		if (ok && pStr != sa[i]) || (ok1 && sStr != pa[i]) {
+			return false
+		} else {
+			pMap[pa[i]] = sa[i]
+			sMap[sa[i]] = pa[i]
+		}
+	}
+	return true
+}
+
+# 
+func wordPattern(pattern string, str string) bool {
+	pa := strings.Split(pattern, "")
+	sa := strings.Split(str, " ")
+	if len(pa) != len(sa) {
+		return false
+	}
+	return isMatch(pa, sa) && isMatch(sa, pa)
+}
+
+func isMatch(pa, sa []string) bool {
+	length := len(pa)
+	m := make(map[string]string, length)
+	for i := 0; i < length; i++ {
+		if w, ok := m[pa[i]]; ok && w != sa[i] {
+			return false
+		} else {
+			m[pa[i]] = sa[i]
+		}
+	}
+	return true
+}
+```
+
+## 292.Nim 游戏(1)
+
+- 题目
+
+```
+你和你的朋友，两个人一起玩 Nim 游戏：桌子上有一堆石头，每次你们轮流拿掉 1 - 3 块石头。 
+拿掉最后一块石头的人就是获胜者。你作为先手。
+你们是聪明人，每一步都是最优解。 编写一个函数，来判断你是否可以在给定石头数量的情况下赢得游戏。
+
+示例:
+输入: 4
+输出: false 
+解释: 如果堆中有 4 块石头，那么你永远不会赢得比赛；
+     因为无论你拿走 1 块、2 块 还是 3 块石头，最后一块石头总是会被你的朋友拿走。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 推理 | O(1)       | O(1)       |
+
+```go
+func canWinNim(n int) bool {
+	// return n&3 != 0
+	return n%4 != 0
+}
+```
+
+## 299.猜数字游戏(2)
+
+- 题目
+
+```
+你正在和你的朋友玩 猜数字（Bulls and Cows）游戏：你写下一个数字让你的朋友猜。
+每次他猜测后，你给他一个提示，告诉他有多少位数字和确切位置都猜对了（称为“Bulls”, 公牛），
+有多少位数字猜对了但是位置不对（称为“Cows”, 奶牛）。
+你的朋友将会根据提示继续猜，直到猜出秘密数字。
+
+请写出一个根据秘密数字和朋友的猜测数返回提示的函数，用 A 表示公牛，用 B 表示奶牛。
+请注意秘密数字和朋友的猜测数都可能含有重复数字。
+
+示例 1:输入: secret = "1807", guess = "7810"输出: "1A3B"
+解释: 1 公牛和 3 奶牛。公牛是 8，奶牛是 0, 1 和 7。
+
+示例 2:输入: secret = "1123", guess = "0111"输出: "1A1B"
+解释: 朋友猜测数中的第一个 1 是公牛，第二个或第三个 1 可被视为奶牛。
+
+说明: 你可以假设秘密数字和朋友的猜测数都只包含数字，并且它们的长度永远相等。
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 双哈希辅助 | O(n)       | O(1)       |
+| 02   | 单哈希辅助 | O(n)       | O(1)       |
+
+```go
+func getHint(secret string, guess string) string {
+	length := len(secret)
+	right := 0
+	wrongLoc := 0
+	m := make(map[byte]int)
+	n := make(map[byte]int)
+	for i := 0; i < length; i++ {
+		if secret[i] == guess[i] {
+			right++
+		} else {
+			m[secret[i]]++
+			n[guess[i]]++
+		}
+	}
+	for i := range m {
+		if m[i] < n[i] {
+			wrongLoc = wrongLoc + m[i]
+		} else {
+			wrongLoc = wrongLoc + n[i]
+		}
+	}
+
+	return fmt.Sprintf("%dA%dB", right, wrongLoc)
+}
+
+#
+func getHint(secret string, guess string) string {
+	length := len(secret)
+	right := 0
+	wrongNum := 0
+	m := make(map[int]int)
+	for i := 0; i < length; i++ {
+		if secret[i] == guess[i] {
+			right++
+		}
+		m[int(secret[i]-'0')]++
+		m[int(guess[i]-'0')]--
+	}
+	for i := range m {
+		if m[i] > 0{
+			wrongNum = wrongNum + m[i]
+		}
+	}
+	// wrongLoc = 总数 - 猜对的数 - 猜错的数
+	wrongLoc := length - right - wrongNum
+	return fmt.Sprintf("%dA%dB", right, wrongLoc)
+}
+```
