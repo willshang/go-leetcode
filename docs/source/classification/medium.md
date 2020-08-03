@@ -1,7 +1,7 @@
 # 中级算法(45)
 - 中级算法 - 巩固训练
 - 本系列共45题
-- 原文分类链接 https://leetcode-cn.com/explore/interview/card/top-interview-questions-medium/
+- 原文分类链接 https://leetcode-cn.com/leetbook/detail/top-interview-questions-medium/
 
 ## 1.数组和字符串(6)
 
@@ -24,14 +24,14 @@
 
 ## 3.树和图(6)
 
-| Title                                                        | Tag                    | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
-| 中序遍历二叉树 <br />[94.二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 栈、树、哈希表         | Medium | 完成     |
-| [103.二叉树的锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/) | 栈、树、广度优先搜索   | Medium | 完成     |
-| [105.从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 树、深度优先搜索、数组 | Medium | 完成     |
-| 填充每个节点的下一个右侧节点指针                             |                        |        |          |
-| 二叉搜索树中第K小的元素                                      |                        |        |          |
-| 岛屿数量                                                     |                        |        |          |
+| Title                                                        | Tag                                | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------------------- | ------ | -------- |
+| 中序遍历二叉树 <br />[94.二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 栈、树、哈希表                     | Medium | 完成     |
+| [103.二叉树的锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/) | 栈、树、广度优先搜索               | Medium | 完成     |
+| [105.从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 树、深度优先搜索、数组             | Medium | 完成     |
+| 填充每个节点的下一个右侧节点指针                             |                                    |        |          |
+| [215.数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | 堆、分治算法                       | Medium | 完成     |
+| [200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
 
 ## 4.回溯算法(5)
 
@@ -49,12 +49,12 @@
 | ------------------------------------------------------------ | ------------------ | ------ | -------- |
 | [75.颜色分类](https://leetcode-cn.com/problems/sort-colors/) | 排序、数组、双指针 | Medium | 完成     |
 | 前 K 个高频元素                                              |                    |        |          |
-| 数组中的第K个最大元素                                        |                    |        |          |
+| [215.数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | 堆、分治算法       | Medium | 完成     |
 | [162.寻找峰值](https://leetcode-cn.com/problems/find-peak-element/) | 数组、二分查找     | Medium | 完成     |
 | [34.在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 数组、二分查找     | Medium | 完成     |
 | [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 排序、数组         | Medium | 完成     |
 | [33.搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) | 数组、二分查找     | Medium | 完成     |
-| 搜索二维矩阵 II                                              |                    |        |          |
+| [240.搜索二维矩阵II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/) | 二分查找、分治算法 | Medium | 完成     |
 
 ## 6.动态规划(4)
 

@@ -12,6 +12,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode95_不同的二叉搜索树II
 func generateTrees(n int) []*TreeNode {
 	if n == 0 {
 		return nil

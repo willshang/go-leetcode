@@ -1060,6 +1060,16 @@ func minArray(numbers []int) int {
 	}
 	return numbers[mid]
 }
+
+func minInorder(numbers []int, left, right int) int {
+	result := numbers[left]
+	for i := left + 1; i <= right; i++ {
+		if result > numbers[i] {
+			result = numbers[i]
+		}
+	}
+	return result
+}
 ```
 
 ## 面试题12.矩阵中的路径(2)
@@ -1836,7 +1846,7 @@ func deleteNode(head *ListNode, val int) *ListNode {
 }
 ```
 
-## 面试题19.正则表达式匹配(2)
+## 面试题19.正则表达式匹配(3)
 
 - 题目
 
@@ -1868,6 +1878,7 @@ https://leetcode-cn.com/problems/regular-expression-matching/
 | ---- | -------------- | ---------- | ---------- |
 | 01   | 递归(书上方法) | O(n)       | O(n)       |
 | 02   | 动态规划       | O(n^2)     | O(n^2)     |
+| 03   | 递归           | O(n)       | O(n)       |
 
 ```go
 func isMatch(s string, p string) bool {
@@ -1929,6 +1940,27 @@ func isMatch(s string, p string) bool {
 	}
 	return dp[len(p)][len(s)]
 }
+
+# 3
+func isMatch(s string, p string) bool {
+	if len(s) == 0 && len(p) == 0 {
+		return true
+	} else if len(p) == 0 {
+		return false
+	}
+	match := false
+	// 正常匹配条件=>相等，或者 p[0]等于.就不用管s[0]
+	if len(s) > 0 && (s[0] == p[0] || p[0] == '.') {
+		match = true
+	}
+	// 匹配多个 就把 s 往后移1位，注意p不移动
+	// 匹配0个 就把 p 往后移2位，相当于p的*当前作废
+	if len(p) > 1 && p[1] == '*' {
+		return (match && isMatch(s[1:], p)) || isMatch(s, p[2:])
+	}
+	// 匹配当前成功，同时往后移
+	return match && isMatch(s[1:], p[1:])
+}
 ```
 
 ## 面试题20.表示数值的字符串(1)
@@ -1987,9 +2019,6 @@ func scanUnsignedInteger(arr *[]byte, index *int) bool {
 	}
 	return j < *index
 }
-
-#
-
 ```
 
 ## 面试题21.调整数组顺序使奇数位于偶数前面(4)
@@ -3422,7 +3451,7 @@ func copyRandomList(head *Node) *Node {
 	return res.Next
 }
 
-#
+# 3
 func copyRandomList(head *Node) *Node {
 	if head == nil {
 		return nil
@@ -3435,22 +3464,18 @@ func copyRandomList(head *Node) *Node {
 
 // 原1-复制1-原2-复制2
 func copyNext(head *Node) *Node {
-	temp := new(Node)
-	temp.Next = head
 	p := head
 	for p != nil {
 		node := new(Node)
 		node.Val = p.Val
 		node.Next = p.Next
 		p.Next = node
-		p = p.Next.Next
+		p = node.Next
 	}
-	return temp.Next
+	return head
 }
 
 func copyRandom(head *Node) *Node {
-	temp := new(Node)
-	temp.Next = head
 	p := head
 	for p != nil {
 		if p.Random != nil {
@@ -3458,20 +3483,22 @@ func copyRandom(head *Node) *Node {
 		}
 		p = p.Next.Next
 	}
-	return temp.Next
+	return head
 }
 
 func cutEven(head *Node) *Node {
-	temp := new(Node)
-	res := head
-	p := head
-	for p != nil {
-		res.Next = p.Next
-		p.Next = p.Next.Next
-		p = p.Next
-		res = res.Next
+	oldNode := head
+	newNode := head.Next
+	cur := newNode
+	for oldNode != nil {
+		oldNode.Next = oldNode.Next.Next
+		if newNode.Next != nil{
+			newNode.Next = newNode.Next.Next
+		}
+		oldNode = oldNode.Next
+		newNode = newNode.Next
 	}
-	return temp.Next
+	return cur
 }
 ```
 
@@ -4088,6 +4115,14 @@ func countDigitOne(n int) int {
 }
 
 #
+func countDigitOne(n int) int {
+	if n <= 0 {
+		return 0
+	}
+	str := strconv.Itoa(n)
+	return dfs(str)
+}
+
 func dfs(str string) int {
 	if str == "" {
 		return 0
@@ -4148,7 +4183,7 @@ func countDigitOne(n int) int {
 | No.  | 思路             | 时间复杂度 | 空间复杂度 |
 | ---- | ---------------- | ---------- | ---------- |
 | 01   | 找规律(书上方法) | O(log(n))  | O(1)       |
-| 02   | 找规律           | O(log(n))  | P          |
+| 02   | 找规律           | O(log(n))  | O(1)          |
 
 ```go
 func findNthDigit(n int) int {
@@ -4724,7 +4759,7 @@ func nthUglyNumber(n int) int {
 func min(a, b int) int {
 	if a > b {
 		return b
-	}go
+	}
 	return a
 }
 ```

@@ -23,7 +23,7 @@ func main() {
 
 func rightSideView(root *TreeNode) []int {
 	res := make([]int, 0)
-	if root == nil{
+	if root == nil {
 		return res
 	}
 	list := make([]*TreeNode, 0)

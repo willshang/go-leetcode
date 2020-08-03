@@ -1,7 +1,7 @@
 # 初级算法(49)
 - 初级算法 - 帮助入门
 - 本系列共49题
-- 原文分类链接 https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/
+- 原文分类链接 https://leetcode-cn.com/leetbook/detail/top-interview-questions-easy/
 
 ## 1.数组(11)
 

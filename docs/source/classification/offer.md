@@ -1,7 +1,8 @@
 # 剑指offer
 
 ## 参考资料
-- 本系列共68题，leetcode上共75题，其中编号36、37、74、75提交没有Go语言
+- 本系列共68题，leetcode上共75题，
+- 其中编号36(426)、37(297)、74(235)、75(236)提交没有Go语言，由括号后的题目是leetcode上相同的题目
 - leetcode专栏链接 https://leetcode-cn.com/problemset/lcof/
 - http://zhedahht.blog.163.com/
 - 《剑指Offer》第二版源代码 C++ https://github.com/zhedahht/CodingInterviewChinese2
@@ -58,8 +59,8 @@
 | 0034                 | 面试题34                     | [面试题34.二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/) | 树、深度优先搜索                     | Medium | 完成             |
 |      | 4.4 分解让复杂问题简单化     |                                                              |                                      |        |                  |
 | 0035                 | 面试题35                     | [面试题35.复杂链表的复制](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/) | 链表                                 | Medium | 完成             |
-| 0036                 | 面试题36                     | [面试题36.二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) | 分治算法                             | Medium | [提交没有Go语言] |
-| 0037                 | 面试题37                     | [面试题37.序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/) | 树、设计                             | Hard   | [提交没有Go语言] |
+| 0036                 | 面试题36                     | [面试题36.二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) | 分治算法                             | Medium | [提交没有Go语言]<br />426替代 |
+| 0037                 | 面试题37                     | [面试题37.序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/) | 树、设计                             | Hard   | [提交没有Go语言]<br />297替代 |
 | 0038                 | 面试题38                     | [面试题38.字符串的排列](https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/) | 回溯算法                             | Medium | 完成             |
 |    | 第五章：优化时间和空间效率   |                                                              |                                      |        |                  |
 |                  | 5.2 时间效率                 |                                                              |                                      |        |                  |
@@ -104,6 +105,6 @@
 | 0072                 | 面试题66                     | [面试题66.构建乘积数组](https://leetcode-cn.com/problems/gou-jian-cheng-ji-shu-zu-lcof/) |                                      | Easy   | 完成             |
 |         | 第七章：两个面试案例          |                                                              |                                      |        |                  |
 | 0073                 | 面试题67                     | [面试题67.把字符串转换成整数](https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/) | 数学、字符串                         | Medium | 完成             |
-| 0074                 | 面试题68                     | [面试题68-I.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/) | 树                                   | Easy   | [提交没有Go语言] |
-| 0075 |                              | [面试题68-II.二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) | 树                                   | Easy   | [提交没有Go语言] |
+| 0074                 | 面试题68                     | [面试题68-I.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/) | 树                                   | Easy   | [提交没有Go语言]<br />235替代 |
+| 0075 |                              | [面试题68-II.二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) | 树                                   | Easy   | [提交没有Go语言]<br />236替代 |
 

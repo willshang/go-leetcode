@@ -3,7 +3,7 @@
 - 数组和字符串系列
 - 本系列共22题
 
-- 原文分类链接 https://leetcode-cn.com/explore/learn/card/array-and-string/
+- 原文分类链接 https://leetcode-cn.com/leetbook/detail/array-and-string/
 
 ## 1-数组简介(3)
 

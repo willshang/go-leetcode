@@ -384,6 +384,9 @@
 | 0337 | [1507.转变日期格式](https://leetcode-cn.com/problems/reformat-date/) | 字符串 | Easy | 完成 |
 | 0338 | [1512.好数对的数目](https://leetcode-cn.com/problems/number-of-good-pairs/) | 数组、哈希表、数学 | Easy | 完成 |
 | 0339 | [1518.换酒问题](https://leetcode-cn.com/problems/water-bottles/) | 贪心算法 | Easy | 完成 |
+| 0340 | [1523.在区间范围内统计奇数数目](https://leetcode-cn.com/problems/count-odd-numbers-in-an-interval-range/) | 数学 | Easy | 完成 |
+|  | 第35期 |  |  |  |
+| 0341 | [1528.重新排列字符串](https://leetcode-cn.com/problems/shuffle-string/) | 排序 | Easy | 完成 |
 
 ### Medium
 
@@ -442,13 +445,13 @@
 | 0046 | [82.删除排序链表中的重复元素II](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/) | 链表                                           | Medium | 完成     |
 | 0047 | [86.分隔链表](https://leetcode-cn.com/problems/partition-list/) | 链表、双指针                                   | Medium | 完成     |
 | 0048 | [89.格雷编码](https://leetcode-cn.com/problems/gray-code/)   | 回溯算法                                       | Medium | 完成     |
-| 0049 | [90.子集II](https://leetcode-cn.com/problems/subsets-ii/)    | 数组、回溯算法                                 | Medium |          |
+| 0049 | [90.子集II](https://leetcode-cn.com/problems/subsets-ii/)    | 数组、回溯算法                                 | Medium | 完成     |
 | 0050 | [91.解码方法](https://leetcode-cn.com/problems/decode-ways/) | 字符串、动态规划                               | Medium | 完成     |
 |      | 第6期                                                        |                                                |        |          |
 | 0051 | [92.反转链表II](https://leetcode-cn.com/problems/reverse-linked-list-ii/) | 链表                                           | Medium | 完成     |
 | 0052 | [93.复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/) | 字符串、回溯算法                               | Medium | 完成     |
 | 0053 | [94.二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 栈、树、哈希表                                 | Medium | 完成     |
-| 0054 | [95.不同的二叉搜索树II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/) | 树、动态规划                                   | Medium |          |
+| 0054 | [95.不同的二叉搜索树II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/) | 树、动态规划                                   | Medium | 完成     |
 | 0055 | [96.不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) | 树、动态规划                                   | Medium | 完成     |
 | 0056 | [98.验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | 树、深度优先搜索                               | Medium | 完成     |
 | 0057 | [102.二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/) | 树、广度优先搜索                               | Medium | 完成     |
@@ -470,7 +473,7 @@
 | 0071 | [133.克隆图](https://leetcode-cn.com/problems/clone-graph/)  | 深度优先搜索、广度优先搜索、图                 | Medium |          |
 | 0072 | [134.加油站](https://leetcode-cn.com/problems/gas-station/)  | 贪心算法                                       | Medium | 完成     |
 | 0073 | [137.只出现一次的数字II](https://leetcode-cn.com/problems/single-number-ii/) | 位运算                                         | Medium | 完成     |
-| 0074 | [138.复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) | 哈希表、链表                                   | Medium |          |
+| 0074 | [138.复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) | 哈希表、链表                                   | Medium | 完成     |
 | 0075 | [139.单词拆分](https://leetcode-cn.com/problems/word-break/) | 动态规划                                       | Medium | 完成     |
 | 0076 | [142.环形链表II](https://leetcode-cn.com/problems/linked-list-cycle-ii/) | 链表、双指针                                   | Medium |          |
 | 0077 | [143.重排链表](https://leetcode-cn.com/problems/reorder-list/) | 链表                                           | Medium |          |
@@ -493,7 +496,7 @@
 | 0092 | [179.最大数](https://leetcode-cn.com/problems/largest-number/) | 排序                                           | Medium | 完成     |
 | 0093 | [180.连续出现的数字](https://leetcode-cn.com/problems/consecutive-numbers/) | Mysql                                          | Medium |          |
 | 0094 | [184.部门工资最高的员工](https://leetcode-cn.com/problems/department-highest-salary/) | Mysql                                          | Medium |          |
-| 0095 | [187.重复的DNA序列](https://leetcode-cn.com/problems/repeated-dna-sequences/) | 位运算、哈希表                                 | Medium |          |
+| 0095 | [187.重复的DNA序列](https://leetcode-cn.com/problems/repeated-dna-sequences/) | 位运算、哈希表                                 | Medium | 完成     |
 | 0096 | [192.统计词频](https://leetcode-cn.com/problems/word-frequency/) | Bash                                           | Medium |          |
 | 0097 | [194.转置文件](https://leetcode-cn.com/problems/transpose-file/) | Bash                                           | Medium |          |
 | 0098 | [199.二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) | 树、深度优先搜索、广度优先搜索                 | Medium | 完成     |
@@ -503,25 +506,76 @@
 | 0101 | [207.课程表](https://leetcode-cn.com/problems/course-schedule/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium |          |
 | 0102 | [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树                                   | Medium |          |
 | 0103 | [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                         | Medium |          |
-|      | [216.组合总和III](https://leetcode-cn.com/problems/combination-sum-iii/) | 数组、回溯算法                                 | Medium | 完成     |
+| 0104 | [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium |          |
+| 0105 | [211.添加与搜索单词-数据结构设计](https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/) | 设计、字典树、回溯算法                         | Medium |          |
+| 0106 | [213.打家劫舍II](https://leetcode-cn.com/problems/house-robber-ii/) | 动态规划                                       | Medium |          |
+| 0107 | [215.数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | 堆、分治算法                                   | Medium | 完成     |
+| 0108 | [216.组合总和III](https://leetcode-cn.com/problems/combination-sum-iii/) | 数组、回溯算法                                 | Medium | 完成     |
+| 0109 | [220.存在重复元素III](https://leetcode-cn.com/problems/contains-duplicate-iii/) | 排序、Ordered Map                              | Medium | 完成     |
+| 0110 | [221.最大正方形](https://leetcode-cn.com/problems/maximal-square/) | 动态规划                                       | Medium |          |
+|      | 第12期                                                       |                                                |        |          |
+| 0111 | [222.完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/) | 树、二分查找                                   | Medium | 完成     |
+| 0112 | [223.矩形面积](https://leetcode-cn.com/problems/rectangle-area/) | 数学                                           | Medium | 完成     |
+| 0113 | [227.基本计算器II](https://leetcode-cn.com/problems/basic-calculator-ii/) | 字符串                                         | Medium |          |
+| 0114 | [228.汇总区间](https://leetcode-cn.com/problems/summary-ranges/) | 数组                                           | Medium | 完成     |
+| 0115 | [229.求众数II](https://leetcode-cn.com/problems/majority-element-ii/) | 数组                                           | Medium | 完成     |
+| 0116 | [230.二叉搜索树中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/) | 树、二分查找                                   | Medium | 完成     |
+| 0117 | [236.二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 树                                             | Medium | 完成     |
+| 0118 | [238.除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | 数组                                           | Medium | 完成     |
+| 0119 | [240.搜索二维矩阵II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/) | 二分查找、分治算法                             | Medium | 完成     |
+| 0120 | [241.为运算表达式设计优先级](https://leetcode-cn.com/problems/different-ways-to-add-parentheses/) | 分治算法                                       | Medium |          |
+|      | 第13期                                                       |                                                |        |          |
+| 0121 | [260.只出现一次的数字III](https://leetcode-cn.com/problems/single-number-iii/) | 位运算                                         | Medium | 完成     |
+| 0122 | [264.丑数II](https://leetcode-cn.com/problems/ugly-number-ii/) | 堆、数学、动态规划                             | Medium | 完成     |
+| 0123 | [274.H指数](https://leetcode-cn.com/problems/h-index/)       | 排序、哈希表                                   | Medium | 完成     |
+| 0124 | [275.H指数II](https://leetcode-cn.com/problems/h-index-ii/)  | 二分查找                                       | Medium | 完成     |
+| 0125 | [279.完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | 广度优先搜索、数学、动态规划                   | Medium | 完成     |
+| 0126 | [284.顶端迭代器](https://leetcode-cn.com/problems/peeking-iterator/) | 设计                                           | Medium |          |
+| 0127 | [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 数组、双指针、二分查找                         | Medium |          |
+| 0128 | [289.生命游戏](https://leetcode-cn.com/problems/game-of-life/) | 数组                                           | Medium |          |
 |      | 第x期                                                        |                                                |        |          |
 |      |                                                              |                                                |        |          |
+|      | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 二分查找、动态规划                             | Medium |          |
+|      | [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划                                       | Medium |          |
+|      | [343.整数拆分](https://leetcode-cn.com/problems/integer-break/) | 数学、动态规划                                 | Medium | 完成     |
 |      | [384.打乱数组](https://leetcode-cn.com/problems/shuffle-an-array/) |                                                | Medium | 完成     |
+|      | [394.字符串解码](https://leetcode-cn.com/problems/decode-string/) | 栈、深度优先搜索                               | Medium |          |
+|      | [400.第N个数字](https://leetcode-cn.com/problems/nth-digit/) | 数学                                           | Medium | 完成     |
 |      | [498.对角线遍历](https://leetcode-cn.com/problems/diagonal-traverse/) |                                                | Medium |          |
+|      | [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) | 深度优先搜索、数组                             | Medium | 完成     |
+|      | [739.每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 栈、哈希表                                     | Medium | 完成     |
+|      | [946.验证栈序列](https://leetcode-cn.com/problems/validate-stack-sequences/) | 栈                                             | Medium | 完成     |
+|      | [994.腐烂的橘子](https://leetcode-cn.com/problems/rotting-oranges/) | 广度优先搜索                                   | Medium | 完成     |
 |      | [1418.点菜展示表](https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/) | 哈希表                                         | Medium | 完成     |
 |      | [1442.形成两个异或相等数组的三元组数目](https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/) | 位运算、数组、数学                             | Medium | 完成     |
 |      | [1487.保证文件名唯一](https://leetcode-cn.com/problems/making-file-names-unique/) | 哈希表、字符串                                 | Medium | 完成     |
 |      | [1492.n的第k个因子](https://leetcode-cn.com/problems/the-kth-factor-of-n/) | 数学                                           | Medium | 完成     |
 |      | [1493.删掉一个元素以后全为1的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | 数组                                           | Medium | 完成     |
+|      | [1503.所有蚂蚁掉下来前的最后一刻](https://leetcode-cn.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/) | 脑筋急转弯、数组                               | Medium | 完成     |
 |      | [1508.子数组和排序后的区间和](https://leetcode-cn.com/problems/range-sum-of-sorted-subarray-sums/) | 排序、数组                                     | Medium | 完成     |
 |      | [1509.三次操作后最大值与最小值的最小差](https://leetcode-cn.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/) | 排序、数组                                     | Medium | 完成     |
 |      | [1513.仅含1的子串数](https://leetcode-cn.com/problems/number-of-substrings-with-only-1s/) | 数学、字符串                                   | Medium | 完成     |
 |      | [1514.概率最大的路径](https://leetcode-cn.com/problems/path-with-maximum-probability/) | 图                                             | Medium |          |
+|      | [1525.字符串的好分割数目](https://leetcode-cn.com/problems/number-of-good-ways-to-split-a-string/) | 位运算、字符串                                 | Medium | 完成     |
 
 ### Hard
 
-| No.  | Title                                                        | Tag                      | 难度 | 完成情况 |
-| ---- | ------------------------------------------------------------ | ------------------------ | ---- | -------- |
-|      | 第1期                                                        |                          |      |          |
-| 0001 | [4.寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) | 数组、二分查找、分治算法 | Hard |          |
+| No.  | Title                                                        | Tag                        | 难度 | 完成情况 |
+| ---- | ------------------------------------------------------------ | -------------------------- | ---- | -------- |
+|      | 第1期                                                        |                            |      |          |
+| 0001 | [4.寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) | 数组、二分查找、分治算法   | Hard | x        |
+| 0002 | [10.正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/) | 字符串、动态规划、回溯算法 | Hard | 完成     |
+| 0003 | [23.合并K个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | 堆、链表、分治算法         | Hard |          |
+| 0004 | [25.K个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) | 链表                       | Hard |          |
+| 0005 | [30.串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 哈希表、双指针、字符串     | Hard |          |
+|      | [65.有效数字](https://leetcode-cn.com/problems/valid-number/) | 数学、字符串               | Hard | 完成     |
+|      | 第x期                                                        |                            |      |          |
+|      |                                                              |                            |      |          |
+|      | [154.寻找旋转排序数组中的最小值II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) | 数组、二分查找             | Hard | 完成     |
+|      | [233.数字1的个数](https://leetcode-cn.com/problems/number-of-digit-one/) | 数学                       | Hard | 完成     |
+|      | [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window         | Hard | 完成     |
+|      | [295.数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/) | 堆、设计                   | Hard | 完成     |
+|      | [297.二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/) | 树、设计                   | Hard |          |
+|      | [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                   | Hard | 完成     |
+|      | [1526.形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/) | 线段树                     | Hard | 完成     |
 
