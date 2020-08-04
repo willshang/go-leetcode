@@ -387,6 +387,7 @@
 | 0340 | [1523.在区间范围内统计奇数数目](https://leetcode-cn.com/problems/count-odd-numbers-in-an-interval-range/) | 数学 | Easy | 完成 |
 |  | 第35期 |  |  |  |
 | 0341 | [1528.重新排列字符串](https://leetcode-cn.com/problems/shuffle-string/) | 排序 | Easy | 完成 |
+| 0342 | [1534.统计好三元组](https://leetcode-cn.com/problems/count-good-triplets/) | 数组 | Easy | 完成 |
 
 ### Medium
 
@@ -416,7 +417,7 @@
 | 0020 | [39.组合总和](https://leetcode-cn.com/problems/combination-sum/) | 数组、回溯算法                                 | Medium | 完成     |
 |      | 第3期                                                        |                                                |        |          |
 | 0021 | [40.组合总和II](https://leetcode-cn.com/problems/combination-sum-ii/) | 数组、回溯算法                                 | Medium | 完成     |
-| 0022 | [43.字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 数学、字符串                                   | Medium |          |
+| 0022 | [43.字符串相乘](https://leetcode-cn.com/problems/multiply-strings/) | 数学、字符串                                   | Medium | 完成     |
 | 0023 | [46.全排列](https://leetcode-cn.com/problems/permutations/)  | 回溯算法                                       | Medium | 完成     |
 | 0024 | [47.全排列II](https://leetcode-cn.com/problems/permutations-ii/) | 回溯算法                                       | Medium | 完成     |
 | 0025 | [48.旋转图像](https://leetcode-cn.com/problems/rotate-image/) | 数组                                           | Medium | 完成     |
@@ -505,7 +506,7 @@
 |      | 第11期                                                       |                                                |        |          |
 | 0101 | [207.课程表](https://leetcode-cn.com/problems/course-schedule/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium |          |
 | 0102 | [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树                                   | Medium |          |
-| 0103 | [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                         | Medium |          |
+| 0103 | [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                         | Medium | 完成     |
 | 0104 | [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium |          |
 | 0105 | [211.添加与搜索单词-数据结构设计](https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/) | 设计、字典树、回溯算法                         | Medium |          |
 | 0106 | [213.打家劫舍II](https://leetcode-cn.com/problems/house-robber-ii/) | 动态规划                                       | Medium |          |
@@ -531,12 +532,17 @@
 | 0124 | [275.H指数II](https://leetcode-cn.com/problems/h-index-ii/)  | 二分查找                                       | Medium | 完成     |
 | 0125 | [279.完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | 广度优先搜索、数学、动态规划                   | Medium | 完成     |
 | 0126 | [284.顶端迭代器](https://leetcode-cn.com/problems/peeking-iterator/) | 设计                                           | Medium |          |
-| 0127 | [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 数组、双指针、二分查找                         | Medium |          |
+| 0127 | [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 数组、双指针、二分查找                         | Medium | 完成     |
 | 0128 | [289.生命游戏](https://leetcode-cn.com/problems/game-of-life/) | 数组                                           | Medium |          |
+| 0129 | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 二分查找、动态规划                             | Medium | 完成     |
+| 0130 | [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) | 动态规划                                       | Medium |          |
+|      | 第14期                                                       |                                                |        |          |
+|      | [306.累加数](https://leetcode-cn.com/problems/additive-number/) |                                                |        |          |
 |      | 第x期                                                        |                                                |        |          |
 |      |                                                              |                                                |        |          |
-|      | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 二分查找、动态规划                             | Medium |          |
+|      | [319.灯泡开关](https://leetcode-cn.com/problems/bulb-switcher/) | 脑筋急转弯、数学                               | Medium | 完成     |
 |      | [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划                                       | Medium |          |
+|      | [334.递增的三元子序列](https://leetcode-cn.com/problems/increasing-triplet-subsequence/) |                                                | Medium | 完成     |
 |      | [343.整数拆分](https://leetcode-cn.com/problems/integer-break/) | 数学、动态规划                                 | Medium | 完成     |
 |      | [384.打乱数组](https://leetcode-cn.com/problems/shuffle-an-array/) |                                                | Medium | 完成     |
 |      | [394.字符串解码](https://leetcode-cn.com/problems/decode-string/) | 栈、深度优先搜索                               | Medium |          |

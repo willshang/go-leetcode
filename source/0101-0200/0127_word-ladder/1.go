@@ -16,10 +16,21 @@ func ladderLength(beginWord string, endWord string, wordList []string) int {
 	}
 	list := make([]string, 0)
 	list = append(list, beginWord)
-	length := len(beginWord)
 	res := 0
 	for len(list) > 0 {
+		res++
+		length := len(list)
+		for i := length - 1; i >= 0; i-- {
 
+		}
+		for i := 0; i < len(beginWord); i++ {
+			char := beginWord[i]
+			for j := 0; j < 26; j++ {
+				if j+'a' == int(char) {
+					continue
+				}
+			}
+		}
 	}
 	return res
 }

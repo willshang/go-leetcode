@@ -5,19 +5,19 @@
 
 ## 1.数组和字符串(11)
 
-| Title                                                        | Tag                | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ------------------ | ------ | -------- |
-| [238.除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | 数组               | Medium | 完成     |
-| [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) | 数组               | Medium | 完成     |
-| 四数相加 II                                                  |                    |        |          |
-| [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针       | Medium | 完成     |
-| 生命游戏                                                     |                    |        |          |
-| 缺失的第一个正数                                             |                    |        |          |
-| 最长连续序列                                                 |                    |        |          |
-| 寻找重复数                                                   |                    |        |          |
-| 基本计算器 II                                                |                    |        |          |
-| [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window | Hard   | 完成     |
-| 最小覆盖子串                                                 |                    |        |          |
+| Title                                                        | Tag                    | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
+| [238.除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | 数组                   | Medium | 完成     |
+| [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) | 数组                   | Medium | 完成     |
+| 四数相加 II                                                  |                        |        |          |
+| [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针           | Medium | 完成     |
+| 生命游戏                                                     |                        |        |          |
+| 缺失的第一个正数                                             |                        |        |          |
+| 最长连续序列                                                 |                        |        |          |
+| [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 数组、双指针、二分查找 | Medium | 完成     |
+| 基本计算器 II                                                |                        |        |          |
+| [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window     | Hard   | 完成     |
+| 最小覆盖子串                                                 |                        |        |          |
 
 ## 2.链表(3)
 
@@ -31,7 +31,7 @@
 
 | Title                                                        | Tag                                | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ---------------------------------- | ------ | -------- |
-| 单词接龙                                                     |                                    |        |          |
+| [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) | 广度优先搜索                       | Medium | 完成     |
 | [130.被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
 | [236.二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 树                                 | Medium | 完成     |
 | 二叉树中的最大路径和                                         |                                    |        |          |

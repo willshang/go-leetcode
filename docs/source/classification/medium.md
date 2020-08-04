@@ -12,7 +12,7 @@
 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) | 哈希表、字符串                             | Medium | 完成     |
 | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window | Medium | 完成     |
 | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划                           | Medium | 完成     |
-| 递增的三元子序列                                             |                                            |        |          |
+| [334.递增的三元子序列](https://leetcode-cn.com/problems/increasing-triplet-subsequence/) |                                            | Medium | 完成     |
 
 ## 2.链表(3)
 

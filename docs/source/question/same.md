@@ -56,4 +56,5 @@
 | 52 | [48.旋转图像](https://leetcode-cn.com/problems/rotate-image/) Medium | [面试题01.07.旋转矩阵](https://leetcode-cn.com/problems/rotate-matrix-lcci/) Medium |
 | 53 | [73.矩阵置零](https://leetcode-cn.com/problems/set-matrix-zeroes/) Medium | [面试题01.08.零矩阵](https://leetcode-cn.com/problems/zero-matrix-lcci/) Medium |
 | 54 | [796.旋转字符串](https://leetcode-cn.com/problems/rotate-string/) Easy | [面试题01.09.字符串轮转](https://leetcode-cn.com/problems/string-rotation-lcci/) Easy |
+| 55(相似) | [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) Medium | [面试题03.数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/) Easy |
 
