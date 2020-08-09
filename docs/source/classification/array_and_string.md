@@ -39,7 +39,7 @@
 | [167.两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted) | 数组、双指针、二分查找 | Easy   | 完成     |
 | [27.移除元素](https://leetcode-cn.com/problems/remove-element) | 数组、双指针           | Easy   | 完成     |
 | [485.最大连续1的个数](https://leetcode-cn.com/problems/max-consecutive-ones/) | 数组                   | Easy   | 完成     |
-| [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找 | Medium |          |
+| [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找 | Medium | 完成     |
 
 ## 5-小结(6)
 

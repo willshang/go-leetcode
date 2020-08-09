@@ -533,7 +533,7 @@
 | 0125 | [279.完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | 广度优先搜索、数学、动态规划                   | Medium | 完成     |
 | 0126 | [284.顶端迭代器](https://leetcode-cn.com/problems/peeking-iterator/) | 设计                                           | Medium |          |
 | 0127 | [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 数组、双指针、二分查找                         | Medium | 完成     |
-| 0128 | [289.生命游戏](https://leetcode-cn.com/problems/game-of-life/) | 数组                                           | Medium |          |
+| 0128 | [289.生命游戏](https://leetcode-cn.com/problems/game-of-life/) | 数组                                           | Medium | 完成     |
 | 0129 | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 二分查找、动态规划                             | Medium | 完成     |
 | 0130 | [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) | 动态规划                                       | Medium |          |
 |      | 第14期                                                       |                                                |        |          |
@@ -541,11 +541,12 @@
 |      | 第x期                                                        |                                                |        |          |
 |      |                                                              |                                                |        |          |
 |      | [319.灯泡开关](https://leetcode-cn.com/problems/bulb-switcher/) | 脑筋急转弯、数学                               | Medium | 完成     |
-|      | [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划                                       | Medium |          |
+|      | [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划                                       | Medium | 完成     |
 |      | [334.递增的三元子序列](https://leetcode-cn.com/problems/increasing-triplet-subsequence/) |                                                | Medium | 完成     |
 |      | [343.整数拆分](https://leetcode-cn.com/problems/integer-break/) | 数学、动态规划                                 | Medium | 完成     |
+|      | [365.水壶问题](https://leetcode-cn.com/problems/water-and-jug-problem/) | 数学                                           | Medium | 完成     |
 |      | [384.打乱数组](https://leetcode-cn.com/problems/shuffle-an-array/) |                                                | Medium | 完成     |
-|      | [394.字符串解码](https://leetcode-cn.com/problems/decode-string/) | 栈、深度优先搜索                               | Medium |          |
+|      | [394.字符串解码](https://leetcode-cn.com/problems/decode-string/) | 栈、深度优先搜索                               | Medium | 完成     |
 |      | [400.第N个数字](https://leetcode-cn.com/problems/nth-digit/) | 数学                                           | Medium | 完成     |
 |      | [498.对角线遍历](https://leetcode-cn.com/problems/diagonal-traverse/) |                                                | Medium |          |
 |      | [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) | 深度优先搜索、数组                             | Medium | 完成     |
@@ -574,7 +575,10 @@
 | 0003 | [23.合并K个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | 堆、链表、分治算法         | Hard |          |
 | 0004 | [25.K个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) | 链表                       | Hard |          |
 | 0005 | [30.串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 哈希表、双指针、字符串     | Hard |          |
+|      |                                                              |                            |      |          |
+|      | [42.接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 栈、数组、双指针           | Hard | 完成     |
 |      | [65.有效数字](https://leetcode-cn.com/problems/valid-number/) | 数学、字符串               | Hard | 完成     |
+|      | [84.柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 栈、数组                   | Hard |          |
 |      | 第x期                                                        |                            |      |          |
 |      |                                                              |                            |      |          |
 |      | [154.寻找旋转排序数组中的最小值II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) | 数组、二分查找             | Hard | 完成     |

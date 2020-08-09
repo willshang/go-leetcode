@@ -58,12 +58,12 @@
 
 ## 6.动态规划(4)
 
-| Title                                                        | Tag            | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------- | ------ | -------- |
-| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组 | Medium | 完成     |
-| [62.不同路径](https://leetcode-cn.com/problems/unique-paths/) | 数组、动态规划 | Medium | 完成     |
-| 零钱兑换                                                     |                |        |          |
-| Longest Increasing Subsequence                               |                |        |          |
+| Title                                                        | Tag                | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------ | ------ | -------- |
+| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组     | Medium | 完成     |
+| [62.不同路径](https://leetcode-cn.com/problems/unique-paths/) | 数组、动态规划     | Medium | 完成     |
+| [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划           | Medium | 完成     |
+| [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 二分查找、动态规划 | Medium | 完成     |
 
 ## 7.设计问题(2)
 

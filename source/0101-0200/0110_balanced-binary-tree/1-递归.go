@@ -28,7 +28,6 @@ func main() {
 func isBalanced(root *TreeNode) bool {
 	_, isBalanced := recur(root)
 	return isBalanced
-
 }
 
 func recur(root *TreeNode) (int, bool) {

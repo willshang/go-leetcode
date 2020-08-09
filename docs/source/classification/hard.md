@@ -11,7 +11,7 @@
 | [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) | 数组                   | Medium | 完成     |
 | 四数相加 II                                                  |                        |        |          |
 | [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针           | Medium | 完成     |
-| 生命游戏                                                     |                        |        |          |
+| [289.生命游戏](https://leetcode-cn.com/problems/game-of-life/) | 数组                   | Medium |          |
 | 缺失的第一个正数                                             |                        |        |          |
 | 最长连续序列                                                 |                        |        |          |
 | [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 数组、双指针、二分查找 | Medium | 完成     |
@@ -88,9 +88,9 @@
 
 ## 9.其他(4)
 
-| Title                          | Tag  | 难度 | 完成情况 |
-| ------------------------------ | ---- | ---- | -------- |
-| Queue Reconstruction by Height |      |      |          |
-| 接雨水                         |      |      |          |
-| 天际线问题                     |      |      |          |
-|                                |      |      |          |
+| Title                                                        | Tag              | 难度 | 完成情况 |
+| ------------------------------------------------------------ | ---------------- | ---- | -------- |
+| Queue Reconstruction by Height                               |                  |      |          |
+| [42.接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 栈、数组、双指针 | Hard | 完成     |
+| 天际线问题                                                   |                  |      |          |
+|                                                              |                  |      |          |

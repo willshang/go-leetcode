@@ -13,5 +13,10 @@ func main() {
 }
 
 func maximalSquare(matrix [][]byte) int {
+	if len(matrix) == 0 || len(matrix[0]) == 0 {
+		return 0
+	}
+	res := 0
+	dp := make([][]int, len(matrix))
 
 }
