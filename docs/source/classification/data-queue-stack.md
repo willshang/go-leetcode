@@ -18,7 +18,7 @@
 | Title                                                        | Tag                                | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ---------------------------------- | ------ | -------- |
 | [200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
-| 打开转盘锁                                                   |                                    |        |          |
+| [752.打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/) | 广度优先搜索                       | Medium | 完成     |
 | [279.完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | 广度优先搜索、数学、动态规划       | Medium | 完成     |
 
 ## 4-栈：后入先出的数据结构(4)

@@ -7,5 +7,5 @@ func main() {
 }
 
 func minOperations(n int) int {
-	return n*n/4
+	return n * n / 4
 }

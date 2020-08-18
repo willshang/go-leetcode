@@ -1457,21 +1457,359 @@ func (this *MinStack) GetMin() int {
 
 ```
 
-## 面试题03.04.化栈为队
+## 面试题03.04.化栈为队(3)
+
+- 题目
+
+```
+实现一个MyQueue类，该类用两个栈来实现一个队列。
+示例：MyQueue queue = new MyQueue();
+queue.push(1);
+queue.push(2);
+queue.peek();  // 返回 1
+queue.pop();   // 返回 1
+queue.empty(); // 返回 false
+说明： 你只能使用标准的栈操作 -- 也就是只有 push to top, peek/pop from top, size 
+和 is empty 操作是合法的。
+    你所使用的语言也许不支持栈。
+    你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。
+    假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）。
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 使用切片        | O(1)       | O(n)       |
+| 02   | 使用2个栈实现   | O(n)       | O(n)       |
+| 03   | 使用2个切片实现 | O(n)       | O(n)       |
+
+```go
+type MyQueue struct {
+	a []int
+}
+
+func Constructor() MyQueue {
+	return MyQueue{}
+}
+
+func (m *MyQueue) Push(x int) {
+	m.a = append(m.a, x)
+}
+
+func (m *MyQueue) Pop() int {
+	if len(m.a) == 0 {
+		return 0
+	}
+	first := m.a[0]
+	m.a = m.a[1:]
+	return first
+}
+
+func (m *MyQueue) Peek() int {
+	if len(m.a) == 0 {
+		return 0
+	}
+	return m.a[0]
+}
+
+func (m *MyQueue) Empty() bool {
+	if len(m.a) == 0 {
+		return true
+	}
+	return false
+}
+
+# 2
+/*
+入队: 直接入栈a
+出队: 栈b为空，则把栈a中全部数据出栈进入栈b，然后出栈b,不为空直接出栈b
+*/
+type MyQueue struct {
+	a, b *Stack
+}
+
+func Constructor() MyQueue {
+	return MyQueue{
+		a: NewStack(),
+		b: NewStack(),
+	}
+}
+
+func (m *MyQueue) Push(x int) {
+	m.a.Push(x)
+}
+
+func (m *MyQueue) Pop() int {
+	if m.b.Len() == 0 {
+		for m.a.Len() > 0 {
+			m.b.Push(m.a.Pop())
+		}
+	}
+	return m.b.Pop()
+}
+
+func (m *MyQueue) Peek() int {
+	res := m.Pop()
+	m.b.Push(res)
+	return res
+}
+
+func (m *MyQueue) Empty() bool {
+	return m.a.Len() == 0 && m.b.Len() == 0
+}
+
+type Stack struct {
+	nums []int
+}
+
+func NewStack() *Stack {
+	return &Stack{
+		nums: []int{},
+	}
+}
+
+func (s *Stack) Push(n int) {
+	s.nums = append(s.nums, n)
+}
+
+func (s *Stack) Pop() int {
+	res := s.nums[len(s.nums)-1]
+	s.nums = s.nums[:len(s.nums)-1]
+	return res
+}
+
+func (s *Stack) Len() int {
+	return len(s.nums)
+}
+
+func (s *Stack) IsEmpty() bool {
+	return s.Len() == 0
+}
+
+# 3
+type MyQueue struct {
+	a []int
+	b []int
+}
+
+func Constructor() MyQueue {
+	return MyQueue{}
+}
+
+func (m *MyQueue) Push(x int) {
+	m.a = append(m.a, x)
+}
+
+func (m *MyQueue) Pop() int {
+	m.Peek()
+	temp := m.b[len(m.b)-1]
+	m.b = m.b[:len(m.b)-1]
+	return temp
+}
+
+func (m *MyQueue) Peek() int {
+	if len(m.b) == 0 {
+		for len(m.a) > 0 {
+			m.b = append(m.b, m.a[len(m.a)-1])
+			m.a = m.a[:len(m.a)-1]
+		}
+	}
+	if len(m.b) == 0 {
+		return -1
+	}
+	return m.b[len(m.b)-1]
+}
+
+func (m *MyQueue) Empty() bool {
+	return len(m.a) == 0 && len(m.b) == 0
+}
+```
+
+## 面试题04.01.节点间通路(2)
+
+- 题目
+
+```
+节点间通路。给定有向图，设计一个算法，找出两个节点之间是否存在一条路径。
+示例1:输入：n = 3, graph = [[0, 1], [0, 2], [1, 2], [1, 2]], start = 0, target = 2 
+输出：true
+示例2:输入：n = 5, graph = [[0, 1], [0, 2], [0, 4], [0, 4], [0, 1], [1, 3], 
+[1, 4], [1, 3], [2, 3], [3, 4]], start = 0, target = 4
+输出 true
+提示：节点数量n在[0, 1e5]范围内。
+    节点编号大于等于 0 小于 n。
+    图中可能存在自环和平行边。
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n)       | O(n)       |
+| 02   | 深度优先搜索 | O(n)       | O(n)       |
+
+```go
+func findWhetherExistsPath(n int, graph [][]int, start int, target int) bool {
+	edges := make([][]int, n)
+	// 邻接表
+	for i := 0; i < len(graph); i++ {
+		a := graph[i][0]
+		b := graph[i][1]
+		edges[a] = append(edges[a], b)
+	}
+	queue := make([]int, 0)
+	queue = append(queue, start)
+	visited := make([]bool, n)
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		visited[node] = true
+		if node == target {
+			return true
+		}
+		for i := 0; i < len(edges[node]); i++ {
+			if visited[edges[node][i]] == false {
+				if edges[node][i] == target {
+					return true
+				}
+				queue = append(queue, edges[node][i])
+			}
+		}
+	}
+	return false
+}
+
+# 2
+func findWhetherExistsPath(n int, graph [][]int, start int, target int) bool {
+	edges := make([][]int, n)
+	// 邻接表
+	for i := 0; i < len(graph); i++ {
+		a := graph[i][0]
+		b := graph[i][1]
+		edges[a] = append(edges[a], b)
+	}
+
+	visited := make([]bool, n)
+	return dfs(edges, visited, start, target)
+}
+
+func dfs(edges [][]int, visited []bool, start, target int) bool {
+	if start == target {
+		return true
+	}
+	visited[start] = true
+	for i := 0; i < len(edges[start]); i++ {
+		if visited[edges[start][i]] == false {
+			if edges[start][i] == target {
+				return true
+			}
+			if dfs(edges, visited, edges[start][i], target) {
+				return true
+			}
+		}
+	}
+	return false
+}
+```
+
+## 面试题04.02.最小高度树(2)
+
+- 题目
+
+```
+给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。
+示例:给定有序数组: [-10,-3,0,5,9],
+一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：
+          0 
+         / \ 
+       -3   9 
+       /   / 
+     -10  5 
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+func sortedArrayToBST(nums []int) *TreeNode {
+	if len(nums) == 0 {
+		return nil
+	}
+	mid := len(nums) / 2
+	return &TreeNode{
+		Val:   nums[mid],
+		Left:  sortedArrayToBST(nums[:mid]),
+		Right: sortedArrayToBST(nums[mid+1:]),
+	}
+}
+
+# 2
+type MyTreeNode struct {
+	root  *TreeNode
+	start int
+	end   int
+}
+
+func sortedArrayToBST(nums []int) *TreeNode {
+	if len(nums) == 0 {
+		return nil
+	}
+	queue := make([]MyTreeNode, 0)
+	root := &TreeNode{Val: 0}
+	queue = append(queue, MyTreeNode{root, 0, len(nums)})
+	for len(queue) > 0 {
+		myRoot := queue[0]
+		queue = queue[1:]
+		start := myRoot.start
+		end := myRoot.end
+		mid := (start + end) / 2
+		curRoot := myRoot.root
+		curRoot.Val = nums[mid]
+		if start < mid {
+			curRoot.Left = &TreeNode{Val: 0}
+			queue = append(queue, MyTreeNode{curRoot.Left, start, mid})
+		}
+		if mid+1 < end {
+			curRoot.Right = &TreeNode{Val: 0}
+			queue = append(queue, MyTreeNode{curRoot.Right, mid + 1, end})
+		}
+	}
+	return root
+}
+```
+
+## 面试题04.03.特定深度节点链表
 
 ### 题目
 
 ```
-
+给定一棵二叉树，设计一个算法，创建含有某一深度上所有节点的链表
+（比如，若一棵树的深度为 D，则会创建出 D 个链表）。返回一个包含所有深度的链表的数组。
+示例：输入：[1,2,3,4,5,null,7,8]
+        1
+       /  \ 
+      2    3
+     / \    \ 
+    4   5    7
+   /
+  8
+输出：[[1],[2,3],[4,5,7],[8]]
 ```
 
 ### 解题思路
 
-```go
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
 
 ```
 
-
+```
 
 ## 面试题04.04.检查平衡性(3)
 
@@ -2036,9 +2374,144 @@ func dfs(node *TreeNode, sum int, path []int, level int) int {
 }
 ```
 
-## 面试题05.03.翻转数位
+## 面试题05.01.插入(4)
 
-### 题目
+- 题目
+
+```
+插入。给定两个32位的整数N与M，以及表示比特位置的i与j。
+编写一种方法，将M插入N，使得M从N的第j位开始，到第i位结束。假定从j位到i位足以容纳M，也即若M = 10 011，
+那么j和i之间至少可容纳5个位。例如，不可能出现j = 3和i = 2的情况，因为第3位和第2位之间放不下M。
+示例1:输入：N = 1024(10000000000), M = 19(10011), i = 2, j = 6 输出：N = 1100(10001001100)
+示例2:输入： N = 0, M = 31(11111), i = 0, j = 4 输出：N = 31(11111)
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 位运算   | O(1)       | O(1)       |
+| 02   | 位运算   | O(1)       | O(1)       |
+| 03   | 数组辅助 | O(1)       | O(1)       |
+| 04   | 位运算   | O(1)       | O(1)       |
+
+```go
+func insertBits(N int, M int, i int, j int) int {
+	a := (N >> (j + 1)) << (j + 1)
+	b := (N>>i)<<i ^ N
+	c := M << i
+	return a | b | c
+}
+
+# 2 
+func insertBits(N int, M int, i int, j int) int {
+	for k := i; k <= j; k++ {
+		if N&(1<<k) != 0 {
+			N = N - 1<<k
+		}
+	}
+	N = N + (M << i)
+	return N
+}
+
+# 3
+func insertBits(N int, M int, i int, j int) int {
+	arr := make([]byte, 32)
+	for i := 0; i < 32; i++ {
+		arr[i] = '0'
+	}
+	a := fmt.Sprintf("%b", N)
+	b := fmt.Sprintf("%b", M)
+	for k := len(a) - 1; k >= 0; k-- {
+		arr[31-(len(a)-1-k)] = a[k]
+	}
+	count := 0
+	for k := 31 - i; k >= 31-j; k-- {
+		if count < len(b) {
+			arr[k] = b[len(b)-1-count]
+			count++
+		} else {
+			arr[k] = '0'
+		}
+	}
+	value, _ := strconv.ParseInt(string(arr), 2, 64)
+	return int(value)
+}
+
+# 4
+func insertBits(N int, M int, i int, j int) int {
+	res := N
+	setZero := 0
+	for k := i; k <= j; k++ {
+		setZero = setZero | (1 << k)
+	}
+	res = res&setZero ^ N
+	res = res | (M << i)
+	return res
+}
+```
+
+## 面试题05.02.二进制数转字符串(2)
+
+- 题目
+
+```
+二进制数转字符串。给定一个介于0和1之间的实数（如0.72），类型为double，打印它的二进制表达式。
+如果该数字不在0和1之间，或者无法精确地用32位以内的二进制表示，则打印“ERROR”。
+示例1:输入：0.625 输出："0.101"
+示例2:输入：0.1 输出："ERROR"
+提示：0.1无法被二进制准确表示
+提示：32位包括输出中的"0."这两位。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(1)       | O(1)       |
+| 02   | 遍历 | O(1)       | O(1)       |
+
+```go
+func printBin(num float64) string {
+	res := "0."
+	for num != float64(0) {
+		num = num * 2
+		if num >= 1 {
+			res = res + "1"
+			num = num - 1.0
+		} else {
+			res = res + "0"
+		}
+		if len(res) > 32 {
+			return "ERROR"
+		}
+	}
+	return res
+}
+
+# 2
+func printBin(num float64) string {
+	res := "0."
+	value := float64(1)
+	for i := 1; i <= 32; i++ {
+		value = value / 2
+		if num < value {
+			res = res + "0"
+			continue
+		}
+		res = res + "1"
+		num = num - value
+		if num == 0 {
+			return res
+		}
+	}
+	return "ERROR"
+}
+```
+
+## 面试题05.03.翻转数位(2)
+
+- 题目
 
 ```
 给定一个32位整数 num，你可以将一个数位从0变为1。请编写一个程序，找出你能够获得的最长的一串1的长度。
@@ -2046,14 +2519,67 @@ func dfs(node *TreeNode, sum int, path []int, level int) int {
 示例 2：输入: num = 7(01112)输出: 4
 ```
 
-### 解题思路
+- 解题思路
 
 | No.  | 思路     | 时间复杂度 | 空间复杂度 |
 | ---- | -------- | ---------- | ---------- |
-| 01   | 内置函数 | O(1)       | O(1)       |
+| 01   | 遍历     | O(1)       | O(1)       |
+| 02   | 数组辅助 | O(1)       | O(1)       |
 
 ```go
+func reverseBits(num int) int {
+	res := 0
+	a, b := 0, 0
+	for num != 0 {
+		if num%2 == 1 {
+			a++
+		} else {
+			b = a
+			a = 0
+		}
+		res = max(res, a+b)
+		num = num / 2
+	}
+	return res + 1
+}
 
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func reverseBits(num int) int {
+	res := 0
+	arr := make([]int, 0)
+	count := 0
+	for num != 0 {
+		if num%2 == 1 {
+			count++
+		} else {
+			arr = append(arr, count)
+			count = 0
+		}
+		num = num / 2
+	}
+	arr = append(arr, count)
+	if len(arr) == 1 {
+		return arr[0] + 1
+	}
+	for i := 1; i < len(arr); i++ {
+		res = max(res, arr[i]+arr[i-1])
+	}
+	return res + 1
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
 ```
 
 ## 面试题05.06.整数转换(4)
@@ -2120,11 +2646,57 @@ func convertInteger(A int, B int) int {
 }
 ```
 
+## 面试题05.07.配对交换(2)
 
+- 题目
 
-## 面试题08.01.三步问题
+```
+配对交换。编写程序，交换某个整数的奇数位和偶数位，尽量使用较少的指令
+（也就是说，位0与位1交换，位2与位3交换，以此类推）。
+示例1:输入：num = 2（或者0b10）输出 1 (或者 0b01)
+示例2:输入：num = 3 输出：3
+提示:num的范围在[0, 2^30 - 1]之间，不会发生整数溢出。
+```
 
-### 题目
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 位运算   | O(1)       | O(1)       |
+| 02   | 数组辅助 | O(1)       | O(1)       |
+
+```go
+func exchangeBits(num int) int {
+	// 0x55555555 = 01010101010101010101010101010101 提取偶数位=>左移
+	// 0xaaaaaaaa = 10101010101010101010101010101010 提取奇数位=>右移
+	a := (num & 0x55555555) << 1
+	b := (num & 0xaaaaaaaa) >> 1
+	return a | b
+}
+
+# 2
+func exchangeBits(num int) int {
+	a := fmt.Sprintf("%b", num)
+	arr := make([]byte, 32)
+	for i := 0; i < 32; i++ {
+		arr[i] = '0'
+	}
+	count := 31
+	for i := len(a) - 1; i >= 0; i-- {
+		arr[count] = a[i]
+		count--
+	}
+	for i := len(arr) - 2; i >= 0; i = i - 2 {
+		arr[i], arr[i+1] = arr[i+1], arr[i]
+	}
+	value, _ := strconv.ParseInt(string(arr), 2, 64)
+	return int(value)
+}
+```
+
+## 面试题08.01.三步问题(2)
+
+- 题目
 
 ```
 三步问题。有个小孩正在上楼梯，楼梯有n阶台阶，小孩一次可以上1阶、2阶或3阶。
@@ -2133,6 +2705,67 @@ func convertInteger(A int, B int) int {
 说明: 有四种走法
 示例2:输入：n = 5输出：13
 提示:n范围在[1, 1000000]之间
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n)       | O(1)       |
+| 02   | 动态规划 | O(n)       | O(n)       |
+
+```go
+func waysToStep(n int) int {
+	if n == 1 {
+		return 1
+	}
+	if n == 2 {
+		return 2
+	}
+	if n == 3 {
+		return 4
+	}
+	a, b, c := 1, 2, 4
+	for i := 4; i <= n; i++ {
+		a, b, c = b, c, (a+b+c)%1000000007
+	}
+	return c
+}
+
+# 2
+func waysToStep(n int) int {
+	dp := make([]int, n+3)
+	dp[0] = 1
+	dp[1] = 2
+	dp[2] = 4
+	for i := 3; i < n; i++ {
+		dp[i] = (dp[i-1] + dp[i-2] + dp[i-3]) % 1000000007
+	}
+	return dp[n-1]
+}
+```
+
+## 面试题08.02.迷路的机器人
+
+### 题目
+
+```
+设想有个机器人坐在一个网格的左上角，网格 r 行 c 列。
+机器人只能向下或向右移动，但不能走到一些被禁止的网格（有障碍物）。
+设计一种算法，寻找机器人从左上角移动到右下角的路径。
+网格中的障碍物和空位置分别用 1 和 0 来表示。
+返回一条可行的路径，路径由经过的网格的行号和列号组成。左上角为 0 行 0 列。
+如果没有可行的路径，返回空数组。
+示例 1:输入:
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+输出: [[0,0],[0,1],[0,2],[1,2],[2,2]]
+解释: 输入中标粗的位置即为输出表示的路径，即
+0行0列（左上角） -> 0行1列 -> 0行2列 -> 1行2列 -> 2行2列（右下角）
+说明：r 和 c 的值均不超过 100。
 ```
 
 ### 解题思路
@@ -2599,6 +3232,34 @@ func floodFill(image [][]int, sr int, sc int, newColor int) [][]int {
 	}
 	return image
 }
+```
+
+## 面试题08.11.硬币
+
+### 题目
+
+```
+硬币。给定数量不限的硬币，币值为25分、10分、5分和1分，编写代码计算n分有几种表示法。
+(结果可能会很大，你需要将结果模上1000000007)
+示例1:输入: n = 5 输出：2 解释: 有两种方式可以凑成总金额:
+5=5
+5=1+1+1+1+1
+示例2:输入: n = 10 输出：4 解释: 有四种方式可以凑成总金额:
+10=10
+10=5+5
+10=5+1+1+1+1+1
+10=1+1+1+1+1+1+1+1+1+1
+说明：注意: 你可以假设： 0 <= n (总金额) <= 1000000
+```
+
+### 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 回溯 | O(n^n)     | O(n^2)     |
+
+```go
+
 ```
 
 ## 面试题08.12.八皇后(3)
@@ -3098,6 +3759,46 @@ func searchMatrix(matrix [][]int, target int) bool {
 }
 ```
 
+## 面试题16.01.交换数字(3)
+
+- 题目
+
+```
+编写一个函数，不用临时变量，直接交换numbers = [a, b]中a与b的值。
+示例：输入: numbers = [1,2] 输出: [2,1]
+提示： numbers.length == 2
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 直接返回 | O(1)       | O(1)       |
+| 02   | 位运算   | O(1)       | O(1)       |
+| 03   | 加减     | O(1)       | O(1)       |
+
+```go
+func swapNumbers(numbers []int) []int {
+	return []int{numbers[1], numbers[0]}
+}
+
+# 2
+func swapNumbers(numbers []int) []int {
+	numbers[0] = numbers[0] ^ numbers[1]
+	numbers[1] = numbers[1] ^ numbers[0]
+	numbers[0] = numbers[0] ^ numbers[1]
+	return numbers
+}
+
+# 3
+func swapNumbers(numbers []int) []int {
+	numbers[0] = numbers[0] + numbers[1]
+	numbers[1] = numbers[0] - numbers[1]
+	numbers[0] = numbers[0] - numbers[1]
+	return numbers
+}
+```
+
 ## 面试题16.05.阶乘尾数(1)
 
 - 题目
@@ -3127,6 +3828,41 @@ func trailingZeroes(n int) int {
 		result = result + n
 	}
 	return result
+}
+```
+
+## 面试题16.07.最大数值(3)
+
+- 题目
+
+```
+编写一个方法，找出两个数字a和b中最大的那一个。不得使用if-else或其他比较运算符。
+示例：输入： a = 1, b = 2 输出： 2
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数学     | O(1)       | O(1)       |
+| 02   | 内置函数 | O(1)       | O(1)       |
+| 03   | 位运算   | O(1)       | O(1)       |
+
+```go
+func maximum(a int, b int) int {
+	// max(a,b) = (abs(a-b)+a+b)/2
+	return (int(math.Abs(float64(a-b))) + a + b) / 2
+}
+
+# 2
+func maximum(a int, b int) int {
+	return int(math.Max(float64(a), float64(b)))
+}
+
+# 3
+func maximum(a int, b int) int {
+	value := int(uint64(a-b) >> 63) // 取符号位，a-b>0 => 符号位为0 a-b<0 =>符号位为1
+	return value*b + int(1^value)*a // value=0=> 0^1=1 1^1=0
 }
 ```
 
@@ -3183,6 +3919,77 @@ func divingBoard(shorter int, longer int, k int) []int {
 		res = append(res, start+i*diff)
 	}
 	return res
+}
+```
+
+## 面试题16.15.珠玑妙算(2)
+
+- 题目
+
+```
+珠玑妙算游戏（the game of master mind）的玩法如下。
+计算机有4个槽，每个槽放一个球，颜色可能是红色（R）、黄色（Y）、绿色（G）或蓝色（B）。
+例如，计算机可能有RGGB 4种（槽1为红色，槽2、3为绿色，槽4为蓝色）。
+作为用户，你试图猜出颜色组合。打个比方，你可能会猜YRGB。
+要是猜对某个槽的颜色，则算一次“猜中”；要是只猜对颜色但槽位猜错了，则算一次“伪猜中”。
+注意，“猜中”不能算入“伪猜中”。
+给定一种颜色组合solution和一个猜测guess，
+编写一个方法，返回猜中和伪猜中的次数answer，其中answer[0]为猜中的次数，answer[1]为伪猜中的次数。
+示例：输入： solution="RGBY",guess="GGRR" 输出： [1,1]
+解释： 猜中1次，伪猜中1次。
+提示：len(solution) = len(guess) = 4
+    solution和guess仅包含"R","G","B","Y"这4种字符
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(1)       | O(1)       |
+| 02   | 数组辅助 | O(1)       | O(1)       |
+
+```go
+func masterMind(solution string, guess string) []int {
+	m := make(map[byte]int)
+	a, b := 0, 0
+	for i := 0; i < len(solution); i++ {
+		if solution[i] == guess[i] {
+			a++
+		} else {
+			m[solution[i]]++
+		}
+	}
+	for i := 0; i < len(guess); i++ {
+		if solution[i] != guess[i] {
+			if m[guess[i]] > 0 {
+				b++
+				m[guess[i]]--
+			}
+		}
+	}
+	return []int{a, b}
+}
+
+# 2
+func masterMind(solution string, guess string) []int {
+	arr := [256]int{}
+	a, b := 0, 0
+	for i := 0; i < len(solution); i++ {
+		if solution[i] == guess[i] {
+			a++
+		} else {
+			arr[solution[i]]++
+		}
+	}
+	for i := 0; i < len(guess); i++ {
+		if solution[i] != guess[i] {
+			if arr[guess[i]] > 0 {
+				b++
+				arr[guess[i]]--
+			}
+		}
+	}
+	return []int{a, b}
 }
 ```
 
@@ -3320,6 +4127,107 @@ func max(a, b int) int {
 		return a
 	}
 	return b
+}
+```
+
+## 面试题16.25.LRU缓存(1)
+
+- 题目
+
+```
+设计和构建一个“最近最少使用”缓存，该缓存会删除最近最少使用的项目。
+缓存应该从键映射到值(允许你插入和检索特定键对应的值)，并在初始化时指定最大容量。
+当缓存被填满时，它应该删除最近最少使用的项目。
+它应该支持以下操作： 获取数据 get 和 写入数据 put 。
+获取数据 get(key) - 如果密钥 (key) 存在于缓存中，则获取密钥的值（总是正数），否则返回 -1。
+写入数据 put(key, value) - 如果密钥不存在，则写入其数据值。
+当缓存容量达到上限时，它应该在写入新数据之前删除最近最少使用的数据值，从而为新的数据值留出空间。
+示例:LRUCache cache = new LRUCache( 2 /* 缓存容量 */ );
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // 返回  1
+cache.put(3, 3);    // 该操作会使得密钥 2 作废
+cache.get(2);       // 返回 -1 (未找到)
+cache.put(4, 4);    // 该操作会使得密钥 1 作废
+cache.get(1);       // 返回 -1 (未找到)
+cache.get(3);       // 返回  3
+cache.get(4);       // 返回  4
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 双向链表 | O(1)       | O(n)       |
+
+```go
+type Node struct {
+	key   int
+	value int
+	prev  *Node
+	next  *Node
+}
+
+type LRUCache struct {
+	cap    int
+	header *Node
+	tail   *Node
+	m      map[int]*Node
+}
+
+func Constructor(capacity int) LRUCache {
+	cache := LRUCache{
+		cap:    capacity,
+		header: &Node{},
+		tail:   &Node{},
+		m:      make(map[int]*Node, capacity),
+	}
+	cache.header.next = cache.tail
+	cache.tail.prev = cache.header
+	return cache
+}
+
+func (this *LRUCache) Get(key int) int {
+	if node, ok := this.m[key]; ok {
+		this.remove(node)
+		this.putHead(node)
+		return node.value
+	}
+	return -1
+}
+
+func (this *LRUCache) Put(key int, value int) {
+	if node, ok := this.m[key]; ok {
+		node.value = value
+		this.remove(node)
+		this.putHead(node)
+		return
+	}
+	if this.cap <= len(this.m) {
+		// 删除尾部
+		deleteKey := this.tail.prev.key
+		this.remove(this.tail.prev)
+		delete(this.m, deleteKey)
+	}
+	// 插入到头部
+	newNode := &Node{key: key, value: value}
+	this.putHead(newNode)
+	this.m[key] = newNode
+}
+
+// 删除尾部节点
+func (this *LRUCache) remove(node *Node) {
+	node.prev.next = node.next
+	node.next.prev = node.prev
+}
+
+// 插入头部
+func (this *LRUCache) putHead(node *Node) {
+	next := this.header.next
+	this.header.next = node
+	node.next = next
+	next.prev = node
+	node.prev = this.header
 }
 ```
 
@@ -3646,6 +4554,106 @@ func majority(nums []int, start, end int) int {
 		return left
 	}
 	return right
+}
+```
+
+## 面试题17.14.最小K个数(3)
+
+- 题目
+
+```
+设计一个算法，找出数组中最小的k个数。以任意顺序返回这k个数均可。
+示例：输入： arr = [1,3,5,7,2,4,6,8], k = 4 输出： [1,2,3,4]
+提示：0 <= len(arr) <= 100000
+    0 <= k <= min(100000, len(arr))
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 堆排序   | O(nlog(n)) | O(n)       |
+| 02   | 快排     | O(nlog(n)) | O(log(n))  |
+| 03   | 内置函数 | O(nlog(n)) | O(1)       |
+
+```go
+func smallestK(arr []int, k int) []int {
+	intHeap := make(IntHeap, 0)
+	heap.Init(&intHeap)
+	for i := 0; i < len(arr); i++ {
+		heap.Push(&intHeap, arr[i])
+	}
+	res := make([]int, 0)
+	for i := 0; i < k; i++ {
+		value := heap.Pop(&intHeap).(int)
+		res = append(res, value)
+	}
+	return res
+}
+
+type IntHeap []int
+
+func (h IntHeap) Len() int {
+	return len(h)
+}
+
+// 小根堆<,大根堆变换方向>
+func (h IntHeap) Less(i, j int) bool {
+	return h[i] < h[j]
+}
+
+func (h IntHeap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+func (h *IntHeap) Push(x interface{}) {
+	*h = append(*h, x.(int))
+}
+
+func (h *IntHeap) Pop() interface{} {
+	value := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return value
+}
+
+# 2
+func smallestK(arr []int, k int) []int {
+	return quickSort(arr, 0, len(arr)-1, k)
+}
+
+func quickSort(arr []int, left, right, k int) []int {
+	if left > right {
+		return nil
+	}
+	index := partition(arr, left, right)
+	if index == k {
+		return arr[:k]
+	} else if index < k {
+		return quickSort(arr, index+1, right, k)
+	}
+	return quickSort(arr, left, index-1, k)
+}
+
+func partition(arr []int, left, right int) int {
+	baseValue := arr[left] // 基准值
+	for left < right {
+		for baseValue <= arr[right] && left < right {
+			right-- // 依次查找大于基准值的位置
+		}
+		arr[left] = arr[right]
+		for arr[left] <= baseValue && left < right {
+			left++ // 依次查找小于基准值的位置
+		}
+		arr[right] = arr[left]
+	}
+	arr[right] = baseValue
+	return right
+}
+
+# 3
+func smallestK(arr []int, k int) []int {
+	sort.Ints(arr)
+	return arr[:k]
 }
 ```
 

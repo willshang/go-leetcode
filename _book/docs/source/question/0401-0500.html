@@ -3209,6 +3209,132 @@ nums1 &#x4E2D;&#x6570;&#x5B57; x &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x66F4;&#x5927
     <span class="hljs-keyword">return</span> people
 }
 </code></pre>
+<h2 id="416&#x5206;&#x5272;&#x7B49;&#x548C;&#x5B50;&#x96C6;3">416.&#x5206;&#x5272;&#x7B49;&#x548C;&#x5B50;&#x96C6;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x53EA;&#x5305;&#x542B;&#x6B63;&#x6574;&#x6570;&#x7684;&#x975E;&#x7A7A;&#x6570;&#x7EC4;&#x3002;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5C06;&#x8FD9;&#x4E2A;&#x6570;&#x7EC4;&#x5206;&#x5272;&#x6210;&#x4E24;&#x4E2A;&#x5B50;&#x96C6;&#xFF0C;&#x4F7F;&#x5F97;&#x4E24;&#x4E2A;&#x5B50;&#x96C6;&#x7684;&#x5143;&#x7D20;&#x548C;&#x76F8;&#x7B49;&#x3002;
+&#x6CE8;&#x610F;:&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7; 100
+    &#x6570;&#x7EC4;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7; 200
+&#x793A;&#x4F8B; 1:&#x8F93;&#x5165;: [1, 5, 11, 5] &#x8F93;&#x51FA;: true
+&#x89E3;&#x91CA;: &#x6570;&#x7EC4;&#x53EF;&#x4EE5;&#x5206;&#x5272;&#x6210; [1, 5, 5] &#x548C; [11].
+&#x793A;&#x4F8B; 2:&#x8F93;&#x5165;: [1, 2, 3, 5] &#x8F93;&#x51FA;: false 
+&#x89E3;&#x91CA;: &#x6570;&#x7EC4;&#x4E0D;&#x80FD;&#x5206;&#x5272;&#x6210;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x548C;&#x76F8;&#x7B49;&#x7684;&#x5B50;&#x96C6;.
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+<th>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x52A8;&#x6001;&#x89C4;&#x5212;</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x52A8;&#x6001;&#x89C4;&#x5212;</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x56DE;&#x6EAF;-&#x9012;&#x5F52;</td>
+<td>O(n!)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> canPartition(nums []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    sum := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(nums); i++ {
+        sum = sum + nums[i]
+    }
+    <span class="hljs-keyword">if</span> sum%<span class="hljs-number">2</span> == <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    target := sum / <span class="hljs-number">2</span>
+    <span class="hljs-comment">// &#x9898;&#x76EE;&#x8F6C;&#x6362;&#x4E3A;0-1&#x80CC;&#x5305;&#x95EE;&#x9898;&#xFF0C;&#x5BB9;&#x91CF;&#x4E3A;sum/2</span>
+    dp := <span class="hljs-built_in">make</span>([][]<span class="hljs-keyword">bool</span>, <span class="hljs-built_in">len</span>(nums)+<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt;= <span class="hljs-built_in">len</span>(nums); i++ {
+        dp[i] = <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">bool</span>, target+<span class="hljs-number">1</span>)
+        dp[i][<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>
+    }
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt;= <span class="hljs-built_in">len</span>(nums); i++ {
+        <span class="hljs-keyword">for</span> j := <span class="hljs-number">1</span>; j &lt;= target; j++ {
+            <span class="hljs-keyword">if</span> j-nums[i<span class="hljs-number">-1</span>] &lt; <span class="hljs-number">0</span> {
+                dp[i][j] = dp[i<span class="hljs-number">-1</span>][j]
+            } <span class="hljs-keyword">else</span> {
+                dp[i][j] = dp[i<span class="hljs-number">-1</span>][j] || dp[i<span class="hljs-number">-1</span>][j-nums[i<span class="hljs-number">-1</span>]]
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> dp[<span class="hljs-built_in">len</span>(nums)][target]
+}
+
+# <span class="hljs-number">2</span> 
+<span class="hljs-keyword">func</span> canPartition(nums []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    sum := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(nums); i++ {
+        sum = sum + nums[i]
+    }
+    <span class="hljs-keyword">if</span> sum%<span class="hljs-number">2</span> == <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    target := sum / <span class="hljs-number">2</span>
+    <span class="hljs-comment">// &#x9898;&#x76EE;&#x8F6C;&#x6362;&#x4E3A;0-1&#x80CC;&#x5305;&#x95EE;&#x9898;&#xFF0C;&#x5BB9;&#x91CF;&#x4E3A;sum/2</span>
+    dp := <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">bool</span>, target+<span class="hljs-number">1</span>)
+    dp[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(nums); i++ {
+        <span class="hljs-keyword">for</span> j := target; j &gt;= <span class="hljs-number">0</span>; j-- {
+            <span class="hljs-keyword">if</span> j-nums[i] &gt;= <span class="hljs-number">0</span> &amp;&amp; dp[j-nums[i]] == <span class="hljs-literal">true</span> {
+                dp[j] = <span class="hljs-literal">true</span>
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> dp[target]
+}
+
+# <span class="hljs-number">3</span>
+<span class="hljs-keyword">func</span> canPartition(nums []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    sort.Ints(nums)
+    sum := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(nums); i++ {
+        sum = sum + nums[i]
+    }
+    <span class="hljs-keyword">if</span> sum%<span class="hljs-number">2</span> == <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    target := sum / <span class="hljs-number">2</span>
+    <span class="hljs-keyword">return</span> dfs(nums, target, <span class="hljs-number">0</span>)
+}
+
+<span class="hljs-keyword">func</span> dfs(nums []<span class="hljs-keyword">int</span>, target <span class="hljs-keyword">int</span>, index <span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">if</span> target == <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    }
+    <span class="hljs-keyword">for</span> i := index; i &lt; <span class="hljs-built_in">len</span>(nums); i++ {
+        <span class="hljs-keyword">if</span> index &lt; i &amp;&amp; nums[i] == nums[i<span class="hljs-number">-1</span>] {
+            <span class="hljs-keyword">continue</span>
+        }
+        <span class="hljs-keyword">if</span> target-nums[i] &lt; <span class="hljs-number">0</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        }
+        <span class="hljs-keyword">if</span> dfs(nums, target-nums[i], i+<span class="hljs-number">1</span>) == <span class="hljs-literal">true</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+}
+</code></pre>
 <h2 id="442&#x6570;&#x7EC4;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x6570;&#x636E;5">442.&#x6570;&#x7EC4;&#x4E2D;&#x91CD;&#x590D;&#x7684;&#x6570;&#x636E;(5)</h2>
 <ul>
 <li>&#x9898;&#x76EE;</li>
@@ -3727,8 +3853,51 @@ nums1 &#x4E2D;&#x6570;&#x5B57; x &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x66F4;&#x5927
 <pre><code class="lang-go">
 
 </code></pre>
+<h1 id="0401-0500-hard">0401-0500-Hard</h1>
+<h2 id="460lfu&#x7F13;&#x5B58;">460.LFU&#x7F13;&#x5B58;</h2>
+<h3 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h3>
+<pre><code>&#x8BF7;&#x4F60;&#x4E3A; &#x6700;&#x4E0D;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#xFF08;LFU&#xFF09;&#x7F13;&#x5B58;&#x7B97;&#x6CD5;&#x8BBE;&#x8BA1;&#x5E76;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;&#x5B83;&#x5E94;&#x8BE5;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;get &#x548C; put&#x3002;
+    get(key) - &#x5982;&#x679C;&#x952E;&#x5B58;&#x5728;&#x4E8E;&#x7F13;&#x5B58;&#x4E2D;&#xFF0C;&#x5219;&#x83B7;&#x53D6;&#x952E;&#x7684;&#x503C;&#xFF08;&#x603B;&#x662F;&#x6B63;&#x6570;&#xFF09;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE; -1&#x3002;
+    put(key, value) - &#x5982;&#x679C;&#x952E;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x53D8;&#x66F4;&#x5176;&#x503C;&#xFF1B;&#x5982;&#x679C;&#x952E;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x8BF7;&#x63D2;&#x5165;&#x952E;&#x503C;&#x5BF9;&#x3002;
+    &#x5F53;&#x7F13;&#x5B58;&#x8FBE;&#x5230;&#x5176;&#x5BB9;&#x91CF;&#x65F6;&#xFF0C;&#x5219;&#x5E94;&#x8BE5;&#x5728;&#x63D2;&#x5165;&#x65B0;&#x9879;&#x4E4B;&#x524D;&#xFF0C;&#x4F7F;&#x6700;&#x4E0D;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x9879;&#x65E0;&#x6548;&#x3002;
+    &#x5728;&#x6B64;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x5F53;&#x5B58;&#x5728;&#x5E73;&#x5C40;&#xFF08;&#x5373;&#x4E24;&#x4E2A;&#x6216;&#x66F4;&#x591A;&#x4E2A;&#x952E;&#x5177;&#x6709;&#x76F8;&#x540C;&#x4F7F;&#x7528;&#x9891;&#x7387;&#xFF09;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x53BB;&#x9664;&#x6700;&#x4E45;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x952E;&#x3002;
+&#x300C;&#x9879;&#x7684;&#x4F7F;&#x7528;&#x6B21;&#x6570;&#x300D;&#x5C31;&#x662F;&#x81EA;&#x63D2;&#x5165;&#x8BE5;&#x9879;&#x4EE5;&#x6765;&#x5BF9;&#x5176;&#x8C03;&#x7528; get &#x548C; put &#x51FD;&#x6570;&#x7684;&#x6B21;&#x6570;&#x4E4B;&#x548C;&#x3002;&#x4F7F;&#x7528;&#x6B21;&#x6570;&#x4F1A;&#x5728;&#x5BF9;&#x5E94;&#x9879;&#x88AB;&#x79FB;&#x9664;&#x540E;&#x7F6E;&#x4E3A; 0 &#x3002;
+&#x8FDB;&#x9636;&#xFF1A;&#x4F60;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5728; O(1) &#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5185;&#x6267;&#x884C;&#x4E24;&#x9879;&#x64CD;&#x4F5C;&#xFF1F;
+&#x793A;&#x4F8B;&#xFF1A;LFUCache cache = new LFUCache( 2 /* capacity (&#x7F13;&#x5B58;&#x5BB9;&#x91CF;) */ );
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // &#x8FD4;&#x56DE; 1
+cache.put(3, 3);    // &#x53BB;&#x9664; key 2
+cache.get(2);       // &#x8FD4;&#x56DE; -1 (&#x672A;&#x627E;&#x5230;key 2)
+cache.get(3);       // &#x8FD4;&#x56DE; 3
+cache.put(4, 4);    // &#x53BB;&#x9664; key 1
+cache.get(1);       // &#x8FD4;&#x56DE; -1 (&#x672A;&#x627E;&#x5230; key 1)
+cache.get(3);       // &#x8FD4;&#x56DE; 3
+cache.get(4);       // &#x8FD4;&#x56DE; 4
+</code></pre><h3 id="&#x89E3;&#x9898;&#x601D;&#x8DEF;">&#x89E3;&#x9898;&#x601D;&#x8DEF;</h3>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+<th>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x53CD;&#x8F6C;&#x904D;&#x5386;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-go">
+
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Zhi2014 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-08-17 12:29:23
+2020-08-18 23:06:02
 </span></footer>
                                 
                                 </section>
@@ -3772,7 +3941,7 @@ nums1 &#x4E2D;&#x6570;&#x5B57; x &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x66F4;&#x5927
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"0401-0500","level":"1.2.5","depth":2,"next":{"title":"0501-0600","level":"1.2.6","depth":2,"path":"docs/source/question/0501-0600.md","ref":"docs/source/question/0501-0600.md","articles":[]},"previous":{"title":"0301-0400","level":"1.2.4","depth":2,"path":"docs/source/question/0301-0400.md","ref":"docs/source/question/0301-0400.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0401-0500.md","mtime":"2020-08-17T04:29:23.002Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-17T15:05:52.063Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"0401-0500","level":"1.2.5","depth":2,"next":{"title":"0501-0600","level":"1.2.6","depth":2,"path":"docs/source/question/0501-0600.md","ref":"docs/source/question/0501-0600.md","articles":[]},"previous":{"title":"0301-0400","level":"1.2.4","depth":2,"path":"docs/source/question/0301-0400.md","ref":"docs/source/question/0301-0400.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0401-0500.md","mtime":"2020-08-18T15:06:02.592Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-18T16:21:29.231Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

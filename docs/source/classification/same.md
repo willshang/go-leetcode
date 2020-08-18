@@ -80,5 +80,9 @@
 | 76(相似) | [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) Medium | [1546.和为目标值的最大数目不重叠非空子数组数目](https://leetcode-cn.com/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/) Medium |
 | 77(相似) | [51.N皇后](https://leetcode-cn.com/problems/n-queens/) Hard<br />[52.N皇后II](https://leetcode-cn.com/problems/n-queens-ii/) Hard | [面试题08.12.八皇后](https://leetcode-cn.com/problems/eight-queens-lcci/) Hard |
 | 78(相似) | [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) Medium | [207.课程表](https://leetcode-cn.com/problems/course-schedule/) Medium |
-| 79 | [215.数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) Medium |  |
+| 79 | [146.LRU缓存机制](https://leetcode-cn.com/problems/lru-cache/) Medium | [面试题16.25.LRU缓存](https://leetcode-cn.com/problems/lru-cache-lcci/) Medium |
+| 80(相似) | [1493.删掉一个元素以后全为1的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) Medium | [面试题05.03.翻转数位](https://leetcode-cn.com/problems/reverse-bits-lcci/) Easy |
+| 81(相似) | [62.不同路径](https://leetcode-cn.com/problems/unique-paths/) Medium[<br />63.不同路径II](https://leetcode-cn.com/problems/unique-paths-ii/) Medium | [面试题08.02.迷路的机器人](https://leetcode-cn.com/problems/robot-in-a-grid-lcci/) Medium |
+| 82 | [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) Easy | [面试题04.02.最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/) Easy |
+| 83 | [232.用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) Easy | [面试题03.04.化栈为队](https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/) Easy |
 

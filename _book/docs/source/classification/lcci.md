@@ -32,42 +32,62 @@
 | 0019 | [面试题03.02.栈的最小值](https://leetcode-cn.com/problems/min-stack-lcci/) | 栈                         | Easy   | 完成     |
 | 0020 | [面试题03.03.堆盘子](https://leetcode-cn.com/problems/stack-of-plates-lcci/) | 设计                       | Medium |          |
 |      | 第3期                                                        |                            |        |          |
-| 0021 | [面试题03.04.化栈为队](https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/) | 栈                         | Easy   |          |
+| 0021 | [面试题03.04.化栈为队](https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/) | 栈                         | Easy   | 完成     |
 | 0022 | 05                                                           |                            |        |          |
 | 0023 | 06                                                           |                            |        |          |
-| 0024 | 01                                                           |                            |        |          |
-| 0025 | 02                                                           |                            |        |          |
-| 0026 | 03                                                           |                            |        |          |
+| 0024 | [面试题04.01.节点间通路](https://leetcode-cn.com/problems/route-between-nodes-lcci/) | 图                         | Medium | 完成     |
+| 0025 | [面试题04.02.最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/) | 树、深度优先搜索           | Easy   | 完成     |
+| 0026 | [面试题04.03.特定深度节点链表](https://leetcode-cn.com/problems/list-of-depth-lcci/) | 树、广度优先搜索           | Medium |          |
 | 0027 | [面试题04.04.检查平衡性](https://leetcode-cn.com/problems/check-balance-lcci/) | 树、深度优先搜索           | Easy   | 完成     |
 | 0028 | [面试题04.05.合法二叉搜索树](https://leetcode-cn.com/problems/legal-binary-search-tree-lcci/) | 树、深度优先搜索           | Medium | 完成     |
 | 0029 |                                                              |                            |        |          |
 | 0030 | [面试题04.08.首个共同祖先](https://leetcode-cn.com/problems/first-common-ancestor-lcci/) | 树                         | Medium | 完成     |
 |      | 第4期                                                        |                            |        |          |
-| 0031 |                                                              |                            |        |          |
+| 0031 | 09                                                           |                            |        |          |
 | 0032 | [面试题04.10.检查子树](https://leetcode-cn.com/problems/check-subtree-lcci/) | 树                         | Medium | 完成     |
 | 0033 | [面试题04.12.求和路径](https://leetcode-cn.com/problems/paths-with-sum-lcci/) | 树、深度优先搜索           | Medium | 完成     |
-| 0034 |                                                              |                            |        |          |
-| 0035 |                                                              |                            |        |          |
-| 0036 | [面试题05.03.翻转数位](https://leetcode-cn.com/problems/reverse-bits-lcci/) | 位运算                     | Easy   |          |
-| 0037 |                                                              |                            |        |          |
-| 0038 |                                                              |                            |        |          |
-| 0039 | [面试题05.06.整数转换](https://leetcode-cn.com/problems/convert-integer-lcci/) | 位运算                     | Easy   | 完成     |
-|      | [面试题08.01.三步问题](https://leetcode-cn.com/problems/three-steps-problem-lcci/) | 动态规划                   | Easy   |          |
-|      | [面试题08.03.魔术索引](https://leetcode-cn.com/problems/magic-index-lcci/) | 数组、二分查找             | Easy   | 完成     |
-|      | [面试题08.07.无重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-i-lcci/) | 回溯算法                   | Medium | 完成     |
-|      | [面试题08.08.有重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-ii-lcci/) | 回溯算法                   | Medium | 完成     |
-|      | [面试题08.09.括号](https://leetcode-cn.com/problems/bracket-lcci/) | 字符串、回溯算法           | Medium | 完成     |
-|      | [面试题08.10.颜色填充](https://leetcode-cn.com/problems/color-fill-lcci/) | 深度优先搜索               | Easy   | 完成     |
-|      | [面试题08.12.八皇后](https://leetcode-cn.com/problems/eight-queens-lcci/) | 回溯算法                   | Hard   | 完成     |
-|      | [面试题10.01.合并排序的数组](https://leetcode-cn.com/problems/sorted-merge-lcci/) | 数组、双指针               | Easy   | 完成     |
-|      | [面试题10.03.搜索旋转数组](https://leetcode-cn.com/problems/search-rotate-array-lcci/) | 数组、二分查找             | Medium | 完成     |
-|      | [面试题10.09.排序矩阵查找](https://leetcode-cn.com/problems/sorted-matrix-search-lcci/) | 双指针、二分查找、分治算法 | Medium | 完成     |
+| 0034 | [面试题05.01.插入](https://leetcode-cn.com/problems/insert-into-bits-lcci/) | 位运算                     | Easy   | 完成     |
+| 0035 | [面试题05.02.二进制数转字符串](https://leetcode-cn.com/problems/bianry-number-to-string-lcci/) | 字符串                     | Medium | 完成     |
+| 0036 | [面试题05.03.翻转数位](https://leetcode-cn.com/problems/reverse-bits-lcci/) | 位运算                     | Easy   | 完成     |
+| 0037 | 04                                                           |                            |        |          |
+| 0038 | [面试题05.06.整数转换](https://leetcode-cn.com/problems/convert-integer-lcci/) | 位运算                     | Easy   | 完成     |
+| 0039 | [面试题05.07.配对交换](https://leetcode-cn.com/problems/exchange-lcci/) | 位运算                     | Easy   | 完成     |
+| 0040 | 08                                                           |                            |        |          |
+|      | 第5期                                                        |                            |        |          |
+| 0041 | [面试题08.01.三步问题](https://leetcode-cn.com/problems/three-steps-problem-lcci/) | 动态规划                   | Easy   | 完成     |
+| 0042 | [面试题08.02.迷路的机器人](https://leetcode-cn.com/problems/robot-in-a-grid-lcci/) | 动态规划                   | Medium |          |
+| 0043 | [面试题08.03.魔术索引](https://leetcode-cn.com/problems/magic-index-lcci/) | 数组、二分查找             | Easy   | 完成     |
+| 0044 | 04                                                           |                            |        |          |
+| 0045 | 05                                                           |                            |        |          |
+| 0046 | 06                                                           |                            |        |          |
+| 0047 | [面试题08.07.无重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-i-lcci/) | 回溯算法                   | Medium | 完成     |
+| 0048 | [面试题08.08.有重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-ii-lcci/) | 回溯算法                   | Medium | 完成     |
+| 0049 | [面试题08.09.括号](https://leetcode-cn.com/problems/bracket-lcci/) | 字符串、回溯算法           | Medium | 完成     |
+| 0050 | [面试题08.10.颜色填充](https://leetcode-cn.com/problems/color-fill-lcci/) | 深度优先搜索               | Easy   | 完成     |
+|      | 第6期                                                        |                            |        |          |
+| 0051 | [面试题08.11.硬币](https://leetcode-cn.com/problems/coin-lcci/) | 动态规划                   | Medium |          |
+| 0052 | [面试题08.12.八皇后](https://leetcode-cn.com/problems/eight-queens-lcci/) | 回溯算法                   | Hard   | 完成     |
+| 0053 | 13                                                           |                            |        |          |
+| 0054 | 14                                                           |                            |        |          |
+| 0055 | [面试题10.01.合并排序的数组](https://leetcode-cn.com/problems/sorted-merge-lcci/) | 数组、双指针               | Easy   | 完成     |
+| 0056 |                                                              |                            |        |          |
+| 0057 | [面试题10.03.搜索旋转数组](https://leetcode-cn.com/problems/search-rotate-array-lcci/) | 数组、二分查找             | Medium | 完成     |
+| 0058 | 05                                                           |                            |        |          |
+| 0059 | [面试题10.09.排序矩阵查找](https://leetcode-cn.com/problems/sorted-matrix-search-lcci/) | 双指针、二分查找、分治算法 | Medium | 完成     |
+| 0060 | 10                                                           |                            |        |          |
+|      | 第7期                                                        |                            |        |          |
+| 0061 |                                                              |                            |        |          |
+| 0062 | [面试题16.01.交换数字](https://leetcode-cn.com/problems/swap-numbers-lcci/) | 位运算、数学               | Medium | 完成     |
 |      | [面试题16.05.阶乘尾数](https://leetcode-cn.com/problems/factorial-zeros-lcci/) | 数学                       | Easy   | 完成     |
+|      | [面试题16.07.最大数值](https://leetcode-cn.com/problems/maximum-lcci/) | 位运算                     | Easy   | 完成     |
 |      | [面试题16.11.跳水板](https://leetcode-cn.com/problems/diving-board-lcci/) | 递归、记忆化               | Easy   | 完成     |
+|      | [面试题16.15.珠玑妙算](https://leetcode-cn.com/problems/master-mind-lcci/) | 数组                       | Easy   | 完成     |
 |      | [面试题16.17.连续数列](https://leetcode-cn.com/problems/contiguous-sequence-lcci/) | 数组、分治算法、动态规划   | Easy   | 完成     |
+|      | [面试题16.25.LRU缓存](https://leetcode-cn.com/problems/lru-cache-lcci/) | 设计                       | Medium | 完成     |
 |      | [面试题17.01.不用加号的加法](https://leetcode-cn.com/problems/add-without-plus-lcci/) | 位运算                     | Easy   | 完成     |
 |      | [面试题17.04.消失的数字](https://leetcode-cn.com/problems/missing-number-lcci/) | 位运算、数组、数字         | Easy   | 完成     |
 |      | [面试题17.09.第k个数](https://leetcode-cn.com/problems/get-kth-magic-number-lcci/) | 堆、队列、数学             | Medium | 完成     |
 |      | [面试题17.10.主要元素](https://leetcode-cn.com/problems/find-majority-element-lcci/) | 位运算、数组、分治算法     | Easy   | 完成     |
+|      | [面试题17.14.最小K个数](https://leetcode-cn.com/problems/smallest-k-lcci/) | 堆、排序、分治算法         | Medium | 完成     |
 |      | [面试题17.16.按摩师](https://leetcode-cn.com/problems/the-masseuse-lcci/) | 动态规划                   | Easy   | 完成     |
 |      | [面试题17.21.直方图的水量](https://leetcode-cn.com/problems/volume-of-histogram-lcci/) | 栈、数组、双指针           | Hard   | 完成     |

@@ -4,18 +4,19 @@
 
 ### 子数组
 
-| Title                                                        | Tag                    | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
-| [152.乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 数组、动态规划         | Medium | 完成     |
-| [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找 | Medium | 完成     |
-| [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表           | Medium | 完成     |
-| [581.最短无序连续子数组](https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/) | 数组                   | Easy   | 完成     |
-| [643.子数组最大平均数I](https://leetcode-cn.com/problems/maximum-average-subarray-i/) | 数组                   | Easy   | 完成     |
-| [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表           | Medium | 完成     |
-| [1460.通过翻转子数组使两个数组相等](https://leetcode-cn.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/) | 数组                   | Easy   | 完成     |
-| [1493.删掉一个元素以后全为1的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | 数组                   | Medium | 完成     |
-| [1508.子数组和排序后的区间和](https://leetcode-cn.com/problems/range-sum-of-sorted-subarray-sums/) | 排序、数组             | Medium | 完成     |
-| [1526.形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/) | 线段树                 | Hard   | 完成     |
+| Title                                                        | Tag                                    | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------------------------- | ------ | -------- |
+| [152.乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | 数组、动态规划                         | Medium | 完成     |
+| [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                 | Medium | 完成     |
+| [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表                           | Medium | 完成     |
+| [581.最短无序连续子数组](https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/) | 数组                                   | Easy   | 完成     |
+| [643.子数组最大平均数I](https://leetcode-cn.com/problems/maximum-average-subarray-i/) | 数组                                   | Easy   | 完成     |
+| [718.最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | 数组、哈希表、<br />二分查找、动态规划 | Medium | 完成     |
+| [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表                           | Medium | 完成     |
+| [1460.通过翻转子数组使两个数组相等](https://leetcode-cn.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/) | 数组                                   | Easy   | 完成     |
+| [1493.删掉一个元素以后全为1的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | 数组                                   | Medium | 完成     |
+| [1508.子数组和排序后的区间和](https://leetcode-cn.com/problems/range-sum-of-sorted-subarray-sums/) | 排序、数组                             | Medium | 完成     |
+| [1526.形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/) | 线段树                                 | Hard   | 完成     |
 
 ### 只出现一次的数字
 
@@ -164,12 +165,14 @@
 
 ### Top K问题
 
-| Title                                                        | Tag          | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ------------ | ------ | -------- |
-| [703.数据流中的第K大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/) | 堆           | Easy   | 完成     |
-| [215.数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | 堆、分治算法 | Medium | 完成     |
-| [347.前K个高频元素](https://leetcode-cn.com/problems/top-k-frequent-elements/) | 堆、哈希表   | Medium | 完成     |
-| [378.有序矩阵中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) | 堆、二分查找 | Medium | 完成     |
+| Title                                                        | Tag                | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------ | ------ | -------- |
+| [703.数据流中的第K大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/) | 堆                 | Easy   | 完成     |
+| [215.数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | 堆、分治算法       | Medium | 完成     |
+| [347.前K个高频元素](https://leetcode-cn.com/problems/top-k-frequent-elements/) | 堆、哈希表         | Medium | 完成     |
+| [378.有序矩阵中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) | 堆、二分查找       | Medium | 完成     |
+| [面试题17.09.第k个数](https://leetcode-cn.com/problems/get-kth-magic-number-lcci/) | 堆、队列、数学     | Medium | 完成     |
+| [面试题17.14.最小K个数](https://leetcode-cn.com/problems/smallest-k-lcci/) | 堆、排序、分治算法 | Medium | 完成     |
 
 ### 博弈问题
 

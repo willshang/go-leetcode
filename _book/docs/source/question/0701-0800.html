@@ -799,7 +799,47 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="0701-0800-easy">0701-0800-Easy</h1>
+                                <pre><code>func openLock(deadends []string, target string) int {
+   m := make(map[string]int)
+   m[&quot;0000&quot;] = 0
+   for i := 0; i &lt; len(deadends); i++ {
+      if deadends[i] == &quot;0000&quot; || deadends[i] == target {
+         return -1
+      }
+      m[deadends[i]] = 0
+   }
+   if target == &quot;0000&quot; {
+      return 0
+   }
+   queue := make([]string, 0)
+   queue = append(queue, &quot;0000&quot;)
+   res := 0
+   dir := []int{1, -1}
+   for len(queue) &gt; 0 {
+      res++
+      length := len(queue)
+      for i := 0; i &lt; length; i++ {
+         str := queue[i]
+         for j := 0; j &lt; 4; j++ {
+            for k := 0; k &lt; len(dir); k++ {
+               char := string((int(str[j]-&apos;0&apos;)+10+dir[k])%10 + &apos;0&apos;)
+               newStr := str[:j] + char + str[j+1:]
+               if _, ok := m[newStr]; ok {
+                  continue
+               }
+               queue = append(queue, newStr)
+               m[newStr] = 1
+               if newStr == target {
+                  return res
+               }
+            }
+         }
+      }
+      queue = queue[length:]
+   }
+   return -1
+}
+</code></pre><h1 id="0701-0800-easy">0701-0800-Easy</h1>
 <ul>
 <li><a href="#0701-0800-easy">0701-0800-Easy</a><ul>
 <li><a href="#703&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;k&#x5927;&#x5143;&#x7D20;2">703.&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;K&#x5927;&#x5143;&#x7D20;(2)</a></li>
@@ -3060,15 +3100,19 @@ A &#x7684;&#x65CB;&#x8F6C;&#x64CD;&#x4F5C;&#x5C31;&#x662F;&#x5C06; A &#x6700;&#x
 }
 </code></pre>
 <h1 id="0701-0800-medium">0701-0800-Medium</h1>
-<h2 id="718&#x6700;&#x957F;&#x91CD;&#x590D;&#x5B50;&#x6570;&#x7EC4;">718.&#x6700;&#x957F;&#x91CD;&#x590D;&#x5B50;&#x6570;&#x7EC4;</h2>
-<h3 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h3>
+<h2 id="718&#x6700;&#x957F;&#x91CD;&#x590D;&#x5B50;&#x6570;&#x7EC4;3">718.&#x6700;&#x957F;&#x91CD;&#x590D;&#x5B50;&#x6570;&#x7EC4;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
 <pre><code>&#x7ED9;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#x6570;&#x7EC4; A &#x548C; B &#xFF0C;&#x8FD4;&#x56DE;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x516C;&#x5171;&#x7684;&#x3001;&#x957F;&#x5EA6;&#x6700;&#x957F;&#x7684;&#x5B50;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x3002;
 &#x793A;&#x4F8B;&#xFF1A;&#x8F93;&#x5165;&#xFF1A;A: [1,2,3,2,1] B: [3,2,1,4,7]
 &#x8F93;&#x51FA;&#xFF1A;3
 &#x89E3;&#x91CA;&#xFF1A;&#x957F;&#x5EA6;&#x6700;&#x957F;&#x7684;&#x516C;&#x5171;&#x5B50;&#x6570;&#x7EC4;&#x662F; [3, 2, 1] &#x3002;
 &#x63D0;&#x793A;&#xFF1A;1 &lt;= len(A), len(B) &lt;= 1000
     0 &lt;= A[i], B[i] &lt; 100
-</code></pre><h3 id="&#x89E3;&#x9898;&#x601D;&#x8DEF;">&#x89E3;&#x9898;&#x601D;&#x8DEF;</h3>
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -3081,14 +3125,108 @@ A &#x7684;&#x65CB;&#x8F6C;&#x64CD;&#x4F5C;&#x5C31;&#x662F;&#x5C06; A &#x6700;&#x
 <tbody>
 <tr>
 <td>01</td>
-<td>&#x6808;&#x8F85;&#x52A9;</td>
+<td>&#x52A8;&#x6001;&#x89C4;&#x5212;</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x52A8;&#x6001;&#x89C4;&#x5212;</td>
+<td>O(n^2)</td>
 <td>O(n)</td>
-<td>O(n)</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;</td>
+<td>O(n^2)</td>
+<td>O(1)</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-go">
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> findLength(A []<span class="hljs-keyword">int</span>, B []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    n, m := <span class="hljs-built_in">len</span>(A), <span class="hljs-built_in">len</span>(B)
+    dp := <span class="hljs-built_in">make</span>([][]<span class="hljs-keyword">int</span>, n+<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt;= n; i++ {
+        dp[i] = <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, m+<span class="hljs-number">1</span>)
+    }
+    res := math.MinInt32
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt;= n; i++ {
+        <span class="hljs-keyword">for</span> j := <span class="hljs-number">1</span>; j &lt;= m; j++ {
+            <span class="hljs-keyword">if</span> A[i<span class="hljs-number">-1</span>] == B[j<span class="hljs-number">-1</span>] {
+                dp[i][j] = dp[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>] + <span class="hljs-number">1</span>
+            }
+            <span class="hljs-keyword">if</span> dp[i][j] &gt; res {
+                res = dp[i][j]
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> res
+}
 
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">func</span> findLength(A []<span class="hljs-keyword">int</span>, B []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    n, m := <span class="hljs-built_in">len</span>(A), <span class="hljs-built_in">len</span>(B)
+    dp := <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, m+<span class="hljs-number">1</span>)
+    res := math.MinInt32
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt;= n; i++ {
+        <span class="hljs-keyword">for</span> j := m; j &gt;= <span class="hljs-number">1</span>; j-- {
+            <span class="hljs-keyword">if</span> A[i<span class="hljs-number">-1</span>] == B[j<span class="hljs-number">-1</span>] {
+                dp[j] = dp[j<span class="hljs-number">-1</span>] + <span class="hljs-number">1</span>
+            } <span class="hljs-keyword">else</span> {
+                dp[j] = <span class="hljs-number">0</span> <span class="hljs-comment">// &#x9700;&#x8981;&#x6E05;0</span>
+            }
+            <span class="hljs-keyword">if</span> dp[j] &gt; res {
+                res = dp[j]
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> res
+}
+
+# <span class="hljs-number">3</span>
+<span class="hljs-keyword">func</span> findLength(A []<span class="hljs-keyword">int</span>, B []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    n, m := <span class="hljs-built_in">len</span>(A), <span class="hljs-built_in">len</span>(B)
+    res := math.MinInt32
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; n; i++ {
+        length := min(n-i, m)
+        maxLength := getMaxLength(A, B, i, <span class="hljs-number">0</span>, length)
+        res = max(res, maxLength)
+    }
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; m; i++ {
+        length := min(n, m-i)
+        maxLength := getMaxLength(A, B, <span class="hljs-number">0</span>, i, length)
+        res = max(res, maxLength)
+    }
+    <span class="hljs-keyword">return</span> res
+}
+
+<span class="hljs-keyword">func</span> getMaxLength(A, B []<span class="hljs-keyword">int</span>, a, b <span class="hljs-keyword">int</span>, length <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    res := <span class="hljs-number">0</span>
+    count := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; length; i++ {
+        <span class="hljs-keyword">if</span> A[a+i] == B[b+i] {
+            count++
+        } <span class="hljs-keyword">else</span> {
+            count = <span class="hljs-number">0</span>
+        }
+        res = max(res, count)
+    }
+    <span class="hljs-keyword">return</span> res
+}
+
+<span class="hljs-keyword">func</span> max(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> a &gt; b {
+        <span class="hljs-keyword">return</span> a
+    }
+    <span class="hljs-keyword">return</span> b
+}
+
+<span class="hljs-keyword">func</span> min(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> a &gt; b {
+        <span class="hljs-keyword">return</span> b
+    }
+    <span class="hljs-keyword">return</span> a
+}
 </code></pre>
 <h2 id="739&#x6BCF;&#x65E5;&#x6E29;&#x5EA6;3">739.&#x6BCF;&#x65E5;&#x6E29;&#x5EA6;(3)</h2>
 <ul>
@@ -3186,6 +3324,96 @@ A &#x7684;&#x65CB;&#x8F6C;&#x64CD;&#x4F5C;&#x5C31;&#x662F;&#x5C06; A &#x6700;&#x
     <span class="hljs-keyword">return</span> T
 }
 </code></pre>
+<h2 id="752&#x6253;&#x5F00;&#x8F6C;&#x76D8;&#x9501;1">752.&#x6253;&#x5F00;&#x8F6C;&#x76D8;&#x9501;(1)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x4F60;&#x6709;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x56DB;&#x4E2A;&#x5706;&#x5F62;&#x62E8;&#x8F6E;&#x7684;&#x8F6C;&#x76D8;&#x9501;&#x3002;
+&#x6BCF;&#x4E2A;&#x62E8;&#x8F6E;&#x90FD;&#x6709;10&#x4E2A;&#x6570;&#x5B57;&#xFF1A; &apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos; &#x3002;
+&#x6BCF;&#x4E2A;&#x62E8;&#x8F6E;&#x53EF;&#x4EE5;&#x81EA;&#x7531;&#x65CB;&#x8F6C;&#xFF1A;&#x4F8B;&#x5982;&#x628A; &apos;9&apos; &#x53D8;&#x4E3A;  &apos;0&apos;&#xFF0C;&apos;0&apos; &#x53D8;&#x4E3A; &apos;9&apos; &#x3002;&#x6BCF;&#x6B21;&#x65CB;&#x8F6C;&#x90FD;&#x53EA;&#x80FD;&#x65CB;&#x8F6C;&#x4E00;&#x4E2A;&#x62E8;&#x8F6E;&#x7684;&#x4E00;&#x4F4D;&#x6570;&#x5B57;&#x3002;
+&#x9501;&#x7684;&#x521D;&#x59CB;&#x6570;&#x5B57;&#x4E3A; &apos;0000&apos; &#xFF0C;&#x4E00;&#x4E2A;&#x4EE3;&#x8868;&#x56DB;&#x4E2A;&#x62E8;&#x8F6E;&#x7684;&#x6570;&#x5B57;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;
+&#x5217;&#x8868; deadends &#x5305;&#x542B;&#x4E86;&#x4E00;&#x7EC4;&#x6B7B;&#x4EA1;&#x6570;&#x5B57;&#xFF0C;&#x4E00;&#x65E6;&#x62E8;&#x8F6E;&#x7684;&#x6570;&#x5B57;&#x548C;&#x5217;&#x8868;&#x91CC;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x76F8;&#x540C;&#xFF0C;
+&#x8FD9;&#x4E2A;&#x9501;&#x5C06;&#x4F1A;&#x88AB;&#x6C38;&#x4E45;&#x9501;&#x5B9A;&#xFF0C;&#x65E0;&#x6CD5;&#x518D;&#x88AB;&#x65CB;&#x8F6C;&#x3002;
+&#x5B57;&#x7B26;&#x4E32; target &#x4EE3;&#x8868;&#x53EF;&#x4EE5;&#x89E3;&#x9501;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x7ED9;&#x51FA;&#x6700;&#x5C0F;&#x7684;&#x65CB;&#x8F6C;&#x6B21;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x65E0;&#x8BBA;&#x5982;&#x4F55;&#x4E0D;&#x80FD;&#x89E3;&#x9501;&#xFF0C;&#x8FD4;&#x56DE; -1&#x3002;
+&#x793A;&#x4F8B; 1:&#x8F93;&#x5165;&#xFF1A;deadends = [&quot;0201&quot;,&quot;0101&quot;,&quot;0102&quot;,&quot;1212&quot;,&quot;2002&quot;], target = &quot;0202&quot; &#x8F93;&#x51FA;&#xFF1A;6
+&#x89E3;&#x91CA;&#xFF1A;&#x53EF;&#x80FD;&#x7684;&#x79FB;&#x52A8;&#x5E8F;&#x5217;&#x4E3A; &quot;0000&quot; -&gt; &quot;1000&quot; -&gt; &quot;1100&quot; -&gt; &quot;1200&quot; -&gt; &quot;1201&quot; -&gt; &quot;1202&quot; -&gt; &quot;0202&quot;&#x3002;
+&#x6CE8;&#x610F; &quot;0000&quot; -&gt; &quot;0001&quot; -&gt; &quot;0002&quot; -&gt; &quot;0102&quot; -&gt; &quot;0202&quot; &#x8FD9;&#x6837;&#x7684;&#x5E8F;&#x5217;&#x662F;&#x4E0D;&#x80FD;&#x89E3;&#x9501;&#x7684;&#xFF0C;
+&#x56E0;&#x4E3A;&#x5F53;&#x62E8;&#x52A8;&#x5230; &quot;0102&quot; &#x65F6;&#x8FD9;&#x4E2A;&#x9501;&#x5C31;&#x4F1A;&#x88AB;&#x9501;&#x5B9A;&#x3002;
+&#x793A;&#x4F8B; 2:&#x8F93;&#x5165;: deadends = [&quot;8888&quot;], target = &quot;0009&quot; &#x8F93;&#x51FA;&#xFF1A;1
+&#x89E3;&#x91CA;&#xFF1A; &#x628A;&#x6700;&#x540E;&#x4E00;&#x4F4D;&#x53CD;&#x5411;&#x65CB;&#x8F6C;&#x4E00;&#x6B21;&#x5373;&#x53EF; &quot;0000&quot; -&gt; &quot;0009&quot;&#x3002;
+&#x793A;&#x4F8B; 3:&#x8F93;&#x5165;: deadends = [&quot;8887&quot;,&quot;8889&quot;,&quot;8878&quot;,&quot;8898&quot;,&quot;8788&quot;,&quot;8988&quot;,&quot;7888&quot;,&quot;9888&quot;], 
+target = &quot;8888&quot; &#x8F93;&#x51FA;&#xFF1A;-1 
+&#x89E3;&#x91CA;&#xFF1A;&#x65E0;&#x6CD5;&#x65CB;&#x8F6C;&#x5230;&#x76EE;&#x6807;&#x6570;&#x5B57;&#x4E14;&#x4E0D;&#x88AB;&#x9501;&#x5B9A;&#x3002;
+&#x793A;&#x4F8B; 4:&#x8F93;&#x5165;: deadends = [&quot;0000&quot;], target = &quot;8888&quot; &#x8F93;&#x51FA;&#xFF1A;-1
+&#x63D0;&#x793A;&#xFF1A;
+    &#x6B7B;&#x4EA1;&#x5217;&#x8868; deadends &#x7684;&#x957F;&#x5EA6;&#x8303;&#x56F4;&#x4E3A; [1, 500]&#x3002;
+    &#x76EE;&#x6807;&#x6570;&#x5B57; target &#x4E0D;&#x4F1A;&#x5728; deadends &#x4E4B;&#x4E2D;&#x3002;
+    &#x6BCF;&#x4E2A; deadends &#x548C; target &#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6570;&#x5B57;&#x4F1A;&#x5728; 10,000 &#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x60C5;&#x51B5; &apos;0000&apos; &#x5230; &apos;9999&apos; &#x4E2D;&#x4EA7;&#x751F;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+<th>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> openLock(deadends []<span class="hljs-keyword">string</span>, target <span class="hljs-keyword">string</span>) <span class="hljs-keyword">int</span> {
+    m := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span>)
+    m[<span class="hljs-string">&quot;0000&quot;</span>] = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(deadends); i++ {
+        <span class="hljs-keyword">if</span> deadends[i] == <span class="hljs-string">&quot;0000&quot;</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+        }
+        m[deadends[i]] = <span class="hljs-number">0</span>
+    }
+    <span class="hljs-keyword">if</span> target == <span class="hljs-string">&quot;0000&quot;</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+    }
+    <span class="hljs-keyword">if</span> _, ok := m[target]; ok {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+    }
+    queue := <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">string</span>, <span class="hljs-number">0</span>)
+    queue = <span class="hljs-built_in">append</span>(queue, <span class="hljs-string">&quot;0000&quot;</span>)
+    res := <span class="hljs-number">0</span>
+    dir := []<span class="hljs-keyword">int</span>{<span class="hljs-number">1</span>, <span class="hljs-number">-1</span>}
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(queue) &gt; <span class="hljs-number">0</span> {
+        res++
+        length := <span class="hljs-built_in">len</span>(queue)
+        <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; length; i++ {
+            str := queue[i]
+            <span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">4</span>; j++ {
+                <span class="hljs-keyword">for</span> k := <span class="hljs-number">0</span>; k &lt; <span class="hljs-built_in">len</span>(dir); k++ {
+                    char := <span class="hljs-keyword">string</span>((<span class="hljs-keyword">int</span>(str[j]-<span class="hljs-string">&apos;0&apos;</span>)+<span class="hljs-number">10</span>+dir[k])%<span class="hljs-number">10</span> + <span class="hljs-string">&apos;0&apos;</span>)
+                    newStr := str[:j] + char + str[j+<span class="hljs-number">1</span>:]
+                    <span class="hljs-keyword">if</span> _, ok := m[newStr]; ok {
+                        <span class="hljs-keyword">continue</span>
+                    }
+                    queue = <span class="hljs-built_in">append</span>(queue, newStr)
+                    m[newStr] = <span class="hljs-number">1</span>
+                    <span class="hljs-keyword">if</span> newStr == target {
+                        <span class="hljs-keyword">return</span> res
+                    }
+                }
+            }
+        }
+        queue = queue[length:]
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>
+}
+</code></pre>
 <h2 id="779&#x7B2C;k&#x4E2A;&#x8BED;&#x6CD5;&#x7B26;&#x53F7;3">779.&#x7B2C;K&#x4E2A;&#x8BED;&#x6CD5;&#x7B26;&#x53F7;(3)</h2>
 <ul>
 <li>&#x9898;&#x76EE;</li>
@@ -3266,7 +3494,7 @@ A &#x7684;&#x65CB;&#x8F6C;&#x64CD;&#x4F5C;&#x5C31;&#x662F;&#x5C06; A &#x6700;&#x
 }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Zhi2014 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-08-13 23:37:47
+2020-08-18 23:57:26
 </span></footer>
                                 
                                 </section>
@@ -3310,7 +3538,7 @@ A &#x7684;&#x65CB;&#x8F6C;&#x64CD;&#x4F5C;&#x5C31;&#x662F;&#x5C06; A &#x6700;&#x
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"0701-0800","level":"1.2.8","depth":2,"next":{"title":"0801-0900","level":"1.2.9","depth":2,"path":"docs/source/question/0801-0900.md","ref":"docs/source/question/0801-0900.md","articles":[]},"previous":{"title":"0601-0700","level":"1.2.7","depth":2,"path":"docs/source/question/0601-0700.md","ref":"docs/source/question/0601-0700.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0701-0800.md","mtime":"2020-08-13T15:37:47.250Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-17T15:05:52.063Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"0701-0800","level":"1.2.8","depth":2,"next":{"title":"0801-0900","level":"1.2.9","depth":2,"path":"docs/source/question/0801-0900.md","ref":"docs/source/question/0801-0900.md","articles":[]},"previous":{"title":"0601-0700","level":"1.2.7","depth":2,"path":"docs/source/question/0601-0700.md","ref":"docs/source/question/0601-0700.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0701-0800.md","mtime":"2020-08-18T15:57:26.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-18T16:21:29.231Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
