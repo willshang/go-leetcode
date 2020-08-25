@@ -85,4 +85,6 @@
 | 81(相似) | [62.不同路径](https://leetcode-cn.com/problems/unique-paths/) Medium[<br />63.不同路径II](https://leetcode-cn.com/problems/unique-paths-ii/) Medium | [面试题08.02.迷路的机器人](https://leetcode-cn.com/problems/robot-in-a-grid-lcci/) Medium |
 | 82 | [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) Easy | [面试题04.02.最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/) Easy |
 | 83 | [232.用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) Easy | [面试题03.04.化栈为队](https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/) Easy |
+| 84(相似) | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) Medium | [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) Medium |
+| 85 | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) Medium | [1035.不相交的线](https://leetcode-cn.com/problems/uncrossed-lines/) Medium |
 

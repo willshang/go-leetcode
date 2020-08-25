@@ -34,6 +34,7 @@
     - [中级算法](docs/source/classification/medium.md)
     - [高级算法](docs/source/classification/hard.md)
     - [热题100](docs/source/classification/hot-100.md)
+    - [腾讯精选练习50题-完成](docs/source/classification/50.md)
     - [数据结构-数组与字符串-完成](docs/source/classification/data-array_and_string.md)
     - [数据结构-队列与栈](docs/source/classification/data-queue-stack.md)
     - [数据结构-递归-完成](docs/source/classification/data-recursion.md)

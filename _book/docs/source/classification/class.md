@@ -58,6 +58,13 @@
 
 ## 2.字符串
 
+### 回文字符串(高频)(动态规划/中心扩展/马拉车算法)
+
+| Title                                                        | Tag              | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------- | ------ | -------- |
+| [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划 | Medium | 完成     |
+| [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | 字符串、动态规划 | Medium | 完成     |
+
 ### 反转字符串
 
 | Title                                                        | Tag            | 难度 | 完成情况 |
@@ -181,6 +188,7 @@
 | Title                                                        | Tag      | 难度 | 完成情况 |
 | ------------------------------------------------------------ | -------- | ---- | -------- |
 | [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划 | Hard | 完成     |
+| [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划 | Hard | 完成     |
 
 #### Nim游戏
 
@@ -220,3 +228,14 @@
 | [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表 | Medium | 完成     |
 | [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表 | Medium | 完成     |
 |                                                              |              |        |          |
+
+### 二分查找-最大化最小值、最小化最大值
+
+| Title                                                        | Tag                | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------ | ------ | -------- |
+| [1552.两球之间的磁力](https://leetcode-cn.com/problems/magnetic-force-between-two-balls/) | 数组、二分查找     | Medium | 完成     |
+| [410.分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 二分查找、动态规划 | Hard   | 完成     |
+| 1482                                                         |                    |        |          |
+| 1011                                                         |                    |        |          |
+| 875                                                          |                    |        |          |
+| lcp12                                                        |                    |        |          |
