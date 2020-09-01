@@ -14,8 +14,8 @@ func maxCoins(piles []int) int {
 	res := 0
 	sort.Ints(piles)
 	left := 0
-	right := len(piles)-1
-	for left < right{
+	right := len(piles) - 1
+	for left < right {
 		left++
 		right--
 		res = res + piles[right]

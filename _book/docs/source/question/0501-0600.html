@@ -400,9 +400,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.21" data-path="lcci.html">
+        <li class="chapter " data-level="1.2.21" data-path="offer.html">
             
-                <a href="lcci.html">
+                <a href="offer.html">
             
                     
                     程序员面试金典
@@ -515,7 +515,7 @@
                 <a href="../classification/easy.html">
             
                     
-                    初级算法-完成
+                    初级算法(49)-完成
             
                 </a>
             
@@ -567,7 +567,7 @@
                 <a href="../classification/50.html">
             
                     
-                    腾讯精选练习50题-完成
+                    腾讯精选练习50题(50)-完成
             
                 </a>
             
@@ -580,7 +580,7 @@
                 <a href="../classification/data-array_and_string.html">
             
                     
-                    数据结构-数组与字符串-完成
+                    数据结构-数组与字符串(22)-完成
             
                 </a>
             
@@ -3177,8 +3177,10 @@ M &#x4E2D;&#x6700;&#x5927;&#x7684;&#x6574;&#x6570;&#x662F; 2, &#x800C;&#x4E14; M
 }
 </code></pre>
 <h1 id="0501-0600-medium">0501-0600-Medium</h1>
-<h2 id="516&#x6700;&#x957F;&#x56DE;&#x6587;&#x5B50;&#x5E8F;&#x5217;">516.&#x6700;&#x957F;&#x56DE;&#x6587;&#x5B50;&#x5E8F;&#x5217;</h2>
-<h3 id="&#x9898;&#x76EE;">&#x9898;&#x76EE;</h3>
+<h2 id="516&#x6700;&#x957F;&#x56DE;&#x6587;&#x5B50;&#x5E8F;&#x5217;3">516.&#x6700;&#x957F;&#x56DE;&#x6587;&#x5B50;&#x5E8F;&#x5217;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
 <pre><code>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; s &#xFF0C;&#x627E;&#x5230;&#x5176;&#x4E2D;&#x6700;&#x957F;&#x7684;&#x56DE;&#x6587;&#x5B50;&#x5E8F;&#x5217;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x8BE5;&#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x53EF;&#x4EE5;&#x5047;&#x8BBE; s &#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x4E3A; 1000 &#x3002;
 &#x793A;&#x4F8B; 1:&#x8F93;&#x5165;:&quot;bbbab&quot;&#x8F93;&#x51FA;:4
 &#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x6700;&#x957F;&#x56DE;&#x6587;&#x5B50;&#x5E8F;&#x5217;&#x4E3A; &quot;bbbb&quot;&#x3002;
@@ -3187,7 +3189,9 @@ M &#x4E2D;&#x6700;&#x5927;&#x7684;&#x6574;&#x6570;&#x662F; 2, &#x800C;&#x4E14; M
 &#x63D0;&#x793A;&#xFF1A;
     1 &lt;= s.length &lt;= 1000
     s &#x53EA;&#x5305;&#x542B;&#x5C0F;&#x5199;&#x82F1;&#x6587;&#x5B57;&#x6BCD;
-</code></pre><h3 id="&#x89E3;&#x9898;&#x601D;&#x8DEF;">&#x89E3;&#x9898;&#x601D;&#x8DEF;</h3>
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -3204,10 +3208,120 @@ M &#x4E2D;&#x6700;&#x5927;&#x7684;&#x6574;&#x6570;&#x662F; 2, &#x800C;&#x4E14; M
 <td>O(n^2)</td>
 <td>O(n^2)</td>
 </tr>
+<tr>
+<td>02</td>
+<td>&#x52A8;&#x6001;&#x89C4;&#x5212;</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x9012;&#x5F52;</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+</tr>
 </tbody>
 </table>
-<pre><code class="lang-go">
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> longestPalindromeSubseq(s <span class="hljs-keyword">string</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s) &lt;= <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(s)
+    }
+    n := <span class="hljs-built_in">len</span>(s)
+    dp := <span class="hljs-built_in">make</span>([][]<span class="hljs-keyword">int</span>, n)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; n; i++ {
+        dp[i] = <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, n)
+        dp[i][i] = <span class="hljs-number">1</span>
+    }
+    <span class="hljs-keyword">for</span> i := n - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i-- {
+        <span class="hljs-keyword">for</span> j := i + <span class="hljs-number">1</span>; j &lt; n; j++ {
+            <span class="hljs-keyword">if</span> s[i] == s[j] {
+                dp[i][j] = dp[i+<span class="hljs-number">1</span>][j<span class="hljs-number">-1</span>] + <span class="hljs-number">2</span> <span class="hljs-comment">// &#x5185;&#x5C42;+2</span>
+            } <span class="hljs-keyword">else</span> {
+                dp[i][j] = max(dp[i+<span class="hljs-number">1</span>][j], dp[i][j<span class="hljs-number">-1</span>])
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> dp[<span class="hljs-number">0</span>][n<span class="hljs-number">-1</span>]
+}
 
+<span class="hljs-keyword">func</span> max(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> a &gt; b {
+        <span class="hljs-keyword">return</span> a
+    }
+    <span class="hljs-keyword">return</span> b
+}
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">func</span> longestPalindromeSubseq(s <span class="hljs-keyword">string</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s) &lt;= <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(s)
+    }
+    n := <span class="hljs-built_in">len</span>(s)
+    dp := <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, n)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; n; i++ {
+        dp[i] = <span class="hljs-number">1</span>
+    }
+    <span class="hljs-keyword">for</span> i := n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i-- {
+        prev := <span class="hljs-number">0</span>
+        <span class="hljs-keyword">for</span> j := i + <span class="hljs-number">1</span>; j &lt; n; j++ {
+            temp := dp[j]
+            <span class="hljs-keyword">if</span> s[i] == s[j] {
+                dp[j] = prev + <span class="hljs-number">2</span> <span class="hljs-comment">// &#x5185;&#x5C42;+2</span>
+            } <span class="hljs-keyword">else</span> {
+                dp[j] = max(dp[j], dp[j<span class="hljs-number">-1</span>])
+            }
+            prev = temp
+        }
+    }
+    <span class="hljs-keyword">return</span> dp[n<span class="hljs-number">-1</span>]
+}
+
+<span class="hljs-keyword">func</span> max(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> a &gt; b {
+        <span class="hljs-keyword">return</span> a
+    }
+    <span class="hljs-keyword">return</span> b
+}
+
+# <span class="hljs-number">3</span>
+<span class="hljs-keyword">var</span> dp [][]<span class="hljs-keyword">int</span>
+
+<span class="hljs-keyword">func</span> longestPalindromeSubseq(s <span class="hljs-keyword">string</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s) &lt;= <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>(s)
+    }
+    n := <span class="hljs-built_in">len</span>(s)
+    dp = <span class="hljs-built_in">make</span>([][]<span class="hljs-keyword">int</span>, n)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; n; i++ {
+        dp[i] = <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, n)
+    }
+    <span class="hljs-keyword">return</span> dfs(s, <span class="hljs-number">0</span>, n<span class="hljs-number">-1</span>)
+}
+
+<span class="hljs-keyword">func</span> dfs(s <span class="hljs-keyword">string</span>, i, j <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> i == j {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    }
+    <span class="hljs-keyword">if</span> i &gt; j {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+    }
+    <span class="hljs-keyword">if</span> dp[i][j] &gt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> dp[i][j]
+    }
+    <span class="hljs-keyword">if</span> s[i] == s[j] {
+        dp[i][j] = dfs(s, i+<span class="hljs-number">1</span>, j<span class="hljs-number">-1</span>) + <span class="hljs-number">2</span>
+    } <span class="hljs-keyword">else</span> {
+        dp[i][j] = max(dfs(s, i+<span class="hljs-number">1</span>, j), dfs(s, i, j<span class="hljs-number">-1</span>))
+    }
+    <span class="hljs-keyword">return</span> dp[i][j]
+}
+
+<span class="hljs-keyword">func</span> max(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> a &gt; b {
+        <span class="hljs-keyword">return</span> a
+    }
+    <span class="hljs-keyword">return</span> b
+}
 </code></pre>
 <h2 id="54201&#x77E9;&#x9635;3">542.01&#x77E9;&#x9635;(3)</h2>
 <ul>
@@ -3504,8 +3618,100 @@ M &#x4E2D;&#x6700;&#x5927;&#x7684;&#x6574;&#x6570;&#x662F; 2, &#x800C;&#x4E14; M
     <span class="hljs-keyword">return</span> res
 }
 </code></pre>
+<h2 id="567&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6392;&#x5217;2">567.&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6392;&#x5217;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x7ED9;&#x5B9A;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32; s1 &#x548C; s2&#xFF0C;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x5224;&#x65AD; s2 &#x662F;&#x5426;&#x5305;&#x542B; s1 &#x7684;&#x6392;&#x5217;&#x3002;
+&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6392;&#x5217;&#x4E4B;&#x4E00;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5B50;&#x4E32;&#x3002;
+&#x793A;&#x4F8B;1:&#x8F93;&#x5165;: s1 = &quot;ab&quot; s2 = &quot;eidbaooo&quot; &#x8F93;&#x51FA;: True
+&#x89E3;&#x91CA;: s2 &#x5305;&#x542B; s1 &#x7684;&#x6392;&#x5217;&#x4E4B;&#x4E00; (&quot;ba&quot;).
+&#x793A;&#x4F8B;2:&#x8F93;&#x5165;: s1= &quot;ab&quot; s2 = &quot;eidboaoo&quot; &#x8F93;&#x51FA;: False
+&#x6CE8;&#x610F;&#xFF1A;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x53EA;&#x5305;&#x542B;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;
+&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x90FD;&#x5728; [1, 10,000] &#x4E4B;&#x95F4;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+<th>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> checkInclusion(s1 <span class="hljs-keyword">string</span>, s2 <span class="hljs-keyword">string</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s1) &gt; <span class="hljs-built_in">len</span>(s2) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    arr1, arr2 := [<span class="hljs-number">26</span>]<span class="hljs-keyword">int</span>{}, [<span class="hljs-number">26</span>]<span class="hljs-keyword">int</span>{}
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(s1); i++ {
+        arr1[s1[i]-<span class="hljs-string">&apos;a&apos;</span>]++
+        arr2[s2[i]-<span class="hljs-string">&apos;a&apos;</span>]++
+    }
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(s2)-<span class="hljs-built_in">len</span>(s1); i++ {
+        <span class="hljs-keyword">if</span> arr1 == arr2 {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+        }
+        arr2[s2[i]-<span class="hljs-string">&apos;a&apos;</span>]--
+        arr2[s2[i+<span class="hljs-built_in">len</span>(s1)]-<span class="hljs-string">&apos;a&apos;</span>]++
+    }
+    <span class="hljs-keyword">return</span> arr1 == arr2
+}
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">func</span> checkInclusion(s1 <span class="hljs-keyword">string</span>, s2 <span class="hljs-keyword">string</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s1) &gt; <span class="hljs-built_in">len</span>(s2) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    m1, m2 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">byte</span>]<span class="hljs-keyword">int</span>), <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">byte</span>]<span class="hljs-keyword">int</span>)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(s1); i++ {
+        m1[s1[i]-<span class="hljs-string">&apos;a&apos;</span>]++
+        m2[s2[i]-<span class="hljs-string">&apos;a&apos;</span>]++
+    }
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(s2)-<span class="hljs-built_in">len</span>(s1); i++ {
+        <span class="hljs-keyword">if</span> compare(m1, m2) {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+        }
+        m2[s2[i]-<span class="hljs-string">&apos;a&apos;</span>]--
+        <span class="hljs-keyword">if</span> m2[s2[i]-<span class="hljs-string">&apos;a&apos;</span>] == <span class="hljs-number">0</span> {
+            <span class="hljs-built_in">delete</span>(m2, s2[i]-<span class="hljs-string">&apos;a&apos;</span>)
+        }
+        m2[s2[i+<span class="hljs-built_in">len</span>(s1)]-<span class="hljs-string">&apos;a&apos;</span>]++
+    }
+    <span class="hljs-keyword">return</span> compare(m1, m2)
+}
+
+<span class="hljs-keyword">func</span> compare(m1, m2 <span class="hljs-keyword">map</span>[<span class="hljs-keyword">byte</span>]<span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(m1) != <span class="hljs-built_in">len</span>(m2) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    <span class="hljs-keyword">for</span> k := <span class="hljs-keyword">range</span> m1 {
+        <span class="hljs-keyword">if</span> m2[k] != m1[k] {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+}
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Zhi2014 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-08-26 00:09:40
+2020-08-30 16:30:12
 </span></footer>
                                 
                                 </section>
@@ -3549,7 +3755,7 @@ M &#x4E2D;&#x6700;&#x5927;&#x7684;&#x6574;&#x6570;&#x662F; 2, &#x800C;&#x4E14; M
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"0501-0600","level":"1.2.6","depth":2,"next":{"title":"0601-0700","level":"1.2.7","depth":2,"path":"docs/source/question/0601-0700.md","ref":"docs/source/question/0601-0700.md","articles":[]},"previous":{"title":"0401-0500","level":"1.2.5","depth":2,"path":"docs/source/question/0401-0500.md","ref":"docs/source/question/0401-0500.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0501-0600.md","mtime":"2020-08-25T16:09:40.516Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-25T16:11:18.388Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"0501-0600","level":"1.2.6","depth":2,"next":{"title":"0601-0700","level":"1.2.7","depth":2,"path":"docs/source/question/0601-0700.md","ref":"docs/source/question/0601-0700.md","articles":[]},"previous":{"title":"0401-0500","level":"1.2.5","depth":2,"path":"docs/source/question/0401-0500.md","ref":"docs/source/question/0401-0500.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/0501-0600.md","mtime":"2020-08-30T08:30:12.158Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T01:39:40.728Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

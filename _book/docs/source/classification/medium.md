@@ -67,10 +67,10 @@
 
 ## 7.设计问题(2)
 
-| Title                        | Tag  | 难度 | 完成情况 |
-| ---------------------------- | ---- | ---- | -------- |
-| 二叉树的序列化与反序列化     |      |      |          |
-| Insert Delete GetRandom O(1) |      |      |          |
+| Title                                                        | Tag      | 难度 | 完成情况 |
+| ------------------------------------------------------------ | -------- | ---- | -------- |
+| [297.二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/) | 树、设计 | Hard | 完成     |
+| Insert Delete GetRandom O(1)                                 |          |      |          |
 
 ## 8.数学(7)
 

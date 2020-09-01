@@ -23,33 +23,32 @@ type ListNode struct {
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	res := &ListNode{Next: head}
 	prev := res
-	left := res
 	for head != nil {
-		right := left
-		for i := 1; i <= k; i++ {
-			right = right.Next
-			if right == nil {
+		tail := prev
+		for i := 0; i < k; i++ {
+			tail = tail.Next
+			if tail == nil {
 				return res.Next
 			}
 		}
-		next := right.Next
-		right.Next = nil
-		left = reverse(left)
-		prev.Next = left
-		prev = next
-		left, right = next, next
-		head = next
+		next := tail.Next
+		head, tail = reverse(head, tail)
+		prev.Next = head
+		tail.Next = next
+		prev = tail
+		head = tail.Next
 	}
 	return res.Next
 }
 
-func reverse(head *ListNode) *ListNode {
-	var result *ListNode
-	for head != nil {
-		next := head.Next
-		head.Next = result
-		result = head
-		head = next
+func reverse(head, tail *ListNode) (*ListNode, *ListNode) {
+	prev := tail.Next
+	temp := head
+	for prev != tail {
+		next := temp.Next
+		temp.Next = prev
+		prev = temp
+		temp = next
 	}
-	return result
+	return tail, head
 }

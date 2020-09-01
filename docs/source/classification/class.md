@@ -63,6 +63,22 @@
 | Title                                                        | Tag              | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ---------------- | ------ | -------- |
 | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划 | Medium | 完成     |
+| [9.回文数](https://leetcode-cn.com/problems/palindrome-number) | 数学             | Easy   | 完成     |
+| [125.验证回文串](https://leetcode-cn.com/problems/valid-palindrome) | 双指针、字符串   | Easy   | 完成     |
+| [131.分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/) | 回溯算法         | Medium | 完成     |
+| [214.最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/) | 字符串           | Hard   | 完成     |
+| [409.最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) | 哈希表           | Easy   | 完成     |
+| [516.最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 动态规划         | Medium | 完成     |
+| [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | 字符串、动态规划 | Medium | 完成     |
+| [680.验证回文字符串Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 字符串           | Easy   | 完成     |
+| [1332.删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | 字符串           | Easy   | 完成     |
+
+### 马拉车(manacher)算法
+
+| Title                                                        | Tag              | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------- | ------ | -------- |
+| [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划 | Medium | 完成     |
+| [214.最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/) | 字符串           | Hard   | 完成     |
 | [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | 字符串、动态规划 | Medium | 完成     |
 
 ### 反转字符串
@@ -187,6 +203,9 @@
 
 | Title                                                        | Tag      | 难度 | 完成情况 |
 | ------------------------------------------------------------ | -------- | ---- | -------- |
+| 877                                                          |          |      |          |
+| 1140                                                         |          |      |          |
+| 1406                                                         |          |      |          |
 | [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划 | Hard | 完成     |
 | [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划 | Hard | 完成     |
 
@@ -195,6 +214,8 @@
 | Title                                                     | Tag                    | 难度 | 完成情况 |
 | --------------------------------------------------------- | ---------------------- | ---- | -------- |
 | [292.Nim游戏](https://leetcode-cn.com/problems/nim-game/) | 脑筋急转弯、极小化极大 | Easy | 完成     |
+
+
 
 ### 单调栈
 
@@ -227,7 +248,7 @@
 | ------------------------------------------------------------ | ------------ | ------ | -------- |
 | [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表 | Medium | 完成     |
 | [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表 | Medium | 完成     |
-|                                                              |              |        |          |
+| [1248.统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/) | 双指针       | Medium | 完成     |
 
 ### 二分查找-最大化最小值、最小化最大值
 
@@ -238,4 +259,29 @@
 | 1482                                                         |                    |        |          |
 | 1011                                                         |                    |        |          |
 | 875                                                          |                    |        |          |
-| lcp12                                                        |                    |        |          |
+| [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) |                    | Medium | 完成     |
+
+### 并查集
+
+| Title                                                        | Tag                                | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------------------- | ------ | -------- |
+| [128.最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | 并查集、数组                       | Hard   | 完成     |
+| [130.被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
+| [200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
+| [1568.使陆地分离的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-disconnect-island/) | 贪心算法                           | Medium | 完成     |
+
+### 滑动窗口
+
+| Title                                                        | Tag                                          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------------------------------- | ------ | -------- |
+| [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window   | Medium | 完成     |
+| [30.串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 哈希表、双指针、字符串                       | Hard   | 完成     |
+| [76.最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 哈希表、双指针、字符串、<br />Sliding Window | Hard   | 完成     |
+| [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 双指针、Sliding Window                       | Medium | 完成     |
+| [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window                           | Hard   | 完成     |
+
+### Trie树
+
+| Title                                                        | Tag          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------ | ------ | -------- |
+| [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树 | Medium | 完成     |

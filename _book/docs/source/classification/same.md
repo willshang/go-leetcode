@@ -87,4 +87,8 @@
 | 83 | [232.用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) Easy | [面试题03.04.化栈为队](https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/) Easy |
 | 84(相似) | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) Medium | [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) Medium |
 | 85 | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) Medium | [1035.不相交的线](https://leetcode-cn.com/problems/uncrossed-lines/) Medium |
+| 86 | [78.子集](https://leetcode-cn.com/problems/subsets/) Medium | [面试题08.04.幂集](https://leetcode-cn.com/problems/power-set-lcci/) Medium |
+| 87(相似) | [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) Medium | [面试题16.19.水域大小](https://leetcode-cn.com/problems/pond-sizes-lcci/) Medium |
+| 88 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) Medium | [面试题10.02.变位词组](https://leetcode-cn.com/problems/group-anagrams-lcci/) Medium |
+| 89(相似) | [888.公平的糖果交换](https://leetcode-cn.com/problems/fair-candy-swap/) Easy | [面试题16.21.交换和](https://leetcode-cn.com/problems/sum-swap-lcci/) Medium |
 

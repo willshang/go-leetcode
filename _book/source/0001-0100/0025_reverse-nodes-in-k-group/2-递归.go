@@ -8,7 +8,7 @@ func main() {
 	firstthree := ListNode{Val: 3}
 	first.Next = &firsttwo
 	firsttwo.Next = &firstthree
-	first = reverseKGroup(first, 2)
+	first = reverseKGroup(first, 3)
 	for first != nil {
 		fmt.Println(first.Val)
 		first = first.Next

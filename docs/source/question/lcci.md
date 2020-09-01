@@ -1313,9 +1313,9 @@ func detectCycle(head *ListNode) *ListNode {
 }
 ```
 
-## 面试题03.01.三合一
+## 面试题03.01.三合一(1)
 
-### 题目
+- 题目
 
 ```
 三合一。描述如何只用一个数组来实现三个栈。
@@ -1330,14 +1330,57 @@ func detectCycle(head *ListNode) *ListNode {
  输出：[null, null, null, null, 2, 1, -1, -1]
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路   | 时间复杂度 | 空间复杂度 |
-| ---- | ------ | ---------- | ---------- |
-| 01   | 结构体 | O(n)       | O(n)       |
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 数组 | O(1)       | O(n)       |
 
 ```go
+type TripleInOne struct {
+	arr    []int
+	length int
+	index  [3]int
+}
 
+func Constructor(stackSize int) TripleInOne {
+	return TripleInOne{
+		arr:    make([]int, stackSize*3),
+		length: stackSize,
+		index:  [3]int{0, 0, 0},
+	}
+}
+
+func (this *TripleInOne) Push(stackNum int, value int) {
+	if this.index[stackNum] < this.length {
+		this.arr[3*this.index[stackNum]+stackNum] = value
+		this.index[stackNum]++
+	}
+}
+
+func (this *TripleInOne) Pop(stackNum int) int {
+	res := -1
+	if this.index[stackNum] != 0 {
+		this.index[stackNum]--
+		res = this.arr[3*this.index[stackNum]+stackNum]
+	}
+	return res
+}
+
+func (this *TripleInOne) Peek(stackNum int) int {
+	res := -1
+	if this.index[stackNum] != 0 {
+		res = this.arr[3*(this.index[stackNum]-1)+stackNum]
+	}
+	return res
+}
+
+func (this *TripleInOne) IsEmpty(stackNum int) bool {
+	if this.index[stackNum] == 0 {
+		return true
+	}
+	return false
+}
 ```
 
 ## 面试题03.02.栈的最小值(2)
@@ -1443,18 +1486,92 @@ func (this *MinStack) GetMin() int {
 }
 ```
 
-## 面试题03.03.堆盘子
+## 面试题03.03.堆盘子(1)
 
-### 题目
-
-```
+- 题目
 
 ```
-
-### 解题思路
-
+堆盘子。设想有一堆盘子，堆太高可能会倒下来。因此，在现实生活中，盘子堆到一定高度时，我们就会另外堆一堆盘子。
+请实现数据结构SetOfStacks，模拟这种行为。SetOfStacks应该由多个栈组成，并且在前一个栈填满时新建一个栈。
+此外，SetOfStacks.push()和SetOfStacks.pop()应该与普通栈的操作方法相同
+（也就是说，pop()返回的值，应该跟只有一个栈时的情况一样）。
+进阶：实现一个popAt(int index)方法，根据指定的子栈，执行pop操作。
+当某个栈为空时，应当删除该栈。当栈中没有元素或不存在该栈时，pop，popAt 应返回 -1.
+示例1: 输入：["StackOfPlates", "push", "push", "popAt", "pop", "pop"]
+[[1], [1], [2], [1], [], []]
+ 输出：[null, null, null, 2, 1, -1]
+示例2:输入： ["StackOfPlates", "push", "push", "push", "popAt", "popAt", "popAt"]
+[[2], [1], [2], [3], [0], [0], [0]]
+ 输出：[null, null, null, null, 2, 1, 3]
 ```
 
+- 解题思路
+
+| No.  | 思路    | 时间复杂度 | 空间复杂度 |
+| ---- | ------- | ---------- | ---------- |
+| 01   | 栈-二维 | O(1)       | O(n^2)     |
+
+```go
+type StackOfPlates struct {
+	cap   int
+	stack [][]int
+}
+
+func Constructor(cap int) StackOfPlates {
+	return StackOfPlates{
+		cap:   cap,
+		stack: make([][]int, 0),
+	}
+}
+
+func (this *StackOfPlates) Push(val int) {
+	if this.cap == 0 {
+		return
+	}
+	if len(this.stack) == 0 {
+		newStack := make([]int, 0)
+		newStack = append(newStack, val)
+		this.stack = append(this.stack, newStack)
+		return
+	}
+	last := this.stack[len(this.stack)-1]
+	if len(last) == this.cap {
+		newStack := make([]int, 0)
+		newStack = append(newStack, val)
+		this.stack = append(this.stack, newStack)
+		return
+	}
+	last = append(last, val)
+	this.stack[len(this.stack)-1] = last
+}
+
+func (this *StackOfPlates) Pop() int {
+	if len(this.stack) == 0 {
+		return -1
+	}
+	last := this.stack[len(this.stack)-1]
+	res := last[len(last)-1]
+	last = last[:len(last)-1]
+	this.stack[len(this.stack)-1] = last
+	if len(last) == 0 {
+		this.stack = this.stack[:len(this.stack)-1]
+	}
+	return res
+}
+
+func (this *StackOfPlates) PopAt(index int) int {
+	if index >= len(this.stack) {
+		return -1
+	}
+	arr := this.stack[index]
+	res := arr[len(arr)-1]
+	arr = arr[:len(arr)-1]
+	this.stack[index] = arr
+	if len(arr) == 0 {
+		this.stack = append(this.stack[:index], this.stack[index+1:]...)
+	}
+	return res
+}
 ```
 
 ## 面试题03.04.化栈为队(3)
@@ -1623,6 +1740,169 @@ func (m *MyQueue) Peek() int {
 
 func (m *MyQueue) Empty() bool {
 	return len(m.a) == 0 && len(m.b) == 0
+}
+```
+
+## 面试题03.05.栈排序
+
+### 题目
+
+```
+栈排序。 编写程序，对栈进行排序使最小元素位于栈顶。
+最多只能使用一个其他的临时栈存放数据，但不得将元素复制到别的数据结构（如数组）中。
+该栈支持如下操作：push、pop、peek 和 isEmpty。当栈为空时，peek 返回 -1。
+示例1:输入：["SortedStack", "push", "push", "peek", "pop", "peek"]
+[[], [1], [2], [], [], []]
+ 输出：[null,null,null,1,null,2]
+示例2:输入： ["SortedStack", "pop", "pop", "push", "pop", "isEmpty"]
+[[], [], [], [1], [], []]
+ 输出：[null,null,null,null,null,true]
+说明:栈中的元素数目在[0, 5000]范围内。
+```
+
+### 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n)       | O(n)       |
+
+```
+
+```
+
+## 面试题03.06.动物收容所(2)
+
+- 题目
+
+```
+动物收容所。有家动物收容所只收容狗与猫，且严格遵守“先进先出”的原则。
+在收养该收容所的动物时，收养人只能收养所有动物中“最老”（由其进入收容所的时间长短而定）的动物，
+或者可以挑选猫或狗（同时必须收养此类动物中“最老”的）。
+换言之，收养人不能自由挑选想收养的对象。
+请创建适用于这个系统的数据结构，实现各种操作方法，
+比如enqueue、dequeueAny、dequeueDog和dequeueCat。允许使用Java内置的LinkedList数据结构。
+enqueue方法有一个animal参数，animal[0]代表动物编号，animal[1]代表动物种类，其中 0 代表猫，1 代表狗。
+dequeue*方法返回一个列表[动物编号, 动物种类]，若没有可以收养的动物，则返回[-1,-1]。
+示例1:输入：
+["AnimalShelf", "enqueue", "enqueue", "dequeueCat", "dequeueDog", "dequeueAny"]
+[[], [[0, 0]], [[1, 0]], [], [], []]
+ 输出：[null,null,null,[0,0],[-1,-1],[1,0]]
+示例2:输入：
+["AnimalShelf", "enqueue", "enqueue", "enqueue", "dequeueDog", "dequeueCat", "dequeueAny"]
+[[], [[0, 0]], [[1, 0]], [[2, 1]], [], [], []]
+输出：[null,null,null,null,[2,1],[0,0],[1,0]]
+说明:收纳所的最大容量为20000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 双数组   | O(1)       | O(n)       |
+| 02   | 内置list | O(1)       | O(n)       |
+
+```go
+type AnimalShelf struct {
+	cat [][]int
+	dog [][]int
+}
+
+func Constructor() AnimalShelf {
+	return AnimalShelf{
+		cat: make([][]int, 0),
+		dog: make([][]int, 0),
+	}
+}
+
+func (this *AnimalShelf) Enqueue(animal []int) {
+	if animal[1] == 0 {
+		this.cat = append(this.cat, animal)
+	} else {
+		this.dog = append(this.dog, animal)
+	}
+}
+
+func (this *AnimalShelf) DequeueAny() []int {
+	if len(this.dog) == 0 && len(this.cat) == 0 {
+		return []int{-1, -1}
+	}
+	if len(this.dog) == 0 || len(this.cat) == 0 {
+		if len(this.dog) == 0 {
+			res := this.cat[0]
+			this.cat = this.cat[1:]
+			return res
+		}
+		res := this.dog[0]
+		this.dog = this.dog[1:]
+		return res
+	}
+	if this.dog[0][0] > this.cat[0][0] {
+		res := this.cat[0]
+		this.cat = this.cat[1:]
+		return res
+
+	}
+	res := this.dog[0]
+	this.dog = this.dog[1:]
+	return res
+}
+
+func (this *AnimalShelf) DequeueDog() []int {
+	if len(this.dog) == 0 {
+		return []int{-1, -1}
+	}
+	res := this.dog[0]
+	this.dog = this.dog[1:]
+	return res
+}
+
+func (this *AnimalShelf) DequeueCat() []int {
+	if len(this.cat) == 0 {
+		return []int{-1, -1}
+	}
+	res := this.cat[0]
+	this.cat = this.cat[1:]
+	return res
+}
+
+# 2
+type AnimalShelf struct {
+	arr [2]*list.List
+}
+
+func Constructor() AnimalShelf {
+	return AnimalShelf{
+		arr: [2]*list.List{list.New(), list.New()},
+	}
+}
+
+func (this *AnimalShelf) Enqueue(animal []int) {
+	this.arr[animal[1]].PushBack(animal[0])
+}
+
+func (this *AnimalShelf) DequeueAny() []int {
+	if this.arr[0].Len() == 0 && this.arr[1].Len() == 0 {
+		return []int{-1, -1}
+	}
+	if this.arr[1].Len() > 0 &&
+		(this.arr[0].Len() == 0 || this.arr[1].Front().Value.(int) < this.arr[0].Front().Value.(int)) {
+		return []int{this.arr[1].Remove(this.arr[1].Front()).(int), 1}
+	}
+	return []int{this.arr[0].Remove(this.arr[0].Front()).(int), 0}
+}
+
+func (this *AnimalShelf) DequeueDog() []int {
+	if this.arr[1].Len() > 0 {
+		return []int{this.arr[1].Remove(this.arr[1].Front()).(int), 1}
+	}
+	return []int{-1, -1}
+}
+
+func (this *AnimalShelf) DequeueCat() []int {
+	if this.arr[0].Len() > 0 {
+		return []int{this.arr[0].Remove(this.arr[0].Front()).(int), 0}
+	}
+	return []int{-1, -1}
 }
 ```
 
@@ -2745,9 +3025,9 @@ func waysToStep(n int) int {
 }
 ```
 
-## 面试题08.02.迷路的机器人
+## 面试题08.02.迷路的机器人(2)
 
-### 题目
+- 题目
 
 ```
 设想有个机器人坐在一个网格的左上角，网格 r 行 c 列。
@@ -2768,14 +3048,100 @@ func waysToStep(n int) int {
 说明：r 和 c 的值均不超过 100。
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 遍历 | O(n)       | O(1)       |
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先搜索 | O(n^2)     | O(n)       |
+| 02   | 动态规划     | O(n^2)     | O(1)       |
 
 ```go
+var res [][]int
 
+func pathWithObstacles(obstacleGrid [][]int) [][]int {
+	res = make([][]int, 0)
+	path := make([][]int, 0)
+	path = append(path, []int{0, 0})
+	dfs(obstacleGrid, path)
+	return res
+}
+
+func dfs(arr [][]int, path [][]int) {
+	if len(res) == 0 {
+		x, y := path[len(path)-1][0], path[len(path)-1][1]
+		if arr[x][y] == 0 {
+			arr[x][y] = 1
+			if x < len(arr)-1 {
+				dfs(arr, append(path, []int{x + 1, y}))
+			}
+			if y < len(arr[0])-1 {
+				dfs(arr, append(path, []int{x, y + 1}))
+			}
+			if x == len(arr)-1 && y == len(arr[0])-1 {
+				res = make([][]int, len(path))
+				copy(res, path)
+			}
+		}
+	}
+}
+
+# 2
+func pathWithObstacles(obstacleGrid [][]int) [][]int {
+	res := make([][]int, 0)
+	n := len(obstacleGrid)
+	m := len(obstacleGrid[0])
+	if obstacleGrid[0][0] == 1 || obstacleGrid[n-1][m-1] == 1 {
+		return res
+	}
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if obstacleGrid[i][j] == 1 {
+				obstacleGrid[i][j] = 0
+				continue
+			}
+			if i == 0 && j == 0 {
+				obstacleGrid[i][j] = 1
+			} else if i == 0 {
+				obstacleGrid[i][j] = obstacleGrid[i][j-1] + 1
+			} else if j == 0 {
+				obstacleGrid[i][j] = obstacleGrid[i-1][j] + 1
+			} else {
+				obstacleGrid[i][j] = max(obstacleGrid[i][j-1], obstacleGrid[i-1][j]) + 1
+			}
+		}
+	}
+	total := n + m - 1
+	if obstacleGrid[n-1][m-1] != total {
+		return res
+	}
+	i, j := n-1, m-1
+	for i >= 0 && j >= 0 {
+		if obstacleGrid[i][j] == total {
+			res = append([][]int{{i, j}}, res...)
+			total = total - 1
+		}
+		if i == 0 && j == 0 {
+			break
+		}
+		if i == 0 && obstacleGrid[i][j-1] == total {
+			j--
+		} else if j == 0 && obstacleGrid[i-1][j] == total {
+			i--
+		} else if obstacleGrid[i-1][j] == total {
+			i--
+		} else if obstacleGrid[i][j-1] == total {
+			j--
+		}
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
 ```
 
 ## 面试题08.03.魔术索引(2)
@@ -2827,6 +3193,194 @@ func search(nums []int, left, right int) int {
 		return mid
 	}
 	return search(nums, mid+1, right)
+}
+```
+
+## 面试题08.04.幂集(3)
+
+- 题目
+
+```
+幂集。编写一种方法，返回某集合的所有子集。集合中不包含重复的元素。
+说明：解集不能包含重复的子集。
+示例:输入： nums = [1,2,3]输出：
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 回溯   | O(n*2^n)   | O(n*2^n)   |
+| 02   | 迭代   | O(n*2^n)   | O(n*2^n)   |
+| 03   | 位运算 | O(n*2^n)   | O(n*2^n)   |
+
+```go
+var res [][]int
+
+func subsets(nums []int) [][]int {
+	res = make([][]int, 0)
+	dfs(nums, make([]int, 0), 0)
+	return res
+}
+
+func dfs(nums []int, arr []int, level int) {
+	temp := make([]int, len(arr))
+	copy(temp, arr)
+	res = append(res, temp)
+	for i := level; i < len(nums); i++ {
+		// dfs(nums, append(arr, nums[i]), i+1)
+		arr = append(arr, nums[i])
+		dfs(nums, arr, i+1)
+		arr = arr[:len(arr)-1]
+	}
+}
+
+# 2
+func subsets(nums []int) [][]int {
+	res := make([][]int, 0)
+	res = append(res, []int{})
+	for i := 0; i < len(nums); i++ {
+		temp := make([][]int, len(res))
+		for key, value := range res {
+			value = append(value, nums[i])
+			temp[key] = append(temp[key], value...)
+		}
+		for _, v := range temp {
+			res = append(res, v)
+		}
+	}
+	return res
+}
+
+# 3
+func subsets(nums []int) [][]int {
+	res := make([][]int, 0)
+	n := len(nums)
+	left := 1 << n
+	right := 1 << (n + 1)
+	for i := left; i < right; i++ {
+		temp := make([]int, 0)
+		for j := 0; j < n; j++ {
+			if i&(1<<j) != 0 {
+				temp = append(temp, nums[j])
+			}
+		}
+		res = append(res, temp)
+	}
+	return res
+}
+```
+
+## 面试题08.05.递归乘法(3)
+
+- 题目
+
+```
+递归乘法。 写一个递归函数，不使用 * 运算符， 实现两个正整数的相乘。可以使用加号、减号、位移，但要吝啬一些。
+示例1:输入：A = 1, B = 10 输出：10
+示例2:输入：A = 3, B = 4 输出：12
+提示:保证乘法范围不会溢出
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+| 02   | 递归 | O(log(n))  | O(log(n))  |
+| 03   | 迭代 | O(log(n))  | O(1)       |
+
+```go
+func multiply(A int, B int) int {
+	if B == 0 {
+		return 0
+	}
+	return multiply(A, B-1) + A
+}
+
+# 2
+func multiply(A int, B int) int {
+	if B == 0 {
+		return 0
+	}
+	if B == 1 {
+		return A
+	}
+	if B%2 == 1 {
+		return multiply(A<<1, B>>1) + A
+	}
+	return multiply(A<<1, B>>1)
+}
+
+# 3
+func multiply(A int, B int) int {
+	res := 0
+	for B != 0{
+		if B % 2==1{
+			res = res + A
+		}
+		A = A+A
+		B = B >> 1
+	}
+	return res
+}
+```
+
+## 面试题08.06.汉诺塔问题(1)
+
+- 题目
+
+```
+在经典汉诺塔问题中，有 3 根柱子及 N 个不同大小的穿孔圆盘，盘子可以滑入任意一根柱子。
+一开始，所有盘子自上而下按升序依次套在第一根柱子上(即每一个盘子只能放在更大的盘子上面)。
+移动圆盘时受到以下限制:
+(1) 每次只能移动一个盘子;
+(2) 盘子只能从柱子顶端滑出移到下一根柱子;
+(3) 盘子只能叠在比它大的盘子上。
+请编写程序，用栈将所有盘子从第一根柱子移到最后一根柱子。
+你需要原地修改栈。
+示例1:输入：A = [2, 1, 0], B = [], C = [] 输出：C = [2, 1, 0]
+示例2:输入：A = [1, 0], B = [], C = [] 输出：C = [1, 0]
+提示:A中盘子的数目不大于14个。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(2^n)     | O(n)       |
+
+```go
+func hanota(A []int, B []int, C []int) []int {
+	if A == nil {
+		return nil
+	}
+	move(len(A), &A, &B, &C)
+	return C
+}
+
+func move(num int, A, B, C *[]int) {
+	if num < 0 {
+		return
+	}
+	if num == 1 {
+		*C = append(*C, (*A)[len(*A)-1])
+		*A = (*A)[:len(*A)-1]
+		return
+	}
+	move(num-1, A, C, B)
+	move(1, A, B, C)
+	move(num-1, B, A, C)
 }
 ```
 
@@ -3532,6 +4086,70 @@ func merge(A []int, m int, B []int, n int) {
 }
 ```
 
+## 面试题10.02.变位词组(2)
+
+- 题目
+
+```
+编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。变位词是指字母相同，但排列不同的字符串。
+注意：本题相对原题稍作修改
+示例:输入: ["eat", "tea", "tan", "ate", "nat", "bat"], 输出:
+[
+  ["ate","eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]
+说明：所有输入均为小写字母。
+    不考虑答案输出的顺序。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度   | 空间复杂度 |
+| ---- | -------- | ------------ | ---------- |
+| 01   | 哈希辅助 | O(n^2log(n)) | O(n^2)     |
+| 02   | 哈希辅助 | O(n^2)       | O(n^2)     |
+
+```go
+func groupAnagrams(strs []string) [][]string {
+	m := make(map[string]int)
+	res := make([][]string, 0)
+	for i := 0; i < len(strs); i++ {
+		arr := []byte(strs[i])
+		sort.Slice(arr, func(i, j int) bool {
+			return arr[i] < arr[j]
+		})
+		newStr := string(arr)
+		if _, ok := m[newStr]; ok {
+			res[m[newStr]] = append(res[m[newStr]], strs[i])
+		} else {
+			m[newStr] = len(res)
+			res = append(res, []string{strs[i]})
+		}
+	}
+	return res
+}
+
+# 2
+func groupAnagrams(strs []string) [][]string {
+	m := make(map[[26]int]int)
+	res := make([][]string, 0)
+	for i := 0; i < len(strs); i++ {
+		arr := [26]int{}
+		for j := 0; j < len(strs[i]); j++{
+			arr[strs[i][j]-'a']++
+		}
+		if _, ok := m[arr]; ok {
+			res[m[arr]] = append(res[m[arr]], strs[i])
+		} else {
+			m[arr] = len(res)
+			res = append(res, []string{strs[i]})
+		}
+	}
+	return res
+}
+```
+
 ## 面试题10.03.搜索旋转数组(2)
 
 - 题目
@@ -3588,6 +4206,67 @@ func search(nums []int, target int) int {
 func search(nums []int, target int) int {
 	for i := 0; i < len(nums); i++ {
 		if target == nums[i] {
+			return i
+		}
+	}
+	return -1
+}
+```
+
+## 面试题10.05.稀疏数组搜索(2)
+
+- 题目
+
+```
+稀疏数组搜索。有个排好序的字符串数组，其中散布着一些空字符串，编写一种方法，找出给定字符串的位置。
+示例1:
+输入: words = ["at", "", "", "", "ball", "", "", "car", "", "","dad", "", ""], s = "ta"
+输出：-1
+说明: 不存在返回-1。
+示例2:
+输入：words = ["at", "", "", "", "ball", "", "", "car", "", "","dad", "", ""], s = "ball"
+输出：4
+提示: words的长度在[1, 1000000]之间
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(log(n))  | O(1)       |
+| 02   | 暴力法   | O(n)       | O(1)       |
+
+```go
+func findString(words []string, s string) int {
+	left := 0
+	right := len(words) - 1
+	for left <= right {
+		mid := left + (right-left)/2
+		index := mid
+		word := words[mid]
+		if word == "" {
+			for index = mid; index <= right; index++ {
+				if words[index] != "" {
+					word = words[index]
+					break
+				}
+			}
+		}
+		if word == s {
+			return index
+		} else if word < s {
+			left = index + 1
+		} else {
+			right = mid - 1
+		}
+	}
+	return -1
+}
+
+# 2
+func findString(words []string, s string) int {
+	for i := 0; i < len(words); i++ {
+		if s == words[i] {
 			return i
 		}
 	}
@@ -3799,6 +4478,91 @@ func swapNumbers(numbers []int) []int {
 }
 ```
 
+## 面试题16.02.单词频率(2)
+
+- 题目
+
+```
+设计一个方法，找出任意指定单词在一本书中的出现频率。
+你的实现应该支持如下操作：
+    WordsFrequency(book)构造函数，参数为字符串数组构成的一本书
+    get(word)查询指定单词在书中出现的频率
+示例：WordsFrequency wordsFrequency = 
+new WordsFrequency({"i", "have", "an", "apple", "he", "have", "a", "pen"});
+wordsFrequency.get("you"); //返回0，"you"没有出现过
+wordsFrequency.get("have"); //返回2，"have"出现2次
+wordsFrequency.get("an"); //返回1
+wordsFrequency.get("apple"); //返回1
+wordsFrequency.get("pen"); //返回1
+提示：book[i]中只包含小写字母
+    1 <= book.length <= 100000
+    1 <= book[i].length <= 10
+    get函数的调用次数不会超过100000
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 02   | map    | O(1)       | O(n)       |
+| 02   | trie树 | O(1)       | O(n)       |
+
+```go
+type WordsFrequency struct {
+	m map[string]int
+}
+
+func Constructor(book []string) WordsFrequency {
+	res := WordsFrequency{m: make(map[string]int)}
+	for k := range book {
+		res.m[book[k]]++
+	}
+	return res
+}
+
+func (this *WordsFrequency) Get(word string) int {
+	return this.m[word]
+}
+
+# 2
+type WordsFrequency struct {
+	ending int
+	next   [26]*WordsFrequency
+}
+
+func Constructor(book []string) WordsFrequency {
+	res := WordsFrequency{}
+	for _, v := range book {
+		res.Insert(v)
+	}
+	return res
+}
+
+func (this *WordsFrequency) Get(word string) int {
+	temp := this
+	for _, v := range word {
+		nextWord := v - 'a'
+		if temp.next[nextWord] == nil {
+			return 0
+		}
+		temp = temp.next[nextWord]
+	}
+	return temp.ending
+}
+
+func (this *WordsFrequency) Insert(word string) {
+	temp := this
+	for _, v := range word {
+		nextWord := v - 'a'
+		if temp.next[nextWord] == nil {
+			temp.next[nextWord] = &WordsFrequency{}
+		}
+		temp = temp.next[nextWord]
+	}
+	temp.ending = temp.ending + 1
+}
+```
+
 ## 面试题16.05.阶乘尾数(1)
 
 - 题目
@@ -3828,6 +4592,98 @@ func trailingZeroes(n int) int {
 		result = result + n
 	}
 	return result
+}
+```
+
+## 面试题16.06.最小差(2)
+
+- 题目
+
+```
+给定两个整数数组a和b，计算具有最小差绝对值的一对数值（每个数组中取一个值），并返回该对数值的差
+示例：输入：{1, 3, 15, 11, 2}, {23, 127, 235, 19, 8} 输出： 3，即数值对(11, 8)
+提示：
+    1 <= a.length, b.length <= 100000
+    -2147483648 <= a[i], b[i] <= 2147483647
+    正确结果在区间[-2147483648, 2147483647]内
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 排序双指针    | O(nlog(n)) | O(1)       |
+| 02   | 排序+二分查找 | O(nlog(n)) | O(1)       |
+
+```go
+func smallestDifference(a []int, b []int) int {
+	sort.Ints(a)
+	sort.Ints(b)
+	i, j := 0, 0
+	res := math.MaxInt32
+	for i < len(a) && j < len(b) {
+		res = min(res, abs(a[i], b[j]))
+		if a[i] > b[j] {
+			j++
+		} else {
+			i++
+		}
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func abs(a, b int) int {
+	if a > b {
+		return a - b
+	}
+	return b - a
+}
+
+# 2
+func smallestDifference(a []int, b []int) int {
+	sort.Ints(b)
+	res := math.MaxInt32
+	for i := 0; i < len(a); i++ {
+		left, right := 0, len(b)-1
+		for left <= right {
+			mid := left + (right-left)/2
+			if b[mid] == a[i] {
+				return 0
+			} else if b[mid] > a[i] {
+				right = mid - 1
+			} else {
+				left = mid + 1
+			}
+		}
+		if left < len(b) {
+			res = min(res, abs(a[i], b[left]))
+		}
+		if left > 0 {
+			res = min(res, abs(a[i], b[left-1]))
+		}
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func abs(a, b int) int {
+	if a > b {
+		return a - b
+	}
+	return b - a
 }
 ```
 
@@ -3863,6 +4719,72 @@ func maximum(a int, b int) int {
 func maximum(a int, b int) int {
 	value := int(uint64(a-b) >> 63) // 取符号位，a-b>0 => 符号位为0 a-b<0 =>符号位为1
 	return value*b + int(1^value)*a // value=0=> 0^1=1 1^1=0
+}
+```
+
+## 面试题16.10.生存人数(2)
+
+- 题目
+
+```
+给定N个人的出生年份和死亡年份，第i个人的出生年份为birth[i]，死亡年份为death[i]，
+实现一个方法以计算生存人数最多的年份。
+你可以假设所有人都出生于1900年至2000年（含1900和2000）之间。
+如果一个人在某一年的任意时期都处于生存状态，那么他们应该被纳入那一年的统计中。
+例如，生于1908年、死于1909年的人应当被列入1908年和1909年的计数。
+如果有多个年份生存人数相同且均为最大值，输出其中最小的年份。
+示例：输入：birth = {1900, 1901, 1950} death = {1948, 1951, 2000} 输出： 1901
+提示：0 < birth.length == death.length <= 10000
+    birth[i] <= death[i]
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 排序双指针 | O(nlog(n)) | O(1)       |
+| 02   | 计数       | O(n)       | O(n)       |
+
+```go
+func maxAliveYear(birth []int, death []int) int {
+	sort.Ints(birth)
+	sort.Ints(death)
+	res := birth[0]
+	max := 0
+	j := 0
+	count := 0
+	for i := 0; i < len(birth); i++ {
+		count++
+		for birth[i] > death[j] {
+			count--
+			j++
+		}
+		if count > max {
+			max = count
+			res = birth[i]
+		}
+	}
+	return res
+}
+
+# 2
+func maxAliveYear(birth []int, death []int) int {
+	arr := make([]int, 102)
+	for i := 0; i < len(birth); i++ {
+		arr[birth[i]-1900]++
+		arr[death[i]-1900+1]--
+	}
+	max := 0
+	sum := 0
+	res := 0
+	for i := 0; i < len(arr); i++ {
+		sum = sum + arr[i]
+		if sum > max {
+			max = sum
+			res = i + 1900
+		}
+	}
+	return res
 }
 ```
 
@@ -3990,6 +4912,69 @@ func masterMind(solution string, guess string) []int {
 		}
 	}
 	return []int{a, b}
+}
+```
+
+## 面试题16.16.部分排序(2)
+
+- 题目
+
+```
+给定一个整数数组，编写一个函数，找出索引m和n，只要将索引区间[m,n]的元素排好序，整个数组就是有序的。
+注意：n-m尽量最小，也就是说，找出符合条件的最短序列。
+函数返回值为[m,n]，若不存在这样的m和n（例如整个数组是有序的），请返回[-1,-1]。
+示例：输入： [1,2,4,7,10,11,7,12,6,7,16,18,19] 输出： [3,9]
+提示：0 <= len(array) <= 1000000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 排序遍历 | O(nlog(n)) | O(n)       |
+| 02   | 遍历     | O(n)       | O(1)       |
+
+```go
+func subSort(array []int) []int {
+	temp := make([]int, len(array))
+	copy(temp, array)
+	sort.Ints(temp)
+	left, right := -1, -1
+	for i := 0; i < len(array); i++ {
+		if temp[i] != array[i] {
+			left = i
+			break
+		}
+	}
+	for i := len(array) - 1; i >= 0; i-- {
+		if temp[i] != array[i] {
+			right = i
+			break
+		}
+	}
+	return []int{left, right}
+}
+
+# 2
+func subSort(array []int) []int {
+	left, right := -1, -1
+	maxValue := math.MinInt32
+	minValue := math.MaxInt32
+	for i := 0; i < len(array); i++ {
+		if array[i] >= maxValue {
+			maxValue = array[i]
+		} else {
+			right = i
+		}
+	}
+	for i := len(array) - 1; i >= 0; i-- {
+		if minValue >= array[i] {
+			minValue = array[i]
+		} else {
+			left = i
+		}
+	}
+	return []int{left, right}
 }
 ```
 
@@ -4127,6 +5112,148 @@ func max(a, b int) int {
 		return a
 	}
 	return b
+}
+```
+
+## 面试题16.19.水域大小(2)
+
+- 题目
+
+```
+你有一个用于表示一片土地的整数矩阵land，该矩阵中每个点的值代表对应地点的海拔高度。
+若值为0则表示水域。由垂直、水平或对角连接的水域为池塘。池塘的大小是指相连接的水域的个数。
+编写一个方法来计算矩阵中所有池塘的大小，返回值需要从小到大排序。
+示例：输入：
+[
+  [0,2,1,0],
+  [0,1,0,1],
+  [1,1,0,1],
+  [0,1,0,1]
+]
+输出： [1,2,4]
+提示：
+    0 < len(land) <= 1000
+    0 < len(land[i]) <= 1000
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先搜索 | O(n^2)     | O(n)       |
+| 02   | 深度优先搜索 | O(n^2)     | O(n)       |
+
+```go
+func pondSizes(land [][]int) []int {
+	res := make([]int, 0)
+	for i := range land {
+		for j := range land[i] {
+			if land[i][j] == 0 {
+				res = append(res, getArea(land, i, j))
+			}
+		}
+	}
+	sort.Ints(res)
+	return res
+}
+
+func getArea(grid [][]int, i, j int) int {
+	if grid[i][j] != 0 {
+		return 0
+	}
+	grid[i][j] = 1
+	area := 1
+	for a := i - 1; a <= i+1; a++ {
+		for b := j - 1; b <= j+1; b++ {
+			if (i == a && j == b) || a < 0 || a >= len(grid) ||
+				b < 0 || b >= len(grid[0]) {
+				continue
+			}
+			area = area + getArea(grid, a, b)
+		}
+	}
+	return area
+}
+
+# 2
+func pondSizes(land [][]int) []int {
+	res := make([]int, 0)
+	for i := range land {
+		for j := range land[i] {
+			if land[i][j] == 0 {
+				res = append(res, getArea(land, i, j))
+			}
+		}
+	}
+	sort.Ints(res)
+	return res
+}
+
+func getArea(grid [][]int, i, j int) int {
+	if i < 0 || i >= len(grid) ||
+		j < 0 || j >= len(grid[0]) || grid[i][j] != 0 {
+		return 0
+	}
+
+	grid[i][j] = 1
+	res := 1
+	res = res + getArea(grid, i+1, j)
+	res = res + getArea(grid, i+1, j+1)
+	res = res + getArea(grid, i+1, j-1)
+	res = res + getArea(grid, i-1, j)
+	res = res + getArea(grid, i-1, j+1)
+	res = res + getArea(grid, i-1, j-1)
+	res = res + getArea(grid, i, j+1)
+	res = res + getArea(grid, i, j-1)
+	return res
+}
+```
+
+## 面试题16.21.交换和(1)
+
+- 题目
+
+```
+给定两个整数数组，请交换一对数值（每个数组中取一个数值），使得两个数组所有元素的和相等。
+返回一个数组，第一个元素是第一个数组中要交换的元素，第二个元素是第二个数组中要交换的元素。
+若有多个答案，返回任意一个均可。若无满足条件的数值，返回空数组。
+示例:输入: array1 = [4, 1, 2, 1, 1, 2], array2 = [3, 6, 3, 3] 输出: [1, 3]
+示例:输入: array1 = [1, 2, 3], array2 = [4, 5, 6] 输出: []
+提示：1 <= array1.length, array2.length <= 100000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+
+```go
+func findSwapValues(array1 []int, array2 []int) []int {
+	m := make(map[int]bool)
+	sumA, sumB := 0, 0
+	for i := 0; i < len(array1); i++ {
+		sumA = sumA + array1[i]
+		m[array1[i]] = true
+	}
+	for i := 0; i < len(array2); i++ {
+		sumB = sumB + array2[i]
+	}
+	if (sumA+sumB)%2 == 1 {
+		return nil
+	}
+	half := (sumA - sumB) / 2
+	a, b := 0, 0
+	// sumA-A[i]+B[j] == sumB-B[j]+A[i]
+	// sumA-sumB=2(A[i]-B[j])
+	// (sumA-sumB)/2 = A[i]-B[j]
+	for _, b = range array2 {
+		a = b + half
+		if m[a] == true {
+			return []int{a, b}
+		}
+	}
+	return nil
 }
 ```
 
@@ -4557,6 +5684,149 @@ func majority(nums []int, start, end int) int {
 }
 ```
 
+## 面试题17.11.单词距离(2)
+
+- 题目
+
+```
+有个内含单词的超大文本文件，给定任意两个单词，找出在这个文件中这两个单词的最短距离(相隔单词数)。
+如果寻找过程在这个文件中会重复多次，而每次寻找的单词不同，你能对此优化吗?
+示例：输入：words = ["I","am","a","student","from","a","university","in","a","city"], 
+word1 = "a", word2 = "student"
+输出：1
+提示：words.length <= 100000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 遍历     | O(n)       | O(1)       |
+| 02   | 数组辅助 | O(n)       | O(n)       |
+
+```go
+func findClosest(words []string, word1 string, word2 string) int {
+	res := len(words) - 1
+	a, b := -1, -1
+	for i := 0; i < len(words); i++ {
+		if words[i] == word1 {
+			a = i
+		}
+		if words[i] == word2 {
+			b = i
+		}
+		if a != -1 && b != -1 && abs(a, b) < res {
+			res = abs(a, b)
+		}
+	}
+	return res
+}
+
+func abs(a, b int) int {
+	if a > b {
+		return a - b
+	}
+	return b - a
+}
+
+# 2
+func findClosest(words []string, word1 string, word2 string) int {
+	res := len(words) - 1
+	arrA, arrB := make([]int, 0), make([]int, 0)
+	for i := 0; i < len(words); i++ {
+		if words[i] == word1 {
+			arrA = append(arrA, i)
+		}
+		if words[i] == word2 {
+			arrB = append(arrB, i)
+		}
+	}
+	i, j := 0, 0
+	for i < len(arrA) && j < len(arrB) {
+		if abs(arrA[i], arrB[j]) < res {
+			res = abs(arrA[i], arrB[j])
+		}
+		if arrA[i] < arrB[j] {
+			i++
+		} else {
+			j++
+		}
+	}
+	return res
+}
+
+func abs(a, b int) int {
+	if a > b {
+		return a - b
+	}
+	return b - a
+}
+```
+
+## 面试题17.12.BiNode(2)
+
+- 题目
+
+```
+二叉树数据结构TreeNode可用来表示单向链表（其中left置空，right为下一个链表节点）。
+实现一个方法，把二叉搜索树转换为单向链表，要求依然符合二叉搜索树的性质，转换操作应是原址的，
+也就是在原始的二叉搜索树上直接修改。
+返回转换后的单向链表的头节点。
+注意：本题相对原题稍作改动
+示例：输入： [4,2,5,1,3,null,6,0]
+输出： [0,null,1,null,2,null,3,null,4,null,5,null,6]
+提示：节点数量不会超过 100000。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+func convertBiNode(root *TreeNode) *TreeNode {
+	head := &TreeNode{}
+	cur := head
+	dfs(root, cur)
+	return head.Right
+}
+
+func dfs(root, cur *TreeNode) *TreeNode {
+	if root != nil {
+		cur = dfs(root.Left, cur)
+		root.Left = nil
+		cur.Right = root
+		cur = root
+		cur = dfs(root.Right, cur)
+	}
+	return cur
+}
+
+# 2
+func convertBiNode(root *TreeNode) *TreeNode {
+	head := &TreeNode{}
+	cur := head
+	stack := make([]*TreeNode, 0)
+	node := root
+	for node != nil || len(stack) > 0 {
+		if node != nil {
+			stack = append(stack, node)
+			node = node.Left
+		} else {
+			node = stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+			node.Left = nil
+			cur.Right = node
+			cur = node
+			node = node.Right
+		}
+	}
+	return head.Right
+}
+```
+
 ## 面试题17.14.最小K个数(3)
 
 - 题目
@@ -4782,6 +6052,107 @@ func max(a, b int) int {
 		return a
 	}
 	return b
+}
+```
+
+## 面试题17.19.消失的两个数字(4)
+
+- 题目
+
+```
+给定一个数组，包含从 1 到 N 所有的整数，但其中缺了两个数字。
+你能在 O(N) 时间内只用 O(1) 的空间找到它们吗？
+以任意顺序返回这两个数字均可。
+示例 1:输入: [1] 输出: [2,3]
+示例 2:输入: [2,3] 输出: [1,4]
+提示：nums.length <= 30000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+| 02   | 数学     | O(n)       | O(1)       |
+| 03   | 交换     | O(n)       | O(1)       |
+| 04   | 异或     | O(n)       | O(1)       |
+
+```go
+func missingTwo(nums []int) []int {
+	res := make([]int, 0)
+	m := make(map[int]bool)
+	for i := 0; i < len(nums); i++ {
+		m[nums[i]] = true
+	}
+	for i := 1; i <= len(nums)+2; i++ {
+		if m[i] == false {
+			res = append(res, i)
+		}
+	}
+	return res
+}
+
+# 2
+func missingTwo(nums []int) []int {
+	n := len(nums) + 2
+	sum := (1 + n) * n / 2
+	total := 0
+	for i := 0; i < len(nums); i++ {
+		total = total + nums[i]
+	}
+	diff := sum - total // a+b
+	mid := diff / 2     // (a+b)/2
+	tempSum := (1 + mid) * mid / 2
+	temp := 0
+	for i := 0; i < len(nums); i++ {
+		if nums[i] <= mid {
+			temp = temp + nums[i]
+		}
+	}
+	a := tempSum - temp
+	b := diff - a
+	return []int{a, b}
+}
+
+# 3
+func missingTwo(nums []int) []int {
+	res := make([]int, 0)
+	nums = append(nums, -1, -1, 0)
+	for i := 0; i < len(nums); i++ {
+		for nums[i] != -1 && nums[i] != i {
+			nums[nums[i]], nums[i] = nums[i], nums[nums[i]]
+		}
+	}
+	for i := 1; i < len(nums); i++ {
+		if nums[i] == -1 {
+			res = append(res, i)
+		}
+	}
+	return res
+}
+
+# 4
+func missingTwo(nums []int) []int {
+	temp := 0
+	for i := 0; i < len(nums); i++ {
+		temp = temp ^ nums[i]
+	}
+	for i := 1; i <= len(nums)+2; i++ {
+		temp = temp ^ i
+	}
+	a := 0
+	diff := temp & (-temp)
+	for i := 1; i <= len(nums)+2; i++ {
+		if diff&i != 0 {
+			a = a ^ i
+		}
+	}
+	for i := 0; i < len(nums); i++ {
+		if diff&nums[i] != 0 {
+			a = a ^ nums[i]
+		}
+	}
+	return []int{a, a ^ temp}
 }
 ```
 

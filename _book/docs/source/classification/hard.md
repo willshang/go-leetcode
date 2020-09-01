@@ -5,19 +5,19 @@
 
 ## 1.数组和字符串(11)
 
-| Title                                                        | Tag                    | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
-| [238.除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | 数组                   | Medium | 完成     |
-| [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) | 数组                   | Medium | 完成     |
-| 四数相加 II                                                  |                        |        |          |
-| [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针           | Medium | 完成     |
-| [289.生命游戏](https://leetcode-cn.com/problems/game-of-life/) | 数组                   | Medium | 完成     |
-| [41.缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | 数组                   | Hard   | 完成     |
-| [128.最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | 并查集、数组           | Hard   | 完成     |
-| [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 数组、双指针、二分查找 | Medium | 完成     |
-| 基本计算器 II                                                |                        |        |          |
-| [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window     | Hard   | 完成     |
-| 最小覆盖子串                                                 |                        |        |          |
+| Title                                                        | Tag                                          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------------------------------- | ------ | -------- |
+| [238.除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | 数组                                         | Medium | 完成     |
+| [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) | 数组                                         | Medium | 完成     |
+| 四数相加 II                                                  |                                              |        |          |
+| [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) | 数组、双指针                                 | Medium | 完成     |
+| [289.生命游戏](https://leetcode-cn.com/problems/game-of-life/) | 数组                                         | Medium | 完成     |
+| [41.缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | 数组                                         | Hard   | 完成     |
+| [128.最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | 并查集、数组                                 | Hard   | 完成     |
+| [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) | 数组、双指针、二分查找                       | Medium | 完成     |
+| 基本计算器 II                                                |                                              |        |          |
+| [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window                           | Hard   | 完成     |
+| [76.最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 哈希表、双指针、字符串、<br />Sliding Window | Hard   | 完成     |
 
 ## 2.链表(3)
 
@@ -43,13 +43,13 @@
 
 ## 4.回溯算法(5)
 
-| Title                                                        | Tag                        | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------------------- | ------ | -------- |
-| [131.分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/) | 回溯算法                   | Medium | 完成     |
-| 单词搜索 II                                                  |                            |        |          |
-| Remove Invalid Parentheses                                   |                            |        |          |
-| 通配符匹配                                                   |                            |        |          |
-| [10.正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/) | 字符串、动态规划、回溯算法 | Hard   | 完成     |
+| Title                                                        | Tag                                        | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------------------------------ | ------ | -------- |
+| [131.分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/) | 回溯算法                                   | Medium | 完成     |
+| 单词搜索 II                                                  |                                            |        |          |
+| Remove Invalid Parentheses                                   |                                            |        |          |
+| [44.通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 贪心算法、字符串、动态规划、<br />回溯算法 | Hard   | 完成     |
+| [10.正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/) | 字符串、动态规划、回溯算法                 | Hard   | 完成     |
 
 ## 5.排序和搜索(3)
 
@@ -72,12 +72,12 @@
 
 ## 7.设计问题(4)
 
-| Title                                                        | Tag      | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------- | ------ | -------- |
-| [146.LRU缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 设计     | Medium | 完成     |
-|                                                              |          |        |          |
-|                                                              |          |        |          |
-| [295.数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/) | 堆、设计 | Hard   | 完成     |
+| Title                                                        | Tag          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------ | ------ | -------- |
+| [146.LRU缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 设计         | Medium | 完成     |
+| [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树 | Medium | 完成     |
+|                                                              |              |        |          |
+| [295.数据流的中位数](https://leetcode-cn.com/problems/find-median-from-data-stream/) | 堆、设计     | Hard   | 完成     |
 
 ## 8.数学(2)
 
