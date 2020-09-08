@@ -46,7 +46,9 @@ func pathWithObstacles(obstacleGrid [][]int) [][]int {
 	i, j := n-1, m-1
 	for i >= 0 && j >= 0 {
 		if obstacleGrid[i][j] == total {
-			res = append([][]int{{i, j}}, res...)
+			newArr := make([][]int, 0)
+			newArr = append(newArr, []int{i, j})
+			res = append(newArr, res...)
 			total = total - 1
 		}
 		if i == 0 && j == 0 {

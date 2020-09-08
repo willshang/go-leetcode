@@ -1,17 +1,18 @@
 # 队列&栈
 
 - 队列和栈系列
-- 本系列共xx题
+- 本系列共19题
 
 - 原文分类链接 https://leetcode-cn.com/leetbook/detail/queue-stack/
 
 
 
-## 2-队列：先入先出的数据结构
+## 2-队列：先入先出的数据结构(2)
 
-| Title        | Tag  | 难度 | 完成情况 |
-| ------------ | ---- | ---- | -------- |
-| 设计循环队列 |      |      |          |
+| Title                                                        | Tag        | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------- | ------ | -------- |
+| [622.设计循环队列](https://leetcode-cn.com/problems/design-circular-queue/) | 设计、队列 | Medium | 完成     |
+| 346.数据流中的移动平均值                                     |            |        |          |
 
 ## 3-队列和广度优先搜索(3)
 
@@ -48,4 +49,4 @@
 | [394.字符串解码](https://leetcode-cn.com/problems/decode-string/) | 栈、深度优先搜索           | Medium | 完成     |
 | [733.图像渲染](https://leetcode-cn.com/problems/flood-fill/) | 深度优先搜索               | Easy   | 完成     |
 | [542.01矩阵](https://leetcode-cn.com/problems/01-matrix/)    | 深度优先搜索、广度优先搜索 | Medium | 完成     |
-| 钥匙和房间                                                   |                            |        |          |
+| [841.钥匙和房间](https://leetcode-cn.com/problems/keys-and-rooms/) | 深度优先搜索、图           | Medium | 完成     |

@@ -47,7 +47,7 @@
 | ------------------------------------------------------------ | ------------------------------------------ | ------ | -------- |
 | [131.分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/) | 回溯算法                                   | Medium | 完成     |
 | 单词搜索 II                                                  |                                            |        |          |
-| Remove Invalid Parentheses                                   |                                            |        |          |
+| [301.删除无效的括号](https://leetcode-cn.com/problems/remove-invalid-parentheses/) | 深度优先搜索、广度优先搜索                 | Hard   | 完成     |
 | [44.通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 贪心算法、字符串、动态规划、<br />回溯算法 | Hard   | 完成     |
 | [10.正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/) | 字符串、动态规划、回溯算法                 | Hard   | 完成     |
 

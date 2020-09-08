@@ -29,7 +29,7 @@
 | 中序遍历二叉树 <br />[94.二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) | 栈、树、哈希表                     | Medium | 完成     |
 | [103.二叉树的锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/) | 栈、树、广度优先搜索               | Medium | 完成     |
 | [105.从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 树、深度优先搜索、数组             | Medium | 完成     |
-| 填充每个节点的下一个右侧节点指针                             |                                    |        |          |
+| [116.填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) | 树、深度优先搜索                   | Medium | 完成     |
 | [215.数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) | 堆、分治算法                       | Medium | 完成     |
 | [200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
 
@@ -67,10 +67,10 @@
 
 ## 7.设计问题(2)
 
-| Title                                                        | Tag      | 难度 | 完成情况 |
-| ------------------------------------------------------------ | -------- | ---- | -------- |
-| [297.二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/) | 树、设计 | Hard | 完成     |
-| Insert Delete GetRandom O(1)                                 |          |      |          |
+| Title                                                        | Tag                | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------ | ------ | -------- |
+| [297.二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/) | 树、设计           | Hard   | 完成     |
+| [380.常数时间插入、删除和获取随机元素](https://leetcode-cn.com/problems/insert-delete-getrandom-o1/) | 设计、数组、哈希表 | Medium | 完成     |
 
 ## 8.数学(7)
 
@@ -82,7 +82,7 @@
 | [50.Pow(x,n)](https://leetcode-cn.com/problems/powx-n/)      | 数学、二分查找 | Medium | 完成     |
 | [69.x 的平方根](https://leetcode-cn.com/problems/sqrtx)      | 数学，二分查找 | Easy   | 完成     |
 | [29.两数相除](https://leetcode-cn.com/problems/divide-two-integers/) | 数学、二分查找 | Medium | 完成     |
-| 分数到小数                                                   |                |        |          |
+| [166.分数到小数](https://leetcode-cn.com/problems/fraction-to-recurring-decimal/) | 哈希表、数学   | Medium | 完成     |
 
 ## 9.其他(4)
 
@@ -91,4 +91,4 @@
 | [371.两整数之和](https://leetcode-cn.com/problems/sum-of-two-integers/) | 位运算                 | Easy   | 完成     |
 | [150.逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/) | 栈                     | Medium | 完成     |
 | [169.多数元素](https://leetcode-cn.com/problems/majority-element) | 位运算、数组、分治算法 | Easy   | 完成     |
-| 任务调度器                                                   |                        |        |          |
+| [621.任务调度器](https://leetcode-cn.com/problems/task-scheduler/) | 贪心算法、队列、数组   | Medium | 完成     |

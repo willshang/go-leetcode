@@ -9,7 +9,7 @@ func main() {
 // leetcode30_串联所有单词的子串
 func findSubstring(s string, words []string) []int {
 	res := make([]int, 0)
-	length,n := len(s),len(words)
+	length, n := len(s), len(words)
 	if length == 0 || n == 0 || len(words[0]) == 0 {
 		return res
 	}

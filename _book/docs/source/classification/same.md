@@ -91,4 +91,6 @@
 | 87(相似) | [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) Medium | [面试题16.19.水域大小](https://leetcode-cn.com/problems/pond-sizes-lcci/) Medium |
 | 88 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) Medium | [面试题10.02.变位词组](https://leetcode-cn.com/problems/group-anagrams-lcci/) Medium |
 | 89(相似) | [888.公平的糖果交换](https://leetcode-cn.com/problems/fair-candy-swap/) Easy | [面试题16.21.交换和](https://leetcode-cn.com/problems/sum-swap-lcci/) Medium |
+| 90 | [316.去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/) Hard | [1081.不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) Medium |
+| 91(相似) | [486.预测赢家](https://leetcode-cn.com/problems/predict-the-winner/) Medium | [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) Medium |
 

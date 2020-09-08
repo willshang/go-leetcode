@@ -137,12 +137,17 @@
 
 ### 股票问题
 
-| Title                                                        | Tag            | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------- | ------ | -------- |
-| [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | 数组、动态规划 | Easy   | 完成     |
-| [122.买卖股票的最佳时机II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) | 贪心算法、数组 | Easy   | 完成     |
-| [123.买卖股票的最佳时机III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) | 数组、动态规划 | Hard   | 完成     |
-| [309.最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | 动态规划       | Medium | 完成     |
+| Title                                                        | Tag                      | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------------ | ------ | -------- |
+| [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | 数组、动态规划           | Easy   | 完成     |
+| [122.买卖股票的最佳时机II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) | 贪心算法、数组           | Easy   | 完成     |
+| [123.买卖股票的最佳时机III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) | 数组、动态规划           | Hard   | 完成     |
+| [188.买卖股票的最佳时机IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/) | 动态规划                 | Hard   | 完成     |
+| [309.最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | 动态规划                 | Medium | 完成     |
+| [714.买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) | 贪心算法、数组、动态规划 | Medium | 完成     |
+| [面试题63.股票的最大利润](https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/) | 动态规划                 | Medium | 完成     |
+| [901.股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 栈                       | Medium | 完成     |
+| [502.IPO](https://leetcode-cn.com/problems/ipo/)             | 堆、贪心算法             | Hard   | 完成     |
 
 ### 打家劫舍问题
 
@@ -151,6 +156,13 @@
 | [198.打家劫舍](https://leetcode-cn.com/problems/house-robber) | 动态规划         | Easy   | 完成     |
 | [213.打家劫舍II](https://leetcode-cn.com/problems/house-robber-ii/) | 动态规划         | Medium | 完成     |
 | [337.打家劫舍III](https://leetcode-cn.com/problems/house-robber-iii/) | 树、深度优先搜索 | Medium | 完成     |
+
+### 零钱兑换
+
+| Title                                                        | Tag      | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------- | ------ | -------- |
+| [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划 | Medium | 完成     |
+| [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) |          | Medium | 完成     |
 
 ## 回溯算法
 
@@ -201,21 +213,36 @@
 
 #### 石子游戏
 
-| Title                                                        | Tag      | 难度 | 完成情况 |
-| ------------------------------------------------------------ | -------- | ---- | -------- |
-| 877                                                          |          |      |          |
-| 1140                                                         |          |      |          |
-| 1406                                                         |          |      |          |
-| [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划 | Hard | 完成     |
-| [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划 | Hard | 完成     |
+| Title                                                        | Tag                        | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------------- | ------ | -------- |
+| [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) | 极小化极大、数学、动态规划 | Medium | 完成     |
+| 1140                                                         |                            |        |          |
+| 1406                                                         |                            |        |          |
+| [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                   | Hard   | 完成     |
+| [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划                   | Hard   | 完成     |
 
-#### Nim游戏
+#### Nim游戏-极小化极大
 
-| Title                                                     | Tag                    | 难度 | 完成情况 |
-| --------------------------------------------------------- | ---------------------- | ---- | -------- |
-| [292.Nim游戏](https://leetcode-cn.com/problems/nim-game/) | 脑筋急转弯、极小化极大 | Easy | 完成     |
+| Title                                                        | Tag                    | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
+| [292.Nim游戏](https://leetcode-cn.com/problems/nim-game/)    | 脑筋急转弯、极小化极大 | Easy   | 完成     |
+| [486.预测赢家](https://leetcode-cn.com/problems/predict-the-winner/) | 极小化极大、动态规划   | Medium | 完成     |
 
+#### 跳跃游戏
 
+| Title                                                        | Tag              | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------- | ------ | -------- |
+| [45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) | 贪心算法、数组   | Hard   | 完成     |
+| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组   | Medium | 完成     |
+| [1306.跳跃游戏III](https://leetcode-cn.com/problems/jump-game-iii/) | 广度优先搜索、图 | Medium | 完成     |
+
+### 灯泡问题
+
+| Title                                                        | Tag              | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------- | ------ | -------- |
+| [319.灯泡开关](https://leetcode-cn.com/problems/bulb-switcher/) | 脑筋急转弯、数学 | Medium | 完成     |
+| [1375.灯泡开关III](https://leetcode-cn.com/problems/bulb-switcher-iii/) | 数组             | Medium | 完成     |
+| [1529.灯泡开关IV](https://leetcode-cn.com/problems/bulb-switcher-iv/) | 字符串           | Medium | 完成     |
 
 ### 单调栈
 
@@ -224,8 +251,11 @@
 | [42.接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 栈、数组、双指针           | Hard   | 完成     |
 | [84.柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 栈、数组                   | Hard   | 完成     |
 | [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 栈、数组、哈希表、动态规划 | Hard   | 完成     |
+| [316.去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/) | 栈、贪心算法               | Hard   | 完成     |
 | [496.下一个更大元素I](https://leetcode-cn.com/problems/next-greater-element-i/) | 栈                         | Easy   | 完成     |
 | [739.每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 栈、哈希表                 | Medium | 完成     |
+| [901.股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 栈                         | Medium | 完成     |
+| [1081.不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) | 字符串                     | Medium | 完成     |
 
 ### 多源广度优先搜索
 
@@ -244,21 +274,24 @@
 
 ### 前缀和问题
 
-| Title                                                        | Tag          | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ------------ | ------ | -------- |
-| [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表 | Medium | 完成     |
-| [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表 | Medium | 完成     |
-| [1248.统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/) | 双指针       | Medium | 完成     |
+| Title                                                        | Tag            | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------- | ------ | -------- |
+| [303.区域和检索-数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划       | Easy   | 完成     |
+| [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) | 动态规划       | Medium | 完成     |
+| [523.连续的子数组和](https://leetcode-cn.com/problems/continuous-subarray-sum/) | 数学、动态规划 | Medium | 完成     |
+| [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表   | Medium | 完成     |
+| [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表   | Medium | 完成     |
+| [1248.统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/) | 双指针         | Medium | 完成     |
 
 ### 二分查找-最大化最小值、最小化最大值
 
 | Title                                                        | Tag                | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ------------------ | ------ | -------- |
-| [1552.两球之间的磁力](https://leetcode-cn.com/problems/magnetic-force-between-two-balls/) | 数组、二分查找     | Medium | 完成     |
 | [410.分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 二分查找、动态规划 | Hard   | 完成     |
-| 1482                                                         |                    |        |          |
-| 1011                                                         |                    |        |          |
 | 875                                                          |                    |        |          |
+| 1011                                                         |                    |        |          |
+| 1482                                                         |                    |        |          |
+| [1552.两球之间的磁力](https://leetcode-cn.com/problems/magnetic-force-between-two-balls/) | 数组、二分查找     | Medium | 完成     |
 | [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) |                    | Medium | 完成     |
 
 ### 并查集
@@ -277,11 +310,24 @@
 | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window   | Medium | 完成     |
 | [30.串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 哈希表、双指针、字符串                       | Hard   | 完成     |
 | [76.最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 哈希表、双指针、字符串、<br />Sliding Window | Hard   | 完成     |
-| [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 双指针、Sliding Window                       | Medium | 完成     |
+| 159                                                          |                                              |        |          |
+| [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                       | Medium | 完成     |
 | [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window                           | Hard   | 完成     |
+| 340                                                          |                                              |        |          |
+| [438.找到字符串中所有字母异位词](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/) | 哈希表                                       | Medium | 完成     |
+| [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 双指针、Sliding Window                       | Medium | 完成     |
+| 632                                                          |                                              |        |          |
+| 727                                                          |                                              |        |          |
 
 ### Trie树
 
-| Title                                                        | Tag          | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ------------ | ------ | -------- |
-| [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树 | Medium | 完成     |
+| Title                                                        | Tag                    | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
+| [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树           | Medium | 完成     |
+| [211.添加与搜索单词-数据结构设计](https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/) | 设计、字典树、回溯算法 | Medium | 完成     |
+
+### 背包问题-完全背包
+
+| Title                                                        | Tag  | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---- | ------ | -------- |
+| [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) |      | Medium | 完成     |

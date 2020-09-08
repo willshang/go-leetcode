@@ -1,5 +1,13 @@
 # ACM题目输入问题
 
+- 一般校招技术会有笔试，通常在nowcoder上，而题目通常是采用ACM模式，掌握ACM模式的输入很重要
+
+| No.  | 描述                         |      |
+| ---- | ---------------------------- | ---- |
+| 01   |                              |      |
+| 02   |                              |      |
+| 03   | 第一行输入N，第二行输入N个数 | 完成 |
+
 ## 0.处理多个case
 
 ### 0.1 牛客网
@@ -111,7 +119,26 @@ func main() {
 }
 ```
 
-### 1.2 多个字符串输入
+### 1.2 第一行输入2个字符串a和b
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var a, b string
+	for {
+		n, _ := fmt.Scanf("%s %s", &a, &b)
+		if n == 0 {
+			break
+		}
+		// 下面是处理逻辑
+	}
+}
+```
 
 #### 1.2.1 xx
 
@@ -123,5 +150,33 @@ func main() {
 
 ```go
 
+```
+
+### 输入N，然后输入N个数
+
+- 第一行输入N， 第二行是N个数
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var n, m int
+	for {
+		a, _ := fmt.Scan(&n)
+		if a == 0 {
+			break
+		}
+		nums := make([]int, 0)
+		for i := 0; i < n; i++ {
+			_, _ = fmt.Scan(&m)
+			nums = append(nums, m)
+		}
+        // 下面是处理逻辑
+	}
+}
 ```
 

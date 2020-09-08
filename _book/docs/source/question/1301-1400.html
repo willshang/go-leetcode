@@ -400,9 +400,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.21" data-path="offer.html">
+        <li class="chapter " data-level="1.2.21" data-path="lcci.html">
             
-                <a href="offer.html">
+                <a href="lcci.html">
             
                     
                     程序员面试金典
@@ -528,7 +528,7 @@
                 <a href="../classification/medium.html">
             
                     
-                    中级算法
+                    中级算法(45)-完成
             
                 </a>
             
@@ -554,7 +554,7 @@
                 <a href="../classification/hot-100.html">
             
                     
-                    热题100
+                    热题100(100)-完成
             
                 </a>
             
@@ -593,7 +593,7 @@
                 <a href="../classification/data-queue-stack.html">
             
                     
-                    数据结构-队列与栈
+                    数据结构-队列与栈(19)-完成
             
                 </a>
             
@@ -606,7 +606,7 @@
                 <a href="../classification/data-recursion.html">
             
                     
-                    数据结构-递归-完成
+                    数据结构-递归(12)-完成
             
                 </a>
             
@@ -627,12 +627,38 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.16" data-path="../classification/patB.html">
+        <li class="chapter " data-level="1.3.16" data-path="../classification/nowcoder_pdd.html">
+            
+                <a href="../classification/nowcoder_pdd.html">
+            
+                    
+                    牛客-拼多多
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../classification/patB.html">
             
                 <a href="../classification/patB.html">
             
                     
                     PAT-乙级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../classification/github-labuladong.html">
+            
+                <a href="../classification/github-labuladong.html">
+            
+                    
+                    github-labuladong
             
                 </a>
             
@@ -685,6 +711,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.3" data-path="../algorithm/trie.html">
+            
+                <a href="../algorithm/trie.html">
+            
+                    
+                    Trie树(前缀树/字典树)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../algorithm/并查集.html">
+            
+                <a href="../algorithm/并查集.html">
+            
+                    
+                    并查集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../algorithm/树状数组.html">
+            
+                <a href="../algorithm/树状数组.html">
+            
+                    
+                    树状数组
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -717,9 +782,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../nowcoder/hw.html">
+        <li class="chapter " data-level="1.5.2" data-path="../nowcoder/pdd.html">
             
-                <a href="../nowcoder/hw.html">
+                <a href="../nowcoder/pdd.html">
             
                     
                     拼多多
@@ -755,6 +820,38 @@
             
                     
                     PAT-乙级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    ACM在线笔试模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../go/1-go语言acm刷题输入问题.html">
+            
+                <a href="../go/1-go语言acm刷题输入问题.html">
+            
+                    
+                    ACM-Go语言处理
             
                 </a>
             
@@ -2811,8 +2908,352 @@ nums       index     target
     <span class="hljs-keyword">return</span> res
 }
 </code></pre>
+<h1 id="1301-1400-medium">1301-1400-Medium</h1>
+<h2 id="1306&#x8DF3;&#x8DC3;&#x6E38;&#x620F;iii2">1306.&#x8DF3;&#x8DC3;&#x6E38;&#x620F;III(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x8D1F;&#x6574;&#x6570;&#x6570;&#x7EC4; arr&#xFF0C;&#x4F60;&#x6700;&#x5F00;&#x59CB;&#x4F4D;&#x4E8E;&#x8BE5;&#x6570;&#x7EC4;&#x7684;&#x8D77;&#x59CB;&#x4E0B;&#x6807; start &#x5904;&#x3002;
+&#x5F53;&#x4F60;&#x4F4D;&#x4E8E;&#x4E0B;&#x6807; i &#x5904;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8DF3;&#x5230; i + arr[i] &#x6216;&#x8005; i - arr[i]&#x3002;
+&#x8BF7;&#x4F60;&#x5224;&#x65AD;&#x81EA;&#x5DF1;&#x662F;&#x5426;&#x80FD;&#x591F;&#x8DF3;&#x5230;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x503C;&#x4E3A; 0 &#x7684; &#x4EFB;&#x4E00; &#x4E0B;&#x6807;&#x5904;&#x3002;
+&#x6CE8;&#x610F;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x90FD;&#x65E0;&#x6CD5;&#x8DF3;&#x5230;&#x6570;&#x7EC4;&#x4E4B;&#x5916;&#x3002;
+&#x793A;&#x4F8B; 1&#xFF1A;&#x8F93;&#x5165;&#xFF1A;arr = [4,2,3,0,3,1,2], start = 5 &#x8F93;&#x51FA;&#xFF1A;true
+&#x89E3;&#x91CA;&#xFF1A;&#x5230;&#x8FBE;&#x503C;&#x4E3A; 0 &#x7684;&#x4E0B;&#x6807; 3 &#x6709;&#x4EE5;&#x4E0B;&#x53EF;&#x80FD;&#x65B9;&#x6848;&#xFF1A; 
+&#x4E0B;&#x6807; 5 -&gt; &#x4E0B;&#x6807; 4 -&gt; &#x4E0B;&#x6807; 1 -&gt; &#x4E0B;&#x6807; 3 
+&#x4E0B;&#x6807; 5 -&gt; &#x4E0B;&#x6807; 6 -&gt; &#x4E0B;&#x6807; 4 -&gt; &#x4E0B;&#x6807; 1 -&gt; &#x4E0B;&#x6807; 3 
+&#x793A;&#x4F8B; 2&#xFF1A;&#x8F93;&#x5165;&#xFF1A;arr = [4,2,3,0,3,1,2], start = 0 &#x8F93;&#x51FA;&#xFF1A;true 
+&#x89E3;&#x91CA;&#xFF1A;&#x5230;&#x8FBE;&#x503C;&#x4E3A; 0 &#x7684;&#x4E0B;&#x6807; 3 &#x6709;&#x4EE5;&#x4E0B;&#x53EF;&#x80FD;&#x65B9;&#x6848;&#xFF1A; 
+&#x4E0B;&#x6807; 0 -&gt; &#x4E0B;&#x6807; 4 -&gt; &#x4E0B;&#x6807; 1 -&gt; &#x4E0B;&#x6807; 3
+&#x793A;&#x4F8B; 3&#xFF1A;&#x8F93;&#x5165;&#xFF1A;arr = [3,0,2,1,2], start = 2 &#x8F93;&#x51FA;&#xFF1A;false
+&#x89E3;&#x91CA;&#xFF1A;&#x65E0;&#x6CD5;&#x5230;&#x8FBE;&#x503C;&#x4E3A; 0 &#x7684;&#x4E0B;&#x6807; 1 &#x5904;&#x3002; 
+&#x63D0;&#x793A;&#xFF1A;
+    1 &lt;= arr.length &lt;= 5 * 10^4
+    0 &lt;= arr[i] &lt; arr.length
+    0 &lt;= start &lt; arr.length
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+<th>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> canReach(arr []<span class="hljs-keyword">int</span>, start <span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    m := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">bool</span>)
+    queue := <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, <span class="hljs-number">0</span>)
+    queue = <span class="hljs-built_in">append</span>(queue, start)
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(queue) &gt; <span class="hljs-number">0</span> {
+        length := <span class="hljs-built_in">len</span>(queue)
+        <span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt; length; j++ {
+            i := queue[j]
+            <span class="hljs-keyword">if</span> m[i] == <span class="hljs-literal">false</span> {
+                m[i] = <span class="hljs-literal">true</span>
+                <span class="hljs-keyword">if</span> i+arr[i] &lt; <span class="hljs-built_in">len</span>(arr) {
+                    <span class="hljs-keyword">if</span> arr[i+arr[i]] == <span class="hljs-number">0</span> {
+                        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+                    }
+                    queue = <span class="hljs-built_in">append</span>(queue, i+arr[i])
+                }
+                <span class="hljs-keyword">if</span> i-arr[i] &gt;= <span class="hljs-number">0</span> {
+                    <span class="hljs-keyword">if</span> arr[i-arr[i]] == <span class="hljs-number">0</span> {
+                        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+                    }
+                    queue = <span class="hljs-built_in">append</span>(queue, i-arr[i])
+                }
+            }
+        }
+        queue = queue[length:]
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+}
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">var</span> m <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">bool</span>
+
+<span class="hljs-keyword">func</span> canReach(arr []<span class="hljs-keyword">int</span>, start <span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    m = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">bool</span>)
+    <span class="hljs-keyword">return</span> dfs(arr, start)
+}
+
+<span class="hljs-keyword">func</span> dfs(arr []<span class="hljs-keyword">int</span>, i <span class="hljs-keyword">int</span>) <span class="hljs-keyword">bool</span> {
+    <span class="hljs-keyword">if</span> i &lt; <span class="hljs-number">0</span> || i &gt; <span class="hljs-built_in">len</span>(arr)<span class="hljs-number">-1</span> || m[i] == <span class="hljs-literal">true</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    m[i] = <span class="hljs-literal">true</span>
+    <span class="hljs-keyword">return</span> arr[i] == <span class="hljs-number">0</span> || dfs(arr, i+arr[i]) || dfs(arr, i-arr[i])
+}
+</code></pre>
+<h2 id="1375&#x706F;&#x6CE1;&#x5F00;&#x5173;iii2">1375.&#x706F;&#x6CE1;&#x5F00;&#x5173;III(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x623F;&#x95F4;&#x4E2D;&#x6709; n &#x679A;&#x706F;&#x6CE1;&#xFF0C;&#x7F16;&#x53F7;&#x4ECE; 1 &#x5230; n&#xFF0C;&#x81EA;&#x5DE6;&#x5411;&#x53F3;&#x6392;&#x6210;&#x4E00;&#x6392;&#x3002;&#x6700;&#x521D;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x706F;&#x90FD;&#x662F;&#x5173;&#x7740;&#x7684;&#x3002;
+&#x5728; k  &#x65F6;&#x523B;&#xFF08; k &#x7684;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x662F; 0 &#x5230; n - 1&#xFF09;&#xFF0C;&#x6211;&#x4EEC;&#x6253;&#x5F00; light[k] &#x8FD9;&#x4E2A;&#x706F;&#x3002;
+&#x706F;&#x7684;&#x989C;&#x8272;&#x8981;&#x60F3; &#x53D8;&#x6210;&#x84DD;&#x8272; &#x5C31;&#x5FC5;&#x987B;&#x540C;&#x65F6;&#x6EE1;&#x8DB3;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;
+    &#x706F;&#x5904;&#x4E8E;&#x6253;&#x5F00;&#x72B6;&#x6001;&#x3002;
+    &#x6392;&#x5728;&#x5B83;&#x4E4B;&#x524D;&#xFF08;&#x5DE6;&#x4FA7;&#xFF09;&#x7684;&#x6240;&#x6709;&#x706F;&#x4E5F;&#x90FD;&#x5904;&#x4E8E;&#x6253;&#x5F00;&#x72B6;&#x6001;&#x3002;
+&#x8BF7;&#x8FD4;&#x56DE;&#x80FD;&#x591F;&#x8BA9; &#x6240;&#x6709;&#x5F00;&#x7740;&#x7684; &#x706F;&#x90FD; &#x53D8;&#x6210;&#x84DD;&#x8272; &#x7684;&#x65F6;&#x523B; &#x6570;&#x76EE; &#x3002;
+&#x793A;&#x4F8B; 1&#xFF1A;&#x8F93;&#x5165;&#xFF1A;light = [2,1,3,5,4] &#x8F93;&#x51FA;&#xFF1A;3
+&#x89E3;&#x91CA;&#xFF1A;&#x6240;&#x6709;&#x5F00;&#x7740;&#x7684;&#x706F;&#x90FD;&#x53D8;&#x84DD;&#x7684;&#x65F6;&#x523B;&#x5206;&#x522B;&#x662F; 1&#xFF0C;2 &#x548C; 4 &#x3002;
+&#x793A;&#x4F8B; 2&#xFF1A;&#x8F93;&#x5165;&#xFF1A;light = [3,2,4,1,5] &#x8F93;&#x51FA;&#xFF1A;2
+&#x89E3;&#x91CA;&#xFF1A;&#x6240;&#x6709;&#x5F00;&#x7740;&#x7684;&#x706F;&#x90FD;&#x53D8;&#x84DD;&#x7684;&#x65F6;&#x523B;&#x5206;&#x522B;&#x662F; 3 &#x548C; 4&#xFF08;index-0&#xFF09;&#x3002;
+&#x793A;&#x4F8B; 3&#xFF1A;&#x8F93;&#x5165;&#xFF1A;light = [4,1,2,3] &#x8F93;&#x51FA;&#xFF1A;1
+&#x89E3;&#x91CA;&#xFF1A;&#x6240;&#x6709;&#x5F00;&#x7740;&#x7684;&#x706F;&#x90FD;&#x53D8;&#x84DD;&#x7684;&#x65F6;&#x523B;&#x662F; 3&#xFF08;index-0&#xFF09;&#x3002;
+&#x7B2C; 4 &#x4E2A;&#x706F;&#x5728;&#x65F6;&#x523B; 3 &#x53D8;&#x84DD;&#x3002;
+&#x793A;&#x4F8B; 4&#xFF1A;&#x8F93;&#x5165;&#xFF1A;light = [2,1,4,3,6,5] &#x8F93;&#x51FA;&#xFF1A;3
+&#x793A;&#x4F8B; 5&#xFF1A;&#x8F93;&#x5165;&#xFF1A;light = [1,2,3,4,5,6] &#x8F93;&#x51FA;&#xFF1A;6
+&#x63D0;&#x793A;&#xFF1A;
+    n == light.length
+    1 &lt;= n &lt;= 5 * 10^4
+    light &#x662F; [1, 2, ..., n] &#x7684;&#x4E00;&#x4E2A;&#x6392;&#x5217;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+<th>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x6570;&#x5B66;</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x904D;&#x5386;</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> numTimesAllBlue(light []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    res := <span class="hljs-number">0</span>
+    sum := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(light); i++ {
+        sum = sum + light[i]
+        <span class="hljs-keyword">if</span> (i+<span class="hljs-number">1</span>)*(i+<span class="hljs-number">2</span>)/<span class="hljs-number">2</span> == sum {
+            res++
+        }
+    }
+    <span class="hljs-keyword">return</span> res
+}
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">func</span> numTimesAllBlue(light []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    res := <span class="hljs-number">0</span>
+    maxValue := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(light); i++ {
+        <span class="hljs-comment">// &#x6700;&#x5927;&#x4EAE;&#x8D77;&#x6765;&#x7684;&#x706F;&#x7B49;&#x4E8E;&#x524D;&#x9762;&#x706F;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x8BF4;&#x660E;&#x524D;&#x9762;&#x706F;&#x90FD;&#x4EAE;&#x4E86;</span>
+        maxValue = max(maxValue, light[i])
+        <span class="hljs-keyword">if</span> maxValue == i+<span class="hljs-number">1</span> {
+            res++
+        }
+    }
+    <span class="hljs-keyword">return</span> res
+}
+
+<span class="hljs-keyword">func</span> max(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> a &gt; b {
+        <span class="hljs-keyword">return</span> a
+    }
+    <span class="hljs-keyword">return</span> b
+}
+</code></pre>
+<h2 id="1376&#x901A;&#x77E5;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x6240;&#x9700;&#x7684;&#x65F6;&#x95F4;3">1376.&#x901A;&#x77E5;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x6240;&#x9700;&#x7684;&#x65F6;&#x95F4;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x516C;&#x53F8;&#x91CC;&#x6709; n &#x540D;&#x5458;&#x5DE5;&#xFF0C;&#x6BCF;&#x4E2A;&#x5458;&#x5DE5;&#x7684; ID &#x90FD;&#x662F;&#x72EC;&#x4E00;&#x65E0;&#x4E8C;&#x7684;&#xFF0C;&#x7F16;&#x53F7;&#x4ECE; 0 &#x5230; n - 1&#x3002;
+&#x516C;&#x53F8;&#x7684;&#x603B;&#x8D1F;&#x8D23;&#x4EBA;&#x901A;&#x8FC7; headID &#x8FDB;&#x884C;&#x6807;&#x8BC6;&#x3002;
+&#x5728; manager &#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x5458;&#x5DE5;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x76F4;&#x5C5E;&#x8D1F;&#x8D23;&#x4EBA;&#xFF0C;&#x5176;&#x4E2D; manager[i] &#x662F;&#x7B2C; i &#x540D;&#x5458;&#x5DE5;&#x7684;&#x76F4;&#x5C5E;&#x8D1F;&#x8D23;&#x4EBA;&#x3002;
+&#x5BF9;&#x4E8E;&#x603B;&#x8D1F;&#x8D23;&#x4EBA;&#xFF0C;manager[headID] = -1&#x3002;&#x9898;&#x76EE;&#x4FDD;&#x8BC1;&#x4ECE;&#x5C5E;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x7528;&#x6811;&#x7ED3;&#x6784;&#x663E;&#x793A;&#x3002;
+&#x516C;&#x53F8;&#x603B;&#x8D1F;&#x8D23;&#x4EBA;&#x60F3;&#x8981;&#x5411;&#x516C;&#x53F8;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x901A;&#x544A;&#x4E00;&#x6761;&#x7D27;&#x6025;&#x6D88;&#x606F;&#x3002;
+&#x4ED6;&#x5C06;&#x4F1A;&#x9996;&#x5148;&#x901A;&#x77E5;&#x4ED6;&#x7684;&#x76F4;&#x5C5E;&#x4E0B;&#x5C5E;&#x4EEC;&#xFF0C;&#x7136;&#x540E;&#x7531;&#x8FD9;&#x4E9B;&#x4E0B;&#x5C5E;&#x901A;&#x77E5;&#x4ED6;&#x4EEC;&#x7684;&#x4E0B;&#x5C5E;&#xFF0C;&#x76F4;&#x5230;&#x6240;&#x6709;&#x7684;&#x5458;&#x5DE5;&#x90FD;&#x5F97;&#x77E5;&#x8FD9;&#x6761;&#x7D27;&#x6025;&#x6D88;&#x606F;&#x3002;
+&#x7B2C; i &#x540D;&#x5458;&#x5DE5;&#x9700;&#x8981; informTime[i] &#x5206;&#x949F;&#x6765;&#x901A;&#x77E5;&#x5B83;&#x7684;&#x6240;&#x6709;&#x76F4;&#x5C5E;&#x4E0B;&#x5C5E;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5728; informTime[i] &#x5206;&#x949F;&#x540E;&#xFF0C;
+&#x4ED6;&#x7684;&#x6240;&#x6709;&#x76F4;&#x5C5E;&#x4E0B;&#x5C5E;&#x90FD;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x4F20;&#x64AD;&#x8FD9;&#x4E00;&#x6D88;&#x606F;&#xFF09;&#x3002;
+&#x8FD4;&#x56DE;&#x901A;&#x77E5;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x8FD9;&#x4E00;&#x7D27;&#x6025;&#x6D88;&#x606F;&#x6240;&#x9700;&#x8981;&#x7684; &#x5206;&#x949F;&#x6570; &#x3002;
+&#x793A;&#x4F8B; 1&#xFF1A;&#x8F93;&#x5165;&#xFF1A;n = 1, headID = 0, manager = [-1], informTime = [0] &#x8F93;&#x51FA;&#xFF1A;0
+&#x89E3;&#x91CA;&#xFF1A;&#x516C;&#x53F8;&#x603B;&#x8D1F;&#x8D23;&#x4EBA;&#x662F;&#x8BE5;&#x516C;&#x53F8;&#x7684;&#x552F;&#x4E00;&#x4E00;&#x540D;&#x5458;&#x5DE5;&#x3002;
+&#x793A;&#x4F8B; 2&#xFF1A;&#x8F93;&#x5165;&#xFF1A;n = 6, headID = 2, manager = [2,2,-1,2,2,2], informTime = [0,0,1,0,0,0] 
+&#x8F93;&#x51FA;&#xFF1A;1
+&#x89E3;&#x91CA;&#xFF1A;id = 2 &#x7684;&#x5458;&#x5DE5;&#x662F;&#x516C;&#x53F8;&#x7684;&#x603B;&#x8D1F;&#x8D23;&#x4EBA;&#xFF0C;&#x4E5F;&#x662F;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x76F4;&#x5C5E;&#x8D1F;&#x8D23;&#x4EBA;&#xFF0C;&#x4ED6;&#x9700;&#x8981; 1 &#x5206;&#x949F;&#x6765;&#x901A;&#x77E5;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x3002;
+&#x4E0A;&#x56FE;&#x663E;&#x793A;&#x4E86;&#x516C;&#x53F8;&#x5458;&#x5DE5;&#x7684;&#x6811;&#x7ED3;&#x6784;&#x3002;
+&#x793A;&#x4F8B; 3&#xFF1A;&#x8F93;&#x5165;&#xFF1A;n = 7, headID = 6, manager = [1,2,3,4,5,6,-1], informTime = [0,6,5,4,3,2,1]
+&#x8F93;&#x51FA;&#xFF1A;21
+&#x89E3;&#x91CA;&#xFF1A;&#x603B;&#x8D1F;&#x8D23;&#x4EBA; id = 6&#x3002;&#x4ED6;&#x5C06;&#x5728; 1 &#x5206;&#x949F;&#x5185;&#x901A;&#x77E5; id = 5 &#x7684;&#x5458;&#x5DE5;&#x3002;
+id = 5 &#x7684;&#x5458;&#x5DE5;&#x5C06;&#x5728; 2 &#x5206;&#x949F;&#x5185;&#x901A;&#x77E5; id = 4 &#x7684;&#x5458;&#x5DE5;&#x3002;
+id = 4 &#x7684;&#x5458;&#x5DE5;&#x5C06;&#x5728; 3 &#x5206;&#x949F;&#x5185;&#x901A;&#x77E5; id = 3 &#x7684;&#x5458;&#x5DE5;&#x3002;
+id = 3 &#x7684;&#x5458;&#x5DE5;&#x5C06;&#x5728; 4 &#x5206;&#x949F;&#x5185;&#x901A;&#x77E5; id = 2 &#x7684;&#x5458;&#x5DE5;&#x3002;
+id = 2 &#x7684;&#x5458;&#x5DE5;&#x5C06;&#x5728; 5 &#x5206;&#x949F;&#x5185;&#x901A;&#x77E5; id = 1 &#x7684;&#x5458;&#x5DE5;&#x3002;
+id = 1 &#x7684;&#x5458;&#x5DE5;&#x5C06;&#x5728; 6 &#x5206;&#x949F;&#x5185;&#x901A;&#x77E5; id = 0 &#x7684;&#x5458;&#x5DE5;&#x3002;
+&#x6240;&#x9700;&#x65F6;&#x95F4; = 1 + 2 + 3 + 4 + 5 + 6 = 21 &#x3002;
+&#x793A;&#x4F8B; 4&#xFF1A;&#x8F93;&#x5165;&#xFF1A;n = 15, headID = 0, manager = [-1,0,0,1,1,2,2,3,3,4,4,5,5,6,6], 
+informTime = [1,1,1,1,1,1,1,0,0,0,0,0,0,0,0] &#x8F93;&#x51FA;&#xFF1A;3
+&#x89E3;&#x91CA;&#xFF1A;&#x7B2C;&#x4E00;&#x5206;&#x949F;&#x603B;&#x8D1F;&#x8D23;&#x4EBA;&#x901A;&#x77E5;&#x5458;&#x5DE5; 1 &#x548C; 2 &#x3002;
+&#x7B2C;&#x4E8C;&#x5206;&#x949F;&#x4ED6;&#x4EEC;&#x5C06;&#x4F1A;&#x901A;&#x77E5;&#x5458;&#x5DE5; 3, 4, 5 &#x548C; 6 &#x3002;
+&#x7B2C;&#x4E09;&#x5206;&#x949F;&#x4ED6;&#x4EEC;&#x5C06;&#x4F1A;&#x901A;&#x77E5;&#x5269;&#x4E0B;&#x7684;&#x5458;&#x5DE5;&#x3002;
+&#x793A;&#x4F8B; 5&#xFF1A;&#x8F93;&#x5165;&#xFF1A;n = 4, headID = 2, manager = [3,3,-1,2], informTime = [0,0,162,914] &#x8F93;&#x51FA;&#xFF1A;1076
+&#x63D0;&#x793A;&#xFF1A;
+    1 &lt;= n &lt;= 10^5
+    0 &lt;= headID &lt; n
+    manager.length == n
+    0 &lt;= manager[i] &lt; n
+    manager[headID] == -1
+    informTime.length == n
+    0 &lt;= informTime[i] &lt;= 1000
+    &#x5982;&#x679C;&#x5458;&#x5DE5; i &#x6CA1;&#x6709;&#x4E0B;&#x5C5E;&#xFF0C;informTime[i] == 0 &#x3002;
+    &#x9898;&#x76EE; &#x4FDD;&#x8BC1; &#x6240;&#x6709;&#x5458;&#x5DE5;&#x90FD;&#x53EF;&#x4EE5;&#x6536;&#x5230;&#x901A;&#x77E5;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+<th>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+<th>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x904D;&#x5386;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x641C;&#x7D22;</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-go"><span class="hljs-keyword">var</span> res <span class="hljs-keyword">int</span>
+<span class="hljs-keyword">var</span> m <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>][]<span class="hljs-keyword">int</span>
+
+<span class="hljs-keyword">func</span> numOfMinutes(n <span class="hljs-keyword">int</span>, headID <span class="hljs-keyword">int</span>, manager []<span class="hljs-keyword">int</span>, informTime []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    m = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>][]<span class="hljs-keyword">int</span>)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(manager); i++ {
+        <span class="hljs-keyword">if</span> _, ok := m[manager[i]]; ok {
+            m[manager[i]] = <span class="hljs-built_in">append</span>(m[manager[i]], i)
+        } <span class="hljs-keyword">else</span> {
+            m[manager[i]] = []<span class="hljs-keyword">int</span>{i}
+        }
+    }
+    res = <span class="hljs-number">0</span>
+    dfs(headID, <span class="hljs-number">0</span>, informTime)
+    <span class="hljs-keyword">return</span> res
+}
+
+<span class="hljs-keyword">func</span> dfs(headID <span class="hljs-keyword">int</span>, cost <span class="hljs-keyword">int</span>, informTime []<span class="hljs-keyword">int</span>) {
+    arr, ok := m[headID]
+    <span class="hljs-keyword">if</span> !ok {
+        <span class="hljs-keyword">if</span> cost &gt; res {
+            res = cost
+        }
+        <span class="hljs-keyword">return</span>
+    }
+    cost = cost + informTime[headID]
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(arr); i++ {
+        dfs(arr[i], cost, informTime)
+    }
+}
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">func</span> numOfMinutes(n <span class="hljs-keyword">int</span>, headID <span class="hljs-keyword">int</span>, manager []<span class="hljs-keyword">int</span>, informTime []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    res := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(manager); i++ {
+        <span class="hljs-comment">// &#x6CA1;&#x6709;&#x4E0B;&#x5C5E;</span>
+        <span class="hljs-keyword">if</span> informTime[i] == <span class="hljs-number">0</span> {
+            count := <span class="hljs-number">0</span>
+            index := i
+            <span class="hljs-keyword">for</span> index != <span class="hljs-number">-1</span> {
+                count = count + informTime[index]
+                index = manager[index]
+            }
+            res = max(res, count)
+        }
+    }
+    <span class="hljs-keyword">return</span> res
+}
+
+<span class="hljs-keyword">func</span> max(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> a &gt; b {
+        <span class="hljs-keyword">return</span> a
+    }
+    <span class="hljs-keyword">return</span> b
+}
+
+# <span class="hljs-number">3</span>
+<span class="hljs-keyword">func</span> numOfMinutes(n <span class="hljs-keyword">int</span>, headID <span class="hljs-keyword">int</span>, manager []<span class="hljs-keyword">int</span>, informTime []<span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    res := <span class="hljs-number">0</span>
+    m := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>][]<span class="hljs-keyword">int</span>)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(manager); i++ {
+        <span class="hljs-keyword">if</span> _, ok := m[manager[i]]; ok {
+            m[manager[i]] = <span class="hljs-built_in">append</span>(m[manager[i]], i)
+        } <span class="hljs-keyword">else</span> {
+            m[manager[i]] = []<span class="hljs-keyword">int</span>{i}
+        }
+    }
+    queue := <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, <span class="hljs-number">0</span>)
+    queue = <span class="hljs-built_in">append</span>(queue, headID)
+    costM := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">int</span>)
+    costM[headID] = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(queue) &gt; <span class="hljs-number">0</span> {
+        id := queue[<span class="hljs-number">0</span>]
+        queue = queue[<span class="hljs-number">1</span>:]
+        res = max(res, costM[id])
+        <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(m[id]); i++ {
+            costM[m[id][i]] = informTime[id] + costM[id]
+            queue = <span class="hljs-built_in">append</span>(queue, m[id][i])
+        }
+    }
+    <span class="hljs-keyword">return</span> res
+}
+
+<span class="hljs-keyword">func</span> max(a, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">if</span> a &gt; b {
+        <span class="hljs-keyword">return</span> a
+    }
+    <span class="hljs-keyword">return</span> b
+}
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; Zhi2014 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-07-27 11:02:52
+2020-09-07 21:34:19
 </span></footer>
                                 
                                 </section>
@@ -2856,7 +3297,7 @@ nums       index     target
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1301-1400","level":"1.2.14","depth":2,"next":{"title":"1401-1500","level":"1.2.15","depth":2,"path":"docs/source/question/1401-1500.md","ref":"docs/source/question/1401-1500.md","articles":[]},"previous":{"title":"1201-1300","level":"1.2.13","depth":2,"path":"docs/source/question/1201-1300.md","ref":"docs/source/question/1201-1300.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/1301-1400.md","mtime":"2020-07-27T03:02:52.116Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-01T01:39:40.728Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1301-1400","level":"1.2.14","depth":2,"next":{"title":"1401-1500","level":"1.2.15","depth":2,"path":"docs/source/question/1401-1500.md","ref":"docs/source/question/1401-1500.md","articles":[]},"previous":{"title":"1201-1300","level":"1.2.13","depth":2,"path":"docs/source/question/1201-1300.md","ref":"docs/source/question/1201-1300.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/1301-1400.md","mtime":"2020-09-07T13:34:19.034Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T15:01:59.885Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
