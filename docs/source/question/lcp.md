@@ -642,3 +642,226 @@ func check(arr []int, mid int) int {
 }
 ```
 
+## LCP17.速算机器人(2)
+
+- 题目
+
+```
+小扣在秋日市集发现了一款速算机器人。店家对机器人说出两个数字（记作 x 和 y），请小扣说出计算指令：
+    "A" 运算：使 x = 2 * x + y；
+    "B" 运算：使 y = 2 * y + x。
+在本次游戏中，店家说出的数字为 x = 1 和 y = 0，小扣说出的计算指令记作仅由大写字母 A、B 组成的字符串 s，
+字符串中字符的顺序表示计算顺序，请返回最终 x 与 y 的和为多少。
+示例 1： 输入：s = "AB" 输出：4
+解释：经过一次 A 运算后，x = 2, y = 0。
+    再经过一次 B 运算，x = 2, y = 2。
+    最终 x 与 y 之和为 4。
+提示：0 <= s.length <= 10
+    s 由 'A' 和 'B' 组成
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n)       | O(1)       |
+| 02   | 数学 | O(1)       | O(1)       |
+
+```go
+func calculate(s string) int {
+	x, y := 1, 0
+	for i := 0; i < len(s); i++ {
+		if s[i] == 'A' {
+			x = 2*x + y
+		} else if s[i] == 'B' {
+			y = 2*y + x
+		}
+	}
+	return x + y
+}
+
+# 2
+func calculate(s string) int {
+	return 1 << len(s)
+}
+```
+
+## LCP18.早餐组合(3)
+
+- 题目
+
+```
+小扣在秋日市集选择了一家早餐摊位，一维整型数组 staple 中记录了每种主食的价格，
+一维整型数组 drinks 中记录了每种饮料的价格。小扣的计划选择一份主食和一款饮料，且花费不超过 x 元。
+请返回小扣共有多少种购买方案。
+注意：答案需要以 1e9 + 7 (1000000007) 为底取模，如：计算初始结果为：1000000008，请返回 1
+示例 1：输入：staple = [10,20,5], drinks = [5,5,2], x = 15 输出：6
+    解释：小扣有 6 种购买方案，所选主食与所选饮料在数组中对应的下标分别是：
+    第 1 种方案：staple[0] + drinks[0] = 10 + 5 = 15；
+    第 2 种方案：staple[0] + drinks[1] = 10 + 5 = 15；
+    第 3 种方案：staple[0] + drinks[2] = 10 + 2 = 12；
+    第 4 种方案：staple[2] + drinks[0] = 5 + 5 = 10；
+    第 5 种方案：staple[2] + drinks[1] = 5 + 5 = 10；
+    第 6 种方案：staple[2] + drinks[2] = 5 + 2 = 7。
+示例 2： 输入：staple = [2,1,1], drinks = [8,9,5,1], x = 9 输出：8
+    解释：小扣有 8 种购买方案，所选主食与所选饮料在数组中对应的下标分别是：
+    第 1 种方案：staple[0] + drinks[2] = 2 + 5 = 7；
+    第 2 种方案：staple[0] + drinks[3] = 2 + 1 = 3；
+    第 3 种方案：staple[1] + drinks[0] = 1 + 8 = 9；
+    第 4 种方案：staple[1] + drinks[2] = 1 + 5 = 6；
+    第 5 种方案：staple[1] + drinks[3] = 1 + 1 = 2；
+    第 6 种方案：staple[2] + drinks[0] = 1 + 8 = 9；
+    第 7 种方案：staple[2] + drinks[2] = 1 + 5 = 6；
+    第 8 种方案：staple[2] + drinks[3] = 1 + 1 = 2；
+提示：1 <= staple.length <= 10^5
+    1 <= drinks.length <= 10^5
+    1 <= staple[i],drinks[i] <= 10^5
+    1 <= x <= 2*10^5
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 排序双指针      | O(nlog(n)) | O(1)       |
+| 02   | 数组辅助+前缀和 | O(n)       | O(n)       |
+| 03   | 排序+二分查找   | O(nlog(n)) | O(1)       |
+
+```go
+func breakfastNumber(staple []int, drinks []int, x int) int {
+	sort.Ints(staple)
+	sort.Ints(drinks)
+	res := 0
+	j := len(drinks) - 1
+	for i := 0; i < len(staple); i++ {
+		for j >= 0 && staple[i]+drinks[j] > x {
+			j--
+		}
+		res = (res + j + 1) % 1000000007
+	}
+	return res
+}
+
+# 2
+func breakfastNumber(staple []int, drinks []int, x int) int {
+	res := 0
+	arr := make([]int, x+1)
+	for i := 0; i < len(staple); i++ {
+		if staple[i] < x {
+			arr[staple[i]]++
+		}
+	}
+	for i := 1; i < len(arr); i++ {
+		arr[i] = arr[i-1] + arr[i]
+	}
+	for i := 0; i < len(drinks); i++ {
+		target := x - drinks[i]
+		if target <= 0 {
+			continue
+		}
+		res = (res + arr[target]) % 1000000007
+	}
+	return res
+}
+
+# 3
+func breakfastNumber(staple []int, drinks []int, x int) int {
+	sort.Ints(staple)
+	sort.Ints(drinks)
+	res := 0
+	for i := 0; i < len(staple); i++ {
+		target := x - staple[i]
+		if target <= 0 {
+			break
+		}
+		j := binarySearch(drinks, target)
+		res = (res + j) % 1000000007
+	}
+	return res
+}
+
+func binarySearch(arr []int, target int) int {
+	left, right := 0, len(arr)
+	for left < right {
+		mid := left + (right-left)/2
+		if arr[mid] > target {
+			right = mid
+		} else {
+			left = mid + 1
+		}
+	}
+	return left
+}
+```
+
+## LCP19.秋叶收藏集
+
+### 题目
+
+```
+小扣出去秋游，途中收集了一些红叶和黄叶，他利用这些叶子初步整理了一份秋叶收藏集 leaves， 
+字符串 leaves 仅包含小写字符 r 和 y， 其中字符 r 表示一片红叶，字符 y 表示一片黄叶。
+出于美观整齐的考虑，小扣想要将收藏集中树叶的排列调整成「红、黄、红」三部分。
+每部分树叶数量可以不相等，但均需大于等于 1。每次调整操作，
+小扣可以将一片红叶替换成黄叶或者将一片黄叶替换成红叶。
+请问小扣最少需要多少次调整操作才能将秋叶收藏集调整完毕。
+示例 1：输入：leaves = "rrryyyrryyyrr" 输出：2
+解释：调整两次，将中间的两片红叶替换成黄叶，得到 "rrryyyyyyyyrr"
+示例 2：输入：leaves = "ryr" 输出：0
+解释：已符合要求，不需要额外操作
+提示：3 <= leaves.length <= 10^5
+    leaves 中只包含字符 'r' 和字符 'y'
+```
+
+### 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-二维 | O(n)       | O(n)       |
+| 02   | 动态规划-一维 | O(n)       | O(1)       |
+
+```go
+func minimumOperations(leaves string) int {
+	n := len(leaves)
+	// 长度i+1
+	// dp[i][0] 全部变成r的步数
+	// dp[i][1] 变成r...ry...y的步数
+	// dp[i][2] 变成r...ry...yr...r的步数
+	dp := make([][3]int, n)
+	if leaves[0] == 'y' {
+		dp[0][0] = 1 // 1个y变为r需要1步
+	}
+	for i := 1; i < n; i++ {
+		if leaves[i] == 'r' {
+			dp[i][0] = dp[i-1][0]     // 不需要改变，同前一个
+			dp[i][1] = dp[i-1][0] + 1 // 全r+当前r，需要改变一个y，步数+1
+			if i > 1 {
+				dp[i][1] = min(dp[i][1], dp[i-1][1]+1)
+				dp[i][2] = dp[i-1][1]
+			}
+			if i > 2 {
+				dp[i][2] = min(dp[i][2], dp[i-1][2])
+			}
+		} else {
+			dp[i][0] = dp[i-1][0] + 1 // 需要改变，步数+1
+			dp[i][1] = dp[i-1][0]     // 前一个全r+当前y,不需要改变
+			if i > 1 {
+				dp[i][1] = min(dp[i][1], dp[i-1][1])
+				dp[i][2] = dp[i-1][1] + 1
+			}
+			if i > 2 {
+				dp[i][2] = min(dp[i][2], dp[i-1][2]+1)
+			}
+		}
+	}
+	return dp[n-1][2]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+

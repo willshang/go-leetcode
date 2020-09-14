@@ -49,6 +49,18 @@
 | ------------------------------------------------------------ | -------------- | ------ | -------- |
 | [81.搜索旋转排序数组II](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/) | 数组、二分查找 | Medium | 完成     |
 
+###  几数之和
+
+| Title                                                        | Tag                    | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
+| [1.两数之和](https://leetcode-cn.com/problems/two-sum/)      | 数组、哈希表           | Easy   | 完成     |
+| [167.两数之和II-输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted) | 数组、双指针、二分查找 | Easy   | 完成     |
+| [653.两数之和IV-输入BST](https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/) | 树                     | Easy   | 完成     |
+| [15.三数之和](https://leetcode-cn.com/problems/3sum/)        | 数组、双指针           | Medium | 完成     |
+| [16.最接近的三数之和](https://leetcode-cn.com/problems/3sum-closest/) | 数组、双指针           | Medium | 完成     |
+| [18.四数之和](https://leetcode-cn.com/problems/4sum/)        | 数组、哈希表、双指针   | Medium | 完成     |
+| [454.四数相加II](https://leetcode-cn.com/problems/4sum-ii/)  | 哈希表、二分查找       | Medium | 完成     |
+
 ### 杨辉三角
 
 | Title                                                        | Tag  | 难度 | 完成情况 |
@@ -271,6 +283,13 @@
 | ------------------------------------------------------------ | ---------------------------------------------- | ------ | -------- |
 | [207.课程表](https://leetcode-cn.com/problems/course-schedule/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium | 完成     |
 | [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium | 完成     |
+
+### 欧拉回路 / 欧拉通路
+
+| Title | Tag  | 难度 | 完成情况 |
+| ----- | ---- | ---- | -------- |
+| 332   |      |      | 完成     |
+| 753   |      |      |          |
 
 ### 前缀和问题
 

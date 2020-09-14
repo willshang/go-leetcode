@@ -84,7 +84,7 @@
 | 0066 | [面试题16.05.阶乘尾数](https://leetcode-cn.com/problems/factorial-zeros-lcci/) | 数学                       | Easy   | 完成     |
 | 0067 | [面试题16.06.最小差](https://leetcode-cn.com/problems/smallest-difference-lcci/) | 数组、双指针               | Medium | 完成     |
 | 0068 | [面试题16.07.最大数值](https://leetcode-cn.com/problems/maximum-lcci/) | 位运算                     | Easy   | 完成     |
-| 0069 | 08                                                           |                            |        |          |
+| 0069 | [面试题16.08.整数的英语表示](https://leetcode-cn.com/problems/english-int-lcci/) | 数学、字符串               | Hard   | 完成     |
 | 0070 | 09                                                           |                            |        |          |
 |      | 第8期                                                        |                            |        |          |
 | 0071 | [面试题16.10.生存人数](https://leetcode-cn.com/problems/living-people-lcci/) | 数组                       | Medium | 完成     |
@@ -102,7 +102,7 @@
 | 0082 | 22                                                           |                            |        |          |
 | 0083 | 24                                                           |                            |        |          |
 | 0084 | [面试题16.25.LRU缓存](https://leetcode-cn.com/problems/lru-cache-lcci/) | 设计                       | Medium | 完成     |
-| 0085 | 26                                                           |                            |        |          |
+| 0085 | [面试题16.26.计算器](https://leetcode-cn.com/problems/calculator-lcci/) | 字符串                     | Medium | 完成     |
 | 0086 | [面试题17.01.不用加号的加法](https://leetcode-cn.com/problems/add-without-plus-lcci/) | 位运算                     | Easy   | 完成     |
 | 0087 | [面试题17.04.消失的数字](https://leetcode-cn.com/problems/missing-number-lcci/) | 位运算、数组、数字         | Easy   | 完成     |
 | 0088 | 05                                                           |                            |        |          |

@@ -14,3 +14,10 @@
 | 0010 |                                                              |      |        |          |
 | 0011 | [LCP11.期望个数统计](https://leetcode-cn.com/problems/qi-wang-ge-shu-tong-ji/) |      | Easy   | 完成     |
 | 0012 | [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) |      | Medium | 完成     |
+| 0013 |                                                              |      |        |          |
+| 0014 |                                                              |      |        |          |
+| 0015 |                                                              |      |        |          |
+| 0016 |                                                              |      |        |          |
+| 0017 | [LCP17.速算机器人](https://leetcode-cn.com/problems/nGK0Fy/) |      | Easy   | 完成     |
+| 0018 | [LCP18.早餐组合](https://leetcode-cn.com/problems/2vYnGI/)   |      | Easy   | 完成     |
+| 0019 | [LCP19.秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/) |      | Medium | 【】     |

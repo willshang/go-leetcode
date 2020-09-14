@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	first := ListNode{Val: 3}
@@ -23,13 +26,20 @@ func insertionSortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}
+	arr := make([]*ListNode, 0)
+	for head != nil {
+		arr = append(arr, head)
+		head = head.Next
+	}
+	sort.Slice(arr, func(i, j int) bool {
+		return arr[i].Val < arr[j].Val
+	})
 	res := &ListNode{Next: head}
-	cur := head.Next
-	head.Next = nil
-	for cur != nil {
-		prev := res
-		next := cur.Next
-
+	cur := res
+	arr[len(arr)-1].Next = nil
+	for i := 0; i < len(arr); i++ {
+		cur.Next = arr[i]
+		cur = cur.Next
 	}
 	return res.Next
 }

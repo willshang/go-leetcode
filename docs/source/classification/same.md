@@ -41,7 +41,7 @@
 | 37       | [236.二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) Medium | [面试题68-II.二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) [Easy]<br />[面试题04.08.首个共同祖先](https://leetcode-cn.com/problems/first-common-ancestor-lcci/) Medium |
 | 38       | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) Medium | [面试题48.最长不含重复字符的子字符串](https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/) Medium |
 | 39       | [400.第N个数字](https://leetcode-cn.com/problems/nth-digit/) Medium | [面试题44.数字序列中某一位的数字](https://leetcode-cn.com/problems/shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi-lcof/) Medium |
-| 40       | [297.二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/) Hard | [面试题37.序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/) [Hard] |
+| 40       | [297.二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/) Hard<br />[449.序列化和反序列化二叉搜索树](https://leetcode-cn.com/problems/serialize-and-deserialize-bst/) Medium | [面试题37.序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/) [Hard] |
 | 41       | 426                                                          | [面试题36.二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) [Medium] |
 | 42       | [138.复制带随机指针的链表](https://leetcode-cn.com/problems/copy-list-with-random-pointer/) Medium | [面试题35.复杂链表的复制](https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/) Medium |
 | 43       | [113.路径总和II](https://leetcode-cn.com/problems/path-sum-ii/) Medium | [面试题34.二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/) Medium |
@@ -67,7 +67,7 @@
 | 63 | [733.图像渲染](https://leetcode-cn.com/problems/flood-fill/) Easy | [面试题08.10.颜色填充](https://leetcode-cn.com/problems/color-fill-lcci/) Easy |
 | 64 | [172.阶乘后的零](https://leetcode-cn.com/problems/factorial-trailing-zeroes) Easy | [面试题16.05.阶乘尾数](https://leetcode-cn.com/problems/factorial-zeros-lcci/) Easy |
 | 65(相似) | [面试题02.02.返回倒数第k个节点](https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci/) Easy | [面试题22.链表中倒数第k个节点](https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/) Easy |
-| 66 | [572.另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/) Easy | [面试题26.树的子结构](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/) Medium<br />[面试题04.10.检查子树](https://leetcode-cn.com/problems/check-subtree-lcci/) Medium |
+| 66(相似) | [572.另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/) Easy<br />[1367.二叉树中的列表](https://leetcode-cn.com/problems/linked-list-in-binary-tree/) Medium | [面试题26.树的子结构](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/) Medium<br />[面试题04.10.检查子树](https://leetcode-cn.com/problems/check-subtree-lcci/) Medium |
 | 67 | [437.路径总和III](https://leetcode-cn.com/problems/path-sum-iii/) Easy | [面试题04.12.求和路径](https://leetcode-cn.com/problems/paths-with-sum-lcci/) Medium |
 | 68 | [22.括号生成](https://leetcode-cn.com/problems/generate-parentheses/) Medium | [面试题08.09.括号](https://leetcode-cn.com/problems/bracket-lcci/) Medium |
 | 69(相似) | [46.全排列](https://leetcode-cn.com/problems/permutations/) Medium | [面试题08.07.无重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-i-lcci/) Medium |
@@ -93,4 +93,7 @@
 | 89(相似) | [888.公平的糖果交换](https://leetcode-cn.com/problems/fair-candy-swap/) Easy | [面试题16.21.交换和](https://leetcode-cn.com/problems/sum-swap-lcci/) Medium |
 | 90 | [316.去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/) Hard | [1081.不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) Medium |
 | 91(相似) | [486.预测赢家](https://leetcode-cn.com/problems/predict-the-winner/) Medium | [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) Medium |
+| 92 | [273.整数转换英文表示](https://leetcode-cn.com/problems/integer-to-english-words/) Hard | [面试题16.08.整数的英语表示](https://leetcode-cn.com/problems/english-int-lcci/) Hard |
+| 93 | [227.基本计算器II](https://leetcode-cn.com/problems/basic-calculator-ii/) Medium | [面试题16.26.计算器](https://leetcode-cn.com/problems/calculator-lcci/) Medium |
+| 94 | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) Medium | 面试题08.11.硬币 |
 

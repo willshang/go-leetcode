@@ -4808,6 +4808,182 @@ func maximum(a int, b int) int {
 }
 ```
 
+## 面试题16.08.整数的英语表示(2)
+
+- 题目
+
+```
+给定一个整数，打印该整数的英文描述。
+示例 1:输入: 123 输出: "One Hundred Twenty Three"
+示例 2:输入: 12345 输出: "Twelve Thousand Three Hundred Forty Five"
+示例 3:输入: 1234567 
+输出: "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
+示例 4:输入: 1234567891
+输出: "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven
+Thousand Eight Hundred Ninety One"
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(1)       | O(1)       |
+| 02   | 递归 | O(1)       | O(1)       |
+
+```go
+func numberToWords(num int) string {
+	if num == 0 {
+		return "Zero"
+	}
+	res := ""
+	billion := num / 1000000000
+	million := (num - billion*1000000000) / 1000000
+	thousand := (num - billion*1000000000 - million*1000000) / 1000
+	left := num - billion*1000000000 - million*1000000 - thousand*1000
+	if billion != 0 {
+		res += three(billion) + " Billion"
+	}
+	if million != 0 {
+		if res != "" {
+			res += " "
+		}
+		res += three(million) + " Million"
+	}
+	if thousand != 0 {
+		if res != "" {
+			res += " "
+		}
+		res += three(thousand) + " Thousand"
+	}
+	if left != 0 {
+		if res != "" {
+			res += " "
+		}
+		res += three(left)
+	}
+	return res
+}
+
+func three(num int) string {
+	hundred := num / 100
+	left := num - hundred*100
+	if hundred == 0 {
+		return two(num)
+	}
+	res := transfer[hundred] + " Hundred"
+	if left != 0 {
+		res += " " + two(left)
+	}
+	return res
+}
+
+func two(num int) string {
+	if num == 0 {
+		return ""
+	} else if num < 10 {
+		return transfer[num]
+	} else if num < 20 {
+		return transfer[num]
+	}
+	ten := num / 10
+	left := num - ten*10
+	ten = ten * 10
+	res := transfer[ten]
+	if left != 0 {
+		res += " " + transfer[left]
+	}
+	return res
+}
+
+var transfer = map[int]string{
+	0:  "Zero",
+	1:  "One",
+	2:  "Two",
+	3:  "Three",
+	4:  "Four",
+	5:  "Five",
+	6:  "Six",
+	7:  "Seven",
+	8:  "Eight",
+	9:  "Nine",
+	10: "Ten",
+	11: "Eleven",
+	12: "Twelve",
+	13: "Thirteen",
+	14: "Fourteen",
+	15: "Fifteen",
+	16: "Sixteen",
+	17: "Seventeen",
+	18: "Eighteen",
+	19: "Nineteen",
+	20: "Twenty",
+	30: "Thirty",
+	40: "Forty",
+	50: "Fifty",
+	60: "Sixty",
+	70: "Seventy",
+	80: "Eighty",
+	90: "Ninety",
+}
+
+# 2
+func numberToWords(num int) string {
+	if num == 0 {
+		return "Zero"
+	}
+	return strings.Trim(dfs(num), " ")
+}
+
+func dfs(n int) string {
+	if n < 20 {
+		return transfer[n]
+	}
+	if n < 100 {
+		return transfer[n/10*10] + dfs(n%10)
+	}
+	if n < 1000 {
+		return transfer[n/100] + "Hundred " + dfs(n%100)
+	}
+	if n < 1000000 {
+		return dfs(n/1000) + "Thousand " + dfs(n%1000)
+	}
+	if n < 1000000000 {
+		return dfs(n/1000000) + "Million " + dfs(n%1000000)
+	}
+	return dfs(n/1000000000) + "Billion " + dfs(n%1000000000)
+}
+
+var transfer = map[int]string{
+	1:  "One ",
+	2:  "Two ",
+	3:  "Three ",
+	4:  "Four ",
+	5:  "Five ",
+	6:  "Six ",
+	7:  "Seven ",
+	8:  "Eight ",
+	9:  "Nine ",
+	10: "Ten ",
+	11: "Eleven ",
+	12: "Twelve ",
+	13: "Thirteen ",
+	14: "Fourteen ",
+	15: "Fifteen ",
+	16: "Sixteen ",
+	17: "Seventeen ",
+	18: "Eighteen ",
+	19: "Nineteen ",
+	20: "Twenty ",
+	30: "Thirty ",
+	40: "Forty ",
+	50: "Fifty ",
+	60: "Sixty ",
+	70: "Seventy ",
+	80: "Eighty ",
+	90: "Ninety ",
+}
+```
+
 ## 面试题16.10.生存人数(2)
 
 - 题目
@@ -5441,6 +5617,111 @@ func (this *LRUCache) putHead(node *Node) {
 	node.next = next
 	next.prev = node
 	node.prev = this.header
+}
+```
+
+## 面试题16.26.计算器(2)
+
+- 题目
+
+```
+给定一个包含正整数、加(+)、减(-)、乘(*)、除(/)的算数表达式(括号除外)，计算其结果。
+表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格  。 整数除法仅保留整数部分。
+示例 1:输入: "3+2*2" 输出: 7
+示例 2:输入: " 3/2 " 输出: 1
+示例 3:输入: " 3+5 / 2 " 输出: 5
+说明：你可以假设所给定的表达式都是有效的。
+    请不要使用内置的库函数 eval。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 栈辅助 | O(n)       | O(n)       |
+| 02   | 栈辅助 | O(n)       | O(n)       |
+
+```go
+func calculate(s string) int {
+	stack := make([]int, 0)
+	op := make([]int, 0)
+	num := 0
+	for i := 0; i < len(s); i++ {
+		if '0' <= s[i] && s[i] <= '9' {
+			num = 0
+			for i < len(s) && '0' <= s[i] && s[i] <= '9' {
+				num = num*10 + int(s[i]-'0')
+				i++
+			}
+			// 处理乘除计算
+			if len(op) > 0 && op[len(op)-1] > 1 {
+				if op[len(op)-1] == 2 {
+					stack[len(stack)-1] = stack[len(stack)-1] * num
+				} else {
+					stack[len(stack)-1] = stack[len(stack)-1] / num
+				}
+				op = op[:len(op)-1]
+			} else {
+				stack = append(stack, num)
+			}
+			i--
+		} else if s[i] == '+' {
+			op = append(op, 1)
+		} else if s[i] == '-' {
+			op = append(op, -1)
+		} else if s[i] == '*' {
+			op = append(op, 2)
+		} else if s[i] == '/' {
+			op = append(op, 3)
+		}
+	}
+	// 处理加减
+	for len(op) > 0 {
+		stack[1] = stack[0] + stack[1]*op[0]
+		stack = stack[1:]
+		op = op[1:]
+	}
+	return stack[0]
+}
+
+# 2
+func calculate(s string) int {
+	s = strings.Trim(s, " ") // 避免"3/2 "的情况
+	stack := make([]int, 0)
+	num := 0
+	sign := byte('+')
+	for i := 0; i < len(s); i++ {
+		if s[i] == ' ' {
+			continue
+		}
+		if '0' <= s[i] && s[i] <= '9' {
+			num = num*10 + int(s[i]-'0')
+		}
+		if s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/' || i == len(s)-1 {
+			// 处理前一个符号
+			switch sign {
+			case '+':
+				stack = append(stack, num)
+			case '-':
+				stack = append(stack, -num)
+			case '*':
+				prev := stack[len(stack)-1]
+				stack = stack[:len(stack)-1]
+				stack = append(stack, num*prev)
+			case '/':
+				prev := stack[len(stack)-1]
+				stack = stack[:len(stack)-1]
+				stack = append(stack, prev/num)
+			}
+			num = 0
+			sign = s[i]
+		}
+	}
+	res := 0
+	for i := 0; i < len(stack); i++ {
+		res = res + stack[i]
+	}
+	return res
 }
 ```
 
