@@ -68,6 +68,25 @@
 | [118.杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) | 数组 | Easy | 完成     |
 | [119.杨辉三角II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组 | Easy | 完成     |
 
+### 数组-差分数组
+
+| Title                                                        | Tag        | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------- | ------ | -------- |
+| [1094.拼车](https://leetcode-cn.com/problems/car-pooling/)   | 贪心算法   | Medium | 完成     |
+| [1109.航班预订统计](https://leetcode-cn.com/problems/corporate-flight-bookings/) | 数组、数学 | Medium | 完成     |
+| [5505.所有排列中的最大和](https://leetcode-cn.com/problems/maximum-sum-obtained-of-any-permutation/) |            |        |          |
+
+### 数组-前缀和问题
+
+| Title                                                        | Tag            | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------- | ------ | -------- |
+| [303.区域和检索-数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划       | Easy   | 完成     |
+| [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) | 动态规划       | Medium | 完成     |
+| [523.连续的子数组和](https://leetcode-cn.com/problems/continuous-subarray-sum/) | 数学、动态规划 | Medium | 完成     |
+| [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表   | Medium | 完成     |
+| [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表   | Medium | 完成     |
+| [1248.统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/) | 双指针         | Medium | 完成     |
+
 ## 2.字符串
 
 ### 回文字符串(高频)(动态规划/中心扩展/马拉车算法)
@@ -264,7 +283,9 @@
 | [84.柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 栈、数组                   | Hard   | 完成     |
 | [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 栈、数组、哈希表、动态规划 | Hard   | 完成     |
 | [316.去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/) | 栈、贪心算法               | Hard   | 完成     |
+| [402.移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) | 栈、贪心算法               | Medium | 完成     |
 | [496.下一个更大元素I](https://leetcode-cn.com/problems/next-greater-element-i/) | 栈                         | Easy   | 完成     |
+| [503.下一个更大元素II](https://leetcode-cn.com/problems/next-greater-element-ii/) | 栈                         | Medium | 完成     |
 | [739.每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 栈、哈希表                 | Medium | 完成     |
 | [901.股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 栈                         | Medium | 完成     |
 | [1081.不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) | 字符串                     | Medium | 完成     |
@@ -277,30 +298,30 @@
 | [1162.地图分析](https://leetcode-cn.com/problems/as-far-from-land-as-possible/) | 广度优先搜索、图           | Medium | 完成     |
 | [542.01矩阵](https://leetcode-cn.com/problems/01-matrix/)    | 深度优先搜索、广度优先搜索 | Medium | 完成     |
 
-### 拓扑排序
+### 岛屿问题
+
+| Title                                                        | Tag                                | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------------------- | ------ | -------- |
+| [200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
+| [463.岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/) | 哈希表                             | Easy   | 完成     |
+| [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) | 深度优先搜索、数组                 | Medium | 完成     |
+| [994.腐烂的橘子](https://leetcode-cn.com/problems/rotting-oranges/) | 广度优先搜索                       | Medium | 完成     |
+| [1020.飞地的数量](https://leetcode-cn.com/problems/number-of-enclaves/) | 深度优先搜索                       | Medium | 完成     |
+| [1254.统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/) | 深度优先搜索                       | Medium | 完成     |
+
+### 图-拓扑排序
 
 | Title                                                        | Tag                                            | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ---------------------------------------------- | ------ | -------- |
 | [207.课程表](https://leetcode-cn.com/problems/course-schedule/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium | 完成     |
 | [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序 | Medium | 完成     |
 
-### 欧拉回路 / 欧拉通路
+### 图-欧拉回路 / 欧拉通路
 
 | Title | Tag  | 难度 | 完成情况 |
 | ----- | ---- | ---- | -------- |
 | 332   |      |      | 完成     |
 | 753   |      |      |          |
-
-### 前缀和问题
-
-| Title                                                        | Tag            | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------- | ------ | -------- |
-| [303.区域和检索-数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划       | Easy   | 完成     |
-| [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) | 动态规划       | Medium | 完成     |
-| [523.连续的子数组和](https://leetcode-cn.com/problems/continuous-subarray-sum/) | 数学、动态规划 | Medium | 完成     |
-| [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表   | Medium | 完成     |
-| [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表   | Medium | 完成     |
-| [1248.统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/) | 双指针         | Medium | 完成     |
 
 ### 二分查找-最大化最小值、最小化最大值
 
@@ -337,6 +358,8 @@
 | [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 双指针、Sliding Window                       | Medium | 完成     |
 | 632                                                          |                                              |        |          |
 | 727                                                          |                                              |        |          |
+| [1004.最大连续1的个数III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | 双指针、Sliding Window                       | Medium | 完成     |
+| [1052.爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 数组、Sliding Window                         | Medium | 完成     |
 
 ### Trie树
 
@@ -350,3 +373,4 @@
 | Title                                                        | Tag  | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ---- | ------ | -------- |
 | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) |      | Medium | 完成     |
+

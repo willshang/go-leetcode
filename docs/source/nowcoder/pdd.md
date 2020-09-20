@@ -312,7 +312,203 @@ M和N都不超过100, 门不超过10扇。
 
 ```
 
+## 7.数三角形
 
+### 题目
+
+```
+题目描述: 给出平面上的n个点，现在需要你求出，在这n个点里选3个点能构成一个三角形的方案有几种。
+输入描述:第一行包含一个正整数n，表示平面上有n个点（n <= 100)
+第2行到第n + 1行，每行有两个整数，表示这个点的x坐标和y坐标。
+(所有坐标的绝对值小于等于100，且保证所有坐标不同）
+输出描述:输出一个数，表示能构成三角形的方案数。
+示例1: 输入
+4
+0 0
+0 1
+1 0
+1 1
+输出 4
+说明4个点中任意选择3个都能构成三角形
+```
+
+### 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 暴力法 | O(n^3)     | O(1)       |
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+	for {
+		a, _ := fmt.Scan(&n)
+		if a == 0 {
+			break
+		}
+		arr := make([][2]int, n)
+		for i := 0; i < n; i++ {
+			var x, y int
+			fmt.Scan(&x, &y)
+			arr[i] = [2]int{x, y}
+		}
+		fmt.Println(count(arr))
+	}
+}
+
+func count(arr [][2]int) int {
+	res := 0
+	for i := 0; i < len(arr); i++ {
+		for j := i + 1; j < len(arr); j++ {
+			for k := j + 1; k < len(arr); k++ {
+				// 斜率判断
+				l1 := (arr[i][0] - arr[j][0]) * (arr[i][1] - arr[k][1])
+				l2 := (arr[i][1] - arr[j][1]) * (arr[i][0] - arr[k][0])
+				if l1 != l2 {
+					res++
+				}
+			}
+		}
+	}
+	return res
+}
+```
+
+## 8.最大乘积(1)
+
+- 题目
+
+```
+题目描述给定一个无序数组，包含正数、负数和0，要求从中找出3个数的乘积，使得乘积最大，
+要求时间复杂度：O(n)，空间复杂度：O(1)。
+n<=1e5。
+输入描述:第一行是数组大小n，第二行是无序整数数组A[n]
+输出描述:满足条件的最大乘积
+示例1 输入
+4
+3 4 1 2
+输出 24
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 排序 | O(nlog(n)) | O(1)       |
+
+```go
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	var n, m int
+	for {
+		a, _ := fmt.Scan(&n)
+		if a == 0 {
+			break
+		}
+		nums := make([]int, 0)
+		for i := 0; i < n; i++ {
+			_, _ = fmt.Scan(&m)
+			nums = append(nums, m)
+		}
+		fmt.Println(maximumProduct(nums))
+	}
+}
+
+func maximumProduct(nums []int) int {
+	sort.Ints(nums)
+	return max(nums[0]*nums[1]*nums[len(nums)-1],
+		nums[len(nums)-3]*nums[len(nums)-2]*nums[len(nums)-1])
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 13.回合制游戏(1)
+
+- 题目
+
+```
+题目描述
+你在玩一个回合制角色扮演的游戏。现在你在准备一个策略，以便在最短的回合内击败敌方角色。
+在战斗开始时，敌人拥有HP格血量。当血量小于等于0时，敌人死去。
+一个缺乏经验的玩家可能简单地尝试每个回合都攻击。但是你知道辅助技能的重要性。
+在你的每个回合开始时你可以选择以下两个动作之一：聚力或者攻击。
+    聚力会提高你下个回合攻击的伤害。
+    攻击会对敌人造成一定量的伤害。如果你上个回合使用了聚力，那这次攻击会对敌人造成buffedAttack点伤害。
+    否则，会造成normalAttack点伤害。
+给出血量HP和不同攻击的伤害，buffedAttack和normalAttack，返回你能杀死敌人的最小回合数。
+输入描述:
+第一行是一个数字HP
+第二行是一个数字normalAttack
+第三行是一个数字buffedAttack
+1 <= HP,buffedAttack,normalAttack <= 10^9
+输出描述:输出一个数字表示最小回合数
+示例1: 输入
+13
+3
+5
+输出: 5
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数学计算 | O(n^3)     | O(1)       |
+
+```go
+package main
+
+import "fmt"
+
+func getCount(hp, normalAttack, buffedAttack int) int {
+	res := 0
+	if normalAttack*2 < buffedAttack {
+		res = res + 2*(hp/buffedAttack)
+		hp = hp - hp/buffedAttack*buffedAttack
+		if hp > 0 {
+			if hp <= normalAttack {
+				res = res + 1
+			} else {
+				res = res + 2
+			}
+		}
+	} else {
+		res = res + hp/normalAttack
+		if hp%normalAttack > 0 {
+			res = res + 1
+		}
+	}
+	return res
+}
+
+func main() {
+	var hp, normalAttack, buffedAttack int
+	for {
+		// 三行数字用fmt.Scan
+		a, _ := fmt.Scan(&hp, &normalAttack, &buffedAttack)
+		if a == 0 {
+			break
+		}
+		fmt.Println(getCount(hp, normalAttack, buffedAttack))
+	}
+}
+```
 
 
 
