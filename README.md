@@ -401,6 +401,8 @@
 | 0350 | [1576.替换所有的问号](https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/) | 字符串 | Easy | 完成 |
 |  | 第36期 |  |  |  |
 | 0351 | [1582.二进制矩阵中的特殊位置](https://leetcode-cn.com/problems/special-positions-in-a-binary-matrix/) | 数组 | Easy | 完成 |
+| 0352 | [1588.所有奇数长度子数组的和](https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays/) | 数组 | Easy | 完成 |
+| 0353 | [1592.重新排列单词间的空格](https://leetcode-cn.com/problems/rearrange-spaces-between-words/) | 字符串 | Easy | 完成 |
 
 ### Medium系列
 
@@ -659,6 +661,7 @@
 |      | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 动态规划                                       | Medium | 完成     |
 |      | [1162.地图分析](https://leetcode-cn.com/problems/as-far-from-land-as-possible/) | 广度优先搜索、图                               | Medium | 完成     |
 |      | [1191.K次串联后最大子数组之和](https://leetcode-cn.com/problems/k-concatenation-maximum-sum/) | 动态规划                                       | Medium |          |
+|      | [1227.飞机座位分配概率](https://leetcode-cn.com/problems/airplane-seat-assignment-probability/) | 脑筋急转弯、数学、动态规划                     | Medium | 完成     |
 |      | [1248.统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/) | 双指针                                         | Medium | 完成     |
 |      | [1249.移除无效的括号](https://leetcode-cn.com/problems/minimum-remove-to-make-valid-parentheses/) | 栈、字符串                                     | Medium |          |
 |      | [1254.统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/) | 深度优先搜索                                   | Medium | 完成     |
@@ -696,6 +699,10 @@
 |      | [1573.分割字符串的方案数](https://leetcode-cn.com/problems/number-of-ways-to-split-a-string/) | 字符串                                         | Medium | 完成     |
 |      | [1574.删除最短的子数组使剩余数组有序](https://leetcode-cn.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/) | 数组、二分查找                                 | Medium | 完成     |
 |      | [1583.统计不开心的朋友](https://leetcode-cn.com/problems/count-unhappy-friends/) | 数组                                           | Medium | 完成     |
+|      | [1589.所有排列中的最大和](https://leetcode-cn.com/problems/maximum-sum-obtained-of-any-permutation/) | 贪心算法                                       | Medium | 完成     |
+|      | [1590.使数组和能被P整除](https://leetcode-cn.com/problems/make-sum-divisible-by-p/) | 数组、二分查找                                 | Medium | 完成     |
+|      | [1593.拆分字符串使唯一子字符串的数目最大](https://leetcode-cn.com/problems/split-a-string-into-the-max-number-of-unique-substrings/) | 回溯算法                                       | Medium | 完成     |
+|      | [1594.矩阵的最大非负积](https://leetcode-cn.com/problems/maximum-non-negative-product-in-a-matrix/) | 贪心算法、动态规划                             | Medium | 完成     |
 
 ### Hard系列
 
