@@ -83,6 +83,7 @@
 | [303.区域和检索-数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划       | Easy   | 完成     |
 | [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) | 动态规划       | Medium | 完成     |
 | [523.连续的子数组和](https://leetcode-cn.com/problems/continuous-subarray-sum/) | 数学、动态规划 | Medium | 完成     |
+| 525                                                          |                |        |          |
 | [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表   | Medium | 完成     |
 | 930                                                          |                |        |          |
 | [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表   | Medium | 完成     |
@@ -330,9 +331,9 @@
 | Title                                                        | Tag                | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ------------------ | ------ | -------- |
 | [410.分割数组的最大值](https://leetcode-cn.com/problems/split-array-largest-sum/) | 二分查找、动态规划 | Hard   | 完成     |
-| 875                                                          |                    |        |          |
-| 1011                                                         |                    |        |          |
-| 1482                                                         |                    |        |          |
+| [875.爱吃香蕉的珂珂](https://leetcode-cn.com/problems/koko-eating-bananas/) | 二分查找           | Medium | 完成     |
+| [1011.在D天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/) | 数组、二分查找     | Medium | 完成     |
+| [1482.制作m束花所需的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/) | 数组、二分查找     | Medium | 完成     |
 | [1552.两球之间的磁力](https://leetcode-cn.com/problems/magnetic-force-between-two-balls/) | 数组、二分查找     | Medium | 完成     |
 | [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) |                    | Medium | 完成     |
 

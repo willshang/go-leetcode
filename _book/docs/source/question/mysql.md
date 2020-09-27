@@ -993,6 +993,14 @@ select max(Salary) from Employee where Employee.DepartmentId = Department.Id
 
 ```
 SQL架构
+Create table If Not Exists seat(id int, student varchar(255))
+Truncate table seat
+insert into seat (id, student) values ('1', 'Abbot')
+insert into seat (id, student) values ('2', 'Doris')
+insert into seat (id, student) values ('3', 'Emerson')
+insert into seat (id, student) values ('4', 'Green')
+insert into seat (id, student) values ('5', 'Jeames')
+
 小美是一所中学的信息科技老师，她有一张 seat 座位表，平时用来储存学生名字和与他们相对应的座位 id。
 其中纵列的 id 是连续递增的
 小美想改变相邻俩学生的座位。

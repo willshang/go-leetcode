@@ -48,7 +48,7 @@
     - [堆](docs/source/algorithm/heap.md)
     - [Trie树(前缀树/字典树)](docs/source/algorithm/trie.md)
     - [并查集](docs/source/algorithm/并查集.md)
-    - [树状数组](docs/source/algorithm/树状数组.md)
+    - [数组-树状数组](docs/source/algorithm/数组-树状数组.md)
     - [数组-前缀和](docs/source/algorithm/数组-前缀和.md)
     - [数组-差分数组](docs/source/algorithm/数组-差分数组.md)
     - [字符串-KMP算法](docs/source/algorithm/字符串-KMP算法.md)
