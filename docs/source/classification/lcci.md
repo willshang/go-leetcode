@@ -124,7 +124,7 @@
 | 0102 | [面试题17.19.消失的两个数字](https://leetcode-cn.com/problems/missing-two-lcci/) | 数组、数学                 | Hard   | 完成     |
 | 0103 | 20                                                           |                            |        |          |
 | 0104 | [面试题17.21.直方图的水量](https://leetcode-cn.com/problems/volume-of-histogram-lcci/) | 栈、数组、双指针           | Hard   | 完成     |
-| 0105 |                                                              |                            |        |          |
+| 0105 | [面试题17.22.单词转换](https://leetcode-cn.com/problems/word-transformer-lcci/) | 深度优先搜索、广度优先搜索 | Medium |          |
 | 0106 |                                                              |                            |        |          |
 | 0107 |                                                              |                            |        |          |
 | 0108 |                                                              |                            |        |          |
