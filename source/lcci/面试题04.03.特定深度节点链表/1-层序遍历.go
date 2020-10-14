@@ -17,29 +17,38 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// leetcode102_二叉树的层序遍历
-func levelOrder(root *TreeNode) [][]int {
-	res := make([][]int, 0)
-	if root == nil {
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+// 程序员面试金典04.03_特定深度节点链表
+func listOfDepth(tree *TreeNode) []*ListNode {
+	res := make([]*ListNode, 0)
+	if tree == nil {
 		return res
 	}
-	list := make([]*TreeNode, 0)
-	list = append(list, root)
-	for len(list) > 0 {
-		length := len(list)
-		temp := make([]int, 0)
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, tree)
+	for len(queue) > 0 {
+		length := len(queue)
+		node := &ListNode{}
+		tempNode := node
 		for i := 0; i < length; i++ {
-			node := list[i]
-			temp = append(temp, node.Val)
+			node := queue[i]
+			tempNode.Next = &ListNode{
+				Val: node.Val,
+			}
+			tempNode = tempNode.Next
 			if node.Left != nil {
-				list = append(list, node.Left)
+				queue = append(queue, node.Left)
 			}
 			if node.Right != nil {
-				list = append(list, node.Right)
+				queue = append(queue, node.Right)
 			}
 		}
-		res = append(res, temp)
-		list = list[length:]
+		res = append(res, node.Next)
+		queue = queue[length:]
 	}
 	return res
 }

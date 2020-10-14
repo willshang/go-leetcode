@@ -197,6 +197,7 @@
 | ------------------------------------------------------------ | -------- | ------ | -------- |
 | [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划 | Medium | 完成     |
 | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) |          | Medium | 完成     |
+| [面试题08.11.硬币](https://leetcode-cn.com/problems/coin-lcci/) | 动态规划 | Medium | 完成     |
 
 ## 回溯算法
 

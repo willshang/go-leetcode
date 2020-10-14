@@ -1827,9 +1827,9 @@ func (m *MyQueue) Empty() bool {
 }
 ```
 
-## 面试题03.05.栈排序
+## 面试题03.05.栈排序(1)
 
-### 题目
+- 题目
 
 ```
 栈排序。 编写程序，对栈进行排序使最小元素位于栈顶。
@@ -1844,14 +1844,51 @@ func (m *MyQueue) Empty() bool {
 说明:栈中的元素数目在[0, 5000]范围内。
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路         | 时间复杂度 | 空间复杂度 |
-| ---- | ------------ | ---------- | ---------- |
-| 01   | 广度优先搜索 | O(n)       | O(n)       |
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 双栈 | O(n)       | O(n)       |
 
-```
+```go
+type SortedStack struct {
+	stack []int
+	temp  []int
+}
 
+func Constructor() SortedStack {
+	return SortedStack{}
+}
+
+func (this *SortedStack) Push(val int) {
+	for len(this.stack) > 0 && val >= this.stack[len(this.stack)-1] {
+		this.temp = append(this.temp, this.stack[len(this.stack)-1])
+		this.stack = this.stack[:len(this.stack)-1]
+	}
+	this.stack = append(this.stack, val)
+	for len(this.temp) > 0 {
+		this.stack = append(this.stack, this.temp[len(this.temp)-1])
+		this.temp = this.temp[:len(this.temp)-1]
+	}
+}
+
+func (this *SortedStack) Pop() {
+	if len(this.stack) == 0 {
+		return
+	}
+	this.stack = this.stack[:len(this.stack)-1]
+}
+
+func (this *SortedStack) Peek() int {
+	if len(this.stack) == 0 {
+		return -1
+	}
+	return this.stack[len(this.stack)-1]
+}
+
+func (this *SortedStack) IsEmpty() bool {
+	return len(this.stack) == 0
+}
 ```
 
 ## 面试题03.06.动物收容所(2)
@@ -2147,9 +2184,9 @@ func sortedArrayToBST(nums []int) *TreeNode {
 }
 ```
 
-## 面试题04.03.特定深度节点链表
+## 面试题04.03.特定深度节点链表(2)
 
-### 题目
+- 题目
 
 ```
 给定一棵二叉树，设计一个算法，创建含有某一深度上所有节点的链表
@@ -2165,14 +2202,70 @@ func sortedArrayToBST(nums []int) *TreeNode {
 输出：[[1],[2,3],[4,5,7],[8]]
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 递归 | O(n)       | O(log(n))  |
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 层序遍历     | O(n)       | O(n)       |
+| 02   | 深度优先搜索 | O(n)       | O(n)       |
 
-```
+```go
+func listOfDepth(tree *TreeNode) []*ListNode {
+	res := make([]*ListNode, 0)
+	if tree == nil {
+		return res
+	}
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, tree)
+	for len(queue) > 0 {
+		length := len(queue)
+		node := &ListNode{}
+		tempNode := node
+		for i := 0; i < length; i++ {
+			node := queue[i]
+			tempNode.Next = &ListNode{
+				Val: node.Val,
+			}
+			tempNode = tempNode.Next
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+		}
+		res = append(res, node.Next)
+		queue = queue[length:]
+	}
+	return res
+}
 
+# 2
+var res []*ListNode
+
+func listOfDepth(tree *TreeNode) []*ListNode {
+	level := 0
+	res = make([]*ListNode, 0)
+	dfs(tree, level)
+	return res
+}
+
+func dfs(root *TreeNode, level int) {
+	if root == nil {
+		return
+	}
+	if level >= len(res) {
+		res = append(res, &ListNode{root.Val, nil})
+	} else {
+		head := res[level]
+		for head.Next != nil {
+			head = head.Next
+		}
+		head.Next = &ListNode{root.Val, nil}
+	}
+	dfs(root.Left, level+1)
+	dfs(root.Right, level+1)
+}
 ```
 
 ## 面试题04.04.检查平衡性(3)
@@ -2432,6 +2525,91 @@ func dfs(root *TreeNode) bool {
 }
 ```
 
+## 面试题04.06.后继者(3)
+
+- 题目
+
+```
+设计一个算法，找出二叉搜索树中指定节点的“下一个”节点（也即中序后继）。
+如果指定节点没有对应的“下一个”节点，则返回null。
+示例 1:输入: root = [2,1,3], p = 1
+  2
+ / \
+1   3
+输出: 2
+示例 2:输入: root = [5,3,6,2,4,null,null,1], p = 6
+      5
+     / \
+    3   6
+   / \
+  2   4
+ /   
+1
+输出: null
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+| 02   | 递归 | O(log(n))  | O(log(n))  |
+| 03   | 迭代 | O(log(n))  | O(1)       |
+
+```go
+var res []*TreeNode
+
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+	res = make([]*TreeNode, 0)
+	dfs(root)
+	for i := 0; i < len(res)-1; i++ {
+		if res[i] == p {
+			return res[i+1]
+		}
+	}
+	return nil
+}
+
+func dfs(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	dfs(root.Left)
+	res = append(res, root)
+	dfs(root.Right)
+}
+
+# 2
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if p.Val >= root.Val {
+		return inorderSuccessor(root.Right, p)
+	}
+	res := inorderSuccessor(root.Left, p)
+	if res == nil {
+		return root
+	}
+	return res
+}
+
+# 3
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+	var res *TreeNode
+	cur := root
+	for cur != nil {
+		if p.Val >= cur.Val {
+			cur = cur.Right
+		} else {
+			res = cur
+			cur = cur.Left
+		}
+	}
+	return res
+}
+```
+
 ## 面试题04.08.首个共同祖先(2)
 
 - 题目
@@ -2512,6 +2690,64 @@ func dfs(root *TreeNode) {
 	if root.Right != nil {
 		m[root.Right.Val] = root
 		dfs(root.Right)
+	}
+}
+```
+
+## 面试题04.09.二叉搜索树序列(1)
+
+- 题目
+
+```
+从左向右遍历一个数组，通过不断将其中的元素插入树中可以逐步地生成一棵二叉搜索树。
+给定一个由不同节点组成的二叉搜索树，输出所有可能生成此树的数组。
+示例：给定如下二叉树
+        2
+       / \
+      1   3
+返回：[
+   [2,1,3],
+   [2,3,1]
+]
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度  | 空间复杂度  |
+| ---- | ---- | ----------- | ----------- |
+| 01   | 递归 | O(2^log(n)) | O(2^log(n)) |
+
+```go
+var res [][]int
+
+func BSTSequences(root *TreeNode) [][]int {
+	res = make([][]int, 0)
+	if root == nil {
+		res = append(res, []int{})
+		return res
+	}
+	dfs(append([]*TreeNode{}, root), make([]int, 0))
+	return res
+}
+
+func dfs(arr []*TreeNode, path []int) {
+	if len(arr) == 0 {
+		res = append(res, path)
+	}
+	for i, node := range arr {
+		temp := make([]int, len(path))
+		copy(temp, path)
+		temp = append(temp, node.Val)
+		tempNode := make([]*TreeNode, len(arr))
+		copy(tempNode, arr)
+		tempNode = append(tempNode[:i], tempNode[i+1:]...) // 去除当前用过的
+		if node.Left != nil {
+			tempNode = append(tempNode, node.Left)
+		}
+		if node.Right != nil {
+			tempNode = append(tempNode, node.Right)
+		}
+		dfs(tempNode, temp)
 	}
 }
 ```
@@ -2944,6 +3180,28 @@ func max(a, b int) int {
 	}
 	return b
 }
+```
+
+## 面试题05.04.下一个数
+
+### 题目
+
+```
+下一个数。给定一个正整数，找出与其二进制表达式中1的个数相同且大小最接近的那两个数（一个略大，一个略小）。
+示例1:输入：num = 2（或者0b10） 输出：[4, 1] 或者（[0b100, 0b1]）
+示例2:输入：num = 1输出：[2, -1]
+提示:num的范围在[1, 2147483647]之间；
+    如果找不到前一个或者后一个满足条件的正数，那么输出 -1。
+```
+
+### 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 内置函数 | O(1)       | O(1)       |
+
+```go
+
 ```
 
 ## 面试题05.06.整数转换(4)
@@ -3874,9 +4132,9 @@ func floodFill(image [][]int, sr int, sc int, newColor int) [][]int {
 }
 ```
 
-## 面试题08.11.硬币
+## 面试题08.11.硬币(2)
 
-### 题目
+- 题目
 
 ```
 硬币。给定数量不限的硬币，币值为25分、10分、5分和1分，编写代码计算n分有几种表示法。
@@ -3892,14 +4150,47 @@ func floodFill(image [][]int, sr int, sc int, newColor int) [][]int {
 说明：注意: 你可以假设： 0 <= n (总金额) <= 1000000
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 回溯 | O(n^n)     | O(n^2)     |
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n)       | O(n)       |
+| 02   | 动态规划 | O(n)       | O(n)       |
 
 ```go
+func waysToChange(n int) int {
+	coins := []int{1, 5, 10, 25}
+	dp := make([][]int, 5)
+	for i := 0; i <= 4; i++ {
+		dp[i] = make([]int, n+1)
+		dp[i][0] = 1 // 金额为0的情况，只有都不选，组合情况为1
+	}
+	for i := 1; i <= 4; i++ {
+		for j := 1; j <= n; j++ {
+			if j-coins[i-1] >= 0 {
+				dp[i][j] = dp[i-1][j] + dp[i][j-coins[i-1]]
+			} else {
+				dp[i][j] = dp[i-1][j]
+			}
+		}
+	}
+	return dp[4][n] % 1000000007
+}
 
+# 2
+func waysToChange(n int) int {
+	coins := []int{1, 5, 10, 25}
+	dp := make([]int, n+1)
+	dp[0] = 1
+	for i := 1; i <= 4; i++ {
+		for j := 1; j <= n; j++ {
+			if j-coins[i-1] >= 0 {
+				dp[j] = dp[j] + dp[j-coins[i-1]]
+			}
+		}
+	}
+	return dp[n] % 1000000007
+}
 ```
 
 ## 面试题08.12.八皇后(3)
@@ -5471,6 +5762,60 @@ func getArea(grid [][]int, i, j int) int {
 }
 ```
 
+## 面试题16.20.T9键盘(1)
+
+- 题目
+
+```
+在老式手机上，用户通过数字键盘输入，手机将提供与这些数字相匹配的单词列表。每个数字映射到0至4个字母。
+给定一个数字序列，实现一个算法来返回匹配单词的列表。你会得到一张含有有效单词的列表。映射如下图所示：
+示例 1:输入: num = "8733", words = ["tree", "used"] 输出: ["tree", "used"]
+示例 2:输入: num = "2", words = ["a", "b", "c", "d"] 输出: ["a", "b", "c"]
+提示：num.length <= 1000
+    words.length <= 500
+    words[i].length == num.length
+    num中不会出现 0, 1 这两个数字
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n^2)     | O(n)       |
+
+```go
+var m [26]byte = [26]byte{
+	'2', '2', '2',
+	'3', '3', '3',
+	'4', '4', '4',
+	'5', '5', '5',
+	'6', '6', '6',
+	'7', '7', '7', '7',
+	'8', '8', '8',
+	'9', '9', '9', '9',
+}
+
+func getValidT9Words(num string, words []string) []string {
+	res := make([]string, 0)
+	for _, str := range words {
+		if len(str) != len(num) {
+			continue
+		}
+		flag := true
+		for i := 0; i < len(str); i++ {
+			if num[i] != m[str[i]-'a'] {
+				flag = false
+				break
+			}
+		}
+		if flag {
+			res = append(res, str)
+		}
+	}
+	return res
+}
+```
+
 ## 面试题16.21.交换和(1)
 
 - 题目
@@ -6420,6 +6765,55 @@ func max(a, b int) int {
 	}
 	return b
 }
+```
+
+## 面试题17.18.最短超串(1)
+
+- 题目
+
+```
+假设你有两个数组，一个长一个短，短的元素均不相同。
+找到长数组中包含短数组所有的元素的最短子数组，其出现顺序无关紧要。
+返回最短子数组的左端点和右端点，如有多个满足条件的子数组，返回左端点最小的一个。若不存在，返回空数组。
+示例 1:输入:big = [7,5,9,0,2,1,3,5,7,9,1,1,5,8,8,9,7] small = [1,5,9] 输出: [7,10]
+示例 2:输入: big = [1,2,3] small = [4] 输出: []
+提示： big.length <= 100000
+    1 <= small.length <= 100000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 滑动窗口 | O(n)       | O(n)       |
+
+```go
+func shortestSeq(big []int, small []int) []int {
+	res := make([]int, 0)
+	m := make(map[int]int)
+	for i := 0; i < len(small); i++ {
+		m[small[i]]++
+	}
+	total := len(m)
+	j := 0
+	for i := 0; i < len(big); i++ {
+		m[big[i]]--
+		if m[big[i]] == 0 {
+			total--
+		}
+		for total == 0 {
+			m[big[j]]++
+			if m[big[j]] > 0 {
+				total++
+				if len(res) == 0 || res[1]-res[0] > i-j {
+					res = []int{j, i}
+				}
+			}
+			j++
+		}
+	}
+	return res
+
 ```
 
 ## 面试题17.19.消失的两个数字(4)
