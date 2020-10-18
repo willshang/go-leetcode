@@ -6198,6 +6198,138 @@ func missingNumber(nums []int) int {
 }
 ```
 
+## 面试题17.05.字母与数字(1)
+
+- 题目
+
+```
+给定一个放有字符和数字的数组，找到最长的子数组，且包含的字符和数字的个数相同。
+返回该子数组，若存在多个最长子数组，返回左端点最小的。若不存在这样的数组，返回一个空数组。
+示例 1:
+输入: ["A","1","B","C","D","2","3","4","E","5","F","G","6","7","H","I","J","K","L","M"]
+输出: ["A","1","B","C","D","2","3","4","E","5","F","G","6","7"]
+示例 2:输入: ["A","A"]输出: []
+提示：array.length <= 100000
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 前缀和 | O(n)       | O(n)       |
+
+```go
+func findLongestSubarray(array []string) []string {
+	m := make(map[int]int)
+	m[0] = 0
+	res := 0
+	begin := 0
+	total := 0
+	for i := 0; i < len(array); i++ {
+		if '0' <= array[i][0] && array[i][0] <= '9' {
+			total++
+		} else {
+			total--
+		}
+		if total == 0 {
+			begin = 0
+			res = i + 1
+		} else if index, ok := m[total]; ok {
+			if i-index > res {
+				res = i - index
+				begin = index + 1
+			}
+		} else {
+			m[total] = i
+		}
+	}
+	return array[begin : begin+res]
+}
+
+```
+
+## 面试题17.08.马戏团人塔(2)
+
+- 题目
+
+```
+有个马戏团正在设计叠罗汉的表演节目，一个人要站在另一人的肩膀上。
+出于实际和美观的考虑，在上面的人要比下面的人矮一点且轻一点。
+已知马戏团每个人的身高和体重，请编写代码计算叠罗汉最多能叠几个人。
+示例：输入：height = [65,70,56,75,60,68] weight = [100,150,90,190,95,110] 输出：6
+解释：从上往下数，叠罗汉最多能叠 6 层：
+(56,90), (60,95),(65,100), (68,110), (70,150), (75,190)
+提示： height.length == weight.length <= 10000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(nlog(n)) | O(n)       |
+| 02   | 内置函数 | O(nlog(n)) | O(n)       |
+
+```go
+func bestSeqAtIndex(height []int, weight []int) int {
+	arr := make([][2]int, 0)
+	for i := 0; i < len(height); i++ {
+		arr = append(arr, [2]int{height[i], weight[i]})
+	}
+	sort.Slice(arr, func(i, j int) bool {
+		if arr[i][0] == arr[j][0] {
+			return arr[i][1] < arr[j][1]
+		}
+		return arr[i][0] > arr[j][0]
+	})
+	res := make([]int, 0)
+	for i := 0; i < len(arr); i++ {
+		if len(res) == 0 || arr[res[len(res)-1]][0] > arr[i][0] &&
+			arr[res[len(res)-1]][1] > arr[i][1] {
+			res = append(res, i)
+		} else {
+			left := 0
+			right := len(res) - 1
+			for left <= right {
+				mid := left + (right-left)/2
+				if arr[res[mid]][0] > arr[i][0] && arr[res[mid]][1] > arr[i][1] {
+					left = mid + 1
+				} else {
+					right = mid - 1
+				}
+			}
+			res[left] = i
+		}
+	}
+	return len(res)
+}
+
+# 2
+func bestSeqAtIndex(height []int, weight []int) int {
+	arr := make([][2]int, 0)
+	for i := 0; i < len(height); i++ {
+		arr = append(arr, [2]int{height[i], weight[i]})
+	}
+	sort.Slice(arr, func(i, j int) bool {
+		if arr[i][0] == arr[j][0] {
+			return arr[i][1] < arr[j][1]
+		}
+		return arr[i][0] > arr[j][0]
+	})
+	res := make([]int, 0)
+	for i := 0; i < len(arr); i++ {
+		index := sort.Search(len(res), func(j int) bool {
+			return arr[res[j]][0] <= arr[i][0] || arr[res[j]][1] <= arr[i][1]
+		})
+		if index == len(res) {
+			res = append(res, i)
+		} else {
+			res[index] = i
+		}
+	}
+	return len(res)
+}
+```
+
 ## 面试题17.09.第k个数(1)
 
 - 题目

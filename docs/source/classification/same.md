@@ -95,6 +95,7 @@
 | 91(相似) | [486.预测赢家](https://leetcode-cn.com/problems/predict-the-winner/) Medium | [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) Medium |
 | 92 | [273.整数转换英文表示](https://leetcode-cn.com/problems/integer-to-english-words/) Hard | [面试题16.08.整数的英语表示](https://leetcode-cn.com/problems/english-int-lcci/) Hard |
 | 93 | [227.基本计算器II](https://leetcode-cn.com/problems/basic-calculator-ii/) Medium | [面试题16.26.计算器](https://leetcode-cn.com/problems/calculator-lcci/) Medium |
-| 94 | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) Medium<br />[322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) Medium | [面试题08.11.硬币](https://leetcode-cn.com/problems/coin-lcci/) Medium |
-| 95 | [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) Medium<br />[126.单词接龙II](https://leetcode-cn.com/problems/word-ladder-ii/) Hard |  |
+| 94(相似) | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) Medium<br />[322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) Medium | [面试题08.11.硬币](https://leetcode-cn.com/problems/coin-lcci/) Medium |
+| 95(相似) | [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) Medium<br />[126.单词接龙II](https://leetcode-cn.com/problems/word-ladder-ii/) Hard |  |
+| 96(相似) | [354.俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/) Hard | [面试题17.08.马戏团人塔](https://leetcode-cn.com/problems/circus-tower-lcci/) Medium |
 
