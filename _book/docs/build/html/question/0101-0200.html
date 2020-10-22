@@ -1,0 +1,3361 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>} &mdash; go-leetcode v1.0.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="}" href="0201-0300.html" />
+    <link rel="prev" title="}" href="0001-0100.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> go-leetcode
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id10">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id15">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id26">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id31">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id64">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id89">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id92">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id97">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id100">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id105">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id110">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id115">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id120">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id125">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id130">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id135">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id140">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id151">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id156">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id173">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id184">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#id203">}</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id30">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id31">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id54">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id71">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id90">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id105">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id122">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id125">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id130">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id141">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id152">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id163">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id174">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id185">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id202">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id229">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id260">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id271">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id282">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id293">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id304">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id315">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id326">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id337">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id348">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id357">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id18">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id23">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id34">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id61">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id72">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id83">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id148">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id167">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id178">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id227">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id244">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id263">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id276">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id287">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id306">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id311">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id322">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id333">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id344">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id355">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id366">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id377">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#id388">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id20">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id25">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id36">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id47">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id58">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id69">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id74">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id79">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id90">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id101">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id106">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id111">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#id124">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id26">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id37">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id42">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id45">]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id50">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id55">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id66">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id71">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id100">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id105">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id116">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id127">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id138">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id143">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id154">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id159">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id170">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id181">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id192">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id203">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id214">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id225">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id236">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id247">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#id258">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id24">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id35">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id40">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id59">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id70">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id81">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id106">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id117">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id146">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id157">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id178">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id189">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id200">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id215">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id226">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id243">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id254">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id285">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id296">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id307">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id318">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id335">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id340">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id351">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#id362">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id28">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id51">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id62">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id67">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id84">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id95">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id106">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id133">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id144">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id155">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id166">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id185">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id204">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id209">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id220">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id231">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id242">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id267">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id280">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id287">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id298">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id309">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#id328">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id46">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id69">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id92">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id103">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id114">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id129">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id140">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id151">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id164">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id175">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id188">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id199">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id210">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id221">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id232">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id243">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id270">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id281">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id292">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#id303">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id22">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id33">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id44">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id55">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id66">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id77">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id82">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id93">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id104">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id115">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id126">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id137">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id148">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id159">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id170">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id181">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id186">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id221">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id232">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id255">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id266">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id277">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id288">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id299">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id310">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id321">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#id356">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id22">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id33">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id44">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id55">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id66">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id77">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id92">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id107">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id122">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id133">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id144">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id155">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id166">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id177">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id188">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id211">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id222">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id227">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id238">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id249">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id260">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id285">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id296">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#id307">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id20">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id35">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id46">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id57">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id68">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id79">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id98">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id109">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id120">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id131">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id142">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id153">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id164">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id193">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id204">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id215">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id226">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id237">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#id248">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id22">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id33">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id44">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id55">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id68">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id79">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id90">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id101">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id112">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id123">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id134">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#id143">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id24">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id35">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id46">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id57">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id68">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id79">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id90">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id101">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id112">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id123">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id140">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id151">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#id162">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id22">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id33">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id44">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id55">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id66">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id79">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id90">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id95">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id106">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id117">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id128">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id139">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id150">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id161">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id166">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id177">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id212">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id223">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id234">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#id239">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id22">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id33">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id44">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id49">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id60">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id71">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id82">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id93">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id104">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id115">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id126">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id137">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id148">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id159">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id170">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#id181">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id16">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id21">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id38">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id59">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id92">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id115">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id126">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id137">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id148">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id159">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id170">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id175">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id180">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id191">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id202">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id221">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id232">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id291">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id322">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id349">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id374">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id401">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id420">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id437">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id442">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id469">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id480">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id511">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id542">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id575">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id586">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id605">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id650">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id655">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id660">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id689">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id752">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id763">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id768">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id775">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id786">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id791">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id802">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id813">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id818">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id823">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id828">#</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id857">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id862">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id867">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id888">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id903">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id922">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id935">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id946">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id951">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id956">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id967">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id972">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1013">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1038">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1043">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1048">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1059">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1064">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1069">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1080">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1091">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html#id1102">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcp.html">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcp.html#id22">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcp.html#id33">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcp.html#id44">}</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcp.html#id55">}</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">go-leetcode</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>}</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/question/0101-0200.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p># 0101-0200-Easy
+* [0101-0200-Easy](#0101-0200-easy)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>[101. 对称二叉树(2)](#101-对称二叉树2)</p></li>
+<li><p>[104.二叉树的最大深度(2)](#104二叉树的最大深度2)</p></li>
+<li><p>[107.二叉树的层次遍历II(2)](#107二叉树的层次遍历ii2)</p></li>
+<li><p>[108.将有序数组转换为二叉搜索树(2)](#108将有序数组转换为二叉搜索树2)</p></li>
+<li><p>[110.平衡二叉树(2)](#110平衡二叉树2)</p></li>
+<li><p>[111.二叉树的最小深度(2)](#111二叉树的最小深度2)</p></li>
+<li><p>[112.路径总和(2)](#112路径总和2)</p></li>
+<li><p>[118.杨辉三角(2)](#118杨辉三角2)</p></li>
+<li><p>[119.杨辉三角II(3)](#119杨辉三角ii3)</p></li>
+<li><p>[121.买卖股票的最佳时机(3)](#121买卖股票的最佳时机3)</p></li>
+<li><p>[122.买卖股票的最佳时机II(2)](#122买卖股票的最佳时机ii2)</p></li>
+<li><p>[125.验证回文串(2)](#125验证回文串2)</p></li>
+<li><p>[136.只出现一次的数字(4)](#136只出现一次的数字4)</p></li>
+<li><p>[141.环形链表(2)](#141环形链表2)</p></li>
+<li><p>[155.最小栈(2)](#155最小栈2)</p></li>
+<li><p>[160.相交链表(4)](#160相交链表4)</p></li>
+<li><p>[167.两数之和 II - 输入有序数组(4)](#167两数之和-ii—输入有序数组4)</p></li>
+<li><p>[168.Excel表列名称(2)](#168excel表列名称2)</p></li>
+<li><p>[169.多数元素(5)](#169多数元素5)</p></li>
+<li><p>[171.Excel表列序号(1)](#171excel表列序号1)</p></li>
+<li><p>[172.阶乘后的零(1)](#172阶乘后的零1)</p></li>
+<li><p>[189.旋转数组(4)](#189旋转数组4)</p></li>
+<li><p>[190.颠倒二进制位(3)](#190颠倒二进制位3)</p></li>
+<li><p>[191.位1的个数(4)](#191位1的个数4)</p></li>
+<li><p>[198.打家劫舍(4)](#198打家劫舍4)</p></li>
+</ul>
+</div></blockquote>
+<p>## 101. 对称二叉树(2)
+- 题目</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+给定一个二叉树，检查它是否是镜像对称的。
+例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>1</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<p>2   2</p>
+</div></blockquote>
+<p>/ / </p>
+</div></blockquote>
+<p>3  4 4  3
+但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>1</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<dl class="simple">
+<dt>2   2</dt><dd><p>  3    3</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>说明:
+如果你可以运用递归和迭代两种方法解决这个问题，会很加分。
+<a href="#id3"><span class="problematic" id="id4">``</span></a>`
+- 解答思路</p>
+<div class="line-block">
+<div class="line">No.      | 思路 | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | —- | ———- | ———- |</div>
+<div class="line">01(最优) | 递归 | O(n)       | O(n)       |</div>
+<div class="line">02       | 迭代 | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a>go
+// 递归
+func isSymmetric(root <a href="#id9"><span class="problematic" id="id10">*</span></a>TreeNode) bool {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return true</p>
+</dd>
+</dl>
+<p>}
+return recur(root.Left, root.Right)</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func recur(left, right <a href="#id11"><span class="problematic" id="id12">*</span></a>TreeNode) bool {</dt><dd><dl class="simple">
+<dt>if left == nil &amp;&amp; right == nil {</dt><dd><p>return true</p>
+</dd>
+</dl>
+<p>}
+if left == nil || right == nil {</p>
+<blockquote>
+<div><p>return false</p>
+</div></blockquote>
+<p>}</p>
+<dl class="simple">
+<dt>return left.Val == right.Val &amp;&amp;</dt><dd><p>recur(left.Left, right.Right) &amp;&amp;
+recur(left.Right, right.Left)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>}
+// 迭代
+func isSymmetric(root <a href="#id13"><span class="problematic" id="id14">*</span></a>TreeNode) bool {</p>
+<blockquote>
+<div><p>leftQ := make([]*TreeNode, 0)
+rightQ := make([]*TreeNode, 0)
+leftQ = append(leftQ, root)
+rightQ = append(rightQ, root)</p>
+<dl>
+<dt>for len(leftQ) != 0 &amp;&amp; len(rightQ) != 0 {</dt><dd><p>leftCur, rightCur := leftQ[0], rightQ[0]
+leftQ, rightQ = leftQ[1:], rightQ[1:]</p>
+<dl class="simple">
+<dt>if leftCur == nil &amp;&amp; rightCur == nil {</dt><dd><p>continue</p>
+</dd>
+<dt>} else if leftCur != nil &amp;&amp; rightCur != nil &amp;&amp; leftCur.Val == rightCur.Val {</dt><dd><p>leftQ = append(leftQ, leftCur.Left, leftCur.Right)
+rightQ = append(rightQ, rightCur.Right, rightCur.Left)</p>
+</dd>
+<dt>} else {</dt><dd><p>return false</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+<dl class="simple">
+<dt>if len(leftQ) == 0 &amp;&amp; len(rightQ) == 0 {</dt><dd><p>return true</p>
+</dd>
+<dt>} else {</dt><dd><p>return false</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<div class="section" id="id15">
+<h1>}<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h1>
+<p>## 104.二叉树的最大深度(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id16"><span class="problematic" id="id17">``</span></a>`
+给定一个二叉树，找出其最大深度。
+二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+说明: 叶子节点是指没有子节点的节点。
+示例：给定二叉树 [3,9,20,null,null,15,7]，</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>3</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<dl>
+<dt>9  20</dt><dd><blockquote>
+<div><p>/  </p>
+</div></blockquote>
+<p>15   7</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>返回它的最大深度 3 。
+<a href="#id18"><span class="problematic" id="id19">``</span></a><a href="#id20"><span class="problematic" id="id21">`</span></a></p>
+<ul class="simple">
+<li><p>解答思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路 | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | —- | ———- | ———- |</div>
+<div class="line">01(最优) | 递归 | O(n)       | O(log(n))  |</div>
+<div class="line">02       | 迭代 | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id22"><span class="problematic" id="id23">``</span></a><a href="#id24"><span class="problematic" id="id25">`</span></a>go
+// 递归
+func maxDepth(root <a href="#id26"><span class="problematic" id="id27">*</span></a>TreeNode) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+left := maxDepth(root.Left)
+right := maxDepth(root.Right)</p>
+<p>return max(left, right) + 1</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func max(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &gt; b {</dt><dd><p>return a</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</dd>
+</dl>
+<p>}</p>
+<p>// 迭代
+func maxDepth(root <a href="#id28"><span class="problematic" id="id29">*</span></a>TreeNode) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+queue := make([]*TreeNode,0)
+queue = append(queue,root)
+depth := 0</p>
+<dl>
+<dt>for len(queue) &gt; 0{</dt><dd><p>length := len(queue)</p>
+<dl>
+<dt>for i := 0; i &lt; length; i++{</dt><dd><p>node := queue[0]
+queue = queue[1:]
+if node.Left != nil{</p>
+<blockquote>
+<div><p>queue = append(queue,node.Left)</p>
+</div></blockquote>
+<p>}
+if node.Right != nil{</p>
+<blockquote>
+<div><p>queue = append(queue,node.Right)</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+depth++</p>
+</dd>
+</dl>
+<p>}
+return depth</p>
+</div></blockquote>
+</div>
+<div class="section" id="id30">
+<h1>}<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h1>
+<p>## 107.二叉树的层次遍历II(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p>例如：
+给定二叉树 [3,9,20,null,null,15,7],</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>3</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<dl>
+<dt>9  20</dt><dd><blockquote>
+<div><p>/  </p>
+</div></blockquote>
+<p>15   7</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>返回其自底向上的层次遍历为：
+[</p>
+<blockquote>
+<div><p>[15,7],
+[9,20],
+[3]</p>
+</div></blockquote>
+</div>
+<div class="section" id="id31">
+<h1>]<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路 | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | —- | ———- | ———- |</div>
+<div class="line">01(最优) | 递归 | O(n)       | O(n)       |</div>
+<div class="line">02       | 迭代 | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id32"><span class="problematic" id="id33">``</span></a><a href="#id34"><span class="problematic" id="id35">`</span></a>go
+// 迭代
+func levelOrderBottom(root <a href="#id36"><span class="problematic" id="id37">*</span></a>TreeNode) [][]int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return nil</p>
+</dd>
+</dl>
+<p>}
+queue := make([]*TreeNode,0)
+out := make([][]int,0)
+queue = append(queue, root)</p>
+<dl>
+<dt>for len(queue) != 0 {</dt><dd><p>l := len(queue)
+arr := make([]int,0)
+for i := 0; i &lt; l; i++ {</p>
+<blockquote>
+<div><p>pop := queue[i]
+arr = append(arr, pop.Val)
+if pop.Left != nil {</p>
+<blockquote>
+<div><p>queue = append(queue, pop.Left)</p>
+</div></blockquote>
+<p>}
+if pop.Right != nil {</p>
+<blockquote>
+<div><p>queue = append(queue, pop.Right)</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}
+out = append(out, arr)
+queue = queue[l:]</p>
+</dd>
+</dl>
+<p>}</p>
+<p>out2 := make([][]int, len(out))
+for i := 0; i &lt; len(out); i++ {</p>
+<blockquote>
+<div><p>out2[len(out)-1-i] = out[i]</p>
+</div></blockquote>
+<p>}</p>
+<p>return out2</p>
+</div></blockquote>
+<p>}</p>
+<p>// 递归
+func levelOrderBottom(root <a href="#id38"><span class="problematic" id="id39">*</span></a>TreeNode) [][]int {</p>
+<blockquote>
+<div><p>result := make([][]int, 0)
+level := 0
+if root == nil {</p>
+<blockquote>
+<div><p>return result</p>
+</div></blockquote>
+<p>}</p>
+<p>orderBottom(root, &amp;result, level)</p>
+<p>left, right := 0, len(result)-1
+for left &lt; right {</p>
+<blockquote>
+<div><p>result[left], result[right] = result[right], result[left]
+left++
+right–</p>
+</div></blockquote>
+<p>}
+return result</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func orderBottom(root <a href="#id40"><span class="problematic" id="id41">*</span></a>TreeNode, result <a href="#id42"><span class="problematic" id="id43">*</span></a>[][]int, level int) {</dt><dd><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return</p>
+</dd>
+</dl>
+<p>}
+if len(<a href="#id44"><span class="problematic" id="id45">*</span></a>result) &gt; level {</p>
+<blockquote>
+<div><p>fmt.Println(level, result, root.Val)
+(<a href="#id46"><span class="problematic" id="id47">*</span></a>result)[level] = append((<a href="#id48"><span class="problematic" id="id49">*</span></a>result)[level], root.Val)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>} else {</dt><dd><p><a href="#id50"><span class="problematic" id="id51">*</span></a>result = append(<a href="#id52"><span class="problematic" id="id53">*</span></a>result, []int{root.Val})</p>
+</dd>
+</dl>
+<p>}
+orderBottom(root.Left, result, level+1)
+orderBottom(root.Right, result, level+1)</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id54">
+<h1>}<a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h1>
+<p>## 108.将有序数组转换为二叉搜索树(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id55"><span class="problematic" id="id56">``</span></a>`
+将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。</p>
+<p>本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。</p>
+<p>示例:</p>
+<p>给定有序数组: [-10,-3,0,5,9],</p>
+<p>一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>0</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<dl class="option-list">
+<dt><kbd><span class="option">-3</span></kbd></dt>
+<dd><p>9</p>
+</dd>
+</dl>
+<p>/   /</p>
+</div></blockquote>
+<p>-10  5</p>
+</div></blockquote>
+<p><a href="#id57"><span class="problematic" id="id58">``</span></a><a href="#id59"><span class="problematic" id="id60">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路 | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | —- | ———- | ———- |</div>
+<div class="line">01(最优) | 递归 | O(n)       | O(log(n))  |</div>
+<div class="line">02       | 迭代 | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id61"><span class="problematic" id="id62">``</span></a><a href="#id63"><span class="problematic" id="id64">`</span></a>go
+// 递归
+func sortedArrayToBST(nums []int) <a href="#id65"><span class="problematic" id="id66">*</span></a>TreeNode {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if len(nums) == 0 {</dt><dd><p>return nil</p>
+</dd>
+</dl>
+<p>}</p>
+<p>mid := len(nums) / 2</p>
+<dl class="simple">
+<dt>return &amp;TreeNode{</dt><dd><p>Val:   nums[mid],
+Left:  sortedArrayToBST(nums[:mid]),
+Right: sortedArrayToBST(nums[mid+1:]),</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<p>// 迭代
+type MyTreeNode struct {</p>
+<blockquote>
+<div><p>root  <a href="#id67"><span class="problematic" id="id68">*</span></a>TreeNode
+start int
+end   int</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func sortedArrayToBST(nums []int) <a href="#id69"><span class="problematic" id="id70">*</span></a>TreeNode {</dt><dd><dl class="simple">
+<dt>if len(nums) == 0 {</dt><dd><p>return nil</p>
+</dd>
+</dl>
+<p>}</p>
+<p>queue := make([]MyTreeNode, 0)
+root := &amp;TreeNode{Val: 0}
+queue = append(queue, MyTreeNode{root, 0, len(nums)})
+for len(queue) &gt; 0 {</p>
+<blockquote>
+<div><p>myRoot := queue[0]
+queue = queue[1:]
+start := myRoot.start
+end := myRoot.end
+mid := (start + end) / 2
+curRoot := myRoot.root
+curRoot.Val = nums[mid]
+if start &lt; mid {</p>
+<blockquote>
+<div><p>curRoot.Left = &amp;TreeNode{Val: 0}
+queue = append(queue, MyTreeNode{curRoot.Left, start, mid})</p>
+</div></blockquote>
+<p>}
+if mid+1 &lt; end {</p>
+<blockquote>
+<div><p>curRoot.Right = &amp;TreeNode{Val: 0}
+queue = append(queue, MyTreeNode{curRoot.Right, mid + 1, end})</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}
+return root</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id71">
+<h1>}<a class="headerlink" href="#id71" title="永久链接至标题">¶</a></h1>
+<p>## 110.平衡二叉树(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id72"><span class="problematic" id="id73">``</span></a>`
+给定一个二叉树，判断它是否是高度平衡的二叉树。</p>
+<p>本题中，一棵高度平衡二叉树定义为：</p>
+<blockquote>
+<div><p>一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。</p>
+</div></blockquote>
+<p>示例 1:</p>
+<p>给定二叉树 [3,9,20,null,null,15,7]</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>3</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<dl>
+<dt>9  20</dt><dd><blockquote>
+<div><p>/  </p>
+</div></blockquote>
+<p>15   7</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>返回 true 。</p>
+<p>示例 2:</p>
+<p>给定二叉树 [1,2,2,3,3,null,null,4,4]</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>1</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<p>2   2</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<p>3   3</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<p>4   4</p>
+</div></blockquote>
+<p>返回 false 。
+<a href="#id74"><span class="problematic" id="id75">``</span></a><a href="#id76"><span class="problematic" id="id77">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.  | 思路 | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">—- | —- | ———- | ———- |</div>
+<div class="line">01   | 递归 | O(n)       | O(log(n))  |</div>
+<div class="line">02   | 递归 | O(n)       | O(log(n))  |</div>
+</div>
+<p><a href="#id78"><span class="problematic" id="id79">``</span></a><a href="#id80"><span class="problematic" id="id81">`</span></a>go
+func isBalanced(root <a href="#id82"><span class="problematic" id="id83">*</span></a>TreeNode) bool {</p>
+<blockquote>
+<div><p>_, isBalanced := recur(root)
+return isBalanced</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func recur(root <a href="#id84"><span class="problematic" id="id85">*</span></a>TreeNode) (int, bool) {</dt><dd><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return 0, true</p>
+</dd>
+</dl>
+<p>}</p>
+<p>leftDepth, leftIsBalanced := recur(root.Left)
+if leftIsBalanced == false{</p>
+<blockquote>
+<div><p>return 0,false</p>
+</div></blockquote>
+<p>}
+rightDepth, rightIsBalanced := recur(root.Right)
+if rightIsBalanced == false{</p>
+<blockquote>
+<div><p>return 0,false</p>
+</div></blockquote>
+<p>}</p>
+<dl class="simple">
+<dt>if -1 &lt;= leftDepth-rightDepth &amp;&amp;</dt><dd><p>leftDepth-rightDepth &lt;= 1 {
+return max(leftDepth, rightDepth) + 1, true</p>
+</dd>
+</dl>
+<p>}
+return 0, false</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func max(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &gt; b {</dt><dd><p>return a</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</dd>
+</dl>
+<p>}</p>
+<p>#
+func isBalanced(root <a href="#id86"><span class="problematic" id="id87">*</span></a>TreeNode) bool {</p>
+<blockquote>
+<div><p>return dfs(root) != -1</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func dfs(root <a href="#id88"><span class="problematic" id="id89">*</span></a>TreeNode) int {</dt><dd><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+left := dfs(root.Left)
+right := dfs(root.Right)
+if left != -1 &amp;&amp; right != -1 &amp;&amp;</p>
+<blockquote>
+<div><p>abs(left, right) &lt;= 1 {
+return max(left, right) + 1</p>
+</div></blockquote>
+<p>}
+return -1</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func max(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &gt; b {</dt><dd><p>return a</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func abs(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &gt; b {</dt><dd><p>return a - b</p>
+</dd>
+</dl>
+<p>}
+return b - a</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id90">
+<h1>}<a class="headerlink" href="#id90" title="永久链接至标题">¶</a></h1>
+<p>##  111.二叉树的最小深度(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id91"><span class="problematic" id="id92">``</span></a>`
+给定一个二叉树，找出其最小深度。</p>
+<p>最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
+说明: 叶子节点是指没有子节点的节点。</p>
+<p>示例:
+给定二叉树 [3,9,20,null,null,15,7],</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>3</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<dl>
+<dt>9  20</dt><dd><blockquote>
+<div><p>/  </p>
+</div></blockquote>
+<p>15   7</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>返回它的最小深度  2.
+<a href="#id93"><span class="problematic" id="id94">``</span></a><a href="#id95"><span class="problematic" id="id96">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路     | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ——– | ———- | ———- |</div>
+<div class="line">01(最优) | 递归     | O(n)       | O(log(n))  |</div>
+<div class="line">02       | 广度优先 | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id97"><span class="problematic" id="id98">``</span></a><a href="#id99"><span class="problematic" id="id100">`</span></a>go
+// 递归
+func minDepth(root <a href="#id101"><span class="problematic" id="id102">*</span></a>TreeNode) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return 0</p>
+</dd>
+<dt>} else if root.Left == nil {</dt><dd><p>return 1 + minDepth(root.Right)</p>
+</dd>
+<dt>} else if root.Right == nil {</dt><dd><p>return 1 + minDepth(root.Left)</p>
+</dd>
+<dt>} else {</dt><dd><p>return 1 + min(minDepth(root.Left), minDepth(root.Right))</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func min(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &lt; b {</dt><dd><p>return a</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</dd>
+</dl>
+<p>}</p>
+<p>// 广度优先搜索
+func minDepth(root <a href="#id103"><span class="problematic" id="id104">*</span></a>TreeNode) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if root == nil{</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}</p>
+<p>list := make([]*TreeNode,0)
+list = append(list,root)
+depth := 1</p>
+<dl>
+<dt>for len(list) &gt; 0{</dt><dd><p>length := len(list)
+for i := 0; i &lt; length; i++{</p>
+<blockquote>
+<div><p>node := list[0]
+list = list[1:]
+if node.Left == nil &amp;&amp; node.Right == nil{</p>
+<blockquote>
+<div><p>return depth</p>
+</div></blockquote>
+<p>}
+if node.Left != nil{</p>
+<blockquote>
+<div><p>list = append(list,node.Left)</p>
+</div></blockquote>
+<p>}
+if node.Right != nil{</p>
+<blockquote>
+<div><p>list = append(list,node.Right)</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}
+depth++</p>
+</dd>
+</dl>
+<p>}
+return depth</p>
+</div></blockquote>
+</div>
+<div class="section" id="id105">
+<h1>}<a class="headerlink" href="#id105" title="永久链接至标题">¶</a></h1>
+<p>## 112.路径总和(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id106"><span class="problematic" id="id107">``</span></a>`
+给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。
+说明: 叶子节点是指没有子节点的节点。
+示例:
+给定如下二叉树，以及目标和 sum = 22，</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>5</p>
+</div></blockquote>
+<p>/ </p>
+</div></blockquote>
+<p>4   8</p>
+</div></blockquote>
+<p>/   / </p>
+</div></blockquote>
+<p>11  13  4</p>
+</div></blockquote>
+<p>/       </p>
+</div></blockquote>
+<p>7    2      1</p>
+</div></blockquote>
+<p>返回 true, 因为存在目标和为 22 的根节点到叶子节点的路径 5-&gt;4-&gt;11-&gt;2。
+<a href="#id108"><span class="problematic" id="id109">``</span></a><a href="#id110"><span class="problematic" id="id111">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路 | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | —- | ———- | ———- |</div>
+<div class="line">01(最优) | 递归 | O(n)       | O(log(n))  |</div>
+<div class="line">02       | 迭代 | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id112"><span class="problematic" id="id113">``</span></a><a href="#id114"><span class="problematic" id="id115">`</span></a>go
+// 递归
+func hasPathSum(root <a href="#id116"><span class="problematic" id="id117">*</span></a>TreeNode, sum int) bool {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return false</p>
+</dd>
+</dl>
+<p>}
+sum = sum - root.Val
+if root.Left == nil &amp;&amp; root.Right == nil {</p>
+<blockquote>
+<div><p>return sum == 0</p>
+</div></blockquote>
+<p>}
+return hasPathSum(root.Left, sum) || hasPathSum(root.Right, sum)</p>
+</div></blockquote>
+<p>}</p>
+<p>// 迭代
+func hasPathSum(root <a href="#id118"><span class="problematic" id="id119">*</span></a>TreeNode, sum int) bool {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if root == nil {</dt><dd><p>return false</p>
+</dd>
+</dl>
+<p>}
+list1 := list.New()
+list2 := list.New()</p>
+<p>list1.PushFront(root)
+list2.PushFront(sum - root.Val)
+for list1.Len() &gt; 0 {</p>
+<blockquote>
+<div><p>length := list1.Len()</p>
+<dl>
+<dt>for i := 0; i &lt; length; i++ {</dt><dd><p>node := list1.Remove(list1.Back()).(<a href="#id120"><span class="problematic" id="id121">*</span></a>TreeNode)
+currentSum := list2.Remove(list2.Back()).(int)
+if node.Left == nil &amp;&amp; node.Right == nil &amp;&amp; currentSum == 0 {</p>
+<blockquote>
+<div><p>return true</p>
+</div></blockquote>
+<p>}
+if node.Left != nil {</p>
+<blockquote>
+<div><p>list1.PushFront(node.Left)
+list2.PushFront(currentSum - node.Left.Val)</p>
+</div></blockquote>
+<p>}
+if node.Right != nil {</p>
+<blockquote>
+<div><p>list1.PushFront(node.Right)
+list2.PushFront(currentSum - node.Right.Val)</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+return false</p>
+</div></blockquote>
+</div>
+<div class="section" id="id122">
+<h1>}<a class="headerlink" href="#id122" title="永久链接至标题">¶</a></h1>
+<p>##  118.杨辉三角(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id123"><span class="problematic" id="id124">``</span></a>`
+给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
+在杨辉三角中，每个数是它左上方和右上方的数的和。</p>
+<p>示例:
+输入: 5
+输出:
+[</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>[1],</p>
+</div></blockquote>
+<p>[1,1],</p>
+</div></blockquote>
+<p>[1,2,1],</p>
+</div></blockquote>
+<p>[1,3,3,1],</p>
+</div></blockquote>
+<p>[1,4,6,4,1]</p>
+</div></blockquote>
+</div>
+<div class="section" id="id125">
+<h1>]<a class="headerlink" href="#id125" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路     | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ——– | ———- | ———- |</div>
+<div class="line">01       | 动态规划 | O(n^2)     | O(n^2)     |</div>
+<div class="line">02(最优) | 递推     | O(n^2)     | O(n^2)     |</div>
+</div>
+<p><a href="#id126"><span class="problematic" id="id127">``</span></a><a href="#id128"><span class="problematic" id="id129">`</span></a>go
+// 动态规划
+func generate(numRows int) [][]int {</p>
+<blockquote>
+<div><p>var result [][]int
+for i := 0; i &lt; numRows; i++ {</p>
+<blockquote>
+<div><p>var row []int
+for j := 0; j &lt;= i; j++ {</p>
+<blockquote>
+<div><p>tmp := 1
+if j == 0 || j == i {</p>
+<dl class="simple">
+<dt>} else {</dt><dd><p>tmp = result[i-1][j-1] + result[i-1][j]</p>
+</dd>
+</dl>
+<p>}
+row = append(row, tmp)</p>
+</div></blockquote>
+<p>}
+result = append(result, row)</p>
+</div></blockquote>
+<p>}
+return result</p>
+</div></blockquote>
+<p>}</p>
+<p>// 递推
+func generate(numRows int) [][]int {</p>
+<blockquote>
+<div><p>res := make([][]int, 0)
+if numRows == 0 {</p>
+<blockquote>
+<div><p>return res</p>
+</div></blockquote>
+<p>}</p>
+<p>res = append(res, []int{1})
+if numRows == 1 {</p>
+<blockquote>
+<div><p>return res</p>
+</div></blockquote>
+<p>}</p>
+<dl class="simple">
+<dt>for i := 1; i &lt; numRows; i++ {</dt><dd><p>res = append(res, genNext(res[i-1]))</p>
+</dd>
+</dl>
+<p>}
+return res</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func genNext(p []int) []int {</dt><dd><p>res := make([]int, 1, len(p)+1)
+res = append(res, p…)</p>
+<dl class="simple">
+<dt>for i := 0; i &lt; len(res)-1; i++ {</dt><dd><p>res[i] = res[i] + res[i+1]</p>
+</dd>
+</dl>
+<p>}
+return res</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id130">
+<h1>}<a class="headerlink" href="#id130" title="永久链接至标题">¶</a></h1>
+<p>## 119.杨辉三角II(3)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id131"><span class="problematic" id="id132">``</span></a>`
+给定一个非负索引 k，其中 k ≤ 33，返回杨辉三角的第 k 行。
+在杨辉三角中，每个数是它左上方和右上方的数的和。</p>
+<p>示例:
+输入: 3
+输出: [1,3,3,1]</p>
+<p>进阶：
+你可以优化你的算法到 O(k) 空间复杂度吗？
+<a href="#id133"><span class="problematic" id="id134">``</span></a><a href="#id135"><span class="problematic" id="id136">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路       | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ———- | ———- | ———- |</div>
+<div class="line">01       | 动态规划   | O(n^2)     | O(n^2)     |</div>
+<div class="line">02       | 递推       | O(n^2)     | O(n)       |</div>
+<div class="line">03(最优) | 二项式定理 | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id137"><span class="problematic" id="id138">``</span></a><a href="#id139"><span class="problematic" id="id140">`</span></a>go
+// 动态规划
+func getRow(rowIndex int) []int {</p>
+<blockquote>
+<div><p>var result [][]int
+for i := 0; i &lt; rowIndex+1; i++ {</p>
+<blockquote>
+<div><p>var row []int
+for j := 0; j &lt;= i; j++ {</p>
+<blockquote>
+<div><p>tmp := 1
+if j == 0 || j == i {</p>
+<dl class="simple">
+<dt>} else {</dt><dd><p>tmp = result[i-1][j-1] + result[i-1][j]</p>
+</dd>
+</dl>
+<p>}
+row = append(row, tmp)</p>
+</div></blockquote>
+<p>}
+result = append(result, row)</p>
+</div></blockquote>
+<p>}
+return result[rowIndex]</p>
+</div></blockquote>
+<p>}</p>
+<p>// 递推
+func getRow(rowIndex int) []int {</p>
+<blockquote>
+<div><p>res := make([]int,1,rowIndex+1)
+res[0] = 1
+if rowIndex == 0{</p>
+<blockquote>
+<div><p>return res</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>for i := 0; i &lt; rowIndex; i++{</dt><dd><p>res = append(res,1)
+for j := len(res) -2 ; j &gt; 0; j–{</p>
+<blockquote>
+<div><p>res[j] = res[j] + res[j-1]</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+return res</p>
+</div></blockquote>
+<p>}</p>
+<p>// 二项式定理
+func getRow(rowIndex int) []int {</p>
+<blockquote>
+<div><p>res := make([]int,rowIndex+1)
+res[0] = 1
+if rowIndex == 0{</p>
+<blockquote>
+<div><p>return res</p>
+</div></blockquote>
+<p>}</p>
+<p>// 公式
+// C(n,k）= n! /(k! * (n-k)!)
+// C(n,k) = (n-k+1)/k * C(n,k-1)
+for i := 1; i &lt;= rowIndex; i++{</p>
+<blockquote>
+<div><p>res[i] = res[i-1] * (rowIndex-i+1)/i</p>
+</div></blockquote>
+<p>}
+return res</p>
+</div></blockquote>
+</div>
+<div class="section" id="id141">
+<h1>}<a class="headerlink" href="#id141" title="永久链接至标题">¶</a></h1>
+<p>## 121.买卖股票的最佳时机(3)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id142"><span class="problematic" id="id143">``</span></a>`
+给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</p>
+<p>如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。</p>
+<p>注意你不能在买入股票前卖出股票。</p>
+<p>示例 1:</p>
+<p>输入: [7,1,5,3,6,4]
+输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。</p>
+<blockquote>
+<div><p>注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。</p>
+</div></blockquote>
+<p>示例 2:</p>
+<p>输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+<a href="#id144"><span class="problematic" id="id145">``</span></a><a href="#id146"><span class="problematic" id="id147">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路                                                         | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ———————————————————— | ———- | ———- |</div>
+<div class="line">01       | 暴力法                                                       | O(n^2)     | O(1)       |</div>
+<div class="line">02(最优) | 动态规划(从前到后) &lt;br /&gt;最大利润=max{前一天最大利润, 今天的价格 - 之前最低价格} | O(n)       | O(1)       |</div>
+<div class="line">03       | 动态规划(从后到前)                                           | O(n)       | O(1)       |</div>
+</div>
+<p><a href="#id148"><span class="problematic" id="id149">``</span></a><a href="#id150"><span class="problematic" id="id151">`</span></a>go
+// 暴力法
+func maxProfit(prices []int) int {</p>
+<blockquote>
+<div><p>max := 0
+length := len(prices)</p>
+<dl>
+<dt>for i := 0; i &lt; length-1 ; i++{</dt><dd><dl>
+<dt>for j := i+1; j &lt;= length-1; j++{</dt><dd><dl class="simple">
+<dt>if prices[j] - prices[i] &gt; max{</dt><dd><p>max = prices[j] - prices[i]</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+return max</p>
+</div></blockquote>
+<p>}</p>
+<p>// 动态规划(从前到后)
+func maxProfit(prices []int) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if len(prices) &lt; 2 {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}</p>
+<p>min := prices[0]
+profit := 0</p>
+<dl>
+<dt>for i := 1; i &lt; len(prices); i++ {</dt><dd><dl class="simple">
+<dt>if prices[i] &lt; min {</dt><dd><p>min = prices[i]</p>
+</dd>
+</dl>
+<p>}
+if profit &lt; prices[i]-min {</p>
+<blockquote>
+<div><p>profit = prices[i] - min</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+return profit</p>
+</div></blockquote>
+<p>}</p>
+<p>// 动态规划(从后到前)
+func maxProfit(prices []int) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if len(prices) &lt; 2 {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}</p>
+<p>max := 0
+profit := 0</p>
+<dl>
+<dt>for i := len(prices) - 1; i &gt;= 0; i– {</dt><dd><dl class="simple">
+<dt>if max &lt; prices[i] {</dt><dd><p>max = prices[i]</p>
+</dd>
+</dl>
+<p>}
+if profit &lt; max-prices[i] {</p>
+<blockquote>
+<div><p>profit = max - prices[i]</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+<p>return profit</p>
+</div></blockquote>
+</div>
+<div class="section" id="id152">
+<h1>}<a class="headerlink" href="#id152" title="永久链接至标题">¶</a></h1>
+<p>## 122.买卖股票的最佳时机II(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id153"><span class="problematic" id="id154">``</span></a>`
+给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
+注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p>示例 1:
+输入: [7,1,5,3,6,4]
+输出: 7
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。</p>
+<blockquote>
+<div><p>随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</p>
+</div></blockquote>
+<p>示例 2:
+输入: [1,2,3,4,5]
+输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。</p>
+<blockquote>
+<div><p>注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
+因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</p>
+</div></blockquote>
+<p>示例 3:
+输入: [7,6,4,3,1]
+输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+<a href="#id155"><span class="problematic" id="id156">``</span></a><a href="#id157"><span class="problematic" id="id158">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路       | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ———- | ———- | ———- |</div>
+<div class="line">01(最优) | 贪心法     | O(n)       | O(1)       |</div>
+<div class="line">02       | 峰谷峰顶法 | O(n)       | O(1)       |</div>
+</div>
+<p><a href="#id159"><span class="problematic" id="id160">``</span></a><a href="#id161"><span class="problematic" id="id162">`</span></a>go
+func maxProfit(prices []int) int {</p>
+<blockquote>
+<div><p>max := 0
+for i := 1; i &lt; len(prices); i++ {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if prices[i] &gt; prices[i-1] {</dt><dd><p>max = max + prices[i] - prices[i-1]</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+return max</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func maxProfit(prices []int) int {</dt><dd><dl class="simple">
+<dt>if len(prices) == 0 {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+i := 0
+valley := prices[0]
+peak := prices[0]
+profit := 0
+for i &lt; len(prices)-1 {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>for i &lt; len(prices)-1 &amp;&amp; prices[i] &gt;= prices[i+1] {</dt><dd><p>i++</p>
+</dd>
+</dl>
+<p>}
+valley = prices[i]
+for i &lt; len(prices)-1 &amp;&amp; prices[i] &lt;= prices[i+1] {</p>
+<blockquote>
+<div><p>i++</p>
+</div></blockquote>
+<p>}
+peak = prices[i]
+profit = profit + peak - valley</p>
+</div></blockquote>
+<p>}
+return profit</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id163">
+<h1>}<a class="headerlink" href="#id163" title="永久链接至标题">¶</a></h1>
+<p>## 125.验证回文串(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id164"><span class="problematic" id="id165">``</span></a>`
+给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
+说明：本题中，我们将空字符串定义为有效的回文串。</p>
+<p>示例 1:
+输入: “A man, a plan, a canal: Panama”
+输出: true</p>
+<p>示例 2:
+输入: “race a car”
+输出: false
+<a href="#id166"><span class="problematic" id="id167">``</span></a><a href="#id168"><span class="problematic" id="id169">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.       | 思路     | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——— | ——– | ———- | ———- |</div>
+<div class="line">01( 最优) | 双指针法 | O(n)       | O(1)       |</div>
+<div class="line">02        | 双指针法 | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id170"><span class="problematic" id="id171">``</span></a><a href="#id172"><span class="problematic" id="id173">`</span></a>go
+func isPalindrome(s string) bool {</p>
+<blockquote>
+<div><p>s = strings.ToLower(s)
+i, j := 0, len(s)-1</p>
+<dl>
+<dt>for i &lt; j {</dt><dd><dl class="simple">
+<dt>for i &lt; j &amp;&amp; !isChar(s[i]) {</dt><dd><p>i++</p>
+</dd>
+</dl>
+<p>}
+for i &lt; j &amp;&amp; !isChar(s[j]) {</p>
+<blockquote>
+<div><p>j–</p>
+</div></blockquote>
+<p>}
+if s[i] != s[j] {</p>
+<blockquote>
+<div><p>return false</p>
+</div></blockquote>
+<p>}
+i++
+j–</p>
+</dd>
+</dl>
+<p>}
+return true</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func isChar(c byte) bool {</dt><dd><dl class="simple">
+<dt>if (‘a’ &lt;= c &amp;&amp; c &lt;= ‘z’) || (‘0’ &lt;= c &amp;&amp; c &lt;= ‘9’) {</dt><dd><p>return true</p>
+</dd>
+</dl>
+<p>}
+return false</p>
+</dd>
+</dl>
+<p>}</p>
+<p>//
+func isPalindrome(s string) bool {</p>
+<blockquote>
+<div><p>str := “”
+s = strings.ToLower(s)
+for _, value := range s {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if (value &gt;= ‘0’ &amp;&amp; value &lt;= ‘9’) || (value &gt;= ‘a’ &amp;&amp; value &lt;= ‘z’) {</dt><dd><p>str += string(value)</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+if len(str) == 0 {</p>
+<blockquote>
+<div><p>return true</p>
+</div></blockquote>
+<p>}
+i := 0
+j := len(str) - 1
+for i &lt;= j {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if str[i] != str[j] {</dt><dd><p>return false</p>
+</dd>
+</dl>
+<p>}
+i++
+j–</p>
+</div></blockquote>
+<p>}
+return true</p>
+</div></blockquote>
+</div>
+<div class="section" id="id174">
+<h1>}<a class="headerlink" href="#id174" title="永久链接至标题">¶</a></h1>
+<p>## 136.只出现一次的数字(4)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id175"><span class="problematic" id="id176">``</span></a>`
+给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+说明：
+你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例 1:
+输入: [2,2,1]
+输出: 1</p>
+<p>示例 2:
+输入: [4,1,2,1,2]
+输出: 4
+<a href="#id177"><span class="problematic" id="id178">``</span></a><a href="#id179"><span class="problematic" id="id180">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路     | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ——– | ———- | ———- |</div>
+<div class="line">01(最优) | 异或     | O(n)       | O(1)       |</div>
+<div class="line">02       | 哈希     | O(n)       | O(n)       |</div>
+<div class="line">03       | 暴力法   | O(n^2)     | O(1)       |</div>
+<div class="line">04       | 排序遍历 | O(nlog(n)) | O(1)       |</div>
+</div>
+<p><a href="#id181"><span class="problematic" id="id182">``</span></a><a href="#id183"><span class="problematic" id="id184">`</span></a>go
+// 异或
+func singleNumber(nums []int) int {</p>
+<blockquote>
+<div><p>res := 0
+for _, n := range nums {</p>
+<blockquote>
+<div><p>res = res ^ n</p>
+</div></blockquote>
+<p>}
+return res</p>
+</div></blockquote>
+<p>}</p>
+<p>// 哈希
+func singleNumber(nums []int) int {</p>
+<blockquote>
+<div><p>m := make(map[int]int)</p>
+<dl class="simple">
+<dt>for _,v := range nums{</dt><dd><p>m[v]++</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>for k,v := range m{</dt><dd><dl class="simple">
+<dt>if v == 1{</dt><dd><p>return k</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+return -1</p>
+</div></blockquote>
+<p>}</p>
+<p>// 暴力法
+func singleNumber(nums []int) int {</p>
+<blockquote>
+<div><dl>
+<dt>for i := 0; i &lt; len(nums); i++ {</dt><dd><p>flag := false
+for j := 0; j &lt; len(nums); j++ {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if nums[i] == nums[j] &amp;&amp; i != j {</dt><dd><p>flag = true
+break</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+if flag == false {</p>
+<blockquote>
+<div><p>return nums[i]</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+return -1</p>
+</div></blockquote>
+<p>}</p>
+<p>// 排序遍历
+func singleNumber(nums []int) int {</p>
+<blockquote>
+<div><p>sort.Ints(nums)
+for i := 0; i &lt; len(nums);i = i+2{</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if i+1 == len(nums){</dt><dd><p>return nums[i]</p>
+</dd>
+</dl>
+<p>}
+if nums[i] != nums[i+1]{</p>
+<blockquote>
+<div><p>return nums[i]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}
+return -1</p>
+</div></blockquote>
+</div>
+<div class="section" id="id185">
+<h1>}<a class="headerlink" href="#id185" title="永久链接至标题">¶</a></h1>
+<p>## 141.环形链表(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id186"><span class="problematic" id="id187">``</span></a>`
+给定一个链表，判断链表中是否有环。
+为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。
+如果 pos 是 -1，则在该链表中没有环。</p>
+<p>示例 1：
+输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。</p>
+<p>示例 2：
+输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。</p>
+<p>示例 3：
+输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+<a href="#id188"><span class="problematic" id="id189">``</span></a><a href="#id190"><span class="problematic" id="id191">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路             | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | —————- | ———- | ———- |</div>
+<div class="line">01       | 哈希法           | O(n)       | O(n)       |</div>
+<div class="line">02(最优) | 双指针(快慢指针) | O(n)       | O(1)       |</div>
+</div>
+<p><a href="#id192"><span class="problematic" id="id193">``</span></a><a href="#id194"><span class="problematic" id="id195">`</span></a>go
+func hasCycle(head <a href="#id196"><span class="problematic" id="id197">*</span></a>ListNode) bool {</p>
+<blockquote>
+<div><p>m := make(map[<a href="#id198"><span class="problematic" id="id199">*</span></a>ListNode]bool)
+for head != nil {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if m[head] {</dt><dd><p>return true</p>
+</dd>
+</dl>
+<p>}
+m[head] = true
+head = head.Next</p>
+</div></blockquote>
+<p>}
+return false</p>
+</div></blockquote>
+<p>}</p>
+<p>// 双指针(快慢指针)
+func hasCycle(head <a href="#id200"><span class="problematic" id="id201">*</span></a>ListNode) bool {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if head == nil {</dt><dd><p>return false</p>
+</dd>
+</dl>
+<p>}
+fast := head.Next
+for fast != nil &amp;&amp; head != nil &amp;&amp; fast.Next != nil {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if fast == head {</dt><dd><p>return true</p>
+</dd>
+</dl>
+<p>}
+fast = fast.Next.Next
+head = head.Next</p>
+</div></blockquote>
+<p>}
+return false</p>
+</div></blockquote>
+</div>
+<div class="section" id="id202">
+<h1>}<a class="headerlink" href="#id202" title="永久链接至标题">¶</a></h1>
+<p>## 155.最小栈(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id203"><span class="problematic" id="id204">``</span></a>`
+设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。</p>
+<blockquote>
+<div><p>push(x) – 将元素 x 推入栈中。
+pop() – 删除栈顶的元素。
+top() – 获取栈顶元素。
+getMin() – 检索栈中的最小元素。</p>
+</div></blockquote>
+<p>示例:
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   –&gt; 返回 -3.
+minStack.pop();
+minStack.top();      –&gt; 返回 0.
+minStack.getMin();   –&gt; 返回 -2.
+<a href="#id205"><span class="problematic" id="id206">``</span></a><a href="#id207"><span class="problematic" id="id208">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路                                               | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ————————————————– | ———- | ———- |</div>
+<div class="line">01(最优) | 使用数组模拟栈，保存数据的时候同时保存当前的最小值 | O(n)       | O(n)       |</div>
+<div class="line">02       | 使用双栈                                           | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id209"><span class="problematic" id="id210">``</span></a><a href="#id211"><span class="problematic" id="id212">`</span></a>go
+type item struct {</p>
+<blockquote>
+<div><p>min, x int</p>
+</div></blockquote>
+<p>}
+type MinStack struct {</p>
+<blockquote>
+<div><p>stack []item</p>
+</div></blockquote>
+<p>}</p>
+<dl class="simple">
+<dt>func Constructor() MinStack {</dt><dd><p>return MinStack{}</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func (this <a href="#id213"><span class="problematic" id="id214">*</span></a>MinStack) Push(x int) {</dt><dd><p>min := x
+if len(this.stack) &gt; 0 &amp;&amp; this.GetMin() &lt; x {</p>
+<blockquote>
+<div><p>min = this.GetMin()</p>
+</div></blockquote>
+<p>}
+this.stack = append(this.stack, item{</p>
+<blockquote>
+<div><p>min: min,
+x:   x,</p>
+</div></blockquote>
+<p>})</p>
+</dd>
+</dl>
+<p>}</p>
+<dl class="simple">
+<dt>func (this <a href="#id215"><span class="problematic" id="id216">*</span></a>MinStack) Pop() {</dt><dd><p>this.stack = this.stack[:len(this.stack)-1]</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func (this <a href="#id217"><span class="problematic" id="id218">*</span></a>MinStack) Top() int {</dt><dd><dl class="simple">
+<dt>if len(this.stack) == 0 {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+return this.stack[len(this.stack)-1].x</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func (this <a href="#id219"><span class="problematic" id="id220">*</span></a>MinStack) GetMin() int {</dt><dd><dl class="simple">
+<dt>if len(this.stack) == 0 {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+return this.stack[len(this.stack)-1].min</p>
+</dd>
+</dl>
+<p>}</p>
+<p>//
+type MinStack struct {</p>
+<blockquote>
+<div><p>data []int
+min  []int</p>
+</div></blockquote>
+<p>}</p>
+<dl class="simple">
+<dt>func Constructor() MinStack {</dt><dd><p>return MinStack{[]int{}, []int{}}</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func (this <a href="#id221"><span class="problematic" id="id222">*</span></a>MinStack) Push(x int) {</dt><dd><dl class="simple">
+<dt>if len(this.data) == 0 || x &lt;= this.GetMin() {</dt><dd><p>this.min = append(this.min, x)</p>
+</dd>
+</dl>
+<p>}
+this.data = append(this.data, x)</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func (this <a href="#id223"><span class="problematic" id="id224">*</span></a>MinStack) Pop() {</dt><dd><p>x := this.data[len(this.data)-1]
+this.data = this.data[:len(this.data)-1]
+if x == this.GetMin() {</p>
+<blockquote>
+<div><p>this.min = this.min[:len(this.min)-1]</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func (this <a href="#id225"><span class="problematic" id="id226">*</span></a>MinStack) Top() int {</dt><dd><dl class="simple">
+<dt>if len(this.data) == 0 {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+return this.data[len(this.data)-1]</p>
+</dd>
+</dl>
+<p>}</p>
+<dl class="simple">
+<dt>func (this <a href="#id227"><span class="problematic" id="id228">*</span></a>MinStack) GetMin() int {</dt><dd><p>return this.min[len(this.min)-1]</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id229">
+<h1>}<a class="headerlink" href="#id229" title="永久链接至标题">¶</a></h1>
+<p>## 160.相交链表(4)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id230"><span class="problematic" id="id231">``</span></a><a href="#id232"><span class="problematic" id="id233">`</span></a>go
+编写一个程序，找到两个单链表相交的起始节点。
+如下面的两个链表：
+在节点 c1 开始相交。</p>
+<p>示例 1：
+输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
+输出：Reference of the node with value = 8
+输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。
+从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
+在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。</p>
+<p>示例 2：
+输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+输出：Reference of the node with value = 2
+输入解释：相交节点的值为 2 （注意，如果两个列表相交则不能为 0）。
+从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。
+在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。</p>
+<p>示例 3：
+输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+输出：null
+输入解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。
+由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。
+解释：这两个链表不相交，因此返回 null。</p>
+<dl class="simple">
+<dt>注意：</dt><dd><p>如果两个链表没有交点，返回 null.
+在返回结果后，两个链表仍须保持原有的结构。
+可假定整个链表结构中没有循环。
+程序尽量满足 O(n) 时间复杂度，且仅用 O(1) 内存。</p>
+</dd>
+</dl>
+<p><a href="#id234"><span class="problematic" id="id235">``</span></a><a href="#id236"><span class="problematic" id="id237">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路                       | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ————————– | ———- | ———- |</div>
+<div class="line">01       | 计算长度后，对齐长度再比较 | O(n)       | O(1)       |</div>
+<div class="line">02(最优) | 交换后相连，再比较         | O(n)       | O(1)       |</div>
+<div class="line">03       | 暴力法                     | O(n^2)     | O(1)       |</div>
+<div class="line">04       | 哈希法                     | O(n)       | O(n)       |</div>
+</div>
+<p><a href="#id238"><span class="problematic" id="id239">``</span></a><a href="#id240"><span class="problematic" id="id241">`</span></a>go
+func getIntersectionNode(headA, headB <a href="#id242"><span class="problematic" id="id243">*</span></a>ListNode) <a href="#id244"><span class="problematic" id="id245">*</span></a>ListNode {</p>
+<blockquote>
+<div><p>ALength := 0
+A := headA
+for A != nil {</p>
+<blockquote>
+<div><p>ALength++
+A = A.Next</p>
+</div></blockquote>
+<p>}
+BLength := 0
+B := headB
+for B != nil {</p>
+<blockquote>
+<div><p>BLength++
+B = B.Next</p>
+</div></blockquote>
+<p>}</p>
+<p>pA := headA
+pB := headB
+if ALength &gt; BLength {</p>
+<blockquote>
+<div><p>n := ALength - BLength
+for n &gt; 0 {</p>
+<blockquote>
+<div><p>pA = pA.Next
+n–</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<dl>
+<dt>} else {</dt><dd><p>n := BLength - ALength
+for n &gt; 0 {</p>
+<blockquote>
+<div><p>pB = pB.Next
+n–</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+<dl class="simple">
+<dt>for pA != pB {</dt><dd><p>pA = pA.Next
+pB = pB.Next</p>
+</dd>
+</dl>
+<p>}
+return pA</p>
+</div></blockquote>
+<p>}</p>
+<p>//
+func getIntersectionNode(headA, headB <a href="#id246"><span class="problematic" id="id247">*</span></a>ListNode) <a href="#id248"><span class="problematic" id="id249">*</span></a>ListNode {</p>
+<blockquote>
+<div><p>A, B := headA, headB
+for A != B {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if A != nil {</dt><dd><p>A = A.Next</p>
+</dd>
+<dt>} else {</dt><dd><p>A = headB</p>
+</dd>
+</dl>
+<p>}
+if B != nil {</p>
+<blockquote>
+<div><p>B = B.Next</p>
+</div></blockquote>
+<dl class="simple">
+<dt>} else {</dt><dd><p>B = headA</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+return A</p>
+</div></blockquote>
+<p>}</p>
+<p>// 暴力法
+func getIntersectionNode(headA, headB <a href="#id250"><span class="problematic" id="id251">*</span></a>ListNode) <a href="#id252"><span class="problematic" id="id253">*</span></a>ListNode {</p>
+<blockquote>
+<div><p>A, B := headA, headB
+for A != nil {</p>
+<blockquote>
+<div><dl>
+<dt>for B != nil {</dt><dd><dl class="simple">
+<dt>if A == B {</dt><dd><p>return A</p>
+</dd>
+</dl>
+<p>}
+B = B.Next</p>
+</dd>
+</dl>
+<p>}
+A = A.Next
+B = headB</p>
+</div></blockquote>
+<p>}
+return nil</p>
+</div></blockquote>
+<p>}</p>
+<p>// 哈希表法
+func getIntersectionNode(headA, headB <a href="#id254"><span class="problematic" id="id255">*</span></a>ListNode) <a href="#id256"><span class="problematic" id="id257">*</span></a>ListNode {</p>
+<blockquote>
+<div><p>m := make(map[<a href="#id258"><span class="problematic" id="id259">*</span></a>ListNode]bool)
+for headA != nil {</p>
+<blockquote>
+<div><p>m[headA] = true
+headA = headA.Next</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>for headB != nil {</dt><dd><dl class="simple">
+<dt>if _, ok := m[headB]; ok {</dt><dd><p>return headB</p>
+</dd>
+</dl>
+<p>}
+headB = headB.Next</p>
+</dd>
+</dl>
+<p>}
+return nil</p>
+</div></blockquote>
+</div>
+<div class="section" id="id260">
+<h1>}<a class="headerlink" href="#id260" title="永久链接至标题">¶</a></h1>
+<p>## 167.两数之和 II - 输入有序数组(4)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id261"><span class="problematic" id="id262">``</span></a>`
+给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。
+函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
+<dl class="simple">
+<dt>说明:</dt><dd><p>返回的下标值（index1 和 index2）不是从零开始的。
+你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</p>
+</dd>
+</dl>
+<p>示例:
+输入: numbers = [2, 7, 11, 15], target = 9
+输出: [1,2]
+解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
+<a href="#id263"><span class="problematic" id="id264">``</span></a><a href="#id265"><span class="problematic" id="id266">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路                | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ——————- | ———- | ———- |</div>
+<div class="line">01       | 暴力法: 2层循环遍历 | O(n^2)     | O(1)       |</div>
+<div class="line">02       | 两遍哈希遍历        | O(n)       | O(n)       |</div>
+<div class="line">03       | 一遍哈希遍历        | O(n)       | O(n)       |</div>
+<div class="line">04(最优) | 一遍哈希遍历        | O(n)       | O(1)       |</div>
+</div>
+<p><a href="#id267"><span class="problematic" id="id268">``</span></a><a href="#id269"><span class="problematic" id="id270">`</span></a>go
+// 暴力法: 2层循环遍历
+func twoSum(nums []int, target int) []int {</p>
+<blockquote>
+<div><dl>
+<dt>for i := 0; i &lt; len(nums); i++ {</dt><dd><dl>
+<dt>for j := i + 1; j &lt; len(nums); j++ {</dt><dd><dl class="simple">
+<dt>if nums[i]+nums[j] == target {</dt><dd><p>return []int{i + 1, j + 1}</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+return []int{}</p>
+</div></blockquote>
+<p>}</p>
+<p>// 两遍哈希遍历
+func twoSum(nums []int, target int) []int {</p>
+<blockquote>
+<div><p>m := make(map[int]int, len(nums))
+for k, v := range nums {</p>
+<blockquote>
+<div><p>m[v] = k</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>for i := 0; i &lt; len(nums); i++ {</dt><dd><p>b := target - nums[i]
+if num, ok := m[b]; ok &amp;&amp; num != i {</p>
+<blockquote>
+<div><p>return []int{i + 1, m[b] + 1}</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}
+return []int{}</p>
+</div></blockquote>
+<p>}</p>
+<p>// 一遍哈希遍历
+func twoSum(numbers []int, target int) []int {</p>
+<blockquote>
+<div><p>m := make(map[int]int, len(numbers))</p>
+<dl>
+<dt>for i, n := range numbers {</dt><dd><dl class="simple">
+<dt>if m[target-n] != 0 {</dt><dd><p>return []int{m[target-n], i + 1}</p>
+</dd>
+</dl>
+<p>}
+m[n] = i + 1</p>
+</dd>
+</dl>
+<p>}
+return nil</p>
+</div></blockquote>
+<p>}</p>
+<p>// 双指针法
+func twoSum(numbers []int, target int) []int {</p>
+<blockquote>
+<div><p>first := 0
+last := len(numbers) - 1</p>
+<p>result := make([]int, 2)</p>
+<dl>
+<dt>for {</dt><dd><dl class="simple">
+<dt>if numbers[first]+numbers[last] == target {</dt><dd><p>result[0] = first + 1
+result[1] = last + 1
+return result</p>
+</dd>
+<dt>} else if numbers[first]+numbers[last] &gt; target {</dt><dd><p>last–</p>
+</dd>
+<dt>} else {</dt><dd><p>first++</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id271">
+<h1>}<a class="headerlink" href="#id271" title="永久链接至标题">¶</a></h1>
+<p>## 168.Excel表列名称(2)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id272"><span class="problematic" id="id273">``</span></a>`
+给定一个正整数，返回它在 Excel 表中相对应的列名称。
+例如，</p>
+<blockquote>
+<div><p>1 -&gt; A
+2 -&gt; B
+3 -&gt; C
+…
+26 -&gt; Z
+27 -&gt; AA
+28 -&gt; AB
+…</p>
+</div></blockquote>
+<p>示例 1:
+输入: 1
+输出: “A”</p>
+<p>示例 2:
+输入: 28
+输出: “AB”</p>
+<p>示例 3:
+输入: 701
+输出: “ZY”
+<a href="#id274"><span class="problematic" id="id275">``</span></a><a href="#id276"><span class="problematic" id="id277">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路         | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ———— | ———- | ———- |</div>
+<div class="line">01(最优) | 求余模拟进制 | O(log(n))  | O(1)       |</div>
+<div class="line">02       | 递归计算     | O(log(n))  | O(log(n))  |</div>
+</div>
+<p><a href="#id278"><span class="problematic" id="id279">``</span></a><a href="#id280"><span class="problematic" id="id281">`</span></a>go
+// 求余模拟进制
+func convertToTitle(n int) string {</p>
+<blockquote>
+<div><p>str := “”</p>
+<dl class="simple">
+<dt>for n &gt; 0 {</dt><dd><p>n–
+str = string(byte(n%26)+’A’) + str
+n /= 26</p>
+</dd>
+</dl>
+<p>}
+return str</p>
+</div></blockquote>
+<p>}</p>
+<p>// 递归计算
+func convertToTitle(n int) string {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if n &lt;= 26{</dt><dd><p>return string(‘A’+n-1)</p>
+</dd>
+</dl>
+<p>}
+y := n % 26
+if y == 0{</p>
+<blockquote>
+<div><p>// 26的倍数 如52%26=0 =&gt; AZ
+return convertToTitle((n-y-1)/26)+convertToTitle(26)</p>
+</div></blockquote>
+<p>}
+return convertToTitle((n-y)/26)+convertToTitle(y)</p>
+</div></blockquote>
+</div>
+<div class="section" id="id282">
+<h1>}<a class="headerlink" href="#id282" title="永久链接至标题">¶</a></h1>
+<p>## 169.多数元素(5)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id283"><span class="problematic" id="id284">``</span></a>`
+给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+你可以假设数组是非空的，并且给定的数组总是存在多数元素。</p>
+<p>示例 1:
+输入: [3,2,3]
+输出: 3</p>
+<p>示例 2:
+输入: [2,2,1,1,1,2,2]
+输出: 2
+<a href="#id285"><span class="problematic" id="id286">``</span></a><a href="#id287"><span class="problematic" id="id288">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路                | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ——————- | ———- | ———- |</div>
+<div class="line">01       | 排序取半            | O(nlog(n)) | O(1)       |</div>
+<div class="line">02       | 哈希法              | O(n)       | O(n)       |</div>
+<div class="line">03(最优) | Boyer-Moore投票算法 | O(n)       | O(1)       |</div>
+<div class="line">04       | 位运算              | O(n)       | O(1)       |</div>
+<div class="line">05       | 分治法              | O(nlog(n)) | O(log(n))  |</div>
+</div>
+<p><a href="#id289"><span class="problematic" id="id290">``</span></a><a href="#id291"><span class="problematic" id="id292">`</span></a>go
+// 排序取半
+func majorityElement(nums []int) int {</p>
+<blockquote>
+<div><p>sort.Ints(nums)
+return nums[len(nums)/2]</p>
+</div></blockquote>
+<p>}</p>
+<p>// 哈希法
+func majorityElement(nums []int) int {</p>
+<blockquote>
+<div><p>m := make(map[int]int)
+result := 0
+for _, v := range nums{</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if _,ok := m[v];ok{</dt><dd><p>m[v]++</p>
+</dd>
+<dt>}else {</dt><dd><p>m[v]=1</p>
+</dd>
+</dl>
+<p>}
+if m[v] &gt; (len(nums)/2){</p>
+<blockquote>
+<div><p>result = v</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}
+return result</p>
+</div></blockquote>
+<p>}</p>
+<p>// Boyer-Moore投票算法
+func majorityElement(nums []int) int {</p>
+<blockquote>
+<div><p>result, count := 0, 0
+for i := 0; i &lt; len(nums); i++ {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if count == 0 {</dt><dd><p>result = nums[i]
+count++</p>
+</dd>
+<dt>} else if result == nums[i] {</dt><dd><p>count++</p>
+</dd>
+<dt>} else {</dt><dd><p>count–</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+return result</p>
+</div></blockquote>
+<p>}</p>
+<p>// 位运算
+func majorityElement(nums []int) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if len(nums) == 1 {</dt><dd><p>return nums[0]</p>
+</dd>
+</dl>
+<p>}
+result := int32(0)
+// 64位有坑
+mask := int32(1)
+for i := 0; i &lt; 32; i++ {</p>
+<blockquote>
+<div><p>count := 0
+for j := 0; j &lt; len(nums); j++ {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if mask&amp;int32(nums[j]) == mask {</dt><dd><p>count++</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+if count &gt; len(nums)/2 {</p>
+<blockquote>
+<div><p>result = result | mask</p>
+</div></blockquote>
+<p>}
+mask = mask &lt;&lt; 1</p>
+</div></blockquote>
+<p>}
+return int(result)</p>
+</div></blockquote>
+<p>}</p>
+<p>// 分治法
+func majorityElement(nums []int) int {</p>
+<blockquote>
+<div><p>return majority(nums, 0, len(nums)-1)</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func count(nums []int, target int, start int, end int) int {</dt><dd><p>countNum := 0
+for i := start; i &lt;= end; i++ {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if nums[i] == target {</dt><dd><p>countNum++</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+return countNum</p>
+</dd>
+</dl>
+<p>}</p>
+<dl>
+<dt>func majority(nums []int, start, end int) int {</dt><dd><dl class="simple">
+<dt>if start == end {</dt><dd><p>return nums[start]</p>
+</dd>
+</dl>
+<p>}</p>
+<p>mid := (start + end) / 2</p>
+<p>left := majority(nums, start, mid)
+right := majority(nums, mid+1, end)
+if left == right {</p>
+<blockquote>
+<div><p>return left</p>
+</div></blockquote>
+<p>}</p>
+<p>leftCount := count(nums, left, start, end)
+rightCount := count(nums, right, start, end)
+if leftCount &gt; rightCount {</p>
+<blockquote>
+<div><p>return left</p>
+</div></blockquote>
+<p>}
+return right</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id293">
+<h1>}<a class="headerlink" href="#id293" title="永久链接至标题">¶</a></h1>
+<p>## 171.Excel表列序号(1)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id294"><span class="problematic" id="id295">``</span></a>`
+给定一个Excel表格中的列名称，返回其相应的列序号。
+例如，</p>
+<blockquote>
+<div><p>A -&gt; 1
+B -&gt; 2
+C -&gt; 3
+…
+Z -&gt; 26
+AA -&gt; 27
+AB -&gt; 28
+…</p>
+</div></blockquote>
+<p>示例 1:
+输入: “A”
+输出: 1</p>
+<p>示例 2:
+输入: “AB”
+输出: 28</p>
+<p>示例 3:
+输入: “ZY”
+输出: 701
+<a href="#id296"><span class="problematic" id="id297">``</span></a><a href="#id298"><span class="problematic" id="id299">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.  | 思路       | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">—- | ———- | ———- | ———- |</div>
+<div class="line">01   | 26进制计算 | O(log(n))  | O(1)       |</div>
+</div>
+<p><a href="#id300"><span class="problematic" id="id301">``</span></a><a href="#id302"><span class="problematic" id="id303">`</span></a>go
+func titleToNumber(s string) int {</p>
+<blockquote>
+<div><p>result := 0
+for i := 0; i &lt; len(s); i++ {</p>
+<blockquote>
+<div><p>temp := int(s[i] - ‘A’ + 1)
+result = result*26 + temp</p>
+</div></blockquote>
+<p>}
+return result</p>
+</div></blockquote>
+</div>
+<div class="section" id="id304">
+<h1>}<a class="headerlink" href="#id304" title="永久链接至标题">¶</a></h1>
+<p>## 172.阶乘后的零(1)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id305"><span class="problematic" id="id306">``</span></a>`
+给定一个整数 n，返回 n! 结果尾数中零的数量。</p>
+<p>示例 1:
+输入: 3
+输出: 0
+解释: 3! = 6, 尾数中没有零。</p>
+<p>示例 2:
+输入: 5
+输出: 1
+解释: 5! = 120, 尾数中有 1 个零.</p>
+<p>说明: 你算法的时间复杂度应为 O(log n) 。
+<a href="#id307"><span class="problematic" id="id308">``</span></a><a href="#id309"><span class="problematic" id="id310">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.  | 思路         | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">—- | ———— | ———- | ———- |</div>
+<div class="line">01   | 数学，找规律 | O(log(n))  | O(1)       |</div>
+</div>
+<p><a href="#id311"><span class="problematic" id="id312">``</span></a><a href="#id313"><span class="problematic" id="id314">`</span></a>go
+func trailingZeroes(n int) int {</p>
+<blockquote>
+<div><p>result := 0
+for n &gt;= 5 {</p>
+<blockquote>
+<div><p>n = n / 5
+result = result + n</p>
+</div></blockquote>
+<p>}
+return result</p>
+</div></blockquote>
+</div>
+<div class="section" id="id315">
+<h1>}<a class="headerlink" href="#id315" title="永久链接至标题">¶</a></h1>
+<p>## 189.旋转数组(4)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id316"><span class="problematic" id="id317">``</span></a>`
+给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。</p>
+<p>示例 1:
+输入: [1,2,3,4,5,6,7] 和 k = 3
+输出: [5,6,7,1,2,3,4]
+解释:
+向右旋转 1 步: [7,1,2,3,4,5,6]
+向右旋转 2 步: [6,7,1,2,3,4,5]
+向右旋转 3 步: [5,6,7,1,2,3,4]</p>
+<p>示例 2:
+输入: [-1,-100,3,99] 和 k = 2
+输出: [3,99,-1,-100]
+解释:
+向右旋转 1 步: [99,-1,-100,3]
+向右旋转 2 步: [3,99,-1,-100]</p>
+<dl class="simple">
+<dt>说明:</dt><dd><p>尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
+要求使用空间复杂度为 O(1) 的 原地 算法。</p>
+</dd>
+</dl>
+<p><a href="#id318"><span class="problematic" id="id319">``</span></a><a href="#id320"><span class="problematic" id="id321">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路           | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ————– | ———- | ———- |</div>
+<div class="line">01       | 暴力法         | O(n^2)     | O(1)       |</div>
+<div class="line">02       | 三次反转法     | O(n)       | O(1)       |</div>
+<div class="line">03       | 使用额外的数组 | O(n)       | O(n)       |</div>
+<div class="line">04(最优) | 环形替换       | O(n)       | O(1)       |</div>
+</div>
+<p><a href="#id322"><span class="problematic" id="id323">``</span></a><a href="#id324"><span class="problematic" id="id325">`</span></a>go
+// 暴力法
+func rotate(nums []int, k int) {</p>
+<blockquote>
+<div><p>n := len(nums)</p>
+<dl class="simple">
+<dt>if k &gt; n {</dt><dd><p>k = k % n</p>
+</dd>
+</dl>
+<p>}
+if k == 0 || k == n {</p>
+<blockquote>
+<div><p>return</p>
+</div></blockquote>
+<p>}
+for i := 0; i &lt; k; i++ {</p>
+<blockquote>
+<div><p>last := nums[len(nums)-1]
+for j := 0; j &lt; len(nums); j++ {</p>
+<blockquote>
+<div><p>nums[j], last = last, nums[j]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<p>// 三次反转法
+func rotate(nums []int, k int) {</p>
+<blockquote>
+<div><p>n := len(nums)</p>
+<dl class="simple">
+<dt>if k &gt; n {</dt><dd><p>k = k % n</p>
+</dd>
+</dl>
+<p>}
+if k == 0 || k == n {</p>
+<blockquote>
+<div><p>return</p>
+</div></blockquote>
+<p>}
+reverse(nums, 0, n-1)
+reverse(nums, 0, k-1)
+reverse(nums, k, n-1)</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func reverse(nums []int, i, j int) {</dt><dd><dl class="simple">
+<dt>for i &lt; j {</dt><dd><p>nums[i], nums[j] = nums[j], nums[i]
+i++
+j–</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+<p>// 使用额外的数组
+func rotate(nums []int, k int) {</p>
+<blockquote>
+<div><p>n := len(nums)</p>
+<dl class="simple">
+<dt>if k &gt; n {</dt><dd><p>k = k % n</p>
+</dd>
+</dl>
+<p>}
+if k == 0 || k == n {</p>
+<blockquote>
+<div><p>return</p>
+</div></blockquote>
+<p>}</p>
+<p>arr := make([]int, len(nums))
+for i := 0; i &lt; len(nums); i++ {</p>
+<blockquote>
+<div><p>arr[(i+k)%len(nums)] = nums[i]</p>
+</div></blockquote>
+<p>}</p>
+<dl class="simple">
+<dt>for i := 0; i &lt; len(nums); i++ {</dt><dd><p>nums[i] = arr[i]</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+<p>// 环形替换
+func rotate(nums []int, k int) {</p>
+<blockquote>
+<div><p>n := len(nums)</p>
+<dl class="simple">
+<dt>if k &gt; n {</dt><dd><p>k = k % n</p>
+</dd>
+</dl>
+<p>}
+if k == 0 || k == n {</p>
+<blockquote>
+<div><p>return</p>
+</div></blockquote>
+<p>}
+count := 0</p>
+<dl>
+<dt>for i := 0; count &lt; len(nums); i++ {</dt><dd><p>current := i
+prev := nums[i]
+for {</p>
+<blockquote>
+<div><p>next := (current + k) % len(nums)
+nums[next], prev = prev, nums[next]
+current = next
+// fmt.Println(nums, prev)
+count++
+if i == current {</p>
+<blockquote>
+<div><p>break</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</div>
+<div class="section" id="id326">
+<h1>}<a class="headerlink" href="#id326" title="永久链接至标题">¶</a></h1>
+<p>## 190.颠倒二进制位(3)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id327"><span class="problematic" id="id328">``</span></a>`
+颠倒给定的 32 位无符号整数的二进制位。</p>
+<p>示例 1：
+输入: 00000010100101000001111010011100
+输出: 00111001011110000010100101000000
+解释: 输入的二进制串 00000010100101000001111010011100 表示无符号整数 43261596，</p>
+<blockquote>
+<div><p>因此返回 964176192，其二进制表示形式为 00111001011110000010100101000000。</p>
+</div></blockquote>
+<p>示例 2：
+输入：11111111111111111111111111111101
+输出：10111111111111111111111111111111
+解释：输入的二进制串 11111111111111111111111111111101 表示无符号整数 4294967293，</p>
+<blockquote>
+<div><p>因此返回 3221225471 其二进制表示形式为 10101111110010110010011101101001。</p>
+</div></blockquote>
+<dl class="simple">
+<dt>提示：</dt><dd><p>请注意，在某些语言（如 Java）中，没有无符号整数类型。
+在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，
+因为无论整数是有符号的还是无符号的，其内部的二进制表示形式都是相同的。
+在 Java 中，编译器使用二进制补码记法来表示有符号整数。
+因此，在上面的 示例 2 中，输入表示有符号整数 -3，输出表示有符号整数 -1073741825。</p>
+</dd>
+</dl>
+<p>进阶:
+如果多次调用这个函数，你将如何优化你的算法？
+<a href="#id329"><span class="problematic" id="id330">``</span></a><a href="#id331"><span class="problematic" id="id332">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.  | 思路       | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">—- | ———- | ———- | ———- |</div>
+<div class="line">01   | 位操作     | O(1)       | O(1)       |</div>
+<div class="line">02   | 转字符串   | O(n)       | O(1)       |</div>
+<div class="line">03   | 二进制交换 | O(1)       | O(1)       |</div>
+</div>
+<p><a href="#id333"><span class="problematic" id="id334">``</span></a><a href="#id335"><span class="problematic" id="id336">`</span></a>go
+func reverseBits(num uint32) uint32 {</p>
+<blockquote>
+<div><p>result := uint32(0)
+for i := 0; i &lt; 32; i++ {</p>
+<blockquote>
+<div><p>last := num &amp; 1               // 取最后一位
+result = (result &lt;&lt; 1) + last // 前移
+num = num &gt;&gt; 1</p>
+</div></blockquote>
+<p>}
+return result</p>
+</div></blockquote>
+<p>}</p>
+<p>//
+func reverseBits(num uint32) uint32 {</p>
+<blockquote>
+<div><p>str := strconv.FormatUint(uint64(num), 2)
+rev := “”
+for i := len(str) - 1; i &gt;= 0; i– {</p>
+<blockquote>
+<div><p>rev = rev + str[i:i+1]</p>
+</div></blockquote>
+<p>}
+if len(rev) &lt; 32 {</p>
+<blockquote>
+<div><p>rev = rev + strings.Repeat(“0”, 32-len(rev))</p>
+</div></blockquote>
+<p>}
+n, _ := strconv.ParseUint(rev, 2, 64)
+return uint32(n)</p>
+</div></blockquote>
+<p>}</p>
+<p>// 二进制交换
+import (</p>
+<blockquote>
+<div><p>“github.com/imroc/biu”</p>
+</div></blockquote>
+<p>)</p>
+<dl class="simple">
+<dt>func reverseBits(num uint32) uint32 {</dt><dd><p>fmt.Println(biu.Uint32ToBinaryString(num))
+num = ((num &amp; 0xffff0000) &gt;&gt; 16) | ((num &amp; 0x0000ffff) &lt;&lt; 16)
+num = ((num &amp; 0xff00ff00) &gt;&gt; 8) | ((num &amp; 0x00ff00ff) &lt;&lt; 8)
+num = ((num &amp; 0xf0f0f0f0) &gt;&gt; 4) | ((num &amp; 0x0f0f0f0f) &lt;&lt; 4)
+num = ((num &amp; 0xcccccccc) &gt;&gt; 2) | ((num &amp; 0x33333333) &lt;&lt; 2)
+num = ((num &amp; 0xaaaaaaaa) &gt;&gt; 1) | ((num &amp; 0x55555555) &lt;&lt; 1)
+return num</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id337">
+<h1>}<a class="headerlink" href="#id337" title="永久链接至标题">¶</a></h1>
+<p>## 191.位1的个数(4)</p>
+<ul class="simple">
+<li><p>题目</p></li>
+</ul>
+<p><a href="#id338"><span class="problematic" id="id339">``</span></a>`
+编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数
+（也被称为汉明重量）。</p>
+<p>示例 1：
+输入：00000000000000000000000000001011
+输出：3
+解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 ‘1’。</p>
+<p>示例 2：
+输入：00000000000000000000000010000000
+输出：1
+解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 ‘1’。</p>
+<p>示例 3：
+输入：11111111111111111111111111111101
+输出：31
+解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 ‘1’。</p>
+<dl class="simple">
+<dt>提示：</dt><dd><p>请注意，在某些语言（如 Java）中，没有无符号整数类型。
+在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，
+因为无论整数是有符号的还是无符号的，其内部的二进制表示形式都是相同的。
+在 Java 中，编译器使用二进制补码记法来表示有符号整数。
+因此，在上面的 示例 3 中，输入表示有符号整数 -3。</p>
+</dd>
+</dl>
+<p>进阶:
+如果多次调用这个函数，你将如何优化你的算法？
+<a href="#id340"><span class="problematic" id="id341">``</span></a><a href="#id342"><span class="problematic" id="id343">`</span></a></p>
+<ul class="simple">
+<li><p>解题思路</p></li>
+</ul>
+<div class="line-block">
+<div class="line">No.      | 思路                                            | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">——– | ———————————————– | ———- | ———- |</div>
+<div class="line">01       | 循环位计算                                      | O(1)       | O(1)       |</div>
+<div class="line">02(最优) | 位计算&lt;br /&gt;n&amp;(n-1)，会把该整数的最右边的1变成0 | O(1)       | O(1)       |</div>
+<div class="line">03       | 内置函数                                        | O(1)       | O(1)       |</div>
+<div class="line">04       | 遍历                                            | O(1)       | O(1)       |</div>
+</div>
+<p><a href="#id344"><span class="problematic" id="id345">``</span></a><a href="#id346"><span class="problematic" id="id347">`</span></a>go
+// 循环位计算
+func hammingWeight(num uint32) int {</p>
+<blockquote>
+<div><p>count := 0
+for num != 0 {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if num&amp;1 == 1 {</dt><dd><p>count++</p>
+</dd>
+</dl>
+<p>}
+num = num &gt;&gt; 1</p>
+</div></blockquote>
+<p>}
+return count</p>
+</div></blockquote>
+<p>}</p>
+<p>//
+func hammingWeight(num uint32) int {</p>
+<blockquote>
+<div><p>count := 0
+for num != 0 {</p>
+<blockquote>
+<div><p>num = num &amp; (num - 1)
+count++</p>
+</div></blockquote>
+<p>}
+return count</p>
+</div></blockquote>
+<p>}</p>
+<p>#
+func hammingWeight(num uint32) int {</p>
+<blockquote>
+<div><p>return strings.Count(strconv.FormatInt(int64(num),2),”1”)
+// return strings.Count(fmt.Sprintf(“%b”,num),”1”)</p>
+</div></blockquote>
+<p>}</p>
+<p>#
+func hammingWeight(num uint32) int {</p>
+<blockquote>
+<div><p>count := 0
+flag := uint32(1)
+for flag != 0 {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if num&amp;flag == flag {</dt><dd><p>count++</p>
+</dd>
+</dl>
+<p>}
+flag = flag &lt;&lt; 1</p>
+</div></blockquote>
+<p>}
+return count</p>
+</div></blockquote>
+</div>
+<div class="section" id="id348">
+<h1>}<a class="headerlink" href="#id348" title="永久链接至标题">¶</a></h1>
+<p>## 198.打家劫舍(4)
+-  题目</p>
+<p><a href="#id349"><span class="problematic" id="id350">``</span></a>`
+你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，
+影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，
+如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。</p>
+<p>给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。</p>
+<p>示例 1:输入: [1,2,3,1] 输出: 4
+解释: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。 偷窃到的最高金额 = 1 + 3 = 4 。</p>
+<p>示例 2: 输入: [2,7,9,3,1] 输出: 12
+解释: 偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。</p>
+<blockquote>
+<div><p>偷窃到的最高金额 = 2 + 9 + 1 = 12 。</p>
+</div></blockquote>
+<p><a href="#id351"><span class="problematic" id="id352">``</span></a>`
+- 解题思路</p>
+<div class="line-block">
+<div class="line">No.  | 思路              | 时间复杂度 | 空间复杂度 |</div>
+<div class="line">—- | —————– | ———- | ———- |</div>
+<div class="line">01(最优) | 动态规划          | O(n)       | O(1)       |</div>
+<div class="line">02   | 动态规划+一维数组 | O(n)       | O(n)       |</div>
+<div class="line">03   | 动态规划+二维数组 | O(n)        | O(n)       |</div>
+<div class="line">04   | 奇偶法            | O(n)       | O(1)         |</div>
+</div>
+<p><a href="#id353"><span class="problematic" id="id354">``</span></a><a href="#id355"><span class="problematic" id="id356">`</span></a>go
+func rob(nums []int) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if len(nums) == 0 {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+if len(nums) == 1 {</p>
+<blockquote>
+<div><p>return nums[0]</p>
+</div></blockquote>
+<p>}
+a := nums[0]
+b := max(a, nums[1])</p>
+<dl class="simple">
+<dt>for i := 2; i &lt; len(nums); i++ {</dt><dd><p>a, b = b, max(a+nums[i], b)</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func max(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &gt; b {</dt><dd><p>return a</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</dd>
+</dl>
+<p>}</p>
+<p>#
+func rob(nums []int) int {</p>
+<blockquote>
+<div><p>n := len(nums)
+if n == 0 {</p>
+<blockquote>
+<div><p>return 0</p>
+</div></blockquote>
+<p>}
+if n == 1 {</p>
+<blockquote>
+<div><p>return nums[0]</p>
+</div></blockquote>
+<p>}
+dp := make([]int, n)
+dp[0] = nums[0]
+if nums[0] &gt; nums[1] {</p>
+<blockquote>
+<div><p>dp[1] = nums[0]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>} else {</dt><dd><p>dp[1] = nums[1]</p>
+</dd>
+</dl>
+<p>}
+for i := 2; i &lt; n; i++ {</p>
+<blockquote>
+<div><p>dp[i] = max(dp[i-1], dp[i-2]+nums[i])</p>
+</div></blockquote>
+<p>}
+return dp[n-1]</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func max(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &gt; b {</dt><dd><p>return a</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</dd>
+</dl>
+<p>}</p>
+<p>#
+func rob(nums []int) int {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if len(nums) == 0 {</dt><dd><p>return 0</p>
+</dd>
+</dl>
+<p>}
+if len(nums) == 1 {</p>
+<blockquote>
+<div><p>return nums[0]</p>
+</div></blockquote>
+<p>}
+n := len(nums)
+dp := make([][]int, n)
+for n := range dp {</p>
+<blockquote>
+<div><p>dp[n] = make([]int, 2)</p>
+</div></blockquote>
+<p>}
+dp[0][0], dp[0][1] = 0, nums[0]
+for i := 1; i &lt; n; i++ {</p>
+<blockquote>
+<div><p>dp[i][0] = max(dp[i-1][0], dp[i-1][1])
+dp[i][1] = dp[i-1][0] + nums[i]</p>
+</div></blockquote>
+<p>}
+return max(dp[n-1][0], dp[n-1][1])</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func max(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &gt; b {</dt><dd><p>return a</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</dd>
+</dl>
+<p>}</p>
+<p>#
+func rob(nums []int) int {</p>
+<blockquote>
+<div><p>var a, b int
+for i, v := range nums {</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if i%2 == 0 {</dt><dd><p>a = max(a+v, b)</p>
+</dd>
+<dt>} else {</dt><dd><p>b = max(a, b+v)</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}
+return max(a, b)</p>
+</div></blockquote>
+<p>}</p>
+<dl>
+<dt>func max(a, b int) int {</dt><dd><dl class="simple">
+<dt>if a &gt; b {</dt><dd><p>return a</p>
+</dd>
+</dl>
+<p>}
+return b</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id357">
+<h1>}<a class="headerlink" href="#id357" title="永久链接至标题">¶</a></h1>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="0201-0300.html" class="btn btn-neutral float-right" title="}" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="0001-0100.html" class="btn btn-neutral float-left" title="}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, willshang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

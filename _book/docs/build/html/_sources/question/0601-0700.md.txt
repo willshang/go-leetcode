@@ -1,0 +1,2197 @@
+# 0601-0700-Easy
+
+* [0601-0700-Easy](#0601-0700-easy)
+	* [605.种花问题(3)](#605种花问题3)
+	* [606.根据二叉树创建字符串(2)](#606根据二叉树创建字符串2)
+	* [617.合并二叉树(2)](#617合并二叉树2)
+	* [628.三个数的最大乘积(2)](#628三个数的最大乘积2)
+	* [633.平方数之和(2)](#633平方数之和2)
+	* [637.二叉树的层平均值(2)](#637二叉树的层平均值2)
+	* [643.子数组最大平均数 I(3)](#643子数组最大平均数-i3)
+	* [645.错误的集合(5)](#645错误的集合5)
+	* [653.两数之和IV输入BST(4)](#653两数之和iv输入bst4)
+	* [657.机器人能否返回原点(2)](#657机器人能否返回原点2)
+	* [661.图片平滑器(2)](#661图片平滑器2)
+	* [665.非递减数列(3)](#665非递减数列3)
+	* [669.修剪二叉搜索树(2)](#669修剪二叉搜索树2)
+	* [671.二叉树中第二小的节点(3)](#671二叉树中第二小的节点3)
+	* [674.最长连续递增序列(3)](#674最长连续递增序列3)
+	* [680.验证回文字符串 Ⅱ(2)](#680验证回文字符串-ⅱ2)
+	* [682.棒球比赛(1)](#682棒球比赛1)
+	* [686.重复叠加字符串匹配(2)](#686重复叠加字符串匹配2)
+	* [687.最长同值路径(3)](#687最长同值路径3)
+	* [690.员工的重要性(2)](#690员工的重要性2)
+	* [693.交替位二进制数(4)](#693交替位二进制数4)
+	* [696.计数二进制子串(3)](#696计数二进制子串3)
+	* [697.数组的度(3)](#697数组的度3)
+	* [700.二叉搜索树中的搜索(2)](#700二叉搜索树中的搜索2)
+
+
+## 605.种花问题(3)
+
+- 题目
+
+```
+假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。
+可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。
+给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。
+能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。
+
+示例 1:输入: flowerbed = [1,0,0,0,1], n = 1 输出: True
+示例 2:输入: flowerbed = [1,0,0,0,1], n = 2 输出: False
+
+注意:
+    数组内已种好的花不会违反种植规则。
+    输入的数组长度范围为 [1, 20000]。
+    n 是非负整数，且不会超过输入数组的大小。
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 遍历          | O(n)       | O(1)       |
+| 02   | 遍历统计      | O(n)       | O(1)       |
+| 03   | 补数+遍历统计 | O(n)       | O(1)       |
+
+```go
+func canPlaceFlowers(flowerbed []int, n int) bool {
+	length := len(flowerbed)
+	// 判断条件
+	// 1:当前元素是0
+	// 2.前一个元素是0，或者当前是第一个元素
+	// 3.后一个元素是0，或者当前是最后一个元素
+	for i := 0; i < length; i++ {
+		if flowerbed[i] == 0 &&
+			(i == 0 || flowerbed[i-1] == 0) &&
+			(i == length-1 || flowerbed[i+1] == 0) {
+			flowerbed[i] = 1
+			n--
+			if n <= 0 {
+				return true
+			}
+		}
+	}
+	return n <= 0
+}
+
+#
+func canPlaceFlowers(flowerbed []int, n int) bool {
+	length := len(flowerbed)
+	count := 0
+	temp := 1
+	// 以0开头，计算情况同以0结束，为向中间情况靠齐，可以特殊处理把temp初始化为1
+	// 中间计算可以种花，value = (temp-1)/2
+	// 最后结束如果为偶数, value=temp/2
+	for i := 0; i < length; i++ {
+		if flowerbed[i] == 1 {
+			count = count + (temp-1)/2
+			temp = 0
+		} else {
+			temp++
+		}
+	}
+	count = count + temp/2
+	return n <= count
+}
+
+#
+func canPlaceFlowers(flowerbed []int, n int) bool {
+	flowerbed = append([]int{0}, flowerbed...)
+	flowerbed = append(flowerbed, []int{0, 1}...)
+	count := 0
+	temp := 0
+	// 首补0，尾补0，1，统一一种情况
+	for i := 0; i < len(flowerbed); i++ {
+		if flowerbed[i] == 1 {
+			count = count + (temp-1)/2
+			temp = 0
+		} else {
+			temp++
+		}
+	}
+	return n <= count
+}
+```
+
+## 606.根据二叉树创建字符串(2)
+
+- 题目
+
+```
+你需要采用前序遍历的方式，将一个二叉树转换成一个由括号和整数组成的字符串。
+空节点则用一对空括号 "()" 表示。而且你需要省略所有不影响字符串与原始二叉树之间的一对一映射关系的空括号对。
+示例 1:
+输入: 二叉树: [1,2,3,4]
+       1
+     /   \
+    2     3
+   /    
+  4     
+输出: "1(2(4))(3)"
+解释: 原本将是“1(2(4)())(3())”，
+在你省略所有不必要的空括号对之后，
+它将是“1(2(4))(3)”。
+示例 2:
+输入: 二叉树: [1,2,3,null,4]
+       1
+     /   \
+    2     3
+     \  
+      4 
+输出: "1(2()(4))(3)"
+解释: 和第一个示例相似，
+除了我们不能省略第一个对括号来中断输入和输出之间的一对一映射关系。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+func tree2str(t *TreeNode) string {
+	if t == nil {
+		return ""
+	}
+	res := strconv.Itoa(t.Val)
+	if t.Left == nil && t.Right == nil {
+		return res
+	}
+	res += "(" + tree2str(t.Left) + ")"
+	if t.Right != nil{
+		res += "(" + tree2str(t.Right) + ")"
+	}
+	return res
+}
+
+#
+func tree2str(t *TreeNode) string {
+	if t == nil {
+		return ""
+	}
+	stack := make([]*TreeNode, 0)
+	m := make(map[*TreeNode]bool)
+	stack = append(stack, t)
+	res := ""
+	for len(stack) > 0 {
+		node := stack[len(stack)-1]
+		if _, ok := m[node]; ok {
+			stack = stack[:len(stack)-1]
+			res = res + ")"
+		} else {
+			m[node] = true
+			res = res + "(" + strconv.Itoa(node.Val)
+			if node.Left == nil && node.Right != nil {
+				res = res + "()"
+			}
+			if node.Right != nil {
+				stack = append(stack, node.Right)
+			}
+			if node.Left != nil {
+				stack = append(stack, node.Left)
+			}
+		}
+	}
+	return res[1 : len(res)-1]
+}
+```
+
+## 617.合并二叉树(2)
+
+- 题目
+
+```
+给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
+你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，
+否则不为 NULL 的节点将直接作为新二叉树的节点。
+
+示例 1:
+输入: 
+	Tree 1                     Tree 2                  
+          1                         2                             
+         / \                       / \                            
+        3   2                     1   3                        
+       /                           \   \                      
+      5                             4   7                  
+输出: 
+合并后的树:
+	     3
+	    / \
+	   4   5
+	  / \   \ 
+	 5   4   7
+注意: 合并必须从两个树的根节点开始。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
+	if t1 == nil {
+		return t2
+	}
+	if t2 == nil {
+		return t1
+	}
+	t1.Val = t1.Val + t2.Val
+	t1.Left = mergeTrees(t1.Left, t2.Left)
+	t1.Right = mergeTrees(t1.Right, t2.Right)
+	return t1
+}
+
+#
+func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
+	if t1 == nil {
+		return t2
+	}
+	if t2 == nil {
+		return t1
+	}
+	list := make([]*TreeNode, 0)
+	list = append(list, t1)
+	list = append(list, t2)
+	for len(list) > 0 {
+		node1 := list[0]
+		node2 := list[1]
+		node1.Val = node1.Val + node2.Val
+		if node1.Left != nil && node2.Left != nil {
+			list = append(list, node1.Left)
+			list = append(list, node2.Left)
+		} else if node1.Left == nil && node2.Left != nil {
+			node1.Left = node2.Left
+		}
+		if node1.Right != nil && node2.Right != nil {
+			list = append(list, node1.Right)
+			list = append(list, node2.Right)
+		} else if node1.Right == nil && node2.Right != nil {
+			node1.Right = node2.Right
+		}
+		list = list[2:]
+	}
+	return t1
+}
+```
+
+## 628.三个数的最大乘积(2)
+
+- 题目
+
+```
+给定一个整型数组，在数组中找出由三个数组成的最大乘积，并输出这个乘积。
+示例 1:输入: [1,2,3]输出: 6
+示例 2:输入: [1,2,3,4]输出: 24
+注意:
+    给定的整型数组长度范围是[3,104]，数组中所有的元素范围是[-1000, 1000]。
+    输入的数组中任意三个数的乘积不会超出32位有符号整数的范围。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 排序 | O(nlog(n)) | O(1)       |
+| 02   | 遍历 | O(n)       | O(1)       |
+
+```go
+func maximumProduct(nums []int) int {
+	sort.Ints(nums)
+	return max(nums[0]*nums[1]*nums[len(nums)-1],
+		nums[len(nums)-3]*nums[len(nums)-2]*nums[len(nums)-1])
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+#
+func maximumProduct(nums []int) int {
+	max1, max2, max3 := math.MinInt32, math.MinInt32, math.MinInt32
+	min1, min2 := math.MaxInt32, math.MaxInt32
+	for i := 0; i < len(nums); i++ {
+		if nums[i] <= min1 {
+			min2 = min1
+			min1 = nums[i]
+		} else if nums[i] <= min2 {
+			min2 = nums[i]
+		}
+		if nums[i] >= max1 {
+			max3 = max2
+			max2 = max1
+			max1 = nums[i]
+		} else if nums[i] >= max2 {
+			max3 = max2
+			max2 = nums[i]
+		} else if nums[i] >= max3 {
+			max3 = nums[i]
+		}
+	}
+	return max(min1*min2*max1, max1*max2*max3)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 633.平方数之和(2)
+
+- 题目
+
+```
+给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。
+示例1:输入: 5 输出: True 解释: 1 * 1 + 2 * 2 = 5
+示例2:输入: 3 输出: False
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 双指针 | O(log(n))  | O(1)       |
+| 02   | 遍历   | O(log(n))  | O(1)       |
+
+```go
+func judgeSquareSum(c int) bool {
+	if c < 0 {
+		return false
+	}
+	i, j := 0, int(math.Sqrt(float64(c)))
+	for i <= j {
+		current := i*i + j*j
+		if current < c {
+			i++
+		} else if current > c {
+			j--
+		} else {
+			return true
+		}
+	}
+	return false
+}
+
+#
+func judgeSquareSum(c int) bool {
+	for i := 0; i <= int(math.Sqrt(float64(c))); i++ {
+		b := c - i*i
+		s := int(math.Sqrt(float64(b)))
+		if s*s == b {
+			return true
+		}
+	}
+	return false
+}
+```
+
+## 637.二叉树的层平均值(2)
+
+- 题目
+
+```
+给定一个非空二叉树, 返回一个由每层节点平均值组成的数组.
+示例 1:
+输入:
+    3
+   / \
+  9  20
+    /  \
+   15   7
+输出: [3, 14.5, 11]
+解释:第0层的平均值是 3,  第1层是 14.5, 第2层是 11. 因此返回 [3, 14.5, 11].
+注意：
+    节点值的范围在32位有符号整数范围内。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+func averageOfLevels(root *TreeNode) []float64 {
+	var sum, node []int
+	res := make([]float64, 0)
+	sum = append(sum, root.Val)
+	node = append(node, 1)
+	sum, node = dfs(root, sum, node, 1)
+	for i := 0; i < len(sum); i++ {
+		res = append(res, float64(sum[i])/float64(node[i]))
+	}
+	return res
+}
+
+func dfs(root *TreeNode, sum, node []int, level int) ([]int, []int) {
+	if root == nil || (root.Left == nil && root.Right == nil) {
+		return sum, node
+	}
+	if level >= len(sum) {
+		sum = append(sum, 0)
+		node = append(node, 0)
+	}
+	if root.Left != nil {
+		sum[level] += root.Left.Val
+		node[level]++
+	}
+	if root.Right != nil {
+		sum[level] += root.Right.Val
+		node[level]++
+	}
+	sum, node = dfs(root.Left, sum, node, level+1)
+	sum, node = dfs(root.Right, sum, node, level+1)
+	return sum, node
+}
+
+#
+func averageOfLevels(root *TreeNode) []float64 {
+	res := make([]float64, 0)
+	list := make([]*TreeNode, 0)
+	list = append(list, root)
+	for len(list) > 0 {
+		length := len(list)
+		sum := 0
+		for i := 0; i < length; i++ {
+			sum = sum + list[i].Val
+			if list[i].Left != nil {
+				list = append(list, list[i].Left)
+			}
+			if list[i].Right != nil {
+				list = append(list, list[i].Right)
+			}
+		}
+		res = append(res, float64(sum)/float64(length))
+		list = list[length:]
+	}
+	return res
+}
+```
+
+## 643.子数组最大平均数 I(3)
+
+- 题目
+
+```
+给定 n 个整数，找出平均数最大且长度为 k 的连续子数组，并输出该最大平均数。
+示例 1:输入: [1,12,-5,-6,50,3], k = 4 输出: 12.75
+解释: 最大平均数 (12-5-6+50)/4 = 51/4 = 12.75
+注意:
+    1 <= k <= n <= 30,000。
+    所给数据范围 [-10,000，10,000]。
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 遍历+滑动窗口 | O(n)       | O(1)       |
+| 02   | 遍历+暴力法   | O(n^2)     | O(1)       |
+| 03   | 遍历+累计求和 | O(n)       | O(n)       |
+
+```go
+func findMaxAverage(nums []int, k int) float64 {
+	temp := 0
+	for i := 0; i < k; i++ {
+		temp = temp + nums[i]
+	}
+	max := temp
+	for i := k; i < len(nums); i++ {
+		temp = temp + nums[i] - nums[i-k]
+		if max < temp {
+			max = temp
+		}
+	}
+	return float64(max) / float64(k)
+}
+
+#
+func findMaxAverage(nums []int, k int) float64 {
+	max := math.MinInt32
+	for i := 0; i < len(nums); i++ {
+		if i + k > len(nums){
+			break
+		}
+		sum := 0
+		for j := i; j < i+k; j++{
+			sum = sum+nums[j]
+		}
+		if sum > max{
+			max = sum
+		}
+	}
+	return float64(max) / float64(k)
+}
+
+#
+func findMaxAverage(nums []int, k int) float64 {
+	sum := make([]int, len(nums))
+	sum[0] = nums[0]
+	for i := 1; i < len(nums); i++ {
+		sum[i] = sum[i-1] + nums[i]
+	}
+	max := sum[k-1]
+	for i := k; i < len(nums); i++ {
+		if sum[i]-sum[i-k] > max {
+			max = sum[i] - sum[i-k]
+		}
+	}
+	return float64(max) / float64(k)
+}
+```
+
+## 645.错误的集合(5)
+
+- 题目
+
+```
+集合 S 包含从1到 n 的整数。不幸的是，因为数据错误，
+导致集合里面某一个元素复制了成了集合里面的另外一个元素的值，导致集合丢失了一个整数并且有一个元素重复。
+给定一个数组 nums 代表了集合 S 发生错误后的结果。
+你的任务是首先寻找到重复出现的整数，再找到丢失的整数，将它们以数组的形式返回。
+
+示例 1:输入: nums = [1,2,2,4]输出: [2,3]
+注意:
+	给定数组的长度范围是 [2, 10000]。
+    给定的数组是无序的。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数组辅助 | O(n)       | O(n)       |
+| 02   | 置反     | O(n)       | O(1)       |
+| 03   | 位运算   | O(n)       | O(1)       |
+| 04   | 哈希辅助 | O(n)       | O(n)       |
+| 05   | 排序     | O(nlog(n)) | O(1)       |
+
+```go
+func findErrorNums(nums []int) []int {
+	newNums := make([]int, len(nums))
+	var repeatNum int
+	for _, v := range nums {
+		if newNums[v-1] != 0 {
+			repeatNum = v
+		}
+		newNums[v-1] = v
+	}
+	for i, v := range newNums {
+		if v == 0 {
+			return []int{repeatNum, i + 1}
+		}
+	}
+	return []int{0, 0}
+}
+
+#
+func findErrorNums(nums []int) []int {
+	repeatNum := 0
+	for i := 0; i < len(nums); i++ {
+		n := abs(nums[i])
+		if nums[n-1] < 0 {
+			repeatNum = n
+		} else {
+			nums[n-1] = -nums[n-1]
+		}
+	}
+	misNum := 0
+	for i, v := range nums {
+		if v > 0 {
+			misNum = i + 1
+			break
+		}
+	}
+	return []int{repeatNum, misNum}
+}
+
+func abs(a int) int {
+	if a > 0 {
+		return a
+	}
+	return -a
+}
+
+#
+func findErrorNums(nums []int) []int {
+	res := 0
+	// 异或得到repeatedNum^misNum
+	for i := 0; i < len(nums); i++ {
+		res = res ^ (i + 1) ^ (nums[i])
+	}
+	// 找到第一位不是0的
+	h := 1
+	for res&h == 0 {
+		h = h << 1
+	}
+	a := 0
+	b := 0
+	for i := range nums {
+		if h&nums[i] == 0 {
+			a ^= nums[i]
+		} else {
+			b ^= nums[i]
+		}
+		if h&(i+1) == 0 {
+			a ^= i + 1
+		} else {
+			b ^= i + 1
+		}
+	}
+	for i := range nums {
+		if nums[i] == b {
+			return []int{b, a}
+		}
+	}
+	return []int{a, b}
+}
+
+#
+func findErrorNums(nums []int) []int {
+	m := make(map[int]int)
+	n := len(nums)
+	sum := 0
+	repeatNum := 0
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+		if _, ok := m[nums[i]]; ok {
+			repeatNum = nums[i]
+		}
+		m[nums[i]] = 1
+	}
+	return []int{repeatNum, n*(n+1)/2 - sum + repeatNum}
+}
+
+#
+func findErrorNums(nums []int) []int {
+	sort.Ints(nums)
+	n := len(nums)
+	sum := 0
+	repeatNum := nums[0]
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+		if i < len(nums)-1 && nums[i] == nums[i+1] {
+			repeatNum = nums[i]
+		}
+	}
+	return []int{repeatNum, n*(n+1)/2 - sum + repeatNum}
+}
+```
+
+## 653.两数之和IV输入BST(4)
+
+- 题目
+
+```
+给定一个二叉搜索树和一个目标结果，如果 BST 中存在两个元素且它们的和等于给定的目标结果，则返回 true。
+案例 1:
+输入: 
+    5
+   / \
+  3   6
+ / \   \
+2   4   7
+Target = 9
+输出: True
+案例 2:
+输入: 
+    5
+   / \
+  3   6
+ / \   \
+2   4   7
+Target = 28 输出: False
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 递归+哈希辅助 | O(n)       | O(n)       |
+| 02   | 递归          | O(nlog(n)) | O(log(n))  |
+| 03   | 迭代          | O(n)       | O(n)       |
+| 04   | 递归+二分查找 | O(n)       | O(n)       |
+
+```go
+func findTarget(root *TreeNode, k int) bool {
+	if root == nil {
+		return false
+	}
+	m := map[int]int{}
+	return dfs(root, k, m)
+}
+
+func dfs(node *TreeNode, k int, m map[int]int) bool {
+	if node == nil {
+		return false
+	}
+	if _, ok := m[k-node.Val]; ok {
+		return true
+	}
+	m[node.Val] = node.Val
+	return dfs(node.Left, k, m) || dfs(node.Right, k, m)
+}
+
+#
+func dfs(root, searchRoot *TreeNode, k int) bool {
+	if root == nil {
+		return false
+	}
+	found := findNode(searchRoot, k-root.Val)
+	if found != nil && found != root {
+		return true
+	}
+	return dfs(root.Left, searchRoot, k) ||
+		dfs(root.Right, searchRoot, k)
+}
+
+func findNode(root *TreeNode, target int) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if root.Val == target {
+		return root
+	}
+	if root.Val < target {
+		return findNode(root.Right, target)
+	}
+	return findNode(root.Left, target)
+}
+
+#
+func findTarget(root *TreeNode, k int) bool {
+	if root == nil {
+		return false
+	}
+	m := make(map[int]int)
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		node := queue[len(queue)-1]
+		queue = queue[:len(queue)-1]
+		if _, ok := m[k-node.Val]; ok {
+			return true
+		}
+		if node.Left != nil {
+			queue = append(queue, node.Left)
+		}
+		if node.Right != nil {
+			queue = append(queue, node.Right)
+		}
+		m[node.Val] = 1
+	}
+	return false
+}
+
+#
+var arr []int
+
+func findTarget(root *TreeNode, k int) bool {
+	if root == nil {
+		return false
+	}
+	arr = make([]int, 0)
+	dfs(root)
+	i := 0
+	j := len(arr) - 1
+	for i < j {
+		if arr[i]+arr[j] == k {
+			return true
+		} else if arr[i]+arr[j] > k {
+			j--
+		} else {
+			i++
+		}
+	}
+	return false
+}
+
+func dfs(node *TreeNode) {
+	if node == nil {
+		return
+	}
+	dfs(node.Left)
+	arr = append(arr, node.Val)
+	dfs(node.Right)
+}
+```
+
+## 657.机器人能否返回原点(2)
+
+- 题目
+
+```
+在二维平面上，有一个机器人从原点 (0, 0) 开始。
+给出它的移动顺序，判断这个机器人在完成移动后是否在 (0, 0) 处结束。
+移动顺序由字符串表示。字符 move[i] 表示其第 i 次移动。
+机器人的有效动作有 R（右），L（左），U（上）和 D（下）。
+如果机器人在完成所有动作后返回原点，则返回 true。否则，返回 false。
+
+注意：机器人“面朝”的方向无关紧要。 “R” 将始终使机器人向右移动一次，“L” 将始终向左移动等。
+此外，假设每次移动机器人的移动幅度相同。
+
+示例 1:输入: "UD" 出: true
+解释：机器人向上移动一次，然后向下移动一次。
+所有动作都具有相同的幅度，因此它最终回到它开始的原点。因此，我们返回 true。
+
+示例 2:输入: "LL"输出: false
+解释：机器人向左移动两次。它最终位于原点的左侧，距原点有两次 “移动” 的距离。
+我们返回 false，因为它在移动结束时没有返回原点。
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 内置函数-字符统计 | O(n)       | O(1)       |
+| 02   | 模拟              | O(n)       | O(1)       |
+
+```go
+func judgeCircle(moves string) bool {
+	return strings.Count(moves, "U") == strings.Count(moves, "D") &&
+		strings.Count(moves, "L") == strings.Count(moves, "R")
+}
+
+#
+func judgeCircle(moves string) bool {
+	x, y := 0, 0
+	for i := range moves {
+		switch i {
+		case 'U':
+			y = y + 1
+		case 'D':
+			y = y - 1
+		case 'L':
+			x = x - 1
+		case 'R':
+			x = x + 1
+		}
+	}
+	return x == 0 && y == 0
+}
+```
+
+## 661.图片平滑器(2)
+
+- 题目
+
+```
+包含整数的二维矩阵 M 表示一个图片的灰度。你需要设计一个平滑器来让每一个单元的灰度成为平均灰度 (向下舍入) ，
+平均灰度的计算是周围的8个单元和它本身的值求平均，如果周围的单元格不足八个，则尽可能多的利用它们。
+
+示例 1:
+输入:
+[[1,1,1],
+ [1,0,1],
+ [1,1,1]]
+输出:
+[[0, 0, 0],
+ [0, 0, 0],
+ [0, 0, 0]]
+解释:
+对于点 (0,0), (0,2), (2,0), (2,2): 平均(3/4) = 平均(0.75) = 0
+对于点 (0,1), (1,0), (1,2), (2,1): 平均(5/6) = 平均(0.83333333) = 0
+对于点 (1,1): 平均(8/9) = 平均(0.88888889) = 0
+注意:
+    给定矩阵中的整数范围为 [0, 255]。
+    矩阵的长和宽的范围均为 [1, 150]。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n^2)     | O(n^2)     |
+| 02   | 遍历 | O(n^2)     | O(n^2)     |
+
+```go
+func imageSmoother(M [][]int) [][]int {
+	res := make([][]int, len(M))
+	for i := range res {
+		res[i] = make([]int, len(M[0]))
+		for j := range res[i] {
+			res[i][j] = getValue(M, i, j)
+		}
+	}
+	return res
+}
+
+func getValue(M [][]int, r, c int) int {
+	value, count := 0, 0
+	for i := r - 1; i < r+2; i++ {
+		for j := c - 1; j < c+2; j++ {
+			if 0 <= i && i < len(M) && 0 <= j && j < len(M[0]) {
+				value = value + M[i][j]
+				count++
+			}
+		}
+	}
+	return value / count
+}
+
+#
+func imageSmoother(M [][]int) [][]int {
+	res := make([][]int, len(M))
+	for i := range res {
+		res[i] = make([]int, len(M[0]))
+		for j := range res[i] {
+			value, count := 0, 0
+			for r := i - 1; r <= i+1; r++ {
+				for c := j - 1; c <= j+1; c++ {
+					if 0 <= r && r < len(M) && 0 <= c && c < len(M[0]) {
+						value = value + M[r][c]
+						count++
+					}
+				}
+			}
+			res[i][j] = value / count
+		}
+	}
+	return res
+}
+```
+
+## 665.非递减数列(3)
+
+- 题目
+
+```
+给你一个长度为 n 的整数数组，请你判断在 最多 改变 1 个元素的情况下，该数组能否变成一个非递减数列。
+我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 <= i < n)，总满足 array[i] <= array[i + 1]。
+
+示例 1:输入: nums = [4,2,3] 输出: true
+解释: 你可以通过把第一个4变成1来使得它成为一个非递减数列。
+示例 2:输入: nums = [4,2,1] 输出: false
+解释: 你不能在只改变一个元素的情况下将其变为非递减数列。
+
+说明：
+    1 <= n <= 10 ^ 4
+    - 10 ^ 5 <= nums[i] <= 10 ^ 5
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 暴力法       | O(n^2)     | O(n)       |
+| 02   | 遍历修改前后 | O(n)       | O(n)       |
+| 03   | 遍历         | O(n)       | )          |
+
+```go
+func checkPossibility(nums []int) bool {
+	for i := 0; i < len(nums); i++ {
+		res := make([]int,0)
+		res = append(res, nums[0:i]...)
+		res = append(res, nums[i+1:]...)
+		if isSort(res) {
+			return true
+		}
+	}
+	return false
+}
+
+func isSort(nums []int) bool {
+	for i := 0; i < len(nums)-1; i++ {
+		if nums[i] > nums[i+1] {
+			return false
+		}
+	}
+	return true
+}
+
+#
+func checkPossibility(nums []int) bool {
+	for i := 1; i < len(nums); i++{
+		if nums[i-1] > nums[i]{
+			pre := deepCopy(nums)
+			pre[i-1] = pre[i]
+			next := deepCopy(nums)
+			next[i] = next[i-1]
+			return sort.IsSorted(sort.IntSlice(pre)) || sort.IsSorted(sort.IntSlice(next))
+		}
+	}
+	return true
+}
+
+func deepCopy(nums []int) []int  {
+	res := make([]int, len(nums))
+	copy(res,nums)
+	return res
+}
+
+#
+func checkPossibility(nums []int) bool {
+	count := 0
+	for i := 0; i < len(nums)-1; i++ {
+		if nums[i] > nums[i+1] {
+			if count == 1 {
+				return false
+			} else if i == 0 {
+				// 4 2 3 => 2 2 3
+				nums[i] = nums[i+1]
+				count++
+			} else if nums[i-1] > nums[i+1] {
+				// 3 4 2 => 3 4 4
+				nums[i+1] = nums[i]
+				count++
+			} else {
+				// 1 4 2 =>  1 2 2
+				nums[i] = nums[i+1]
+				count++
+			}
+		}
+	}
+	return true
+}
+```
+
+## 669.修剪二叉搜索树(2)
+
+- 题目
+
+```
+给定一个二叉搜索树，同时给定最小边界L 和最大边界 R。
+通过修剪二叉搜索树，使得所有节点的值在[L, R]中 (R>=L) 。
+你可能需要改变树的根节点，所以结果应当返回修剪好的二叉搜索树的新的根节点。
+
+示例 1:
+输入: 
+    1
+   / \
+  0   2
+
+  L = 1
+  R = 2
+输出: 
+    1
+      \
+       2
+
+示例 2:
+输入: 
+    3
+   / \
+  0   4
+   \
+    2
+   /
+  1
+  L = 1
+  R = 3
+输出: 
+      3
+     / 
+   2   
+  /
+ 1
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+func trimBST(root *TreeNode, L int, R int) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if root.Val < L {
+		return trimBST(root.Right, L, R)
+	}
+	if R < root.Val {
+		return trimBST(root.Left, L, R)
+	}
+	root.Left = trimBST(root.Left, L, R)
+	root.Right = trimBST(root.Right, L, R)
+	return root
+}
+
+#
+func trimBST(root *TreeNode, L int, R int) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	// 找到根节点
+	for root.Val < L || root.Val > R {
+		if root.Val < L {
+			root = root.Right
+		} else {
+			root = root.Left
+		}
+	}
+
+	stack := make([]*TreeNode, 0)
+	stack = append(stack, root)
+	cur := root
+	temp := root
+	for len(stack) > 0 {
+		cur = stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		if cur.Left != nil {
+			if cur.Left.Val >= L {
+				// 左节点>=L，继续向左
+				stack = append(stack, cur.Left)
+			} else {
+				// 在当前左节点，向它的右节点找到满足<L的值，
+				// 并把当前左指针指向找到的值
+				// 如示例2里面的，3的Left指向找到的2
+				// 然后入栈继续在2找
+				temp = cur.Left
+				for temp != nil && temp.Val < L {
+					temp = temp.Right
+				}
+				cur.Left = temp
+				if temp != nil {
+					stack = append(stack, temp)
+				}
+			}
+		}
+		if cur.Right != nil {
+			if cur.Right.Val <= R {
+				stack = append(stack, cur.Right)
+			} else {
+				temp = cur.Right
+				for temp != nil && temp.Val > R {
+					temp = temp.Left
+				}
+				cur.Right = temp
+				if temp != nil {
+					stack = append(stack, temp)
+				}
+			}
+		}
+	}
+	return root
+}
+```
+
+## 671.二叉树中第二小的节点(3)
+
+- 题目
+
+```
+给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。
+如果一个节点有两个子节点的话，那么这个节点的值不大于它的子节点的值。 
+给出这样的一个二叉树，你需要输出所有节点中的第二小的值。如果第二小的值不存在的话，输出 -1 。
+示例 1:
+输入: 
+    2
+   / \
+  2   5
+     / \
+    5   7
+
+输出: 5
+说明: 最小的值是 2 ，第二小的值是 5 。
+示例 2:
+输入: 
+    2
+   / \
+  2   2
+输出: -1
+说明: 最小的值是 2, 但是不存在第二小的值。
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 递归+数组辅助 | O(n)       | O(n)       |
+| 02   | 递归          | O(n)       | O(log(n))    |
+| 03 | 迭代 | O(n) | O(n) |
+
+```go
+var arr []int
+
+func findSecondMinimumValue(root *TreeNode) int {
+	arr = make([]int, 0)
+	dfs(root)
+	min, second := math.MaxInt32, math.MaxInt32
+	flag := 0
+	for i := 0; i < len(arr); i++ {
+		if arr[i] < min {
+			second = min
+			min = arr[i]
+		} else if min < arr[i] && arr[i] <= second {
+			flag = 1
+			second = arr[i]
+		}
+	}
+	if second == math.MaxInt32 && flag == 0 {
+		return -1
+	}
+	return second
+}
+
+func dfs(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	arr = append(arr, root.Val)
+	dfs(root.Left)
+	dfs(root.Right)
+}
+
+#
+func dfs(root *TreeNode, val int) int {
+	if root == nil {
+		return -1
+	}
+	if root.Val > val {
+		return root.Val
+	}
+	left := dfs(root.Left, val)
+	right := dfs(root.Right, val)
+	if left == -1 {
+		return right
+	}
+	if right == -1 {
+		return left
+	}
+	return min(left, right)
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+
+#
+func findSecondMinimumValue(root *TreeNode) int {
+	min, second := root.Val, math.MaxInt32
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+	flag := 0
+	for len(queue) > 0 {
+		node := queue[len(queue)-1]
+		queue = queue[:len(queue)-1]
+		if node.Val < min {
+			second = min
+			min = node.Val
+		} else if min < node.Val && node.Val <= second {
+			flag = 1
+			second = node.Val
+		}
+		if node.Left != nil {
+			// 有0个或2节点
+			queue = append(queue, node.Left)
+			queue = append(queue, node.Right)
+		}
+	}
+	if second == math.MaxInt32 && flag == 0 {
+		return -1
+	}
+	return second
+}
+```
+
+## 674.最长连续递增序列(3)
+
+- 题目
+
+```
+给定一个未经排序的整数数组，找到最长且连续的的递增序列。
+示例 1:输入: [1,3,5,4,7] 输出: 3
+解释: 最长连续递增序列是 [1,3,5], 长度为3。
+尽管 [1,3,5,7] 也是升序的子序列, 但它不是连续的，因为5和7在原数组里被4隔开。 
+示例 2:输入: [2,2,2,2,2] 输出: 1
+解释: 最长连续递增序列是 [2], 长度为1。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 双指针   | O(n)       | O(1)       |
+| 02   | 动态规划 | O(n)       | O(n)       |
+| 03   | 遍历     | O(n)        | O(1)           |
+
+```go
+func findLengthOfLCIS(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	res := 1
+	i, j := 0, 1
+	for j < len(nums) {
+		for j < len(nums) && nums[j-1] < nums[j] {
+			j++
+		}
+		if res < j-i {
+			res = j - i
+		}
+		i = j
+		j++
+	}
+	return res
+}
+
+#
+// 状态转移方程
+// 若nums[i-1]<nums[i]，则dp[i]=dp[i-1]+1；否则dp[i]=1
+func findLengthOfLCIS(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	res := 1
+	dp := make([]int,len(nums))
+	for i := 0; i < len(nums); i++{
+		dp[i] = 1
+	}
+	for i := 1; i < len(nums); i++{
+		if nums[i-1] < nums[i]{
+			dp[i] = dp[i-1]+1
+		}
+		if dp[i] > res{
+			res = dp[i]
+		}
+	}
+	return res
+}
+```
+
+## 680.验证回文字符串 Ⅱ(2)
+
+- 题目
+
+```
+给定一个非空字符串 s，最多删除一个字符。判断是否能成为回文字符串。
+示例 1:输入: "aba" 输出: True
+示例 2:输入: "abca"输出: True 解释: 你可以删除c字符。
+注意:
+    字符串只包含从 a-z 的小写字母。字符串的最大长度是50000。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 双指针 | O(n)       | O(1)       |
+| 02   | 递归   | O(n)       | O(n)       |
+
+```go
+func validPalindrome(s string) bool {
+	i := 0
+	j := len(s) - 1
+	for i < j {
+		if s[i] != s[j] {
+			return isPalindrome(s, i, j-1) || isPalindrome(s, i+1, j)
+		}
+		i++
+		j--
+	}
+	return true
+}
+
+func isPalindrome(s string, i, j int) bool {
+	for i < j {
+		if s[i] != s[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
+}
+
+#
+func validPalindrome(s string) bool {
+	length := len(s)
+	if length < 2 {
+		return true
+	}
+	if s[0] == s[length-1] {
+		return validPalindrome(s[1 : length-1])
+	}
+	return isPalindrome(s[0:length-1]) || isPalindrome(s[1:length])
+}
+
+func isPalindrome(s string) bool {
+	i := 0
+	j := len(s) - 1
+	for i < j {
+		if s[i] != s[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
+}
+```
+
+## 682.棒球比赛(1)
+
+- 题目
+
+```
+你现在是棒球比赛记录员。
+给定一个字符串列表，每个字符串可以是以下四种类型之一：
+1.整数（一轮的得分）：直接表示您在本轮中获得的积分数。
+2. "+"（一轮的得分）：表示本轮获得的得分是前两轮有效 回合得分的总和。
+3. "D"（一轮的得分）：表示本轮获得的得分是前一轮有效 回合得分的两倍。
+4. "C"（一个操作，这不是一个回合的分数）：表示您获得的最后一个有效 回合的分数是无效的，应该被移除。
+
+每一轮的操作都是永久性的，可能会对前一轮和后一轮产生影响。
+你需要返回你在所有回合中得分的总和。
+示例 1:输入: ["5","2","C","D","+"] 输出: 30
+解释: 
+第1轮：你可以得到5分。总和是：5。
+第2轮：你可以得到2分。总和是：7。
+操作1：第2轮的数据无效。总和是：5。
+第3轮：你可以得到10分（第2轮的数据已被删除）。总数是：15。
+第4轮：你可以得到5 + 10 = 15分。总数是：30。
+
+示例 2:输入: ["5","-2","4","C","D","9","+","+"] 输出: 27
+解释: 
+第1轮：你可以得到5分。总和是：5。
+第2轮：你可以得到-2分。总数是：3。
+第3轮：你可以得到4分。总和是：7。
+操作1：第3轮的数据无效。总数是：3。
+第4轮：你可以得到-4分（第三轮的数据已被删除）。总和是：-1。
+第5轮：你可以得到9分。总数是：8。
+第6轮：你可以得到-4 + 9 = 5分。总数是13。
+第7轮：你可以得到9 + 5 = 14分。总数是27。
+
+注意：
+    输入列表的大小将介于1和1000之间。
+    列表中的每个整数都将介于-30000和30000之间。
+```
+
+- 解题思路
+
+| No.  | 思路        | 时间复杂度 | 空间复杂度 |
+| ---- | ----------- | ---------- | ---------- |
+| 01   | 模拟-栈辅助 | O(n)       | O(n)       |
+
+```go
+func calPoints(ops []string) int {
+	stacks := make([]int, 0)
+	for i := range ops {
+		switch ops[i] {
+		case "+":
+			r1 := stacks[len(stacks)-1]
+			r2 := stacks[len(stacks)-2]
+			stacks = append(stacks, r1+r2)
+		case "D":
+			r1 := stacks[len(stacks)-1]
+			stacks = append(stacks, 2*r1)
+		case "C":
+			stacks = stacks[:len(stacks)-1]
+		default:
+			tempInt, _ := strconv.Atoi(ops[i])
+			stacks = append(stacks, tempInt)
+		}
+	}
+	res := 0
+	for _, value := range stacks {
+		res = res + value
+	}
+	return res
+}
+```
+
+## 686.重复叠加字符串匹配(2)
+
+<<<<<<< HEAD
+- 题目
+=======
+－ 题目
+>>>>>>> 167ff051e1bed62c3e84043cdd3460ecc3db1eae
+
+```
+给定两个字符串 A 和 B, 寻找重复叠加字符串A的最小次数，
+使得字符串B成为叠加后的字符串A的子串，如果不存在则返回 -1。
+
+举个例子，A = "abcd"，B = "cdabcdab"。
+答案为 3， 因为 A 重复叠加三遍后为 “abcdabcdabcd”，
+此时 B 是其子串；A 重复叠加两遍后为"abcdabcd"，B 并不是其子串。
+
+注意:
+A 与 B 字符串的长度在1和10000区间范围内。
+```
+
+<<<<<<< HEAD
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 内置函数 | O(n)       | O(n)       |
+| 02   | 遍历     | O(n)       | O(n)       |
+
+```go
+func repeatedStringMatch(A string, B string) int {
+	times := len(B) / len(A)
+	// 要确保B是A的子串，就要最少重复len(B)/len(A)次A次，最多len(B)/len(A)+2次
+	// 如长度为 len(B) = 6, len(A) = 3,至少重复2次
+	// 长度为len(B) = 7, len(A) = 3, 至少重复3次
+	// 另外如B="cabcabca", A="abc",需要重复4次
+	for i := times; i <= times+2; i++ {
+		if strings.Contains(strings.Repeat(A, i), B) {
+			return i
+		}
+	}
+	return -1
+}
+
+#
+func repeatedStringMatch(A string, B string) int {
+	temp := A
+	count := 1
+	for len(temp) < len(B) {
+		temp = temp + A
+		count++
+	}
+	if strings.Contains(temp, B) {
+		return count
+	}
+	temp = temp + A
+	if strings.Contains(temp, B) {
+		return count + 1
+	}
+	return -1
+}
+```
+
+## 687.最长同值路径(3)
+
+- 题目
+
+```
+给定一个二叉树，找到最长的路径，这个路径中的每个节点具有相同值。 这条路径可以经过也可以不经过根节点。
+注意：两个节点之间的路径长度由它们之间的边数表示。
+示例 1:
+输入:
+              5
+             / \
+            4   5
+           / \   \
+          1   1   5
+
+输出:2
+示例 2:
+输入:
+              1
+             / \
+            4   5
+           / \   \
+          4   4   5
+输出:2
+注意: 给定的二叉树不超过10000个结点。 树的高度不超过1000。
+```
+
+- 解题思路
+=======
+－ 解题思路
+>>>>>>> 167ff051e1bed62c3e84043cdd3460ecc3db1eae
+
+| No.  | 思路        | 时间复杂度 | 空间复杂度 |
+| ---- | ----------- | ---------- | ---------- |
+| 01   | 递归        | O(n)       | O(log(n))  |
+| 02   | 递归        | O(n)       | O(log(n))  |
+| 03   | 迭代+栈辅助 | O(n)       | O(n)       |
+
+```go
+var maxLen int
+
+func longestUnivaluePath(root *TreeNode) int {
+	maxLen = 0
+	dfs(root)
+	return maxLen
+}
+
+func dfs(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	left := dfs(root.Left)
+	right := dfs(root.Right)
+	l, r := 0, 0
+	if root.Left != nil && root.Val == root.Left.Val {
+		l = left + 1
+	}
+	if root.Right != nil && root.Val == root.Right.Val {
+		r = right + 1
+	}
+	if l+r > maxLen {
+		maxLen = l + r
+	}
+	return max(l, r)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+#
+var maxLen int
+
+func longestUnivaluePath(root *TreeNode) int {
+	maxLen = 0
+	if root == nil {
+		return 0
+	}
+	dfs(root, root.Val)
+	return maxLen
+}
+
+func dfs(root *TreeNode, val int) int {
+	if root == nil {
+		return 0
+	}
+	left := dfs(root.Left, root.Val)
+	right := dfs(root.Right, root.Val)
+	if left+right > maxLen {
+		maxLen = left + right
+	}
+	if root.Val == val {
+		return max(left, right) + 1
+	}
+	return 0
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 参考543.二叉树的直径做法
+func longestUnivaluePath(root *TreeNode) int {
+	res := 0
+	stack := make([]*TreeNode, 0)
+	m := make(map[*TreeNode]int)
+
+	cur := root
+	var prev *TreeNode
+	for cur != nil || len(stack) != 0 {
+		for cur != nil {
+			stack = append(stack, cur)
+			cur = cur.Left
+		}
+		cur = stack[len(stack)-1]
+		if cur.Right == nil || cur.Right == prev {
+			cur = stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+			leftLen := 0
+			rightLen := 0
+			if v, ok := m[cur.Left]; ok {
+				leftLen = v
+			}
+			if v, ok := m[cur.Right]; ok {
+				rightLen = v
+			}
+			var left, right int
+			if cur.Left != nil && cur.Val == cur.Left.Val {
+				left = leftLen + 1
+			}
+			if cur.Right != nil && cur.Val == cur.Right.Val {
+				right = rightLen + 1
+			}
+
+			if left+right > res {
+				res = left + right
+			}
+			if left > right {
+				m[cur] = left
+			} else {
+				m[cur] = right
+			}
+			prev = cur
+			cur = nil
+		} else {
+			cur = cur.Right
+		}
+	}
+	return res
+}
+```
+
+## 690.员工的重要性(2)
+
+- 题目
+
+```
+给定一个保存员工信息的数据结构，它包含了员工唯一的id，重要度 和 直系下属的id。
+比如，员工1是员工2的领导，员工2是员工3的领导。他们相应的重要度为15, 10, 5。
+那么员工1的数据结构是[1, 15, [2]]，员工2的数据结构是[2, 10, [3]]，员工3的数据结构是[3, 5, []]。
+注意虽然员工3也是员工1的一个下属，但是由于并不是直系下属，因此没有体现在员工1的数据结构中。
+现在输入一个公司的所有员工信息，以及单个员工id，返回这个员工和他所有下属的重要度之和。
+
+示例 1:输入: [[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1 输出: 11
+解释:
+员工1自身的重要度是5，他有两个直系下属2和3，而且2和3的重要度均为3。因此员工1的总重要度是 5 + 3 + 3 = 11。
+注意:
+    一个员工最多有一个直系领导，但是可以有多个直系下属
+    员工数量不超过2000。
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 深度优先搜索-递归 | O(n)       | O(log(n))  |
+| 02   | 广度优先搜索-迭代 | O(n)       | O(n)       |
+
+```go
+func getImportance(employees []*Employee, id int) int {
+	if len(employees) == 0 {
+		return 0
+	}
+	var root *Employee
+	for i := 0; i < len(employees); i++ {
+		if employees[i].Id == id {
+			root = employees[i]
+		}
+	}
+	if root == nil {
+		return 0
+	}
+	res := root.Importance
+	for i := range root.Subordinates {
+		res = res + getImportance(employees, root.Subordinates[i])
+	}
+	return res
+}
+
+#
+func getImportance(employees []*Employee, id int) int {
+	if len(employees) == 0 {
+		return 0
+	}
+	m := make(map[int]*Employee)
+	for i := 0; i < len(employees); i++ {
+		m[employees[i].Id] = employees[i]
+	}
+	root := m[id]
+	if root == nil {
+		return 0
+	}
+	res := 0
+	list := make([]*Employee, 0)
+	list = append(list, root)
+	for len(list) > 0 {
+		node := list[0]
+		list = list[1:]
+		res = res + node.Importance
+		for i := range node.Subordinates {
+			if value, ok := m[node.Subordinates[i]]; ok {
+				list = append(list, value)
+			}
+		}
+	}
+	return res
+}
+```
+
+## 693.交替位二进制数(4)
+
+- 题目
+
+```
+给定一个正整数，检查他是否为交替位二进制数：换句话说，就是他的二进制数相邻的两个位数永不相等。
+示例 1: 输入: 5 输出: True 
+解释:5的二进制数是: 101
+示例 2:输入: 7 输出: False
+解释: 7的二进制数是: 111
+示例 3:输入: 11 输出: False
+解释: 11的二进制数是: 1011
+示例 4:输入: 10 输出: True
+解释: 10的二进制数是: 1010
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 转字符串+遍历 | O(1)       | O(1)       |
+| 02   | 位运算        | O(1)       | O(1)       |
+| 03   | 位运算        | O(1)       | O(1)       |
+| 04   | 遍历          | O(1)       | O(1)       |
+
+```go
+func hasAlternatingBits(n int) bool {
+	str := strconv.FormatInt(int64(n), 2)
+	for i := 1; i < len(str); i++ {
+		if str[i] == str[i-1] {
+			return false
+		}
+	}
+	return true
+}
+
+#
+/*
+示例1：
+1. n=1010
+2. n>>1=101
+3. n=n^(n>>1)=1010^101=1111
+4. n&(n+1)=1111&(10000)=0
+
+示例2:
+1. n=101
+2. n>>1=10
+3. n=n^(n>>1)=101^10=111
+4. n&(n+1)=111&(1000)=0
+*/
+func hasAlternatingBits(n int) bool {
+	n = n ^ (n >> 1)
+	return n&(n+1) == 0
+}
+
+#
+// n (10|01)&3(11)=10|01
+func hasAlternatingBits(n int) bool {
+	temp := n & 3
+	if temp != 1 && temp != 2 {
+		return false
+	}
+	for n > 0 {
+		if n&3 != temp {
+			return false
+		}
+		n = n >> 2
+	}
+	return true
+}
+
+#
+// n (10|01)&3(11)=10|01
+func hasAlternatingBits(n int) bool {
+	temp := n & 3
+	if temp != 1 && temp != 2 {
+		return false
+	}
+	for n > 0 {
+		if n&3 != temp {
+			return false
+		}
+		n = n >> 2
+	}
+	return true
+}
+
+#
+func hasAlternatingBits(n int) bool {
+	pre := n & 1
+	n = n >> 1
+	for n > 0 {
+		if n&1 == pre {
+			return false
+		}
+		pre = n & 1
+		n = n >> 1
+	}
+	return true
+}
+```
+
+## 696.计数二进制子串(3)
+
+- 题目
+
+```
+给定一个字符串 s，计算具有相同数量0和1的非空(连续)子字符串的数量，
+并且这些子字符串中的所有0和所有1都是组合在一起的。
+重复出现的子串要计算它们出现的次数。
+
+示例 1 :输入: "00110011" 输出: 6
+解释: 有6个子串具有相同数量的连续1和0：“0011”，“01”，“1100”，“10”，“0011” 和 “01”。
+请注意，一些重复出现的子串要计算它们出现的次数。
+另外，“00110011”不是有效的子串，因为所有的0（和1）没有组合在一起。
+
+示例 2 :输入: "10101"输出: 4
+解释: 有4个子串：“10”，“01”，“10”，“01”，它们具有相同数量的连续1和0。
+注意：
+    s.length 在1到50,000之间。
+    s 只包含“0”或“1”字符。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 遍历   | O(n)       | O(1)       |
+| 02   | 遍历   | O(n)       | O(n)       |
+| 03   | 暴力法 | O(n^2)     | O(1)       |
+
+```go
+func countBinarySubstrings(s string) int {
+	res := 0
+	cur := 1
+	pre := 0
+	for i := 0; i < len(s)-1; i++ {
+		if s[i] == s[i+1] {
+			cur++
+		} else {
+			if pre > cur {
+				res = res + cur
+			} else {
+				res = res + pre
+			}
+			pre = cur
+			cur = 1
+		}
+	}
+	if pre > cur {
+		return res + cur
+	}
+	return res + pre
+}
+
+#
+func countBinarySubstrings(s string) int {
+	res := 0
+	arr := make([]int, 0)
+	arr = append(arr, 1)
+	for i := 1; i < len(s); i++ {
+		if s[i] == s[i-1] {
+			arr[len(arr)-1]++
+		} else {
+			arr = append(arr, 1)
+		}
+	}
+	for i := 0; i < len(arr)-1; i++ {
+		if arr[i] > arr[i+1] {
+			res = res + arr[i+1]
+		} else {
+			res = res + arr[i]
+		}
+	}
+	return res
+}
+
+#
+var count int
+
+func countBinarySubstrings(s string) int {
+	count = 0
+	for i := 1; i < len(s); i++ {
+		if s[i-1] == '0' && s[i] == '1' {
+			CountString(s, i-1, i)
+		}
+		if s[i-1] == '1' && s[i] == '0' {
+			CountString(s, i-1, i)
+		}
+	}
+	return count
+}
+
+func CountString(s string, left, right int) {
+	leftStr := s[left]
+	rightStr := s[right]
+	for left >= 0 && right < len(s) && s[left] == leftStr && s[right] == rightStr {
+		left--
+		right++
+		count++
+	}
+}
+```
+
+## 697.数组的度(3)
+
+- 题目
+
+```
+给定一个非空且只包含非负数的整数数组 nums, 数组的度的定义是指数组里任一元素出现频数的最大值。
+你的任务是找到与 nums 拥有相同大小的度的最短连续子数组，返回其长度。
+
+示例 1:输入: [1, 2, 2, 3, 1]输出: 2
+解释: 输入数组的度是2，因为元素1和2的出现频数最大，均为2.
+连续子数组里面拥有相同度的有如下所示:
+[1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2]
+最短连续子数组[2, 2]的长度为2，所以返回2.
+
+示例 2:输入: [1,2,2,3,1,4,2] 输出: 6
+
+注意:
+    nums.length 在1到50,000区间范围内。
+    nums[i] 是一个在0到49,999范围内的整数。
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 自定义结构体+遍历 | O(n)       | O(n)       |
+| 02   | 哈希辅助          | O(n)       | O(n)       |
+| 03   | 哈希辅助          | O(n)       | O(n)       |
+
+```go
+type node struct {
+	count int
+	left  int
+	right int
+}
+
+func findShortestSubArray(nums []int) int {
+	m := make(map[int]*node, 0)
+	for k, v := range nums {
+		if nd, ok := m[v]; ok {
+			nd.count = nd.count + 1
+			nd.right = k
+		} else {
+			m[v] = &node{
+				count: 1,
+				left:  k,
+				right: k,
+			}
+		}
+	}
+	maxNode := new(node)
+	for _, v := range m {
+		if v.count > maxNode.count {
+			maxNode = v
+		} else if v.count == maxNode.count && 
+			v.right-v.left < maxNode.right-maxNode.left {
+			maxNode = v
+		}
+	}
+	return maxNode.right - maxNode.left + 1
+}
+
+#
+func findShortestSubArray(nums []int) int {
+	size := len(nums)
+	if size < 2 {
+		return size
+	}
+	first := make(map[int]int)
+	count := make(map[int]int)
+	maxCount := 1
+	minLen := size
+	for i, n := range nums {
+		count[n]++
+		if count[n] == 1 {
+			first[n] = i
+		} else {
+			length := i - first[n] + 1
+			if maxCount < count[n] ||
+				(maxCount == count[n] && minLen > length) {
+				maxCount = count[n]
+				minLen = length
+			}
+		}
+	}
+	if len(count) == size {
+		return 1
+	}
+	return minLen
+}
+
+#
+func findShortestSubArray(nums []int) int {
+	size := len(nums)
+	if size < 2 {
+		return size
+	}
+	res := 0
+	maxLen := 0
+	m := make(map[int][]int)
+	for i := 0; i < len(nums); i++ {
+		m[nums[i]] = append(m[nums[i]], i)
+	}
+	for _, v := range m{
+		if len(v) > maxLen {
+			maxLen = len(v)
+			res = v[len(v)-1] - v[0] + 1
+		} else if len(v) == maxLen && v[len(v)-1]-v[0]+1 < res {
+			res = v[len(v)-1] - v[0] + 1
+		}
+	}
+	return res
+}
+```
+
+## 700.二叉搜索树中的搜索(2)
+
+- 题目
+
+```
+给定二叉搜索树（BST）的根节点和一个值。 你需要在BST中找到节点值等于给定值的节点。 
+返回以该节点为根的子树。 如果节点不存在，则返回 NULL。
+例如，
+给定二叉搜索树:
+        4
+       / \
+      2   7
+     / \
+    1   3
+和值: 2
+你应该返回如下子树:
+      2     
+     / \   
+    1   3
+在上述示例中，如果要找的值是 5，但因为没有节点值为 5，我们应该返回 NULL。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+func searchBST(root *TreeNode, val int) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if root.Val < val {
+		return searchBST(root.Right, val)
+	} else if root.Val > val {
+		return searchBST(root.Left, val)
+	}
+	return root
+}
+
+#
+func searchBST(root *TreeNode, val int) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	stack := make([]*TreeNode, 0)
+	if root.Val == val {
+		return root
+	} else if root.Val > val && root.Left != nil {
+		stack = append(stack, root.Left)
+	} else if root.Val < val && root.Right != nil {
+		stack = append(stack, root.Right)
+	}
+	for len(stack) > 0 {
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		if node.Val == val {
+			return node
+		} else if node.Val > val && node.Left != nil {
+			stack = append(stack, node.Left)
+		} else if node.Val < val && node.Right != nil {
+			stack = append(stack, node.Right)
+		}
+	}
+	return nil
+}
+```
+

@@ -1,0 +1,2578 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>mysql · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bash.html" />
+    
+    
+    <link rel="prev" href="lcp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    题目
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="0001-0100.html">
+            
+                <a href="0001-0100.html">
+            
+                    
+                    0001-0100
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="0101-0200.html">
+            
+                <a href="0101-0200.html">
+            
+                    
+                    0100-0200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="0201-0300.html">
+            
+                <a href="0201-0300.html">
+            
+                    
+                    0201-0300
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="0301-0400.html">
+            
+                <a href="0301-0400.html">
+            
+                    
+                    0301-0400
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="0401-0500.html">
+            
+                <a href="0401-0500.html">
+            
+                    
+                    0401-0500
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="0501-0600.html">
+            
+                <a href="0501-0600.html">
+            
+                    
+                    0501-0600
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="0601-0700.html">
+            
+                <a href="0601-0700.html">
+            
+                    
+                    0601-0700
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="0701-0800.html">
+            
+                <a href="0701-0800.html">
+            
+                    
+                    0701-0800
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="0801-0900.html">
+            
+                <a href="0801-0900.html">
+            
+                    
+                    0801-0900
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="0901-1000.html">
+            
+                <a href="0901-1000.html">
+            
+                    
+                    0901-1000
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="1001-1100.html">
+            
+                <a href="1001-1100.html">
+            
+                    
+                    1001-1100
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="1101-1200.html">
+            
+                <a href="1101-1200.html">
+            
+                    
+                    1101-1200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="1201-1300.html">
+            
+                <a href="1201-1300.html">
+            
+                    
+                    1201-1300
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="1301-1400.html">
+            
+                <a href="1301-1400.html">
+            
+                    
+                    1301-1400
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="1401-1500.html">
+            
+                <a href="1401-1500.html">
+            
+                    
+                    1401-1500
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="1501-1600.html">
+            
+                <a href="1501-1600.html">
+            
+                    
+                    1501-1600
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="1601-1700.html">
+            
+                <a href="1601-1700.html">
+            
+                    
+                    1601-1700
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="lcp.html">
+            
+                <a href="lcp.html">
+            
+                    
+                    lcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.19" data-path="mysql.html">
+            
+                <a href="mysql.html">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="bash.html">
+            
+                <a href="bash.html">
+            
+                    
+                    bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="offer.html">
+            
+                <a href="offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="lcci.html">
+            
+                <a href="lcci.html">
+            
+                    
+                    程序员面试金典
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    分类/书籍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../classification/same.html">
+            
+                <a href="../classification/same.html">
+            
+                    
+                    重复问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../classification/class.html">
+            
+                <a href="../classification/class.html">
+            
+                    
+                    系列问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../classification/offer.html">
+            
+                <a href="../classification/offer.html">
+            
+                    
+                    书籍-剑指offer-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../classification/lcci.html">
+            
+                <a href="../classification/lcci.html">
+            
+                    
+                    书籍-程序员面试金典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../classification/lcp.html">
+            
+                <a href="../classification/lcp.html">
+            
+                    
+                    lcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../classification/leetcode_contest.html">
+            
+                <a href="../classification/leetcode_contest.html">
+            
+                    
+                    leetcode-竞赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../classification/easy.html">
+            
+                <a href="../classification/easy.html">
+            
+                    
+                    初级算法(49)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../classification/medium.html">
+            
+                <a href="../classification/medium.html">
+            
+                    
+                    中级算法(45)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../classification/hard.html">
+            
+                <a href="../classification/hard.html">
+            
+                    
+                    高级算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../classification/hot-100.html">
+            
+                <a href="../classification/hot-100.html">
+            
+                    
+                    热题100(100)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../classification/50.html">
+            
+                <a href="../classification/50.html">
+            
+                    
+                    腾讯精选练习50题(50)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../classification/data-array_and_string.html">
+            
+                <a href="../classification/data-array_and_string.html">
+            
+                    
+                    数据结构-数组与字符串(22)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../classification/data-queue-stack.html">
+            
+                <a href="../classification/data-queue-stack.html">
+            
+                    
+                    数据结构-队列与栈(19)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../classification/data-recursion.html">
+            
+                <a href="../classification/data-recursion.html">
+            
+                    
+                    数据结构-递归(12)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../classification/nowcoder_hw.html">
+            
+                <a href="../classification/nowcoder_hw.html">
+            
+                    
+                    牛客-华为
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../classification/nowcoder_pdd.html">
+            
+                <a href="../classification/nowcoder_pdd.html">
+            
+                    
+                    牛客-拼多多
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../classification/patB.html">
+            
+                <a href="../classification/patB.html">
+            
+                    
+                    PAT-乙级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../classification/github-labuladong.html">
+            
+                <a href="../classification/github-labuladong.html">
+            
+                    
+                    github-labuladong
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../algorithm/查找算法.html">
+            
+                <a href="../algorithm/查找算法.html">
+            
+                    
+                    查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../algorithm/排序算法.html">
+            
+                <a href="../algorithm/排序算法.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../algorithm/heap.html">
+            
+                <a href="../algorithm/heap.html">
+            
+                    
+                    堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../algorithm/trie.html">
+            
+                <a href="../algorithm/trie.html">
+            
+                    
+                    Trie树(前缀树/字典树)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../algorithm/并查集.html">
+            
+                <a href="../algorithm/并查集.html">
+            
+                    
+                    并查集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../algorithm/数组-树状数组.html">
+            
+                <a href="../algorithm/数组-树状数组.html">
+            
+                    
+                    数组-树状数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../algorithm/数组-前缀和.html">
+            
+                <a href="../algorithm/数组-前缀和.html">
+            
+                    
+                    数组-前缀和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../algorithm/数组-差分数组.html">
+            
+                <a href="../algorithm/数组-差分数组.html">
+            
+                    
+                    数组-差分数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../algorithm/字符串-KMP算法.html">
+            
+                <a href="../algorithm/字符串-KMP算法.html">
+            
+                    
+                    字符串-KMP算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../algorithm/字符串-马拉车算法.html">
+            
+                <a href="../algorithm/字符串-马拉车算法.html">
+            
+                    
+                    字符串-马拉车算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    牛客
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../nowcoder/hw.html">
+            
+                <a href="../nowcoder/hw.html">
+            
+                    
+                    华为机试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../nowcoder/pdd.html">
+            
+                <a href="../nowcoder/pdd.html">
+            
+                    
+                    拼多多
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    PAT
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="patB.html">
+            
+                <a href="patB.html">
+            
+                    
+                    PAT-乙级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="readme.html">
+            
+                <a href="readme.html">
+            
+                    
+                    ACM在线笔试模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../go/1-go语言acm刷题输入问题.html">
+            
+                <a href="../go/1-go语言acm刷题输入问题.html">
+            
+                    
+                    ACM-Go语言处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >mysql</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>mysql</p>
+<ul>
+<li><a href="#mysql">mysql</a><ul>
+<li><a href="#175&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x8868;2">175.&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x8868;(2)</a></li>
+<li><a href="#176&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;3">176.&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;(3)</a></li>
+<li><a href="#181&#x8D85;&#x8FC7;&#x7ECF;&#x7406;&#x6536;&#x5165;&#x7684;&#x5458;&#x5DE5;3">181.&#x8D85;&#x8FC7;&#x7ECF;&#x7406;&#x6536;&#x5165;&#x7684;&#x5458;&#x5DE5;(3)</a></li>
+<li><a href="#182&#x67E5;&#x627E;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;2">182.&#x67E5;&#x627E;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;(2)</a></li>
+<li><a href="#183&#x4ECE;&#x4E0D;&#x8BA2;&#x8D2D;&#x7684;&#x5BA2;&#x6237;3">183.&#x4ECE;&#x4E0D;&#x8BA2;&#x8D2D;&#x7684;&#x5BA2;&#x6237;(3)</a></li>
+<li><a href="#193&#x5220;&#x9664;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;2">193.&#x5220;&#x9664;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;(2)</a></li>
+<li><a href="#197&#x4E0A;&#x5347;&#x7684;&#x6E29;&#x5EA6;4">197.&#x4E0A;&#x5347;&#x7684;&#x6E29;&#x5EA6;(4)</a></li>
+<li><a href="#595&#x5927;&#x7684;&#x56FD;2">595.&#x5927;&#x7684;&#x56FD;(2)</a></li>
+<li><a href="#596&#x8D85;&#x8FC7;5&#x540D;&#x5B66;&#x751F;&#x7684;&#x8BFE;2">596.&#x8D85;&#x8FC7;5&#x540D;&#x5B66;&#x751F;&#x7684;&#x8BFE;(2)</a></li>
+<li><a href="#620&#x6709;&#x8DA3;&#x7684;&#x7535;&#x5F71;2">620.&#x6709;&#x8DA3;&#x7684;&#x7535;&#x5F71;(2)</a></li>
+<li><a href="#627&#x4EA4;&#x6362;&#x5DE5;&#x8D44;3">627.&#x4EA4;&#x6362;&#x5DE5;&#x8D44;(3)</a></li>
+<li><a href="#1179&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x90E8;&#x95E8;&#x8868;2">1179.&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x90E8;&#x95E8;&#x8868;(2)</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="easy">Easy</h1>
+<h2 id="175&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x8868;2">175.&#x7EC4;&#x5408;&#x4E24;&#x4E2A;&#x8868;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table Person (PersonId int, FirstName varchar(255), LastName varchar(255))
+Create table Address (AddressId int, PersonId int, City varchar(255), State varchar(255))
+Truncate table Person
+insert into Person (PersonId, LastName, FirstName) values (&apos;1&apos;, &apos;Wang&apos;, &apos;Allen&apos;)
+Truncate table Address
+insert into Address (AddressId, PersonId, City, State) values (&apos;1&apos;, &apos;2&apos;, &apos;New York City&apos;, &apos;New York&apos;)
+
+&#x8868;1: Person
++-------------+---------+
+| &#x5217;&#x540D;         | &#x7C7B;&#x578B;     |
++-------------+---------+
+| PersonId    | int     |
+| FirstName   | varchar |
+| LastName    | varchar |
++-------------+---------+
+PersonId &#x662F;&#x4E0A;&#x8868;&#x4E3B;&#x952E;
+
+&#x8868;2: Address
++-------------+---------+
+| &#x5217;&#x540D;         | &#x7C7B;&#x578B;    |
++-------------+---------+
+| AddressId   | int     |
+| PersonId    | int     |
+| City        | varchar |
+| State       | varchar |
++-------------+---------+
+AddressId &#x662F;&#x4E0A;&#x8868;&#x4E3B;&#x952E;
+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF1A;&#x65E0;&#x8BBA; person &#x662F;&#x5426;&#x6709;&#x5730;&#x5740;&#x4FE1;&#x606F;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x4E0A;&#x8FF0;&#x4E24;&#x8868;&#x63D0;&#x4F9B; person &#x7684;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#xFF1A;
+FirstName, LastName, City, State
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x8003;&#x5BDF;join&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x8003;&#x5BDF;join&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-mysql">select FirstName, LastName, City, State 
+from Person left join Address on Person.PersonId = Address.PersonId
+
+#
+select A.FirstName, A.LastName, B.City, B.State
+from Person A
+left join (select distinct PersonId, City, State from Address) B
+on A.PersonId=B.PersonId;
+</code></pre>
+<h2 id="176&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;3">176.&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Employee (Id int, Salary int)
+Truncate table Employee
+insert into Employee (Id, Salary) values (&apos;1&apos;, &apos;100&apos;)
+insert into Employee (Id, Salary) values (&apos;2&apos;, &apos;200&apos;)
+insert into Employee (Id, Salary) values (&apos;3&apos;, &apos;300&apos;)
+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x83B7;&#x53D6; Employee &#x8868;&#x4E2D;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;&#xFF08;Salary&#xFF09; &#x3002;
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+
+&#x4F8B;&#x5982;&#x4E0A;&#x8FF0; Employee &#x8868;&#xFF0C;SQL&#x67E5;&#x8BE2;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE; 200 &#x4F5C;&#x4E3A;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;&#x3002;
+&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34;&#xFF0C;&#x90A3;&#x4E48;&#x67E5;&#x8BE2;&#x5E94;&#x8FD4;&#x56DE; null&#x3002;
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x628A;select&#x8BED;&#x53E5;&#x5305;&#x8D77;&#x6765;&#xFF0C;&#x4F7F;&#x7A7A;&#x7684;&#x65F6;&#x5019;&#x4E3A;null</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x4F7F;&#x7528;ifnull</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x5148;&#x67E5;&#x51FA;&#x6700;&#x5927;&#x7684;&#xFF0C;&#x7136;&#x540E;&#x67E5;&#x51FA;&#x6BD4;&#x6700;&#x5927;&#x5C0F;&#x7684;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span>(
+    <span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> Salary 
+    <span class="hljs-keyword">from</span> Employee 
+    <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> Salary <span class="hljs-keyword">desc</span>
+    <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span> <span class="hljs-keyword">offset</span> <span class="hljs-number">1</span>
+) <span class="hljs-keyword">as</span> SecondHighestSalary;
+
+#
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">ifnull</span>(
+    (<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> Salary 
+    <span class="hljs-keyword">from</span> Employee 
+    <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> Salary <span class="hljs-keyword">desc</span>
+    <span class="hljs-keyword">limit</span> <span class="hljs-number">1</span> <span class="hljs-keyword">offset</span> <span class="hljs-number">1</span>),<span class="hljs-literal">null</span>
+) <span class="hljs-keyword">as</span> SecondHighestSalary;
+
+# 
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(Salary) <span class="hljs-keyword">as</span> SecondHighestSalary 
+<span class="hljs-keyword">from</span> Employee 
+<span class="hljs-keyword">where</span> Salary &lt; (<span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(Salary) <span class="hljs-keyword">from</span> Employee);
+</code></pre>
+<h2 id="181&#x8D85;&#x8FC7;&#x7ECF;&#x7406;&#x6536;&#x5165;&#x7684;&#x5458;&#x5DE5;3">181.&#x8D85;&#x8FC7;&#x7ECF;&#x7406;&#x6536;&#x5165;&#x7684;&#x5458;&#x5DE5;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, ManagerId int)
+Truncate table Employee
+insert into Employee (Id, Name, Salary, ManagerId) values (&apos;1&apos;, &apos;Joe&apos;, &apos;70000&apos;, &apos;3&apos;)
+insert into Employee (Id, Name, Salary, ManagerId) values (&apos;2&apos;, &apos;Henry&apos;, &apos;80000&apos;, &apos;4&apos;)
+insert into Employee (Id, Name, Salary, ManagerId) values (&apos;3&apos;, &apos;Sam&apos;, &apos;60000&apos;, &apos;None&apos;)
+insert into Employee (Id, Name, Salary, ManagerId) values (&apos;4&apos;, &apos;Max&apos;, &apos;90000&apos;, &apos;None&apos;)
+
+Employee &#x8868;&#x5305;&#x542B;&#x6240;&#x6709;&#x5458;&#x5DE5;&#xFF0C;&#x4ED6;&#x4EEC;&#x7684;&#x7ECF;&#x7406;&#x4E5F;&#x5C5E;&#x4E8E;&#x5458;&#x5DE5;&#x3002;
+&#x6BCF;&#x4E2A;&#x5458;&#x5DE5;&#x90FD;&#x6709;&#x4E00;&#x4E2A; Id&#xFF0C;&#x6B64;&#x5916;&#x8FD8;&#x6709;&#x4E00;&#x5217;&#x5BF9;&#x5E94;&#x5458;&#x5DE5;&#x7684;&#x7ECF;&#x7406;&#x7684; Id&#x3002;
+
++----+-------+--------+-----------+
+| Id | Name  | Salary | ManagerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | NULL      |
+| 4  | Max   | 90000  | NULL      |
++----+-------+--------+-----------+
+
+&#x7ED9;&#x5B9A; Employee &#x8868;&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x8BE5;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x6536;&#x5165;&#x8D85;&#x8FC7;&#x4ED6;&#x4EEC;&#x7ECF;&#x7406;&#x7684;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;&#x3002;
+&#x5728;&#x4E0A;&#x9762;&#x7684;&#x8868;&#x683C;&#x4E2D;&#xFF0C;Joe &#x662F;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x6536;&#x5165;&#x8D85;&#x8FC7;&#x4ED6;&#x7684;&#x7ECF;&#x7406;&#x7684;&#x5458;&#x5DE5;&#x3002;
+
++----------+
+| Employee |
++----------+
+| Joe      |
++----------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x4F7F;&#x7528;&#x7B1B;&#x5361;&#x5C14;&#x4E58;&#x79EF;&#xFF0C;&#x548C;&#x65B9;&#x6CD5;2&#x4E00;&#x6837;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x4F7F;&#x7528;&#x5185;&#x94FE;&#x63A5;</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x5B50;&#x67E5;&#x8BE2;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> a.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">AS</span> <span class="hljs-string">&apos;Employee&apos;</span>
+<span class="hljs-keyword">FROM</span> Employee <span class="hljs-keyword">AS</span> a, Employee <span class="hljs-keyword">AS</span> b
+<span class="hljs-keyword">WHERE</span> a.ManagerId = b.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">AND</span> a.Salary &gt; b.Salary;
+
+#
+<span class="hljs-keyword">SELECT</span> a.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">AS</span> <span class="hljs-string">&apos;Employee&apos;</span>
+<span class="hljs-keyword">FROM</span> Employee <span class="hljs-keyword">AS</span> a <span class="hljs-keyword">join</span> Employee <span class="hljs-keyword">AS</span> b
+<span class="hljs-keyword">on</span> a.ManagerId = b.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">AND</span> a.Salary &gt; b.Salary;
+
+#
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span> <span class="hljs-keyword">as</span> Employee 
+<span class="hljs-keyword">from</span> employee a 
+<span class="hljs-keyword">where</span> salary &gt; (<span class="hljs-keyword">select</span> salary <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> a.managerid = <span class="hljs-keyword">id</span>);
+</code></pre>
+<h2 id="182&#x67E5;&#x627E;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;2">182.&#x67E5;&#x627E;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Person (Id int, Email varchar(255))
+Truncate table Person
+insert into Person (Id, Email) values (&apos;1&apos;, &apos;a@b.com&apos;)
+insert into Person (Id, Email) values (&apos;2&apos;, &apos;c@d.com&apos;)
+insert into Person (Id, Email) values (&apos;3&apos;, &apos;a@b.com&apos;)
+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x67E5;&#x627E; Person &#x8868;&#x4E2D;&#x6240;&#x6709;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#x3002;
+&#x793A;&#x4F8B;&#xFF1A;
++----+---------+
+| Id | Email   |
++----+---------+
+| 1  | a@b.com |
+| 2  | c@d.com |
+| 3  | a@b.com |
++----+---------+
+
+&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x8F93;&#x5165;&#xFF0C;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x5E94;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x7ED3;&#x679C;&#xFF1A;
++---------+
+| Email   |
++---------+
+| a@b.com |
++---------+
+
+&#x8BF4;&#x660E;&#xFF1A;&#x6240;&#x6709;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#x90FD;&#x662F;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x4F7F;&#x7528;&#x4E34;&#x65F6;&#x8868;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x4F7F;&#x7528;having&#x5B50;&#x53E5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> Email <span class="hljs-keyword">from</span>
+(
+    <span class="hljs-keyword">select</span> Email, <span class="hljs-keyword">count</span>(Email) <span class="hljs-keyword">as</span> <span class="hljs-keyword">num</span>
+    <span class="hljs-keyword">from</span> Person 
+    <span class="hljs-keyword">Group</span> <span class="hljs-keyword">by</span> Email
+) <span class="hljs-keyword">as</span> temp_table 
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">num</span> &gt; <span class="hljs-number">1</span>;
+
+//
+<span class="hljs-keyword">select</span> Email 
+<span class="hljs-keyword">from</span> Person
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Email
+<span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(Email) &gt; <span class="hljs-number">1</span>;
+</code></pre>
+<h2 id="183&#x4ECE;&#x4E0D;&#x8BA2;&#x8D2D;&#x7684;&#x5BA2;&#x6237;3">183.&#x4ECE;&#x4E0D;&#x8BA2;&#x8D2D;&#x7684;&#x5BA2;&#x6237;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Customers (Id int, Name varchar(255))
+Create table If Not Exists Orders (Id int, CustomerId int)
+Truncate table Customers
+insert into Customers (Id, Name) values (&apos;1&apos;, &apos;Joe&apos;)
+insert into Customers (Id, Name) values (&apos;2&apos;, &apos;Henry&apos;)
+insert into Customers (Id, Name) values (&apos;3&apos;, &apos;Sam&apos;)
+insert into Customers (Id, Name) values (&apos;4&apos;, &apos;Max&apos;)
+Truncate table Orders
+insert into Orders (Id, CustomerId) values (&apos;1&apos;, &apos;3&apos;)
+insert into Orders (Id, CustomerId) values (&apos;2&apos;, &apos;1&apos;)
+&#x67D0;&#x7F51;&#x7AD9;&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x8868;&#xFF0C;Customers &#x8868;&#x548C; Orders &#x8868;&#x3002;&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x627E;&#x51FA;&#x6240;&#x6709;&#x4ECE;&#x4E0D;&#x8BA2;&#x8D2D;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#x7684;&#x5BA2;&#x6237;&#x3002;
+
+Customers &#x8868;&#xFF1A;
++----+-------+
+| Id | Name  |
++----+-------+
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
++----+-------+
+
+Orders &#x8868;&#xFF1A;
++----+------------+
+| Id | CustomerId |
++----+------------+
+| 1  | 3          |
+| 2  | 1          |
++----+------------+
+
+&#x4F8B;&#x5982;&#x7ED9;&#x5B9A;&#x4E0A;&#x8FF0;&#x8868;&#x683C;&#xFF0C;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x5E94;&#x8FD4;&#x56DE;&#xFF1A;
++-----------+
+| Customers |
++-----------+
+| Henry     |
+| Max       |
++-----------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x4F7F;&#x7528;not in</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x5DE6;&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x4F7F;&#x7528;not exists</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> Customers.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> Customers
+<span class="hljs-keyword">from</span> Customers
+<span class="hljs-keyword">where</span> Customers.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (
+    <span class="hljs-keyword">select</span> CustomerId <span class="hljs-keyword">from</span> Orders
+);
+
+#
+<span class="hljs-keyword">select</span> a.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> Customers
+<span class="hljs-keyword">from</span> Customers <span class="hljs-keyword">as</span> a <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> Orders <span class="hljs-keyword">as</span> b <span class="hljs-keyword">on</span> a.<span class="hljs-keyword">Id</span>=b.CustomerId
+<span class="hljs-keyword">where</span> b.CustomerId <span class="hljs-keyword">is</span> <span class="hljs-literal">null</span>;
+
+#
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span> Customers 
+<span class="hljs-keyword">from</span> customers c 
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exists</span> (
+    <span class="hljs-keyword">select</span> <span class="hljs-number">1</span> <span class="hljs-keyword">from</span> orders o 
+    <span class="hljs-keyword">where</span> o.customerid=c.<span class="hljs-keyword">id</span>
+)
+</code></pre>
+<h2 id="193&#x5220;&#x9664;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;2">193.&#x5220;&#x9664;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x6765;&#x5220;&#x9664; Person &#x8868;&#x4E2D;&#x6240;&#x6709;&#x91CD;&#x590D;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#xFF0C;&#x91CD;&#x590D;&#x7684;&#x90AE;&#x7BB1;&#x91CC;&#x53EA;&#x4FDD;&#x7559; Id &#x6700;&#x5C0F; &#x7684;&#x90A3;&#x4E2A;&#x3002;
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
+| 3  | john@example.com |
++----+------------------+
+Id &#x662F;&#x8FD9;&#x4E2A;&#x8868;&#x7684;&#x4E3B;&#x952E;&#x3002;
+&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x4E4B;&#x540E;&#xFF0C;&#x4E0A;&#x9762;&#x7684; Person &#x8868;&#x5E94;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x51E0;&#x884C;:
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
++----+------------------+
+&#x63D0;&#x793A;&#xFF1A;
+    &#x6267;&#x884C; SQL &#x4E4B;&#x540E;&#xFF0C;&#x8F93;&#x51FA;&#x662F;&#x6574;&#x4E2A; Person &#x8868;&#x3002;
+    &#x4F7F;&#x7528; delete &#x8BED;&#x53E5;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x4F7F;&#x7528;delete+&#x81EA;&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x4F7F;&#x7528;delete&#xFF0C;&#x6839;&#x636E;group by&#x548C;min()&#x67E5;&#x8BE2;&#x51FA;&#x6700;&#x5C0F;&#x7684;id</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"># 
+<span class="hljs-keyword">delete</span> p1 <span class="hljs-keyword">from</span> Person p1, Person P2 
+<span class="hljs-keyword">where</span> p1.Email = p2.Email <span class="hljs-keyword">and</span> p1.<span class="hljs-keyword">Id</span> &gt; p2.<span class="hljs-keyword">Id</span>
+
+#
+<span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> Person
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (
+    <span class="hljs-keyword">select</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">from</span> (
+        <span class="hljs-keyword">select</span> <span class="hljs-keyword">min</span>(<span class="hljs-keyword">id</span>) <span class="hljs-keyword">as</span> <span class="hljs-keyword">id</span>
+        <span class="hljs-keyword">from</span> Person
+        <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Email
+    ) <span class="hljs-keyword">as</span> temp_table
+)
+</code></pre>
+<h2 id="197&#x4E0A;&#x5347;&#x7684;&#x6E29;&#x5EA6;4">197.&#x4E0A;&#x5347;&#x7684;&#x6E29;&#x5EA6;(4)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Weather (Id int, RecordDate date, Temperature int)
+Truncate table Weather
+insert into Weather (Id, RecordDate, Temperature) values (&apos;1&apos;, &apos;2015-01-01&apos;, &apos;10&apos;)
+insert into Weather (Id, RecordDate, Temperature) values (&apos;2&apos;, &apos;2015-01-02&apos;, &apos;25&apos;)
+insert into Weather (Id, RecordDate, Temperature) values (&apos;3&apos;, &apos;2015-01-03&apos;, &apos;20&apos;)
+insert into Weather (Id, RecordDate, Temperature) values (&apos;4&apos;, &apos;2015-01-04&apos;, &apos;30&apos;)
+
+&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A; Weather &#x8868;&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x6765;&#x67E5;&#x627E;&#x4E0E;&#x4E4B;&#x524D;&#xFF08;&#x6628;&#x5929;&#x7684;&#xFF09;&#x65E5;&#x671F;&#x76F8;&#x6BD4;&#x6E29;&#x5EA6;&#x66F4;&#x9AD8;&#x7684;&#x6240;&#x6709;&#x65E5;&#x671F;&#x7684; Id&#x3002;
++---------+------------------+------------------+
+| Id(INT) | RecordDate(DATE) | Temperature(INT) |
++---------+------------------+------------------+
+|       1 |       2015-01-01 |               10 |
+|       2 |       2015-01-02 |               25 |
+|       3 |       2015-01-03 |               20 |
+|       4 |       2015-01-04 |               30 |
++---------+------------------+------------------+
+
+&#x4F8B;&#x5982;&#xFF0C;&#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x7ED9;&#x5B9A;&#x7684; Weather &#x8868;&#x683C;&#xFF0C;&#x8FD4;&#x56DE;&#x5982;&#x4E0B; Id:
++----+
+| Id |
++----+
+|  2 |
+|  4 |
++----+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x81EA;&#x8FDE;&#x63A5;&#x548C;datediff()&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x81EA;&#x8FDE;&#x63A5;&#x548C;adddate()&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>03</td>
+<td>&#x81EA;&#x8FDE;&#x63A5;&#x548C;unix_timestamp()&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>04</td>
+<td>&#x81EA;&#x8FDE;&#x63A5;&#x548C;subdate()&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql">#
+<span class="hljs-keyword">select</span> A.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;Id&quot;</span>
+<span class="hljs-keyword">from</span> Weather A <span class="hljs-keyword">join</span> Weather B
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">datediff</span>(A.RecordDate, B.RecordDate) = <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> A.Temperature &gt; B.Temperature
+
+#
+<span class="hljs-keyword">select</span> A.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;Id&quot;</span>
+<span class="hljs-keyword">from</span> Weather A <span class="hljs-keyword">join</span> Weather B
+<span class="hljs-keyword">on</span> A.Temperature &gt; B.Temperature <span class="hljs-keyword">and</span> A.RecordDate = adddate(B.RecordDate, <span class="hljs-number">1</span>) 
+
+#
+<span class="hljs-keyword">select</span> A.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;Id&quot;</span>
+<span class="hljs-keyword">from</span> Weather A <span class="hljs-keyword">join</span> Weather B
+<span class="hljs-keyword">on</span> <span class="hljs-keyword">unix_timestamp</span>(A.RecordDate) = <span class="hljs-keyword">unix_timestamp</span>(B.RecordDate) + <span class="hljs-number">86400</span>
+<span class="hljs-keyword">and</span> A.Temperature &gt; B.Temperature
+
+#
+<span class="hljs-keyword">select</span> A.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">as</span> <span class="hljs-string">&quot;Id&quot;</span>
+<span class="hljs-keyword">from</span> Weather A <span class="hljs-keyword">join</span> Weather B
+<span class="hljs-keyword">on</span> A.Temperature &gt; B.Temperature <span class="hljs-keyword">and</span> B.RecordDate = <span class="hljs-keyword">subdate</span>(A.RecordDate, <span class="hljs-number">1</span>)
+</code></pre>
+<h2 id="595&#x5927;&#x7684;&#x56FD;2">595.&#x5927;&#x7684;&#x56FD;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>Create table If Not Exists World (name varchar(255), continent varchar(255), area int, population int, gdp int)
+Truncate table World
+insert into World (name, continent, area, population, gdp) values (&apos;Afghanistan&apos;, &apos;Asia&apos;, &apos;652230&apos;, &apos;25500100&apos;, &apos;20343000000&apos;)
+insert into World (name, continent, area, population, gdp) values (&apos;Albania&apos;, &apos;Europe&apos;, &apos;28748&apos;, &apos;2831741&apos;, &apos;12960000000&apos;)
+insert into World (name, continent, area, population, gdp) values (&apos;Algeria&apos;, &apos;Africa&apos;, &apos;2381741&apos;, &apos;37100000&apos;, &apos;188681000000&apos;)
+insert into World (name, continent, area, population, gdp) values (&apos;Andorra&apos;, &apos;Europe&apos;, &apos;468&apos;, &apos;78115&apos;, &apos;3712000000&apos;)
+insert into World (name, continent, area, population, gdp) values (&apos;Angola&apos;, &apos;Africa&apos;, &apos;1246700&apos;, &apos;20609294&apos;, &apos;100990000000&apos;)
+
+&#x8FD9;&#x91CC;&#x6709;&#x5F20; World &#x8868;
+
++-----------------+------------+------------+--------------+---------------+
+| name            | continent  | area       | population   | gdp           |
++-----------------+------------+------------+--------------+---------------+
+| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |
+| Albania         | Europe     | 28748      | 2831741      | 12960000      |
+| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |
+| Andorra         | Europe     | 468        | 78115        | 3712000       |
+| Angola          | Africa     | 1246700    | 20609294     | 100990000     |
++-----------------+------------+------------+--------------+---------------+
+
+&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x56FD;&#x5BB6;&#x7684;&#x9762;&#x79EF;&#x8D85;&#x8FC7;300&#x4E07;&#x5E73;&#x65B9;&#x516C;&#x91CC;&#xFF0C;&#x6216;&#x8005;&#x4EBA;&#x53E3;&#x8D85;&#x8FC7;2500&#x4E07;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x56FD;&#x5BB6;&#x5C31;&#x662F;&#x5927;&#x56FD;&#x5BB6;&#x3002;
+&#x7F16;&#x5199;&#x4E00;&#x4E2A;SQL&#x67E5;&#x8BE2;&#xFF0C;&#x8F93;&#x51FA;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x5927;&#x56FD;&#x5BB6;&#x7684;&#x540D;&#x79F0;&#x3001;&#x4EBA;&#x53E3;&#x548C;&#x9762;&#x79EF;&#x3002;
+&#x4F8B;&#x5982;&#xFF0C;&#x6839;&#x636E;&#x4E0A;&#x8868;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x8F93;&#x51FA;:
++--------------+-------------+--------------+
+| name         | population  | area         |
++--------------+-------------+--------------+
+| Afghanistan  | 25500100    | 652230       |
+| Algeria      | 37100000    | 2381741      |
++--------------+-------------+--------------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>or&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>union&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>, population, area <span class="hljs-keyword">from</span> world
+<span class="hljs-keyword">where</span> area &gt; <span class="hljs-number">3000000</span> <span class="hljs-keyword">or</span> population &gt; <span class="hljs-number">25000000</span>
+
+#
+# <span class="hljs-keyword">or</span>&#x5177;&#x6709;&#x5168;&#x8868;&#x626B;&#x63CF;&#x673A;&#x5236;
+# <span class="hljs-keyword">union</span>&#x5177;&#x6709;&#x7D22;&#x5F15;&#x5217;&#x67E5;&#x8BE2;&#x901F;&#x5EA6;&#x5FEB;
+# <span class="hljs-keyword">Union</span>&#xFF1A;&#x5BF9;&#x4E24;&#x4E2A;&#x7ED3;&#x679C;&#x96C6;&#x8FDB;&#x884C;&#x5E76;&#x96C6;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x91CD;&#x590D;&#x884C;&#xFF0C;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x9ED8;&#x8BA4;&#x89C4;&#x5219;&#x7684;&#x6392;&#x5E8F;&#xFF1B;
+# <span class="hljs-keyword">Union</span> All&#xFF1A;&#x5BF9;&#x4E24;&#x4E2A;&#x7ED3;&#x679C;&#x96C6;&#x8FDB;&#x884C;&#x5E76;&#x96C6;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC;&#x91CD;&#x590D;&#x884C;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF1B;
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>, population, area <span class="hljs-keyword">from</span> world <span class="hljs-keyword">where</span> area &gt; <span class="hljs-number">3000000</span>
+<span class="hljs-keyword">union</span>
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">name</span>, population, area <span class="hljs-keyword">from</span> world <span class="hljs-keyword">where</span> population &gt; <span class="hljs-number">25000000</span>
+</code></pre>
+<h2 id="596&#x8D85;&#x8FC7;5&#x540D;&#x5B66;&#x751F;&#x7684;&#x8BFE;2">596.&#x8D85;&#x8FC7;5&#x540D;&#x5B66;&#x751F;&#x7684;&#x8BFE;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>Create table If Not Exists courses (student varchar(255), class varchar(255))
+Truncate table courses
+insert into courses (student, class) values (&apos;A&apos;, &apos;Math&apos;)
+insert into courses (student, class) values (&apos;B&apos;, &apos;English&apos;)
+insert into courses (student, class) values (&apos;C&apos;, &apos;Math&apos;)
+insert into courses (student, class) values (&apos;D&apos;, &apos;Biology&apos;)
+insert into courses (student, class) values (&apos;E&apos;, &apos;Math&apos;)
+insert into courses (student, class) values (&apos;F&apos;, &apos;Computer&apos;)
+insert into courses (student, class) values (&apos;G&apos;, &apos;Math&apos;)
+insert into courses (student, class) values (&apos;H&apos;, &apos;Math&apos;)
+insert into courses (student, class) values (&apos;I&apos;, &apos;Math&apos;)
+
+&#x6709;&#x4E00;&#x4E2A;courses &#x8868; &#xFF0C;&#x6709;: student (&#x5B66;&#x751F;) &#x548C; class (&#x8BFE;&#x7A0B;)&#x3002;
+
+&#x8BF7;&#x5217;&#x51FA;&#x6240;&#x6709;&#x8D85;&#x8FC7;&#x6216;&#x7B49;&#x4E8E;5&#x540D;&#x5B66;&#x751F;&#x7684;&#x8BFE;&#x3002;
+
+&#x4F8B;&#x5982;,&#x8868;:
++---------+------------+
+| student | class      |
++---------+------------+
+| A       | Math       |
+| B       | English    |
+| C       | Math       |
+| D       | Biology    |
+| E       | Math       |
+| F       | Computer   |
+| G       | Math       |
+| H       | Math       |
+| I       | Math       |
++---------+------------+
+
+&#x5E94;&#x8BE5;&#x8F93;&#x51FA;:
++---------+
+| class   |
++---------+
+| Math    |
++---------+
+Note:
+&#x5B66;&#x751F;&#x5728;&#x6BCF;&#x4E2A;&#x8BFE;&#x4E2D;&#x4E0D;&#x5E94;&#x88AB;&#x91CD;&#x590D;&#x8BA1;&#x7B97;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>group by + having</td>
+</tr>
+<tr>
+<td>02</td>
+<td>group by + &#x4E34;&#x65F6;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">class</span> <span class="hljs-keyword">from</span> courses
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">class</span>
+<span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span> student) &gt;= <span class="hljs-number">5</span>
+
+#
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">class</span> <span class="hljs-keyword">from</span> 
+(<span class="hljs-keyword">select</span> <span class="hljs-keyword">class</span>, <span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span> student) <span class="hljs-keyword">as</span> <span class="hljs-keyword">num</span> <span class="hljs-keyword">from</span> courses <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">class</span>) <span class="hljs-keyword">as</span> temp_table
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">num</span> &gt;= <span class="hljs-number">5</span>
+</code></pre>
+<h2 id="620&#x6709;&#x8DA3;&#x7684;&#x7535;&#x5F71;2">620.&#x6709;&#x8DA3;&#x7684;&#x7535;&#x5F71;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>Create table If Not Exists cinema (id int, movie varchar(255), description varchar(255), rating float(2, 1))
+Truncate table cinema
+insert into cinema (id, movie, description, rating) values (&apos;1&apos;, &apos;War&apos;, &apos;great 3D&apos;, &apos;8.9&apos;)
+insert into cinema (id, movie, description, rating) values (&apos;2&apos;, &apos;Science&apos;, &apos;fiction&apos;, &apos;8.5&apos;)
+insert into cinema (id, movie, description, rating) values (&apos;3&apos;, &apos;irish&apos;, &apos;boring&apos;, &apos;6.2&apos;)
+insert into cinema (id, movie, description, rating) values (&apos;4&apos;, &apos;Ice song&apos;, &apos;Fantacy&apos;, &apos;8.6&apos;)
+insert into cinema (id, movie, description, rating) values (&apos;5&apos;, &apos;House card&apos;, &apos;Interesting&apos;, &apos;9.1&apos;)
+
+&#x67D0;&#x57CE;&#x5E02;&#x5F00;&#x4E86;&#x4E00;&#x5BB6;&#x65B0;&#x7684;&#x7535;&#x5F71;&#x9662;&#xFF0C;&#x5438;&#x5F15;&#x4E86;&#x5F88;&#x591A;&#x4EBA;&#x8FC7;&#x6765;&#x770B;&#x7535;&#x5F71;&#x3002;
+&#x8BE5;&#x7535;&#x5F71;&#x9662;&#x7279;&#x522B;&#x6CE8;&#x610F;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#xFF0C;&#x4E13;&#x95E8;&#x6709;&#x4E2A; LED&#x663E;&#x793A;&#x677F;&#x505A;&#x7535;&#x5F71;&#x63A8;&#x8350;&#xFF0C;&#x4E0A;&#x9762;&#x516C;&#x5E03;&#x7740;&#x5F71;&#x8BC4;&#x548C;&#x76F8;&#x5173;&#x7535;&#x5F71;&#x63CF;&#x8FF0;&#x3002;
+&#x4F5C;&#x4E3A;&#x8BE5;&#x7535;&#x5F71;&#x9662;&#x7684;&#x4FE1;&#x606F;&#x90E8;&#x4E3B;&#x7BA1;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL&#x67E5;&#x8BE2;&#xFF0C;
+&#x627E;&#x51FA;&#x6240;&#x6709;&#x5F71;&#x7247;&#x63CF;&#x8FF0;&#x4E3A;&#x975E; boring (&#x4E0D;&#x65E0;&#x804A;) &#x7684;&#x5E76;&#x4E14; id &#x4E3A;&#x5947;&#x6570; &#x7684;&#x5F71;&#x7247;&#xFF0C;&#x7ED3;&#x679C;&#x8BF7;&#x6309;&#x7B49;&#x7EA7; rating &#x6392;&#x5217;&#x3002;
+&#x4F8B;&#x5982;&#xFF0C;&#x4E0B;&#x8868; cinema:
++---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   1     | War       |   great 3D   |   8.9     |
+|   2     | Science   |   fiction    |   8.5     |
+|   3     | irish     |   boring     |   6.2     |
+|   4     | Ice song  |   Fantacy    |   8.6     |
+|   5     | House card|   Interesting|   9.1     |
++---------+-----------+--------------+-----------+
+&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5219;&#x6B63;&#x786E;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E3A;&#xFF1A;
++---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   5     | House card|   Interesting|   9.1     |
+|   1     | War       |   great 3D   |   8.9     |
++---------+-----------+--------------+-----------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>mod&#x7684;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x5E38;&#x7528;&#x64CD;&#x4F5C;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-mysql">select * from cinema
+where mod(id,2)=1 and description != &apos;boring&apos;
+order by rating desc
+
+#
+select * from cinema
+where id%2=1 and description != &apos;boring&apos;
+order by rating desc
+</code></pre>
+<h2 id="627&#x4EA4;&#x6362;&#x5DE5;&#x8D44;3">627.&#x4EA4;&#x6362;&#x5DE5;&#x8D44;(3)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>create table if not exists salary(id int, name varchar(100), sex char(1), salary int)
+Truncate table salary
+insert into salary (id, name, sex, salary) values (&apos;1&apos;, &apos;A&apos;, &apos;m&apos;, &apos;2500&apos;)
+insert into salary (id, name, sex, salary) values (&apos;2&apos;, &apos;B&apos;, &apos;f&apos;, &apos;1500&apos;)
+insert into salary (id, name, sex, salary) values (&apos;3&apos;, &apos;C&apos;, &apos;m&apos;, &apos;5500&apos;)
+insert into salary (id, name, sex, salary) values (&apos;4&apos;, &apos;D&apos;, &apos;f&apos;, &apos;500&apos;)
+&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A; salary &#x8868;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x6709; m = &#x7537;&#x6027; &#x548C; f = &#x5973;&#x6027; &#x7684;&#x503C;&#x3002;
+&#x4EA4;&#x6362;&#x6240;&#x6709;&#x7684; f &#x548C; m &#x503C;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x5C06;&#x6240;&#x6709; f &#x503C;&#x66F4;&#x6539;&#x4E3A; m&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#xFF09;&#x3002;
+&#x8981;&#x6C42;&#x53EA;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x66F4;&#x65B0;&#xFF08;Update&#xFF09;&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x4E2D;&#x95F4;&#x7684;&#x4E34;&#x65F6;&#x8868;&#x3002;
+
+&#x6CE8;&#x610F;&#xFF0C;&#x60A8;&#x5FC5;&#x53EA;&#x80FD;&#x5199;&#x4E00;&#x4E2A; Update &#x8BED;&#x53E5;&#xFF0C;&#x8BF7;&#x4E0D;&#x8981;&#x7F16;&#x5199;&#x4EFB;&#x4F55; Select &#x8BED;&#x53E5;&#x3002;
+&#x4F8B;&#x5982;&#xFF1A;
+| id | name | sex | salary |
+|----|------|-----|--------|
+| 1  | A    | m   | 2500   |
+| 2  | B    | f   | 1500   |
+| 3  | C    | m   | 5500   |
+| 4  | D    | f   | 500    |
+&#x8FD0;&#x884C;&#x4F60;&#x6240;&#x7F16;&#x5199;&#x7684;&#x66F4;&#x65B0;&#x8BED;&#x53E5;&#x4E4B;&#x540E;&#xFF0C;&#x5C06;&#x4F1A;&#x5F97;&#x5230;&#x4EE5;&#x4E0B;&#x8868;:
+| id | name | sex | salary |
+|----|------|-----|--------|
+| 1  | A    | f   | 2500   |
+| 2  | B    | m   | 1500   |
+| 3  | C    | f   | 5500   |
+| 4  | D    | m   | 500    |
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>update+case</td>
+</tr>
+<tr>
+<td>02</td>
+<td>update+if</td>
+</tr>
+<tr>
+<td>03</td>
+<td>update+ascii&#x4E92;&#x8F6C;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-mysql">update salary
+set sex=
+CASE sex
+when &apos;m&apos; then &apos;f&apos;
+else &apos;m&apos;
+END
+
+#
+update salary
+set sex=if(sex=&apos;f&apos;,&apos;m&apos;,&apos;f&apos;)
+
+#
+update salary
+set sex=char(ascii(&apos;m&apos;)+ascii(&apos;f&apos;)-ascii(sex))
+</code></pre>
+<h2 id="1179&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x90E8;&#x95E8;&#x8868;2">1179.&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x90E8;&#x95E8;&#x8868;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x90E8;&#x95E8;&#x8868; Department&#xFF1A;
+Create table If Not Exists Department (id int, revenue int, month varchar(5))
+Truncate table Department
+insert into Department (id, revenue, month) values (&apos;1&apos;, &apos;8000&apos;, &apos;Jan&apos;)
+insert into Department (id, revenue, month) values (&apos;2&apos;, &apos;9000&apos;, &apos;Jan&apos;)
+insert into Department (id, revenue, month) values (&apos;3&apos;, &apos;10000&apos;, &apos;Feb&apos;)
+insert into Department (id, revenue, month) values (&apos;1&apos;, &apos;7000&apos;, &apos;Feb&apos;)
+insert into Department (id, revenue, month) values (&apos;1&apos;, &apos;6000&apos;, &apos;Mar&apos;)
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| revenue       | int     |
+| month         | varchar |
++---------------+---------+
+(id, month) &#x662F;&#x8868;&#x7684;&#x8054;&#x5408;&#x4E3B;&#x952E;&#x3002;
+&#x8FD9;&#x4E2A;&#x8868;&#x683C;&#x6709;&#x5173;&#x4E8E;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x6BCF;&#x6708;&#x6536;&#x5165;&#x7684;&#x4FE1;&#x606F;&#x3002;
+&#x6708;&#x4EFD;&#xFF08;month&#xFF09;&#x53EF;&#x4EE5;&#x53D6;&#x4E0B;&#x5217;&#x503C; [&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;,&quot;Sep&quot;,&quot;Oct&quot;,&quot;Nov&quot;,&quot;Dec&quot;]&#x3002;
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#x6765;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x8868;&#xFF0C;&#x4F7F;&#x5F97;&#x65B0;&#x7684;&#x8868;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x90E8;&#x95E8; id &#x5217;&#x548C;&#x4E00;&#x4E9B;&#x5BF9;&#x5E94; &#x6BCF;&#x4E2A;&#x6708; &#x7684;&#x6536;&#x5165;&#xFF08;revenue&#xFF09;&#x5217;&#x3002;
+&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x6240;&#x793A;&#xFF1A;
+Department &#x8868;&#xFF1A;
++------+---------+-------+
+| id   | revenue | month |
++------+---------+-------+
+| 1    | 8000    | Jan   |
+| 2    | 9000    | Jan   |
+| 3    | 10000   | Feb   |
+| 1    | 7000    | Feb   |
+| 1    | 6000    | Mar   |
++------+---------+-------+
+&#x67E5;&#x8BE2;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x8868;&#xFF1A;
++------+-------------+-------------+-------------+-----+-------------+
+| id   | Jan_Revenue | Feb_Revenue | Mar_Revenue | ... | Dec_Revenue |
++------+-------------+-------------+-------------+-----+-------------+
+| 1    | 8000        | 7000        | 6000        | ... | null        |
+| 2    | 9000        | null        | null        | ... | null        |
+| 3    | null        | 10000       | null        | ... | null        |
++------+-------------+-------------+-------------+-----+-------------+
+&#x6CE8;&#x610F;&#xFF0C;&#x7ED3;&#x679C;&#x8868;&#x6709; 13 &#x5217; (1&#x4E2A;&#x90E8;&#x95E8; id &#x5217; + 12&#x4E2A;&#x6708;&#x4EFD;&#x7684;&#x6536;&#x5165;&#x5217;)&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>group by+case when then end+sum/max</td>
+</tr>
+<tr>
+<td>02</td>
+<td>group by+if+sum/max</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-mysql">select id,
+sum(case month when &apos;Jan&apos; then revenue end) Jan_Revenue,
+sum(case month when &apos;Feb&apos; then revenue end) Feb_Revenue,
+sum(case month when &apos;Mar&apos; then revenue end) Mar_Revenue,
+sum(case month when &apos;Apr&apos; then revenue end) Apr_Revenue,
+sum(case month when &apos;May&apos; then revenue end) May_Revenue,
+sum(case month when &apos;Jun&apos; then revenue end) Jun_Revenue,
+sum(case month when &apos;Jul&apos; then revenue end) Jul_Revenue,
+sum(case month when &apos;Aug&apos; then revenue end) Aug_Revenue,
+sum(case month when &apos;Sep&apos; then revenue end) Sep_Revenue,
+sum(case month when &apos;Oct&apos; then revenue end) Oct_Revenue,
+sum(case month when &apos;Nov&apos; then revenue end) Nov_Revenue,
+sum(case month when &apos;Dec&apos; then revenue end) Dec_Revenue
+from department
+group by id;
+
+#
+select id,
+sum(if(`month` = &apos;Jan&apos;, revenue, null)) as &quot;Jan_Revenue&quot;,
+sum(if(`month` = &apos;Feb&apos;, revenue, null)) as &quot;Feb_Revenue&quot;,
+sum(if(`month` = &apos;Mar&apos;, revenue, null)) as &quot;Mar_Revenue&quot;,
+sum(if(`month` = &apos;Apr&apos;, revenue, null)) as &quot;Apr_Revenue&quot;,
+sum(if(`month` = &apos;May&apos;, revenue, null)) as &quot;May_Revenue&quot;,
+sum(if(`month` = &apos;Jun&apos;, revenue, null)) as &quot;Jun_Revenue&quot;,
+sum(if(`month` = &apos;Jul&apos;, revenue, null)) as &quot;Jul_Revenue&quot;,
+sum(if(`month` = &apos;Aug&apos;, revenue, null)) as &quot;Aug_Revenue&quot;,
+sum(if(`month` = &apos;Sep&apos;, revenue, null)) as &quot;Sep_Revenue&quot;,
+sum(if(`month` = &apos;Oct&apos;, revenue, null)) as &quot;Oct_Revenue&quot;,
+sum(if(`month` = &apos;Nov&apos;, revenue, null)) as &quot;Nov_Revenue&quot;,
+sum(if(`month` = &apos;Dec&apos;, revenue, null)) as &quot;Dec_Revenue&quot;
+from Department
+group by id;
+</code></pre>
+<h1 id="medium">Medium</h1>
+<h2 id="177&#x7B2C;n&#x9AD8;&#x7684;&#x85AA;&#x6C34;2">177.&#x7B2C;N&#x9AD8;&#x7684;&#x85AA;&#x6C34;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x83B7;&#x53D6; Employee &#x8868;&#x4E2D;&#x7B2C; n &#x9AD8;&#x7684;&#x85AA;&#x6C34;&#xFF08;Salary&#xFF09;&#x3002;
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+&#x4F8B;&#x5982;&#x4E0A;&#x8FF0; Employee &#x8868;&#xFF0C;n = 2 &#x65F6;&#xFF0C;&#x5E94;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x85AA;&#x6C34; 200&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x7B2C; n &#x9AD8;&#x7684;&#x85AA;&#x6C34;&#xFF0C;&#x90A3;&#x4E48;&#x67E5;&#x8BE2;&#x5E94;&#x8FD4;&#x56DE; null&#x3002;
++------------------------+
+| getNthHighestSalary(2) |
++------------------------+
+| 200                    |
++------------------------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x5355;&#x8868;&#x67E5;&#x8BE2;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x5B50;&#x67E5;&#x8BE2;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-mysql">CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  SET N := N-1;
+  RETURN (
+      # Write your MySQL query statement below.
+      select Salary from Employee group by Salary order by Salary desc limit N, 1
+  );
+END
+
+# 2
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  RETURN (
+      # Write your MySQL query statement below.
+      select distinct e.Salary from Employee e
+      where (select count(distinct Salary) from Employee where Salary &gt; e.Salary) = N-1
+  );
+END
+</code></pre>
+<h2 id="178&#x5206;&#x6570;&#x6392;&#x540D;2">178.&#x5206;&#x6570;&#x6392;&#x540D;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Scores (Id int, Score DECIMAL(3,2))
+Truncate table Scores
+insert into Scores (Id, Score) values (&apos;1&apos;, &apos;3.5&apos;)
+insert into Scores (Id, Score) values (&apos;2&apos;, &apos;3.65&apos;)
+insert into Scores (Id, Score) values (&apos;3&apos;, &apos;4.0&apos;)
+insert into Scores (Id, Score) values (&apos;4&apos;, &apos;3.85&apos;)
+insert into Scores (Id, Score) values (&apos;5&apos;, &apos;4.0&apos;)
+insert into Scores (Id, Score) values (&apos;6&apos;, &apos;3.65&apos;)
+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#x6765;&#x5B9E;&#x73B0;&#x5206;&#x6570;&#x6392;&#x540D;&#x3002;
+&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x5206;&#x6570;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x4E24;&#x4E2A;&#x5206;&#x6570;&#x6392;&#x540D;&#xFF08;Rank&#xFF09;&#x76F8;&#x540C;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5E73;&#x5206;&#x540E;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x540D;&#x6B21;&#x5E94;&#x8BE5;&#x662F;&#x4E0B;&#x4E00;&#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x6574;&#x6570;&#x503C;&#x3002;
+&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x540D;&#x6B21;&#x4E4B;&#x95F4;&#x4E0D;&#x5E94;&#x8BE5;&#x6709;&#x201C;&#x95F4;&#x9694;&#x201D;&#x3002;
++----+-------+
+| Id | Score |
++----+-------+
+| 1  | 3.50  |
+| 2  | 3.65  |
+| 3  | 4.00  |
+| 4  | 3.85  |
+| 5  | 4.00  |
+| 6  | 3.65  |
++----+-------+
+&#x4F8B;&#x5982;&#xFF0C;&#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x7ED9;&#x5B9A;&#x7684; Scores &#x8868;&#xFF0C;&#x4F60;&#x7684;&#x67E5;&#x8BE2;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#xFF08;&#x6309;&#x5206;&#x6570;&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#x6392;&#x5217;&#xFF09;&#xFF1A;
++-------+------+
+| Score | Rank |
++-------+------+
+| 4.00  | 1    |
+| 4.00  | 1    |
+| 3.85  | 2    |
+| 3.65  | 3    |
+| 3.65  | 3    |
+| 3.50  | 4    |
++-------+------+
+&#x91CD;&#x8981;&#x63D0;&#x793A;&#xFF1A;&#x5BF9;&#x4E8E; MySQL &#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x8F6C;&#x4E49;&#x7528;&#x4F5C;&#x5217;&#x540D;&#x7684;&#x4FDD;&#x7559;&#x5B57;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5173;&#x952E;&#x5B57;&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x4F7F;&#x7528;&#x6487;&#x53F7;&#x3002;&#x4F8B;&#x5982; `Rank`
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x67E5;&#x8BE2;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>dense_rank</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> a.Score <span class="hljs-keyword">as</span> Score,
+(<span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span> b.Score) <span class="hljs-keyword">from</span> Scores b <span class="hljs-keyword">where</span> b.Score &gt;= a.Score) <span class="hljs-keyword">as</span> <span class="hljs-string">`Rank`</span>
+<span class="hljs-keyword">from</span> Scores a
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> a.Score <span class="hljs-keyword">desc</span>
+
+# <span class="hljs-number">2</span>
+# <span class="hljs-keyword">OVER</span>() &#x6307;&#x5B9A;&#x5206;&#x6790;&#x51FD;&#x6570;&#x5DE5;&#x4F5C;&#x7684;&#x6570;&#x636E;&#x7A97;&#x53E3;&#x5927;&#x5C0F;,&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x53EF;&#x80FD;&#x4F1A;&#x968F;&#x7740;&#x884C;&#x7684;&#x53D8;&#x5316;&#x800C;&#x53D8;&#x5316;
+# <span class="hljs-keyword">RANK</span>() &#x6392;&#x5E8F;&#x76F8;&#x540C;&#x65F6;&#x4F1A;&#x91CD;&#x590D;,&#x603B;&#x6570;&#x4E0D;&#x4F1A;&#x53D8;
+# <span class="hljs-keyword">DENSE_RANK</span>() &#x6392;&#x5E8F;&#x76F8;&#x540C;&#x65F6;&#x4F1A;&#x91CD;&#x590D;,&#x603B;&#x6570;&#x4F1A;&#x51CF;&#x5C11;
+# ROW_NUMBER() &#x4F1A;&#x6839;&#x636E;&#x987A;&#x5E8F;&#x8BA1;&#x7B97;
+<span class="hljs-keyword">select</span> Score, <span class="hljs-keyword">dense_rank</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> Score <span class="hljs-keyword">desc</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">`Rank`</span>
+<span class="hljs-keyword">from</span> Scores
+</code></pre>
+<h2 id="180&#x8FDE;&#x7EED;&#x51FA;&#x73B0;&#x7684;&#x6570;&#x5B57;1">180.&#x8FDE;&#x7EED;&#x51FA;&#x73B0;&#x7684;&#x6570;&#x5B57;(1)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Logs (Id int, Num int)
+Truncate table Logs
+insert into Logs (Id, Num) values (&apos;1&apos;, &apos;1&apos;)
+insert into Logs (Id, Num) values (&apos;2&apos;, &apos;1&apos;)
+insert into Logs (Id, Num) values (&apos;3&apos;, &apos;1&apos;)
+insert into Logs (Id, Num) values (&apos;4&apos;, &apos;2&apos;)
+insert into Logs (Id, Num) values (&apos;5&apos;, &apos;1&apos;)
+insert into Logs (Id, Num) values (&apos;6&apos;, &apos;2&apos;)
+insert into Logs (Id, Num) values (&apos;7&apos;, &apos;2&apos;)
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x67E5;&#x627E;&#x6240;&#x6709;&#x81F3;&#x5C11;&#x8FDE;&#x7EED;&#x51FA;&#x73B0;&#x4E09;&#x6B21;&#x7684;&#x6570;&#x5B57;&#x3002;
++----+-----+
+| Id | Num |
++----+-----+
+| 1  |  1  |
+| 2  |  1  |
+| 3  |  1  |
+| 4  |  2  |
+| 5  |  1  |
+| 6  |  2  |
+| 7  |  2  |
++----+-----+
+&#x4F8B;&#x5982;&#xFF0C;&#x7ED9;&#x5B9A;&#x4E0A;&#x9762;&#x7684; Logs &#x8868;&#xFF0C; 1 &#x662F;&#x552F;&#x4E00;&#x8FDE;&#x7EED;&#x51FA;&#x73B0;&#x81F3;&#x5C11;&#x4E09;&#x6B21;&#x7684;&#x6570;&#x5B57;&#x3002;
++-----------------+
+| ConsecutiveNums |
++-----------------+
+| 1               |
++-----------------+
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>3&#x8868;&#x8FDE;&#x63A5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> l1.<span class="hljs-keyword">Num</span> <span class="hljs-keyword">as</span> ConsecutiveNums
+<span class="hljs-keyword">from</span> <span class="hljs-keyword">Logs</span> l1, <span class="hljs-keyword">Logs</span> l2, <span class="hljs-keyword">Logs</span> l3
+<span class="hljs-keyword">where</span> l1.<span class="hljs-keyword">Id</span> = l2.<span class="hljs-keyword">Id</span><span class="hljs-number">-1</span> <span class="hljs-keyword">and</span> l2.<span class="hljs-keyword">Id</span> = l3.<span class="hljs-keyword">Id</span><span class="hljs-number">-1</span> <span class="hljs-keyword">and</span> l1.<span class="hljs-keyword">Num</span> = l2.<span class="hljs-keyword">Num</span> <span class="hljs-keyword">and</span> l2.<span class="hljs-keyword">Num</span> = l3.<span class="hljs-keyword">Num</span>
+</code></pre>
+<h2 id="184&#x90E8;&#x95E8;&#x5DE5;&#x8D44;&#x6700;&#x9AD8;&#x7684;&#x5458;&#x5DE5;2">184.&#x90E8;&#x95E8;&#x5DE5;&#x8D44;&#x6700;&#x9AD8;&#x7684;&#x5458;&#x5DE5;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int)
+Create table If Not Exists Department (Id int, Name varchar(255))
+Truncate table Employee
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;1&apos;, &apos;Joe&apos;, &apos;70000&apos;, &apos;1&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;2&apos;, &apos;Jim&apos;, &apos;90000&apos;, &apos;1&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;3&apos;, &apos;Henry&apos;, &apos;80000&apos;, &apos;2&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;4&apos;, &apos;Sam&apos;, &apos;60000&apos;, &apos;2&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;5&apos;, &apos;Max&apos;, &apos;90000&apos;, &apos;1&apos;)
+Truncate table Department
+insert into Department (Id, Name) values (&apos;1&apos;, &apos;IT&apos;)
+insert into Department (Id, Name) values (&apos;2&apos;, &apos;Sales&apos;)
+
+Employee &#x8868;&#x5305;&#x542B;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#xFF0C;&#x6BCF;&#x4E2A;&#x5458;&#x5DE5;&#x6709;&#x5176;&#x5BF9;&#x5E94;&#x7684; Id, salary &#x548C; department Id&#x3002;
++----+-------+--------+--------------+
+| Id | Name  | Salary | DepartmentId |
++----+-------+--------+--------------+
+| 1  | Joe   | 70000  | 1            |
+| 2  | Jim   | 90000  | 1            |
+| 3  | Henry | 80000  | 2            |
+| 4  | Sam   | 60000  | 2            |
+| 5  | Max   | 90000  | 1            |
++----+-------+--------+--------------+
+
+Department &#x8868;&#x5305;&#x542B;&#x516C;&#x53F8;&#x6240;&#x6709;&#x90E8;&#x95E8;&#x7684;&#x4FE1;&#x606F;&#x3002;
++----+----------+
+| Id | Name     |
++----+----------+
+| 1  | IT       |
+| 2  | Sales    |
++----+----------+
+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x627E;&#x51FA;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x5DE5;&#x8D44;&#x6700;&#x9AD8;&#x7684;&#x5458;&#x5DE5;&#x3002;
+&#x5BF9;&#x4E8E;&#x4E0A;&#x8FF0;&#x8868;&#xFF0C;&#x60A8;&#x7684; SQL &#x67E5;&#x8BE2;&#x5E94;&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;&#x884C;&#xFF08;&#x884C;&#x7684;&#x987A;&#x5E8F;&#x65E0;&#x5173;&#x7D27;&#x8981;&#xFF09;&#x3002;
++------------+----------+--------+
+| Department | Employee | Salary |
++------------+----------+--------+
+| IT         | Max      | 90000  |
+| IT         | Jim      | 90000  |
+| Sales      | Henry    | 80000  |
++------------+----------+--------+
+&#x89E3;&#x91CA;&#xFF1A;Max &#x548C; Jim &#x5728; IT &#x90E8;&#x95E8;&#x7684;&#x5DE5;&#x8D44;&#x90FD;&#x662F;&#x6700;&#x9AD8;&#x7684;&#xFF0C;Henry &#x5728;&#x9500;&#x552E;&#x90E8;&#x7684;&#x5DE5;&#x8D44;&#x6700;&#x9AD8;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>join+in</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x5B50;&#x67E5;&#x8BE2;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> Department.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> <span class="hljs-string">`Department`</span>, Employee.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> <span class="hljs-string">`Employee`</span>, Salary
+<span class="hljs-keyword">from</span> Employee <span class="hljs-keyword">join</span> Department <span class="hljs-keyword">on</span> Employee.DepartmentId = Department.<span class="hljs-keyword">Id</span>
+<span class="hljs-keyword">where</span> (Employee.DepartmentId, Salary) <span class="hljs-keyword">in</span>
+(<span class="hljs-keyword">select</span> DepartmentId, <span class="hljs-keyword">max</span>(Salary) <span class="hljs-keyword">from</span> Employee <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> DepartmentId)
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">select</span> Department.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> <span class="hljs-string">`Department`</span>, Employee.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> <span class="hljs-string">`Employee`</span>, Salary
+<span class="hljs-keyword">from</span> Employee <span class="hljs-keyword">join</span> Department <span class="hljs-keyword">on</span> Employee.DepartmentId = Department.<span class="hljs-keyword">Id</span>
+<span class="hljs-keyword">where</span> Employee.Salary = (
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">max</span>(Salary) <span class="hljs-keyword">from</span> Employee <span class="hljs-keyword">where</span> Employee.DepartmentId = Department.<span class="hljs-keyword">Id</span>
+)
+</code></pre>
+<h2 id="626&#x6362;&#x5EA7;&#x4F4D;2">626.&#x6362;&#x5EA7;&#x4F4D;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists seat(id int, student varchar(255))
+Truncate table seat
+insert into seat (id, student) values (&apos;1&apos;, &apos;Abbot&apos;)
+insert into seat (id, student) values (&apos;2&apos;, &apos;Doris&apos;)
+insert into seat (id, student) values (&apos;3&apos;, &apos;Emerson&apos;)
+insert into seat (id, student) values (&apos;4&apos;, &apos;Green&apos;)
+insert into seat (id, student) values (&apos;5&apos;, &apos;Jeames&apos;)
+
+&#x5C0F;&#x7F8E;&#x662F;&#x4E00;&#x6240;&#x4E2D;&#x5B66;&#x7684;&#x4FE1;&#x606F;&#x79D1;&#x6280;&#x8001;&#x5E08;&#xFF0C;&#x5979;&#x6709;&#x4E00;&#x5F20; seat &#x5EA7;&#x4F4D;&#x8868;&#xFF0C;&#x5E73;&#x65F6;&#x7528;&#x6765;&#x50A8;&#x5B58;&#x5B66;&#x751F;&#x540D;&#x5B57;&#x548C;&#x4E0E;&#x4ED6;&#x4EEC;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x5EA7;&#x4F4D; id&#x3002;
+&#x5176;&#x4E2D;&#x7EB5;&#x5217;&#x7684; id &#x662F;&#x8FDE;&#x7EED;&#x9012;&#x589E;&#x7684;
+&#x5C0F;&#x7F8E;&#x60F3;&#x6539;&#x53D8;&#x76F8;&#x90BB;&#x4FE9;&#x5B66;&#x751F;&#x7684;&#x5EA7;&#x4F4D;&#x3002;
+&#x4F60;&#x80FD;&#x4E0D;&#x80FD;&#x5E2E;&#x5979;&#x5199;&#x4E00;&#x4E2A; SQL query &#x6765;&#x8F93;&#x51FA;&#x5C0F;&#x7F8E;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;&#x5462;&#xFF1F;
+&#x793A;&#x4F8B;&#xFF1A;
++---------+---------+
+|    id   | student |
++---------+---------+
+|    1    | Abbot   |
+|    2    | Doris   |
+|    3    | Emerson |
+|    4    | Green   |
+|    5    | Jeames  |
++---------+---------+
+&#x5047;&#x5982;&#x6570;&#x636E;&#x8F93;&#x5165;&#x7684;&#x662F;&#x4E0A;&#x8868;&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;
++---------+---------+
+|    id   | student |
++---------+---------+
+|    1    | Doris   |
+|    2    | Abbot   |
+|    3    | Green   |
+|    4    | Emerson |
+|    5    | Jeames  |
++---------+---------+
+&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x5B66;&#x751F;&#x4EBA;&#x6570;&#x662F;&#x5947;&#x6570;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#x6539;&#x53D8;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x540C;&#x5B66;&#x7684;&#x5EA7;&#x4F4D;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>case when</td>
+</tr>
+<tr>
+<td>02</td>
+<td>coalesce</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> (<span class="hljs-keyword">case</span>
+    <span class="hljs-keyword">when</span> <span class="hljs-keyword">mod</span>(<span class="hljs-keyword">id</span>,<span class="hljs-number">2</span>) !=<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> total != <span class="hljs-keyword">id</span> <span class="hljs-keyword">then</span> <span class="hljs-keyword">id</span>+<span class="hljs-number">1</span>
+    <span class="hljs-keyword">when</span> <span class="hljs-keyword">mod</span>(<span class="hljs-keyword">id</span>,<span class="hljs-number">2</span>) !=<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> total = <span class="hljs-keyword">id</span> <span class="hljs-keyword">then</span> <span class="hljs-keyword">id</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">id</span><span class="hljs-number">-1</span> <span class="hljs-keyword">end</span>) <span class="hljs-keyword">as</span> <span class="hljs-keyword">id</span>, student
+<span class="hljs-keyword">from</span>  seat, ( <span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">as</span> total <span class="hljs-keyword">from</span> seat) <span class="hljs-keyword">as</span> seat_counts
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">asc</span> 
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">select</span> s1.<span class="hljs-keyword">id</span>, <span class="hljs-keyword">coalesce</span>(s2.student, s1.student) <span class="hljs-keyword">AS</span> student
+<span class="hljs-keyword">from</span> seat s1 <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> seat s2 <span class="hljs-keyword">on</span> ((s1.<span class="hljs-keyword">id</span>+<span class="hljs-number">1</span>)^<span class="hljs-number">1</span>)<span class="hljs-number">-1</span>=s2.<span class="hljs-keyword">id</span>
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> s1.<span class="hljs-keyword">id</span>
+</code></pre>
+<h1 id="hard">Hard</h1>
+<h2 id="185&#x90E8;&#x95E8;&#x5DE5;&#x8D44;&#x524D;&#x4E09;&#x9AD8;&#x7684;&#x6240;&#x6709;&#x5458;&#x5DE5;2">185.&#x90E8;&#x95E8;&#x5DE5;&#x8D44;&#x524D;&#x4E09;&#x9AD8;&#x7684;&#x6240;&#x6709;&#x5458;&#x5DE5;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Employee (Id int, Name varchar(255), Salary int, DepartmentId int)
+Create table If Not Exists Department (Id int, Name varchar(255))
+Truncate table Employee
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;1&apos;, &apos;Joe&apos;, &apos;85000&apos;, &apos;1&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;2&apos;, &apos;Henry&apos;, &apos;80000&apos;, &apos;2&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;3&apos;, &apos;Sam&apos;, &apos;60000&apos;, &apos;2&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;4&apos;, &apos;Max&apos;, &apos;90000&apos;, &apos;1&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;5&apos;, &apos;Janet&apos;, &apos;69000&apos;, &apos;1&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;6&apos;, &apos;Randy&apos;, &apos;85000&apos;, &apos;1&apos;)
+insert into Employee (Id, Name, Salary, DepartmentId) values (&apos;7&apos;, &apos;Will&apos;, &apos;70000&apos;, &apos;1&apos;)
+Truncate table Department
+insert into Department (Id, Name) values (&apos;1&apos;, &apos;IT&apos;)
+insert into Department (Id, Name) values (&apos;2&apos;, &apos;Sales&apos;)
+Employee &#x8868;&#x5305;&#x542B;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#xFF0C;&#x6BCF;&#x4E2A;&#x5458;&#x5DE5;&#x6709;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x5DE5;&#x53F7; Id&#xFF0C;
+&#x59D3;&#x540D; Name&#xFF0C;&#x5DE5;&#x8D44; Salary &#x548C;&#x90E8;&#x95E8;&#x7F16;&#x53F7; DepartmentId &#x3002;
++----+-------+--------+--------------+
+| Id | Name  | Salary | DepartmentId |
++----+-------+--------+--------------+
+| 1  | Joe   | 85000  | 1            |
+| 2  | Henry | 80000  | 2            |
+| 3  | Sam   | 60000  | 2            |
+| 4  | Max   | 90000  | 1            |
+| 5  | Janet | 69000  | 1            |
+| 6  | Randy | 85000  | 1            |
+| 7  | Will  | 70000  | 1            |
++----+-------+--------+--------------+
+Department &#x8868;&#x5305;&#x542B;&#x516C;&#x53F8;&#x6240;&#x6709;&#x90E8;&#x95E8;&#x7684;&#x4FE1;&#x606F;&#x3002;
++----+----------+
+| Id | Name     |
++----+----------+
+| 1  | IT       |
+| 2  | Sales    |
++----+----------+
+&#x7F16;&#x5199;&#x4E00;&#x4E2A; SQL &#x67E5;&#x8BE2;&#xFF0C;&#x627E;&#x51FA;&#x6BCF;&#x4E2A;&#x90E8;&#x95E8;&#x83B7;&#x5F97;&#x524D;&#x4E09;&#x9AD8;&#x5DE5;&#x8D44;&#x7684;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6839;&#x636E;&#x4E0A;&#x8FF0;&#x7ED9;&#x5B9A;&#x7684;&#x8868;&#xFF0C;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x5E94;&#x8FD4;&#x56DE;&#xFF1A;
++------------+----------+--------+
+| Department | Employee | Salary |
++------------+----------+--------+
+| IT         | Max      | 90000  |
+| IT         | Randy    | 85000  |
+| IT         | Joe      | 85000  |
+| IT         | Will     | 70000  |
+| Sales      | Henry    | 80000  |
+| Sales      | Sam      | 60000  |
++------------+----------+--------+
+&#x89E3;&#x91CA;&#xFF1A;IT &#x90E8;&#x95E8;&#x4E2D;&#xFF0C;Max &#x83B7;&#x5F97;&#x4E86;&#x6700;&#x9AD8;&#x7684;&#x5DE5;&#x8D44;&#xFF0C;Randy &#x548C; Joe &#x90FD;&#x62FF;&#x5230;&#x4E86;&#x7B2C;&#x4E8C;&#x9AD8;&#x7684;&#x5DE5;&#x8D44;&#xFF0C;Will &#x7684;&#x5DE5;&#x8D44;&#x6392;&#x7B2C;&#x4E09;&#x3002;
+&#x9500;&#x552E;&#x90E8;&#x95E8;&#xFF08;Sales&#xFF09;&#x53EA;&#x6709;&#x4E24;&#x540D;&#x5458;&#x5DE5;&#xFF0C;Henry &#x7684;&#x5DE5;&#x8D44;&#x6700;&#x9AD8;&#xFF0C;Sam &#x7684;&#x5DE5;&#x8D44;&#x6392;&#x7B2C;&#x4E8C;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>join+&#x5B50;&#x67E5;&#x8BE2;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>dense_rank&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> Department.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> <span class="hljs-string">`Department`</span>, Employee.<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> <span class="hljs-string">`Employee`</span>, Salary
+<span class="hljs-keyword">from</span> Employee <span class="hljs-keyword">join</span> Department <span class="hljs-keyword">on</span> Employee.DepartmentId = Department.<span class="hljs-keyword">Id</span>
+<span class="hljs-keyword">where</span> <span class="hljs-number">3</span> &gt;
+(<span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(<span class="hljs-keyword">distinct</span> e2.Salary) <span class="hljs-keyword">from</span> Employee e2 
+<span class="hljs-keyword">where</span> e2.Salary &gt; Employee.Salary <span class="hljs-keyword">and</span> e2.DepartmentId = Employee.DepartmentId )
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">select</span> d.<span class="hljs-keyword">name</span> <span class="hljs-keyword">AS</span> <span class="hljs-string">`Department`</span>,a.<span class="hljs-keyword">name</span> <span class="hljs-keyword">AS</span> <span class="hljs-string">`Employee`</span>,a.Salary
+<span class="hljs-keyword">from</span>(<span class="hljs-keyword">select</span> *,<span class="hljs-keyword">dense_rank</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> DepartmentId <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> salary <span class="hljs-keyword">desc</span>) <span class="hljs-keyword">as</span> ranking <span class="hljs-keyword">from</span> Employee) <span class="hljs-keyword">as</span> a,
+department <span class="hljs-keyword">as</span> d
+<span class="hljs-keyword">where</span> a.DepartmentId = d.<span class="hljs-keyword">Id</span> <span class="hljs-keyword">and</span> ranking&lt;=<span class="hljs-number">3</span>
+</code></pre>
+<h2 id="262&#x884C;&#x7A0B;&#x548C;&#x7528;&#x6237;2">262.&#x884C;&#x7A0B;&#x548C;&#x7528;&#x6237;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists Trips (Id int, Client_Id int, Driver_Id int, City_Id int, Status ENUM(&apos;completed&apos;, &apos;cancelled_by_driver&apos;, &apos;cancelled_by_client&apos;), Request_at varchar(50))
+Create table If Not Exists Users (Users_Id int, Banned varchar(50), Role ENUM(&apos;client&apos;, &apos;driver&apos;, &apos;partner&apos;))
+Truncate table Trips
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;1&apos;, &apos;1&apos;, &apos;10&apos;, &apos;1&apos;, &apos;completed&apos;, &apos;2013-10-01&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;2&apos;, &apos;2&apos;, &apos;11&apos;, &apos;1&apos;, &apos;cancelled_by_driver&apos;, &apos;2013-10-01&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;3&apos;, &apos;3&apos;, &apos;12&apos;, &apos;6&apos;, &apos;completed&apos;, &apos;2013-10-01&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;4&apos;, &apos;4&apos;, &apos;13&apos;, &apos;6&apos;, &apos;cancelled_by_client&apos;, &apos;2013-10-01&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;5&apos;, &apos;1&apos;, &apos;10&apos;, &apos;1&apos;, &apos;completed&apos;, &apos;2013-10-02&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;6&apos;, &apos;2&apos;, &apos;11&apos;, &apos;6&apos;, &apos;completed&apos;, &apos;2013-10-02&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;7&apos;, &apos;3&apos;, &apos;12&apos;, &apos;6&apos;, &apos;completed&apos;, &apos;2013-10-02&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;8&apos;, &apos;2&apos;, &apos;12&apos;, &apos;12&apos;, &apos;completed&apos;, &apos;2013-10-03&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;9&apos;, &apos;3&apos;, &apos;10&apos;, &apos;12&apos;, &apos;completed&apos;, &apos;2013-10-03&apos;)
+insert into Trips (Id, Client_Id, Driver_Id, City_Id, Status, Request_at) values (&apos;10&apos;, &apos;4&apos;, &apos;13&apos;, &apos;12&apos;, &apos;cancelled_by_driver&apos;, &apos;2013-10-03&apos;)
+Truncate table Users
+insert into Users (Users_Id, Banned, Role) values (&apos;1&apos;, &apos;No&apos;, &apos;client&apos;)
+insert into Users (Users_Id, Banned, Role) values (&apos;2&apos;, &apos;Yes&apos;, &apos;client&apos;)
+insert into Users (Users_Id, Banned, Role) values (&apos;3&apos;, &apos;No&apos;, &apos;client&apos;)
+insert into Users (Users_Id, Banned, Role) values (&apos;4&apos;, &apos;No&apos;, &apos;client&apos;)
+insert into Users (Users_Id, Banned, Role) values (&apos;10&apos;, &apos;No&apos;, &apos;driver&apos;)
+insert into Users (Users_Id, Banned, Role) values (&apos;11&apos;, &apos;No&apos;, &apos;driver&apos;)
+insert into Users (Users_Id, Banned, Role) values (&apos;12&apos;, &apos;No&apos;, &apos;driver&apos;)
+insert into Users (Users_Id, Banned, Role) values (&apos;13&apos;, &apos;No&apos;, &apos;driver&apos;)
+
+Trips &#x8868;&#x4E2D;&#x5B58;&#x6240;&#x6709;&#x51FA;&#x79DF;&#x8F66;&#x7684;&#x884C;&#x7A0B;&#x4FE1;&#x606F;&#x3002;&#x6BCF;&#x6BB5;&#x884C;&#x7A0B;&#x6709;&#x552F;&#x4E00;&#x952E; Id&#xFF0C;
+Client_Id &#x548C; Driver_Id &#x662F; Users &#x8868;&#x4E2D; Users_Id &#x7684;&#x5916;&#x952E;&#x3002;
+Status &#x662F;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#xFF0C;&#x679A;&#x4E3E;&#x6210;&#x5458;&#x4E3A; (&#x2018;completed&#x2019;, &#x2018;cancelled_by_driver&#x2019;, &#x2018;cancelled_by_client&#x2019;)&#x3002;
++----+-----------+-----------+---------+--------------------+----------+
+| Id | Client_Id | Driver_Id | City_Id |        Status      |Request_at|
++----+-----------+-----------+---------+--------------------+----------+
+| 1  |     1     |    10     |    1    |     completed      |2013-10-01|
+| 2  |     2     |    11     |    1    | cancelled_by_driver|2013-10-01|
+| 3  |     3     |    12     |    6    |     completed      |2013-10-01|
+| 4  |     4     |    13     |    6    | cancelled_by_client|2013-10-01|
+| 5  |     1     |    10     |    1    |     completed      |2013-10-02|
+| 6  |     2     |    11     |    6    |     completed      |2013-10-02|
+| 7  |     3     |    12     |    6    |     completed      |2013-10-02|
+| 8  |     2     |    12     |    12   |     completed      |2013-10-03|
+| 9  |     3     |    10     |    12   |     completed      |2013-10-03| 
+| 10 |     4     |    13     |    12   | cancelled_by_driver|2013-10-03|
++----+-----------+-----------+---------+--------------------+----------+
+Users &#x8868;&#x5B58;&#x6240;&#x6709;&#x7528;&#x6237;&#x3002;&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x6709;&#x552F;&#x4E00;&#x952E; Users_Id&#x3002;Banned &#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x662F;&#x5426;&#x88AB;&#x7981;&#x6B62;&#xFF0C;
+Role &#x5219;&#x662F;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#xFF08;&#x2018;client&#x2019;, &#x2018;driver&#x2019;, &#x2018;partner&#x2019;&#xFF09;&#x7684;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x3002;
++----------+--------+--------+
+| Users_Id | Banned |  Role  |
++----------+--------+--------+
+|    1     |   No   | client |
+|    2     |   Yes  | client |
+|    3     |   No   | client |
+|    4     |   No   | client |
+|    10    |   No   | driver |
+|    11    |   No   | driver |
+|    12    |   No   | driver |
+|    13    |   No   | driver |
++----------+--------+--------+
+&#x5199;&#x4E00;&#x6BB5; SQL &#x8BED;&#x53E5;&#x67E5;&#x51FA; 2013&#x5E74;10&#x6708;1&#x65E5; &#x81F3; 2013&#x5E74;10&#x6708;3&#x65E5; &#x671F;&#x95F4;&#x975E;&#x7981;&#x6B62;&#x7528;&#x6237;&#x7684;&#x53D6;&#x6D88;&#x7387;&#x3002;
+&#x57FA;&#x4E8E;&#x4E0A;&#x8868;&#xFF0C;&#x4F60;&#x7684; SQL &#x8BED;&#x53E5;&#x5E94;&#x8FD4;&#x56DE;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#xFF0C;&#x53D6;&#x6D88;&#x7387;&#xFF08;Cancellation Rate&#xFF09;&#x4FDD;&#x7559;&#x4E24;&#x4F4D;&#x5C0F;&#x6570;&#x3002;
+&#x53D6;&#x6D88;&#x7387;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;(&#x88AB;&#x53F8;&#x673A;&#x6216;&#x4E58;&#x5BA2;&#x53D6;&#x6D88;&#x7684;&#x975E;&#x7981;&#x6B62;&#x7528;&#x6237;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x6570;&#x91CF;) / (&#x975E;&#x7981;&#x6B62;&#x7528;&#x6237;&#x751F;&#x6210;&#x7684;&#x8BA2;&#x5355;&#x603B;&#x6570;)
++------------+-------------------+
+|     Day    | Cancellation Rate |
++------------+-------------------+
+| 2013-10-01 |       0.33        |
+| 2013-10-02 |       0.00        |
+| 2013-10-03 |       0.50        |
++------------+-------------------+
+&#x81F4;&#x8C22;:&#x975E;&#x5E38;&#x611F;&#x8C22; @cak1erlizhou &#x8BE6;&#x7EC6;&#x7684;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x9053;&#x9898;&#x548C;&#x76F8;&#x5E94;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x805A;&#x5408;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x805A;&#x5408;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> t.Request_at <span class="hljs-keyword">as</span> <span class="hljs-string">`Day`</span>, <span class="hljs-keyword">Round</span>(<span class="hljs-keyword">sum</span>(<span class="hljs-keyword">if</span>(t.<span class="hljs-keyword">Status</span>=<span class="hljs-string">&apos;completed&apos;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>))/<span class="hljs-keyword">count</span>(t.<span class="hljs-keyword">Status</span>),<span class="hljs-number">2</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">`Cancellation Rate`</span>
+<span class="hljs-keyword">from</span> Trips <span class="hljs-keyword">as</span> t
+<span class="hljs-keyword">join</span> <span class="hljs-keyword">Users</span> <span class="hljs-keyword">as</span> u1 <span class="hljs-keyword">on</span> t.Client_Id=u1.Users_Id <span class="hljs-keyword">and</span> u1.Banned=<span class="hljs-string">&apos;No&apos;</span>
+<span class="hljs-keyword">join</span> <span class="hljs-keyword">Users</span> <span class="hljs-keyword">as</span> u2 <span class="hljs-keyword">on</span> t.Driver_Id=u2.Users_Id <span class="hljs-keyword">and</span> u2.Banned=<span class="hljs-string">&apos;No&apos;</span>
+<span class="hljs-keyword">where</span> t.Request_at <span class="hljs-keyword">between</span> <span class="hljs-string">&apos;2013-10-01&apos;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;2013-10-03&apos;</span>
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> t.Request_at
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">select</span> t.Request_at <span class="hljs-keyword">as</span> <span class="hljs-string">`Day`</span>, <span class="hljs-keyword">Round</span>(<span class="hljs-keyword">avg</span>(t.<span class="hljs-keyword">Status</span>!=<span class="hljs-string">&apos;completed&apos;</span>),<span class="hljs-number">2</span>) <span class="hljs-keyword">as</span> <span class="hljs-string">`Cancellation Rate`</span>
+<span class="hljs-keyword">from</span> Trips <span class="hljs-keyword">as</span> t
+<span class="hljs-keyword">join</span> <span class="hljs-keyword">Users</span> <span class="hljs-keyword">as</span> u1 <span class="hljs-keyword">on</span> t.Client_Id=u1.Users_Id <span class="hljs-keyword">and</span> u1.Banned=<span class="hljs-string">&apos;No&apos;</span>
+<span class="hljs-keyword">join</span> <span class="hljs-keyword">Users</span> <span class="hljs-keyword">as</span> u2 <span class="hljs-keyword">on</span> t.Driver_Id=u2.Users_Id <span class="hljs-keyword">and</span> u2.Banned=<span class="hljs-string">&apos;No&apos;</span>
+<span class="hljs-keyword">where</span> t.Request_at <span class="hljs-keyword">between</span> <span class="hljs-string">&apos;2013-10-01&apos;</span> <span class="hljs-keyword">and</span> <span class="hljs-string">&apos;2013-10-03&apos;</span>
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> t.Request_at
+</code></pre>
+<h2 id="601&#x4F53;&#x80B2;&#x9986;&#x7684;&#x4EBA;&#x6D41;&#x91CF;2">601.&#x4F53;&#x80B2;&#x9986;&#x7684;&#x4EBA;&#x6D41;&#x91CF;(2)</h2>
+<ul>
+<li>&#x9898;&#x76EE;</li>
+</ul>
+<pre><code>SQL&#x67B6;&#x6784;
+Create table If Not Exists stadium (id int, visit_date DATE NULL, people int)
+Truncate table stadium
+insert into stadium (id, visit_date, people) values (&apos;1&apos;, &apos;2017-01-01&apos;, &apos;10&apos;)
+insert into stadium (id, visit_date, people) values (&apos;2&apos;, &apos;2017-01-02&apos;, &apos;109&apos;)
+insert into stadium (id, visit_date, people) values (&apos;3&apos;, &apos;2017-01-03&apos;, &apos;150&apos;)
+insert into stadium (id, visit_date, people) values (&apos;4&apos;, &apos;2017-01-04&apos;, &apos;99&apos;)
+insert into stadium (id, visit_date, people) values (&apos;5&apos;, &apos;2017-01-05&apos;, &apos;145&apos;)
+insert into stadium (id, visit_date, people) values (&apos;6&apos;, &apos;2017-01-06&apos;, &apos;1455&apos;)
+insert into stadium (id, visit_date, people) values (&apos;7&apos;, &apos;2017-01-07&apos;, &apos;199&apos;)
+insert into stadium (id, visit_date, people) values (&apos;8&apos;, &apos;2017-01-08&apos;, &apos;188&apos;)
+
+X &#x5E02;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F53;&#x80B2;&#x9986;&#xFF0C;&#x6BCF;&#x65E5;&#x4EBA;&#x6D41;&#x91CF;&#x4FE1;&#x606F;&#x88AB;&#x8BB0;&#x5F55;&#x5728;&#x8FD9;&#x4E09;&#x5217;&#x4FE1;&#x606F;&#x4E2D;&#xFF1A;&#x5E8F;&#x53F7; (id)&#x3001;&#x65E5;&#x671F; (visit_date)&#x3001;
+&#x4EBA;&#x6D41;&#x91CF; (people)&#x3002;
+&#x8BF7;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C;&#x627E;&#x51FA;&#x4EBA;&#x6D41;&#x91CF;&#x7684;&#x9AD8;&#x5CF0;&#x671F;&#x3002;&#x9AD8;&#x5CF0;&#x671F;&#x65F6;&#xFF0C;&#x81F3;&#x5C11;&#x8FDE;&#x7EED;&#x4E09;&#x884C;&#x8BB0;&#x5F55;&#x4E2D;&#x7684;&#x4EBA;&#x6D41;&#x91CF;&#x4E0D;&#x5C11;&#x4E8E;100&#x3002;
+&#x4F8B;&#x5982;&#xFF0C;&#x8868; stadium&#xFF1A;
++------+------------+-----------+
+| id   | visit_date | people    |
++------+------------+-----------+
+| 1    | 2017-01-01 | 10        |
+| 2    | 2017-01-02 | 109       |
+| 3    | 2017-01-03 | 150       |
+| 4    | 2017-01-04 | 99        |
+| 5    | 2017-01-05 | 145       |
+| 6    | 2017-01-06 | 1455      |
+| 7    | 2017-01-07 | 199       |
+| 8    | 2017-01-08 | 188       |
++------+------------+-----------+
+&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x6570;&#x636E;&#xFF0C;&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;
++------+------------+-----------+
+| id   | visit_date | people    |
++------+------------+-----------+
+| 5    | 2017-01-05 | 145       |
+| 6    | 2017-01-06 | 1455      |
+| 7    | 2017-01-07 | 199       |
+| 8    | 2017-01-08 | 188       |
++------+------------+-----------+
+&#x63D0;&#x793A;&#xFF1A;&#x6BCF;&#x5929;&#x53EA;&#x6709;&#x4E00;&#x884C;&#x8BB0;&#x5F55;&#xFF0C;&#x65E5;&#x671F;&#x968F;&#x7740; id &#x7684;&#x589E;&#x52A0;&#x800C;&#x589E;&#x52A0;&#x3002;
+    &#x4F53;&#x80B2;&#x9986;&#x5E76;&#x4E0D;&#x662F;&#x6BCF;&#x5929;&#x90FD;&#x5F00;&#x653E;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8BB0;&#x5F55;&#x4E2D;&#x7684;&#x65E5;&#x671F;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x65AD;&#x5C42;&#x3002;
+</code></pre><ul>
+<li>&#x89E3;&#x9898;&#x601D;&#x8DEF;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>&#x601D;&#x8DEF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td>02</td>
+<td>&#x8FDE;&#x63A5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> t1.*
+<span class="hljs-keyword">from</span> stadium t1, stadium t2, stadium t3
+<span class="hljs-keyword">where</span> t1.people &gt;= <span class="hljs-number">100</span> <span class="hljs-keyword">and</span> t2.people &gt;= <span class="hljs-number">100</span> <span class="hljs-keyword">and</span> t3.people &gt;= <span class="hljs-number">100</span> <span class="hljs-keyword">and</span>
+(
+    (t1.<span class="hljs-keyword">id</span>-t2.<span class="hljs-keyword">id</span>=<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> t1.<span class="hljs-keyword">id</span>-t3.<span class="hljs-keyword">id</span>=<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> t2.<span class="hljs-keyword">id</span>-t3.<span class="hljs-keyword">id</span>=<span class="hljs-number">1</span>) <span class="hljs-keyword">or</span>
+    (t2.<span class="hljs-keyword">id</span>-t1.<span class="hljs-keyword">id</span>=<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> t2.<span class="hljs-keyword">id</span>-t3.<span class="hljs-keyword">id</span>=<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> t1.<span class="hljs-keyword">id</span>-t3.<span class="hljs-keyword">id</span>=<span class="hljs-number">1</span>) <span class="hljs-keyword">or</span>
+    (t3.<span class="hljs-keyword">id</span>-t2.<span class="hljs-keyword">id</span>=<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> t3.<span class="hljs-keyword">id</span>-t1.<span class="hljs-keyword">id</span>=<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> t2.<span class="hljs-keyword">id</span>-t1.<span class="hljs-keyword">id</span>=<span class="hljs-number">1</span>)
+)
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> t1.<span class="hljs-keyword">id</span>
+
+# <span class="hljs-number">2</span>
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> stadium.<span class="hljs-keyword">id</span>, visit_date, people
+<span class="hljs-keyword">from</span> stadium,(<span class="hljs-keyword">select</span> t1.<span class="hljs-keyword">id</span> <span class="hljs-keyword">from</span> stadium t1,stadium t2,stadium t3 <span class="hljs-keyword">where</span> 
+    t1.<span class="hljs-keyword">id</span> - t2.<span class="hljs-keyword">id</span> = <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> 
+    t2.<span class="hljs-keyword">id</span> - t3.<span class="hljs-keyword">id</span> = <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> 
+    t1.people &gt;=<span class="hljs-number">100</span> <span class="hljs-keyword">and</span> t2.people &gt;=<span class="hljs-number">100</span> <span class="hljs-keyword">and</span> t3.people &gt;=<span class="hljs-number">100</span>
+) t
+<span class="hljs-keyword">where</span> (t.<span class="hljs-keyword">id</span> - stadium.<span class="hljs-keyword">id</span>) <span class="hljs-keyword">between</span> <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> <span class="hljs-number">2</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Zhi2014 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-09-28 00:03:12
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lcp.html" class="navigation navigation-prev " aria-label="Previous page: lcp">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bash.html" class="navigation navigation-next " aria-label="Next page: bash">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"mysql","level":"1.2.19","depth":2,"next":{"title":"bash","level":"1.2.20","depth":2,"path":"docs/source/question/bash.md","ref":"docs/source/question/bash.md","articles":[]},"previous":{"title":"lcp","level":"1.2.18","depth":2,"path":"docs/source/question/lcp.md","ref":"docs/source/question/lcp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/question/mysql.md","mtime":"2020-09-27T16:03:12.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-22T11:20:23.621Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

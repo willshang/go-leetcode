@@ -1,0 +1,1091 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>数组-树状数组 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="数组-前缀和.html" />
+    
+    
+    <link rel="prev" href="并查集.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../question/readme.html">
+            
+                <a href="../question/readme.html">
+            
+                    
+                    题目
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../question/0001-0100.html">
+            
+                <a href="../question/0001-0100.html">
+            
+                    
+                    0001-0100
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../question/0101-0200.html">
+            
+                <a href="../question/0101-0200.html">
+            
+                    
+                    0100-0200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../question/0201-0300.html">
+            
+                <a href="../question/0201-0300.html">
+            
+                    
+                    0201-0300
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../question/0301-0400.html">
+            
+                <a href="../question/0301-0400.html">
+            
+                    
+                    0301-0400
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../question/0401-0500.html">
+            
+                <a href="../question/0401-0500.html">
+            
+                    
+                    0401-0500
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../question/0501-0600.html">
+            
+                <a href="../question/0501-0600.html">
+            
+                    
+                    0501-0600
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../question/0601-0700.html">
+            
+                <a href="../question/0601-0700.html">
+            
+                    
+                    0601-0700
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../question/0701-0800.html">
+            
+                <a href="../question/0701-0800.html">
+            
+                    
+                    0701-0800
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../question/0801-0900.html">
+            
+                <a href="../question/0801-0900.html">
+            
+                    
+                    0801-0900
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../question/0901-1000.html">
+            
+                <a href="../question/0901-1000.html">
+            
+                    
+                    0901-1000
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../question/1001-1100.html">
+            
+                <a href="../question/1001-1100.html">
+            
+                    
+                    1001-1100
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../question/1101-1200.html">
+            
+                <a href="../question/1101-1200.html">
+            
+                    
+                    1101-1200
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../question/1201-1300.html">
+            
+                <a href="../question/1201-1300.html">
+            
+                    
+                    1201-1300
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../question/1301-1400.html">
+            
+                <a href="../question/1301-1400.html">
+            
+                    
+                    1301-1400
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../question/1401-1500.html">
+            
+                <a href="../question/1401-1500.html">
+            
+                    
+                    1401-1500
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" data-path="../question/1501-1600.html">
+            
+                <a href="../question/1501-1600.html">
+            
+                    
+                    1501-1600
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" data-path="../question/1601-1700.html">
+            
+                <a href="../question/1601-1700.html">
+            
+                    
+                    1601-1700
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" data-path="../question/lcp.html">
+            
+                <a href="../question/lcp.html">
+            
+                    
+                    lcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" data-path="../question/mysql.html">
+            
+                <a href="../question/mysql.html">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.20" data-path="../question/bash.html">
+            
+                <a href="../question/bash.html">
+            
+                    
+                    bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.21" data-path="../question/offer.html">
+            
+                <a href="../question/offer.html">
+            
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.22" data-path="../question/lcci.html">
+            
+                <a href="../question/lcci.html">
+            
+                    
+                    程序员面试金典
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../question/readme.html">
+            
+                <a href="../question/readme.html">
+            
+                    
+                    分类/书籍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../classification/same.html">
+            
+                <a href="../classification/same.html">
+            
+                    
+                    重复问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../classification/class.html">
+            
+                <a href="../classification/class.html">
+            
+                    
+                    系列问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../classification/offer.html">
+            
+                <a href="../classification/offer.html">
+            
+                    
+                    书籍-剑指offer-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../classification/lcci.html">
+            
+                <a href="../classification/lcci.html">
+            
+                    
+                    书籍-程序员面试金典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../classification/lcp.html">
+            
+                <a href="../classification/lcp.html">
+            
+                    
+                    lcp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../classification/leetcode_contest.html">
+            
+                <a href="../classification/leetcode_contest.html">
+            
+                    
+                    leetcode-竞赛
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../classification/easy.html">
+            
+                <a href="../classification/easy.html">
+            
+                    
+                    初级算法(49)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../classification/medium.html">
+            
+                <a href="../classification/medium.html">
+            
+                    
+                    中级算法(45)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../classification/hard.html">
+            
+                <a href="../classification/hard.html">
+            
+                    
+                    高级算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../classification/hot-100.html">
+            
+                <a href="../classification/hot-100.html">
+            
+                    
+                    热题100(100)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../classification/50.html">
+            
+                <a href="../classification/50.html">
+            
+                    
+                    腾讯精选练习50题(50)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../classification/data-array_and_string.html">
+            
+                <a href="../classification/data-array_and_string.html">
+            
+                    
+                    数据结构-数组与字符串(22)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../classification/data-queue-stack.html">
+            
+                <a href="../classification/data-queue-stack.html">
+            
+                    
+                    数据结构-队列与栈(19)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../classification/data-recursion.html">
+            
+                <a href="../classification/data-recursion.html">
+            
+                    
+                    数据结构-递归(12)-完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../classification/nowcoder_hw.html">
+            
+                <a href="../classification/nowcoder_hw.html">
+            
+                    
+                    牛客-华为
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../classification/nowcoder_pdd.html">
+            
+                <a href="../classification/nowcoder_pdd.html">
+            
+                    
+                    牛客-拼多多
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../classification/patB.html">
+            
+                <a href="../classification/patB.html">
+            
+                    
+                    PAT-乙级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../classification/github-labuladong.html">
+            
+                <a href="../classification/github-labuladong.html">
+            
+                    
+                    github-labuladong
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../question/readme.html">
+            
+                <a href="../question/readme.html">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="查找算法.html">
+            
+                <a href="查找算法.html">
+            
+                    
+                    查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="排序算法.html">
+            
+                <a href="排序算法.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="heap.html">
+            
+                <a href="heap.html">
+            
+                    
+                    堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="trie.html">
+            
+                <a href="trie.html">
+            
+                    
+                    Trie树(前缀树/字典树)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="并查集.html">
+            
+                <a href="并查集.html">
+            
+                    
+                    并查集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="数组-树状数组.html">
+            
+                <a href="数组-树状数组.html">
+            
+                    
+                    数组-树状数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="数组-前缀和.html">
+            
+                <a href="数组-前缀和.html">
+            
+                    
+                    数组-前缀和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="数组-差分数组.html">
+            
+                <a href="数组-差分数组.html">
+            
+                    
+                    数组-差分数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="字符串-KMP算法.html">
+            
+                <a href="字符串-KMP算法.html">
+            
+                    
+                    字符串-KMP算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="字符串-马拉车算法.html">
+            
+                <a href="字符串-马拉车算法.html">
+            
+                    
+                    字符串-马拉车算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../question/readme.html">
+            
+                <a href="../question/readme.html">
+            
+                    
+                    牛客
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../nowcoder/hw.html">
+            
+                <a href="../nowcoder/hw.html">
+            
+                    
+                    华为机试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../nowcoder/pdd.html">
+            
+                <a href="../nowcoder/pdd.html">
+            
+                    
+                    拼多多
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../question/readme.html">
+            
+                <a href="../question/readme.html">
+            
+                    
+                    PAT
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../question/patB.html">
+            
+                <a href="../question/patB.html">
+            
+                    
+                    PAT-乙级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../question/readme.html">
+            
+                <a href="../question/readme.html">
+            
+                    
+                    ACM在线笔试模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../go/1-go语言acm刷题输入问题.html">
+            
+                <a href="../go/1-go语言acm刷题输入问题.html">
+            
+                    
+                    ACM-Go语言处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >数组-树状数组</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <ul>
+<li><a href="https://www.cnblogs.com/xenny/p/9739600.html" target="_blank">https://www.cnblogs.com/xenny/p/9739600.html</a></li>
+<li><a href="https://www.cnblogs.com/findview/archive/2019/08/01/11281628.html" target="_blank">https://www.cnblogs.com/findview/archive/2019/08/01/11281628.html</a> </li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Zhi2014 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-09-27 23:59:37
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="并查集.html" class="navigation navigation-prev " aria-label="Previous page: 并查集">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="数组-前缀和.html" class="navigation navigation-next " aria-label="Next page: 数组-前缀和">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"数组-树状数组","level":"1.4.6","depth":2,"next":{"title":"数组-前缀和","level":"1.4.7","depth":2,"path":"docs/source/algorithm/数组-前缀和.md","ref":"docs/source/algorithm/数组-前缀和.md","articles":[]},"previous":{"title":"并查集","level":"1.4.5","depth":2,"path":"docs/source/algorithm/并查集.md","ref":"docs/source/algorithm/并查集.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","back-to-top-button","chapter-fold","code","splitter","tbfed-pagefooter","page-toc-button","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Zhi2014 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":5,"minTocSize":2},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/source/algorithm/数组-树状数组.md","mtime":"2020-09-27T15:59:37.869Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-22T11:20:23.621Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

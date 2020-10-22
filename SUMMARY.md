@@ -54,7 +54,7 @@
     - [数组-差分数组](docs/source/algorithm/数组-差分数组.md)
     - [字符串-KMP算法](docs/source/algorithm/字符串-KMP算法.md)
     - [字符串-马拉车算法](docs/source/algorithm/字符串-马拉车算法.md)
-[牛客](docs/source/question/readme.md)
+* [牛客](docs/source/question/readme.md)
     - [华为机试](docs/source/nowcoder/hw.md)
     - [拼多多](docs/source/nowcoder/pdd.md)
 * [PAT](docs/source/question/readme.md)
