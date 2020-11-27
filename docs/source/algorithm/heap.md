@@ -1,5 +1,87 @@
 # 堆
 
+## 二叉堆实现
+
+- 二叉堆是一个完全二叉树
+- 指针关系：**父节点下标为id，左孩子下标为2\*id+1，右孩子下标为2\*id+2**
+- 3种操作时间复杂度：插入O(log(n))、删除O(log(n))、构建O(n)
+- **插入节点(上浮)：**插入数据到完全二叉树的最后一个位置，与父节点比较，不符合就交换新节点和父节点的位置，继续上浮，最后到堆顶；满足条件就终止
+- **删除节点(下沉)：**删除元素是在堆顶，把完全二叉树的最后一个位置临时替换到堆顶，然后栈顶跟左右节点比较，如果左右节点较小(小顶堆)的栈顶节点小，则栈顶节点与左右节点中较小的节点交换，交换后继续下沉；满足条件就终止
+- **构建二叉堆：**把无序的完全二叉树调整为二叉堆，本质是让**所有非叶子节点依次下沉**；非叶子节点遍历从最后一个非叶子节点开始，一直到栈顶
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	arr := []int{66, 33, 55, 22, 11, 99, 88, 77}
+	buildHeap(arr) // 构建堆
+	fmt.Println(arr)
+	// 插入使用上浮
+	arr = append(arr, 1)
+	up(arr)
+	fmt.Println(arr)
+	// 删除使用下沉
+	value := pop(arr)
+	fmt.Println(value, arr)
+}
+
+func pop(arr []int) int {
+	if len(arr) == 0 {
+		return 0
+	}
+	res := arr[0]
+	arr[0] = arr[len(arr)-1]
+	arr = arr[:len(arr)-1]
+	down(arr, 0, len(arr))
+	return res
+}
+
+// 构建堆[最小堆为例]
+func buildHeap(arr []int) {
+	// 从最后一个非叶子节点开始
+	for i := (len(arr) - 2) / 2; i >= 0; i-- {
+		down(arr, i, len(arr))
+	}
+}
+
+// 下沉[最小堆为例]
+func down(arr []int, parentId int, length int) {
+	temp := arr[parentId]
+	childId := 2*parentId + 1 // 左节点
+	for childId < length {
+		// 有右节点且右节点小于左节点，childId+1
+		if childId+1 < length && arr[childId+1] < arr[childId] { // 小根堆
+			// if childId+1 < length && arr[childId+1] > arr[childId] { // 大根堆
+			childId = childId + 1
+		}
+		if temp <= arr[childId] { // 小根堆
+			// if temp >= arr[childId] { // 大根堆
+			break
+		}
+		arr[parentId] = arr[childId]
+		parentId = childId
+		childId = 2*childId + 1
+	}
+	arr[parentId] = temp
+}
+
+// 上浮[最小堆为例]
+func up(arr []int) {
+	childId := len(arr) - 1                   // 最后一个节点下标（子节点）
+	last := arr[childId]                      // 最后一个节点
+	parentId := (childId - 1) / 2             // 父节点
+	for childId > 0 && last < arr[parentId] { // 小根堆
+		// for childId > 0 && last > arr[parentId] { // 大根堆
+		arr[childId] = arr[parentId] //
+		childId = parentId           //
+		parentId = (childId - 1) / 2 //
+	}
+	arr[childId] = last
+}
+```
+
 ## go-使用接口实现
 - 堆的接口在`"str/container/heap/heap.go"`
 ```go

@@ -98,5 +98,5 @@
 | 94(相似) | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) Medium<br />[322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) Medium | [面试题08.11.硬币](https://leetcode-cn.com/problems/coin-lcci/) Medium |
 | 95(相似) | [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) Medium<br />[126.单词接龙II](https://leetcode-cn.com/problems/word-ladder-ii/) Hard |  |
 | 96(相似) | [354.俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/) Hard | [面试题17.08.马戏团人塔](https://leetcode-cn.com/problems/circus-tower-lcci/) Medium |
-| 97(相似) | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) Medium | [1626.无矛盾的最佳球队](https://leetcode-cn.com/problems/best-team-with-no-conflicts/) Medium |
+| 97(相似) | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) Medium<br />[673.最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/) Medium | [1626.无矛盾的最佳球队](https://leetcode-cn.com/problems/best-team-with-no-conflicts/) Medium |
 

@@ -11,9 +11,9 @@ type TreeNode struct {
 }
 
 func recoverFromPreorder(S string) *TreeNode {
-	stack := make([]*TreeNode,0)
+	stack := make([]*TreeNode, 0)
 	index := 0
-	for index < len(S){
+	for index < len(S) {
 
 	}
 }
