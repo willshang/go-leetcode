@@ -4,6 +4,7 @@ func main() {
 
 }
 
+// leetcode1638_统计只差一个字符的子串数目
 func countSubstrings(s string, t string) int {
 	res := 0
 	for i := 0; i < len(s); i++ {
