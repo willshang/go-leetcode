@@ -125,7 +125,7 @@
 | 0103 | 20                                                           |                                      |        |          |
 | 0104 | [面试题17.21.直方图的水量](https://leetcode-cn.com/problems/volume-of-histogram-lcci/) | 栈、数组、双指针                     | Hard   | 完成     |
 | 0105 | [面试题17.22.单词转换](https://leetcode-cn.com/problems/word-transformer-lcci/) | 深度优先搜索、广度优先搜索           | Medium |          |
-| 0106 |                                                              |                                      |        |          |
+| 0106 | [面试题17.23.最大黑方阵](https://leetcode-cn.com/problems/max-black-square-lcci/) | 动态规划                             | Medium |          |
 | 0107 |                                                              |                                      |        |          |
 | 0108 |                                                              |                                      |        |          |
 | 0109 |                                                              |                                      |        |          |

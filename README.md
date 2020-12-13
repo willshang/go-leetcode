@@ -641,6 +641,7 @@
 |      | [529.扫雷游戏](https://leetcode-cn.com/problems/minesweeper/) | 深度优先搜索、广度优先搜索                     | Medium | 完成     |
 |      | [540.有序数组中的单一元素](https://leetcode-cn.com/problems/single-element-in-a-sorted-array/) |                                                | Medium | 完成     |
 |      | [542.01矩阵](https://leetcode-cn.com/problems/01-matrix/)    | 深度优先搜索、广度优先搜索                     | Medium | 完成     |
+|      | [547.朋友圈](https://leetcode-cn.com/problems/friend-circles/) | 深度优先搜索、并查集                           | Medium | 完成     |
 |      | [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表                                   | Medium | 完成     |
 |      | [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 双指针、Sliding Window                         | Medium | 完成     |
 |      | [611.有效三角形的个数](https://leetcode-cn.com/problems/valid-triangle-number/) | 数组                                           | Medium | 完成     |
@@ -790,6 +791,9 @@
 |      | [1641.统计字典序元音字符串的数目](https://leetcode-cn.com/problems/count-sorted-vowel-strings/) | 数学、动态规划、回溯算法                       | Medium | 完成     |
 |      | [1642.可以到达的最远建筑](https://leetcode-cn.com/problems/furthest-building-you-can-reach/) | 堆、二分查找                                   | Medium | 完成     |
 |      | [1647.字符频次唯一的最小删除次数](https://leetcode-cn.com/problems/minimum-deletions-to-make-character-frequencies-unique/) | 贪心算法、排序                                 | Medium | 完成     |
+|      | [1648.销售价值减少的颜色球](https://leetcode-cn.com/problems/sell-diminishing-valued-colored-balls/) | 贪心算法、排序、数学                           | Medium |          |
+|      | [1653.使字符串平衡的最少删除次数](https://leetcode-cn.com/problems/minimum-deletions-to-make-string-balanced/) | 贪心算法、字符串                               | Medium | 完成     |
+|      | [1654.到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | 广度优先搜索、动态规划                         | Medium |          |
 |      | [1657.确定两个字符串是否接近](https://leetcode-cn.com/problems/determine-if-two-strings-are-close/) | 贪心算法                                       | Medium | 完成     |
 |      | [1658.将x减到0的最小操作数](https://leetcode-cn.com/problems/minimum-operations-to-reduce-x-to-zero/) | 贪心算法、双指针、二分查找                     | Medium | 完成     |
 |      | [1663.具有给定数值的最小字符串](https://leetcode-cn.com/problems/smallest-string-with-a-given-numeric-value/) | 贪心算法                                       | Medium | 完成     |
@@ -798,6 +802,7 @@
 |      | [1670.设计前中后队列](https://leetcode-cn.com/problems/design-front-middle-back-queue/) | 设计、链表                                     | Medium | 完成     |
 |      | [1673.找出最具竞争力的子序列](https://leetcode-cn.com/problems/find-the-most-competitive-subsequence/) | 栈、贪心算法                                   | Medium | 完成     |
 |      | [1674.使数组互补的最少操作次数](https://leetcode-cn.com/problems/minimum-moves-to-make-array-complementary/) | 贪心算法                                       | Medium | 完成     |
+|      | [1679.K和数对的最大数目](https://leetcode-cn.com/problems/max-number-of-k-sum-pairs/) | 哈希表                                         | Medium | 完成     |
 |      | [1680.连接连续二进制数字](https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/) | 数学                                           | Medium |          |
 
 ### Hard系列
@@ -814,7 +819,7 @@
 | 0007 | [37.解数独](https://leetcode-cn.com/problems/sudoku-solver/) | 哈希表、回溯算法                                 | Hard | 完成     |
 | 0008 | [41.缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | 数组                                             | Hard | 完成     |
 | 0009 | [42.接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 栈、数组、双指针                                 | Hard | 完成     |
-| 0010 | [44.通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 贪心算法、字符串、动态规划、<br />回溯算法       | Hard | 完成     |
+| 0010 | [44.通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/) | 贪心算法、字符串、<br />动态规划、回溯算法       | Hard | 完成     |
 |      | 第2期                                                        |                                                  |      |          |
 | 0011 | [45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) | 贪心算法、数组                                   | Hard | 完成     |
 | 0012 | [51.N皇后](https://leetcode-cn.com/problems/n-queens/)       | 回溯算法                                         | Hard | 完成     |
