@@ -10,8 +10,8 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// leetcode1609_奇偶树
 func isEvenOddTree(root *TreeNode) bool {
-	flag := false
 	queue := make([]*TreeNode, 0)
 	queue = append(queue, root)
 	level := 1
@@ -27,22 +27,16 @@ func isEvenOddTree(root *TreeNode) bool {
 				queue = append(queue, queue[i].Right)
 			}
 		}
-		if flag == true {
+		if level%2 == 0 {
 			for j := 0; j < len(temp)/2; j++ {
 				temp[j], temp[len(temp)-1-j] = temp[len(temp)-1-j], temp[j]
 			}
-			flag = false
-		} else {
-			flag = true
 		}
-		if len(temp) != level {
-			return false
-		}
-		if temp[0]%2 != level%2 {
-			return false
-		}
-		for j := 1; j < len(temp); j++ {
-			if temp[j]%2 != level%2 || temp[j-1] >= temp[j] {
+		for i := 0; i < len(temp); i++ {
+			if i < len(temp)-1 && temp[i] >= temp[i+1] {
+				return false
+			}
+			if temp[i]%2 != level%2 {
 				return false
 			}
 		}
