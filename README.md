@@ -422,8 +422,13 @@
 | 0367 | [1668.最大重复子字符串](https://leetcode-cn.com/problems/maximum-repeating-substring/) | 字符串 | Easy | 完成 |
 | 0368 | [1672.最富有客户的资产总量](https://leetcode-cn.com/problems/richest-customer-wealth/) | 数组 | Easy | 完成 |
 | 0369 | [1678.设计Goal解析器](https://leetcode-cn.com/problems/goal-parser-interpretation/) | 字符串 | Easy | 完成 |
-|  | [1684.统计一致字符串的数目](https://leetcode-cn.com/problems/count-the-number-of-consistent-strings/) | 字符串 | Easy | 完成 |
-|  | [1688.比赛中的配对次数](https://leetcode-cn.com/problems/count-of-matches-in-tournament/) | 回溯算法 | Easy | 完成 |
+| 0370 | [1684.统计一致字符串的数目](https://leetcode-cn.com/problems/count-the-number-of-consistent-strings/) | 字符串 | Easy | 完成 |
+|  | 第38期 |  |  |  |
+| 0371 | [1688.比赛中的配对次数](https://leetcode-cn.com/problems/count-of-matches-in-tournament/) | 回溯算法 | Easy | 完成 |
+| 0372 | [1694.重新格式化电话号码](https://leetcode-cn.com/problems/reformat-phone-number/) | 字符串 | Easy | 完成 |
+| 0373 | [1700.无法吃午餐的学生数量](https://leetcode-cn.com/problems/number-of-students-unable-to-eat-lunch/) | 数组 | Easy | 完成 |
+| 0374 | [1704.判断字符串的两半是否相似](https://leetcode-cn.com/problems/determine-if-string-halves-are-alike/) | 字符串 | Easy | 完成 |
+| 0375 | [1710.卡车上的最大单元数](https://leetcode-cn.com/problems/maximum-units-on-a-truck/) | 贪心算法、排序 | Easy | 完成 |
 
 ### Medium系列
 
@@ -597,10 +602,10 @@
 |      | 第16期                                                       |                                                |        |          |
 | 0151 | [365.水壶问题](https://leetcode-cn.com/problems/water-and-jug-problem/) | 数学                                           | Medium | 完成     |
 | 0152 | 368                                                          |                                                |        |          |
-| 0153 | 372                                                          |                                                |        |          |
+| 0153 | [372.超级次方](https://leetcode-cn.com/problems/super-pow/)  | 数学                                           | Medium |          |
 | 0154 | [373.查找和最小的K对数字](https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/) | 堆                                             | Medium | 完成     |
 | 0155 | 375                                                          |                                                |        |          |
-| 0156 | 376                                                          |                                                |        |          |
+| 0156 | [376.摆动序列](https://leetcode-cn.com/problems/wiggle-subsequence/) | 贪心算法、动态规划                             | Medium |          |
 | 0157 | 377                                                          |                                                |        |          |
 | 0158 | [378.有序矩阵中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) | 堆、二分查找                                   | Medium | 完成     |
 | 0159 | [380.常数时间插入、删除和获取随机元素](https://leetcode-cn.com/problems/insert-delete-getrandom-o1/) | 设计、数组、哈希表                             | Medium | 完成     |
@@ -746,6 +751,7 @@
 |      | [1375.灯泡开关III](https://leetcode-cn.com/problems/bulb-switcher-iii/) | 数组                                           | Medium | 完成     |
 |      | [1376.通知所有员工所需的时间](https://leetcode-cn.com/problems/time-needed-to-inform-all-employees/) | 深度优先搜索                                   | Medium | 完成     |
 |      | [1387.将整数按权重排序](https://leetcode-cn.com/problems/sort-integers-by-the-power-value/) | 排序、图                                       | Medium | 完成     |
+|      | [1390.四因数](https://leetcode-cn.com/problems/four-divisors/) | 数学                                           | Medium | 完成     |
 |      | [1395.统计作战单位数](https://leetcode-cn.com/problems/count-number-of-teams/) | 数组                                           | Medium | 完成     |
 |      | [1404.将二进制表示减到1的步骤数](https://leetcode-cn.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/) | 位运算                                         | Medium | 完成     |
 |      | [1418.点菜展示表](https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/) | 哈希表                                         | Medium | 完成     |
@@ -757,6 +763,8 @@
 |      | [1442.形成两个异或相等数组的三元组数目](https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/) | 位运算、数组、数学                             | Medium | 完成     |
 |      | [1447.最简分数](https://leetcode-cn.com/problems/simplified-fractions/) | 数学                                           | Medium | 完成     |
 |      | [1451.重新排列句子中的单词](https://leetcode-cn.com/problems/rearrange-words-in-a-sentence/) | 排序、字符串                                   | Medium | 完成     |
+|      | [1452.收藏清单](https://leetcode-cn.com/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/) | 排序、字符串                                   | Medium | 完成     |
+|      | [1472.设计浏览器历史记录](https://leetcode-cn.com/problems/design-browser-history/) | 设计                                           | Medium | 完成     |
 |      | [1481.不同整数的最少数目](https://leetcode-cn.com/problems/least-number-of-unique-integers-after-k-removals/) | 排序、数组                                     | Medium | 完成     |
 |      | [1482.制作m束花所需的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/) | 数组、二分查找                                 | Medium | 完成     |
 |      | [1487.保证文件名唯一](https://leetcode-cn.com/problems/making-file-names-unique/) | 哈希表、字符串                                 | Medium | 完成     |
@@ -821,6 +829,9 @@
 |      | [1679.K和数对的最大数目](https://leetcode-cn.com/problems/max-number-of-k-sum-pairs/) | 哈希表                                         | Medium | 完成     |
 |      | [1680.连接连续二进制数字](https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/) | 数学                                           | Medium |          |
 |      | [1689.十-二进制数的最少数目](https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/) | 贪心算法                                       | Medium | 完成     |
+|      | [1695.删除子数组的最大得分](https://leetcode-cn.com/problems/maximum-erasure-value/) | 双指针                                         | Medium | 完成     |
+|      | [1705.吃苹果的最大数目](https://leetcode-cn.com/problems/maximum-number-of-eaten-apples/) | 堆、贪心算法                                   | Medium | 完成     |
+|      | [1711.大餐计数](https://leetcode-cn.com/problems/count-good-meals/) | 数组、哈希表、双指针                           | Medium | 完成     |
 
 ### Hard系列
 

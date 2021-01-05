@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-func main()  {
+func main() {
 
 }
 
