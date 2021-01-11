@@ -76,20 +76,6 @@
 | [1109.航班预订统计](https://leetcode-cn.com/problems/corporate-flight-bookings/) | 数组、数学 | Medium | 完成     |
 | [1589.所有排列中的最大和](https://leetcode-cn.com/problems/maximum-sum-obtained-of-any-permutation/) | 贪心算法   | Medium | 完成     |
 
-### 数组-前缀和问题
-
-| Title                                                        | Tag            | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------- | ------ | -------- |
-| [303.区域和检索-数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | 动态规划       | Easy   | 完成     |
-| [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) | 动态规划       | Medium | 完成     |
-| [523.连续的子数组和](https://leetcode-cn.com/problems/continuous-subarray-sum/) | 数学、动态规划 | Medium | 完成     |
-| 525                                                          |                |        |          |
-| [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | 数组、哈希表   | Medium | 完成     |
-| 930                                                          |                |        |          |
-| [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表   | Medium | 完成     |
-| [1248.统计「优美子数组」](https://leetcode-cn.com/problems/count-number-of-nice-subarrays/) | 双指针         | Medium | 完成     |
-| [1590.使数组和能被P整除](https://leetcode-cn.com/problems/make-sum-divisible-by-p/) | 数组、二分查找 | Medium | 完成     |
-
 ## 2.字符串
 
 ### 回文字符串(高频)(动态规划/中心扩展/马拉车算法)
@@ -141,6 +127,7 @@
 | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 二分查找、动态规划           | Medium | 完成     |
 | [392.判断子序列](https://leetcode-cn.com/problems/is-subsequence/) | 贪心算法、二分查找、动态规划 | Easy   | 完成     |
 | [594.最长和谐子序列](https://leetcode-cn.com/problems/longest-harmonious-subsequence/) | 哈希表                       | Easy   | 完成     |
+| [646.最长数对链](https://leetcode-cn.com/problems/maximum-length-of-pair-chain/) | 动态规划                     | Medium | 完成     |
 | [1332.删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | 字符串                       | Easy   | 完成     |
 | [1403.非递增顺序的最小子序列](https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order/) | 贪心算法、排序               | Easy   | 完成     |
 
@@ -338,15 +325,6 @@
 | [1552.两球之间的磁力](https://leetcode-cn.com/problems/magnetic-force-between-two-balls/) | 数组、二分查找     | Medium | 完成     |
 | [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) |                    | Medium | 完成     |
 
-### 并查集
-
-| Title                                                        | Tag                                | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------------------------- | ------ | -------- |
-| [128.最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | 并查集、数组                       | Hard   | 完成     |
-| [130.被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
-| [200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | 深度优先搜索、广度优先搜索、并查集 | Medium | 完成     |
-| [1568.使陆地分离的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-disconnect-island/) | 贪心算法                           | Medium | 完成     |
-
 ### 滑动窗口
 
 | Title                                                        | Tag                                          | 难度   | 完成情况 |
@@ -365,16 +343,17 @@
 | [1004.最大连续1的个数III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | 双指针、Sliding Window                       | Medium | 完成     |
 | [1052.爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 数组、Sliding Window                         | Medium | 完成     |
 
-### Trie树
-
-| Title                                                        | Tag                    | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
-| [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树           | Medium | 完成     |
-| [211.添加与搜索单词-数据结构设计](https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/) | 设计、字典树、回溯算法 | Medium | 完成     |
-
 ### 背包问题-完全背包
 
 | Title                                                        | Tag  | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ---- | ------ | -------- |
 | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) |      | Medium | 完成     |
 
+### 区间问题
+
+| Title                                                        | Tag            | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------- | ------ | -------- |
+| [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 排序、数组     | Medium | 完成     |
+| [57.插入区间](https://leetcode-cn.com/problems/insert-interval/) | 排序、数组     | Hard   | 完成     |
+| [435.无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/) | 贪心算法       | Medium | 完成     |
+| [452.用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/) | 贪心算法、排序 | Medium |          |

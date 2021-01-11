@@ -10,6 +10,7 @@
 | [105.从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | 树、深度优先搜索、数组 | Medium | 完成     |
 | [99.恢复二叉搜索树](https://leetcode-cn.com/problems/recover-binary-search-tree/) | 树、深度优先搜索       | Hard   | 完成     |
 | [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划               | Medium | 完成     |
+| [46.全排列](https://leetcode-cn.com/problems/permutations/)  | 回溯算法               | Medium | 完成     |
 | [51.N皇后](https://leetcode-cn.com/problems/n-queens/)       | 回溯算法               | Hard   | 完成     |
 
 ### 动态规划解题套路框架(2)
@@ -79,7 +80,7 @@
 
 | Title                                                        | Tag                      | 难度 | 完成情况 |
 | ------------------------------------------------------------ | ------------------------ | ---- | -------- |
-| [887.鸡蛋掉落](https://leetcode-cn.com/problems/super-egg-drop/) | 数学、二分查找、动态规划 | Hard |          |
+| [887.鸡蛋掉落](https://leetcode-cn.com/problems/super-egg-drop/) | 数学、二分查找、动态规划 | Hard | 完成     |
 
 ### 经典动态规划：子集背包问题(1)
 
