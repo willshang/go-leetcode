@@ -106,7 +106,7 @@
 | 0086 | [面试题17.01.不用加号的加法](https://leetcode-cn.com/problems/add-without-plus-lcci/) | 位运算                               | Easy   | 完成     |
 | 0087 | [面试题17.04.消失的数字](https://leetcode-cn.com/problems/missing-number-lcci/) | 位运算、数组、数字                   | Easy   | 完成     |
 | 0088 | [面试题17.05.字母与数字](https://leetcode-cn.com/problems/find-longest-subarray-lcci/) | 数组                                 | Medium | 完成     |
-| 0089 | 06                                                           |                                      |        |          |
+| 0089 | [面试题17.06.2出现的次数](https://leetcode-cn.com/problems/number-of-2s-in-range-lcci/) | 数学、动态规划                       | Hard   | 完成     |
 | 0090 | [面试题17.07.婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) | 深度优先搜索、广度优先搜索、并茶查集 | Medium |          |
 |      | 第10期                                                       |                                      |        |          |
 | 0091 | [面试题17.08.马戏团人塔](https://leetcode-cn.com/problems/circus-tower-lcci/) | 排序、二分查找、动态规划             | Medium | 完成     |
@@ -122,10 +122,10 @@
 |      | 第11期                                                       |                                      |        |          |
 | 0101 | [面试题17.18.最短超串](https://leetcode-cn.com/problems/shortest-supersequence-lcci/) | Sliding Window                       | Medium | 完成     |
 | 0102 | [面试题17.19.消失的两个数字](https://leetcode-cn.com/problems/missing-two-lcci/) | 数组、数学                           | Hard   | 完成     |
-| 0103 | 20                                                           |                                      |        |          |
+| 0103 | [面试题17.20.连续中值](https://leetcode-cn.com/problems/continuous-median-lcci/) | 堆                                   | Hard   | 完成     |
 | 0104 | [面试题17.21.直方图的水量](https://leetcode-cn.com/problems/volume-of-histogram-lcci/) | 栈、数组、双指针                     | Hard   | 完成     |
 | 0105 | [面试题17.22.单词转换](https://leetcode-cn.com/problems/word-transformer-lcci/) | 深度优先搜索、广度优先搜索           | Medium |          |
 | 0106 | [面试题17.23.最大黑方阵](https://leetcode-cn.com/problems/max-black-square-lcci/) | 动态规划                             | Medium |          |
 | 0107 |                                                              |                                      |        |          |
 | 0108 |                                                              |                                      |        |          |
-| 0109 |                                                              |                                      |        |          |
+| 0109 | [面试题17.26.稀疏相似度](https://leetcode-cn.com/problems/sparse-similarity-lcci/) | 哈希表                               | Hard   | 完成     |

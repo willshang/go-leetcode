@@ -6248,6 +6248,98 @@ func findLongestSubarray(array []string) []string {
 
 ```
 
+## 面试题17.06.2出现的次数(3)
+
+- 题目
+
+```
+编写一个方法，计算从 0 到 n (含 n) 中数字 2 出现的次数。
+示例:输入: 25 输出: 9
+解释: (2, 12, 20, 21, 22, 23, 24, 25)(注意 22 应该算作两次)
+提示：n <= 10^9
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 找规律 | O(log(n))  | O(1)       |
+| 02   | 找规律 | O(log(n))  | O(1)       |
+| 03   | 找规律 | O(log(n))  | O(1)       |
+
+```go
+func numberOf2sInRange(n int) int {
+	if n <= 0 {
+		return 0
+	}
+	res := 0
+	for i := 1; i <= n; i = i * 10 {
+		left := n / i
+		right := n % i
+		res = res + (left+7)/10*i
+		if left%10 == 2 {
+			res = res + right + 1
+		}
+	}
+	return res
+}
+
+# 2
+func numberOf2sInRange(n int) int {
+	res := 0
+	digit := 1
+	high := n / 10
+	cur := n % 10
+	low := 0
+	for high != 0 || cur != 0 {
+		if cur > 2 {
+			res = res + (high+1)*digit
+		} else if cur == 2 {
+			res = res + high*digit + low + 1
+		} else {
+			res = res + high*digit
+		}
+		low = low + cur*digit
+		cur = high % 10
+		high = high / 10
+		digit = digit * 10
+	}
+	return res
+}
+
+# 3
+func numberOf2sInRange(n int) int {
+	if n <= 0 {
+		return 0
+	}
+	str := strconv.Itoa(n)
+	return dfs(str)
+}
+
+func dfs(str string) int {
+	if str == "" {
+		return 0
+	}
+	first := int(str[0] - '0')
+	if len(str) == 1 && first == 0 {
+		return 0
+	}
+	if len(str) == 1 && first >= 2 {
+		return 1
+	}
+	count := 0
+	if first > 2 {
+		count = int(math.Pow(float64(10), float64(len(str)-1)))
+	} else if first == 2 {
+		count, _ = strconv.Atoi(str[1:])
+		count = count + 1
+	}
+	other := first * (len(str) - 1) * int(math.Pow(float64(10), float64(len(str)-2)))
+	numLeft := dfs(str[1:])
+	return count + numLeft + other
+}
+```
+
 ## 面试题17.08.马戏团人塔(2)
 
 - 题目
@@ -7049,6 +7141,111 @@ func missingTwo(nums []int) []int {
 }
 ```
 
+## 面试题17.20.连续中值(1)
+
+- 题目
+
+```
+随机产生数字并传递给一个方法。你能否完成这个方法，在每次产生新值时，寻找当前所有值的中间值（中位数）并保存。
+中位数是有序列表中间的数。如果列表长度是偶数，中位数则是中间两个数的平均值。
+例如，[2,3,4] 的中位数是 3
+[2,3] 的中位数是 (2 + 3) / 2 = 2.5
+设计一个支持以下两种操作的数据结构：
+void addNum(int num) - 从数据流中添加一个整数到数据结构中。
+double findMedian() - 返回目前所有元素的中位数。
+示例：addNum(1)
+addNum(2)
+findMedian() -> 1.5
+addNum(3) 
+findMedian() -> 2
+```
+
+- 解题思路
+
+| No.  | 思路                  | 时间复杂度 | 空间复杂度 |
+| ---- | --------------------- | ---------- | ---------- |
+| 01   | 大小根堆-内置heap接口 | O(log(n))  | O(n)       |
+
+```go
+type MinHeap []int
+
+func (i MinHeap) Len() int {
+	return len(i)
+}
+
+func (i MinHeap) Less(x, y int) bool {
+	return i[x] < i[y]
+}
+
+func (i MinHeap) Swap(x, y int) {
+	i[x], i[y] = i[y], i[x]
+}
+func (i *MinHeap) Push(v interface{}) {
+	*i = append(*i, v.(int))
+}
+
+func (i *MinHeap) Pop() interface{} {
+	value := (*i)[len(*i)-1]
+	*i = (*i)[:len(*i)-1]
+	return value
+}
+
+type MaxHeap []int
+
+func (i MaxHeap) Len() int {
+	return len(i)
+}
+
+func (i MaxHeap) Less(x, y int) bool {
+	return i[x] > i[y]
+}
+
+func (i MaxHeap) Swap(x, y int) {
+	i[x], i[y] = i[y], i[x]
+}
+func (i *MaxHeap) Push(v interface{}) {
+	*i = append(*i, v.(int))
+}
+
+func (i *MaxHeap) Pop() interface{} {
+	value := (*i)[len(*i)-1]
+	*i = (*i)[:len(*i)-1]
+	return value
+}
+
+type MedianFinder struct {
+	minArr *MinHeap
+	maxArr *MaxHeap
+}
+
+func Constructor() MedianFinder {
+	res := new(MedianFinder)
+	res.minArr = new(MinHeap)
+	res.maxArr = new(MaxHeap)
+	heap.Init(res.minArr)
+	heap.Init(res.maxArr)
+	return *res
+}
+
+func (this *MedianFinder) AddNum(num int) {
+	if this.maxArr.Len() == this.minArr.Len() {
+		heap.Push(this.minArr, num)
+		heap.Push(this.maxArr, heap.Pop(this.minArr))
+	} else {
+		heap.Push(this.maxArr, num)
+		heap.Push(this.minArr, heap.Pop(this.maxArr))
+	}
+}
+
+func (this *MedianFinder) FindMedian() float64 {
+	if this.minArr.Len() == this.maxArr.Len() {
+		return (float64((*this.maxArr)[0]) + float64((*this.minArr)[0])) / 2
+	} else {
+		return float64((*this.maxArr)[0])
+	}
+}
+```
+
 ## 面试题17.21.直方图的水量(4)
 
 - 题目
@@ -7269,5 +7466,70 @@ wordList = ["hot","dot","dog","lot","log"]
 
 ```go
 
+```
+
+## 面试题17.26.稀疏相似度(1)
+
+- 题目
+
+```
+两个(具有不同单词的)文档的交集(intersection)中元素的个数除以并集(union)中元素的个数，
+就是这两个文档的相似度。
+例如，{1, 5, 3} 和 {1, 7, 2, 3} 的相似度是 0.4，其中，交集的元素有 2 个，并集的元素有 5 个。
+给定一系列的长篇文档，每个文档元素各不相同，并与一个 ID 相关联。
+它们的相似度非常“稀疏”，也就是说任选 2 个文档，相似度都很接近 0。
+请设计一个算法返回每对文档的 ID 及其相似度。
+只需输出相似度大于 0 的组合。请忽略空文档。
+为简单起见，可以假定每个文档由一个含有不同整数的数组表示。
+输入为一个二维数组 docs，docs[i] 表示 id 为 i 的文档。
+返回一个数组，其中每个元素是一个字符串，代表每对相似度大于 0 的文档，
+其格式为 {id1},{id2}: {similarity}，其中 id1 为两个文档中较小的 id，similarity 为相似度，
+精确到小数点后 4 位。以任意顺序返回数组均可。
+示例:输入: 
+[
+  [14, 15, 100, 9, 3],
+  [32, 1, 9, 3, 5],
+  [15, 29, 2, 6, 8, 7],
+  [7, 10]
+]
+输出:
+[
+  "0,1: 0.2500",
+  "0,2: 0.1000",
+  "2,3: 0.1429"
+]
+提示：docs.length <= 500
+docs[i].length <= 500
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n^3)     | O(n^2)     |
+
+```go
+func computeSimilarities(docs [][]int) []string {
+	res := make([]string, 0)
+	n := len(docs)
+	m := make(map[[2]int]int)
+	m1 := make(map[int][]int) // 字符出现的位置
+	for i := 0; i < n; i++ {
+		for j := 0; j < len(docs[i]); j++ {
+			char := docs[i][j]
+			for _, v := range m1[char] {
+				m[[2]int{v, i}]++
+			}
+			m1[char] = append(m1[char], i)
+		}
+	}
+	for k, v := range m {
+		x := v
+		y := len(docs[k[0]]) + len(docs[k[1]]) - v
+		res = append(res, fmt.Sprintf("%d,%d: %.4f",
+			k[0], k[1], float64(x)/float64(y)+1e-9))
+	}
+	return res
+}
 ```
 
