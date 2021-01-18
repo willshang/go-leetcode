@@ -87,7 +87,7 @@
 | 83 | [232.用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) Easy | [面试题03.04.化栈为队](https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/) Easy |
 | 84(相似) | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) Medium | [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) Medium |
 | 85 | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) Medium | [1035.不相交的线](https://leetcode-cn.com/problems/uncrossed-lines/) Medium |
-| 86 | [78.子集](https://leetcode-cn.com/problems/subsets/) Medium | [面试题08.04.幂集](https://leetcode-cn.com/problems/power-set-lcci/) Medium |
+| 86(相似) | [78.子集](https://leetcode-cn.com/problems/subsets/) Medium | [面试题08.04.幂集](https://leetcode-cn.com/problems/power-set-lcci/) Medium<br />[1239.串联字符串的最大长度](https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/) Medium |
 | 87(相似) | [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) Medium | [面试题16.19.水域大小](https://leetcode-cn.com/problems/pond-sizes-lcci/) Medium |
 | 88 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) Medium | [面试题10.02.变位词组](https://leetcode-cn.com/problems/group-anagrams-lcci/) Medium |
 | 89(相似) | [888.公平的糖果交换](https://leetcode-cn.com/problems/fair-candy-swap/) Easy | [面试题16.21.交换和](https://leetcode-cn.com/problems/sum-swap-lcci/) Medium |
@@ -100,6 +100,8 @@
 | 96(相似) | [354.俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/) Hard | [面试题17.08.马戏团人塔](https://leetcode-cn.com/problems/circus-tower-lcci/) Medium |
 | 97(相似) | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) Medium<br />[673.最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/) Medium | [1626.无矛盾的最佳球队](https://leetcode-cn.com/problems/best-team-with-no-conflicts/) Medium<br />[1671.得到山形数组的最少删除次数](https://leetcode-cn.com/problems/minimum-number-of-removals-to-make-mountain-array/) Hard<br />[1691.堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/) Hard |
 | 98(相似) | [767.重构字符串](https://leetcode-cn.com/problems/reorganize-string/) Medium | [1054.距离相等的条形码](https://leetcode-cn.com/problems/distant-barcodes/) Medium |
-| 99(像是) | [402.移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) Medium | [1673.找出最具竞争力的子序列](https://leetcode-cn.com/problems/find-the-most-competitive-subsequence/) Medium |
+| 99(相似) | [402.移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) Medium | [1673.找出最具竞争力的子序列](https://leetcode-cn.com/problems/find-the-most-competitive-subsequence/) Medium |
 | 100 | [865.具有所有最深节点的最小子树](https://leetcode-cn.com/problems/smallest-subtree-with-all-the-deepest-nodes/) Medium | [1123.最深叶节点的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-deepest-leaves/) Medium |
+| 101(相似) | [306.累加数](https://leetcode-cn.com/problems/additive-number/) Medium | [842.将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/) Medium |
+| 102 | [538.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) Easy | [1038.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/) Medium |
 

@@ -27,7 +27,7 @@
 | 20   | [22.括号生成](https://leetcode-cn.com/problems/generate-parentheses/) | 字符串、回溯算法                        | Medium | 完成     |
 |      | 第3期                                                        |                                         |        |          |
 | 21   | [222.完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/) | 树、二分查找                            | Medium | 完成     |
-| 22   | 224                                                          |                                         |        |          |
+| 22   | [224.基本计算器](https://leetcode-cn.com/problems/basic-calculator/) | 栈、数学                                | Hard   | 完成     |
 | 23   | [227.基本计算器II](https://leetcode-cn.com/problems/basic-calculator-ii/) | 字符串                                  | Medium | 完成     |
 | 24   | [234.回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/) | 链表、双指针                            | Easy   | 完成     |
 | 25   | [236.二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 树                                      | Medium | 完成     |
@@ -55,7 +55,7 @@
 | 45   | [45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) | 贪心算法、数组                          | Hard   | 完成     |
 | 46   | [450.删除二叉搜索树中的节点](https://leetcode-cn.com/problems/delete-node-in-a-bst/) | 树                                      | Medium | 完成     |
 | 47   | [46.全排列](https://leetcode-cn.com/problems/permutations/)  | 回溯算法                                | Medium | 完成     |
-| 48   | [460.LFU缓存](https://leetcode-cn.com/problems/lfu-cache/)   | 设计                                    | Hard   |          |
+| 48   | [460.LFU缓存](https://leetcode-cn.com/problems/lfu-cache/)   | 设计                                    | Hard   | 完成     |
 | 49   | [496.下一个更大元素I](https://leetcode-cn.com/problems/next-greater-element-i/) | 栈                                      | Easy   | 完成     |
 | 50   | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划                        | Medium | 完成     |
 |      | 第6期                                                        |                                         |        |          |
@@ -86,7 +86,7 @@
 | 73   | 855                                                          |                                         |        |          |
 | 74   | [875.爱吃香蕉的珂珂](https://leetcode-cn.com/problems/koko-eating-bananas/) | 二分查找                                | Medium | 完成     |
 | 75   | [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) | 极小化极大、数学、动态规划              | Medium | 完成     |
-| 76   | [ 887.鸡蛋掉落](https://leetcode-cn.com/problems/super-egg-drop/) | 数学、二分查找、动态规划                | Hard   |          |
+| 76   | [887.鸡蛋掉落](https://leetcode-cn.com/problems/super-egg-drop/) | 数学、二分查找、动态规划                | Hard   | 完成     |
 | 77   | [92.反转链表II](https://leetcode-cn.com/problems/reverse-linked-list-ii/) | 链表                                    | Medium | 完成     |
 | 78   | [ 969.煎饼排序](https://leetcode-cn.com/problems/pancake-sorting/) | 排序、数组                              | Medium | 完成     |
 | 79   | [98.验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) | 树、深度优先搜索                        | Medium | 完成     |
