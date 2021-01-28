@@ -76,7 +76,7 @@
 | 0059 | [面试题10.09.排序矩阵查找](https://leetcode-cn.com/problems/sorted-matrix-search-lcci/) | 双指针、二分查找、分治算法           | Medium | 完成     |
 | 0060 | 10                                                           |                                      |        |          |
 |      | 第7期                                                        |                                      |        |          |
-| 0061 | 11                                                           |                                      |        |          |
+| 0061 | [面试题10.11.峰与谷](https://leetcode-cn.com/problems/peaks-and-valleys-lcci/) |                                      | Medium | 完成     |
 | 0062 | [面试题16.01.交换数字](https://leetcode-cn.com/problems/swap-numbers-lcci/) | 位运算、数学                         | Medium | 完成     |
 | 0063 | [面试题16.02.单词频率](https://leetcode-cn.com/problems/words-frequency-lcci/) | 设计、哈希表                         | Medium | 完成     |
 | 0064 | 03                                                           |                                      |        |          |
@@ -100,14 +100,14 @@
 |      | 第9期                                                        |                                      |        |          |
 | 0081 | [面试题16.21.交换和](https://leetcode-cn.com/problems/sum-swap-lcci/) | 排序、数组                           | Medium | 完成     |
 | 0082 | 22                                                           |                                      |        |          |
-| 0083 | 24                                                           |                                      |        |          |
+| 0083 | [面试题16.24.数对和](https://leetcode-cn.com/problems/pairs-with-sum-lcci/) | 数组、哈希表                         | Medium | 完成     |
 | 0084 | [面试题16.25.LRU缓存](https://leetcode-cn.com/problems/lru-cache-lcci/) | 设计                                 | Medium | 完成     |
 | 0085 | [面试题16.26.计算器](https://leetcode-cn.com/problems/calculator-lcci/) | 字符串                               | Medium | 完成     |
 | 0086 | [面试题17.01.不用加号的加法](https://leetcode-cn.com/problems/add-without-plus-lcci/) | 位运算                               | Easy   | 完成     |
 | 0087 | [面试题17.04.消失的数字](https://leetcode-cn.com/problems/missing-number-lcci/) | 位运算、数组、数字                   | Easy   | 完成     |
 | 0088 | [面试题17.05.字母与数字](https://leetcode-cn.com/problems/find-longest-subarray-lcci/) | 数组                                 | Medium | 完成     |
 | 0089 | [面试题17.06.2出现的次数](https://leetcode-cn.com/problems/number-of-2s-in-range-lcci/) | 数学、动态规划                       | Hard   | 完成     |
-| 0090 | [面试题17.07.婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) | 深度优先搜索、广度优先搜索、并茶查集 | Medium |          |
+| 0090 | [面试题17.07.婴儿名字](https://leetcode-cn.com/problems/baby-names-lcci/) | 深度优先搜索、广度优先搜索、并茶查集 | Medium | 完成     |
 |      | 第10期                                                       |                                      |        |          |
 | 0091 | [面试题17.08.马戏团人塔](https://leetcode-cn.com/problems/circus-tower-lcci/) | 排序、二分查找、动态规划             | Medium | 完成     |
 | 0092 | [面试题17.09.第k个数](https://leetcode-cn.com/problems/get-kth-magic-number-lcci/) | 堆、队列、数学                       | Medium | 完成     |

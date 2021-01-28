@@ -126,6 +126,7 @@
 | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) | 数组、分治算法、动态规划     | Easy   | 完成     |
 | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 二分查找、动态规划           | Medium | 完成     |
 | [392.判断子序列](https://leetcode-cn.com/problems/is-subsequence/) | 贪心算法、二分查找、动态规划 | Easy   | 完成     |
+| [583.两个字符串的删除操作](https://leetcode-cn.com/problems/delete-operation-for-two-strings/) | 字符串                       | Medium | 完成     |
 | [594.最长和谐子序列](https://leetcode-cn.com/problems/longest-harmonious-subsequence/) | 哈希表                       | Easy   | 完成     |
 | [646.最长数对链](https://leetcode-cn.com/problems/maximum-length-of-pair-chain/) | 动态规划                     | Medium | 完成     |
 | [1332.删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | 字符串                       | Easy   | 完成     |
@@ -309,10 +310,10 @@
 
 ### 图-欧拉回路 / 欧拉通路
 
-| Title | Tag  | 难度 | 完成情况 |
-| ----- | ---- | ---- | -------- |
-| 332   |      |      | 完成     |
-| 753   |      |      |          |
+| Title                                                        | Tag              | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------- | ------ | -------- |
+| [332.重新安排行程](https://leetcode-cn.com/problems/reconstruct-itinerary/) | 深度优先搜索、图 | Medium | 完成     |
+| 753                                                          |                  |        |          |
 
 ### 二分查找-最大化最小值、最小化最大值
 

@@ -4815,6 +4815,44 @@ func searchMatrix(matrix [][]int, target int) bool {
 }
 ```
 
+## 面试题10.11.峰与谷(2)
+
+- 题目
+
+```
+在一个整数数组中，“峰”是大于或等于相邻整数的元素，相应地，“谷”是小于或等于相邻整数的元素。
+例如，在数组{5, 8, 4, 2, 3, 4, 6}中，{8, 6}是峰， {5, 2}是谷。
+现在给定一个整数数组，将该数组按峰与谷的交替顺序排序。
+示例:输入: [5, 3, 1, 2, 3] 输出: [5, 1, 3, 2, 3]
+提示：nums.length <= 10000
+```
+
+-  解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n)       | O(1)       |
+| 02   | 排序 | O(nlog(n)) | O(1)       |
+
+```go
+func wiggleSort(nums []int) {
+	for i := 0; i < len(nums)-1; i++ {
+		if (i%2 == 1 && nums[i] > nums[i+1]) ||
+			(i%2 == 0 && nums[i] < nums[i+1]) {
+			nums[i], nums[i+1] = nums[i+1], nums[i]
+		}
+	}
+}
+
+# 2
+func wiggleSort(nums []int) {
+	sort.Ints(nums)
+	for i := 0; i < len(nums)-1; i = i + 2 {
+		nums[i], nums[i+1] = nums[i+1], nums[i]
+	}
+}
+```
+
 ## 面试题16.01.交换数字(3)
 
 - 题目
@@ -5864,6 +5902,61 @@ func findSwapValues(array1 []int, array2 []int) []int {
 }
 ```
 
+## 面试题16.24.数对和(2)
+
+- 题目
+
+```
+设计一个算法，找出数组中两数之和为指定值的所有整数对。一个数只能属于一个数对。
+示例 1:输入: nums = [5,6,5], target = 11 输出: [[5,6]]
+示例 2:输入: nums = [5,6,5,6], target = 11 输出: [[5,6],[5,6]]
+提示：nums.length <= 100000
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 排序双指针 | O(nlog(n)) | O(n)       |
+| 02   | 哈希辅助   | O(n)       | O(n)       |
+
+```go
+func pairSums(nums []int, target int) [][]int {
+	res := make([][]int, 0)
+	sort.Ints(nums)
+	left, right := 0, len(nums)-1
+	for left < right {
+		sum := nums[left] + nums[right]
+		if target == sum {
+			res = append(res, []int{nums[left], nums[right]})
+			left++
+			right--
+		} else if target > sum {
+			left++
+		} else {
+			right--
+		}
+	}
+	return res
+}
+
+# 2
+func pairSums(nums []int, target int) [][]int {
+	res := make([][]int, 0)
+	m := make(map[int]int)
+	for i := 0; i < len(nums); i++ {
+		x := target - nums[i]
+		if m[x] > 0 {
+			res = append(res, []int{nums[i], x})
+			m[x]--
+			continue
+		}
+		m[nums[i]]++
+	}
+	return res
+}
+```
+
 ## 面试题16.25.LRU缓存(1)
 
 - 题目
@@ -6337,6 +6430,107 @@ func dfs(str string) int {
 	other := first * (len(str) - 1) * int(math.Pow(float64(10), float64(len(str)-2)))
 	numLeft := dfs(str[1:])
 	return count + numLeft + other
+}
+```
+
+## 面试题17.07.婴儿名字(1)
+
+- 题目
+
+```
+每年，政府都会公布一万个最常见的婴儿名字和它们出现的频率，也就是同名婴儿的数量。
+有些名字有多种拼法，例如，John 和 Jon 本质上是相同的名字，但被当成了两个名字公布出来。
+给定两个列表，一个是名字及对应的频率，另一个是本质相同的名字对。设计一个算法打印出每个真实名字的实际频率。
+注意，如果 John 和 Jon 是相同的，并且 Jon 和 Johnny 相同，
+则 John 与 Johnny 也相同，即它们有传递和对称性。
+在结果列表中，选择 字典序最小 的名字作为真实名字。
+示例：输入：names = ["John(15)","Jon(12)","Chris(13)","Kris(4)","Christopher(19)"], 
+synonyms = ["(Jon,John)","(John,Johnny)","(Chris,Kris)","(Chris,Christopher)"]
+输出：["John(27)","Chris(36)"]
+提示：names.length <= 100000
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 并查集 | O(n)       | O(n)       |
+
+```go
+func trulyMostPopular(names []string, synonyms []string) []string {
+	res := make([]string, 0)
+	node = Node{}
+	nameArr := make([]string, 0)
+	countArr := make([]int, 0)
+	m := make(map[string]int)
+	for i := 0; i < len(names); i++ {
+		arr := strings.Split(names[i], "(")
+		nameArr = append(nameArr, arr[0])
+		tempArr := strings.Split(arr[1], ")")
+		count, _ := strconv.Atoi(tempArr[0])
+		countArr = append(countArr, count)
+		m[arr[0]] = i
+	}
+	Init(nameArr, countArr)
+
+	for i := 0; i < len(synonyms); i++ {
+		str := strings.TrimLeft(synonyms[i], "(")
+		str = strings.TrimRight(str, ")")
+		arr := strings.Split(str, ",")
+		a := m[arr[0]]
+		b := m[arr[1]]
+		union(a, b)
+	}
+	for i := 0; i < len(node.fa); i++ {
+		if node.fa[i] < 0 {
+			temp := node.names[i] + "(" + strconv.Itoa(node.count[i]) + ")"
+			res = append(res, temp)
+		}
+	}
+	return res
+}
+
+var node Node
+
+type Node struct {
+	fa    []int
+	names []string
+	count []int
+}
+
+// 初始化
+func Init(names []string, count []int) {
+	node.fa = make([]int, len(names))
+	for i := 0; i < len(names); i++ {
+		node.fa[i] = -1
+	}
+	node.names = names
+	node.count = count
+}
+
+// 查询
+func find(x int) int {
+	if node.fa[x] < 0 {
+		return x
+	}
+	res := find(node.fa[x])
+	node.fa[x] = res
+	return res
+}
+
+// 合并
+func union(i, j int) {
+	x, y := find(i), find(j)
+	if x == y {
+		return
+	}
+	if node.names[x] <= node.names[y] {
+		node.fa[y] = x
+		node.count[x] = node.count[x] + node.count[y]
+	} else {
+		node.fa[x] = y
+		node.count[y] = node.count[y] + node.count[x]
+	}
 }
 ```
 

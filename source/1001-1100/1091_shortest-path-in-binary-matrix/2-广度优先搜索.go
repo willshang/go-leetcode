@@ -15,7 +15,7 @@ func shortestPathBinaryMatrix(grid [][]int) int {
 	if grid[n-1][m-1] == 1 {
 		return -1
 	}
-	if n == 1 && m == 1{
+	if n == 1 && m == 1 {
 		return 1
 	}
 	queue := make([]int, 0)
