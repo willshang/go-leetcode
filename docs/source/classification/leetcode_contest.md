@@ -2,6 +2,8 @@
 
 | No.                                                          | 题目                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [第226场周赛](https://leetcode-cn.com/contest/weekly-contest-226/) | [1742.盒子中小球的最大数量](https://leetcode-cn.com/problems/maximum-number-of-balls-in-a-box/)<br />[1743.从相邻元素对还原数组](https://leetcode-cn.com/problems/restore-the-array-from-adjacent-pairs/)<br />[1744.你能在你最喜欢的那天吃到你最喜欢的糖果吗？](https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/)<br />[1745.回文串分割IV](https://leetcode-cn.com/problems/palindrome-partitioning-iv/) |
+| [第225场周赛](https://leetcode-cn.com/contest/weekly-contest-225/) |                                                              |
 | [第222场周赛](https://leetcode-cn.com/contest/weekly-contest-222/) | [1710.卡车上的最大单元数](https://leetcode-cn.com/problems/maximum-units-on-a-truck/)<br />[1711.大餐计数](https://leetcode-cn.com/problems/count-good-meals/) |
 | [第221场周赛](https://leetcode-cn.com/contest/weekly-contest-221/) | [1704.判断字符串的两半是否相似](https://leetcode-cn.com/problems/determine-if-string-halves-are-alike/)<br />[1705.吃苹果的最大数目](https://leetcode-cn.com/problems/maximum-number-of-eaten-apples/) |
 | [第42场双周赛](https://leetcode-cn.com/contest/biweekly-contest-42/) |                                                              |
