@@ -104,4 +104,6 @@
 | 100 | [865.具有所有最深节点的最小子树](https://leetcode-cn.com/problems/smallest-subtree-with-all-the-deepest-nodes/) Medium | [1123.最深叶节点的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-deepest-leaves/) Medium |
 | 101(相似) | [306.累加数](https://leetcode-cn.com/problems/additive-number/) Medium | [842.将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/) Medium |
 | 102 | [538.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) Easy | [1038.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/) Medium |
+| 103 | [846.一手顺子](https://leetcode-cn.com/problems/hand-of-straights/) Medium | [1296.划分数组为连续数字的集合](https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) Medium |
+| 104(相似) | [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) Medium | [1425.带限制的子序列和](https://leetcode-cn.com/problems/constrained-subsequence-sum/) Hard |
 

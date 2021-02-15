@@ -13,6 +13,7 @@
 | [643.子数组最大平均数I](https://leetcode-cn.com/problems/maximum-average-subarray-i/) | 数组                                   | Easy   | 完成     |
 | [718.最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | 数组、哈希表、<br />二分查找、动态规划 | Medium | 完成     |
 | [974.和可被K整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | 数组、哈希表                           | Medium | 完成     |
+| [978.最长湍流子数组](https://leetcode-cn.com/problems/longest-turbulent-subarray/) | 数组、动态规划、Sliding Window         | Medium | 完成     |
 | [1460.通过翻转子数组使两个数组相等](https://leetcode-cn.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/) | 数组                                   | Easy   | 完成     |
 | [1493.删掉一个元素以后全为1的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) | 数组                                   | Medium | 完成     |
 | [1508.子数组和排序后的区间和](https://leetcode-cn.com/problems/range-sum-of-sorted-subarray-sums/) | 排序、数组                             | Medium | 完成     |
@@ -131,6 +132,7 @@
 | [646.最长数对链](https://leetcode-cn.com/problems/maximum-length-of-pair-chain/) | 动态规划                     | Medium | 完成     |
 | [1332.删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | 字符串                       | Easy   | 完成     |
 | [1403.非递增顺序的最小子序列](https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order/) | 贪心算法、排序               | Easy   | 完成     |
+|                                                              |                              |        |          |
 
 ## 3.链表
 
@@ -243,6 +245,7 @@
 | 1406                                                         |                            |        |          |
 | [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                   | Hard   | 完成     |
 | [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划                   | Hard   | 完成     |
+| [1686.石子游戏VI](https://leetcode-cn.com/problems/stone-game-vi/) | 贪心算法                   | Medium | 完成     |
 
 #### Nim游戏-极小化极大
 
@@ -258,6 +261,7 @@
 | [45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) | 贪心算法、数组   | Hard   | 完成     |
 | [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组   | Medium | 完成     |
 | [1306.跳跃游戏III](https://leetcode-cn.com/problems/jump-game-iii/) | 广度优先搜索、图 | Medium | 完成     |
+| [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) |                  | Medium | 完成     |
 
 ### 灯泡问题
 
@@ -324,6 +328,7 @@
 | [1011.在D天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/) | 数组、二分查找     | Medium | 完成     |
 | [1482.制作m束花所需的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/) | 数组、二分查找     | Medium | 完成     |
 | [1552.两球之间的磁力](https://leetcode-cn.com/problems/magnetic-force-between-two-balls/) | 数组、二分查找     | Medium | 完成     |
+| [1760.袋子里最少数目的球](https://leetcode-cn.com/problems/minimum-limit-of-balls-in-a-bag/) | 堆、二分查找       | Medium | 完成     |
 | [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) |                    | Medium | 完成     |
 
 ### 滑动窗口
@@ -352,10 +357,31 @@
 
 ### 区间问题
 
+| Title                                                        | Tag                        | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------------- | ------ | -------- |
+| [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 排序、数组                 | Medium | 完成     |
+| [57.插入区间](https://leetcode-cn.com/problems/insert-interval/) | 排序、数组                 | Hard   | 完成     |
+| [435.无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/) | 贪心算法                   | Medium | 完成     |
+| [452.用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/) | 贪心算法、排序             | Medium | 完成     |
+| [986.区间列表的交集](https://leetcode-cn.com/problems/interval-list-intersections/) | 双指针                     | Medium | 完成     |
+| [1024.视频拼接](https://leetcode-cn.com/problems/video-stitching/) | 动态规划                   | Medium | 完成     |
+| [1288.删除被覆盖区间](https://leetcode-cn.com/problems/remove-covered-intervals/) | 贪心算法、排序、Line Sweep | Medium | 完成     |
+
+### 最大矩形面积问题
+
+| Title                                                        | Tag                        | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------------- | ------ | -------- |
+| [84.柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 栈、数组                   | Hard   | 完成     |
+| [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 栈、数组、哈希表、动态规划 | Hard   | 完成     |
+| [221.最大正方形](https://leetcode-cn.com/problems/maximal-square/) | 动态规划                   | Medium | 完成     |
+| 1277                                                         |                            |        |          |
+| 1504                                                         |                            |        |          |
+| [1727.重新排列后的最大子矩阵](https://leetcode-cn.com/problems/largest-submatrix-with-rearrangements/) | 贪心算法、排序             | Medium | 完成     |
+
+### 连续数组
+
 | Title                                                        | Tag            | 难度   | 完成情况 |
 | ------------------------------------------------------------ | -------------- | ------ | -------- |
-| [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) | 排序、数组     | Medium | 完成     |
-| [57.插入区间](https://leetcode-cn.com/problems/insert-interval/) | 排序、数组     | Hard   | 完成     |
-| [435.无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/) | 贪心算法       | Medium | 完成     |
-| [452.用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/) | 贪心算法、排序 | Medium | 完成     |
-| [1024.视频拼接](https://leetcode-cn.com/problems/video-stitching/) | 动态规划       | Medium | 完成     |
+| 659                                                          |                |        |          |
+| [846.一手顺子](https://leetcode-cn.com/problems/hand-of-straights/) | Ordered Map    | Medium | 完成     |
+| [1296.划分数组为连续数字的集合](https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) | 贪心算法、数组 | Medium | 完成     |
