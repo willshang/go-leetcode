@@ -6,7 +6,6 @@ func main() {
 	fmt.Println(maxResult([]int{1, -1, -2, 4, -7, 3}, 2))
 }
 
-
 // leetcode1696_跳跃游戏VI
 func maxResult(nums []int, k int) int {
 	n := len(nums)

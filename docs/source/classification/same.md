@@ -86,7 +86,7 @@
 | 82 | [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) Easy | [面试题04.02.最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/) Easy |
 | 83 | [232.用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) Easy | [面试题03.04.化栈为队](https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/) Easy |
 | 84(相似) | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) Medium | [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) Medium |
-| 85(相似) | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) Medium<br />[583.两个字符串的删除操作](https://leetcode-cn.com/problems/delete-operation-for-two-strings/) Medium<br />[712.两个字符串的最小ASCII删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/) Medium | [1035.不相交的线](https://leetcode-cn.com/problems/uncrossed-lines/) Medium |
+| 85(相似) | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) Medium<br />[583.两个字符串的删除操作](https://leetcode-cn.com/problems/delete-operation-for-two-strings/) Medium<br />[712.两个字符串的最小ASCII删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/) Medium<br />[1048.最长字符串链](https://leetcode-cn.com/problems/longest-string-chain/) Medium | [1035.不相交的线](https://leetcode-cn.com/problems/uncrossed-lines/) Medium |
 | 86(相似) | [78.子集](https://leetcode-cn.com/problems/subsets/) Medium | [面试题08.04.幂集](https://leetcode-cn.com/problems/power-set-lcci/) Medium<br />[1239.串联字符串的最大长度](https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/) Medium |
 | 87(相似) | [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) Medium | [面试题16.19.水域大小](https://leetcode-cn.com/problems/pond-sizes-lcci/) Medium |
 | 88 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) Medium | [面试题10.02.变位词组](https://leetcode-cn.com/problems/group-anagrams-lcci/) Medium |
@@ -106,4 +106,7 @@
 | 102 | [538.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) Easy | [1038.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/) Medium |
 | 103 | [846.一手顺子](https://leetcode-cn.com/problems/hand-of-straights/) Medium | [1296.划分数组为连续数字的集合](https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) Medium |
 | 104(相似) | [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) Medium | [1425.带限制的子序列和](https://leetcode-cn.com/problems/constrained-subsequence-sum/) Hard |
+| 105(相似) | [473.火柴拼正方形](https://leetcode-cn.com/problems/matchsticks-to-square/) Medium | 698 |
+| 106(相似) | [516.最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) Medium | [1771.由子序列构造的最长回文串的长度](https://leetcode-cn.com/problems/maximize-palindrome-length-from-subsequences/) Hard |
+| 107(相似) | [416.分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) Medium | [1049.最后一块石头的重量II](https://leetcode-cn.com/problems/last-stone-weight-ii/) Medium |
 

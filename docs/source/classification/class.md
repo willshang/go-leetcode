@@ -69,14 +69,6 @@
 | [118.杨辉三角](https://leetcode-cn.com/problems/pascals-triangle) | 数组 | Easy | 完成     |
 | [119.杨辉三角II](https://leetcode-cn.com/problems/pascals-triangle-ii) | 数组 | Easy | 完成     |
 
-### 数组-差分数组
-
-| Title                                                        | Tag        | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------- | ------ | -------- |
-| [1094.拼车](https://leetcode-cn.com/problems/car-pooling/)   | 贪心算法   | Medium | 完成     |
-| [1109.航班预订统计](https://leetcode-cn.com/problems/corporate-flight-bookings/) | 数组、数学 | Medium | 完成     |
-| [1589.所有排列中的最大和](https://leetcode-cn.com/problems/maximum-sum-obtained-of-any-permutation/) | 贪心算法   | Medium | 完成     |
-
 ## 2.字符串
 
 ### 回文字符串(高频)(动态规划/中心扩展/马拉车算法)
@@ -93,14 +85,6 @@
 | [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | 字符串、动态规划 | Medium | 完成     |
 | [680.验证回文字符串Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/) | 字符串           | Easy   | 完成     |
 | [1332.删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | 字符串           | Easy   | 完成     |
-
-### 马拉车(manacher)算法
-
-| Title                                                        | Tag              | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------- | ------ | -------- |
-| [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划 | Medium | 完成     |
-| [214.最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/) | 字符串           | Hard   | 完成     |
-| [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | 字符串、动态规划 | Medium | 完成     |
 
 ### 反转字符串
 
@@ -349,12 +333,6 @@
 | [1004.最大连续1的个数III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | 双指针、Sliding Window                       | Medium | 完成     |
 | [1052.爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 数组、Sliding Window                         | Medium | 完成     |
 
-### 背包问题-完全背包
-
-| Title                                                        | Tag  | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---- | ------ | -------- |
-| [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) |      | Medium | 完成     |
-
 ### 区间问题
 
 | Title                                                        | Tag                        | 难度   | 完成情况 |
@@ -382,6 +360,20 @@
 
 | Title                                                        | Tag            | 难度   | 完成情况 |
 | ------------------------------------------------------------ | -------------- | ------ | -------- |
-| 659                                                          |                |        |          |
+| [659.分割数组为连续子序列](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/) | 堆、贪心算法   | Medium |          |
 | [846.一手顺子](https://leetcode-cn.com/problems/hand-of-straights/) | Ordered Map    | Medium | 完成     |
 | [1296.划分数组为连续数字的集合](https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) | 贪心算法、数组 | Medium | 完成     |
+
+### 环形子数组最大值
+
+| Title                                                        | Tag                      | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------------ | ------ | -------- |
+| [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) | 数组、分治算法、动态规划 | Easy   | 完成     |
+| 918                                                          |                          |        |          |
+| [1191.K次串联后最大子数组之和](https://leetcode-cn.com/problems/k-concatenation-maximum-sum/) | 动态规划                 | Medium | 完成     |
+
+### 首尾选择问题
+
+| Title                                                        | Tag      | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------- | ------ | -------- |
+| [1770.执行乘法运算的最大分数](https://leetcode-cn.com/problems/maximum-score-from-performing-multiplication-operations/) | 动态规划 | Medium | 完成     |
