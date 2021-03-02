@@ -9,7 +9,7 @@
 - 2.6 k https://github.com/aQuaYi/LeetCode-in-Go
 - 11.1 k https://github.com/greyireland/algorithm-pattern
 - 14.9k https://github.com/halfrost/LeetCode-Go
-- 84. 4k https://github.com/labuladong/fucking-algorithm
+- 84.6k https://github.com/labuladong/fucking-algorithm
 - https://github.com/ldeng7/go-leetcode 
 - https://oi-wiki.org/
 - https://cp-wiki.vercel.app/
