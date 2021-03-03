@@ -735,8 +735,10 @@
 |      | [777.在LR字符串中交换相邻字符](https://leetcode-cn.com/problems/swap-adjacent-in-lr-string/) | 脑筋急转弯                                     | Medium | 完成     |
 |      | [779.第K个语法符号](https://leetcode-cn.com/problems/k-th-symbol-in-grammar/) | 递归                                           | Medium | 完成     |
 |      | [781.森林中的兔子](https://leetcode-cn.com/problems/rabbits-in-forest/) | 哈希表、数学                                   | Medium | 完成     |
+|      | [791.自定义字符串排序](https://leetcode-cn.com/problems/custom-sort-string/) | 字符串                                         | Medium | 完成     |
 |      | [797. 所有可能的路径](https://leetcode-cn.com/problems/all-paths-from-source-to-target/) | 深度优先搜索、图、回溯算法                     | Medium | 完成     |
 |      | [808.分汤](https://leetcode-cn.com/problems/soup-servings/)  | 动态规划                                       | Medium | 完成     |
+|      | [809.情感丰富的文字](https://leetcode-cn.com/problems/expressive-words/) | 字符串                                         | Medium | 完成     |
 |      | [814.二叉树剪枝](https://leetcode-cn.com/problems/binary-tree-pruning/) | 树                                             | Medium | 完成     |
 |      | [817.链表组件](https://leetcode-cn.com/problems/linked-list-components/) | 链表                                           | Medium | 完成     |
 |      | [820.单词的压缩编码](https://leetcode-cn.com/problems/short-encoding-of-words/) |                                                | Medium | 完成     |
@@ -744,6 +746,7 @@
 |      | [825.适龄的朋友](https://leetcode-cn.com/problems/friends-of-appropriate-ages/) | 数组                                           | Medium | 完成     |
 |      | [826.安排工作以达到最大收益](https://leetcode-cn.com/problems/most-profit-assigning-work/) | 双指针                                         | Medium |          |
 |      | [831.隐藏个人信息](https://leetcode-cn.com/problems/masking-personal-information/) | 字符串                                         | Medium | 完成     |
+|      | [833.字符串中的查找与替换](https://leetcode-cn.com/problems/find-and-replace-in-string/) | 字符串                                         | Medium | 完成     |
 |      | [838.推多米诺](https://leetcode-cn.com/problems/push-dominoes/) | 双指针、动态规划                               | Medium |          |
 |      | [841.钥匙和房间](https://leetcode-cn.com/problems/keys-and-rooms/) | 深度优先搜索、图                               | Medium | 完成     |
 |      | [842.将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/) | 贪心算法、字符串、回溯算法                     | Medium | 完成     |
@@ -763,6 +766,7 @@
 |      | [880.索引处的解码字符串](https://leetcode-cn.com/problems/decoded-string-at-index/) | 栈                                             | Medium |          |
 |      | [881.救生艇](https://leetcode-cn.com/problems/boats-to-save-people/) | 贪心算法、双指针                               | Medium | 完成     |
 |      | [889.根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/) | 树                                             | Medium | 完成     |
+|      | [890.查找和替换模式](https://leetcode-cn.com/problems/find-and-replace-pattern/) | 字符串                                         | Medium | 完成     |
 |      | [898.子数组按位或操作](https://leetcode-cn.com/problems/bitwise-ors-of-subarrays/) | 位运算、动态规划                               | Medium | 完成     |
 |      | [901.股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 栈                                             | Medium | 完成     |
 |      | [904.水果成篮](https://leetcode-cn.com/problems/fruit-into-baskets/) | 双指针                                         | Medium | 完成     |
@@ -844,6 +848,7 @@
 |      | [1161.最大层内元素和](https://leetcode-cn.com/problems/maximum-level-sum-of-a-binary-tree/) | 树、广度优先搜索                               | Medium | 完成     |
 |      | [1162.地图分析](https://leetcode-cn.com/problems/as-far-from-land-as-possible/) | 广度优先搜索、图                               | Medium | 完成     |
 |      | [1171.从链表中删去总和值为零的连续节点](https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/) | 链表                                           | Medium | 完成     |
+|      | [1186.删除一次得到子数组最大和](https://leetcode-cn.com/problems/maximum-subarray-sum-with-one-deletion/) | 动态规划                                       | Medium |          |
 |      | [1190.反转每对括号间的子串](https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/) | 栈                                             | Medium | 完成     |
 |      | [1191.K次串联后最大子数组之和](https://leetcode-cn.com/problems/k-concatenation-maximum-sum/) | 动态规划                                       | Medium | 完成     |
 |      | [1202.交换字符串中的元素](https://leetcode-cn.com/problems/smallest-string-with-swaps/) | 并查集、数组                                   | Medium | 完成     |
@@ -863,6 +868,7 @@
 |      | [1262.可被三整除的最大和](https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/) | 动态规划                                       | Medium | 完成     |
 |      | [1267.统计参与通信的服务器](https://leetcode-cn.com/problems/count-servers-that-communicate/) | 图、数组                                       | Medium | 完成     |
 |      | [1276.不浪费原料的汉堡制作方案](https://leetcode-cn.com/problems/number-of-burgers-with-no-waste-of-ingredients/) | 贪心算法、数学                                 | Medium | 完成     |
+|      | [1297.子串的最大出现次数](https://leetcode-cn.com/problems/maximum-number-of-occurrences-of-a-substring/) | 位运算、字符串                                 | Medium | 完成     |
 |      | [1282.用户分组](https://leetcode-cn.com/problems/group-the-people-given-the-group-size-they-belong-to/) | 贪心算法                                       | Medium | 完成     |
 |      | [1288.删除被覆盖区间](https://leetcode-cn.com/problems/remove-covered-intervals/) | 贪心算法、排序、Line Sweep                     | Medium | 完成     |
 |      | [1291.顺次数](https://leetcode-cn.com/problems/sequential-digits/) | 回溯算法                                       | Medium | 完成     |

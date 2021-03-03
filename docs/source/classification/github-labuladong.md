@@ -48,7 +48,7 @@
 | 39   | [354.俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/) | 二分查找、动态规划                      | Hard   | 完成     |
 | 40   | [37.解数独](https://leetcode-cn.com/problems/sudoku-solver/) | 哈希表、回溯算法                        | Hard   | 完成     |
 |      | 第5期                                                        |                                         |        |          |
-| 41   | [372.超级次方](https://leetcode-cn.com/problems/super-pow/)  | 数学                                    | Medium |          |
+| 41   | [372.超级次方](https://leetcode-cn.com/problems/super-pow/)  | 数学                                    | Medium | 完成     |
 | 42   | [416.分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) | 动态规划                                | Medium | 完成     |
 | 43   | [42.接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) | 栈、数组、双指针                        | Hard   | 完成     |
 | 44   | [438.找到字符串中所有字母异位词](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/) | 哈希表                                  | Medium | 完成     |

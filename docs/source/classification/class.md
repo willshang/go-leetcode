@@ -364,12 +364,13 @@
 | [846.一手顺子](https://leetcode-cn.com/problems/hand-of-straights/) | Ordered Map    | Medium | 完成     |
 | [1296.划分数组为连续数字的集合](https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) | 贪心算法、数组 | Medium | 完成     |
 
-### 环形子数组最大值
+### 子数组最大值
 
 | Title                                                        | Tag                      | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ------------------------ | ------ | -------- |
 | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) | 数组、分治算法、动态规划 | Easy   | 完成     |
-| 918                                                          |                          |        |          |
+| [918.环形子数组的最大和](https://leetcode-cn.com/problems/maximum-sum-circular-subarray/) | 数组                     | Medium |          |
+| [1186.删除一次得到子数组最大和](https://leetcode-cn.com/problems/maximum-subarray-sum-with-one-deletion/) | 动态规划                 | Medium |          |
 | [1191.K次串联后最大子数组之和](https://leetcode-cn.com/problems/k-concatenation-maximum-sum/) | 动态规划                 | Medium | 完成     |
 
 ### 首尾选择问题
