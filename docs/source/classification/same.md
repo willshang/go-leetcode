@@ -110,4 +110,6 @@
 | 106(相似) | [516.最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) Medium | [1771.由子序列构造的最长回文串的长度](https://leetcode-cn.com/problems/maximize-palindrome-length-from-subsequences/) Hard |
 | 107(相似) | [416.分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) Medium | [1049.最后一块石头的重量II](https://leetcode-cn.com/problems/last-stone-weight-ii/) Medium |
 | 108(相似) | [205.同构字符串](https://leetcode-cn.com/problems/isomorphic-strings/) Easy | [890.查找和替换模式](https://leetcode-cn.com/problems/find-and-replace-pattern/) Medium |
+| 109(相似) | [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) Medium | [1314.矩阵区域和](https://leetcode-cn.com/problems/matrix-block-sum/) Medium |
+| 110(相似) | [392.判断子序列](https://leetcode-cn.com/problems/is-subsequence/) Easy | [792.匹配子序列的单词数](https://leetcode-cn.com/problems/number-of-matching-subsequences/) Medium |
 

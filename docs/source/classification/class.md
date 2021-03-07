@@ -225,11 +225,12 @@
 | Title                                                        | Tag                        | 难度   | 完成情况 |
 | ------------------------------------------------------------ | -------------------------- | ------ | -------- |
 | [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) | 极小化极大、数学、动态规划 | Medium | 完成     |
-| 1140                                                         |                            |        |          |
+| [1140.石子游戏II](https://leetcode-cn.com/problems/stone-game-ii/) | 动态规划                   | Medium | 完成     |
 | 1406                                                         |                            |        |          |
 | [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                   | Hard   | 完成     |
 | [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划                   | Hard   | 完成     |
 | [1686.石子游戏VI](https://leetcode-cn.com/problems/stone-game-vi/) | 贪心算法                   | Medium | 完成     |
+| [1690.石子游戏VII](https://leetcode-cn.com/problems/stone-game-vii/) | 动态规划                   | Medium | 完成     |
 
 #### Nim游戏-极小化极大
 
@@ -375,6 +376,9 @@
 
 ### 首尾选择问题
 
-| Title                                                        | Tag      | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------- | ------ | -------- |
-| [1770.执行乘法运算的最大分数](https://leetcode-cn.com/problems/maximum-score-from-performing-multiplication-operations/) | 动态规划 | Medium | 完成     |
+| Title                                                        | Tag                        | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------------- | ------ | -------- |
+| [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) | 极小化极大、数学、动态规划 | Medium | 完成     |
+| [1690.石子游戏VII](https://leetcode-cn.com/problems/stone-game-vii/) | 动态规划                   | Medium | 完成     |
+| [1770.执行乘法运算的最大分数](https://leetcode-cn.com/problems/maximum-score-from-performing-multiplication-operations/) | 动态规划                   | Medium | 完成     |
+
