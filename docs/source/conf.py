@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'go-leetcode'
-copyright = '2020, willshang'
+copyright = '2021, willshang'
 author = 'willshang'
 
 # The full version, including alpha/beta/rc tags
