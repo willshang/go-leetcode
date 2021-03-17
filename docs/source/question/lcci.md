@@ -4382,7 +4382,203 @@ func dfs(arr [][]string, row int, rows, left, right int) {
 }
 ```
 
+## 面试题08.13.堆箱子(1)
 
+- 题目
+
+```
+堆箱子。给你一堆n个箱子，箱子宽 wi、深 di、高 hi。
+箱子不能翻转，将箱子堆起来时，下面箱子的宽度、高度和深度必须大于上面的箱子。
+实现一种方法，搭出最高的一堆箱子。箱堆的高度为每个箱子高度的总和。
+输入使用数组[wi, di, hi]表示每个箱子。
+示例1:输入：box = [[1, 1, 1], [2, 2, 2], [3, 3, 3]]输出：6
+示例2:输入：box = [[1, 1, 1], [2, 3, 4], [2, 6, 7], [3, 4, 5]] 输出：10
+提示:箱子的数目不大于3000个。
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 排序+动态规划 | O(n^2)     | O(n)       |
+
+```go
+func pileBox(box [][]int) int {
+	sort.Slice(box, func(i, j int) bool {
+		if box[i][0] == box[j][0] {
+			if box[i][1] == box[j][1] {
+				return box[i][2] < box[j][2]
+			}
+			return box[i][1] < box[j][1]
+		}
+		return box[i][0] < box[j][0]
+	})
+	n, res := len(box), 0
+	dp := make([]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = box[i][2]
+	}
+	for i := 0; i < n; i++ {
+		for j := 0; j < i; j++ {
+			if box[j][0] < box[i][0] && box[j][1] < box[i][1] && box[j][2] < box[i][2] {
+				dp[i] = max(dp[i], dp[j]+box[i][2])
+			}
+		}
+		res = max(res, dp[i])
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 面试题08.14.布尔运算(3)
+
+- 题目
+
+```
+给定一个布尔表达式和一个期望的布尔结果 result，布尔表达式由 0 (false)、1 (true)、& (AND)、
+| (OR) 和 ^ (XOR) 符号组成。实现一个函数，算出有几种可使该表达式得出 result 值的括号方法。
+示例 1:输入: s = "1^0|0|1", result = 0  输出: 2
+解释: 两种可能的括号方法是
+1^(0|(0|1))
+1^((0|0)|1)
+示例 2:输入: s = "0&0&0&1^1|0", result = 1 输出: 10
+提示：运算符的数量不超过 19 个
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^3)     | O(n^2)     |
+| 02   | 动态规划 | O(n^3)     | O(n^2)     |
+| 03   | 动态规划 | O(n^3)     | O(n^2)     |
+
+```go 
+func countEval(s string, result int) int {
+	n := len(s)
+	// dp[i][j][0/1] => s[i:j+1]结果为0/1的方法数
+	dp := make([][][2]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([][2]int, n)
+	}
+	for i := n - 1; i >= 0; i = i - 2 {
+		for j := i; j < n; j = j + 2 {
+			if i == j {
+				if s[i] == '0' {
+					dp[i][j][0]++
+				} else {
+					dp[i][j][1]++
+				}
+				continue
+			}
+			for k := i + 1; k < j; k = k + 2 { // 枚举操作符
+				for a := 0; a <= 1; a++ {
+					for b := 0; b <= 1; b++ {
+						if getValue(a, b, s[k]) == 0 {
+							dp[i][j][0] = dp[i][j][0] +
+								dp[i][k-1][a]*dp[k+1][j][b]
+						} else {
+							dp[i][j][1] = dp[i][j][01] +
+								dp[i][k-1][a]*dp[k+1][j][b]
+						}
+					}
+				}
+			}
+		}
+	}
+	return dp[0][n-1][result]
+}
+
+func getValue(a, b int, op byte) int {
+	if op == '&' {
+		return a & b
+	} else if op == '|' {
+		return a | b
+	}
+	return a ^ b
+}
+
+# 2
+func countEval(s string, result int) int {
+	n := len(s)
+	// dp[i][j][0/1] => s[i:j+1]结果为0/1的方法数
+	dp := make([][][2]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([][2]int, n)
+	}
+	for i := n - 1; i >= 0; i = i - 2 {
+		for j := i; j < n; j = j + 2 {
+			if i == j {
+				dp[i][j][s[i]-'0']++
+				continue
+			}
+			for k := i + 1; k < j; k = k + 2 { // 枚举操作符
+				for a := 0; a <= 1; a++ {
+					for b := 0; b <= 1; b++ {
+						temp := getValue(a, b, s[k])
+						dp[i][j][temp] = dp[i][j][temp] +
+							dp[i][k-1][a]*dp[k+1][j][b]
+					}
+				}
+			}
+		}
+	}
+	return dp[0][n-1][result]
+}
+
+func getValue(a, b int, op byte) int {
+	if op == '&' {
+		return a & b
+	} else if op == '|' {
+		return a | b
+	}
+	return a ^ b
+}
+
+# 3
+func countEval(s string, result int) int {
+	n := len(s)
+	// dp[i][j][0/1] => s[i:j+1]结果为0/1的方法数
+	dp := make([][][2]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([][2]int, n)
+		if i%2 == 0 {
+			dp[i][i][int(s[i]-'0')]++
+		}
+	}
+	for length := 2; length <= n; length = length + 2 { // 枚举长度
+		for i := 0; i <= n-length; i = i + 2 { // 枚举起点
+			j := i + length                    // 确定终点
+			for k := i + 1; k < j; k = k + 2 { // 枚举操作符
+				for a := 0; a <= 1; a++ {
+					for b := 0; b <= 1; b++ {
+						temp := getValue(a, b, s[k])
+						dp[i][j][temp] = dp[i][j][temp] +
+							dp[i][k-1][a]*dp[k+1][j][b]
+					}
+				}
+			}
+		}
+	}
+	return dp[0][n-1][result]
+}
+
+func getValue(a, b int, op byte) int {
+	if op == '&' {
+		return a & b
+	} else if op == '|' {
+		return a | b
+	}
+	return a ^ b
+}
+```
 
 ## 面试题10.01.合并排序的数组(3)
 
@@ -5706,6 +5902,102 @@ func max(a, b int) int {
 }
 ```
 
+## 面试题16.18.模式匹配(1)
+
+- 题目
+
+```
+你有两个字符串，即pattern和value。 pattern字符串由字母"a"和"b"组成，用于描述字符串中的模式。
+例如，字符串"catcatgocatgo"匹配模式"aabab"（其中"cat"是"a"，"go"是"b"），
+该字符串也匹配像"a"、"ab"和"b"这样的模式。
+但需注意"a"和"b"不能同时表示相同的字符串。编写一个方法判断value字符串是否匹配pattern字符串。
+示例 1：输入： pattern = "abba", value = "dogcatcatdog" 输出： true
+示例 2：输入： pattern = "abba", value = "dogcatcatfish" 输出： false
+示例 3：输入： pattern = "aaaa", value = "dogcatcatdog" 输出： false
+示例 4：输入： pattern = "abba", value = "dogdogdogdog" 输出： true
+解释： "a"="dogdog",b=""，反之也符合规则
+提示：1 <= len(pattern) <= 1000
+0 <= len(value) <= 1000
+你可以假设pattern只包含字母"a"和"b"，value仅包含小写字母。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 枚举 | O(n^2)     | O(n)       |
+
+```go
+func patternMatching(pattern string, value string) bool {
+	countA := 0
+	for i := 0; i < len(pattern); i++ {
+		if pattern[i] == 'a' {
+			countA++
+		}
+	}
+	countB := len(pattern) - countA
+	if value == "" {
+		return countA == 0 || countB == 0
+	}
+	if countA < countB { // 令a>b
+		countA, countB = countB, countA
+		str := ""
+		for i := 0; i < len(pattern); i++ {
+			if pattern[i] == 'a' {
+				str = str + "b"
+			} else {
+				str = str + "a"
+			}
+		}
+		pattern = str
+	}
+	for a := 0; a <= len(value)/countA; a++ { // 枚举
+		if judge(pattern, value, a, countA, countB) {
+			return true
+		}
+	}
+	return false
+}
+
+func judge(pattern string, value string, a, countA, countB int) bool {
+	left := len(value) - a*countA
+	if (countB == 0 && left == 0) || (countB > 0 && left%countB == 0) {
+		var b int
+		if countB > 0 {
+			b = left / countB
+		}
+		var strA, strB string
+		index := 0
+		flag := true
+		for i := 0; i < len(pattern); i++ {
+			if pattern[i] == 'a' {
+				str := value[index : index+a]
+				if strA == "" {
+					strA = str
+				} else if str != strA {
+					flag = false
+					break
+				}
+				index = index + a
+			} else {
+				str := value[index : index+b]
+				if strB == "" {
+					strB = str
+				} else if str != strB {
+					flag = false
+					break
+				}
+				index = index + b
+			}
+		}
+		if flag == true && strA != strB {
+			return true
+		}
+	}
+	return false
+}
+```
+
 ## 面试题16.19.水域大小(2)
 
 - 题目
@@ -5899,6 +6191,100 @@ func findSwapValues(array1 []int, array2 []int) []int {
 		}
 	}
 	return nil
+}
+```
+
+## 面试题16.22.兰顿蚂蚁(1)
+
+- 题目
+
+```
+一只蚂蚁坐在由白色和黑色方格构成的无限网格上。开始时，网格全白，蚂蚁面向右侧。
+每行走一步，蚂蚁执行以下操作。
+(1) 如果在白色方格上，则翻转方格的颜色，向右(顺时针)转 90 度，并向前移动一个单位。
+(2) 如果在黑色方格上，则翻转方格的颜色，向左(逆时针方向)转 90 度，并向前移动一个单位。
+编写程序来模拟蚂蚁执行的前 K 个动作，并返回最终的网格。
+网格由数组表示，每个元素是一个字符串，代表网格中的一行，黑色方格由 'X' 表示，白色方格由 '_' 表示，
+蚂蚁所在的位置由 'L', 'U', 'R', 'D' 表示，分别表示蚂蚁 左、上、右、下 的朝向。
+只需要返回能够包含蚂蚁走过的所有方格的最小矩形。
+示例 1:输入: 0 输出: ["R"]
+示例 2:输入: 2 输出:
+[
+  "_X",
+  "LX"
+]
+示例 3:输入: 5 输出:
+[
+  "_U",
+  "X_",
+  "XX"
+]
+说明：K <= 100000
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 遍历模拟 | O(n)       | O(n)       |
+
+```go
+func printKMoves(K int) []string {
+	var dirArr = []byte{'R', 'D', 'L', 'U'}
+	var dx = []int{1, 0, -1, 0}
+	var dy = []int{0, -1, 0, 1}
+	dir := 0 // 向右
+	x, y := 0, 0
+	left, right := 0, 0
+	up, down := 0, 0
+	m := make(map[[2]int]int) // 1黑色，0白色
+	for i := 0; i < K; i++ {
+		if m[[2]int{x, y}] == 1 { // 变方向
+			dir = (dir + 3) % 4 // 逆时针
+		} else {
+			dir = (dir + 1) % 4 // 顺时针
+		}
+		m[[2]int{x, y}] = 1 - m[[2]int{x, y}]
+		x = x + dx[dir]
+		y = y + dy[dir]
+		left = min(left, x)
+		right = max(right, x)
+		down = min(down, y)
+		up = max(up, y)
+	}
+	w := right - left + 1
+	h := up - down + 1
+	res := make([]string, 0)
+	for i := 0; i < h; i++ {
+		arr := make([]byte, w)
+		for j := 0; j < w; j++ {
+			newX := j + left
+			newY := up - i
+			arr[j] = '_'
+			if v, ok := m[[2]int{newX, newY}]; ok && v == 1 {
+				arr[j] = 'X'
+			}
+			if newX == x && newY == y {
+				arr[j] = dirArr[dir]
+			}
+		}
+		res = append(res, string(arr))
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
 }
 ```
 

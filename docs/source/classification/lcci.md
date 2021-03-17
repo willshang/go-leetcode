@@ -67,8 +67,8 @@
 |      | 第6期                                                        |                                      |        |          |
 | 0051 | [面试题08.11.硬币](https://leetcode-cn.com/problems/coin-lcci/) | 动态规划                             | Medium | 完成     |
 | 0052 | [面试题08.12.八皇后](https://leetcode-cn.com/problems/eight-queens-lcci/) | 回溯算法                             | Hard   | 完成     |
-| 0053 | 13                                                           |                                      |        |          |
-| 0054 | 14                                                           |                                      |        |          |
+| 0053 | [面试题08.13.堆箱子](https://leetcode-cn.com/problems/pile-box-lcci/) | 动态规划、回溯算法                   | Hard   | 完成     |
+| 0054 | [面试题08.14.布尔运算](https://leetcode-cn.com/problems/boolean-evaluation-lcci/) | 栈、字符串                           | Medium | 完成     |
 | 0055 | [面试题10.01.合并排序的数组](https://leetcode-cn.com/problems/sorted-merge-lcci/) | 数组、双指针                         | Easy   | 完成     |
 | 0056 | [面试题10.02.变位词组](https://leetcode-cn.com/problems/group-anagrams-lcci/) | 哈希表、字符串                       | Medium | 完成     |
 | 0057 | [面试题10.03.搜索旋转数组](https://leetcode-cn.com/problems/search-rotate-array-lcci/) | 数组、二分查找                       | Medium | 完成     |
@@ -94,12 +94,12 @@
 | 0075 | [面试题16.15.珠玑妙算](https://leetcode-cn.com/problems/master-mind-lcci/) | 数组                                 | Easy   | 完成     |
 | 0076 | [面试题16.16.部分排序](https://leetcode-cn.com/problems/sub-sort-lcci/) | 排序、数字                           | Medium | 完成     |
 | 0077 | [面试题16.17.连续数列](https://leetcode-cn.com/problems/contiguous-sequence-lcci/) | 数组、分治算法、动态规划             | Easy   | 完成     |
-| 0078 | 18                                                           |                                      |        |          |
+| 0078 | [面试题16.18.模式匹配](https://leetcode-cn.com/problems/pattern-matching-lcci/) | 字符串                               | Medium | 完成     |
 | 0079 | [面试题16.19.水域大小](https://leetcode-cn.com/problems/pond-sizes-lcci/) | 深度优先搜索、广度优先搜索           | Medium | 完成     |
 | 0080 | [面试题16.20.T9键盘](https://leetcode-cn.com/problems/t9-lcci/) | 数组                                 | Medium | 完成     |
 |      | 第9期                                                        |                                      |        |          |
 | 0081 | [面试题16.21.交换和](https://leetcode-cn.com/problems/sum-swap-lcci/) | 排序、数组                           | Medium | 完成     |
-| 0082 | 22                                                           |                                      |        |          |
+| 0082 | [面试题16.22.兰顿蚂蚁](https://leetcode-cn.com/problems/langtons-ant-lcci/) | 数组                                 | Medium | 完成     |
 | 0083 | [面试题16.24.数对和](https://leetcode-cn.com/problems/pairs-with-sum-lcci/) | 数组、哈希表                         | Medium | 完成     |
 | 0084 | [面试题16.25.LRU缓存](https://leetcode-cn.com/problems/lru-cache-lcci/) | 设计                                 | Medium | 完成     |
 | 0085 | [面试题16.26.计算器](https://leetcode-cn.com/problems/calculator-lcci/) | 字符串                               | Medium | 完成     |

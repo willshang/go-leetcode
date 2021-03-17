@@ -2,6 +2,12 @@
 
 |      | No.                                                          | 题目                                                         |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 完成 | [第232场周赛](https://leetcode-cn.com/contest/weekly-contest-232/) | [1790.仅执行一次字符串交换能否使两个字符串相等](https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal/)<br />[1791.找出星型图的中心节点](https://leetcode-cn.com/problems/find-center-of-star-graph/)<br />[1792.最大平均通过率](https://leetcode-cn.com/problems/maximum-average-pass-ratio/)<br />[1793.好子数组的最大分数](https://leetcode-cn.com/problems/maximum-score-of-a-good-subarray/) |
+|      | [第231场周赛](https://leetcode-cn.com/contest/weekly-contest-231/) |                                                              |
+|      | 第47场双周赛                                                 |                                                              |
+|      | 第230场周赛                                                  |                                                              |
+|      | 第229场周赛                                                  |                                                              |
+|      | 第46场双周赛                                                 |                                                              |
 | 完成 | [第228场周赛](https://leetcode-cn.com/contest/weekly-contest-228/) | [1758.生成交替二进制字符串的最少操作数](https://leetcode-cn.com/problems/minimum-changes-to-make-alternating-binary-string/)<br />[1759.统计同构子字符串的数目](https://leetcode-cn.com/problems/count-number-of-homogenous-substrings/)<br />[1760.袋子里最少数目的球](https://leetcode-cn.com/problems/minimum-limit-of-balls-in-a-bag/)<br />[1761.一个图中连通三元组的最小度数](https://leetcode-cn.com/problems/minimum-degree-of-a-connected-trio-in-a-graph/) |
 |      | 第227                                                        |                                                              |
 | 完成 | [第226场周赛](https://leetcode-cn.com/contest/weekly-contest-226/) | [1742.盒子中小球的最大数量](https://leetcode-cn.com/problems/maximum-number-of-balls-in-a-box/)<br />[1743.从相邻元素对还原数组](https://leetcode-cn.com/problems/restore-the-array-from-adjacent-pairs/)<br />[1744.你能在你最喜欢的那天吃到你最喜欢的糖果吗？](https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/)<br />[1745.回文串分割IV](https://leetcode-cn.com/problems/palindrome-partitioning-iv/) |
