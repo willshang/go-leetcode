@@ -8,7 +8,7 @@
 | 04 | [154.寻找旋转排序数组中的最小值II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) Hard | [面试题11.旋转数组的最小数字](https://leetcode-cn.com/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/) Easy |
 | 05 | [105.从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) Medium | [面试题07.重建二叉树](https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/) Medium |
 | 06 | [79.单词搜索](https://leetcode-cn.com/problems/word-search/) Medium | [面试题12.矩阵中的路径 ](https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/) Medium |
-| 07 | [343.整数拆分](https://leetcode-cn.com/problems/integer-break/) Medium | [面试题14- I.剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/) Medium<br />[面试题14-II.剪绳子 II](https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/) Medium |
+| 07 | [343.整数拆分](https://leetcode-cn.com/problems/integer-break/) Medium<br />[1808.好因子的最大数目](https://leetcode-cn.com/problems/maximize-number-of-nice-divisors/) Hard | [面试题14- I.剪绳子](https://leetcode-cn.com/problems/jian-sheng-zi-lcof/) Medium<br />[面试题14-II.剪绳子 II](https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof/) Medium |
 | 08 | [240.搜索二维矩阵II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/) Medium<br />[74.搜索二维矩阵](https://leetcode-cn.com/problems/search-a-2d-matrix/) Medium | [面试题04.二维数组中的查找](https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/) Easy<br />[面试题10.09.排序矩阵查找](https://leetcode-cn.com/problems/sorted-matrix-search-lcci/) Medium |
 | 09 | [191.位1的个数](https://leetcode-cn.com/problems/number-of-1-bits) Easy | [面试题15.二进制中1的个数](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/) Easy |
 | 10 | [50.Pow(x,n)](https://leetcode-cn.com/problems/powx-n/) Medium | [面试题16.数值的整数次方](https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/) Medium |
@@ -58,7 +58,7 @@
 | 54 | [796.旋转字符串](https://leetcode-cn.com/problems/rotate-string/) Easy | [面试题01.09.字符串轮转](https://leetcode-cn.com/problems/string-rotation-lcci/) Easy |
 | 55(相似) | [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) Medium | [面试题03.数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/) Easy |
 | 56 | [88.合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array) Easy | [面试题10.01.合并排序的数组](https://leetcode-cn.com/problems/sorted-merge-lcci/) Easy |
-| 57 | [198.打家劫舍](https://leetcode-cn.com/problems/house-robber) Easy | [面试题17.16.按摩师](https://leetcode-cn.com/problems/the-masseuse-lcci/) Easy |
+| 57 | [198.打家劫舍](https://leetcode-cn.com/problems/house-robber) Easy<br />[740.删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) Medium | [面试题17.16.按摩师](https://leetcode-cn.com/problems/the-masseuse-lcci/) Easy |
 | 58 | [2.两数相加](https://leetcode-cn.com/problems/add-two-numbers/) Medium | [面试题02.05.链表求和](https://leetcode-cn.com/problems/sum-lists-lcci/) Medium |
 | 59 | [86.分隔链表](https://leetcode-cn.com/problems/partition-list/) Medium | [面试题02.04.分割链表](https://leetcode-cn.com/problems/partition-list-lcci/) Medium |
 | 60 | [234.回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/) Easy | [面试题02.06.回文链表](https://leetcode-cn.com/problems/palindrome-linked-list-lcci/) Easy |

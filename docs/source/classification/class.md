@@ -239,14 +239,15 @@
 | [292.Nim游戏](https://leetcode-cn.com/problems/nim-game/)    | 脑筋急转弯、极小化极大 | Easy   | 完成     |
 | [486.预测赢家](https://leetcode-cn.com/problems/predict-the-winner/) | 极小化极大、动态规划   | Medium | 完成     |
 
-#### 跳跃游戏
+#### 跳跃游戏系列
 
-| Title                                                        | Tag              | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------- | ------ | -------- |
-| [45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) | 贪心算法、数组   | Hard   | 完成     |
-| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组   | Medium | 完成     |
-| [1306.跳跃游戏III](https://leetcode-cn.com/problems/jump-game-iii/) | 广度优先搜索、图 | Medium | 完成     |
-| [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) |                  | Medium | 完成     |
+| Title                                                        | Tag                    | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
+| [45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) | 贪心算法、数组         | Hard   | 完成     |
+| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组         | Medium | 完成     |
+| [1306.跳跃游戏III](https://leetcode-cn.com/problems/jump-game-iii/) | 广度优先搜索、图       | Medium | 完成     |
+| [1654.到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | 广度优先搜索、动态规划 | Medium | 完成     |
+| [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) |                        | Medium | 完成     |
 
 ### 灯泡问题
 
