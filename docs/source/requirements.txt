@@ -1,0 +1,4 @@
+sphinx-markdown-parser
+sphinx-markdown-tables
+sphinx-rtd-theme
+recommonmark
