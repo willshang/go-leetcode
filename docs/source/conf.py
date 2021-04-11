@@ -14,8 +14,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import recommonmark
 import sphinx_markdown_tables
 import sphinx_rtd_theme
+from recommonmark.parser import CommonMarkParser
 
 # -- 项目信息 -----------------------------------------------------
 project = 'go-leetcode' # 项目名称
@@ -31,7 +33,9 @@ release = 'v1.0.0' # 版本
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx_markdown_tables',
+    'recommonmark',
+    'sphinx_rtd_theme',
+    'sphinx_markdown_tables'
 ]
 
 
@@ -65,7 +69,7 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-from recommonmark.parser import CommonMarkParser
+
 source_parsers = {
     '.md': CommonMarkParser,
 }
