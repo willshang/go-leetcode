@@ -1,6 +1,6 @@
 # go-Leetcode
 - readthedoc [![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/en/latest/?badge=latest)
-- PDF下载：https://go-leetcode.readthedocs.io/_/downloads/en/latest/pdf/
+- PDF下载：https://go-leetcode.readthedocs.io/_/downloads/zh/latest/pdf/
 - gitbook [gitbook](https://willshang.github.io/go-leetcode/)
 - 剑指offer [剑指offer](https://willshang.github.io/go-leetcode/docs/source/question/offer.html) 
 - 程序员面试金典 [程序员面试金典](https://willshang.github.io/go-leetcode/docs/source/question/lcci.html)
