@@ -16,7 +16,7 @@ mysql
 
     
 
-# Easy
+# Mysql-Easy
 
 ## 175.组合两个表(2)
 
@@ -755,7 +755,7 @@ from Department
 group by id;
 ```
 
-# Medium
+# Mysql-Medium
 
 ## 177.第N高的薪水(2)
 
@@ -1049,7 +1049,7 @@ from seat s1 left join seat s2 on ((s1.id+1)^1)-1=s2.id
 order by s1.id
 ```
 
-# Hard
+# Mysql-Hard
 
 ## 185.部门工资前三高的所有员工(2)
 
