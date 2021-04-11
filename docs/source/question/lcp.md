@@ -865,3 +865,538 @@ func min(a, b int) int {
 }
 ```
 
+## LCP22.黑白方格画(1)
+
+- 题目
+
+```
+小扣注意到秋日市集上有一个创作黑白方格画的摊位。摊主给每个顾客提供一个固定在墙上的白色画板，画板不能转动。
+画板上有 n * n 的网格。绘画规则为，小扣可以选择任意多行以及任意多列的格子涂成黑色，
+所选行数、列数均可为 0。
+小扣希望最终的成品上需要有 k 个黑色格子，请返回小扣共有多少种涂色方案。
+注意：两个方案中任意一个相同位置的格子颜色不同，就视为不同的方案。
+示例 1：输入：n = 2, k = 2 输出：4
+解释：一共有四种不同的方案：
+第一种方案：涂第一列；
+第二种方案：涂第二列；
+第三种方案：涂第一行；
+第四种方案：涂第二行。
+示例 2：输入：n = 2, k = 1 输出：0
+解释：不可行，因为第一次涂色至少会涂两个黑格。
+示例 3：输入：n = 2, k = 4 输出：1
+解释：共有 2*2=4 个格子，仅有一种涂色方案。
+限制：1 <= n <= 6
+0 <= k <= n * n
+```
+
+- 解题思路
+
+| No.  | 思路        | 时间复杂度 | 空间复杂度 |
+| ---- | ----------- | ---------- | ---------- |
+| 01   | 暴力法+组合 | O(1)       | O(1)       |
+
+```go
+func paintingPlan(n int, k int) int {
+	if k == n*n || k == 0 { // 全部涂满或者不涂只有1种方案
+		return 1
+	}
+	if k < n { // 最少大于等于n
+		return 0
+	}
+	res := 0
+	// 暴力枚举行和列
+	for i := 0; i < n; i++ {
+		for j := 0; j < n; j++ {
+			a := i * n
+			b := j * n
+			if a+b-i*j == k {
+				res = res + C(n, i)*C(n, j) // 求组合数
+			}
+		}
+	}
+	return res
+}
+
+func C(n, m int) int {
+	a := 1
+	for i := 1; i <= m; i++ {
+		a = a * (n - i + 1)
+	}
+
+	b := 1
+	for i := 1; i <= m; i++ {
+		b = b * i
+	}
+	return a / b
+}
+```
+
+## LCP28.采购方案(3)
+
+- 题目
+
+```
+小力将 N 个零件的报价存于数组 nums。小力预算为 target，假定小力仅购买两个零件，
+要求购买零件的花费不超过预算，请问他有多少种采购方案。
+注意：答案需要以 1e9 + 7 (1000000007) 为底取模，如：计算初始结果为：1000000008，请返回 1
+示例 1：输入：nums = [2,5,3,5], target = 6 输出：1
+解释：预算内仅能购买 nums[0] 与 nums[2]。
+示例 2：输入：nums = [2,2,1,9], target = 10 输出：4
+解释：符合预算的采购方案如下：
+nums[0] + nums[1] = 4
+nums[0] + nums[2] = 3
+nums[1] + nums[2] = 3
+nums[2] + nums[3] = 10
+提示：2 <= nums.length <= 10^5
+1 <= nums[i], target <= 10^5
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 排序+双指针   | O(nlog(n)) | O(1)       |
+| 02   | 排序+双指针   | O(nlog(n)) | O(1)       |
+| 03   | 排序+二分查找 | O(nlog(n)) | O(1)       |
+
+```go
+func purchasePlans(nums []int, target int) int {
+	sort.Ints(nums)
+	j := len(nums) - 1
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		for i < j {
+			if nums[i]+nums[j] <= target {
+				break
+			}
+			j--
+		}
+		if i < j {
+			res = res + (j - i)
+		}
+	}
+	return res % 1000000007
+}
+
+# 2
+func purchasePlans(nums []int, target int) int {
+	sort.Ints(nums)
+	res := 0
+	left, right := 0, len(nums)-1
+	for left < right {
+		for left < right && nums[left]+nums[right] > target {
+			right--
+		}
+		res = res + right - left
+		left++
+	}
+	return res % 1000000007
+}
+
+# 3
+func purchasePlans(nums []int, target int) int {
+	sort.Ints(nums)
+	ln := len(nums)
+	res := 0
+	for i := 0; i < ln; i++ {
+		target := target - nums[i]
+		index := search(nums[i+1:], target)
+		res = res + index
+	}
+	return res % 1000000007
+}
+
+func search(nums []int, target int) int {
+	left := 0
+	right := len(nums) - 1
+	for left <= right {
+		mid := left + (right-left)/2
+		if nums[mid] > target {
+			right = mid - 1
+		} else {
+			left = mid + 1
+		}
+	}
+	return left
+}
+```
+
+## LCP29.乐团站位(2)
+
+- 题目
+
+```
+某乐团的演出场地可视作 num * num 的二维矩阵 grid（左上角坐标为 [0,0])，每个位置站有一位成员。
+乐团共有 9 种乐器，乐器编号为 1~9，每位成员持有 1 个乐器。
+为保证声乐混合效果，成员站位规则为：自 grid 左上角开始顺时针螺旋形向内循环以 1，2，...，9 循环重复排列。
+例如当 num = 5 时，站位如图所示
+请返回位于场地坐标 [Xpos,Ypos] 的成员所持乐器编号。
+示例 1：输入：num = 3, Xpos = 0, Ypos = 2 输出：3
+解释：
+示例 2：输入：num = 4, Xpos = 1, Ypos = 2 输出：5
+解释：
+提示：1 <= num <= 10^9
+0 <= Xpos, Ypos < num
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 找规律 | O(1)       | O(1)       |
+| 02   | 找规律 | O(1)       | O(1)       |
+
+```go
+func orchestraLayout(num int, xPos int, yPos int) int {
+	x := min(xPos, num-1-xPos)
+	y := min(yPos, num-1-yPos)
+	k := min(x, y) // 在第几圈（从0开始）
+	// n*n - (n-2k)*(n-2k) = n*n-(n*n+4k*k-4nk)= 4nk-4k*k
+	total := 4 * k * (num - k) % 9 // 第几圈外总共的个数
+	if xPos == k {                 // 上边
+		return (total+yPos-k)%9 + 1
+	} else if yPos == num-1-k { // 右边
+		before := num - 2*k - 1
+		return (total+before+xPos-k)%9 + 1
+	} else if xPos == num-1-k { // 下边
+		before := (num - 2*k - 1) * 2
+		return (total+before+num-k-1-yPos)%9 + 1
+	} else if yPos == k { // 左边
+		before := (num - 2*k - 1) * 3
+		return (total+before+num-k-1-xPos)%9 + 1
+	}
+	return 0
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+func orchestraLayout(num int, xPos int, yPos int) int {
+	x := min(xPos, num-1-xPos)
+	y := min(yPos, num-1-yPos)
+	k := min(x, y) // 在第几圈（从0开始）
+	// n*n - (n-2k)*(n-2k) = n*n-(n*n+4k*k-4nk)= 4nk-4k*k
+	if xPos <= yPos {
+		total := num*num - (num-2*k)*(num-2*k)
+		return (total+xPos-k+yPos-k)%9 + 1
+	} else {
+		total := num*num - (num-(2*k+2))*(num-(2*k+2))
+		return (total-(xPos-k)-(yPos-k))%9 + 1
+	}
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
+## LCP30.魔塔游戏(2)
+
+- 题目
+
+```
+小扣当前位于魔塔游戏第一层，共有 N 个房间，编号为 0 ~ N-1。
+每个房间的补血道具/怪物对于血量影响记于数组 nums，其中正数表示道具补血数值，即血量增加对应数值；
+负数表示怪物造成伤害值，即血量减少对应数值；0 表示房间对血量无影响。
+小扣初始血量为 1，且无上限。假定小扣原计划按房间编号升序访问所有房间补血/打怪，为保证血量始终为正值，
+小扣需对房间访问顺序进行调整，每次仅能将一个怪物房间（负数的房间）调整至访问顺序末尾。
+请返回小扣最少需要调整几次，才能顺利访问所有房间。若调整顺序也无法访问完全部房间，请返回 -1。
+示例 1：输入：nums = [100,100,100,-250,-60,-140,-50,-50,100,150] 输出：1
+解释：初始血量为 1。至少需要将 nums[3] 调整至访问顺序末尾以满足要求。
+示例 2：输入：nums = [-200,-300,400,0]输出：-1
+解释：调整访问顺序也无法完成全部房间的访问。
+提示：1 <= nums.length <= 10^5
+-10^5 <= nums[i] <= 10^5
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 堆   | O(nlog(n)) | O(n)       |
+| 02   | 堆   | O(nlog(n)) | O(n)       |
+
+```go
+func magicTower(nums []int) int {
+	intHeap := make(IntHeap, 0)
+	heap.Init(&intHeap)
+	blood := 0
+	sum := 0
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+		if nums[i] < 0 {
+			heap.Push(&intHeap, nums[i])
+			if blood+nums[i] < 0 {
+				res++
+				minValue := heap.Pop(&intHeap).(int)
+				blood = blood - minValue 
+			}
+		}
+		blood = blood + nums[i]
+	}
+	if sum < 0 {
+		return -1
+	}
+	return res
+}
+
+type IntHeap []int
+
+func (h IntHeap) Len() int {
+	return len(h)
+}
+
+// 小根堆<,大根堆变换方向>
+func (h IntHeap) Less(i, j int) bool {
+	return h[i] < h[j]
+}
+
+func (h IntHeap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+func (h *IntHeap) Push(x interface{}) {
+	*h = append(*h, x.(int))
+}
+
+func (h *IntHeap) Pop() interface{} {
+	value := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return value
+}
+
+# 2
+func magicTower(nums []int) int {
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+	}
+	if sum < 0 {
+		return -1
+	}
+	intHeap := make(IntHeap, 0)
+	heap.Init(&intHeap)
+	blood := 0
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		heap.Push(&intHeap, nums[i])
+		blood = blood + nums[i]
+		if blood < 0 {
+			minValue := heap.Pop(&intHeap).(int)
+			blood = blood - minValue
+			res++
+		}
+	}
+	return res
+}
+
+type IntHeap []int
+
+func (h IntHeap) Len() int {
+	return len(h)
+}
+
+// 小根堆<,大根堆变换方向>
+func (h IntHeap) Less(i, j int) bool {
+	return h[i] < h[j]
+}
+
+func (h IntHeap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+func (h *IntHeap) Push(x interface{}) {
+	*h = append(*h, x.(int))
+}
+
+func (h *IntHeap) Pop() interface{} {
+	value := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return value
+}
+```
+
+## LCP33.蓄水(2)
+
+- 题目
+
+```
+给定 N 个无限容量且初始均空的水缸，每个水缸配有一个水桶用来打水，
+第 i 个水缸配备的水桶容量记作 bucket[i]。小扣有以下两种操作：
+升级水桶：选择任意一个水桶，使其容量增加为 bucket[i]+1
+蓄水：将全部水桶接满水，倒入各自对应的水缸
+每个水缸对应最低蓄水量记作 vat[i]，返回小扣至少需要多少次操作可以完成所有水缸蓄水要求。
+注意：实际蓄水量 达到或超过 最低蓄水量，即完成蓄水要求。
+示例 1：输入：bucket = [1,3], vat = [6,8] 输出：4
+解释：第 1 次操作升级 bucket[0]；
+第 2 ~ 4 次操作均选择蓄水，即可完成蓄水要求。
+示例 2：输入：bucket = [9,0,1], vat = [0,2,2] 输出：3
+解释：第 1 次操作均选择升级 bucket[1]
+第 2~3 次操作选择蓄水，即可完成蓄水要求。
+提示：1 <= bucket.length == vat.length <= 100
+0 <= bucket[i], vat[i] <= 10^4
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 枚举 | O(n^2)     | O(1)       |
+| 02   | 堆   | O(nlog(n)) | O(n)       |
+
+```go
+func storeWater(bucket []int, vat []int) int {
+	n := len(vat)
+	maxValue := 0
+	for i := 0; i < n; i++ {
+		maxValue = max(maxValue, vat[i])
+	}
+	if maxValue == 0 {
+		return 0
+	}
+	res := math.MaxInt32
+	for k := 1; k <= maxValue; k++ { // 枚举蓄水的次数
+		temp := k
+		for i := 0; i < n; i++ {
+			begin := vat[i] / k // 需要升级到的目的容量
+			if vat[i]%k > 0 {
+				begin++
+			}
+			if begin > bucket[i] {
+				temp = temp + begin - bucket[i] // 升级次数
+			}
+		}
+		res = min(res, temp)
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+func storeWater(bucket []int, vat []int) int {
+	n := len(vat)
+	nodeHeap := make(IntHeap, 0)
+	heap.Init(&nodeHeap)
+	count := 0 // 需要升级的次数
+	for i := 0; i < n; i++ {
+		if bucket[i] == 0 && vat[i] > 0 {
+			bucket[i] = 1
+			count++
+		}
+		if vat[i] > 0 {
+			heap.Push(&nodeHeap, Node{
+				bucket: bucket[i],
+				vat:    vat[i],
+				count:  (vat[i]-1)/bucket[i] + 1,
+			})
+		}
+	}
+	res := math.MaxInt32 // 总次数
+	for nodeHeap.Len() > 0 {
+		node := heap.Pop(&nodeHeap).(Node)
+		if count >= res {
+			break
+		}
+        res = min(res, node.count+count) // 堆里面最大的蓄水次数+升级的次数
+		heap.Push(&nodeHeap, Node{
+			bucket: node.bucket + 1,
+			vat:    node.vat,
+			count:  (node.vat-1)/(node.bucket+1) + 1,
+		})
+		count++
+	}
+	if res == math.MaxInt32 {
+		return 0
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+type Node struct {
+	bucket int
+	vat    int
+	count  int
+}
+
+type IntHeap []Node
+
+func (h IntHeap) Len() int {
+	return len(h)
+}
+
+// 小根堆<,大根堆变换方向>
+func (h IntHeap) Less(i, j int) bool {
+	return h[i].count > h[j].count
+}
+
+func (h IntHeap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+func (h *IntHeap) Push(x interface{}) {
+	*h = append(*h, x.(Node))
+}
+
+func (h *IntHeap) Pop() interface{} {
+	value := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return value
+}
+```
+
+## LCP34.二叉树染色
+
+### 题目
+
+```
+小扣有一个根结点为 root 的二叉树模型，初始所有结点均为白色，可以用蓝色染料给模型结点染色，
+模型的每个结点有一个 val 价值。
+小扣出于美观考虑，希望最后二叉树上每个蓝色相连部分的结点个数不能超过 k 个，
+求所有染成蓝色的结点价值总和最大是多少？
+示例 1：输入：root = [5,2,3,4], k = 2输出：12
+解释：结点 5、3、4 染成蓝色，获得最大的价值 5+3+4=12
+示例 2：输入：root = [4,1,3,9,null,null,2], k = 2 输出：16
+解释：结点 4、3、9 染成蓝色，获得最大的价值 4+3+9=16
+提示：1 <= k <= 10
+1 <= val <= 10000
+1 <= 结点数量 <= 10000
+```
+
+### 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 枚举 | O(n^2)     | O(1)       |
+
+```go
+
+```
+

@@ -6615,7 +6615,7 @@ func lastRemaining(n int, m int) int {
 	return (lastRemaining(n-1, m) + m) % n
 }
 
-#
+# 2
 func lastRemaining(n int, m int) int {
 	res := 0
 	for i := 2; i <= n; i++ {
