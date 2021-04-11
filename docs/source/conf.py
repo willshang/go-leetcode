@@ -24,15 +24,8 @@ author = 'willshang'
 # The full version, including alpha/beta/rc tags
 release = 'v1.0.0'
 
-
 # -- General configuration ---------------------------------------------------
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-extensions = [
-    'sphinx_markdown_tables',
-]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -69,5 +62,14 @@ source_parsers = {
 }
 source_suffix = ['.rst', '.md']
 
+
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
+extensions = [
+    'sphinx_markdown_tables',
+]
+
 #
 master_doc = 'index'
+
