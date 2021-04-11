@@ -1,30 +1,88 @@
 # 0101-0200-Easy
-* [0101-0200-Easy](#0101-0200-easy)
-	* [101. 对称二叉树(2)](#101-对称二叉树2)
-	* [104.二叉树的最大深度(2)](#104二叉树的最大深度2)
-	* [107.二叉树的层次遍历II(2)](#107二叉树的层次遍历ii2)
-	* [108.将有序数组转换为二叉搜索树(2)](#108将有序数组转换为二叉搜索树2)
-	* [110.平衡二叉树(2)](#110平衡二叉树2)
-	* [111.二叉树的最小深度(2)](#111二叉树的最小深度2)
-	* [112.路径总和(2)](#112路径总和2)
-	* [118.杨辉三角(2)](#118杨辉三角2)
-	* [119.杨辉三角II(3)](#119杨辉三角ii3)
-	* [121.买卖股票的最佳时机(3)](#121买卖股票的最佳时机3)
-	* [122.买卖股票的最佳时机II(2)](#122买卖股票的最佳时机ii2)
-	* [125.验证回文串(2)](#125验证回文串2)
-	* [136.只出现一次的数字(4)](#136只出现一次的数字4)
-	* [141.环形链表(2)](#141环形链表2)
-	* [155.最小栈(2)](#155最小栈2)
-	* [160.相交链表(4)](#160相交链表4)
-	* [167.两数之和 II - 输入有序数组(4)](#167两数之和-ii---输入有序数组4)
-	* [168.Excel表列名称(2)](#168excel表列名称2)
-	* [169.多数元素(5)](#169多数元素5)
-	* [171.Excel表列序号(1)](#171excel表列序号1)
-	* [172.阶乘后的零(1)](#172阶乘后的零1)
-	* [189.旋转数组(4)](#189旋转数组4)
-	* [190.颠倒二进制位(3)](#190颠倒二进制位3)
-	* [191.位1的个数(4)](#191位1的个数4)
-	* [198.打家劫舍(4)](#198打家劫舍4)
+
+* [0101\-0200\-Easy](#0101-0200-easy)
+  * [101\. 对称二叉树(2)](#101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%912)
+  * [104\.二叉树的最大深度(2)](#104%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A62)
+  * [107\.二叉树的层次遍历II(2)](#107%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86ii2)
+  * [108\.将有序数组转换为二叉搜索树(2)](#108%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%912)
+  * [110\.平衡二叉树(3)](#110%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%913)
+  * [111\.二叉树的最小深度(2)](#111%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A62)
+  * [112\.路径总和(2)](#112%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C2)
+  * [118\.杨辉三角(2)](#118%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%922)
+  * [119\.杨辉三角II(3)](#119%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92ii3)
+  * [121\.买卖股票的最佳时机(3)](#121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA3)
+  * [122\.买卖股票的最佳时机II(2)](#122%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAii2)
+  * [125\.验证回文串(2)](#125%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E4%B8%B22)
+  * [136\.只出现一次的数字(4)](#136%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%974)
+  * [141\.环形链表(3)](#141%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A83)
+  * [155\.最小栈(2)](#155%E6%9C%80%E5%B0%8F%E6%A0%882)
+  * [160\.相交链表(4)](#160%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A84)
+  * [167\.两数之和 II \- 输入有序数组(4)](#167%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-ii---%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%844)
+  * [168\.Excel表列名称(2)](#168excel%E8%A1%A8%E5%88%97%E5%90%8D%E7%A7%B02)
+  * [169\.多数元素(5)](#169%E5%A4%9A%E6%95%B0%E5%85%83%E7%B4%A05)
+  * [171\.Excel表列序号(1)](#171excel%E8%A1%A8%E5%88%97%E5%BA%8F%E5%8F%B71)
+  * [172\.阶乘后的零(1)](#172%E9%98%B6%E4%B9%98%E5%90%8E%E7%9A%84%E9%9B%B61)
+  * [189\.旋转数组(4)](#189%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%844)
+  * [190\.颠倒二进制位(3)](#190%E9%A2%A0%E5%80%92%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D3)
+  * [191\.位1的个数(4)](#191%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B04)
+  * [198\.打家劫舍(4)](#198%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D4)
+* [0101\-0200\-Medium](#0101-0200-medium)
+  * [102\.二叉树的层序遍历(2)](#102%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%862)
+  * [103\.二叉树的锯齿形层次遍历(2)](#103%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E5%BD%A2%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%862)
+  * [105\.从前序与中序遍历序列构造二叉树(3)](#105%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%913)
+  * [106\.从中序与后序遍历序列构造二叉树(3)](#106%E4%BB%8E%E4%B8%AD%E5%BA%8F%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%913)
+  * [109\.有序链表转换二叉搜索树(2)](#109%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E8%BD%AC%E6%8D%A2%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%912)
+  * [113\.路径总和II(2)](#113%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8Cii2)
+  * [114\.二叉树展开为链表(3)](#114%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%95%E5%BC%80%E4%B8%BA%E9%93%BE%E8%A1%A83)
+  * [116\.填充每个节点的下一个右侧节点指针(3)](#116%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%883)
+  * [117\.填充每个节点的下一个右侧节点指针II(4)](#117%E5%A1%AB%E5%85%85%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E5%8F%B3%E4%BE%A7%E8%8A%82%E7%82%B9%E6%8C%87%E9%92%88ii4)
+  * [120\.三角形最小路径和(5)](#120%E4%B8%89%E8%A7%92%E5%BD%A2%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C5)
+  * [127\.单词接龙](#127%E5%8D%95%E8%AF%8D%E6%8E%A5%E9%BE%99)
+    * [题目](#%E9%A2%98%E7%9B%AE)
+    * [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
+  * [129\.求根到叶子节点数字之和(2)](#129%E6%B1%82%E6%A0%B9%E5%88%B0%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E6%95%B0%E5%AD%97%E4%B9%8B%E5%92%8C2)
+  * [130\.被围绕的区域(1)](#130%E8%A2%AB%E5%9B%B4%E7%BB%95%E7%9A%84%E5%8C%BA%E5%9F%9F1)
+  * [131\.分割回文串(2)](#131%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B22)
+  * [133\.克隆图(2)](#133%E5%85%8B%E9%9A%86%E5%9B%BE2)
+  * [134\.加油站(2)](#134%E5%8A%A0%E6%B2%B9%E7%AB%992)
+  * [137\.只出现一次的数字II(5)](#137%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97ii5)
+  * [138\.复制带随机指针的链表(3)](#138%E5%A4%8D%E5%88%B6%E5%B8%A6%E9%9A%8F%E6%9C%BA%E6%8C%87%E9%92%88%E7%9A%84%E9%93%BE%E8%A1%A83)
+  * [139\.单词拆分(1)](#139%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%861)
+  * [142\.环形链表II(3)](#142%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8ii3)
+  * [143\.重排链表(4)](#143%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A84)
+  * [144\.二叉树的前序遍历(3)](#144%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%863)
+  * [146\.LRU缓存机制(1)](#146lru%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B61)
+  * [147\.对链表进行插入排序](#147%E5%AF%B9%E9%93%BE%E8%A1%A8%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F)
+    * [题目](#%E9%A2%98%E7%9B%AE-1)
+    * [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-1)
+  * [148\.排序链表(3)](#148%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A83)
+  * [150\.逆波兰表达式求值(1)](#150%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC1)
+  * [151\.翻转字符串里的单词(2)](#151%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%8D%95%E8%AF%8D2)
+  * [152\.乘积最大子数组(2)](#152%E4%B9%98%E7%A7%AF%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%842)
+  * [153\.寻找旋转排序数组中的最小值(2)](#153%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC2)
+  * [162\.寻找峰值(3)](#162%E5%AF%BB%E6%89%BE%E5%B3%B0%E5%80%BC3)
+  * [165\.比较版本号(2)](#165%E6%AF%94%E8%BE%83%E7%89%88%E6%9C%AC%E5%8F%B72)
+  * [166\.分数到小数(1)](#166%E5%88%86%E6%95%B0%E5%88%B0%E5%B0%8F%E6%95%B01)
+  * [173\.二叉搜索树迭代器](#173%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E8%BF%AD%E4%BB%A3%E5%99%A8)
+    * [题目](#%E9%A2%98%E7%9B%AE-2)
+    * [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-2)
+  * [179\.最大数(2)](#179%E6%9C%80%E5%A4%A7%E6%95%B02)
+  * [187\.重复的DNA序列(1)](#187%E9%87%8D%E5%A4%8D%E7%9A%84dna%E5%BA%8F%E5%88%971)
+  * [199\.二叉树的右视图(2)](#199%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%8F%B3%E8%A7%86%E5%9B%BE2)
+  * [200\.岛屿数量(1)](#200%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F1)
+* [0101\-0200\-Hard](#0101-0200-hard)
+  * [115\.不同的子序列(2)](#115%E4%B8%8D%E5%90%8C%E7%9A%84%E5%AD%90%E5%BA%8F%E5%88%972)
+  * [123\.买卖股票的最佳时机III(2)](#123%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAiii2)
+  * [124\.二叉树中的最大路径和(2)](#124%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E8%B7%AF%E5%BE%84%E5%92%8C2)
+  * [128\.最长连续序列(3)](#128%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%BA%8F%E5%88%973)
+  * [135\.分发糖果(2)](#135%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C2)
+  * [145\.二叉树的后序遍历(4)](#145%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%864)
+  * [149\.直线上最多的点数](#149%E7%9B%B4%E7%BA%BF%E4%B8%8A%E6%9C%80%E5%A4%9A%E7%9A%84%E7%82%B9%E6%95%B0)
+    * [题目](#%E9%A2%98%E7%9B%AE-3)
+    * [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-3)
+  * [154\.寻找旋转排序数组中的最小值II(4)](#154%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BCii4)
+  * [164\.最大间距(2)](#164%E6%9C%80%E5%A4%A7%E9%97%B4%E8%B7%9D2)
+  * [188\.买卖股票的最佳时机IV(3)](#188%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAiv3)
 
 
 ## 101. 对称二叉树(2)
@@ -44,8 +102,7 @@
   2   2
    \   \
    3    3
-说明:
-如果你可以运用递归和迭代两种方法解决这个问题，会很加分。
+说明:如果你可以运用递归和迭代两种方法解决这个问题，会很加分。
 ```
 - 解答思路
 
@@ -182,15 +239,12 @@ func maxDepth(root *TreeNode) int {
 
 ````
 给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）
-
-例如：
-给定二叉树 [3,9,20,null,null,15,7],
+例如：给定二叉树 [3,9,20,null,null,15,7],
     3
    / \
   9  20
     /  \
    15   7
-
 返回其自底向上的层次遍历为：
 [
   [15,7],
@@ -265,7 +319,6 @@ func orderBottom(root *TreeNode, result *[][]int, level int) {
 		return
 	}
 	if len(*result) > level {
-		fmt.Println(level, result, root.Val)
 		(*result)[level] = append((*result)[level], root.Val)
 	} else {
 		*result = append(*result, []int{root.Val})
@@ -281,15 +334,9 @@ func orderBottom(root *TreeNode, result *[][]int, level int) {
 
 ```
 将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。
-
 本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。
-
-示例:
-
-给定有序数组: [-10,-3,0,5,9],
-
+示例:给定有序数组: [-10,-3,0,5,9],
 一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：
-
       0
      / \
    -3   9
@@ -356,33 +403,22 @@ func sortedArrayToBST(nums []int) *TreeNode {
 }
 ```
 
-## 110.平衡二叉树(2)
+## 110.平衡二叉树(3)
 
 - 题目
 
 ```
 给定一个二叉树，判断它是否是高度平衡的二叉树。
-
 本题中，一棵高度平衡二叉树定义为：
-
     一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。
-
-示例 1:
-
-给定二叉树 [3,9,20,null,null,15,7]
-
+示例 1:给定二叉树 [3,9,20,null,null,15,7]
     3
    / \
   9  20
     /  \
    15   7
-
 返回 true 。
-
-示例 2:
-
-给定二叉树 [1,2,2,3,3,null,null,4,4]
-
+示例 2:给定二叉树 [1,2,2,3,3,null,null,4,4]
        1
       / \
      2   2
@@ -390,7 +426,6 @@ func sortedArrayToBST(nums []int) *TreeNode {
    3   3
   / \
  4   4
-
 返回 false 。
 ```
 
@@ -400,6 +435,7 @@ func sortedArrayToBST(nums []int) *TreeNode {
 | ---- | ---- | ---------- | ---------- |
 | 01   | 递归 | O(n)       | O(log(n))  |
 | 02   | 递归 | O(n)       | O(log(n))  |
+| 03   | 递归 | O(n)       | O(log(n))  |
 
 ```go
 func isBalanced(root *TreeNode) bool {
@@ -467,6 +503,24 @@ func abs(a, b int) int {
 	}
 	return b - a
 }
+
+# 3
+func isBalanced(root *TreeNode) bool {
+	if root == nil {
+		return true
+	}
+	if math.Abs(dfs(root.Left)-dfs(root.Right)) <= 1 {
+		return isBalanced(root.Left) && isBalanced(root.Right)
+	}
+	return false
+}
+
+func dfs(root *TreeNode) float64 {
+	if root == nil {
+		return 0
+	}
+	return math.Max(dfs(root.Left), dfs(root.Right)) + 1
+}
 ```
 
 ##  111.二叉树的最小深度(2)
@@ -475,12 +529,9 @@ func abs(a, b int) int {
 
 ```
 给定一个二叉树，找出其最小深度。
-
 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
 说明: 叶子节点是指没有子节点的节点。
-
-示例:
-给定二叉树 [3,9,20,null,null,15,7],
+示例:给定二叉树 [3,9,20,null,null,15,7],
     3
    / \
   9  20
@@ -555,8 +606,7 @@ func minDepth(root *TreeNode) int {
 ```
 给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。
 说明: 叶子节点是指没有子节点的节点。
-示例: 
-给定如下二叉树，以及目标和 sum = 22，
+示例: 给定如下二叉树，以及目标和 sum = 22，
               5
              / \
             4   8
@@ -627,10 +677,7 @@ func hasPathSum(root *TreeNode, sum int) bool {
 ```
 给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
 在杨辉三角中，每个数是它左上方和右上方的数的和。
-
-示例:
-输入: 5
-输出:
+示例:输入: 5 输出:
 [
      [1],
     [1,1],
@@ -703,13 +750,8 @@ func genNext(p []int) []int {
 ```
 给定一个非负索引 k，其中 k ≤ 33，返回杨辉三角的第 k 行。
 在杨辉三角中，每个数是它左上方和右上方的数的和。
-
-示例:
-输入: 3
-输出: [1,3,3,1]
-
-进阶：
-你可以优化你的算法到 O(k) 空间复杂度吗？
+示例:输入: 3 输出: [1,3,3,1]
+进阶：你可以优化你的算法到 O(k) 空间复杂度吗？
 ```
 
 - 解题思路
@@ -782,22 +824,12 @@ func getRow(rowIndex int) []int {
 
 ```
 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
-
 如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。
-
 注意你不能在买入股票前卖出股票。
-
-示例 1:
-
-输入: [7,1,5,3,6,4]
-输出: 5
+示例 1:输入: [7,1,5,3,6,4] 输出: 5
 解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
      注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
-
-示例 2:
-
-输入: [7,6,4,3,1]
-输出: 0
+示例 2:输入: [7,6,4,3,1] 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
 ```
 
@@ -876,23 +908,17 @@ func maxProfit(prices []int) int {
 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
 设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。
 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
-
-示例 1:
-输入: [7,1,5,3,6,4]
-输出: 7
-解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
-     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。
-
-示例 2:
-输入: [1,2,3,4,5]
-输出: 4
-解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。
+示例 1:输入: [7,1,5,3,6,4] 输出: 7
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 
+这笔交易所能获得利润 = 5-1 = 4 。
+     随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 
+     这笔交易所能获得利润 = 6-3 = 3 。
+示例 2: 输入: [1,2,3,4,5]输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 
+这笔交易所能获得利润 = 5-1 = 4 。
      注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。
      因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
-
-示例 3:
-输入: [7,6,4,3,1]
-输出: 0
+示例 3:输入: [7,6,4,3,1] 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
 ```
 
@@ -944,14 +970,8 @@ func maxProfit(prices []int) int {
 ```
 给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
 说明：本题中，我们将空字符串定义为有效的回文串。
-
-示例 1:
-输入: "A man, a plan, a canal: Panama"
-输出: true
-
-示例 2:
-输入: "race a car"
-输出: false
+示例 1:输入: "A man, a plan, a canal: Panama" 输出: true
+示例 2:输入: "race a car" 输出: false
 ```
 
 - 解题思路
@@ -1020,16 +1040,9 @@ func isPalindrome(s string) bool {
 
 ```
 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
-说明：
-你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
-
-示例 1:
-输入: [2,2,1]
-输出: 1
-
-示例 2:
-输入: [4,1,2,1,2]
-输出: 4
+说明：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+示例 1:输入: [2,2,1] 输出: 1
+示例 2:输入: [4,1,2,1,2] 输出: 4
 ```
 
 - 解题思路
@@ -1100,7 +1113,7 @@ func singleNumber(nums []int) int {
 }
 ```
 
-## 141.环形链表(2)
+## 141.环形链表(3)
 
 - 题目
 
@@ -1108,20 +1121,11 @@ func singleNumber(nums []int) int {
 给定一个链表，判断链表中是否有环。
 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 
 如果 pos 是 -1，则在该链表中没有环。
-
-示例 1：
-输入：head = [3,2,0,-4], pos = 1
-输出：true
+示例 1：输入：head = [3,2,0,-4], pos = 1 输出：true
 解释：链表中有一个环，其尾部连接到第二个节点。
-
-示例 2：
-输入：head = [1,2], pos = 0
-输出：true
+示例 2：输入：head = [1,2], pos = 0 输出：true
 解释：链表中有一个环，其尾部连接到第一个节点。
-
-示例 3：
-输入：head = [1], pos = -1
-输出：false
+示例 3：输入：head = [1], pos = -1输出：false 
 解释：链表中没有环。
 ```
 
@@ -1131,6 +1135,7 @@ func singleNumber(nums []int) int {
 | -------- | ---------------- | ---------- | ---------- |
 | 01       | 哈希法           | O(n)       | O(n)       |
 | 02(最优) | 双指针(快慢指针) | O(n)       | O(1)       |
+| 03       | 遍历标记         | O(n)       | O(1)       |
 
 ```go
 func hasCycle(head *ListNode) bool {
@@ -1160,6 +1165,18 @@ func hasCycle(head *ListNode) bool {
 	}
 	return false
 }
+
+# 3
+func hasCycle(head *ListNode) bool {
+	for head != nil {
+		if head.Val == math.MaxInt32 {
+			return true
+		}
+		head.Val = math.MaxInt32
+		head = head.Next
+	}
+	return false
+}
 ```
 
 ## 155.最小栈(2)
@@ -1172,7 +1189,6 @@ func hasCycle(head *ListNode) bool {
     pop() -- 删除栈顶的元素。
     top() -- 获取栈顶元素。
     getMin() -- 检索栈中的最小元素。
-    
 示例:
 MinStack minStack = new MinStack();
 minStack.push(-2);
@@ -1277,28 +1293,24 @@ func (this *MinStack) GetMin() int {
 编写一个程序，找到两个单链表相交的起始节点。
 如下面的两个链表：
 在节点 c1 开始相交。
-
 示例 1：
 输入：intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5], skipA = 2, skipB = 3
 输出：Reference of the node with value = 8
 输入解释：相交节点的值为 8 （注意，如果两个列表相交则不能为 0）。
 从各自的表头开始算起，链表 A 为 [4,1,8,4,5]，链表 B 为 [5,0,1,8,4,5]。
 在 A 中，相交节点前有 2 个节点；在 B 中，相交节点前有 3 个节点。
-
 示例 2：
 输入：intersectVal = 2, listA = [0,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
 输出：Reference of the node with value = 2
 输入解释：相交节点的值为 2 （注意，如果两个列表相交则不能为 0）。
 从各自的表头开始算起，链表 A 为 [0,9,1,2,4]，链表 B 为 [3,2,4]。
 在 A 中，相交节点前有 3 个节点；在 B 中，相交节点前有 1 个节点。
-
 示例 3：
 输入：intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
 输出：null
 输入解释：从各自的表头开始算起，链表 A 为 [2,6,4]，链表 B 为 [1,5]。
 由于这两个链表不相交，所以 intersectVal 必须为 0，而 skipA 和 skipB 可以是任意值。
 解释：这两个链表不相交，因此返回 null。
-
 注意：
     如果两个链表没有交点，返回 null.
     在返回结果后，两个链表仍须保持原有的结构。
@@ -1412,14 +1424,10 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 ```
 给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。
 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。
-
 说明:
     返回的下标值（index1 和 index2）不是从零开始的。
     你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。
-
-示例:
-输入: numbers = [2, 7, 11, 15], target = 9
-输出: [1,2]
+示例:输入: numbers = [2, 7, 11, 15], target = 9 输出: [1,2]
 解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
 ```
 
@@ -1502,7 +1510,6 @@ func twoSum(numbers []int, target int) []int {
 ```
 给定一个正整数，返回它在 Excel 表中相对应的列名称。
 例如，
-
     1 -> A
     2 -> B
     3 -> C
@@ -1511,17 +1518,9 @@ func twoSum(numbers []int, target int) []int {
     27 -> AA
     28 -> AB 
     ...
-示例 1:
-输入: 1
-输出: "A"
-
-示例 2:
-输入: 28
-输出: "AB"
-
-示例 3:
-输入: 701
-输出: "ZY"
+示例 1:输入: 1 输出: "A"
+示例 2:输入: 28 输出: "AB"
+示例 3:输入: 701 输出: "ZY"
 ```
 
 - 解题思路
@@ -1565,14 +1564,8 @@ func convertToTitle(n int) string {
 ```
 给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
 你可以假设数组是非空的，并且给定的数组总是存在多数元素。
-
-示例 1:
-输入: [3,2,3]
-输出: 3
-
-示例 2:
-输入: [2,2,1,1,1,2,2]
-输出: 2
+示例 1:输入: [3,2,3]输出: 3
+示例 2:输入: [2,2,1,1,1,2,2]输出: 2
 ```
 
 - 解题思路
@@ -1700,18 +1693,9 @@ func majority(nums []int, start, end int) int {
     AA -> 27
     AB -> 28 
     ...
-
-示例 1:
-输入: "A"
-输出: 1
-
-示例 2:
-输入: "AB"
-输出: 28
-
-示例 3:
-输入: "ZY"
-输出: 701
+示例 1:输入: "A" 输出: 1
+示例 2:输入: "AB" 输出: 28
+示例 3:输入: "ZY" 输出: 701
 ```
 
 - 解题思路
@@ -1737,17 +1721,10 @@ func titleToNumber(s string) int {
 
 ```
 给定一个整数 n，返回 n! 结果尾数中零的数量。
-
-示例 1:
-输入: 3
-输出: 0
+示例 1:输入: 3 输出: 0
 解释: 3! = 6, 尾数中没有零。
-
-示例 2:
-输入: 5
-输出: 1
+示例 2:输入: 5输出: 1
 解释: 5! = 120, 尾数中有 1 个零.
-
 说明: 你算法的时间复杂度应为 O(log n) 。
 ```
 
@@ -1774,7 +1751,6 @@ func trailingZeroes(n int) int {
 
 ```
 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
-
 示例 1:
 输入: [1,2,3,4,5,6,7] 和 k = 3
 输出: [5,6,7,1,2,3,4]
@@ -1782,14 +1758,12 @@ func trailingZeroes(n int) int {
 向右旋转 1 步: [7,1,2,3,4,5,6]
 向右旋转 2 步: [6,7,1,2,3,4,5]
 向右旋转 3 步: [5,6,7,1,2,3,4]
-
 示例 2:
 输入: [-1,-100,3,99] 和 k = 2
 输出: [3,99,-1,-100]
 解释: 
 向右旋转 1 步: [99,-1,-100,3]
 向右旋转 2 步: [3,99,-1,-100]
-
 说明:
     尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
     要求使用空间复杂度为 O(1) 的 原地 算法。
@@ -1902,19 +1876,12 @@ func rotate(nums []int, k int) {
 
 ```
 颠倒给定的 32 位无符号整数的二进制位。
-
-示例 1：
-输入: 00000010100101000001111010011100
-输出: 00111001011110000010100101000000
+示例 1：输入: 00000010100101000001111010011100 输出: 00111001011110000010100101000000
 解释: 输入的二进制串 00000010100101000001111010011100 表示无符号整数 43261596，
       因此返回 964176192，其二进制表示形式为 00111001011110000010100101000000。
-
-示例 2：
-输入：11111111111111111111111111111101
-输出：10111111111111111111111111111111
+示例 2：输入：11111111111111111111111111111101 输出：10111111111111111111111111111111
 解释：输入的二进制串 11111111111111111111111111111101 表示无符号整数 4294967293，
       因此返回 3221225471 其二进制表示形式为 10101111110010110010011101101001。
-
 提示：
     请注意，在某些语言（如 Java）中，没有无符号整数类型。
     在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，
@@ -1981,30 +1948,19 @@ func reverseBits(num uint32) uint32 {
 ```
 编写一个函数，输入是一个无符号整数，返回其二进制表达式中数字位数为 ‘1’ 的个数
 （也被称为汉明重量）。
-
-示例 1：
-输入：00000000000000000000000000001011
-输出：3
+示例 1：输入：00000000000000000000000000001011 输出：3
 解释：输入的二进制串 00000000000000000000000000001011 中，共有三位为 '1'。
-
-示例 2：
-输入：00000000000000000000000010000000
-输出：1
+示例 2：输入：00000000000000000000000010000000 输出：1
 解释：输入的二进制串 00000000000000000000000010000000 中，共有一位为 '1'。
-
-示例 3：
-输入：11111111111111111111111111111101
-输出：31
+示例 3：输入：11111111111111111111111111111101 输出：31
 解释：输入的二进制串 11111111111111111111111111111101 中，共有 31 位为 '1'。
-
 提示：
     请注意，在某些语言（如 Java）中，没有无符号整数类型。
     在这种情况下，输入和输出都将被指定为有符号整数类型，并且不应影响您的实现，
     因为无论整数是有符号的还是无符号的，其内部的二进制表示形式都是相同的。
     在 Java 中，编译器使用二进制补码记法来表示有符号整数。
     因此，在上面的 示例 3 中，输入表示有符号整数 -3。
-进阶:
-如果多次调用这个函数，你将如何优化你的算法？
+进阶:如果多次调用这个函数，你将如何优化你的算法？
 ```
 
 - 解题思路
@@ -2066,12 +2022,9 @@ func hammingWeight(num uint32) int {
 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，
 影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，
 如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
-
 给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。
-
 示例 1:输入: [1,2,3,1] 输出: 4
 解释: 偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。 偷窃到的最高金额 = 1 + 3 = 4 。
-
 示例 2: 输入: [2,7,9,3,1] 输出: 12
 解释: 偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。
      偷窃到的最高金额 = 2 + 9 + 1 = 12 。
@@ -2186,3 +2139,4836 @@ func max(a, b int) int {
 	return b
 }
 ```
+
+# 0101-0200-Medium
+
+## 102.二叉树的层序遍历(2)
+
+- 题目
+
+```
+给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
+示例：二叉树：[3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+返回其层次遍历结果：
+[
+  [3],
+  [9,20],
+  [15,7]
+]
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 层序遍历 | O(n)       | O(n)       |
+| 02   | 递归     | O(n)       | O(n)       |
+
+```go
+func levelOrder(root *TreeNode) [][]int {
+	res := make([][]int, 0)
+	if root == nil {
+		return res
+	}
+	list := make([]*TreeNode, 0)
+	list = append(list, root)
+	for len(list) > 0 {
+		length := len(list)
+		temp := make([]int, 0)
+		for i := 0; i < length; i++ {
+			node := list[i]
+			temp = append(temp, node.Val)
+			if node.Left != nil {
+				list = append(list, node.Left)
+			}
+			if node.Right != nil {
+				list = append(list, node.Right)
+			}
+		}
+		res = append(res, temp)
+		list = list[length:]
+	}
+	return res
+}
+
+#
+var res [][]int
+
+func levelOrder(root *TreeNode) [][]int {
+	res = make([][]int, 0)
+	if root == nil {
+		return res
+	}
+	dfs(root, 0)
+	return res
+}
+
+func dfs(root *TreeNode, level int) {
+	if root == nil {
+		return
+	}
+	if level == len(res) {
+		res = append(res, []int{})
+	}
+	res[level] = append(res[level], root.Val)
+	dfs(root.Left, level+1)
+	dfs(root.Right, level+1)
+}
+```
+
+## 103.二叉树的锯齿形层次遍历(2)
+
+- 题目
+
+```
+给定一个二叉树，返回其节点值的锯齿形层次遍历。
+（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
+例如：给定二叉树 [3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+返回锯齿形层次遍历如下：
+[
+  [3],
+  [20,9],
+  [15,7]
+]
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 层序遍历 | O(n)       | O(n)       |
+| 02   | 递归     | O(n)       | O(n)       |
+
+```go
+func zigzagLevelOrder(root *TreeNode) [][]int {
+	res := make([][]int, 0)
+	if root == nil {
+		return res
+	}
+	list := make([]*TreeNode, 0)
+	list = append(list, root)
+	for len(list) > 0 {
+		length := len(list)
+		temp := make([]int, 0)
+		for i := 0; i < length; i++ {
+			node := list[i]
+			temp = append(temp, node.Val)
+			if node.Left != nil {
+				list = append(list, node.Left)
+			}
+			if node.Right != nil {
+				list = append(list, node.Right)
+			}
+		}
+		if len(res)%2 == 1 {
+			for i := 0; i < len(temp)/2; i++ {
+				temp[i], temp[len(temp)-1-i] = temp[len(temp)-1-i], temp[i]
+			}
+		}
+		res = append(res, temp)
+		list = list[length:]
+	}
+	return res
+}
+
+#
+var res [][]int
+
+func zigzagLevelOrder(root *TreeNode) [][]int {
+	res = make([][]int, 0)
+	if root == nil {
+		return res
+	}
+	dfs(root, 0)
+	return res
+}
+
+func dfs(root *TreeNode, level int) {
+	if root == nil {
+		return
+	}
+	if level == len(res) {
+		res = append(res, []int{})
+	}
+	if level%2 == 1 {
+		arr := res[level]
+		arr = append([]int{root.Val}, arr...)
+		res[level] = arr
+	} else {
+		res[level] = append(res[level], root.Val)
+	}
+	dfs(root.Left, level+1)
+	dfs(root.Right, level+1)
+}
+```
+
+## 105.从前序与中序遍历序列构造二叉树(3)
+
+- 题目
+
+```
+根据一棵树的前序遍历与中序遍历构造二叉树。
+注意:你可以假设树中没有重复的元素。
+例如，给出
+前序遍历 preorder = [3,9,20,15,7]
+中序遍历 inorder = [9,3,15,20,7]
+返回如下的二叉树：
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+| 02   | 迭代 | O(n)       | O(n)       |
+| 03   | 递归 | O(n)       | O(n)       |
+
+```go
+func buildTree(preorder []int, inorder []int) *TreeNode {
+    for k := range inorder {
+        if inorder[k] == preorder[0] {
+            return &TreeNode{
+                Val:   preorder[0],
+                Left:  buildTree(preorder[1:k+1], inorder[0:k]),
+                Right: buildTree(preorder[k+1:], inorder[k+1:]),
+            }
+        }
+    }
+    return nil
+}
+
+# 2
+func buildTree(preorder []int, inorder []int) *TreeNode {
+    if preorder == nil || len(preorder) == 0 {
+        return nil
+    }
+    root := &TreeNode{
+        Val: preorder[0],
+    }
+    length := len(preorder)
+    stack := make([]*TreeNode, 0)
+    stack = append(stack, root)
+    index := 0
+    for i := 1; i < length; i++ {
+        value := preorder[i]
+        node := stack[len(stack)-1]
+        if node.Val != inorder[index] {
+            node.Left = &TreeNode{Val: value}
+            stack = append(stack, node.Left)
+        } else {
+            for len(stack) > 0 && stack[len(stack)-1].Val == inorder[index] {
+                node = stack[len(stack)-1]
+                stack = stack[:len(stack)-1]
+                index++
+            }
+            node.Right = &TreeNode{Val: value}
+            stack = append(stack, node.Right)
+        }
+    }
+    return root
+}
+
+#
+func buildTree(preorder []int, inorder []int) *TreeNode {
+    if len(preorder) == 0 {
+        return nil
+    }
+    return helper(preorder, inorder)
+}
+
+func helper(preorder []int, inorder []int) *TreeNode {
+    var root *TreeNode
+    for k := range inorder {
+        if inorder[k] == preorder[0] {
+            root = &TreeNode{Val: preorder[0]}
+            root.Left = helper(preorder[1:k+1], inorder[0:k])
+            root.Right = helper(preorder[k+1:], inorder[k+1:])
+        }
+    }
+    return root
+}
+```
+
+## 106.从中序与后序遍历序列构造二叉树(3)
+
+- 题目
+
+```
+根据一棵树的中序遍历与后序遍历构造二叉树。
+注意:你可以假设树中没有重复的元素。
+例如，给出
+中序遍历 inorder = [9,3,15,20,7]
+后序遍历 postorder = [9,15,7,20,3]
+返回如下的二叉树：
+    3
+   / \
+  9  20
+    /  \
+   15   7
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+| 02   | 递归 | O(n)       | O(n)       |
+| 03   | 迭代 | O(n)       | O(n)       |
+
+```go
+func buildTree(inorder []int, postorder []int) *TreeNode {
+	last := len(postorder) - 1
+	for k := range inorder {
+		if inorder[k] == postorder[last] {
+			return &TreeNode{
+				Val:   postorder[last],
+				Left:  buildTree(inorder[0:k], postorder[0:k]),
+				Right: buildTree(inorder[k+1:], postorder[k:last]),
+			}
+		}
+	}
+	return nil
+}
+
+#
+func buildTree(inorder []int, postorder []int) *TreeNode {
+	if len(postorder) == 0 {
+		return nil
+	}
+	return helper(inorder, postorder)
+}
+
+func helper(inorder []int, postorder []int) *TreeNode {
+	var root *TreeNode
+	last := len(postorder) - 1
+	for k := range inorder {
+		if inorder[k] == postorder[last] {
+			root = &TreeNode{Val: postorder[last]}
+			root.Left = helper(inorder[0:k], postorder[0:k])
+			root.Right = helper(inorder[k+1:], postorder[k:last])
+		}
+	}
+	return root
+}
+
+#
+func buildTree(inorder []int, postorder []int) *TreeNode {
+	if postorder == nil || len(postorder) == 0 {
+		return nil
+	}
+	last := len(postorder) - 1
+	root := &TreeNode{
+		Val: postorder[last],
+	}
+	length := len(postorder)
+	stack := make([]*TreeNode, 0)
+	stack = append(stack, root)
+	index := last
+	for i := length - 2; i >= 0; i-- {
+		value := postorder[i]
+		node := stack[len(stack)-1]
+		if node.Val != inorder[index] {
+			node.Right = &TreeNode{Val: value}
+			stack = append(stack, node.Right)
+		} else {
+			for len(stack) > 0 && stack[len(stack)-1].Val == inorder[index] {
+				node = stack[len(stack)-1]
+				stack = stack[:len(stack)-1]
+				index--
+			}
+			node.Left = &TreeNode{Val: value}
+			stack = append(stack, node.Left)
+		}
+	}
+	return root
+}
+```
+
+## 109.有序链表转换二叉搜索树(2)
+
+- 题目
+
+```
+给定一个单链表，其中的元素按升序排序，将其转换为高度平衡的二叉搜索树。
+本题中，一个高度平衡二叉树是指一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1。
+示例:给定的有序链表： [-10, -3, 0, 5, 9],
+一个可能的答案是：[0, -3, 9, -10, null, 5], 它可以表示下面这个高度平衡二叉搜索树：
+      0
+     / \
+   -3   9
+   /   /
+ -10  5
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 递归     | O(nlog(n)) | O(log(n))  |
+| 02   | 数组辅助 | O(n)       | O(n)       |
+
+```go
+func sortedListToBST(head *ListNode) *TreeNode {
+	if head == nil {
+		return nil
+	}
+	mid := find(head)
+	if mid == head {
+		return &TreeNode{Val: mid.Val}
+	}
+	return &TreeNode{
+		Val:   mid.Val,
+		Left:  sortedListToBST(head),
+		Right: sortedListToBST(mid.Next),
+	}
+}
+
+func find(head *ListNode) *ListNode {
+	if head == nil {
+		return nil
+	}
+	slow, fast := head, head
+	var prev *ListNode
+	for fast != nil && fast.Next != nil {
+		prev = slow
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	if prev != nil {
+		prev.Next = nil
+	}
+	return slow
+}
+
+#
+func sortedListToBST(head *ListNode) *TreeNode {
+	if head == nil {
+		return nil
+	}
+	arr := make([]int, 0)
+	for head != nil {
+		arr = append(arr, head.Val)
+		head = head.Next
+	}
+	return sortArr(arr)
+}
+
+func sortArr(arr []int) *TreeNode {
+	if len(arr) == 0 {
+		return nil
+	}
+	return &TreeNode{
+		Val:   arr[len(arr)/2],
+		Left:  sortArr(arr[:len(arr)/2]),
+		Right: sortArr(arr[len(arr)/2+1:]),
+	}
+}
+```
+
+## 113.路径总和II(2)
+
+- 题目
+
+```
+给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。
+说明: 叶子节点是指没有子节点的节点。
+示例:给定如下二叉树，以及目标和 sum = 22，
+
+              5
+             / \
+            4   8
+           /   / \
+          11  13  4
+         /  \    / \
+        7    2  5   1
+返回:
+[
+   [5,4,11,2],
+   [5,8,4,5]
+]
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+var res [][]int
+
+func pathSum(root *TreeNode, sum int) [][]int {
+	if root == nil {
+		return nil
+	}
+	res = make([][]int, 0)
+	var arr []int
+	dfs(root, sum, arr)
+	return res
+}
+
+func dfs(root *TreeNode, sum int, arr []int) {
+	if root == nil {
+		return
+	}
+	arr = append(arr, root.Val)
+	if root.Val == sum && root.Left == nil && root.Right == nil {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+	}
+	dfs(root.Left, sum-root.Val, arr)
+	dfs(root.Right, sum-root.Val, arr)
+	arr = arr[:len(arr)-1]
+}
+
+#
+func pathSum(root *TreeNode, sum int) [][]int {
+	res := make([][]int, 0)
+	if root == nil {
+		return res
+	}
+	temp := make([]int, 0)
+	stack := make([]*TreeNode, 0)
+	visited := make(map[*TreeNode]bool)
+	curSum := 0
+	for root != nil || len(stack) > 0 {
+		for root != nil {
+			temp = append(temp, root.Val)
+			curSum = curSum + root.Val
+			visited[root] = true
+			stack = append(stack, root)
+			root = root.Left
+		}
+		node := stack[len(stack)-1]
+		if node.Right == nil || visited[node.Right] {
+			if node.Left == nil && node.Right == nil && curSum == sum {
+				tmp := make([]int, len(temp))
+				copy(tmp, temp)
+				res = append(res, tmp)
+			}
+			stack = stack[:len(stack)-1]
+			temp = temp[:len(temp)-1]
+			curSum = curSum - node.Val
+			root = nil
+		} else {
+			root = node.Right
+		}
+	}
+	return res
+}
+```
+
+## 114.二叉树展开为链表(3)
+
+- 题目
+
+```
+给定一个二叉树，原地将它展开为一个单链表。
+例如，给定二叉树
+    1
+   / \
+  2   5
+ / \   \
+3   4   6
+将其展开为：
+1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+         \
+          6
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 递归 | O(n)       | O(log(n))  |
+| 03   | 迭代 | O(n)       | O(n)       |
+
+```go
+// 将原左子树变为节点的右子树
+// 再将原右子树变为当前右子树最右节点的右子树。
+func flatten(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	flatten(root.Left)
+	flatten(root.Right)
+	right := root.Right
+	root.Right, root.Left = root.Left, nil
+	for root.Right != nil {
+		root = root.Right
+	}
+	root.Right = right
+}
+
+#
+func flatten(root *TreeNode) {
+	dfs(root, nil)
+}
+
+func dfs(root *TreeNode, pre *TreeNode) *TreeNode {
+	if root == nil {
+		return pre
+	}
+	pre = dfs(root.Right, pre)
+	pre = dfs(root.Left, pre)
+	root.Right, root.Left = pre, nil
+	pre = root
+	return pre
+}
+
+#
+func flatten(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	res := make([]*TreeNode, 0)
+	stack := make([]*TreeNode, 0)
+	stack = append(stack, root)
+	for len(stack) > 0 {
+		node := stack[len(stack)-1]
+		res = append(res, node)
+		stack = stack[:len(stack)-1]
+		if node.Right != nil {
+			stack = append(stack, node.Right)
+		}
+		if node.Left != nil {
+			stack = append(stack, node.Left)
+		}
+	}
+	for i := 1; i < len(res); i++ {
+		res[i-1].Left = nil
+		res[i-1].Right = res[i]
+	}
+	res[len(res)-1].Left = nil
+}
+```
+
+## 116.填充每个节点的下一个右侧节点指针(3)
+
+- 题目
+
+```
+给定一个完美二叉树，其所有叶子节点都在同一层，每个父节点都有两个子节点。二叉树定义如下：
+struct Node {
+  int val;
+  Node *left;
+  Node *right;
+  Node *next;
+}
+填充它的每个 next 指针，让这个指针指向其下一个右侧节点。
+如果找不到下一个右侧节点，则将 next 指针设置为 NULL。
+初始状态下，所有 next 指针都被设置为 NULL。
+示例：输入：{"$id":"1","left":{"$id":"2","left":{"$id":"3","left":null,"next":null,"right":null,"val":4},"next":null,"right":
+{"$id":"4","left":null,"next":null,"right":null,"val":5},"val":2},"next":null,"right":
+{"$id":"5","left":
+{"$id":"6","left":null,"next":null,"right":null,"val":6},"next":null,"right":
+{"$id":"7","left":null,"next":null,"right":null,"val":7},"val":3},"val":1}
+输出：{"$id":"1","left":{"$id":"2","left":{"$id":"3","left":null,"next":
+{"$id":"4","left":null,"next":{"$id":"5","left":null,"next":
+{"$id":"6","left":null,"next":null,"right":null,"val":7},"right":null,"val":6},
+"right":null,"val":5},"right":null,"val":4},"next":{"$id":"7","left":
+{"$ref":"5"},"next":null,"right":{"$ref":"6"},"val":3},"right":
+{"$ref":"4"},"val":2},"next":null,"right":{"$ref":"7"},"val":1}
+解释：给定二叉树如图 A 所示，你的函数应该填充它的每个 next 指针，以指向其下一个右侧节点，如图 B 所示。
+提示：你只能使用常量级额外空间。
+    使用递归解题也符合要求，本题中递归程序占用的栈空间不算做额外的空间复杂度。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(1)       |
+| 03   | 迭代 | O(n)       | O(n)       |
+
+```go
+func connect(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	left := root.Left
+	right := root.Right
+	// 从上往下，连接最中间的
+	for left != nil {
+		left.Next = right
+		left = left.Right
+		right = right.Left
+	}
+	connect(root.Left)
+	connect(root.Right)
+	return root
+}
+
+# 2
+func connect(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	cur := root
+	for cur.Left != nil {
+		parent := cur
+		for parent != nil {
+			parent.Left.Next = parent.Right // 左节点连接右节点
+			if parent.Next != nil {
+				// 图中的5->6 ，左子树的右节点->右子树的左节点
+				parent.Right.Next = parent.Next.Left
+			}
+			parent = parent.Next
+		}
+		cur = cur.Left // 移到下一层最左边
+	}
+	return root
+}
+
+# 3
+func connect(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	queue := make([]*Node, 0)
+	if root.Left != nil {
+		queue = append(queue, root.Left)
+	}
+	if root.Right != nil {
+		queue = append(queue, root.Right)
+	}
+	for len(queue) > 0 {
+		length := len(queue)
+		i := 0
+		for i = 0; i < length; i++ {
+			node := queue[i]
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+			if i+1 < length {
+				node.Next = queue[i+1]
+			}
+		}
+		queue = queue[length:]
+	}
+	return root
+}
+```
+
+## 117.填充每个节点的下一个右侧节点指针II(4)
+
+- 题目
+
+```
+给定一个二叉树
+struct Node {
+  int val;
+  Node *left;
+  Node *right;
+  Node *next;
+}
+填充它的每个 next 指针，让这个指针指向其下一个右侧节点。
+如果找不到下一个右侧节点，则将 next 指针设置为 NULL。
+初始状态下，所有 next 指针都被设置为 NULL。
+进阶：你只能使用常量级额外空间。
+    使用递归解题也符合要求，本题中递归程序占用的栈空间不算做额外的空间复杂度。
+示例：输入：root = [1,2,3,4,5,null,7] 输出：[1,#,2,3,#,4,5,7,#]
+解释：给定二叉树如图 A 所示，你的函数应该填充它的每个 next 指针，以指向其下一个右侧节点，如图 B 所示。
+提示：
+    树中的节点数小于 6000
+    -100 <= node.val <= 100
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+| 03   | 迭代 | O(n)       | O(1)       |
+| 04   | 迭代 | O(n)       | O(1)       |
+
+```go
+func connect(root *Node) *Node {
+	if root == nil || (root.Left == nil && root.Right == nil) {
+		return root
+	}
+	if root.Left != nil {
+		root.Left.Next = root.Right
+	}
+	prev := root.Right
+	if prev == nil {
+		prev = root.Left
+	}
+	nextRoot := root.Next
+	for nextRoot != nil && (nextRoot.Left == nil && nextRoot.Right == nil) {
+		nextRoot = nextRoot.Next
+	}
+	if nextRoot != nil {
+		if nextRoot.Left != nil {
+			prev.Next = nextRoot.Left
+		} else {
+			prev.Next = nextRoot.Right
+		}
+	}
+	connect(root.Right)
+	connect(root.Left)
+	return root
+}
+
+# 2
+func connect(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	queue := make([]*Node, 0)
+	if root.Left != nil {
+		queue = append(queue, root.Left)
+	}
+	if root.Right != nil {
+		queue = append(queue, root.Right)
+	}
+	for len(queue) > 0 {
+		length := len(queue)
+		i := 0
+		for i = 0; i < length; i++ {
+			node := queue[i]
+			if node.Left != nil {
+				queue = append(queue, node.Left)
+			}
+			if node.Right != nil {
+				queue = append(queue, node.Right)
+			}
+			if i+1 < length {
+				node.Next = queue[i+1]
+			}
+		}
+		queue = queue[length:]
+	}
+	return root
+}
+
+# 3
+func connect(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	cur := root
+	for cur != nil {
+		var prev, down *Node
+		for cur != nil {
+			if cur.Left != nil {
+				if prev != nil {
+					prev.Next = cur.Left
+				} else {
+					down = cur.Left
+				}
+				prev = cur.Left
+			}
+			if cur.Right != nil {
+				if prev != nil {
+					prev.Next = cur.Right
+				} else {
+					down = cur.Right
+				}
+				prev = cur.Right
+			}
+			cur = cur.Next // 当前层级移动
+		}
+		cur = down // 移到下一层最左边
+	}
+	return root
+}
+
+# 4
+func connect(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	cur := root
+	for cur != nil {
+		down := &Node{}
+		prev := down
+		for cur != nil {
+			if cur.Left != nil {
+				prev.Next = cur.Left
+				prev = prev.Next
+			}
+			if cur.Right != nil {
+				prev.Next = cur.Right
+				prev = prev.Next
+			}
+			cur = cur.Next // 当前层级移动
+		}
+		cur = down.Next // 移到下一层最左边
+	}
+	return root
+}
+```
+
+## 120.三角形最小路径和(5)
+
+- 题目
+
+```
+给定一个三角形，找出自顶向下的最小路径和。每一步只能移动到下一行中相邻的结点上。
+相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。
+例如，给定三角形：
+[
+     [2],
+    [3,4],
+   [6,5,7],
+  [4,1,8,3]
+]
+自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 = 11）。
+说明：如果你可以只使用 O(n) 的额外空间（n 为三角形的总行数）来解决这个问题，那么你的算法会很加分。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划 | O(n^2)     | O(n)       |
+| 03   | 动态规划 | O(n^2)     | O(n)       |
+| 04   | 遍历     | O(n^2)     | O(1)       |
+| 05   | 递归     | O(n^2)     | O(n^2)     |
+
+```go
+func minimumTotal(triangle [][]int) int {
+	n := len(triangle)
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, n)
+	}
+	dp[0][0] = triangle[0][0]
+	for i := 1; i < n; i++ {
+		dp[i][0] = dp[i-1][0] + triangle[i][0]
+		for j := 1; j < i; j++ {
+			dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j]
+		}
+		dp[i][i] = dp[i-1][i-1] + triangle[i][i]
+	}
+	res := dp[n-1][0]
+	for i := 1; i < n; i++ {
+		res = min(res, dp[n-1][i])
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+func minimumTotal(triangle [][]int) int {
+	n := len(triangle)
+	dp := [2][]int{}
+	for i := 0; i < 2; i++ {
+		dp[i] = make([]int, n)
+	}
+	dp[0][0] = triangle[0][0]
+	for i := 1; i < n; i++ {
+		cur := i % 2
+		prev := 1 - cur
+		dp[cur][0] = dp[prev][0] + triangle[i][0]
+		for j := 1; j < i; j++ {
+			dp[cur][j] = min(dp[prev][j-1], dp[prev][j]) + triangle[i][j]
+		}
+		dp[cur][i] = dp[prev][i-1] + triangle[i][i]
+	}
+	res := dp[(n-1)%2][0]
+	for i := 1; i < n; i++ {
+		res = min(res, dp[(n-1)%2][i])
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 3
+func minimumTotal(triangle [][]int) int {
+	n := len(triangle)
+	dp := make([]int, n)
+	dp[0] = triangle[0][0]
+	for i := 1; i < n; i++ {
+		dp[i] = dp[i-1] + triangle[i][i]
+		for j := i - 1; j > 0; j-- {
+			dp[j] = min(dp[j-1], dp[j]) + triangle[i][j]
+		}
+		dp[0] = dp[0] + triangle[i][0]
+	}
+	res := dp[0]
+	for i := 1; i < n; i++ {
+		res = min(res, dp[i])
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 4
+func minimumTotal(triangle [][]int) int {
+	n := len(triangle)
+	for i := n - 2; i >= 0; i-- {
+		for j := 0; j < len(triangle[i]); j++ {
+			triangle[i][j] = min(triangle[i+1][j], triangle[i+1][j+1]) + triangle[i][j]
+		}
+	}
+	return triangle[0][0]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 5
+var dp [][]int
+
+func minimumTotal(triangle [][]int) int {
+	dp = make([][]int, len(triangle))
+	for i := 0; i < len(triangle); i++ {
+		dp[i] = make([]int, len(triangle))
+	}
+	return dfs(triangle, 0, 0)
+}
+
+func dfs(triangle [][]int, i, j int) int {
+	if i == len(triangle) {
+		return 0
+	}
+	if dp[i][j] != 0 {
+		return dp[i][j]
+	}
+	dp[i][j] = min(dfs(triangle, i+1, j), dfs(triangle, i+1, j+1)) + triangle[i][j]
+	return dp[i][j]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
+## 127.单词接龙(2)
+
+- 题目
+
+```
+给定两个单词（beginWord 和 endWord）和一个字典，找到从 beginWord 到 endWord 的最短转换序列的长度。
+转换需遵循如下规则：
+    每次转换只能改变一个字母。
+    转换过程中的中间单词必须是字典中的单词。
+说明:
+    如果不存在这样的转换序列，返回 0。
+    所有单词具有相同的长度。
+    所有单词只由小写字母组成。
+    字典中不存在重复的单词。
+    你可以假设 beginWord 和 endWord 是非空的，且二者不相同。
+示例 1:输入:
+beginWord = "hit",
+endWord = "cog",
+wordList = ["hot","dot","dog","lot","log","cog"]
+输出: 5
+解释: 一个最短转换序列是 "hit" -> "hot" -> "dot" -> "dog" -> "cog",
+     返回它的长度 5。
+示例 2:输入:
+beginWord = "hit"
+endWord = "cog"
+wordList = ["hot","dot","dog","lot","log"]
+输出: 0
+解释: endWord "cog" 不在字典中，所以无法进行转换。
+```
+
+- 解题思路 
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+| 02   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+
+```go
+func ladderLength(beginWord string, endWord string, wordList []string) int {
+	m := make(map[string]int)
+	for i := 0; i < len(wordList); i++ {
+		m[wordList[i]] = 1
+	}
+	if m[endWord] == 0 {
+		return 0
+	}
+	preMap := make(map[string][]string)
+	for i := 0; i < len(wordList); i++ {
+		for j := 0; j < len(wordList[i]); j++ {
+			newStr := wordList[i][:j] + "*" + wordList[i][j+1:]
+			if _, ok := preMap[newStr]; !ok {
+				preMap[newStr] = make([]string, 0)
+			}
+			preMap[newStr] = append(preMap[newStr], wordList[i])
+		}
+	}
+	visited := make(map[string]bool)
+	count := 0
+	queue := make([]string, 0)
+	queue = append(queue, beginWord)
+	for len(queue) > 0 {
+		count++
+		length := len(queue)
+		for i := 0; i < length; i++ {
+			for j := 0; j < len(beginWord); j++ {
+				newStr := queue[i][:j] + "*" + queue[i][j+1:]
+				for _, word := range preMap[newStr] {
+					if word == endWord {
+						return count + 1
+					}
+					if visited[word] == false {
+						visited[word] = true
+						queue = append(queue, word)
+					}
+				}
+			}
+		}
+		queue = queue[length:]
+	}
+	return 0
+}
+
+# 2
+func ladderLength(beginWord string, endWord string, wordList []string) int {
+	m := make(map[string]int)
+	for i := 0; i < len(wordList); i++ {
+		m[wordList[i]] = 1
+	}
+	if m[endWord] == 0 {
+		return 0
+	}
+	queue := make([]string, 0)
+	queue = append(queue, beginWord)
+	count := 0
+	for len(queue) > 0 {
+		count++
+		length := len(queue)
+		for i := 0; i < length; i++ {
+			for _, word := range wordList {
+				diff := 0
+				for j := 0; j < len(queue[i]); j++ {
+					if queue[i][j] != word[j] {
+						diff++
+					}
+					if diff > 1 {
+						break
+					}
+				}
+				if diff == 1 && m[word] != 2 {
+					if word == endWord {
+						return count + 1
+					}
+					m[word] = 2
+					queue = append(queue, word)
+				}
+			}
+		}
+		queue = queue[length:]
+	}
+	return 0
+}
+```
+
+## 129.求根到叶子节点数字之和(2)
+
+- 题目
+
+```
+给定一个二叉树，它的每个结点都存放一个 0-9 的数字，每条从根到叶子节点的路径都代表一个数字。
+例如，从根到叶子节点路径 1->2->3 代表数字 123。
+计算从根到叶子节点生成的所有数字之和。
+说明: 叶子节点是指没有子节点的节点。
+示例 1:输入: [1,2,3]
+    1
+   / \
+  2   3
+输出: 25
+解释:
+从根到叶子节点路径 1->2 代表数字 12.
+从根到叶子节点路径 1->3 代表数字 13.
+因此，数字总和 = 12 + 13 = 25.
+示例 2:输入: [4,9,0,5,1]
+    4
+   / \
+  9   0
+ / \
+5   1
+输出: 1026 
+解释:
+从根到叶子节点路径 4->9->5 代表数字 495.
+从根到叶子节点路径 4->9->1 代表数字 491.
+从根到叶子节点路径 4->0 代表数字 40.
+因此，数字总和 = 495 + 491 + 40 = 1026。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+var res int
+
+func sumNumbers(root *TreeNode) int {
+	res = 0
+	dfs(root, 0)
+	return res
+}
+
+func dfs(root *TreeNode, sum int) {
+	if root == nil {
+		return
+	}
+	sum = sum*10 + root.Val
+	if root.Left == nil && root.Right == nil {
+		res = res + sum
+	}
+	dfs(root.Left, sum)
+	dfs(root.Right, sum)
+}
+
+#
+func sumNumbers(root *TreeNode) int {
+	res := 0
+	if root == nil {
+		return res
+	}
+	list := make([]*TreeNode, 0)
+	list = append(list, root)
+	for len(list) > 0 {
+		length := len(list)
+		for i := 0; i < length; i++ {
+			node := list[i]
+			value := node.Val
+			if node.Left == nil && node.Right == nil {
+				res = res + value
+			}
+			if node.Left != nil {
+				node.Left.Val = node.Left.Val + value*10
+				list = append(list, node.Left)
+			}
+			if node.Right != nil {
+				node.Right.Val = node.Right.Val + value*10
+				list = append(list, node.Right)
+			}
+		}
+		list = list[length:]
+	}
+	return res
+}
+```
+
+## 130.被围绕的区域(2)
+
+- 题目
+
+```
+给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。
+找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X' 填充。
+示例:
+X X X X
+X O O X
+X X O X
+X O X X
+运行你的函数后，矩阵变为：
+X X X X
+X X X X
+X X X X
+X O X X
+解释:
+被围绕的区间不会存在于边界上，换句话说，任何边界上的 'O' 都不会被填充为 'X'。 
+任何不在边界上，或不与边界上的 'O' 相连的 'O' 最终都会被填充为 'X'。
+如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先搜索 | O(n^2)     | O(1)       |
+| 02   | 并查集       | O(n^2)     | O(n)       |
+
+```go
+func solve(board [][]byte) {
+	if board == nil || len(board) == 0 {
+		return
+	}
+	for i := 0; i < len(board); i++ {
+		for j := 0; j < len(board[i]); j++ {
+			if (i == 0 || i == len(board)-1 || j == 0 || j == len(board[i])-1) &&
+				board[i][j] == 'O' {
+				dfs(board, i, j)
+			}
+		}
+	}
+	for i := 0; i < len(board); i++ {
+		for j := 0; j < len(board[i]); j++ {
+			if board[i][j] == 'O' {
+				board[i][j] = 'X'
+			}
+			if board[i][j] == '#' {
+				board[i][j] = 'O'
+			}
+		}
+	}
+}
+
+func dfs(board [][]byte, i, j int) {
+	if i < 0 || j < 0 || i >= len(board) || j >= len(board[0]) ||
+		board[i][j] == '#' || board[i][j] == 'X' {
+		return
+	}
+	board[i][j] = '#'
+	dfs(board, i+1, j)
+	dfs(board, i-1, j)
+	dfs(board, i, j+1)
+	dfs(board, i, j-1)
+}
+
+# 2
+func solve(board [][]byte) {
+	if board == nil || len(board) == 0 {
+		return
+	}
+	n := len(board)
+	m := len(board[0])
+	fa = Init(n*m + 1)
+	target := n * m
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if board[i][j] == 'O' {
+				if i == 0 || i == n-1 || j == 0 || j == m-1 {
+					union(i*m+j, target)
+				} else {
+					if board[i-1][j] == 'O' {
+						union(i*m+j, (i-1)*m+j)
+					}
+					if board[i+1][j] == 'O' {
+						union(i*m+j, (i+1)*m+j)
+					}
+					if board[i][j-1] == 'O' {
+						union(i*m+j, i*m+j-1)
+					}
+					if board[i][j+1] == 'O' {
+						union(i*m+j, i*m+j+1)
+					}
+				}
+			}
+		}
+	}
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if board[i][j] == 'O' && find(i*m+j) != find(target) {
+				board[i][j] = 'X'
+			}
+		}
+	}
+}
+
+var fa []int
+
+// 初始化
+func Init(n int) []int {
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = i
+	}
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	if fa[x] == x {
+		return x
+	}
+	// 路径压缩
+	fa[x] = find(fa[x])
+	return fa[x]
+}
+
+// 合并
+func union(i, j int) {
+	fa[find(i)] = find(j)
+}
+
+func query(i, j int) bool {
+	return find(i) == find(j)
+}
+```
+
+## 131.分割回文串(2)
+
+- 题目
+
+```
+给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。
+返回 s 所有可能的分割方案。
+示例:输入: "aab" 输出:
+[
+  ["aa","b"],
+  ["a","a","b"]
+]
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 回溯          | O(n*2^n)   | O(n*2^n)   |
+| 02   | 动态规划+回溯 | O(n*2^n)   | O(n*2^n)   |
+
+```go
+var res [][]string
+
+func partition(s string) [][]string {
+	res = make([][]string, 0)
+	arr := make([]string, 0)
+	dfs(s, 0, arr)
+	return res
+}
+
+func dfs(s string, level int, arr []string) {
+	if level == len(s) {
+		temp := make([]string, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := level; i < len(s); i++ {
+		str := s[level : i+1]
+		if judge(str) == true {
+			dfs(s, i+1, append(arr, str))
+		}
+	}
+}
+
+func judge(s string) bool {
+	for i := 0; i < len(s)/2; i++ {
+		if s[i] != s[len(s)-1-i] {
+			return false
+		}
+	}
+	return true
+}
+
+# 2
+var res [][]string
+var dp [][]bool
+
+func partition(s string) [][]string {
+	res = make([][]string, 0)
+	arr := make([]string, 0)
+	dp = make([][]bool, len(s))
+	for r := 0; r < len(s); r++ {
+		dp[r] = make([]bool, len(s))
+		dp[r][r] = true
+		for l := 0; l < r; l++ {
+			if s[l] == s[r] && (r-l <= 2 || dp[l+1][r-1] == true) {
+				dp[l][r] = true
+			} else {
+				dp[l][r] = false
+			}
+		}
+	}
+	dfs(s, 0, arr)
+	return res
+}
+
+func dfs(s string, level int, arr []string) {
+	if level == len(s) {
+		temp := make([]string, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := level; i < len(s); i++ {
+		str := s[level : i+1]
+		if dp[level][i] == true {
+			dfs(s, i+1, append(arr, str))
+		}
+	}
+}
+```
+
+## 133.克隆图(2)
+
+- 题目
+
+```
+给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。
+图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。
+class Node {
+    public int val;
+    public List<Node> neighbors;
+}
+测试用例格式：简单起见，每个节点的值都和它的索引相同。
+例如，第一个节点值为 1（val = 1），第二个节点值为 2（val = 2），以此类推。
+该图在测试用例中使用邻接列表表示。
+邻接列表 是用于表示有限图的无序列表的集合。每个列表都描述了图中节点的邻居集。
+给定节点将始终是图中的第一个节点（值为 1）。你必须将 给定节点的拷贝 作为对克隆图的引用返回。
+示例 1：输入：adjList = [[2,4],[1,3],[2,4],[1,3]] 输出：[[2,4],[1,3],[2,4],[1,3]]
+解释：图中有 4 个节点。
+节点 1 的值是 1，它有两个邻居：节点 2 和 4 。
+节点 2 的值是 2，它有两个邻居：节点 1 和 3 。
+节点 3 的值是 3，它有两个邻居：节点 2 和 4 。
+节点 4 的值是 4，它有两个邻居：节点 1 和 3 。
+示例 2：输入：adjList = [[]] 输出：[[]]
+解释：输入包含一个空列表。该图仅仅只有一个值为 1 的节点，它没有任何邻居。
+示例 3：输入：adjList = [] 输出：[]
+解释：这个图是空的，它不含任何节点。
+示例 4：输入：adjList = [[2],[1]] 输出：[[2],[1]]
+提示：
+    节点数不超过 100 。
+    每个节点值 Node.val 都是唯一的，1 <= Node.val <= 100。
+    无向图是一个简单图，这意味着图中没有重复的边，也没有自环。
+    由于图是无向的，如果节点 p 是节点 q 的邻居，那么节点 q 也必须是节点 p 的邻居。
+    图是连通图，你可以从给定节点访问到所有节点。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+var visited map[*Node]*Node
+
+func cloneGraph(node *Node) *Node {
+	visited = make(map[*Node]*Node)
+	return clone(node)
+}
+
+func clone(node *Node) *Node {
+	if node == nil {
+		return node
+	}
+	if v, ok := visited[node]; ok {
+		return v
+	}
+	newNode := &Node{
+		Val:       node.Val,
+		Neighbors: make([]*Node, len(node.Neighbors)),
+	}
+	visited[node] = newNode
+	for i := 0; i < len(node.Neighbors); i++ {
+		newNode.Neighbors[i] = clone(node.Neighbors[i])
+	}
+	return newNode
+}
+
+# 2
+func cloneGraph(node *Node) *Node {
+	if node == nil {
+		return nil
+	}
+	queue := make([]*Node, 0)
+	queue = append(queue, node)
+	visited := make(map[*Node]*Node)
+	visited[node] = &Node{
+		Val:       node.Val,
+		Neighbors: make([]*Node, len(node.Neighbors)),
+	}
+	for len(queue) > 0 {
+		temp := queue[0]
+		queue = queue[1:]
+		for i, v := range temp.Neighbors {
+			if _, ok := visited[v]; !ok {
+				queue = append(queue, v)
+				visited[v] = &Node{
+					Val:       v.Val,
+					Neighbors: make([]*Node, len(v.Neighbors)),
+				}
+			}
+			visited[temp].Neighbors[i] = visited[v]
+		}
+	}
+	return visited[node]
+}
+```
+
+## 134.加油站(2)
+
+- 题目
+
+```
+在一条环路上有 N 个加油站，其中第 i 个加油站有汽油 gas[i] 升。
+你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。
+你从其中的一个加油站出发，开始时油箱为空。
+如果你可以绕环路行驶一周，则返回出发时加油站的编号，否则返回 -1。
+说明: 
+    如果题目有解，该答案即为唯一答案。
+    输入数组均为非空数组，且长度相同。
+    输入数组中的元素均为非负数。
+示例 1:输入: gas  = [1,2,3,4,5] cost = [3,4,5,1,2] 输出: 3
+解释:从 3 号加油站(索引为 3 处)出发，可获得 4 升汽油。此时油箱有 = 0 + 4 = 4 升汽油
+开往 4 号加油站，此时油箱有 4 - 1 + 5 = 8 升汽油
+开往 0 号加油站，此时油箱有 8 - 2 + 1 = 7 升汽油
+开往 1 号加油站，此时油箱有 7 - 3 + 2 = 6 升汽油
+开往 2 号加油站，此时油箱有 6 - 4 + 3 = 5 升汽油
+开往 3 号加油站，你需要消耗 5 升汽油，正好足够你返回到 3 号加油站。
+因此，3 可为起始索引。
+示例 2:输入: gas  = [2,3,4] cost = [3,4,3]输出: -1
+解释:你不能从 0 号或 1 号加油站出发，因为没有足够的汽油可以让你行驶到下一个加油站。
+我们从 2 号加油站出发，可以获得 4 升汽油。 此时油箱有 = 0 + 4 = 4 升汽油
+开往 0 号加油站，此时油箱有 4 - 3 + 2 = 3 升汽油
+开往 1 号加油站，此时油箱有 3 - 3 + 3 = 3 升汽油
+你无法返回 2 号加油站，因为返程需要消耗 4 升汽油，但是你的油箱只有 3 升汽油。
+因此，无论怎样，你都不可能绕环路行驶一周。。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 贪心   | O(n)       | O(1)       |
+| 02   | 暴力法 | O(n^2)     | O(1)       |
+
+```go
+func canCompleteCircuit(gas []int, cost []int) int {
+	total, sum, start := 0, 0, 0
+	for i := 0; i < len(gas); i++ {
+		sum = sum + gas[i] - cost[i]
+		total = total + gas[i] - cost[i]
+		// 例如gas[i] - cost[i]的值为=> 1, 2, 3, 4, -11, 12
+		// 1->-11 <0
+		// 2->-11 <0
+		// 3->-11 <0
+		// 4->-11 <0
+		// -11 < 0
+		// i要是到不了j但是能到i和j之间的点(>=0)，
+		// 那么i和j之间的所有点都到不了b(<0)
+		if sum < 0 {
+			start = i + 1
+			sum = 0
+		}
+	}
+	if total < 0 {
+		return -1
+	}
+	return start
+}
+
+#
+func canCompleteCircuit(gas []int, cost []int) int {
+	for i := 0; i < len(gas); i++ {
+		total := 0
+		for j := 0; j < len(gas); j++ {
+			total = total + gas[j]
+			if total < cost[j] {
+				break
+			} else {
+				if j == len(gas)-1 && total >= cost[j] {
+					return i
+				}
+				total = total - cost[j]
+			}
+		}
+		gas = append(gas[1:], gas[0])
+		cost = append(cost[1:], cost[0])
+	}
+	return -1
+}
+```
+
+## 137.只出现一次的数字II(5)
+
+- 题目
+
+```
+给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现了三次。找出那个只出现了一次的元素。
+说明：
+你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+示例 1:输入: [2,2,3,2] 输出: 3
+示例 2:输入: [0,1,0,1,0,1,99] 输出: 99
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+| 02   | 排序遍历 | O(nlog(n)) | O(1)       |
+| 03   | 位运算   | O(n)       | O(1)       |
+| 04   | 位运算   | O(n)       | O(1)       |
+| 05   | 数学计算 | O(n)       | O(n)       |
+
+```go
+func singleNumber(nums []int) int {
+	m := make(map[int]int)
+	for _, v := range nums {
+		m[v]++
+	}
+	for k, v := range m {
+		if v == 1 {
+			return k
+		}
+	}
+	return 0
+}
+
+# 2
+func singleNumber(nums []int) int {
+	sort.Ints(nums)
+	for i := 0; i < len(nums)-1; i=i+3{
+		if nums[i] != nums[i+1]{
+			return nums[i]
+		}
+	}
+	return nums[len(nums)-1]
+}
+
+# 3
+func singleNumber(nums []int) int {
+	var res int
+	for i := 0; i < 64; i++ {
+		count := 0
+		for j := 0; j < len(nums); j++ {
+			if (nums[j]>>i) & 1 ==1{
+				count++
+			}
+		}
+		res |= count%3 << i
+	}
+	return res
+}
+
+# 4
+func singleNumber(nums []int) int {
+	a, b := 0,0
+	for i := 0; i < len(nums); i++ {
+		a = a ^ nums[i] & (^b)
+		b = b ^ nums[i] & (^a)
+	}
+	return a
+}
+
+# 5
+func singleNumber(nums []int) int {
+	m := make(map[int]int)
+	sum := 0
+	singleSum := 0
+	for _, v := range nums {
+		if m[v] == 0{
+			singleSum = singleSum+v
+		}
+		m[v] = 1
+		sum = sum + v
+	}
+	return (singleSum*3-sum)/2
+}
+```
+
+## 138.复制带随机指针的链表(3)
+
+- 题目
+
+```
+给定一个链表，每个节点包含一个额外增加的随机指针，该指针可以指向链表中的任何节点或空节点。
+要求返回这个链表的 深拷贝。 
+我们用一个由 n 个节点组成的链表来表示输入/输出中的链表。每个节点用一个 [val, random_index] 表示：
+    val：一个表示 Node.val 的整数。
+    random_index：随机指针指向的节点索引（范围从 0 到 n-1）；如果不指向任何节点，则为  null 。
+示例 1：输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]] 
+输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
+示例 2：输入：head = [[1,1],[2,1]] 输出：[[1,1],[2,1]]
+示例 3：输入：head = [[3,null],[3,0],[3,null]] 输出：[[3,null],[3,0],[3,null]]
+示例 4：输入：head = [] 输出：[]
+解释：给定的链表为空（空指针），因此返回 null。
+提示：
+    -10000 <= Node.val <= 10000
+    Node.random 为空（null）或指向链表中的节点。
+    节点数目不超过 1000 。
+```
+
+- 解题思路 
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 哈希辅助-递归 | O(n)       | O(n)       |
+| 02   | 哈希辅助      | O(n)       | O(n)       |
+| 03   | 复制-删除     | O(n)       | O(1)       |
+
+```go
+var m map[*Node]*Node
+
+func copyRandomList(head *Node) *Node {
+	m = make(map[*Node]*Node)
+	return copyList(head)
+}
+
+func copyList(head *Node) *Node {
+	if head == nil {
+		return head
+	}
+	if node, ok := m[head]; ok {
+		return node
+	}
+	temp := &Node{
+		Val:    head.Val,
+		Next:   nil,
+		Random: nil,
+	}
+	m[head] = temp
+	temp.Next = copyList(head.Next)
+	temp.Random = copyList(head.Random)
+	return temp
+}
+
+# 2
+func copyRandomList(head *Node) *Node {
+	if head == nil {
+		return nil
+	}
+	res := new(Node)
+	m := make(map[*Node]*Node)
+	temp := head
+	p := res
+	for temp != nil {
+		node := &Node{
+			Val:    temp.Val,
+			Next:   nil,
+			Random: nil,
+		}
+		m[temp] = node
+		p.Next = node
+		p = p.Next
+		temp = temp.Next
+
+	}
+	temp = head
+	p = res.Next
+	for temp != nil {
+		p.Random = m[temp.Random]
+		p = p.Next
+		temp = temp.Next
+	}
+	return res.Next
+}
+
+# 3
+func copyRandomList(head *Node) *Node {
+	if head == nil {
+		return nil
+	}
+	res := copyNext(head)
+	res = copyRandom(res)
+	res = cutEven(res)
+	return res
+}
+
+// 原1-复制1-原2-复制2
+func copyNext(head *Node) *Node {
+	p := head
+	for p != nil {
+		node := new(Node)
+		node.Val = p.Val
+		node.Next = p.Next
+		p.Next = node
+		p = node.Next
+	}
+	return head
+}
+
+func copyRandom(head *Node) *Node {
+	p := head
+	for p != nil {
+		if p.Random != nil {
+			p.Next.Random = p.Random.Next
+		}
+		p = p.Next.Next
+	}
+	return head
+}
+
+func cutEven(head *Node) *Node {
+	oldNode := head
+	newNode := head.Next
+	cur := newNode
+	for oldNode != nil {
+		oldNode.Next = oldNode.Next.Next
+		if newNode.Next != nil{
+			newNode.Next = newNode.Next.Next
+		}
+		oldNode = oldNode.Next
+		newNode = newNode.Next
+	}
+	return cur
+}
+```
+
+## 139.单词拆分(2)
+
+- 题目
+
+```
+给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，
+判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。
+说明：
+    拆分时可以重复使用字典中的单词。
+    你可以假设字典中没有重复的单词。
+示例 1：输入: s = "leetcode", wordDict = ["leet", "code"] 输出: true
+解释: 返回 true 因为 "leetcode" 可以被拆分成 "leet code"。
+示例 2：输入: s = "applepenapple", wordDict = ["apple", "pen"] 输出: true
+解释: 返回 true 因为 "applepenapple" 可以被拆分成 "apple pen apple"。
+     注意你可以重复使用字典中的单词。
+示例 3：输入: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"] 输出: false
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n)       |
+| 02   | 回溯算法 | O(n^n)     | O(n)       |
+
+```go
+func wordBreak(s string, wordDict []string) bool {
+	m := make(map[string]bool)
+	for i := 0; i < len(wordDict); i++{
+		m[wordDict[i]] = true
+	}
+	dp := make([]bool, len(s)+1)
+	dp[0] = true
+	for i := 1; i <= len(s); i++{
+		for j := 0; j < i; j++{
+			if dp[j] == true && m[s[j:i]] == true{
+				dp[i] = true
+				break
+			}
+		}
+	}
+	return dp[len(s)]
+}
+
+# 2
+var m map[string]bool
+var visited map[int]bool
+
+func wordBreak(s string, wordDict []string) bool {
+	m = make(map[string]bool)
+	for i := 0; i < len(wordDict); i++ {
+		m[wordDict[i]] = true
+	}
+	visited = make(map[int]bool)
+	return wordbreak(s, 0)
+}
+
+func wordbreak(s string, start int) bool {
+	if start == len(s) {
+		return true
+	}
+	if _, ok := visited[start]; ok {
+		return visited[start]
+	}
+	//递归
+	for i := start; i < len(s); i++ {
+		if _, ok := m[s[start:i+1]]; ok && wordbreak(s, i+1) {
+			visited[start] = true
+			return true
+		}
+	}
+	visited[start] = false
+	return false
+}
+```
+
+## 142.环形链表II(3)
+
+- 题目
+
+```
+给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
+为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。
+如果 pos 是 -1，则在该链表中没有环。
+说明：不允许修改给定的链表。
+示例 1：输入：head = [3,2,0,-4], pos = 1 输出：tail connects to node index 1
+解释：链表中有一个环，其尾部连接到第二个节点。
+示例 2：输入：head = [1,2], pos = 0 输出：tail connects to node index 0
+解释：链表中有一个环，其尾部连接到第一个节点。
+示例 3：输入：head = [1], pos = -1 输出：no cycle
+解释：链表中没有环。
+进阶：你是否可以不用额外空间解决此题？
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+| 02   | 快慢指针 | O(n)       | O(1)       |
+| 03   | 遍历标记 | O(n)       | O(1)       |
+
+```go
+func detectCycle(head *ListNode) *ListNode {
+	m := make(map[*ListNode]bool)
+	for head != nil {
+		if m[head] {
+			return head
+		}
+		m[head] = true
+		head = head.Next
+	}
+	return nil
+}
+
+# 2
+func detectCycle(head *ListNode) *ListNode {
+	if head == nil {
+		return nil
+	}
+	fast, slow := head, head
+	for fast != nil && fast.Next != nil {
+		fast = fast.Next.Next
+		slow = slow.Next
+		if fast == slow {
+			break
+		}
+	}
+	if fast == nil || fast.Next == nil {
+		return nil
+	}
+	slow = head
+	for fast != slow {
+		fast = fast.Next
+		slow = slow.Next
+	}
+	return slow
+}
+
+# 3
+func detectCycle(head *ListNode) *ListNode {
+	for head != nil {
+		if head.Val == math.MaxInt32 {
+			return head
+		}
+		head.Val = math.MaxInt32
+		head = head.Next
+	}
+	return head
+}
+```
+
+## 143.重排链表(4)
+
+- 题目
+
+```
+给定一个单链表 L：L0→L1→…→Ln-1→Ln ，
+将其重新排列后变为： L0→Ln→L1→Ln-1→L2→Ln-2→…
+你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+示例 1:给定链表 1->2->3->4, 重新排列为 1->4->2->3.
+示例 2:给定链表 1->2->3->4->5, 重新排列为 1->5->2->4->3.
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数组辅助 | O(n)       | O(n)       |
+| 02   | 三指针   | O(n^2)     | O(1)       |
+| 03   | 反转链表 | O(n)       | O(1)       |
+| 04   | 递归     | O(n)       | O(n)       |
+
+```go
+func reorderList(head *ListNode) {
+	if head == nil || head.Next == nil {
+		return
+	}
+	cur := head
+	arr := make([]*ListNode, 0)
+	for cur != nil {
+		arr = append(arr, cur)
+		cur = cur.Next
+	}
+	res := make([]*ListNode, 0)
+	for i := 0; i < len(arr)/2; i++ {
+		res = append(res, arr[i], arr[len(arr)-1-i])
+	}
+	if len(arr)%2 == 1 {
+		res = append(res, arr[len(arr)/2])
+	}
+	cur = head
+	for i := 1; i < len(res); i++ {
+		cur.Next = res[i]
+		cur = cur.Next
+	}
+	cur.Next = nil
+}
+
+# 2
+func reorderList(head *ListNode) {
+	if head == nil || head.Next == nil {
+		return
+	}
+	cur, prev, next := head, head, head
+	for cur != nil {
+		next = cur.Next
+		// prev 指向n-1 prev.next 指向n
+		for prev = next; prev != nil && prev.Next != nil && prev.Next.Next != nil; {
+			prev = prev.Next
+		}
+		if prev != nil && prev.Next != nil {
+			cur.Next = prev.Next
+			prev.Next.Next = next
+			prev.Next = nil
+		}
+		cur = next
+	}
+}
+
+# 3
+func reorderList(head *ListNode) {
+	if head == nil || head.Next == nil {
+		return
+	}
+	fast, slow := head, head
+	for fast != nil && fast.Next != nil {
+		fast = fast.Next.Next
+		slow = slow.Next
+	}
+	second := reverse(slow.Next)
+	slow.Next = nil
+	cur := head
+	count := 0
+	for cur != nil && second != nil {
+		a := cur.Next
+		b := second.Next
+		if count%2 == 0 {
+			cur.Next = second
+			cur = a
+		} else {
+			second.Next = cur
+			second = b
+		}
+		count++
+	}
+}
+
+func reverse(head *ListNode) *ListNode {
+	var res *ListNode
+	for head != nil {
+		next := head.Next
+		head.Next = res
+		res = head
+		head = next
+	}
+	return res
+}
+
+# 4
+func reorderList(head *ListNode) {
+	if head == nil || head.Next == nil {
+		return
+	}
+	length := 0
+	cur := head
+	for cur != nil {
+		length++
+		cur = cur.Next
+	}
+	helper(head, length)
+}
+
+func helper(head *ListNode, length int) *ListNode {
+	if length == 1 {
+		next := head.Next
+		head.Next = nil
+		return next
+	}
+	if length == 2 {
+		next := head.Next.Next
+		head.Next.Next = nil
+		return next
+	}
+	tail := helper(head.Next, length-2)
+	next := tail.Next
+	temp := head.Next
+	head.Next = tail
+	tail.Next = temp
+	return next
+}
+```
+
+## 144.二叉树的前序遍历(3)
+
+- 题目
+
+```
+给定一个二叉树，返回它的 前序 遍历。
+示例:输入: [1,null,2,3]  
+   1
+    \
+     2
+    /
+   3 
+输出: [1,2,3]
+进阶: 递归算法很简单，你可以通过迭代算法完成吗？
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+| 02   | 迭代 | O(n)       | O(n)       |
+| 03   | 迭代 | O(n)       | O(n)       |
+
+```go
+var res []int
+
+func preorderTraversal(root *TreeNode) []int {
+	res = make([]int, 0)
+	dfs(root)
+	return res
+}
+
+func dfs(root *TreeNode) {
+	if root != nil {
+		res = append(res, root.Val)
+		dfs(root.Left)
+		dfs(root.Right)
+	}
+}
+
+# 2
+func preorderTraversal(root *TreeNode) []int {
+	res := make([]int, 0)
+	stack := make([]*TreeNode, 0)
+	for len(stack) > 0 || root != nil {
+		for root != nil {
+			res = append(res, root.Val)
+			stack = append(stack, root.Right)
+			root = root.Left
+		}
+		last := len(stack) - 1
+		root = stack[last]
+		stack = stack[:last]
+	}
+	return res
+}
+
+# 3
+func preorderTraversal(root *TreeNode) []int {
+	res := make([]int, 0)
+	if root == nil {
+		return res
+	}
+	stack := make([]*TreeNode, 0)
+	stack = append(stack, root)
+	for len(stack) > 0 {
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		res = append(res, node.Val)
+		if node.Right != nil {
+			stack = append(stack, node.Right)
+		}
+		if node.Left != nil {
+			stack = append(stack, node.Left)
+		}
+	}
+	return res
+}
+```
+
+## 146.LRU缓存机制(1)
+
+- 题目
+
+```
+运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。
+它应该支持以下操作： 获取数据 get 和 写入数据 put 。
+获取数据 get(key) - 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。
+写入数据 put(key, value) - 如果关键字已经存在，则变更其数据值；
+如果关键字不存在，则插入该组「关键字/值」。
+当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。
+进阶:你是否可以在 O(1) 时间复杂度内完成这两种操作？
+示例:LRUCache cache = new LRUCache( 2 /* 缓存容量 */ );
+cache.put(1, 1);
+cache.put(2, 2);
+cache.get(1);       // 返回  1
+cache.put(3, 3);    // 该操作会使得关键字 2 作废
+cache.get(2);       // 返回 -1 (未找到)
+cache.put(4, 4);    // 该操作会使得关键字 1 作废
+cache.get(1);       // 返回 -1 (未找到)
+cache.get(3);       // 返回  3
+cache.get(4);       // 返回  4
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 双向链表 | O(1)       | O(n)       |
+
+```go
+type Node struct {
+	key   int
+	value int
+	prev  *Node
+	next  *Node
+}
+
+type LRUCache struct {
+	cap    int
+	header *Node
+	tail   *Node
+	m      map[int]*Node
+}
+
+func Constructor(capacity int) LRUCache {
+	cache := LRUCache{
+		cap:    capacity,
+		header: &Node{},
+		tail:   &Node{},
+		m:      make(map[int]*Node, capacity),
+	}
+	cache.header.next = cache.tail
+	cache.tail.prev = cache.header
+	return cache
+}
+
+func (this *LRUCache) Get(key int) int {
+	if node, ok := this.m[key]; ok {
+		this.remove(node)
+		this.putHead(node)
+		return node.value
+	}
+	return -1
+}
+
+func (this *LRUCache) Put(key int, value int) {
+	if node, ok := this.m[key]; ok {
+		node.value = value
+		this.remove(node)
+		this.putHead(node)
+		return
+	}
+	if this.cap <= len(this.m) {
+		// 删除尾部
+		deleteKey := this.tail.prev.key
+		this.remove(this.tail.prev)
+		delete(this.m, deleteKey)
+	}
+	// 插入到头部
+	newNode := &Node{key: key, value: value}
+	this.putHead(newNode)
+	this.m[key] = newNode
+}
+
+// 删除尾部节点
+func (this *LRUCache) remove(node *Node) {
+	node.prev.next = node.next
+	node.next.prev = node.prev
+}
+
+// 插入头部
+func (this *LRUCache) putHead(node *Node) {
+	next := this.header.next
+	this.header.next = node
+	node.next = next
+	next.prev = node
+	node.prev = this.header
+}
+```
+
+## 147.对链表进行插入排序(2)
+
+- 题目
+
+```
+对链表进行插入排序。
+插入排序的动画演示如上。从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。
+每次迭代时，从输入数据中移除一个元素（用红色表示），并原地将其插入到已排好序的链表中。
+插入排序算法：
+    插入排序是迭代的，每次只移动一个元素，直到所有元素可以形成一个有序的输出列表。
+    每次迭代中，插入排序只从输入数据中移除一个待排序的元素，找到它在序列中适当的位置，并将其插入。
+    重复直到所有输入数据插入完为止。
+示例 1：输入: 4->2->1->3 输出: 1->2->3->4
+示例 2：输入: -1->5->3->4->0 输出: -1->0->3->4->5
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 插入排序 | O(n^2)     | O(1)       |
+| 02   | 数组辅助 | O(nlog(n)) | O(n)       |
+
+```go
+func insertionSortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	res := &ListNode{Next: head}
+	cur := head.Next
+	head.Next = nil
+	for cur != nil {
+		next := cur.Next
+		prev := res // 从头开始寻找插入点
+		for prev.Next != nil && prev.Next.Val <= cur.Val {
+			prev = prev.Next
+		}
+		// 插入操作
+		cur.Next = prev.Next
+		prev.Next = cur
+		// 指向下一个未排序节点
+		cur = next
+	}
+	return res.Next
+}
+
+# 2
+func insertionSortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	arr := make([]*ListNode, 0)
+	for head != nil {
+		arr = append(arr, head)
+		head = head.Next
+	}
+	sort.Slice(arr, func(i, j int) bool {
+		return arr[i].Val < arr[j].Val
+	})
+	res := &ListNode{Next: head}
+	cur := res
+	arr[len(arr)-1].Next = nil
+	for i := 0; i < len(arr); i++ {
+		cur.Next = arr[i]
+		cur = cur.Next
+	}
+	return res.Next
+}
+```
+
+## 148.排序链表(3)
+
+- 题目
+
+```
+在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
+示例 1:输入: 4->2->1->3 输出: 1->2->3->4
+示例 2:输入: -1->5->3->4->0 输出: -1->0->3->4->5
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 快排 | O(nlog(n)) | O(log(n))  |
+| 02   | 归并 | O(nlog(n)) | O(log(n))  |
+| 03   | 归并 | O(nlog(n)) | O(1)       |
+
+```go
+func sortList(head *ListNode) *ListNode {
+	quickSort(head, nil)
+	return head
+}
+
+func quickSort(head, end *ListNode) {
+	if head == end || head.Next == end {
+		return
+	}
+	temp := head.Val
+	fast, slow := head.Next, head
+	for fast != end {
+		if fast.Val < temp {
+			slow = slow.Next
+			slow.Val, fast.Val = fast.Val, slow.Val
+		}
+		fast = fast.Next
+	}
+	slow.Val, head.Val = head.Val, slow.Val
+	quickSort(head, slow)
+	quickSort(slow.Next, end)
+}
+
+# 2
+func sortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	slow, fast := head, head.Next
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	right := sortList(slow.Next)
+	slow.Next = nil
+	left := sortList(head)
+	return mergeTwoLists(left, right)
+}
+
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	res := &ListNode{}
+	temp := res
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			temp.Next = l1
+			l1 = l1.Next
+		} else {
+			temp.Next = l2
+			l2 = l2.Next
+		}
+		temp = temp.Next
+	}
+	if l1 != nil {
+		temp.Next = l1
+	} else {
+		temp.Next = l2
+	}
+	return res.Next
+}
+
+# 3
+func sortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	res := &ListNode{Next: head}
+	cur := head
+	var left, right *ListNode
+	length := 0
+	for cur != nil {
+		length++
+		cur = cur.Next
+	}
+	for i := 1; i < length; i = i * 2 {
+		cur = res.Next
+		tail := res
+		for cur != nil {
+			left = cur
+			right = split(left, i)
+			cur = split(right, i)
+			tail.Next = mergeTwoLists(left, right)
+			for tail.Next != nil {
+				tail = tail.Next
+			}
+		}
+	}
+	return res.Next
+}
+
+func split(head *ListNode, length int) *ListNode {
+	cur := head
+	var right *ListNode
+	length--
+	for length > 0 && cur != nil {
+		length--
+		cur = cur.Next
+	}
+	if cur == nil {
+		return nil
+	}
+	right = cur.Next
+	cur.Next = nil
+	return right
+}
+
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	res := &ListNode{}
+	temp := res
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			temp.Next = l1
+			l1 = l1.Next
+		} else {
+			temp.Next = l2
+			l2 = l2.Next
+		}
+		temp = temp.Next
+	}
+	if l1 != nil {
+		temp.Next = l1
+	} else {
+		temp.Next = l2
+	}
+	return res.Next
+}
+```
+
+## 150.逆波兰表达式求值(1)
+
+- 题目
+
+```
+根据 逆波兰表示法，求表达式的值。
+有效的运算符包括 +, -, *, / 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。
+说明：
+    整数除法只保留整数部分。
+    给定逆波兰表达式总是有效的。换句话说，表达式总会得出有效数值且不存在除数为 0 的情况。
+示例 1：输入: ["2", "1", "+", "3", "*"] 输出: 9
+解释: 该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9
+示例 2：输入: ["4", "13", "5", "/", "+"] 输出: 6
+解释: 该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6
+示例 3： 输入: ["10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"] 
+输出: 22
+解释: 
+该算式转化为常见的中缀算术表达式为：
+  ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
+= ((10 * (6 / (12 * -11))) + 17) + 5
+= ((10 * (6 / -132)) + 17) + 5
+= ((10 * 0) + 17) + 5
+= (0 + 17) + 5
+= 17 + 5
+= 22
+逆波兰表达式：
+逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。
+    平常使用的算式则是一种中缀表达式，如 ( 1 + 2 ) * ( 3 + 4 ) 。
+    该算式的逆波兰表达式写法为 ( ( 1 2 + ) ( 3 4 + ) * ) 。
+逆波兰表达式主要有以下两个优点：
+    去掉括号后表达式无歧义，上式即便写成 1 2 + 3 4 + * 也可以依据次序计算出正确结果。
+    适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 栈辅助 | O(n)       | O(n)       |
+
+```go
+func evalRPN(tokens []string) int {
+	stack := make([]int, 0)
+	for _, v := range tokens {
+		length := len(stack)
+		if v == "+" || v == "-" || v == "*" || v == "/" {
+			a := stack[length-2]
+			b := stack[length-1]
+			stack = stack[:length-2]
+			var value int
+			if v == "+" {
+				value = a + b
+			} else if v == "-" {
+				value = a - b
+			} else if v == "*" {
+				value = a * b
+			} else {
+				value = a / b
+			}
+			stack = append(stack, value)
+		} else {
+			value, _ := strconv.Atoi(v)
+			stack = append(stack, value)
+		}
+	}
+	return stack[0]
+}
+```
+
+## 151.翻转字符串里的单词(2)
+
+- 题目
+
+```
+给定一个字符串，逐个翻转字符串中的每个单词。
+示例 1：输入: "the sky is blue" 输出: "blue is sky the"
+示例 2：输入: "  hello world!  " 输出: "world! hello"
+解释: 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
+示例 3：输入: "a good   example" 输出: "example good a"
+解释: 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
+说明：
+    无空格字符构成一个单词。
+    输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
+    如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
+进阶：请选用 C 语言的用户尝试使用 O(1) 额外空间复杂度的原地解法。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 内置函数 | O(n)       | O(n)       |
+| 02   | 遍历     | O(n)       | O(n)       |
+
+```go
+func reverseWords(s string) string {
+	arr := strings.Fields(s)
+	for i := 0; i < len(arr)/2; i++{
+		arr[i], arr[len(arr)-1-i] =  arr[len(arr)-1-i],arr[i]
+	}
+	return strings.Join(arr," ")
+}
+
+#
+func reverseWords(s string) string {
+	arr := make([]string, 0)
+	i, j := 0, 0
+	for i < len(s) && j <= len(s) {
+		for i = j; i < len(s) && s[i] == ' '; i++ {
+		}
+		for j = i; j < len(s) && s[j] != ' '; j++ {
+		}
+		if i < j {
+			arr = append(arr, s[i:j])
+		}
+	}
+	for i := 0; i < len(arr)/2; i++ {
+		arr[i], arr[len(arr)-1-i] = arr[len(arr)-1-i], arr[i]
+	}
+	return strings.Join(arr, " ")
+}
+```
+
+## 152.乘积最大子数组(2)
+
+- 题目
+
+```
+给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），
+并返回该子数组所对应的乘积。
+示例 1:输入: [2,3,-2,4] 输出: 6
+解释: 子数组 [2,3] 有最大乘积 6。
+示例 2:输入: [-2,0,-1] 输出: 0
+解释: 结果不能为 2, 因为 [-2,-1] 不是子数组。
+```
+
+-解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n)       | O(1)       |
+| 02   | 暴力法   | O(n^2)     | O(1)       |
+
+```go
+func maxProduct(nums []int) int {
+	minValue, maxValue, res := nums[0], nums[0], nums[0]
+	for i := 1; i < len(nums); i++ {
+		minV, maxV := minValue, maxValue
+		minValue = min(minV*nums[i], min(nums[i], maxV*nums[i]))
+		maxValue = max(maxV*nums[i], max(nums[i], minV*nums[i]))
+		res = max(res, maxValue)
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+#
+func maxProduct(nums []int) int {
+	res := math.MinInt64
+	for i := 0; i < len(nums); i++ {
+		temp := 1
+		for j := i; j < len(nums); j++ {
+			temp = temp * nums[j]
+			if temp > res {
+				res = temp
+			}
+		}
+	}
+	return res
+}
+```
+
+## 153.寻找旋转排序数组中的最小值(2)
+
+- 题目
+
+```
+假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
+请找出其中最小的元素。
+你可以假设数组中不存在重复元素。
+示例 1:输入: [3,4,5,1,2]输出: 1
+示例 2:输入: [4,5,6,7,0,1,2]输出: 0
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 遍历     | O(n)       | O(1)       |
+| 02   | 二分查找 | O(log(n))  | O(1)       |
+
+```go
+func findMin(nums []int) int {
+	res := nums[0]
+	for i := 1; i < len(nums); i++ {
+		if nums[i] < res {
+			res = nums[i]
+		}
+	}
+	return res
+}
+
+# 2
+func findMin(nums []int) int {
+	left, right := 0, len(nums)-1
+	for left < right {
+		mid := left + (right-left)/2
+		if nums[mid] > nums[right] {
+			left = mid + 1
+		} else {
+			right = mid
+		}
+	}
+	return nums[left]
+}
+```
+
+## 162.寻找峰值(3)
+
+- 题目
+
+```
+峰值元素是指其值大于左右相邻值的元素。
+给定一个输入数组 nums，其中 nums[i] ≠ nums[i+1]，找到峰值元素并返回其索引。
+数组可能包含多个峰值，在这种情况下，返回任何一个峰值所在位置即可。
+你可以假设 nums[-1] = nums[n] = -∞。
+示例 1:输入: nums = [1,2,3,1] 输出: 2
+解释: 3 是峰值元素，你的函数应该返回其索引 2。
+示例 2:输入: nums = [1,2,1,3,5,6,4] 输出: 1 或 5 
+解释: 你的函数可以返回索引 1，其峰值元素为 2；
+     或者返回索引 5， 其峰值元素为 6。
+说明:你的解法应该是 O(logN) 时间复杂度的。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 遍历     | O(n)       | O(1)       |
+| 02   | 二分查找 | O(log(n))  | O(1)       |
+| 03   | 遍历     | O(n)       | O(1)       |
+
+```go
+func findPeakElement(nums []int) int {
+	n := len(nums)
+	if n == 1 {
+		return 0
+	}
+	for i := 0; i < n; i++ {
+		if i == 0 && i+1 < n && nums[i] > nums[i+1] {
+			return i
+		}
+		if i == n-1 && i-1 >= 0 && nums[i] > nums[i-1] {
+			return i
+		}
+		if i-1 >= 0 && i+1 < n && nums[i] > nums[i+1] && nums[i] > nums[i-1] {
+			return i
+		}
+	}
+	return -1
+}
+
+# 2
+func findPeakElement(nums []int) int {
+	n := len(nums)
+	if n == 1 {
+		return 0
+	}
+	left := 0
+	right := n - 1
+	for left < right {
+		mid := left + (right-left)/2
+		if nums[mid] > nums[mid+1] {
+			right = mid
+		} else {
+			left = mid + 1
+		}
+	}
+	return left
+}
+
+# 3
+func findPeakElement(nums []int) int {
+	n := len(nums)
+	if n == 1 {
+		return 0
+	}
+	for i := 0; i < n-1; i++ {
+		if nums[i] > nums[i+1] {
+			return i
+		}
+	}
+	return n - 1
+}
+```
+
+## 165.比较版本号(2)
+
+- 题目
+
+```
+比较两个版本号 version1 和 version2。
+如果 version1 > version2 返回 1，如果 version1 < version2 返回 -1， 除此之外返回 0。
+你可以假设版本字符串非空，并且只包含数字和 . 字符。
+ . 字符不代表小数点，而是用于分隔数字序列。
+例如，2.5 不是“两个半”，也不是“差一半到三”，而是第二版中的第五个小版本。
+你可以假设版本号的每一级的默认修订版号为 0。
+例如，版本号 3.4 的第一级（大版本）和第二级（小版本）修订号分别为 3 和 4。其第三级和第四级修订号均为 0。
+示例 1:输入: version1 = "0.1", version2 = "1.1" 输出: -1
+示例 2:输入: version1 = "1.0.1", version2 = "1" 输出: 1
+示例 3:输入: version1 = "7.5.2.4", version2 = "7.5.3" 输出: -1
+示例 4：输入：version1 = "1.01", version2 = "1.001" 输出：0
+解释：忽略前导零，“01” 和 “001” 表示相同的数字 “1”。
+示例 5：输入：version1 = "1.0", version2 = "1.0.0" 输出：0
+解释：version1 没有第三级修订号，这意味着它的第三级修订号默认为 “0”。
+提示：
+    版本字符串由以点 （.） 分隔的数字字符串组成。这个数字字符串可能有前导零。
+    版本字符串不以点开始或结束，并且其中不会有两个连续的点。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n)       | O(n)       |
+| 02   | 遍历 | O(n)       | O(n)       |
+
+```go
+func compareVersion(version1 string, version2 string) int {
+	arr1 := strings.Split(version1, ".")
+	arr2 := strings.Split(version2, ".")
+	for len(arr1) < len(arr2) {
+		arr1 = append(arr1, "0")
+	}
+	for len(arr2) < len(arr1) {
+		arr2 = append(arr2, "0")
+	}
+	for i := 0; i < len(arr1); i++ {
+		a, _ := strconv.Atoi(arr1[i])
+		b, _ := strconv.Atoi(arr2[i])
+		if a > b {
+			return 1
+		} else if a < b {
+			return -1
+		}
+	}
+	return 0
+}
+
+#
+func compareVersion(version1 string, version2 string) int {
+	arr1 := strings.Split(version1, ".")
+	arr2 := strings.Split(version2, ".")
+	for len(arr1) < len(arr2) {
+		arr1 = append(arr1, "0")
+	}
+	for len(arr2) < len(arr1) {
+		arr2 = append(arr2, "0")
+	}
+	for i := 0; i < len(arr1); i++ {
+		a := strings.TrimLeft(arr1[i], "0")
+		b := strings.TrimLeft(arr2[i], "0")
+		// 1 < 10 => 01 < 10
+		for len(a) < len(b) {
+			a = "0" + a
+		}
+		for len(b) < len(a) {
+			b = "0" + b
+		}
+		for j := 0; j < len(a); j++ {
+			if a[j] < b[j] {
+				return -1
+			} else if a[j] > b[j] {
+				return 1
+			}
+		}
+	}
+	return 0
+}
+```
+
+## 166.分数到小数(1)
+
+- 题目
+
+```
+给定两个整数，分别表示分数的分子 numerator 和分母 denominator，以字符串形式返回小数。
+如果小数部分为循环小数，则将循环的部分括在括号内。
+示例 1:输入: numerator = 1, denominator = 2 输出: "0.5"
+示例 2:输入: numerator = 2, denominator = 1 输出: "2"
+示例 3:输入: numerator = 2, denominator = 3 输出: "0.(6)"
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(log(n))  | O(log(n))  |
+
+```go
+func fractionToDecimal(numerator int, denominator int) string {
+	res := make([]string, 0)
+	if numerator == 0 {
+		return "0"
+	}
+	// 预处理
+	flag := false
+	if numerator < 0 {
+		flag = !flag
+		numerator = -numerator
+	}
+	if denominator < 0 {
+		flag = !flag
+		denominator = -denominator
+	}
+	if flag == true {
+		res = append(res, "-")
+	}
+	a, b := numerator/denominator, numerator%denominator
+	res = append(res, strconv.Itoa(a))
+	if b == 0 {
+		return strings.Join(res, "")
+	}
+	res = append(res, ".")
+	m := make(map[int]int)
+	last, index := -1, len(res)
+	for b > 0 {
+		b = b * 10
+		if v, ok := m[b]; ok {
+			last = v
+			break
+		} else {
+			m[b] = index
+		}
+		index++
+		a, b = b/denominator, b%denominator
+		res = append(res, strconv.Itoa(a))
+	}
+	if last != -1 {
+		res = append(res[:last], append([]string{"("}, res[last:]...)...)
+		res = append(res, ")")
+	}
+	return strings.Join(res, "")
+}
+```
+
+## 173.二叉搜索树迭代器(2)
+
+- 题目
+
+```
+实现一个二叉搜索树迭代器。你将使用二叉搜索树的根节点初始化迭代器。
+调用 next() 将返回二叉搜索树中的下一个最小的数。
+示例：BSTIterator iterator = new BSTIterator(root);
+iterator.next();    // 返回 3
+iterator.next();    // 返回 7
+iterator.hasNext(); // 返回 true
+iterator.next();    // 返回 9
+iterator.hasNext(); // 返回 true
+iterator.next();    // 返回 15
+iterator.hasNext(); // 返回 true
+iterator.next();    // 返回 20
+iterator.hasNext(); // 返回 false
+提示：next() 和 hasNext() 操作的时间复杂度是 O(1)，并使用 O(h) 内存，其中 h 是树的高度。
+    你可以假设 next() 调用总是有效的，也就是说，当调用 next() 时，BST 中至少存在一个下一个最小的数。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 数组辅助 | O(1)       | O(n)       |
+| 02   | 栈辅助   | O(1)       | O(n)       |
+
+```go
+type BSTIterator struct {
+	arr  []int
+	root *TreeNode
+}
+
+func Constructor(root *TreeNode) BSTIterator {
+	arr := make([]int, 0)
+	inorder(root, &arr)
+	return BSTIterator{
+		arr:  arr,
+		root: root,
+	}
+}
+
+func inorder(root *TreeNode, nums *[]int) {
+	if root == nil {
+		return
+	}
+	inorder(root.Left, nums)
+	*nums = append(*nums, root.Val)
+	inorder(root.Right, nums)
+}
+
+func (this *BSTIterator) Next() int {
+	if len(this.arr) == 0 {
+		return -1
+	}
+	res := this.arr[0]
+	this.arr = this.arr[1:]
+	return res
+}
+
+func (this *BSTIterator) HasNext() bool {
+	if len(this.arr) > 0 {
+		return true
+	}
+	return false
+}
+
+# 2
+type BSTIterator struct {
+	stack []*TreeNode
+}
+
+func Constructor(root *TreeNode) BSTIterator {
+	res := BSTIterator{}
+	res.left(root)
+	return res
+}
+
+func (this *BSTIterator) left(root *TreeNode) {
+	for root != nil {
+		this.stack = append(this.stack, root)
+		root = root.Left
+	}
+}
+
+func (this *BSTIterator) Next() int {
+	node := this.stack[len(this.stack)-1]
+	this.stack = this.stack[:len(this.stack)-1]
+	if node.Right != nil {
+		this.left(node.Right)
+	}
+	return node.Val
+}
+
+func (this *BSTIterator) HasNext() bool {
+	return len(this.stack) > 0
+}
+```
+
+## 179.最大数(2)
+
+- 题目
+
+```
+给定一组非负整数，重新排列它们的顺序使之组成一个最大的整数。
+示例 1:输入: [10,2] 输出: 210
+示例 2:输入: [3,30,34,5,9] 输出: 9534330
+说明: 输出结果可能非常大，所以你需要返回一个字符串而不是整数。
+```
+
+- 解题思路
+
+| No.  | 思路       | 时间复杂度 | 空间复杂度 |
+| ---- | ---------- | ---------- | ---------- |
+| 01   | 自定义排序 | O(nlog(n)) | O(n)       |
+| 02   | 自定义排序 | O(nlog(n)) | O(n)       |
+
+```go
+func largestNumber(nums []int) string {
+	arr := make([]string, 0)
+	for i := 0; i < len(nums); i++ {
+		arr = append(arr, strconv.Itoa(nums[i]))
+	}
+	sort.Slice(arr, func(i, j int) bool {
+		return arr[i]+arr[j] >= arr[j]+arr[i]
+	})
+	res := strings.Join(arr, "")
+	if res[0] == '0' {
+		return "0"
+	}
+	return res
+}
+
+#
+func largestNumber(nums []int) string {
+	sort.Slice(nums, func(i, j int) bool {
+		return fmt.Sprintf("%d%d", nums[i], nums[j]) >=
+			fmt.Sprintf("%d%d", nums[j], nums[i])
+	})
+	res := ""
+	for i := 0; i < len(nums); i++ {
+		res = res + strconv.Itoa(nums[i])
+	}
+	if res[0] == '0' {
+		return "0"
+	}
+	return res
+}
+```
+
+## 187.重复的DNA序列(1)
+
+- 题目
+
+```
+所有 DNA 都由一系列缩写为 A，C，G 和 T 的核苷酸组成，例如：“ACGAATTCCG”。
+在研究 DNA 时，识别 DNA 中的重复序列有时会对研究非常有帮助。
+编写一个函数来查找目标子串，目标子串的长度为 10，且在 DNA 字符串 s 中出现次数超过一次。
+示例：输入：s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT" 输出：["AAAAACCCCC", "CCCCCAAAAA"]
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+
+```go
+func findRepeatedDnaSequences(s string) []string {
+	res := make([]string, 0)
+	m := make(map[string]int)
+	// 可以采用其他的形式作为key
+	for i := 0; i < len(s)-9; i++ {
+		m[s[i:i+10]]++
+	}
+	for k, v := range m {
+		if v > 1 {
+			res = append(res, k)
+		}
+	}
+	return res
+}
+```
+
+## 199.二叉树的右视图(2)
+
+- 题目
+
+```
+给定一棵二叉树，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+示例:输入: [1,2,3,null,5,null,4] 输出: [1, 3, 4]
+解释:
+   1            <---
+ /   \
+2     3         <---
+ \     \
+  5     4       <---
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 迭代 | O(n)       | O(n)       |
+| 02   | 递归 | O(n)       | O(log(n))  |
+
+```go
+func rightSideView(root *TreeNode) []int {
+	res := make([]int, 0)
+	if root == nil{
+		return res
+	}
+	list := make([]*TreeNode, 0)
+	list = append(list, root)
+	for len(list) > 0 {
+		length := len(list)
+		res = append(res, list[0].Val)
+		for i := 0; i < length; i++ {
+			node := list[i]
+			if node.Right != nil {
+				list = append(list, node.Right)
+			}
+			if node.Left != nil {
+				list = append(list, node.Left)
+			}
+		}
+		list = list[length:]
+	}
+	return res
+}
+
+#
+var res []int
+
+func rightSideView(root *TreeNode) []int {
+	res = make([]int, 0)
+	if root == nil {
+		return res
+	}
+	dfs(root, 1)
+	return res
+}
+
+func dfs(root *TreeNode, level int) {
+	if root == nil {
+		return
+	}
+	if level > len(res) {
+		res = append(res, root.Val)
+	}
+	dfs(root.Right, level+1)
+	dfs(root.Left, level+1)
+}
+```
+
+## 200.岛屿数量(2)
+
+- 题目
+
+```
+给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
+岛屿总是被水包围，并且每座岛屿只能由水平方向或竖直方向上相邻的陆地连接形成。
+此外，你可以假设该网格的四条边均被水包围。
+示例 1:输入:
+[
+['1','1','1','1','0'],
+['1','1','0','1','0'],
+['1','1','0','0','0'],
+['0','0','0','0','0']
+]
+输出: 1
+示例 2:输入:
+[
+['1','1','0','0','0'],
+['1','1','0','0','0'],
+['0','0','1','0','0'],
+['0','0','0','1','1']
+]
+输出: 3
+解释: 每座岛屿只能由水平和/或竖直方向上相邻的陆地连接而成。
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先遍历 | O(n^2)     | O(1)       |
+| 02   | 并查集       | O(n^2)     | O(1)       |
+
+```go
+func numIslands(grid [][]byte) int {
+	res := 0
+	for i := 0; i < len(grid); i++ {
+		for j := 0; j < len(grid[i]); j++ {
+			if grid[i][j] == '1' {
+				dfs(grid, i, j)
+				res++
+			}
+		}
+	}
+	return res
+}
+
+func dfs(grid [][]byte, i, j int) {
+	if i < 0 || j < 0 || i >= len(grid) || j >= len(grid[0]) ||
+		grid[i][j] == '0' {
+		return
+	}
+	grid[i][j] = '0'
+	dfs(grid, i+1, j)
+	dfs(grid, i-1, j)
+	dfs(grid, i, j+1)
+	dfs(grid, i, j-1)
+}
+
+# 2
+func numIslands(grid [][]byte) int {
+	n := len(grid)
+	m := len(grid[0])
+	fa = Init(n*m + 1)
+	for i := 0; i < len(grid); i++ {
+		for j := 0; j < len(grid[i]); j++ {
+			if grid[i][j] == '1' {
+				count++
+				grid[i][j] = '0'
+				if i >= 1 && grid[i-1][j] == '1' {
+					union(i*m+j, (i-1)*m+j)
+				}
+				if i < n-1 && grid[i+1][j] == '1' {
+					union(i*m+j, (i+1)*m+j)
+				}
+				if j >= 1 && grid[i][j-1] == '1' {
+					union(i*m+j, i*m+j-1)
+				}
+				if j < m-1 && grid[i][j+1] == '1' {
+					union(i*m+j, i*m+j+1)
+				}
+			}
+		}
+	}
+	return getCount()
+}
+
+var fa []int
+var count int
+
+// 初始化
+func Init(n int) []int {
+	arr := make([]int, n)
+	count = 0
+	for i := 0; i < n; i++ {
+		arr[i] = i
+	}
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	if fa[x] == x {
+		return x
+	}
+	// 路径压缩
+	fa[x] = find(fa[x])
+	return fa[x]
+}
+
+// 合并
+func union(i, j int) {
+	x, y := find(i), find(j)
+	if x != y {
+		fa[x] = y
+		count--
+	}
+}
+
+func query(i, j int) bool {
+	return find(i) == find(j)
+}
+
+func getCount() int {
+	return count
+}
+```
+
+# 0101-0200-Hard
+
+## 115.不同的子序列(2)
+
+- 题目
+
+```
+给定一个字符串 S 和一个字符串 T，计算在 S 的子序列中 T 出现的个数。
+一个字符串的一个子序列是指，通过删除一些（也可以不删除）字符且不干扰剩余字符相对位置所组成的新字符串。
+（例如，"ACE" 是 "ABCDE" 的一个子序列，而 "AEC" 不是）
+题目数据保证答案符合 32 位带符号整数范围。
+示例 1：输入：S = "rabbbit", T = "rabbit" 输出：3
+解释：如下图所示, 有 3 种可以从 S 中得到 "rabbit" 的方案。
+(上箭头符号 ^ 表示选取的字母)
+rabbbit
+^^^^ ^^
+rabbbit
+^^ ^^^^
+rabbbit
+^^^ ^^^
+示例 2：输入：S = "babgbag", T = "bag" 输出：5
+解释：如下图所示, 有 5 种可以从 S 中得到 "bag" 的方案。 
+(上箭头符号 ^ 表示选取的字母)
+babgbag
+^^ ^
+babgbag
+^^    ^
+babgbag
+^    ^^
+babgbag
+  ^  ^^
+babgbag
+    ^^^
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-一维 | O(n^2)     | O(n)       |
+| 02   | 动态规划-二维 | O(n^2)     | O(n^2)     |
+
+```go
+func numDistinct(s string, t string) int {
+	dp := make([]int, len(t)+1)
+	dp[0] = 1
+	for i := 1; i <= len(s); i++ {
+		for j := len(t); j >= 1; j-- {
+			if s[i-1] == t[j-1] {
+				dp[j] = dp[j] + dp[j-1]
+			}
+		}
+	}
+	return dp[len(t)]
+}
+
+# 2
+func numDistinct(s string, t string) int {
+	// dp[i][j]为使用s的前i个字符能够最多组成多少个t的前j个字符
+	dp := make([][]int, len(s)+1)
+	for i := 0; i <= len(s); i++ {
+		dp[i] = make([]int, len(t)+1)
+	}
+	for i := 0; i <= len(s); i++ {
+		dp[i][0] = 1
+	}
+	for i := 1; i <= len(s); i++ {
+		for j := 1; j <= len(t); j++ {
+			if s[i-1] == t[j-1] {
+				// s用最后一位的 +不用最后一位
+				dp[i][j] = dp[i-1][j-1] + dp[i-1][j]
+			} else {
+				dp[i][j] = dp[i-1][j]
+			}
+		}
+	}
+	return dp[len(s)][len(t)]
+}
+```
+
+## 123.买卖股票的最佳时机III(2)
+
+- 题目
+
+```
+给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。
+设计一个算法来计算你所能获取的最大利润。你最多可以完成 两笔 交易。
+注意: 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+示例 1:输入: [3,3,5,0,0,3,1,4]
+输出: 6
+解释: 在第 4 天（股票价格 = 0）的时候买入，在第 6 天（股票价格 = 3）的时候卖出，
+这笔交易所能获得利润 = 3-0 = 3 。
+随后，在第 7 天（股票价格 = 1）的时候买入，在第 8 天 （股票价格 = 4）的时候卖出，
+     这笔交易所能获得利润 = 4-1 = 3 。
+示例 2:输入: [1,2,3,4,5] 输出: 4
+解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 
+这笔交易所能获得利润 = 5-1 = 4 。   
+     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。   
+     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+示例 3:输入: [7,6,4,3,1]  输出: 0 
+解释: 在这个情况下, 没有交易完成, 所以最大利润为 0。
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-三维 | O(n)       | O(n)       |
+| 02   | 动态规划      | O(n)       | O(1)       |
+
+```go
+func maxProfit(prices []int) int {
+	n := len(prices)
+	if n < 2 {
+		return 0
+	}
+	maxK := 2
+	// 第一维n个状态：n天
+	// 第二维3个状态：0、1、2分别表示完成的交易次数
+	// 第三维2个状态：0（不持有股票）、1（持有股票）
+	dp := make([][3][2]int, n)
+	for i := 0; i < n; i++ {
+		for j := 0; j <= maxK; j++ {
+			if i == 0 {
+				if j == 0 {
+					dp[i][j][1] = math.MinInt64
+				} else {
+					dp[i][j][1] = -prices[i]
+				}
+			} else if j == 0 {
+				dp[i][j][0] = 0
+				dp[i][j][1] = math.MinInt64
+			} else {
+				dp[i][j][0] = max(dp[i-1][j][0], dp[i-1][j][1]+prices[i])
+				dp[i][j][1] = max(dp[i-1][j][1], dp[i-1][j-1][0]-prices[i])
+			}
+		}
+	}
+	return dp[n-1][2][0]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func maxProfit(prices []int) int {
+	buy1, buy2 := math.MaxInt32, math.MaxInt32
+	profit1, profit2 := 0, 0
+	for i := 0; i < len(prices); i++ {
+		value := prices[i]
+		buy1 = min(buy1, value)
+		profit1 = max(profit1, value-buy1)
+		buy2 = min(buy2, value-profit1)
+		profit2 = max(profit2, value-buy2)
+	}
+	return profit2
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+```
+
+## 124.二叉树中的最大路径和(2)
+
+- 题目
+
+```
+给定一个非空二叉树，返回其最大路径和。
+本题中，路径被定义为一条从树中任意节点出发，达到任意节点的序列。该路径至少包含一个节点，且不一定经过根节点。
+示例 1:输入: [1,2,3]
+       1
+      / \
+     2   3
+输出: 6
+示例 2:输入: [-10,9,20,null,null,15,7]
+   -10
+   / \
+  9  20
+    /  \
+   15   7
+输出: 42
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(log(n))  |
+| 02   | 迭代 | O(n)       | O(n)       |
+
+```go
+var res int
+
+func maxPathSum(root *TreeNode) int {
+	res = math.MinInt32
+	dfs(root)
+	return res
+}
+
+func dfs(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	left := max(dfs(root.Left), 0)
+	right := max(dfs(root.Right), 0)
+	// 该顶点路径和=root.Val+2边和
+	value := left + right + root.Val
+	res = max(res, value)
+	// 单分支
+	return root.Val + max(left, right)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+var res int
+
+func maxPathSum(root *TreeNode) int {
+	res = math.MinInt32
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+	stack := make([]*TreeNode, 0)
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		if node.Left != nil {
+			queue = append(queue, node.Left)
+		}
+		if node.Right != nil {
+			queue = append(queue, node.Right)
+		}
+		stack = append(stack, node)
+	}
+	for len(stack) > 0 {
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		res = max(res, node.Val)
+		var left, right int
+		if node.Left == nil {
+			left = 0
+		} else {
+			left = max(node.Left.Val, 0)
+		}
+		if node.Right == nil {
+			right = 0
+		} else {
+			right = max(node.Right.Val, 0)
+		}
+		sum := node.Val + left + right
+		res = max(res, sum)
+		node.Val = node.Val + max(left, right)
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 126.单词接龙II
+
+### 题目
+
+```
+给定两个单词（beginWord 和 endWord）和一个字典 wordList，
+找出所有从 beginWord 到 endWord 的最短转换序列。转换需遵循如下规则：
+    每次转换只能改变一个字母。
+    转换后得到的单词必须是字典中的单词。
+说明:如果不存在这样的转换序列，返回一个空列表。
+    所有单词具有相同的长度。
+    所有单词只由小写字母组成。
+    字典中不存在重复的单词。
+    你可以假设 beginWord 和 endWord 是非空的，且二者不相同。
+示例 1:输入:beginWord = "hit", endWord = "cog",
+wordList = ["hot","dot","dog","lot","log","cog"]
+输出:[
+  ["hit","hot","dot","dog","cog"],
+  ["hit","hot","lot","log","cog"]
+]
+示例 2:输入:beginWord = "hit" endWord = "cog"
+wordList = ["hot","dot","dog","lot","log"]
+输出: []
+解释: endWord "cog" 不在字典中，所以不存在符合要求的转换序列。
+```
+
+### 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+
+```go
+
+```
+
+## 128.最长连续序列(4)
+
+- 题目
+
+```
+给定一个未排序的整数数组，找出最长连续序列的长度。
+要求算法的时间复杂度为 O(n)。
+示例:输入: [100, 4, 200, 1, 3, 2] 输出: 4
+解释: 最长连续序列是 [1, 2, 3, 4]。它的长度为 4。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+| 02   | 排序遍历 | O(nlog(n)) | O(1)       |
+| 03   | 哈希辅助 | O(n)       | O(n)       |
+| 04   | 并查集   | O(n)       | O(n)       |
+
+```go
+func longestConsecutive(nums []int) int {
+	m := make(map[int]bool)
+	for i := 0; i < len(nums); i++ {
+		m[nums[i]] = true
+	}
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		if _, ok := m[nums[i]-1]; !ok {
+			cur := nums[i]
+			count := 1
+			for m[cur+1] == true {
+				count = count + 1
+				cur = cur + 1
+			}
+			res = max(res, count)
+		}
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func longestConsecutive(nums []int) int {
+	if len(nums) <= 1 {
+		return len(nums)
+	}
+	sort.Ints(nums)
+	res := 1
+	count := 1
+	for i := 1; i < len(nums); i++ {
+		if nums[i] == nums[i-1] {
+			continue
+		} else if nums[i] == nums[i-1]+1 {
+			count++
+		} else {
+			res = max(res, count)
+			count = 1
+		}
+	}
+	res = max(res, count)
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 3
+func longestConsecutive(nums []int) int {
+	m := make(map[int]int)
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		if m[nums[i]] > 0 {
+			continue
+		}
+		left := m[nums[i]-1]
+		right := m[nums[i]+1]
+		sum := left + 1 + right
+		res = max(res, sum)
+		m[nums[i]] = sum
+		m[nums[i]-left] = sum
+		m[nums[i]+right] = sum
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 4
+func longestConsecutive(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	m := make(map[int]int)
+	res := 1
+	fa = Init(nums)
+	for i := 0; i < len(nums); i++ {
+		union(nums[i], nums[i]+1)
+		m[nums[i]]++
+	}
+	for i := 0; i < len(nums); i++ {
+		res = max(res, find(nums[i])-nums[i]+1)
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+var fa map[int]int
+
+// 初始化
+func Init(data []int) map[int]int {
+	n := len(data)
+	arr := make(map[int]int)
+	for i := 0; i < n; i++ {
+		arr[data[i]] = data[i]
+	}
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	if _, ok := fa[x]; !ok {
+		return math.MinInt32 // 特殊处理
+	}
+	res := x
+	for res != fa[res] {
+		res = fa[res]
+	}
+	return res
+}
+
+// 合并
+func union(i, j int) {
+	x, y := find(i), find(j)
+	if x == y {
+		return
+	} else if x == math.MinInt32 || y == math.MinInt32 {
+		return
+	}
+	fa[x] = y
+}
+
+func query(i, j int) bool {
+	return find(i) == find(j)
+}
+```
+
+## 132.分割回文串II(2)
+
+- 题目
+
+```
+给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。
+返回符合要求的最少分割次数。
+示例:输入: "aab"输出: 1
+解释: 进行一次分割就可将 s 分割成 ["aa","b"] 这样两个回文子串。
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 动态规划          | O(n^3)     | O(n)       |
+| 02   | 动态规划+动态规划 | O(n^2)     | O(n^2)     |
+
+```go
+func minCut(s string) int {
+	if len(s) == 0 || len(s) == 1 {
+		return 0
+	}
+	dp := make([]int, len(s)+1)
+	dp[0] = -1
+	dp[1] = 1
+	for i := 1; i <= len(s); i++ {
+		dp[i] = i - 1 // 长度N切分n-1次
+		for j := 0; j < i; j++ {
+			if judge(s[j:i]) {
+				dp[i] = min(dp[i], dp[j]+1)
+			}
+		}
+	}
+	return dp[len(s)]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func judge(s string) bool {
+	for i := 0; i < len(s)/2; i++ {
+		if s[i] != s[len(s)-1-i] {
+			return false
+		}
+	}
+	return true
+}
+
+# 2
+func minCut(s string) int {
+	if len(s) == 0 || len(s) == 1 {
+		return 0
+	}
+	dp := make([]int, len(s)+1)
+	dp[0] = -1
+	dp[1] = 1
+	arr := getDP(s)
+	for i := 1; i <= len(s); i++ {
+		dp[i] = i - 1 // 长度N切分n-1次
+		for j := 0; j < i; j++ {
+			if arr[j][i-1] == true {
+				dp[i] = min(dp[i], dp[j]+1)
+			}
+		}
+	}
+	return dp[len(s)]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func getDP(s string) [][]bool {
+	dp := make([][]bool, len(s))
+	for r := 0; r < len(s); r++ {
+		dp[r] = make([]bool, len(s))
+		dp[r][r] = true
+		for l := 0; l < r; l++ {
+			if s[l] == s[r] && (r-l <= 2 || dp[l+1][r-1] == true) {
+				dp[l][r] = true
+			} else {
+				dp[l][r] = false
+			}
+		}
+	}
+	return dp
+}
+```
+
+## 135.分发糖果(2)
+
+- 题目
+
+```
+老师想给孩子们分发糖果，有 N 个孩子站成了一条直线，老师会根据每个孩子的表现，预先给他们评分。
+你需要按照以下要求，帮助老师给这些孩子分发糖果：
+    每个孩子至少分配到 1 个糖果。
+    相邻的孩子中，评分高的孩子必须获得更多的糖果。
+那么这样下来，老师至少需要准备多少颗糖果呢？
+示例 1:输入: [1,0,2] 输出: 5
+解释: 你可以分别给这三个孩子分发 2、1、2 颗糖果。
+示例 2:输入: [1,2,2] 输出: 4
+解释: 你可以分别给这三个孩子分发 1、2、1 颗糖果。
+     第三个孩子只得到 1 颗糖果，这已满足上述两个条件。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 贪心 | O(n)       | O(n)       |
+| 02   | 贪心 | O(n)       | O(n)       |
+
+```go
+func candy(ratings []int) int {
+	arr := make([]int, len(ratings))
+	// 规则1：每个孩子至少分配到 1 个糖果。
+	for i := 0; i < len(arr); i++ {
+		arr[i] = 1
+	}
+	for i := 1; i < len(ratings); i++ {
+		if ratings[i] > ratings[i-1] && arr[i] <= arr[i-1] {
+			arr[i] = arr[i-1] + 1
+		}
+	}
+	for i := len(ratings) - 2; i >= 0; i-- {
+		if ratings[i] > ratings[i+1] && arr[i] <= arr[i+1] {
+			arr[i] = arr[i+1] + 1
+		}
+	}
+	res := 0
+	for i := 0; i < len(arr); i++ {
+		res = res + arr[i]
+	}
+	return res
+}
+
+# 2
+func candy(ratings []int) int {
+	n := len(ratings)
+	left := make([]int, n)
+	right := make([]int, n)
+	// 规则1：每个孩子至少分配到 1 个糖果。
+	for i := 0; i < n; i++ {
+		left[i] = 1
+		right[i] = 1
+	}
+	for i := 1; i < n; i++ {
+		if ratings[i] > ratings[i-1] {
+			left[i] = left[i-1] + 1
+		}
+	}
+	for i := n - 2; i >= 0; i-- {
+		if ratings[i] > ratings[i+1] {
+			right[i] = right[i+1] + 1
+		}
+	}
+	res := 0
+	for i := 0; i < n; i++ {
+		res = res + max(left[i], right[i])
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 140.单词拆分II(2)
+
+- 题目
+
+```
+给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，在字符串中增加空格来构建一个句子，
+使得句子中所有的单词都在词典中。返回所有这些可能的句子。
+说明：
+    分隔时可以重复使用字典中的单词。
+    你可以假设字典中没有重复的单词。
+示例 1：输入:s = "catsanddog" wordDict = ["cat", "cats", "and", "sand", "dog"]
+输出:[
+  "cats and dog",
+  "cat sand dog"
+]
+示例 2：输入:s = "pineapplepenapple"
+wordDict = ["apple", "pen", "applepen", "pine", "pineapple"]
+输出:[
+  "pine apple pen apple",
+  "pineapple pen apple",
+  "pine applepen apple"
+]
+解释: 注意你可以重复使用字典中的单词。
+示例 3：输入:s = "catsandog" wordDict = ["cats", "dog", "sand", "and", "cat"] 输出:[]
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 动态规划+回溯算法 | O(n^n)     | O(n^3)     |
+| 02   | 回溯算法          | O(n^n)     | O(n^3)     |
+
+```go
+var res []string
+var m map[string]bool
+
+func wordBreak(s string, wordDict []string) []string {
+	m = make(map[string]bool)
+	for _, word := range wordDict {
+		m[word] = true
+	}
+	dp := make([]bool, len(s)+1)
+	dp[0] = true
+	for i := 1; i <= len(s); i++ {
+		for j := 0; j < i; j++ {
+			if dp[j] == true && m[s[j:i]] == true {
+				dp[i] = true
+				break
+			}
+		}
+	}
+	if dp[len(s)] == false {
+		return nil
+	}
+	res = make([]string, 0)
+	dfs(s, make([]string, 0))
+	return res
+}
+
+func dfs(str string, arr []string) {
+	if len(str) == 0 {
+		res = append(res, strings.Join(arr, " "))
+		return
+	}
+	for i := 1; i <= len(str); i++ {
+		if m[str[:i]] == true {
+			dfs(str[i:], append(arr, str[:i]))
+		}
+	}
+}
+
+# 2
+var m map[string]bool
+var visited map[int][]string
+
+func wordBreak(s string, wordDict []string) []string {
+	m = make(map[string]bool)
+	visited = make(map[int][]string)
+	for _, str := range wordDict {
+		m[str] = true
+	}
+	return dfs(s, 0)
+}
+
+func dfs(s string, level int) []string {
+	if str, ok := visited[level]; ok {
+		return str
+	}
+	res := make([]string, 0)
+	for i := level + 1; i <= len(s); i++ {
+		if m[s[level:i]] {
+			if i != len(s) {
+				arr := dfs(s, i)
+				for _, str := range arr {
+					res = append(res, s[level:i]+" "+str)
+				}
+			} else {
+				res = append(res, s[level:i])
+			}
+		}
+	}
+	visited[level] = res
+	return res
+}
+```
+
+## 145.二叉树的后序遍历(4)
+
+- 题目
+
+```
+给定一个二叉树，返回它的 后序 遍历。
+示例:输入: [1,null,2,3]  
+   1
+    \
+     2
+    /
+   3 
+输出: [3,2,1] 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+| 02   | 递归 | O(n)       | O(n)       |
+| 03   | 迭代 | O(n)       | O(n)       |
+| 04   | 迭代 | O(n)       | O(n)       |
+
+```go
+var res []int
+
+func postorderTraversal(root *TreeNode) []int {
+	res = make([]int, 0)
+	dfs(root)
+	return res
+}
+
+func dfs(root *TreeNode) {
+	if root != nil {
+		dfs(root.Left)
+		dfs(root.Right)
+		res = append(res, root.Val)
+	}
+}
+
+# 2
+func postorderTraversal(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+	res := make([]int, 0)
+	if root.Left != nil {
+		res = append(res, postorderTraversal(root.Left)...)
+	}
+	if root.Right != nil {
+		res = append(res, postorderTraversal(root.Right)...)
+	}
+	res = append(res, root.Val)
+	return res
+}
+
+# 3
+func postorderTraversal(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+	res := make([]int, 0)
+	stack := make([]*TreeNode, 0)
+	stack = append(stack, root)
+	for len(stack) > 0 {
+		last := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		if last != nil {
+			stack = append(stack, last)
+			stack = append(stack, nil)
+			if last.Right != nil {
+				stack = append(stack, last.Right)
+			}
+			if last.Left != nil {
+				stack = append(stack, last.Left)
+			}
+		} else {
+			node := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+			res = append(res, node.Val)
+		}
+	}
+	return res
+}
+
+# 4
+func postorderTraversal(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+	res := make([]int, 0)
+	stack := make([]*TreeNode, 0)
+	stack = append(stack, root)
+	// 根->右->左
+	for len(stack) != 0 {
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		if node.Left != nil {
+			stack = append(stack, node.Left)
+		}
+		if node.Right != nil {
+			stack = append(stack, node.Right)
+		}
+		res = append(res, node.Val)
+	}
+
+	for i := 0; i < len(res)/2; i++ {
+		res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i]
+	}
+	return res
+}
+
+```
+
+## 149.直线上最多的点数
+
+### 题目
+
+```
+给定一个二维平面，平面上有 n 个点，求最多有多少个点在同一条直线上。
+示例 1:输入: [[1,1],[2,2],[3,3]] 输出: 3
+解释:
+^
+|
+|        o
+|     o
+|  o  
++------------->
+0  1  2  3  4
+示例 2:输入: [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]] 输出: 4
+解释:
+^
+|
+|  o
+|     o        o
+|        o
+|  o        o
++------------------->
+0  1  2  3  4  5  6
+```
+
+### 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(log(n))  | O(1)       |
+
+```go
+
+```
+
+## 154.寻找旋转排序数组中的最小值II(4)
+
+- 题目
+
+```
+假设按照升序排序的数组在预先未知的某个点上进行了旋转。
+( 例如，数组 [0,1,2,4,5,6,7] 可能变为 [4,5,6,7,0,1,2] )。
+请找出其中最小的元素。
+注意数组中可能存在重复的元素。
+示例 1：输入: [1,3,5] 输出: 1
+示例 2：输入: [2,2,2,0,1]输出: 0
+说明：这道题是 寻找旋转排序数组中的最小值 的延伸题目。
+    允许重复会影响算法的时间复杂度吗？会如何影响，为什么？
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(log(n))  | O(1)       |
+| 02   | 排序     | O(nlog(n)) | O(1)       |
+| 03   | 遍历     | O(n)       | O(1)       |
+| 04   | 二分查找 | O(log(n))  | O(1)       |
+
+```go
+func findMin(nums []int) int {
+	left := 0
+	right := len(nums) - 1
+	for left < right {
+		mid := left + (right-left)/2
+		if nums[mid] > nums[right] {
+			left = mid + 1
+		} else if nums[mid] < nums[right] {
+			right = mid
+		} else {
+			right--
+		}
+	}
+	return nums[left]
+}
+
+# 2
+func findMin(nums []int) int {
+	sort.Ints(nums)
+	return nums[0]
+}
+
+# 3
+func findMin(nums []int) int {
+	for i := 1; i < len(nums); i++ {
+		if nums[i] < nums[i-1] {
+			return nums[i]
+		}
+	}
+	return nums[0]
+}
+
+# 4
+func findMin(nums []int) int {
+	left := 0
+	right := len(nums) - 1
+	mid := left
+	for nums[left] >= nums[right] {
+		if right-left == 1 {
+			mid = right
+			break
+		}
+		mid = (left + right) / 2
+		if nums[left] == nums[right] && nums[mid] == nums[left] {
+			return minInorder(nums, left, right)
+		}
+		if nums[mid] >= nums[left] {
+			left = mid
+		} else if nums[mid] <= nums[right] {
+			right = mid
+		}
+	}
+	return nums[mid]
+}
+
+func minInorder(numbers []int, left, right int) int {
+	result := numbers[left]
+	for i := left + 1; i <= right; i++ {
+		if result > numbers[i] {
+			result = numbers[i]
+		}
+	}
+	return result
+}
+```
+
+## 164.最大间距(2)
+
+- 题目
+
+```
+给定一个无序的数组，找出数组在排序之后，相邻元素之间最大的差值。
+如果数组元素个数小于 2，则返回 0。
+示例 1:输入: [3,6,9,1] 输出: 3
+解释: 排序后的数组是 [1,3,6,9], 其中相邻元素 (3,6) 和 (6,9) 之间都存在最大差值 3。
+示例 2:输入: [10] 输出: 0
+解释: 数组元素个数小于 2，因此返回 0。
+说明:你可以假设数组中所有元素都是非负整数，且数值在 32 位有符号整数范围内。
+    请尝试在线性时间复杂度和空间复杂度的条件下解决此问题。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 排序   | O(nlog(n)) | O(1)       |
+| 02   | 桶排序 | O(n)       | O(n)       |
+
+```go
+func maximumGap(nums []int) int {
+	res := 0
+	sort.Ints(nums)
+	for i := 1; i < len(nums); i++ {
+		if nums[i]-nums[i-1] > res {
+			res = nums[i] - nums[i-1]
+		}
+	}
+	return res
+}
+
+# 2
+func maximumGap(nums []int) int {
+	if len(nums) <= 1 {
+		return 0
+	}
+	res := 0
+	minValue, maxValue := nums[0], nums[0]
+	for i := 1; i < len(nums); i++ {
+		minValue = min(minValue, nums[i])
+		maxValue = max(maxValue, nums[i])
+	}
+	bucketSize := (maxValue-minValue)/len(nums) + 1
+	bucketNum := (maxValue-minValue)/bucketSize + 1
+	arr := make([][]int, bucketNum)
+	for i := 0; i < len(nums); i++ {
+		index := (nums[i] - minValue) / bucketSize
+		if len(arr[index]) == 0 {
+			arr[index] = make([]int, 2)
+			arr[index][0], arr[index][1] = nums[i], nums[i]
+		} else {
+			arr[index][0] = min(arr[index][0], nums[i])
+			arr[index][1] = max(arr[index][1], nums[i])
+		}
+	}
+	prev := 0
+	for i := 0; i < bucketNum; i++ {
+		if len(arr[i]) == 0 {
+			continue
+		}
+		res = max(res, arr[i][0]-arr[prev][1])
+		prev = i
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
+## 174.地下城游戏(3)
+
+- 题目
+
+```
+一些恶魔抓住了公主（P）并将她关在了地下城的右下角。地下城是由 M x N 个房间组成的二维网格。
+我们英勇的骑士（K）最初被安置在左上角的房间里，他必须穿过地下城并通过对抗恶魔来拯救公主。
+骑士的初始健康点数为一个正整数。如果他的健康点数在某一时刻降至 0 或以下，他会立即死亡。
+有些房间由恶魔守卫，因此骑士在进入这些房间时会失去健康点数
+（若房间里的值为负整数，则表示骑士将损失健康点数）；
+其他房间要么是空的（房间里的值为 0），
+要么包含增加骑士健康点数的魔法球（若房间里的值为正整数，则表示骑士将增加健康点数）。
+为了尽快到达公主，骑士决定每次只向右或向下移动一步。
+编写一个函数来计算确保骑士能够拯救到公主所需的最低初始健康点数。
+例如，考虑到如下布局的地下城，如果骑士遵循最佳路径 右 -> 右 -> 下 -> 下，
+则骑士的初始健康点数至少为 7。
+-2 (K) 	-3 	3
+-5 	-10 	1
+10 	30 	-5 (P)
+说明:骑士的健康点数没有上限。
+    任何房间都可能对骑士的健康点数造成威胁，也可能增加骑士的健康点数，
+    包括骑士进入的左上角房间以及公主被监禁的右下角房间。
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度   | 空间复杂度 |
+| ---- | ------------- | ------------ | ---------- |
+| 01   | 动态规划-二维 | O(n^2)       | O(n^2)     |
+| 02   | 递归          | O(n^2)       | O(n^2)     |
+| 03   | 二分查找      | O(n^2log(n)) | O(n^2)     |
+
+```go
+func calculateMinimumHP(dungeon [][]int) int {
+	n, m := len(dungeon), len(dungeon[0])
+	dp := make([][]int, n+1)
+	for i := 0; i <= n; i++ {
+		dp[i] = make([]int, m+1)
+		for j := 0; j <= m; j++ {
+			dp[i][j] = math.MaxInt32
+		}
+	}
+	dp[n][m-1], dp[n-1][m] = 1, 1 // 结果最小为1
+	for i := n - 1; i >= 0; i-- {
+		for j := m - 1; j >= 0; j-- {
+			minValue := min(dp[i+1][j], dp[i][j+1])
+			dp[i][j] = max(minValue-dungeon[i][j], 1)
+		}
+	}
+	return dp[0][0]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+var dp [][]int
+
+func calculateMinimumHP(dungeon [][]int) int {
+	n, m := len(dungeon), len(dungeon[0])
+	dp = make([][]int, n+1)
+	for i := 0; i <= n; i++ {
+		dp[i] = make([]int, m+1)
+	}
+	return dfs(dungeon, n, m, 0, 0)
+}
+
+func dfs(dungeon [][]int, n, m, i, j int) int {
+	if i == n-1 && j == m-1 {
+		return max(1-dungeon[i][j], 1)
+	}
+	if dp[i][j] > 0 {
+		return dp[i][j]
+	}
+	res := 0
+	if i == n-1 {
+		res = max(dfs(dungeon, n, m, i, j+1)-dungeon[i][j], 1)
+	} else if j == m-1 {
+		res = max(dfs(dungeon, n, m, i+1, j)-dungeon[i][j], 1)
+	} else {
+		minValue := min(dfs(dungeon, n, m, i, j+1), dfs(dungeon, n, m, i+1, j))
+		res = max(minValue-dungeon[i][j], 1)
+	}
+	dp[i][j] = res
+	return dp[i][j]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 3
+func calculateMinimumHP(dungeon [][]int) int {
+	if len(dungeon) == 0 {
+		return 0
+	}
+	left, right := 1, math.MaxInt32
+	for left <= right {
+		mid := left + (right-left)/2
+		if judge(dungeon, mid) == true {
+			right = mid - 1
+		} else {
+			left = mid + 1
+		}
+	}
+	return left
+}
+
+func judge(dungeon [][]int, hp int) bool {
+	n, m := len(dungeon), len(dungeon[0])
+	dp := make([][]int, n+1)
+	for i := 0; i <= n; i++ {
+		dp[i] = make([]int, m+1)
+		for j := 0; j <= m; j++ {
+			dp[i][j] = math.MinInt32
+		}
+	}
+	dp[0][1], dp[1][0] = hp, hp
+	for i := 1; i <= n; i++ {
+		for j := 1; j <= m; j++ {
+			value := max(dp[i-1][j], dp[i][j-1]) + dungeon[i-1][j-1]
+			if value <= 0 {
+				continue
+			}
+			dp[i][j] = value
+		}
+	}
+	return dp[n][m] > 0
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 188.买卖股票的最佳时机IV(3)
+
+- 题目
+
+```
+给定一个数组，它的第 i 个元素是一支给定的股票在第 i 天的价格。
+设计一个算法来计算你所能获取的最大利润。你最多可以完成 k 笔交易。
+注意: 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+示例 1:输入: [2,4,1], k = 2 输出: 2
+解释: 在第 1 天 (股票价格 = 2) 的时候买入，在第 2 天 (股票价格 = 4) 的时候卖出，
+这笔交易所能获得利润 = 4-2 = 2 。
+示例 2:输入: [3,2,6,5,0,3], k = 2 输出: 7
+解释: 在第 2 天 (股票价格 = 2) 的时候买入，在第 3 天 (股票价格 = 6) 的时候卖出, 
+这笔交易所能获得利润 = 6-2 = 4 。
+     随后，在第 5 天 (股票价格 = 0) 的时候买入，在第 6 天 (股票价格 = 3) 的时候卖出, 
+     这笔交易所能获得利润 = 3-0 = 3 。
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-一维 | O(n^2)     | O(n)       |
+| 02   | 动态规划-二维 | O(n^2)     | O(n^2)     |
+| 03   | 动态规划-三维 | O(n^2)     | O(n^2)     |
+
+```go
+func maxProfit(k int, prices []int) int {
+	res := 0
+	if k >= len(prices)/2 {
+		for i := 0; i < len(prices)-1; i++ {
+			if prices[i] < prices[i+1] {
+				res = res + prices[i+1] - prices[i]
+			}
+		}
+		return res
+	}
+	dp0, dp1 := make([]int, k+1), make([]int, k+1)
+	for i := 0; i <= k; i++ {
+		dp0[i] = 0
+		dp1[i] = math.MinInt64
+	}
+	for i := 0; i < len(prices); i++ {
+		for j := k; j >= 1; j-- {
+			dp0[j] = max(dp0[j], dp1[j]+prices[i])
+			dp1[j] = max(dp1[j], dp0[j-1]-prices[i])
+		}
+	}
+	return dp0[k]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func maxProfit(k int, prices []int) int {
+	res := 0
+	if k >= len(prices)/2 {
+		for i := 0; i < len(prices)-1; i++ {
+			if prices[i] < prices[i+1] {
+				res = res + prices[i+1] - prices[i]
+			}
+		}
+		return res
+	}
+	dp0, dp1 := make([][]int, len(prices)), make([][]int, len(prices))
+	for i := 0; i < len(prices); i++ {
+		dp0[i] = make([]int, k+1)
+		dp1[i] = make([]int, k+1)
+	}
+	for i := 0; i <= k; i++ {
+		dp1[0][i] = -prices[0]
+	}
+	for i := 1; i < len(prices); i++ {
+		for j := 1; j <= k; j++ {
+			dp0[i][j] = max(dp0[i-1][j], dp1[i-1][j]+prices[i])
+			dp1[i][j] = max(dp1[i-1][j], dp0[i-1][j-1]-prices[i])
+		}
+	}
+	return dp0[len(prices)-1][k]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 3
+func maxProfit(k int, prices []int) int {
+	res := 0
+	if k >= len(prices)/2 {
+		for i := 0; i < len(prices)-1; i++ {
+			if prices[i] < prices[i+1] {
+				res = res + prices[i+1] - prices[i]
+			}
+		}
+		return res
+	}
+	dp := make([][][2]int, len(prices))
+	for i := 0; i < len(prices); i++ {
+		dp[i] = make([][2]int, k+1)
+	}
+	for i := 0; i <= k; i++ {
+		dp[0][i][1] = -prices[0]
+	}
+	for i := 1; i < len(prices); i++ {
+		for j := 1; j <= k; j++ {
+			dp[i][j][0] = max(dp[i-1][j][0], dp[i-1][j][1]+prices[i])
+			dp[i][j][1] = max(dp[i-1][j][1], dp[i-1][j-1][0]-prices[i])
+		}
+	}
+	return dp[len(prices)-1][k][0]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+

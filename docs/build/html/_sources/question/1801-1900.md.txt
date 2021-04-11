@@ -1,0 +1,911 @@
+# 1801-1900-Easy
+
+## 1805.字符串中不同整数的数目(2)
+
+- 题目
+
+```
+给你一个字符串 word ，该字符串由数字和小写英文字母组成。
+请你用空格替换每个不是数字的字符。例如，"a123bc34d8ef34" 将会变成 " 123  34 8  34" 。
+注意，剩下的这些整数为（相邻彼此至少有一个空格隔开）："123"、"34"、"8" 和 "34" 。
+返回对 word 完成替换后形成的 不同 整数的数目。
+只有当两个整数的 不含前导零 的十进制表示不同， 才认为这两个整数也不同。
+示例 1：输入：word = "a123bc34d8ef34" 输出：3
+解释：不同的整数有 "123"、"34" 和 "8" 。注意，"34" 只计数一次。
+示例 2：输入：word = "leet1234code234" 输出：2
+示例 3：输入：word = "a1b01c001" 输出：1
+解释："1"、"01" 和 "001" 视为同一个整数的十进制表示，因为在比较十进制值时会忽略前导零的存在。
+提示：1 <= word.length <= 1000
+word 由数字和小写英文字母组成
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 内置函数 | O(n)       | O(n)       |
+| 02   | 遍历     | O(n)       | O(n)       |
+
+```go
+func numDifferentIntegers(word string) int {
+	m := make(map[string]bool)
+	arr := strings.FieldsFunc(word, func(r rune) bool {
+		return 'a' <= r && r <= 'z'
+	})
+	for i := 0; i < len(arr); i++ {
+		s := strings.Trim(arr[i], " ")
+		for len(s) > 0 && s[0] == '0' {
+			s = s[1:]
+		}
+		m[s] = true
+	}
+	return len(m)
+}
+
+# 2
+func numDifferentIntegers(word string) int {
+	m := make(map[int]bool)
+	for i := 0; i < len(word); i++ {
+		if '0' <= word[i] && word[i] <= '9' {
+			value := int(word[i] - '0')
+			for i+1 < len(word) && '0' <= word[i+1] && word[i+1] <= '9' {
+				i++
+				value = value*10 + int(word[i]-'0')
+			}
+			m[value] = true
+		}
+	}
+	return len(m)
+}
+```
+
+## 1812.判断国际象棋棋盘中一个格子的颜色(2)
+
+- 题目
+
+```
+给你一个坐标 coordinates ，它是一个字符串，表示国际象棋棋盘中一个格子的坐标。下图是国际象棋棋盘示意图。
+如果所给格子的颜色是白色，请你返回 true，如果是黑色，请返回 false 。
+给定坐标一定代表国际象棋棋盘上一个存在的格子。坐标第一个字符是字母，第二个字符是数字。
+示例 1：输入：coordinates = "a1" 输出：false
+解释：如上图棋盘所示，"a1" 坐标的格子是黑色的，所以返回 false 。
+示例 2：输入：coordinates = "h3" 输出：true
+解释：如上图棋盘所示，"h3" 坐标的格子是白色的，所以返回 true 。
+示例 3：输入：coordinates = "c7" 输出：false
+提示：coordinates.length == 2
+'a' <= coordinates[0] <= 'h'
+'1' <= coordinates[1] <= '8'
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 计算 | O(1)       | O(1)       |
+| 02   | 计算 | O(1)       | O(1)       |
+
+```go
+func squareIsWhite(coordinates string) bool {
+	a := int(coordinates[0] - 'a')
+	b := int(coordinates[1] - '1')
+	return (a+b)%2 != 0
+}
+
+# 2
+func squareIsWhite(coordinates string) bool {
+	// a => 97  1 => 49
+	return (coordinates[0]+coordinates[1])%2 != 0
+}
+```
+
+## 1816.截断句子(2)
+
+- 题目
+
+```
+句子 是一个单词列表，列表中的单词之间用单个空格隔开，且不存在前导或尾随空格。
+每个单词仅由大小写英文字母组成（不含标点符号）。
+例如，"Hello World"、"HELLO" 和 "hello world hello world" 都是句子。
+给你一个句子 s和一个整数 k，请你将 s截断 ，使截断后的句子仅含 前 k个单词。
+返回 截断 s后得到的句子。
+示例 1：输入：s = "Hello how are you Contestant", k = 4 输出："Hello how are you"
+解释：s 中的单词为 ["Hello", "how" "are", "you", "Contestant"]
+前 4 个单词为 ["Hello", "how", "are", "you"]
+因此，应当返回 "Hello how are you"
+示例 2：输入：s = "What is the solution to this problem", k = 4
+输出："What is the solution"
+解释：s 中的单词为 ["What", "is" "the", "solution", "to", "this", "problem"]
+前 4 个单词为 ["What", "is", "the", "solution"]
+因此，应当返回 "What is the solution"
+示例 3：输入：s = "chopper is not a tanuki", k = 5 输出："chopper is not a tanuki"
+提示：1 <= s.length <= 500
+k 的取值范围是 [1,  s 中单词的数目]
+s 仅由大小写英文字母和空格组成
+s 中的单词之间由单个空格隔开
+不存在前导或尾随空格
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 内置函数 | O(n)       | O(n)       |
+| 02   | 遍历     | O(n)       | O(1)       |
+
+```go
+func truncateSentence(s string, k int) string {
+	arr := strings.Split(s, " ")
+	if k < len(arr) {
+		return strings.Join(arr[:k], " ")
+	}
+	return s
+}
+
+# 2
+func truncateSentence(s string, k int) string {
+	count := 0
+	for i := 0; i < len(s); i++ {
+		if s[i] == ' ' {
+			count++
+			if count == k {
+				return s[:i]
+			}
+		}
+	}
+	return s
+}
+```
+
+# 1801-1900-Medium
+
+## 1801.积压订单中的订单总数(1)
+
+- 题目
+
+```
+给你一个二维整数数组 orders ，其中每个 orders[i] = [pricei, amounti, orderTypei] 
+表示有 amounti 笔类型为 orderTypei 、价格为 pricei 的订单。
+订单类型 orderTypei 可以分为两种：
+0 表示这是一批采购订单 buy
+1 表示这是一批销售订单 sell
+注意，orders[i] 表示一批共计 amounti 笔的独立订单，这些订单的价格和类型相同。
+对于所有有效的 i ，由 orders[i] 表示的所有订单提交时间均早于 orders[i+1] 表示的所有订单。
+存在由未执行订单组成的 积压订单 。积压订单最初是空的。提交订单时，会发生以下情况：
+如果该订单是一笔采购订单 buy ，则可以查看积压订单中价格 最低 的销售订单 sell 。
+如果该销售订单 sell 的价格 低于或等于 当前采购订单 buy 的价格，
+则匹配并执行这两笔订单，并将销售订单 sell 从积压订单中删除。否则，采购订单 buy 将会添加到积压订单中。
+反之亦然，如果该订单是一笔销售订单 sell ，则可以查看积压订单中价格 最高 的采购订单 buy 。
+如果该采购订单 buy 的价格 高于或等于 当前销售订单 sell 的价格，
+则匹配并执行这两笔订单，并将采购订单 buy 从积压订单中删除。否则，销售订单 sell 将会添加到积压订单中。
+输入所有订单后，返回积压订单中的 订单总数 。由于数字可能很大，所以需要返回对 109 + 7 取余的结果。
+示例 1：输入：orders = [[10,5,0],[15,2,1],[25,1,1],[30,4,0]] 输出：6
+解释：输入订单后会发生下述情况：
+- 提交 5 笔采购订单，价格为 10 。没有销售订单，所以这 5 笔订单添加到积压订单中。
+- 提交 2 笔销售订单，价格为 15 。没有采购订单的价格大于或等于 15 ，所以这 2 笔订单添加到积压订单中。
+- 提交 1 笔销售订单，价格为 25 。没有采购订单的价格大于或等于 25 ，所以这 1 笔订单添加到积压订单中。
+- 提交 4 笔采购订单，价格为 30 。前 2 笔采购订单与价格最低（价格为 15）的 2 笔销售订单匹配，
+从积压订单中删除这 2 笔销售订单。第 3 笔采购订单与价格最低的 1 笔销售订单匹配，销售订单价格为 25 ，
+从积压订单中删除这 1 笔销售订单。积压订单中不存在更多销售订单，所以第 4 笔采购订单需要添加到积压订单中。
+最终，积压订单中有 5 笔价格为 10 的采购订单，和 1 笔价格为 30 的采购订单。
+所以积压订单中的订单总数为 6 。
+示例 2：输入：orders = [[7,1000000000,1],[15,3,0],[5,999999995,0],[5,1,1]] 输出：999999984
+解释：输入订单后会发生下述情况：
+- 提交 109 笔销售订单，价格为 7 。没有采购订单，所以这 109 笔订单添加到积压订单中。
+- 提交 3 笔采购订单，价格为 15 。这些采购订单与价格最低（价格为 7 ）的 3 笔销售订单匹配，
+从积压订单中删除这 3 笔销售订单。
+- 提交 999999995 笔采购订单，价格为 5 。销售订单的最低价为 7 ，
+所以这 999999995 笔订单添加到积压订单中。
+- 提交 1 笔销售订单，价格为 5 。这笔销售订单与价格最高（价格为 5 ）的 1 笔采购订单匹配，
+从积压订单中删除这 1 笔采购订单。
+最终，积压订单中有 (1000000000-3) 笔价格为 7 的销售订单，和 (999999995-1) 笔价格为 5 的采购订单。
+所以积压订单中的订单总数为 1999999991 ，等于 999999984 % (109 + 7) 。
+提示：1 <= orders.length <= 105
+orders[i].length == 3
+1 <= pricei, amounti <= 109
+orderTypei 为 0 或 1
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 双堆 | O(nlog(n)) | O(n)       |
+
+```go
+func getNumberOfBacklogOrders(orders [][]int) int {
+	res := 0
+	buyHeap := make(BuyHeap, 0)
+	sellHeap := make(SellHeap, 0)
+	heap.Init(&buyHeap)
+	heap.Init(&sellHeap)
+	for i := 0; i < len(orders); i++ {
+		price := orders[i][0]
+		count := orders[i][1]
+		typeInt := orders[i][2]
+		if typeInt == 1 { // sell
+			for buyHeap.Len() > 0 {
+				node := heap.Pop(&buyHeap).(Node)
+				if node.price < price {
+					heap.Push(&buyHeap, node)
+					break
+				}
+				if node.count > count { // 数量大于
+					node.count = node.count - count
+					count = 0
+					heap.Push(&buyHeap, node)
+					break
+				}
+				count = count - node.count
+			}
+			if count > 0 {
+				heap.Push(&sellHeap, Node{
+					count: count,
+					price: price,
+				})
+			}
+		} else { // buy
+			for sellHeap.Len() > 0 {
+				node := heap.Pop(&sellHeap).(Node)
+				if node.price > price {
+					heap.Push(&sellHeap, node)
+					break
+				}
+				if node.count > count { // 数量小于
+					node.count = node.count - count
+					count = 0
+					heap.Push(&sellHeap, node)
+					break
+				}
+				count = count - node.count
+			}
+			if count > 0 {
+				heap.Push(&buyHeap, Node{
+					count: count,
+					price: price,
+				})
+			}
+		}
+	}
+	for buyHeap.Len() > 0 {
+		node := heap.Pop(&buyHeap).(Node)
+		res = res + node.count
+	}
+	for sellHeap.Len() > 0 {
+		node := heap.Pop(&sellHeap).(Node)
+		res = res + node.count
+	}
+	return res % 1000000007
+}
+
+type Node struct {
+	count int
+	price int
+}
+type SellHeap []Node
+
+func (h SellHeap) Len() int {
+	return len(h)
+}
+
+// 小根堆<,大根堆变换方向>
+func (h SellHeap) Less(i, j int) bool {
+	return h[i].price < h[j].price
+}
+
+func (h SellHeap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+func (h *SellHeap) Push(x interface{}) {
+	*h = append(*h, x.(Node))
+}
+
+func (h *SellHeap) Pop() interface{} {
+	value := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return value
+}
+
+type BuyHeap []Node
+
+func (h BuyHeap) Len() int {
+	return len(h)
+}
+
+// 小根堆<,大根堆变换方向>
+func (h BuyHeap) Less(i, j int) bool {
+	return h[i].price > h[j].price
+}
+
+func (h BuyHeap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+func (h *BuyHeap) Push(x interface{}) {
+	*h = append(*h, x.(Node))
+}
+
+func (h *BuyHeap) Pop() interface{} {
+	value := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return value
+}
+```
+
+## 1802.有界数组中指定下标处的最大值(2)
+
+- 题目
+
+```
+给你三个正整数 n、index 和 maxSum 。
+你需要构造一个同时满足下述所有条件的数组 nums（下标 从 0 开始 计数）：
+nums.length == n
+nums[i] 是 正整数 ，其中 0 <= i < n
+abs(nums[i] - nums[i+1]) <= 1 ，其中 0 <= i < n-1
+nums 中所有元素之和不超过 maxSum
+nums[index] 的值被 最大化
+返回你所构造的数组中的 nums[index] 。
+注意：abs(x) 等于 x 的前提是 x >= 0 ；否则，abs(x) 等于 -x 。
+示例 1：输入：n = 4, index = 2,  maxSum = 6 输出：2
+解释：数组 [1,1,2,1] 和 [1,2,2,1] 满足所有条件。不存在其他在指定下标处具有更大值的有效数组。
+示例 2：输入：n = 6, index = 1,  maxSum = 10 输出：3
+提示：1 <= n <= maxSum <= 109
+0 <= index < n
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(log(n))  | O(1)       |
+| 02   | 二分查找 | O(log(n))  | O(1)       |
+
+```go
+func maxValue(n int, index int, maxSum int) int {
+	if n == 1 {
+		return maxSum
+	}
+	res := 1
+	leftTotal, rightTotal := index, n-index-1
+	left, right := 1, maxSum
+	for left < right {
+		mid := left + (right-left)/2
+		l := getTotal(mid, leftTotal)
+		r := getTotal(mid, rightTotal)
+		if l+r+mid <= maxSum {
+			left = mid + 1
+			res = mid
+		} else {
+			right = mid
+		}
+	}
+	return res
+}
+
+func getTotal(high int, total int) int {
+	need := high - 1
+	if need >= total {
+		return total * (need + high - total) / 2
+	}
+	return need*(1+need)/2 + total - need
+}
+
+# 2
+func maxValue(n int, index int, maxSum int) int {
+	res := 1
+	leftTotal, rightTotal := index, n-index-1
+	left, right := 1, maxSum+1
+	for left < right {
+		mid := left + (right-left)/2
+		l := getTotal(mid, leftTotal)
+		r := getTotal(mid, rightTotal)
+		if l+r+mid <= maxSum {
+			left = mid + 1
+			res = mid
+		} else {
+			right = mid
+		}
+	}
+	return res
+}
+
+func getTotal(high int, total int) int {
+	need := high - 1
+	if need >= total {
+		return total * (need + high - total) / 2
+	}
+	return need*(1+need)/2 + total - need
+}
+```
+
+## 1806.还原排列的最少操作步数(3)
+
+- 题目
+
+```
+给你一个偶数 n，已知存在一个长度为 n 的排列 perm ，其中 perm[i] == i（下标 从 0 开始 计数）。
+一步操作中，你将创建一个新数组 arr ，对于每个 i ：
+如果 i % 2 == 0 ，那么 arr[i] = perm[i / 2]
+如果 i % 2 == 1 ，那么 arr[i] = perm[n / 2 + (i - 1) / 2]
+然后将 arr赋值给 perm 。
+要想使 perm 回到排列初始值，至少需要执行多少步操作？返回最小的 非零 操作步数。
+示例 1：输入：n = 2 输出：1
+解释：最初，perm = [0,1]
+第 1 步操作后，perm = [0,1]
+所以，仅需执行 1 步操作
+示例 2：输入：n = 4 输出：2
+解释：最初，perm = [0,1,2,3]
+第 1 步操作后，perm = [0,2,1,3]
+第 2 步操作后，perm = [0,1,2,3]
+所以，仅需执行 2 步操作
+示例 3：输入：n = 6 输出：4
+提示：2 <= n <= 1000
+n是一个偶数
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 暴力法 | O(n^2)     | O(n)       |
+| 02   | 暴力法 | O(n^2)     | O(n)       |
+| 03   | 循环   | O(n)       | O(1)       |
+
+```go
+func reinitializePermutation(n int) int {
+	res := 0
+	target := make([]int, n)
+	perm := make([]int, n)
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		perm[i] = i
+	}
+	copy(target, perm)
+	for {
+		for i := 0; i < n; i++ {
+			if i%2 == 0 {
+				arr[i] = perm[i/2]
+			} else {
+				arr[i] = perm[n/2+(i-1)/2]
+			}
+		}
+		res++
+		if reflect.DeepEqual(target, arr) {
+			break
+		}
+		copy(perm, arr)
+	}
+	return res
+}
+
+# 2
+func reinitializePermutation(n int) int {
+	res := 0
+	target := make([]int, n)
+	perm := make([]int, n)
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		perm[i] = i
+	}
+	copy(target, perm)
+	for {
+		for i := 0; i < n; i++ {
+			if i%2 == 0 {
+				arr[i] = perm[i/2]
+			} else {
+				arr[i] = perm[n/2+(i-1)/2]
+			}
+		}
+		res++
+		flag := true
+		for i := 0; i < n; i++ {
+			if arr[i] != target[i] {
+				flag = false
+				break
+			}
+		}
+		if flag == true {
+			break
+		}
+		copy(perm, arr)
+	}
+	return res
+}
+
+# 3
+func reinitializePermutation(n int) int {
+	res := 0
+	target := 1
+	// 反向思路，只考虑1的变换
+	for {
+		if target*2 < n {
+			target = target * 2
+		} else {
+			target = target*2 + 1 - n
+		}
+		res++
+		if target == 1 {
+			break
+		}
+	}
+	return res
+}
+```
+
+## 1807.替换字符串中的括号内容(1)
+
+- 题目
+
+```
+给你一个字符串 s ，它包含一些括号对，每个括号中包含一个 非空 的键。
+比方说，字符串 "(name)is(age)yearsold" 中，有 两个 括号对，分别包含键 "name" 和 "age" 。
+你知道许多键对应的值，这些关系由二维字符串数组 knowledge 表示，
+其中 knowledge[i] = [keyi, valuei] ，表示键 keyi 对应的值为 valuei 。
+你需要替换 所有 的括号对。当你替换一个括号对，且它包含的键为 keyi 时，你需要：
+将 keyi 和括号用对应的值 valuei 替换。
+如果从 knowledge 中无法得知某个键对应的值，你需要将 keyi 和括号用问号 "?" 替换（不需要引号）。
+knowledge 中每个键最多只会出现一次。s 中不会有嵌套的括号。
+请你返回替换 所有 括号对后的结果字符串。
+示例 1：输入：s = "(name)is(age)yearsold", knowledge = [["name","bob"],["age","two"]]
+输出："bobistwoyearsold"
+解释：键 "name" 对应的值为 "bob" ，所以将 "(name)" 替换为 "bob" 。
+键 "age" 对应的值为 "two" ，所以将 "(age)" 替换为 "two" 。
+示例 2：输入：s = "hi(name)", knowledge = [["a","b"]] 输出："hi?"
+解释：由于不知道键 "name" 对应的值，所以用 "?" 替换 "(name)" 。
+示例 3：输入：s = "(a)(a)(a)aaa", knowledge = [["a","yes"]] 输出："yesyesyesaaa"
+解释：相同的键在 s 中可能会出现多次。
+键 "a" 对应的值为 "yes" ，所以将所有的 "(a)" 替换为 "yes" 。
+注意，不在括号里的 "a" 不需要被替换。
+示例 4：输入：s = "(a)(b)", knowledge = [["a","b"],["b","a"]] 输出："ba"
+提示：1 <= s.length <= 105
+0 <= knowledge.length <= 105
+knowledge[i].length == 2
+1 <= keyi.length, valuei.length <= 10
+s 只包含小写英文字母和圆括号 '(' 和 ')' 。
+s 中每一个左圆括号 '(' 都有对应的右圆括号 ')' 。
+s 中每对括号内的键都不会为空。
+s 中不会有嵌套括号对。
+keyi 和 valuei 只包含小写英文字母。
+knowledge 中的 keyi 不会重复。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+
+```go
+func evaluate(s string, knowledge [][]string) string {
+	m := make(map[string]string)
+	for i := 0; i < len(knowledge); i++ {
+		a, b := knowledge[i][0], knowledge[i][1]
+		m[a] = b
+	}
+	res := ""
+	left := -1
+	for i := 0; i < len(s); i++ {
+		if s[i] == '(' {
+			left = i
+		} else if s[i] == ')' {
+			str := s[left+1 : i]
+			if v, ok := m[str]; ok {
+				res = res + v
+			} else {
+				res = res + "?"
+			}
+			left = -1
+		} else if left == -1 {
+			res = res + string(s[i])
+		}
+	}
+	return res
+}
+```
+
+## 1813.句子相似性III
+
+### 题目
+
+```
+一个句子是由一些单词与它们之间的单个空格组成，且句子的开头和结尾没有多余空格。
+比方说，"Hello World" ，"HELLO" ，"hello world hello world" 都是句子。
+每个单词都 只 包含大写和小写英文字母。
+如果两个句子 sentence1 和 sentence2 ，
+可以通过往其中一个句子插入一个任意的句子（可以是空句子）而得到另一个句子，那么我们称这两个句子是 相似的 。
+比方说，sentence1 = "Hello my name is Jane" 且 sentence2 = "Hello Jane" ，
+我们可以往 sentence2 中 "Hello" 和 "Jane" 之间插入 "my name is" 得到 sentence1 。
+给你两个句子 sentence1 和 sentence2 ，如果 sentence1 和 sentence2 是相似的，
+请你返回 true ，否则返回 false 。
+示例 1：输入：sentence1 = "My name is Haley", sentence2 = "My Haley" 输出：true
+解释：可以往 sentence2 中 "My" 和 "Haley" 之间插入 "name is" ，得到 sentence1 。
+示例 2：输入：sentence1 = "of", sentence2 = "A lot of words" 输出：false
+解释：没法往这两个句子中的一个句子只插入一个句子就得到另一个句子。
+示例 3：输入：sentence1 = "Eating right now", sentence2 = "Eating" 输出：true
+解释：可以往 sentence2 的结尾插入 "right now" 得到 sentence1 。
+示例 4：输入：sentence1 = "Luky", sentence2 = "Lucccky" 输出：false
+提示：1 <= sentence1.length, sentence2.length <= 100
+sentence1 和 sentence2 都只包含大小写英文字母和空格。
+sentence1 和 sentence2 中的单词都只由单个空格隔开。
+```
+
+### 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n)       | O(n)       |
+
+```go
+
+
+```
+
+## 1814.统计一个数组中好对子的数目(1)
+
+- 题目
+
+```
+给你一个数组 nums ，数组中只包含非负整数。定义 rev(x) 的值为将整数 x 各个数字位反转得到的结果。
+比方说 rev(123) = 321 ， rev(120) = 21 。我们称满足下面条件的下标对 (i, j) 是 好的 ：
+0 <= i < j < nums.length
+nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])
+请你返回好下标对的数目。由于结果可能会很大，请将结果对 109 + 7 取余 后返回。
+示例 1：输入：nums = [42,11,1,97] 输出：2
+解释：两个坐标对为：
+ - (0,3)：42 + rev(97) = 42 + 79 = 121, 97 + rev(42) = 97 + 24 = 121 。
+ - (1,2)：11 + rev(1) = 11 + 1 = 12, 1 + rev(11) = 1 + 11 = 12 。
+示例 2：输入：nums = [13,10,35,24,76] 输出：4
+提示：1 <= nums.length <= 105
+0 <= nums[i] <= 109
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+
+```go
+func countNicePairs(nums []int) int {
+	m := make(map[int]int)
+	for i := 0; i < len(nums); i++ {
+		m[nums[i]-reverse(nums[i])]++
+	}
+	res := 0
+	for _, v := range m {
+		res = (res + v*(v-1)/2) % 1000000007
+	}
+	return res
+}
+
+func reverse(num int) int {
+	res := 0
+	for num > 0 {
+		res = res*10 + num%10
+		num = num / 10
+	}
+	return res
+}
+
+```
+
+## 1817.查找用户活跃分钟数(1)
+
+- 题目
+
+```
+给你用户在 LeetCode 的操作日志，和一个整数 k 。日志用一个二维整数数组 logs 表示，
+其中每个 logs[i] = [IDi, timei] 表示 ID 为 IDi 的用户在 timei 分钟时执行了某个操作。
+多个用户 可以同时执行操作，单个用户可以在同一分钟内执行 多个操作 。
+指定用户的 用户活跃分钟数（user active minutes，UAM） 定义为用户对 LeetCode 执行操作的 唯一分钟数 。
+即使一分钟内执行多个操作，也只能按一分钟计数。
+请你统计用户活跃分钟数的分布情况，统计结果是一个长度为 k 且 下标从 1 开始计数 的数组 answer ，
+对于每个 j（1 <= j <= k），answer[j] 表示 用户活跃分钟数 等于 j 的用户数。
+返回上面描述的答案数组 answer 。
+示例 1：输入：logs = [[0,5],[1,2],[0,2],[0,5],[1,3]], k = 5 输出：[0,2,0,0,0]
+解释：
+ID=0 的用户执行操作的分钟分别是：5 、2 和 5 。因此，该用户的用户活跃分钟数为 2（分钟 5 只计数一次）
+ID=1 的用户执行操作的分钟分别是：2 和 3 。因此，该用户的用户活跃分钟数为 2
+2 个用户的用户活跃分钟数都是 2 ，answer[2] 为 2 ，其余 answer[j] 的值都是 0
+示例 2：输入：logs = [[1,1],[2,2],[2,3]], k = 4 输出：[1,1,0,0]
+解释： ID=1 的用户仅在分钟 1 执行单个操作。因此，该用户的用户活跃分钟数为 1
+ID=2 的用户执行操作的分钟分别是：2 和 3 。因此，该用户的用户活跃分钟数为 2
+1 个用户的用户活跃分钟数是 1 ，1 个用户的用户活跃分钟数是 2 
+因此，answer[1] = 1 ，answer[2] = 1 ，其余的值都是 0
+提示：1 <= logs.length <= 104
+0 <= IDi <= 109
+1 <= timei <= 105
+k 的取值范围是 [用户的最大用户活跃分钟数, 105]
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+
+```go
+func findingUsersActiveMinutes(logs [][]int, k int) []int {
+	m := make(map[int]map[int]int)
+	for i := 0; i < len(logs); i++{
+		a, b := logs[i][0], logs[i][1]
+		if _, ok := m[a]; ok == false{
+			m[a] = make(map[int]int)
+		}
+		m[a][b]++
+	}
+	res := make([]int, k)
+	for _, v := range m{
+		value := len(v)
+		res[value-1]++
+	}
+	return res
+}
+```
+
+## 1818.绝对差值和(1)
+
+- 题目
+
+```
+给你两个正整数数组 nums1 和 nums2 ，数组的长度都是 n 。
+数组 nums1 和 nums2 的 绝对差值和 定义为所有 |nums1[i] - nums2[i]|（0 <= i < n）的 
+总和（下标从 0 开始）。
+你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
+在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。
+因为答案可能很大，所以需要对 109 + 7 取余 后返回。
+|x| 定义为：如果 x >= 0 ，值为 x ，或者
+如果 x <= 0 ，值为 -x
+示例 1：输入：nums1 = [1,7,5], nums2 = [2,3,5] 输出：3
+解释：有两种可能的最优方案：
+- 将第二个元素替换为第一个元素：[1,7,5] => [1,1,5] ，或者
+- 将第二个元素替换为第三个元素：[1,7,5] => [1,5,5]
+两种方案的绝对差值和都是 |1-2| + (|1-3| 或者 |5-3|) + |5-5| = 3
+示例 2：输入：nums1 = [2,4,6,8,10], nums2 = [2,4,6,8,10] 输出：0
+解释：nums1 和 nums2 相等，所以不用替换元素。绝对差值和为 0
+示例 3：输入：nums1 = [1,10,4,4,2,7], nums2 = [9,3,5,1,7,4] 输出：20
+解释：将第一个元素替换为第二个元素：[1,10,4,4,2,7] => [10,10,4,4,2,7]
+绝对差值和为 |10-9| + |10-3| + |4-5| + |4-1| + |2-7| + |7-4| = 20
+提示：n == nums1.length
+n == nums2.length
+1 <= n <= 105
+1 <= nums1[i], nums2[i] <= 105
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 排序+二分查找 | O(nlog(n)) | O(n)       |
+
+```go
+func minAbsoluteSumDiff(nums1 []int, nums2 []int) int {
+	arr := make([]int, len(nums1))
+	sum := 0
+	for i := 0; i < len(nums1); i++ {
+		arr[i] = nums1[i]
+		sum = (sum + abs(nums1[i]-nums2[i])) % 1000000007
+	}
+	sort.Ints(arr)
+	maxValue := 0
+	for i := 0; i < len(arr); i++ {
+		if nums1[i] == nums2[i] {
+			continue
+		}
+		b := nums2[i]
+		target := search(arr, b)
+		maxValue = max(maxValue, abs(nums1[i]-b)-abs(target-b))
+	}
+	return (sum - maxValue+ 1000000007) % 1000000007
+}
+
+func search(arr []int, target int) int {
+	res := 0
+	if arr[0] > target {
+		return arr[0]
+	}
+	if arr[len(arr)-1] < target {
+		return arr[len(arr)-1]
+	}
+	left, right := 0, len(arr)-1
+	for left <= right {
+		mid := left + (right-left)/2
+		if target < arr[mid] {
+			right = mid - 1
+			if abs(res-target) > abs(target-arr[mid]) {
+				res = arr[mid]
+			}
+		} else if target == arr[mid] {
+			return target
+		} else if target > arr[mid] {
+			left = mid + 1
+			if abs(res-target) > abs(target-arr[mid]) {
+				res = arr[mid]
+			}
+		}
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func abs(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+```
+
+# 1801-1900-Hard
+
+## 1808.好因子的最大数目(1)
+
+- 题目
+
+```
+给你一个正整数 primeFactors 。你需要构造一个正整数 n ，它满足以下条件：
+n 质因数（质因数需要考虑重复的情况）的数目 不超过 primeFactors 个。
+n 好因子的数目最大化。如果 n 的一个因子可以被 n 的每一个质因数整除，我们称这个因子是 好因子 。
+比方说，如果 n = 12 ，那么它的质因数为 [2,2,3] ，那么 6 和 12 是好因子，但 3 和 4 不是。
+请你返回 n 的好因子的数目。由于答案可能会很大，请返回答案对 109 + 7 取余 的结果。
+请注意，一个质数的定义是大于 1 ，且不能被分解为两个小于该数的自然数相乘。
+一个数 n 的质因子是将 n 分解为若干个质因子，且它们的乘积为 n 。
+示例 1：输入：primeFactors = 5 输出：6
+解释：200 是一个可行的 n 。
+它有 5 个质因子：[2,2,2,5,5] ，且有 6 个好因子：[10,20,40,50,100,200] 。
+不存在别的 n 有至多 5 个质因子，且同时有更多的好因子。
+示例 2：输入：primeFactors = 8 输出：18
+提示：1 <= primeFactors <= 109
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 快速幂 | O(log(n))  | O(1)       |
+
+```go
+/*
+由题意有: n=a1^k1 * a2^k2 *...*an^kn(如12=2^2 * 3^1)
+其中
+1、a1,a2,...,an是不同的质数(2,3不重复)
+2、k1+k2+...+kn <=primeFactors
+3、n的好因子,要能被每一个质因数(a1,a2,a3,...,an)整除，即好因子必须含有a1*a2*...*an作为因数
+=>好因子的个数 k = k1*k2*...*kn =>求k最大，其中k1+..kn=primeFactors
+等价于343题，整数拆分
+*/
+
+var mod = 1000000007
+
+func maxNiceDivisors(primeFactors int) int {
+	n := primeFactors
+	if n <= 3 {
+		return n
+	}
+	if n%3 == 0 {
+		return pow(3, n/3) % mod
+	} else if n%3 == 1 {
+		return pow(3, (n-4)/3) * 4 % mod
+	}
+	return pow(3, n/3) * 2 % mod
+}
+
+func pow(a, b int) int {
+	res := 1
+	for b > 0 {
+		if b%2 == 1 {
+			res = res * a % mod
+		}
+		a = a * a % mod
+		b = b / 2
+	}
+	return res
+}
+```
+

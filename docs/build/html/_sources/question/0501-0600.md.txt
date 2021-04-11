@@ -1,31 +1,42 @@
 # 0501-0600-Easy
-* [0501-0600-Easy](#0501-0600-easy)
-	* [501.二叉搜索树中的众数(2)](#501二叉搜索树中的众数2)
-	* [504.七进制数(3)](#504七进制数3)
-	* [506.相对名次(1)](#506相对名次1)
-	* [507.完美数(1)](#507完美数1)
-	* [509.斐波那契数(6)](#509斐波那契数6)
-	* [520.检测大写字母(2)](#520检测大写字母2)
-	* [521.最长特殊序列Ⅰ(1)](#521最长特殊序列ⅰ1)
-	* [530.二叉搜索树的最小绝对差(3)](#530二叉搜索树的最小绝对差3)
-	* [532.数组中的K-diff数对(3)](#532数组中的k-diff数对3)
-	* [538.把二叉搜索树转换为累加树(2)](#538把二叉搜索树转换为累加树2)
-	* [541.反转字符串II(2)](#541反转字符串ii2)
-	* [543.二叉树的直径(2)](#543二叉树的直径2)
-	* [551.学生出勤记录 I(2)](#551学生出勤记录-i2)
-	* [557.反转字符串中的单词 III(2)](#557反转字符串中的单词-iii2)
-	* [559.N叉树的最大深度(2)](#559n叉树的最大深度2)
-	* [561.数组拆分 I(2)](#561数组拆分-i2)
-	* [563.二叉树的坡度(2)](#563二叉树的坡度2)
-	* [566.重塑矩阵(2)](#566重塑矩阵2)
-	* [572.另一个树的子树(3)](#572另一个树的子树3)
-	* [575.分糖果(2)](#575分糖果2)
-	* [581.最短无序连续子数组(3)](#581最短无序连续子数组3)
-	* [589.N叉树的前序遍历(2)](#589n叉树的前序遍历2)
-	* [590.N叉树的后序遍历(2)](#590n叉树的后序遍历2)
-	* [594.最长和谐子序列(2)](#594最长和谐子序列2)
-	* [598.范围求和 II(1)](#598范围求和-ii1)
-	* [599.两个列表的最小索引总和(2)](#599两个列表的最小索引总和2)
+* [0501\-0600\-Easy](#0501-0600-easy)
+  * [501\.二叉搜索树中的众数(2)](#501%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E4%BC%97%E6%95%B02)
+  * [504\.七进制数(3)](#504%E4%B8%83%E8%BF%9B%E5%88%B6%E6%95%B03)
+  * [506\.相对名次(1)](#506%E7%9B%B8%E5%AF%B9%E5%90%8D%E6%AC%A11)
+  * [507\.完美数(1)](#507%E5%AE%8C%E7%BE%8E%E6%95%B01)
+  * [509\.斐波那契数(6)](#509%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B06)
+  * [520\.检测大写字母(2)](#520%E6%A3%80%E6%B5%8B%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D2)
+  * [521\.最长特殊序列Ⅰ(1)](#521%E6%9C%80%E9%95%BF%E7%89%B9%E6%AE%8A%E5%BA%8F%E5%88%97%E2%85%B01)
+  * [530\.二叉搜索树的最小绝对差(3)](#530%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE3)
+  * [532\.数组中的K\-diff数对(3)](#532%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84k-diff%E6%95%B0%E5%AF%B93)
+  * [538\.把二叉搜索树转换为累加树(2)](#538%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%B4%AF%E5%8A%A0%E6%A0%912)
+  * [541\.反转字符串II(2)](#541%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2ii2)
+  * [543\.二叉树的直径(2)](#543%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%842)
+  * [551\.学生出勤记录 I(2)](#551%E5%AD%A6%E7%94%9F%E5%87%BA%E5%8B%A4%E8%AE%B0%E5%BD%95-i2)
+  * [557\.反转字符串中的单词 III(2)](#557%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%8D%95%E8%AF%8D-iii2)
+  * [559\.N叉树的最大深度(2)](#559n%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A62)
+  * [561\.数组拆分 I(2)](#561%E6%95%B0%E7%BB%84%E6%8B%86%E5%88%86-i2)
+  * [563\.二叉树的坡度(2)](#563%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9D%A1%E5%BA%A62)
+  * [566\.重塑矩阵(2)](#566%E9%87%8D%E5%A1%91%E7%9F%A9%E9%98%B52)
+  * [572\.另一个树的子树(3)](#572%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%A0%91%E7%9A%84%E5%AD%90%E6%A0%913)
+  * [575\.分糖果(2)](#575%E5%88%86%E7%B3%96%E6%9E%9C2)
+  * [581\.最短无序连续子数组(3)](#581%E6%9C%80%E7%9F%AD%E6%97%A0%E5%BA%8F%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%843)
+  * [589\.N叉树的前序遍历(2)](#589n%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%862)
+  * [590\.N叉树的后序遍历(2)](#590n%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%862)
+  * [594\.最长和谐子序列(2)](#594%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%972)
+  * [598\.范围求和 II(1)](#598%E8%8C%83%E5%9B%B4%E6%B1%82%E5%92%8C-ii1)
+  * [599\.两个列表的最小索引总和(2)](#599%E4%B8%A4%E4%B8%AA%E5%88%97%E8%A1%A8%E7%9A%84%E6%9C%80%E5%B0%8F%E7%B4%A2%E5%BC%95%E6%80%BB%E5%92%8C2)
+* [0501\-0600\-Medium](#0501-0600-medium)
+  * [516\.最长回文子序列(3)](#516%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E5%BA%8F%E5%88%973)
+  * [518\.零钱兑换II(2)](#518%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2ii2)
+  * [523\.连续的子数组和(2)](#523%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C2)
+  * [542\.01矩阵(3)](#54201%E7%9F%A9%E9%98%B53)
+  * [560\.和为K的子数组(4)](#560%E5%92%8C%E4%B8%BAk%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%844)
+  * [567\.字符串的排列(2)](#567%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%972)
+* [0501\-0600\-Hard](#0501-0600-hard)
+  * [502\.IPO](#502ipo)
+    * [题目](#%E9%A2%98%E7%9B%AE)
+    * [解题思路](#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF)
 
 
 
@@ -1941,6 +1952,2400 @@ func findRestaurant(list1 []string, list2 []string) []string {
 				}
 			}
 		}
+	}
+	return res
+}
+```
+
+# 0501-0600-Medium
+
+## 503.下一个更大元素II(2)
+
+- 题目
+
+```
+给定一个循环数组（最后一个元素的下一个元素是数组的第一个元素），输出每个元素的下一个更大元素。
+数字 x 的下一个更大的元素是按数组遍历顺序，这个数字之后的第一个比它更大的数，
+这意味着你应该循环地搜索它的下一个更大的数。如果不存在，则输出 -1。
+示例 1:输入: [1,2,1] 输出: [2,-1,2]
+解释: 第一个 1 的下一个更大的数是 2；数字 2 找不到下一个更大的数； 
+第二个 1 的下一个最大的数需要循环搜索，结果也是 2。
+注意: 输入数组的长度不会超过 10000。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 单调栈 | O(n)       | O(n)       |
+| 02   | 单调栈 | O(n)       | O(n)       |
+
+```go
+func nextGreaterElements(nums []int) []int {
+	res := make([]int, len(nums))
+	if len(nums) == 0 {
+		return res
+	}
+	for i := 0; i < len(nums); i++ {
+		res[i] = -1
+	}
+	stack := make([]int, 0)
+	for i := 0; i < len(nums)*2; i++ {
+		index := i % len(nums)
+		for len(stack) > 0 && nums[index] > nums[stack[len(stack)-1]] {
+			if res[stack[len(stack)-1]] == -1 {
+				res[stack[len(stack)-1]] = nums[index]
+			}
+			stack = stack[:len(stack)-1]
+		}
+		stack = append(stack, index)
+	}
+	return res
+}
+
+# 2
+func nextGreaterElements(nums []int) []int {
+	res := make([]int, len(nums))
+	if len(nums) == 0 {
+		return res
+	}
+	stack := make([]int, 0)
+	for i := 2*len(nums) - 1; i >= 0; i-- {
+		index := i % len(nums)
+		for len(stack) > 0 && nums[index] >= stack[len(stack)-1] {
+			stack = stack[:len(stack)-1]
+		}
+		if len(stack) == 0 {
+			res[index] = -1
+		} else {
+			res[index] = stack[len(stack)-1]
+		}
+		stack = append(stack, nums[index])
+	}
+	return res
+}
+```
+
+## 508.出现次数最多的子树元素和(1)
+
+- 题目
+
+```
+给你一个二叉树的根结点，请你找出出现次数最多的子树元素和。
+一个结点的「子树元素和」定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。
+你需要返回出现次数最多的子树元素和。
+如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。
+示例 1：输入:
+  5
+ /  \
+2   -3
+返回 [2, -3, 4]，所有的值均只出现一次，以任意顺序返回所有值。
+示例 2：输入：
+  5
+ /  \
+2   -5
+返回 [2]，只有 2 出现两次，-5 只出现 1 次。
+提示： 假设任意子树元素和均可以用 32 位有符号整数表示。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n)       | O(n)       |
+
+```go
+var m map[int]int
+
+func findFrequentTreeSum(root *TreeNode) []int {
+	m = make(map[int]int)
+	res := make([]int, 0)
+	dfs(root)
+	maxValue := 0
+	for k, v := range m {
+		if v > maxValue {
+			maxValue = v
+			res = []int{k}
+		} else if maxValue == v {
+			res = append(res, k)
+		}
+	}
+	return res
+}
+
+func dfs(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	sum := root.Val + dfs(root.Left) + dfs(root.Right)
+	m[sum]++
+	return sum
+}
+
+```
+
+## 513.找树左下角的值(2)
+
+- 题目
+
+```
+给定一个二叉树，在树的最后一行找到最左边的值。
+示例 1:输入:
+    2
+   / \
+  1   3
+输出:1
+示例 2:输入:
+        1
+       / \
+      2   3
+     /   / \
+    4   5   6
+       /
+      7
+输出:7
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 层序遍历 | O(n)       | O(n)       |
+| 02   | 递归     | O(n)       | O(log(n))  |
+
+```go
+func findBottomLeftValue(root *TreeNode) int {
+	res := 0
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		length := len(queue)
+		res = queue[0].Val
+		for i := 0; i < length; i++ {
+			if queue[i].Left != nil {
+				queue = append(queue, queue[i].Left)
+			}
+			if queue[i].Right != nil {
+				queue = append(queue, queue[i].Right)
+			}
+		}
+		queue = queue[length:]
+	}
+	return res
+}
+
+# 2
+var res int
+var maxLevel int
+
+func findBottomLeftValue(root *TreeNode) int {
+	res = 0
+	maxLevel = -1
+	if root == nil {
+		return res
+	}
+	dfs(root, 0)
+	return res
+}
+
+func dfs(root *TreeNode, level int) {
+	if root == nil {
+		return
+	}
+	dfs(root.Left, level+1)
+	if level > maxLevel {
+		maxLevel = level
+		res = root.Val
+	}
+	dfs(root.Right, level+1)
+}
+```
+
+## 515.在每个树行中找最大值(2)
+
+- 题目
+
+```
+您需要在二叉树的每一行中找到最大的值。
+示例：输入: 
+          1
+         / \
+        3   2
+       / \   \  
+      5   3   9 
+输出: [1, 3, 9]
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 层序遍历 | O(n)       | O(n)       |
+| 02   | 递归     | O(n)       | O(n)       |
+
+```go
+func largestValues(root *TreeNode) []int {
+	res := make([]int, 0)
+	if root == nil {
+		return res
+	}
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+	for len(queue) > 0 {
+		length := len(queue)
+		maxValue := math.MinInt32
+		for i := 0; i < length; i++ {
+			if queue[i].Left != nil {
+				queue = append(queue, queue[i].Left)
+			}
+			if queue[i].Right != nil {
+				queue = append(queue, queue[i].Right)
+			}
+			if maxValue < queue[i].Val {
+				maxValue = queue[i].Val
+			}
+		}
+		res = append(res, maxValue)
+		queue = queue[length:]
+	}
+	return res
+}
+
+# 2
+var res []int
+
+func largestValues(root *TreeNode) []int {
+	res = make([]int, 0)
+	if root == nil {
+		return res
+	}
+	dfs(root, 0)
+	return res
+}
+
+func dfs(root *TreeNode, level int) {
+	if root == nil {
+		return
+	}
+	if level >= len(res) {
+		res = append(res, math.MinInt32)
+	}
+	res[level] = max(res[level], root.Val)
+	dfs(root.Left, level+1)
+	dfs(root.Right, level+1)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 516.最长回文子序列(3)
+
+- 题目
+
+```
+给定一个字符串 s ，找到其中最长的回文子序列，并返回该序列的长度。可以假设 s 的最大长度为 1000 。
+示例 1:输入:"bbbab"输出:4
+一个可能的最长回文子序列为 "bbbb"。
+示例 2:输入:"cbbd"输出:2
+一个可能的最长回文子序列为 "bb"。
+提示：
+    1 <= s.length <= 1000
+    s 只包含小写英文字母
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划 | O(n^2)     | O(n)       |
+| 03   | 递归     | O(n^2)     | O(n^2)     |
+
+```go
+func longestPalindromeSubseq(s string) int {
+	if len(s) <= 1 {
+		return len(s)
+	}
+	n := len(s)
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, n)
+		dp[i][i] = 1
+	}
+	for i := n - 2; i >= 0; i-- {
+		for j := i + 1; j < n; j++ {
+			if s[i] == s[j] {
+				dp[i][j] = dp[i+1][j-1] + 2 // 内层+2
+			} else {
+				dp[i][j] = max(dp[i+1][j], dp[i][j-1])
+			}
+		}
+	}
+	return dp[0][n-1]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func longestPalindromeSubseq(s string) int {
+	if len(s) <= 1 {
+		return len(s)
+	}
+	n := len(s)
+	dp := make([]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = 1
+	}
+	for i := n - 1; i >= 0; i-- {
+		prev := 0
+		for j := i + 1; j < n; j++ {
+			temp := dp[j]
+			if s[i] == s[j] {
+				dp[j] = prev + 2 // 内层+2
+			} else {
+				dp[j] = max(dp[j], dp[j-1])
+			}
+			prev = temp
+		}
+	}
+	return dp[n-1]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 3
+var dp [][]int
+
+func longestPalindromeSubseq(s string) int {
+	if len(s) <= 1 {
+		return len(s)
+	}
+	n := len(s)
+	dp = make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, n)
+	}
+	return dfs(s, 0, n-1)
+}
+
+func dfs(s string, i, j int) int {
+	if i == j {
+		return 1
+	}
+	if i > j {
+		return 0
+	}
+	if dp[i][j] > 0 {
+		return dp[i][j]
+	}
+	if s[i] == s[j] {
+		dp[i][j] = dfs(s, i+1, j-1) + 2
+	} else {
+		dp[i][j] = max(dfs(s, i+1, j), dfs(s, i, j-1))
+	}
+	return dp[i][j]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 518.零钱兑换II(2)
+
+- 题目
+
+```
+给定不同面额的硬币和一个总金额。写出函数来计算可以凑成总金额的硬币组合数。假设每一种面额的硬币有无限个。 
+示例 1:输入: amount = 5, coins = [1, 2, 5] 输出: 4
+解释: 有四种方式可以凑成总金额:
+5=5
+5=2+2+1
+5=2+1+1+1
+5=1+1+1+1+1
+示例 2:输入: amount = 3, coins = [2] 输出: 0
+解释: 只用面额2的硬币不能凑成总金额3。
+示例 3:输入: amount = 10, coins = [10]  输出: 1
+注意:你可以假设：
+    0 <= amount (总金额) <= 5000
+    1 <= coin (硬币面额) <= 5000
+    硬币种类不超过 500 种
+    结果符合 32 位符号整数
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-二维 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划-一维 | O(n^2)     | O(n)       |
+
+```go
+func change(amount int, coins []int) int {
+	n := len(coins)
+	dp := make([][]int, n+1)
+	for i := 0; i <= n; i++ {
+		dp[i] = make([]int, amount+1)
+		dp[i][0] = 1 // 金额为0的情况，只有都不选，组合情况为1
+	}
+	for i := 1; i <= n; i++ {
+		for j := 1; j <= amount; j++ {
+			if j-coins[i-1] >= 0 {
+				dp[i][j] = dp[i-1][j] + dp[i][j-coins[i-1]]
+			} else {
+				dp[i][j] = dp[i-1][j]
+			}
+		}
+	}
+	return dp[n][amount]
+}
+
+# 2
+func change(amount int, coins []int) int {
+	n := len(coins)
+	dp := make([]int, amount+1)
+	dp[0] = 1
+	for i := 1; i <= n; i++ {
+		for j := 1; j <= amount; j++ {
+			if j-coins[i-1] >= 0 {
+				dp[j] = dp[j] + dp[j-coins[i-1]]
+			}
+		}
+	}
+	return dp[amount]
+}
+```
+
+## 519.随机翻转矩阵(1)
+
+- 题目
+
+```
+题中给出一个 n_rows 行 n_cols 列的二维矩阵，且所有值被初始化为 0。
+要求编写一个 flip 函数，均匀随机的将矩阵中的 0 变为 1，并返回该值的位置下标 [row_id,col_id]；
+同样编写一个 reset 函数，将所有的值都重新置为 0。
+尽量最少调用随机函数 Math.random()，并且优化时间和空间复杂度。
+注意:1 <= n_rows, n_cols <= 10000
+0 <= row.id < n_rows 并且 0 <= col.id < n_cols
+当矩阵中没有值为 0 时，不可以调用 flip 函数
+调用 flip 和 reset 函数的次数加起来不会超过 1000 次
+示例 1：输入:  ["Solution","flip","flip","flip","flip"]  [[2,3],[],[],[],[]]
+输出: [null,[0,1],[1,2],[1,0],[1,1]]
+示例 2：输入:  ["Solution","flip","flip","reset","flip"] [[1,2],[],[],[],[]]
+输出: [null,[0,0],[0,1],null,[0,0]]
+输入语法解释：
+输入包含两个列表：被调用的子程序和他们的参数。Solution 的构造函数有两个参数，分别为 n_rows 和 n_cols。
+flip 和 reset 没有参数，参数总会以列表形式给出，哪怕该列表为空
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+
+```go
+type Solution struct {
+	m     map[int]bool
+	rows  int
+	cols  int
+	total int
+}
+
+func Constructor(n_rows int, n_cols int) Solution {
+	return Solution{
+		m:     make(map[int]bool),
+		rows:  n_rows,
+		cols:  n_cols,
+		total: 0,
+	}
+}
+
+func (this *Solution) Flip() []int {
+	if this.total >= this.rows*this.cols {
+		return nil
+	}
+	for {
+		index := rand.Intn(this.rows * this.cols)
+		if this.m[index] == true {
+			continue
+		}
+		a, b := index/this.cols, index%this.cols
+		this.m[index] = true
+		this.total++
+		return []int{a, b}
+	}
+}
+
+func (this *Solution) Reset() {
+	this.m = make(map[int]bool)
+	this.total = 0
+}
+```
+
+## 522.最长特殊序列II(3)
+
+- 题目
+
+```
+给定字符串列表，你需要从它们中找出最长的特殊序列。
+最长特殊序列定义如下：该序列为某字符串独有的最长子序列（即不能是其他字符串的子序列）。
+子序列可以通过删去字符串中的某些字符实现，但不能改变剩余字符的相对顺序。
+空序列为所有字符串的子序列，任何字符串为其自身的子序列。
+输入将是一个字符串列表，输出是最长特殊序列的长度。如果最长特殊序列不存在，返回 -1 。
+示例：输入: "aba", "cdc", "eae" 输出: 3
+提示：所有给定的字符串长度不会超过 10 。
+给定字符串列表的长度将在 [2, 50 ] 之间。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 暴力法 | O(2^n)     | O(2^n)     |
+| 02   | 暴力法 | O(n^2)     | O(1)       |
+| 03   | 暴力法 | O(n^2)     | O(1)       |
+
+```go
+func findLUSlength(strs []string) int {
+	m := make(map[string]int)
+	for i := 0; i < len(strs); i++ {
+		total := 1 << (len(strs[i]))
+		for j := 0; j < total; j++ {
+			s := ""
+			for k := 0; k < len(strs[i]); k++ {
+				if (j>>k)&1 != 0 {
+					s = s + string(strs[i][k])
+				}
+			}
+			m[s]++
+		}
+	}
+	res := -1
+	for k, v := range m {
+		if v == 1 && len(k) > res {
+			res = len(k)
+		}
+	}
+	return res
+}
+
+# 2
+func findLUSlength(strs []string) int {
+	res := -1
+	var j int
+	for i := 0; i < len(strs); i++ {
+		for j = 0; j < len(strs); j++ {
+			if i == j {
+				continue
+			}
+			if judge(strs[i], strs[j]) == true {
+				break
+			}
+		}
+		if j == len(strs) && len(strs[i]) > res {
+			res = len(strs[i])
+		}
+	}
+
+	return res
+}
+
+func judge(a, b string) bool {
+	j := 0
+	for i := 0; i < len(b) && j < len(a); i++ {
+		if a[j] == b[i] {
+			j++
+		}
+	}
+	return j == len(a)
+}
+
+# 3
+func findLUSlength(strs []string) int {
+	sort.Slice(strs, func(i, j int) bool {
+		return len(strs[i]) > len(strs[j])
+	})
+	res := -1
+	var j int
+	for i := 0; i < len(strs); i++ {
+		for j = 0; j < len(strs); j++ {
+			if i == j {
+				continue
+			}
+			if judge(strs[i], strs[j]) == true {
+				break
+			}
+		}
+		if j == len(strs) {
+			return len(strs[i])
+		}
+	}
+	return res
+}
+
+func judge(a, b string) bool {
+	j := 0
+	for i := 0; i < len(b) && j < len(a); i++ {
+		if a[j] == b[i] {
+			j++
+		}
+	}
+	return j == len(a)
+}
+```
+
+## 523.连续的子数组和(2)
+
+- 题目
+
+```
+给定一个包含 非负数 的数组和一个目标 整数 k，编写一个函数来判断该数组是否含有连续的子数组，
+其大小至少为 2，且总和为 k 的倍数，即总和为 n*k，其中 n 也是一个整数。
+示例 1：输入：[23,2,4,6,7], k = 6 输出：True
+解释：[2,4] 是一个大小为 2 的子数组，并且和为 6。
+示例 2：输入：[23,2,6,4,7], k = 6 输出：True
+解释：[23,2,6,4,7]是大小为 5 的子数组，并且和为 42。
+说明：
+    数组的长度不会超过 10,000 。
+    你可以认为所有数字总和在 32 位有符号整数范围内。
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 哈希辅助      | O(n)       | O(n)       |
+| 02   | 前缀和-暴力法 | O(n^2)     | O(n)       |
+
+```go
+func checkSubarraySum(nums []int, k int) bool {
+	if len(nums) == 0 {
+		return false
+	}
+	m := make(map[int]int)
+	m[0] = -1
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+		if k != 0 {
+			sum = sum % k
+		}
+		if _, ok := m[sum]; ok {
+			// 确保数组大小至少为2
+			if i-m[sum] >= 2 {
+				return true
+			}
+		} else {
+			m[sum] = i
+		}
+	}
+	return false
+}
+
+# 2
+func checkSubarraySum(nums []int, k int) bool {
+	if len(nums) == 0 {
+		return false
+	}
+	arr := make([]int, len(nums))
+	arr[0] = nums[0]
+	for i := 1; i < len(nums); i++ {
+		arr[i] = arr[i-1] + nums[i]
+	}
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			sum := arr[j] - arr[i] + nums[i]
+			if sum == k || (k != 0 && sum%k == 0) {
+				return true
+			}
+		}
+	}
+	return false
+}
+```
+
+## 525.连续数组(1)
+
+- 题目
+
+```
+给定一个二进制数组, 找到含有相同数量的 0 和 1 的最长连续子数组（的长度）。
+示例 1:输入: [0,1] 输出: 2
+说明: [0, 1] 是具有相同数量0和1的最长连续子数组。
+示例 2:输入: [0,1,0] 输出: 2
+说明: [0, 1] (或 [1, 0]) 是具有相同数量0和1的最长连续子数组。
+注意: 给定的二进制数组的长度不会超过50000。
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 前缀和 | O(n)       | O(n)       |
+
+ ```go
+func findMaxLength(nums []int) int {
+	res := 0
+	m := make(map[int]int)
+	m[0] = -1
+	total := 0
+	for i := 0; i < len(nums); i++ {
+		if nums[i] == 0 {
+			total--
+		} else {
+			total++
+		}
+		if first, ok := m[total]; !ok {
+			m[total] = i
+		} else {
+			if i-first > res {
+				res = i - first
+			}
+		}
+	}
+	return res
+}
+ ```
+
+## 526.优美的排列(2)
+
+- 题目
+
+```
+假设有从 1 到 N 的 N 个整数，如果从这 N 个数字中成功构造出一个数组，
+使得数组的第 i 位 (1 <= i <= N) 满足如下两个条件中的一个，我们就称这个数组为一个优美的排列。条件：
+第 i 位的数字能被 i 整除
+i 能被第 i 位上的数字整除
+现在给定一个整数 N，请问可以构造多少个优美的排列？
+示例1:输入: 2 输出: 2
+解释: 
+第 1 个优美的排列是 [1, 2]:
+  第 1 个位置（i=1）上的数字是1，1能被 i（i=1）整除
+  第 2 个位置（i=2）上的数字是2，2能被 i（i=2）整除
+第 2 个优美的排列是 [2, 1]:
+  第 1 个位置（i=1）上的数字是2，2能被 i（i=1）整除
+  第 2 个位置（i=2）上的数字是1，i（i=2）能被 1 整除
+说明:N 是一个正整数，并且不会超过15。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 回溯 | O(n^n)     | O(n!)      |
+| 02   | 回溯 | O(n^n)     | O(n)       |
+
+```go
+var res [][]int
+
+func countArrangement(n int) int {
+	res = make([][]int, 0)
+	dfs(n, make([]int, 0), make([]bool, n+1))
+	fmt.Println(res)
+	return len(res)
+}
+
+func dfs(n int, path []int, visited []bool) {
+	if len(path) == n {
+		temp := make([]int, len(path))
+		copy(temp, path)
+		res = append(res, temp)
+		return
+	}
+	for i := 1; i <= n; i++ {
+		index := len(path) + 1
+		if visited[i] == false && (i%index == 0 || index%i == 0) {
+			visited[i] = true
+			dfs(n, append(path, i), visited)
+			visited[i] = false
+		}
+	}
+}
+
+# 2
+var res int
+
+func countArrangement(n int) int {
+	res = 0
+	dfs(n, make([]int, 0), make([]bool, n+1))
+	return res
+}
+
+func dfs(n int, path []int, visited []bool) {
+	if len(path) == n {
+		res++
+		return
+	}
+	for i := 1; i <= n; i++ {
+		index := len(path) + 1
+		if visited[i] == false && (i%index == 0 || index%i == 0) {
+			visited[i] = true
+			dfs(n, append(path, i), visited)
+			visited[i] = false
+		}
+	}
+}
+```
+
+## 529.扫雷游戏(2)
+
+- 题目
+
+```
+让我们一起来玩扫雷游戏！
+给定一个代表游戏板的二维字符矩阵。 'M' 代表一个未挖出的地雷，'E' 代表一个未挖出的空方块，
+'B' 代表没有相邻（上，下，左，右，和所有4个对角线）地雷的已挖出的空白方块，
+数字（'1' 到 '8'）表示有多少地雷与这块已挖出的方块相邻，'X' 则表示一个已挖出的地雷。
+现在给出在所有未挖出的方块中（'M'或者'E'）的下一个点击位置（行和列索引），根据以下规则，
+返回相应位置被点击后对应的面板：
+    如果一个地雷（'M'）被挖出，游戏就结束了- 把它改为 'X'。
+    如果一个没有相邻地雷的空方块（'E'）被挖出，修改它为（'B'），
+    并且所有和其相邻的未挖出方块都应该被递归地揭露。
+    如果一个至少与一个地雷相邻的空方块（'E'）被挖出，修改它为数字（'1'到'8'），表示相邻地雷的数量。
+    如果在此次点击中，若无更多方块可被揭露，则返回面板。
+示例 1：输入: [['E', 'E', 'E', 'E', 'E'],
+ ['E', 'E', 'M', 'E', 'E'],
+ ['E', 'E', 'E', 'E', 'E'],
+ ['E', 'E', 'E', 'E', 'E']]
+Click : [3,0]
+输出: [['B', '1', 'E', '1', 'B'],
+ ['B', '1', 'M', '1', 'B'],
+ ['B', '1', '1', '1', 'B'],
+ ['B', 'B', 'B', 'B', 'B']]
+解释:示例 2：输入: 
+[['B', '1', 'E', '1', 'B'],
+ ['B', '1', 'M', '1', 'B'],
+ ['B', '1', '1', '1', 'B'],
+ ['B', 'B', 'B', 'B', 'B']]
+Click : [1,2]
+输出: 
+[['B', '1', 'E', '1', 'B'],
+ ['B', '1', 'X', '1', 'B'],
+ ['B', '1', '1', '1', 'B'],
+ ['B', 'B', 'B', 'B', 'B']]
+解释:
+注意：输入矩阵的宽和高的范围为 [1,50]。
+    点击的位置只能是未被挖出的方块 ('M' 或者 'E')，这也意味着面板至少包含一个可点击的方块。
+    输入面板不会是游戏结束的状态（即有地雷已被挖出）。
+    简单起见，未提及的规则在这个问题中可被忽略。
+    例如，当游戏结束时你不需要挖出所有地雷，考虑所有你可能赢得游戏或标记方块的情况。
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先搜索 | O(n^2)     | O(n^2)     |
+| 02   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+
+```go
+var dx = []int{-1, 1, 0, 0, 1, 1, -1, -1}
+var dy = []int{0, 0, -1, 1, 1, -1, 1, -1}
+
+func updateBoard(board [][]byte, click []int) [][]byte {
+	x, y := click[0], click[1]
+	if board[x][y] == 'M' {
+		board[x][y] = 'X'
+	} else {
+		dfs(board, x, y)
+	}
+	return board
+}
+
+func dfs(board [][]byte, x, y int) {
+	count := 0
+	for i := 0; i < 8; i++ {
+		newX := dx[i] + x
+		newY := dy[i] + y
+		if newX < 0 || newX >= len(board) || newY < 0 || newY >= len(board[0]) {
+			continue
+		}
+		if board[newX][newY] == 'M' {
+			count++
+		}
+	}
+	if count > 0 {
+		board[x][y] = byte(count + '0')
+	} else {
+		board[x][y] = 'B'
+		for i := 0; i < 8; i++ {
+			newX := dx[i] + x
+			newY := dy[i] + y
+			if newX < 0 || newX >= len(board) ||
+				newY < 0 || newY >= len(board[0]) ||
+				board[newX][newY] != 'E' {
+				continue
+			}
+			dfs(board, newX, newY)
+		}
+	}
+}
+
+# 2
+var dx = []int{-1, 1, 0, 0, 1, 1, -1, -1}
+var dy = []int{0, 0, -1, 1, 1, -1, 1, -1}
+
+func updateBoard(board [][]byte, click []int) [][]byte {
+	x, y := click[0], click[1]
+	if board[x][y] == 'M' {
+		board[x][y] = 'X'
+	} else {
+		bfs(board, x, y)
+	}
+	return board
+}
+
+func bfs(board [][]byte, x, y int) {
+	visited := make([][]bool, len(board))
+	for i := 0; i < len(board); i++ {
+		visited[i] = make([]bool, len(board[i]))
+	}
+	queue := make([][2]int, 0)
+	queue = append(queue, [2]int{x, y})
+	visited[x][y] = true
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		count := 0
+		a := node[0]
+		b := node[1]
+		for j := 0; j < 8; j++ {
+			newX := dx[j] + a
+			newY := dy[j] + b
+			if newX < 0 || newX >= len(board) ||
+				newY < 0 || newY >= len(board[0]) ||
+				visited[newX][newY] == true {
+				continue
+			}
+			if board[newX][newY] == 'M' {
+				count++
+			}
+		}
+		if count > 0 {
+			board[a][b] = byte(count + '0')
+		} else {
+			board[a][b] = 'B'
+			for j := 0; j < 8; j++ {
+				newX := dx[j] + a
+				newY := dy[j] + b
+				if newX < 0 || newX >= len(board) ||
+					newY < 0 || newY >= len(board[0]) ||
+					board[newX][newY] != 'E' ||
+					visited[newX][newY] == true {
+					continue
+				}
+				queue = append(queue, [2]int{newX, newY})
+				visited[newX][newY] = true
+			}
+		}
+	}
+}
+```
+
+## 537.复数乘法(2)
+
+- 题目
+
+```
+给定两个表示复数的字符串。
+返回表示它们乘积的字符串。注意，根据定义 i2 = -1 。
+示例 1:输入: "1+1i", "1+1i" 输出: "0+2i"
+解释: (1 + i) * (1 + i) = 1 + i2 + 2 * i = 2i ，你需要将它转换为 0+2i 的形式。
+示例 2:输入: "1+-1i", "1+-1i" 输出: "0+-2i"
+解释: (1 - i) * (1 - i) = 1 + i2 - 2 * i = -2i ，你需要将它转换为 0+-2i 的形式。 
+注意:输入字符串不包含额外的空格。
+输入字符串将以 a+bi 的形式给出，其中整数 a 和 b 的范围均在 [-100, 100] 之间。输出也应当符合这种形式。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 内置函数 | O(1)       | O(1)       |
+| 02   | 内置函数 | O(1)       | O(1)       |
+
+```go
+func complexNumberMultiply(a string, b string) string {
+	a1, a2 := getValue(a)
+	b1, b2 := getValue(b)
+	return fmt.Sprintf("%d+%di", a1*b1-a2*b2, a1*b2+a2*b1)
+}
+
+func getValue(str string) (a, b int) {
+	arr := strings.Split(str, "+")
+	a, _ = strconv.Atoi(arr[0])
+	b, _ = strconv.Atoi(arr[1][:len(arr[1])-1])
+	return a, b
+}
+
+# 2
+func complexNumberMultiply(a string, b string) string {
+	var a1, a2, b1, b2 int
+	fmt.Sscanf(a, "%d+%di", &a1, &a2)
+	fmt.Sscanf(b, "%d+%di", &b1, &b2)
+	return fmt.Sprintf("%d+%di", a1*b1-a2*b2, a1*b2+a2*b1)
+}
+```
+
+## 539.最小时间差(2)
+
+- 题目
+
+```
+给定一个 24 小时制（小时:分钟 "HH:MM"）的时间列表，找出列表中任意两个时间的最小时间差并以分钟数表示。
+示例 1：输入：timePoints = ["23:59","00:00"] 输出：1
+示例 2：输入：timePoints = ["00:00","23:59","00:00"]输出：0
+提示：2 <= timePoints <= 2 * 104
+timePoints[i] 格式为 "HH:MM"
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 排序 | O(nlog(n)) | O(n)       |
+| 02   | 排序 | O(nlog(n)) | O(n)       |
+
+```go
+func findMinDifference(timePoints []string) int {
+	m := make(map[int]bool)
+	for i := 0; i < len(timePoints); i++ {
+		value := getValue(timePoints[i])
+		if _, ok := m[value]; ok {
+			return 0
+		}
+		m[value] = true
+	}
+	arr := make([]int, 0)
+	for k := range m {
+		arr = append(arr, k)
+	}
+	sort.Ints(arr)
+	res := math.MaxInt32
+	arr = append(arr, arr[0]+1440)
+	for i := 1; i < len(arr); i++ {
+		if res > arr[i]-arr[i-1] {
+			res = arr[i] - arr[i-1]
+		}
+	}
+	return res
+}
+
+func getValue(str string) int {
+	hour, _ := strconv.Atoi(str[:2])
+	minute, _ := strconv.Atoi(str[3:])
+	return hour*60 + minute
+}
+
+# 2
+func findMinDifference(timePoints []string) int {
+	arr := make([]int, 0)
+	for i := 0; i < len(timePoints); i++ {
+		value := getValue(timePoints[i])
+		arr = append(arr, value)
+	}
+	sort.Ints(arr)
+	res := math.MaxInt32
+	arr = append(arr, arr[0]+1440)
+	for i := 1; i < len(arr); i++ {
+		if res > arr[i]-arr[i-1] {
+			res = arr[i] - arr[i-1]
+		}
+	}
+	return res
+}
+
+func getValue(str string) int {
+	hour, _ := strconv.Atoi(str[:2])
+	minute, _ := strconv.Atoi(str[3:])
+	return hour*60 + minute
+}
+```
+
+## 540.有序数组中的单一元素(3)
+
+- 题目
+
+```
+给定一个只包含整数的有序数组，每个元素都会出现两次，唯有一个数只会出现一次，找出这个数。
+示例 1:输入: [1,1,2,3,3,4,4,8,8]输出: 2
+示例 2:输入: [3,3,7,7,10,11,11]输出: 10
+注意: 您的方案应该在 O(log n)时间复杂度和 O(1)空间复杂度中运行。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 遍历     | O(n)       | O(1)       |
+| 02   | 二分查找 | O(log(n))  | O(1)       |
+| 03   | 异或     | O(n)       | O(1)       |
+
+```go
+func singleNonDuplicate(nums []int) int {
+	for i := 0; i < len(nums)-1; i = i + 2 {
+		if nums[i] != nums[i+1] {
+			return nums[i]
+		}
+	}
+	return nums[len(nums)-1]
+}
+
+# 2
+func singleNonDuplicate(nums []int) int {
+	n := len(nums)
+	left, right := 0, n-1
+	for left < right {
+		mid := left + (right-left)/2
+		if mid%2 == 1 {
+			mid--
+		}
+		if nums[mid] == nums[mid+1] {
+			left = mid + 2
+		} else {
+			right = mid
+		}
+	}
+	return nums[left]
+}
+
+# 3
+func singleNonDuplicate(nums []int) int {
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		res = res ^ nums[i]
+	}
+	return res
+}
+```
+
+## 542.01矩阵(3)
+
+- 题目
+
+```
+给定一个由 0 和 1 组成的矩阵，找出每个元素到最近的 0 的距离。
+两个相邻元素间的距离为 1 。
+示例 1: 输入:
+0 0 0
+0 1 0
+0 0 0
+输出:
+0 0 0
+0 1 0
+0 0 0
+示例 2: 输入:
+0 0 0
+0 1 0
+1 1 1
+输出:
+0 0 0
+0 1 0
+1 2 1
+注意:
+    给定矩阵的元素个数不超过 10000。
+    给定矩阵中至少有一个元素是 0。
+    矩阵中的元素只在四个方向上相邻: 上、下、左、右。
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 动态规划     | O(n^2)     | O(n^2)     |
+| 02   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+| 03   | 动态规划     | O(n^2)     | O(1)       |
+
+```go
+func updateMatrix(matrix [][]int) [][]int {
+	n := len(matrix)
+	m := len(matrix[0])
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			if matrix[i][j] == 1 {
+				dp[i][j] = math.MaxInt32 / 10
+				if i > 0 {
+					dp[i][j] = min(dp[i][j], dp[i-1][j]+1)
+				}
+				if j > 0 {
+					dp[i][j] = min(dp[i][j], dp[i][j-1]+1)
+				}
+			} else {
+				dp[i][j] = 0
+			}
+		}
+	}
+	for i := n - 1; i >= 0; i-- {
+		for j := m - 1; j >= 0; j-- {
+			if dp[i][j] > 1 {
+				if i < n-1 {
+					dp[i][j] = min(dp[i][j], dp[i+1][j]+1)
+				}
+				if j < m-1 {
+					dp[i][j] = min(dp[i][j], dp[i][j+1]+1)
+				}
+			}
+		}
+	}
+	return dp
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+var dx = []int{-1, 1, 0, 0}
+var dy = []int{0, 0, -1, 1}
+
+func updateMatrix(matrix [][]int) [][]int {
+	n := len(matrix)
+	m := len(matrix[0])
+	queue := make([][2]int, 0)
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if matrix[i][j] == 0 {
+				queue = append(queue, [2]int{i, j})
+			} else {
+				matrix[i][j] = -1
+			}
+		}
+	}
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		for i := 0; i < 4; i++ {
+			x := node[0] + dx[i]
+			y := node[1] + dy[i]
+			if 0 <= x && x < n && 0 <= y && y < m && matrix[x][y] == -1 {
+				matrix[x][y] = matrix[node[0]][node[1]] + 1
+				queue = append(queue, [2]int{x, y})
+			}
+		}
+	}
+	return matrix
+}
+
+# 3
+func updateMatrix(matrix [][]int) [][]int {
+	n := len(matrix)
+	m := len(matrix[0])
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if matrix[i][j] == 1 {
+				matrix[i][j] = math.MaxInt32 / 10
+				if i > 0 {
+					matrix[i][j] = min(matrix[i][j], matrix[i-1][j]+1)
+				}
+				if j > 0 {
+					matrix[i][j] = min(matrix[i][j], matrix[i][j-1]+1)
+				}
+			} else {
+				matrix[i][j] = 0
+			}
+		}
+	}
+	for i := n - 1; i >= 0; i-- {
+		for j := m - 1; j >= 0; j-- {
+			if matrix[i][j] > 1 {
+				if i < n-1 {
+					matrix[i][j] = min(matrix[i][j], matrix[i+1][j]+1)
+				}
+				if j < m-1 {
+					matrix[i][j] = min(matrix[i][j], matrix[i][j+1]+1)
+				}
+			}
+		}
+	}
+	return matrix
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
+## 547.朋友圈(3)
+
+- 题目
+
+```
+班上有 N 名学生。其中有些人是朋友，有些则不是。他们的友谊具有是传递性。
+如果已知 A 是 B 的朋友，B 是 C 的朋友，那么我们可以认为 A 也是 C 的朋友。
+所谓的朋友圈，是指所有朋友的集合。
+给定一个 N * N 的矩阵 M，表示班级中学生之间的朋友关系。
+如果M[i][j] = 1，表示已知第 i 个和 j 个学生互为朋友关系，否则为不知道。
+你必须输出所有学生中的已知的朋友圈总数。
+示例 1：输入：
+[[1,1,0],
+ [1,1,0],
+ [0,0,1]]
+输出：2 
+解释：已知学生 0 和学生 1 互为朋友，他们在一个朋友圈。
+第2个学生自己在一个朋友圈。所以返回 2 。
+示例 2：输入：
+[[1,1,0],
+ [1,1,1],
+ [0,1,1]]
+输出：1
+解释：已知学生 0 和学生 1 互为朋友，学生 1 和学生 2 互为朋友，
+所以学生 0 和学生 2 也是朋友，所以他们三个在一个朋友圈，返回 1 。
+提示：1 <= N <= 200
+M[i][i] == 1
+M[i][j] == M[j][i]
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 并查集       | O(n^2)     | O(n)       |
+| 02   | 递归         | O(n^2)     | O(n)       |
+| 03   | 广度优先搜索 | O(n^2)     | O(n)       |
+
+```go
+func findCircleNum(M [][]int) int {
+	n := len(M)
+	fa = Init(n)
+	count = n
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			if M[i][j] == 1 {
+				union(i, j)
+			}
+		}
+	}
+	return getCount()
+}
+
+var fa []int
+var count int
+
+// 初始化
+func Init(n int) []int {
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = i
+	}
+	count = n
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	if fa[x] == x {
+		return x
+	}
+	// 路径压缩
+	fa[x] = find(fa[x])
+	return fa[x]
+}
+
+// 合并
+func union(i, j int) {
+	x, y := find(i), find(j)
+	if x != y {
+		fa[x] = y
+		count--
+	}
+}
+
+func query(i, j int) bool {
+	return find(i) == find(j)
+}
+
+func getCount() int {
+	return count
+}
+
+# 2
+var arr []bool
+
+func findCircleNum(M [][]int) int {
+	n := len(M)
+	arr = make([]bool, n)
+	res := 0
+	for i := 0; i < n; i++ {
+		if arr[i] == false {
+			dfs(M, i)
+			res++
+		}
+	}
+	return res
+}
+
+func dfs(M [][]int, index int) {
+	for i := 0; i < len(M); i++ {
+		if arr[i] == false && M[index][i] == 1 {
+			arr[i] = true
+			dfs(M, i)
+		}
+	}
+}
+
+# 3
+func findCircleNum(M [][]int) int {
+	n := len(M)
+	arr := make([]bool, n)
+	res := 0
+	queue := make([]int, 0)
+	for i := 0; i < n; i++ {
+		if arr[i] == false {
+			queue = append(queue, i)
+			for len(queue) > 0 {
+				node := queue[0]
+				queue = queue[1:]
+				arr[node] = true
+				for j := 0; j < n; j++ {
+					if M[node][j] == 1 && arr[j] == false {
+						queue = append(queue, j)
+					}
+				}
+			}
+			res++
+		}
+	}
+	return res
+}
+```
+
+## 554.砖墙(1)
+
+- 题目
+
+```
+你的面前有一堵矩形的、由多行砖块组成的砖墙。 这些砖块高度相同但是宽度不同。
+你现在要画一条自顶向下的、穿过最少砖块的垂线。
+砖墙由行的列表表示。 每一行都是一个代表从左至右每块砖的宽度的整数列表。
+如果你画的线只是从砖块的边缘经过，就不算穿过这块砖。
+你需要找出怎样画才能使这条线穿过的砖块数量最少，并且返回穿过的砖块数量。
+你不能沿着墙的两个垂直边缘之一画线，这样显然是没有穿过一块砖的。
+示例：输入: [[1,2,2,1],
+      [3,1,2],
+      [1,3,2],
+      [2,4],
+      [3,1,2],
+      [1,3,1,1]]
+输出: 2
+解释: 提示：每一行砖块的宽度之和应该相等，并且不能超过 INT_MAX。
+每一行砖块的数量在 [1,10,000] 范围内， 墙的高度在 [1,10,000] 范围内， 总的砖块数量不超过 20,000。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n^2)     | O(n)       |
+
+```go
+func leastBricks(wall [][]int) int {
+	maxCount := 0
+	m := make(map[int]int)
+	for i := 0; i < len(wall); i++ {
+		index := 0
+		for j := 0; j < len(wall[i])-1; j++ {
+			index = index + wall[i][j]
+            m[index]++ // 保留去除开头和结尾的位置(空隙地方)
+			if maxCount <= m[index] {
+				maxCount = m[index]
+			}
+		}
+	}
+	return len(wall) - maxCount
+}
+```
+
+## 560.和为K的子数组(4)
+
+- 题目
+
+```
+给定一个整数数组和一个整数 k，你需要找到该数组中和为 k 的连续的子数组的个数。
+示例 1 :输入:nums = [1,1,1], k = 2 输出: 2 , [1,1] 与 [1,1] 为两种不同的情况。
+说明:数组的长度为 [1, 20,000]。
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 暴力法          | O(n^2)     | O(1)       |
+| 02   | 前缀和-遍历     | O(n^2)     | O(n)       |
+| 03   | 前缀和-哈希辅助 | O(n)       | O(n)       |
+| 04   | 前缀和-哈希辅助 | O(n)       | O(n)       |
+
+```go
+func subarraySum(nums []int, k int) int {
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		sum := 0
+		for j := i; j < len(nums); j++ {
+			sum = sum + nums[j]
+			if sum == k {
+				res++
+			}
+		}
+	}
+	return res
+}
+
+# 2
+func subarraySum(nums []int, k int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	res := 0
+	arr := make([]int, len(nums)+1)
+	arr[0] = 0
+	for i := 1; i <= len(nums); i++ {
+		arr[i] = arr[i-1] + nums[i-1]
+	}
+	for i := 0; i <= len(nums); i++ {
+		for j := 0; j < i; j++ {
+			if arr[i]-arr[j] == k {
+				res++
+			}
+		}
+	}
+	return res
+}
+
+# 3
+func subarraySum(nums []int, k int) int {
+	res := 0
+	m := make(map[int]int)
+	m[0] = 1 // 保证第一个k的存在
+	sum := 0
+	// sum[i:j]= sum[0:j]-sum[0:i]，把sum[i:j]设为k，
+	// 于是可以转化为sum[0:j]-k=sum[0:i]
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+		if _, ok := m[sum-k]; ok {
+			res = res + m[sum-k]
+		}
+		m[sum]++
+	}
+	return res
+}
+
+# 4
+func subarraySum(nums []int, k int) int {
+	res := 0
+	m := make(map[int][]int)
+	m[0] = []int{-1} // 保证第一个k的存在
+	sum := 0
+	// sum[i:j]= sum[0:j]-sum[0:i]，把sum[i:j]设为k，
+	// 于是可以转化为sum[0:j]-k=sum[0:i]
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+		if _, ok := m[sum-k]; ok {
+			res = res + len(m[sum-k])
+            // 输出满足条件的子数组下标
+			// for _, v := range m[sum-k] {
+			//	fmt.Println(v+1, i)
+			// }
+		}
+		m[sum] = append(m[sum], i)
+	}
+	return res
+}
+```
+
+## 565.数组嵌套(4)
+
+- 题目
+
+```
+索引从0开始长度为N的数组A，包含0到N - 1的所有整数。找到最大的集合S并返回其大小，
+其中 S[i] = {A[i], A[A[i]], A[A[A[i]]], ... }且遵守以下的规则。
+假设选择索引为i的元素A[i]为S的第一个元素，S的下一个元素应该是A[A[i]]，
+之后是A[A[A[i]]]... 以此类推，不断添加直到S出现重复的元素。
+示例 1:输入: A = [5,4,0,3,1,6,2] 输出: 4
+解释:  A[0] = 5, A[1] = 4, A[2] = 0, A[3] = 3, A[4] = 1, A[5] = 6, A[6] = 2.
+其中一种最长的 S[K]:
+S[0] = {A[0], A[5], A[6], A[2]} = {5, 6, 2, 0}
+提示：N是[1, 20,000]之间的整数。
+A中不含有重复的元素。
+A中的元素大小在[0, N-1]之间。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+| 02   | 哈希辅助 | O(n)       | O(n)       |
+| 03   | 遍历交换 | O(n)       | O(1)       |
+| 04   | 并查集   | O(n)       | O(n)       |
+
+```go
+func arrayNesting(nums []int) int {
+	m := make(map[int]bool)
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		if m[nums[i]] == true {
+			continue
+		}
+		count := 0
+		cur := i
+		for {
+			count++
+			m[cur] = true
+			cur = nums[cur]
+			if cur == i {
+				break
+			}
+		}
+		if count > res {
+			res = count
+		}
+	}
+	return res
+}
+
+# 2
+func arrayNesting(nums []int) int {
+	m := make(map[int]bool)
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		if m[nums[i]] == true {
+			continue
+		}
+		count := 0
+		cur := i
+		for {
+			count++
+			m[cur] = true
+			cur = nums[cur]
+			if m[cur] == true {
+				break
+			}
+		}
+		if count > res {
+			res = count
+		}
+	}
+	return res
+}
+
+# 3
+func arrayNesting(nums []int) int {
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		count := 1
+		for nums[i] != i {
+			count++
+			nums[i], nums[nums[i]] = nums[nums[i]], nums[i]
+		}
+		if count > res {
+			res = count
+		}
+	}
+	return res
+}
+
+# 4
+func arrayNesting(nums []int) int {
+	res := 0
+	fa = Init(len(nums))
+	for i := 0; i < len(nums); i++ {
+		union(i, nums[i])
+	}
+	m := make(map[int]int)
+	for i := 0; i < len(fa); i++ {
+		m[find(i)]++
+	}
+	for _, v := range m {
+		if v > res {
+			res = v
+		}
+	}
+	return res
+}
+
+var fa []int
+
+// 初始化
+func Init(n int) []int {
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = i
+	}
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	if fa[x] == x {
+		return x
+	}
+	// 路径压缩
+	fa[x] = find(fa[x])
+	return fa[x]
+}
+
+// 合并
+func union(i, j int) {
+	x, y := find(i), find(j)
+	if x != y {
+		fa[x] = y
+	}
+}
+```
+
+## 567.字符串的排列(2)
+
+- 题目
+
+```
+给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。
+换句话说，第一个字符串的排列之一是第二个字符串的子串。
+示例1:输入: s1 = "ab" s2 = "eidbaooo" 输出: True
+解释: s2 包含 s1 的排列之一 ("ba").
+示例2:输入: s1= "ab" s2 = "eidboaoo" 输出: False
+注意：输入的字符串只包含小写字母
+两个字符串的长度都在 [1, 10,000] 之间
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 滑动窗口 | O(n)       | O(1)       |
+| 02   | 滑动窗口 | O(n)       | O(1)       |
+
+```go
+func checkInclusion(s1 string, s2 string) bool {
+	if len(s1) > len(s2) {
+		return false
+	}
+	arr1, arr2 := [26]int{}, [26]int{}
+	for i := 0; i < len(s1); i++ {
+		arr1[s1[i]-'a']++
+		arr2[s2[i]-'a']++
+	}
+	for i := 0; i < len(s2)-len(s1); i++ {
+		if arr1 == arr2 {
+			return true
+		}
+		arr2[s2[i]-'a']--
+		arr2[s2[i+len(s1)]-'a']++
+	}
+	return arr1 == arr2
+}
+
+# 2
+func checkInclusion(s1 string, s2 string) bool {
+	if len(s1) > len(s2) {
+		return false
+	}
+	m1, m2 := make(map[byte]int), make(map[byte]int)
+	for i := 0; i < len(s1); i++ {
+		m1[s1[i]-'a']++
+		m2[s2[i]-'a']++
+	}
+	for i := 0; i < len(s2)-len(s1); i++ {
+		if compare(m1, m2) {
+			return true
+		}
+		m2[s2[i]-'a']--
+		if m2[s2[i]-'a'] == 0 {
+			delete(m2, s2[i]-'a')
+		}
+		m2[s2[i+len(s1)]-'a']++
+	}
+	return compare(m1, m2)
+}
+
+func compare(m1, m2 map[byte]int) bool {
+	if len(m1) != len(m2) {
+		return false
+	}
+	for k := range m1 {
+		if m2[k] != m1[k] {
+			return false
+		}
+	}
+	return true
+}
+```
+
+## 576.出界的路径数
+
+### 题目
+
+```
+给定一个 m × n 的网格和一个球。球的起始坐标为 (i,j) ，你可以将球移到相邻的单元格内，
+或者往上、下、左、右四个方向上移动使球穿过网格边界。但是，你最多可以移动 N 次。
+找出可以将球移出边界的路径数量。答案可能非常大，返回 结果 mod 109 + 7 的值。
+示例 1：输入: m = 2, n = 2, N = 2, i = 0, j = 0 输出: 6
+解释:
+示例 2：输入: m = 1, n = 3, N = 3, i = 0, j = 1 输出: 12
+解释:
+说明:球一旦出界，就不能再被移动回网格内。
+网格的长度和高度在 [1,50] 的范围内。
+N 在 [0,50] 的范围内。
+```
+
+### 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+
+```go
+
+```
+
+## 583.两个字符串的删除操作(3)
+
+- 题目
+
+```
+给定两个单词 word1 和 word2，找到使得 word1 和 word2 相同所需的最小步数，
+每步可以删除任意一个字符串中的一个字符。
+示例：输入: "sea", "eat" 输出: 2
+解释: 第一步将"sea"变为"ea"，第二步将"eat"变为"ea"
+提示：给定单词的长度不超过500。
+给定单词中的字符只含有小写字母。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划 | O(n^2)     | O(n^2)     |
+| 03   | 递归     | O(n^2)     | O(n^2)     |
+
+```go
+func minDistance(word1 string, word2 string) int {
+	a, b := len(word1), len(word2)
+	// 最长公共子序列
+	dp := make([][]int, a+1)
+	for i := 0; i <= a; i++ {
+		dp[i] = make([]int, b+1)
+	}
+	for i := 1; i <= a; i++ {
+		for j := 1; j <= b; j++ {
+			if word1[i-1] == word2[j-1] {
+				dp[i][j] = dp[i-1][j-1] + 1
+			} else {
+				dp[i][j] = max(dp[i][j-1], dp[i-1][j])
+			}
+		}
+	}
+	return a + b - 2*dp[a][b]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func minDistance(word1 string, word2 string) int {
+	a, b := len(word1), len(word2)
+	dp := make([][]int, a+1)
+	for i := 0; i <= a; i++ {
+		dp[i] = make([]int, b+1)
+		dp[i][0] = i
+	}
+	for i := 0; i <= b; i++ {
+		dp[0][i] = i
+	}
+	for i := 1; i <= a; i++ {
+		for j := 1; j <= b; j++ {
+			if word1[i-1] == word2[j-1] {
+				dp[i][j] = dp[i-1][j-1]
+			} else {
+				dp[i][j] = min(dp[i][j-1], dp[i-1][j]) + 1
+			}
+		}
+	}
+	return dp[a][b]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 3
+var m [][]int
+
+func minDistance(word1 string, word2 string) int {
+	a, b := len(word1), len(word2)
+	m = make([][]int, a+1)
+	for i := 0; i <= a; i++ {
+		m[i] = make([]int, b+1)
+		for j := 0; j <= b; j++ {
+			m[i][j] = -1
+		}
+	}
+	total := dfs(word1, word2, 0, 0)
+	return a + b - 2*total
+}
+
+func dfs(word1 string, word2 string, i, j int) int {
+	if len(word1) == i || len(word2) == j {
+		return 0
+	}
+	if m[i][j] > -1 {
+		return m[i][j]
+	}
+	if word1[i] == word2[j] {
+		m[i][j] = dfs(word1, word2, i+1, j+1) + 1
+	} else {
+		m[i][j] = max(dfs(word1, word2, i, j+1), dfs(word1, word2, i+1, j))
+	}
+	return m[i][j]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 593.有效的正方形(2)
+
+- 题目
+
+```
+给定二维空间中四点的坐标，返回四点是否可以构造一个正方形。
+一个点的坐标（x，y）由一个有两个整数的整数数组表示。
+示例:输入: p1 = [0,0], p2 = [1,1], p3 = [1,0], p4 = [0,1] 输出: True
+注意:所有输入整数都在 [-10000，10000] 范围内。
+一个有效的正方形有四个等长的正长和四个等角（90度角）。
+输入点没有顺序。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 几何 | O(1)       | O(1)       |
+| 02   | 几何 | O(1)       | O(1)       |
+
+```go
+func validSquare(p1 []int, p2 []int, p3 []int, p4 []int) bool {
+	m := make(map[int]int)
+	m[getDis(p1, p2)]++
+	m[getDis(p1, p3)]++
+	m[getDis(p1, p4)]++
+	m[getDis(p2, p3)]++
+	m[getDis(p2, p4)]++
+	m[getDis(p3, p4)]++
+	a, b := 0, 0
+	for k, v := range m {
+		if v == 2 {
+			a = k
+		} else if v == 4 {
+			b = k
+		} else {
+			return false
+		}
+	}
+	return len(m) == 2 && a == 2*b
+}
+
+func getDis(a, b []int) int {
+	return (a[0]-b[0])*(a[0]-b[0]) + (a[1]-b[1])*(a[1]-b[1])
+}
+
+# 2
+func validSquare(p1 []int, p2 []int, p3 []int, p4 []int) bool {
+	arr := make([]int, 0)
+	arr = append(arr, getDis(p1, p2))
+	arr = append(arr, getDis(p1, p3))
+	arr = append(arr, getDis(p1, p4))
+	arr = append(arr, getDis(p2, p3))
+	arr = append(arr, getDis(p2, p4))
+	arr = append(arr, getDis(p3, p4))
+	sort.Ints(arr)
+	return arr[0] > 0 && arr[0] == arr[3] && arr[4] == arr[5] && arr[0]*2 == arr[4]
+}
+
+func getDis(a, b []int) int {
+	return (a[0]-b[0])*(a[0]-b[0]) + (a[1]-b[1])*(a[1]-b[1])
+}
+```
+
+# 0501-0600-Hard
+
+## 502.IPO(2)
+
+- 题目
+
+```
+假设 力扣（LeetCode）即将开始其 IPO。为了以更高的价格将股票卖给风险投资公司，
+力扣 希望在 IPO 之前开展一些项目以增加其资本。 
+由于资源有限，它只能在 IPO 之前完成最多 k 个不同的项目。
+帮助 力扣 设计完成最多 k 个不同项目后得到最大总资本的方式。
+给定若干个项目。对于每个项目 i，它都有一个纯利润 Pi，并且需要最小的资本 Ci 来启动相应的项目。
+最初，你有 W 资本。当你完成一个项目时，你将获得纯利润，且利润将被添加到你的总资本中。
+总而言之，从给定项目中选择最多 k 个不同项目的列表，以最大化最终资本，并输出最终可获得的最多资本。
+示例 1:输入: k=2, W=0, Profits=[1,2,3], Capital=[0,1,1].
+输出: 4
+解释:由于你的初始资本为 0，你尽可以从 0 号项目开始。
+在完成后，你将获得 1 的利润，你的总资本将变为 1。
+此时你可以选择开始 1 号或 2 号项目。
+由于你最多可以选择两个项目，所以你需要完成 2 号项目以获得最大的资本。
+因此，输出最后最大化的资本，为 0 + 1 + 3 = 4。
+注意:假设所有输入数字都是非负整数。
+    表示利润和资本的数组的长度不超过 50000。
+    答案保证在 32 位有符号整数范围内。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 双堆 | O(nlog(n)) | O(n)       |
+| 02   | 排序 | O(nlog(n)) | O(n)             |
+
+```go
+func findMaximizedCapital(k int, W int, Profits []int, Capital []int) int {
+	maxProfit := &ProfitNode{}
+	minCapital := &CapitalNode{}
+	heap.Init(maxProfit)
+	heap.Init(minCapital)
+	for i := 0; i < len(Profits); i++ {
+		heap.Push(minCapital, Node{
+			Profits: Profits[i],
+			Capital: Capital[i],
+		})
+	}
+	for i := 0; i < k; i++ {
+		for minCapital.Len() > 0 {
+			node := heap.Pop(minCapital).(Node)
+			if node.Capital <= W {
+				heap.Push(maxProfit, node)
+			} else {
+				heap.Push(minCapital, node)
+				break
+			}
+		}
+		if maxProfit.Len() == 0 {
+			return W
+		}
+		node := heap.Pop(maxProfit).(Node)
+		W = W + node.Profits
+	}
+	return W
+}
+
+type Node struct {
+	Profits int
+	Capital int
+}
+
+type ProfitNode []Node
+
+func (h ProfitNode) Len() int {
+	return len(h)
+}
+
+// 小根堆<,大根堆变换方向>
+func (h ProfitNode) Less(i, j int) bool {
+	return h[i].Profits > h[j].Profits
+}
+
+func (h ProfitNode) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+func (h *ProfitNode) Push(x interface{}) {
+	*h = append(*h, x.(Node))
+}
+
+func (h *ProfitNode) Pop() interface{} {
+	value := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return value
+}
+
+type CapitalNode []Node
+
+func (h CapitalNode) Len() int {
+	return len(h)
+}
+
+// 小根堆<,大根堆变换方向>
+func (h CapitalNode) Less(i, j int) bool {
+	return h[i].Capital < h[j].Capital
+}
+
+func (h CapitalNode) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+
+func (h *CapitalNode) Push(x interface{}) {
+	*h = append(*h, x.(Node))
+}
+
+func (h *CapitalNode) Pop() interface{} {
+	value := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return value
+}
+
+# 2
+type Node struct {
+	profit  int
+	capital int
+}
+
+func findMaximizedCapital(k int, W int, Profits []int, Capital []int) int {
+	arr := make([]Node, 0)
+	for i := 0; i < len(Profits); i++ {
+		arr = append(arr, Node{
+			profit:  Profits[i],
+			capital: Capital[i],
+		})
+	}
+	sort.Slice(arr, func(i, j int) bool {
+		return arr[i].profit > arr[j].profit
+	})
+	index := 0
+	for k > 0 {
+		if index == len(arr) {
+			return W
+		}
+		// 挑选一个满足条件的项目，利润最大即可
+		if arr[index].capital <= W {
+			k--
+			W = W + arr[index].profit
+			arr = append(arr[:index], arr[index+1:]...)
+			index = 0
+			continue
+		}
+		index++
+	}
+	return W
+}
+```
+
+## 514.自由之路(2)
+
+- 题目
+
+```
+电子游戏“辐射4”中，任务“通向自由”要求玩家到达名为“Freedom Trail Ring”的金属表盘，
+并使用表盘拼写特定关键词才能开门。
+给定一个字符串 ring，表示刻在外环上的编码；给定另一个字符串 key，表示需要拼写的关键词。
+您需要算出能够拼写关键词中所有字符的最少步数。
+最初，ring 的第一个字符与12:00方向对齐。
+您需要顺时针或逆时针旋转 ring 以使 key 的一个字符在 12:00 方向对齐，
+然后按下中心按钮，以此逐个拼写完 key 中的所有字符。
+旋转 ring 拼出 key 字符 key[i] 的阶段中：
+您可以将 ring 顺时针或逆时针旋转一个位置，计为1步。
+旋转的最终目的是将字符串 ring 的一个字符与 12:00 方向对齐，并且这个字符必须等于字符 key[i] 。
+如果字符 key[i] 已经对齐到12:00方向，您需要按下中心按钮进行拼写，这也将算作 1 步。
+按完之后，您可以开始拼写 key 的下一个字符（下一阶段）, 直至完成所有拼写。
+示例：输入: ring = "godding", key = "gd" 输出: 4
+解释: 对于 key 的第一个字符 'g'，已经在正确的位置, 我们只需要1步来拼写这个字符。 
+ 对于 key 的第二个字符 'd'，我们需要逆时针旋转 ring "godding" 2步使它变成 "ddinggo"。
+ 当然, 我们还需要1步进行拼写。
+ 因此最终的输出是 4。
+提示：ring 和 key 的字符串长度取值范围均为 1 至 100；
+两个字符串中都只有小写字符，并且均可能存在重复字符；
+字符串 key 一定可以由字符串 ring 旋转拼出。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^3)     | O(n^2)     |
+| 02   | 递归     | O(n^3)     | O(n^2)     |
+
+```go
+func findRotateSteps(ring string, key string) int {
+	maxValue := math.MaxInt32 / 10
+	n := len(key)
+	m := len(ring)
+	dp := make([][]int, n) // dp[i][j] => key[:i+1]，ring[:j+1]的最少步数
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			dp[i][j] = maxValue
+		}
+	}
+	arr := [26][]int{}
+	for i := 0; i < len(ring); i++ {
+		value := int(ring[i] - 'a')
+		arr[value] = append(arr[value], i)
+	}
+	for _, v := range arr[key[0]-'a'] {
+		dp[0][v] = min(v, m-v) + 1 // 移到次数
+	}
+	for i := 1; i < n; i++ {
+		for _, j := range arr[key[i]-'a'] { // 枚举当前字母位置
+			for _, k := range arr[key[i-1]-'a'] { // 枚举上一个字母位置
+				minValue := min(abs(j-k), m-abs(j-k))
+				dp[i][j] = min(dp[i][j], dp[i-1][k]+minValue+1)
+			}
+		}
+	}
+	res := math.MaxInt32
+	for i := 0; i < m; i++ {
+		res = min(res, dp[n-1][i])
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func abs(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+
+# 2
+var dp [][]int
+var arr [26][]int
+
+func findRotateSteps(ring string, key string) int {
+	n := len(key)
+	m := len(ring)
+	dp = make([][]int, n) // dp[i][j] => key[:i+1]，ring[:j+1]的最少步数
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			dp[i][j] = -1
+		}
+	}
+	arr = [26][]int{}
+	for i := 0; i < len(ring); i++ {
+		value := int(ring[i] - 'a')
+		arr[value] = append(arr[value], i)
+	}
+	return n + dfs(key, ring, 0, 0)
+}
+
+func dfs(key, ring string, keyIndex, ringIndex int) int {
+	if keyIndex == len(key) {
+		return 0
+	}
+	if dp[keyIndex][ringIndex] != -1 {
+		return dp[keyIndex][ringIndex]
+	}
+	cur := int(key[keyIndex] - 'a')
+	res := math.MaxInt32
+	for _, v := range arr[cur] {
+		minValue := min(abs(ringIndex-v), len(ring)-abs(ringIndex-v))
+		res = min(res, minValue+dfs(key, ring, keyIndex+1, v))
+	}
+	dp[keyIndex][ringIndex] = res
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func abs(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+```
+
+## 552.学生出勤记录II(1)
+
+- 题目
+
+```
+给定一个正整数 n，返回长度为 n 的所有可被视为可奖励的出勤记录的数量。 
+答案可能非常大，你只需返回结果mod 109 + 7的值。
+学生出勤记录是只包含以下三个字符的字符串：
+'A' : Absent，缺勤
+'L' : Late，迟到
+'P' : Present，到场
+如果记录不包含多于一个'A'（缺勤）或超过两个连续的'L'（迟到），则该记录被视为可奖励的。
+示例 1:输入: n = 2 输出: 8 
+解释：有8个长度为2的记录将被视为可奖励：
+"PP" , "AP", "PA", "LP", "PL", "AL", "LA", "LL"
+只有"AA"不会被视为可奖励，因为缺勤次数超过一次。
+注意：n 的值不会超过100000。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n)       | O(1)       |
+
+```go
+var mod = 1000000007
+
+func checkRecord(n int) int {
+	dp := [6]int{}
+	dp[0] = 1 // 0A 0L
+	dp[1] = 1 // 0A 1L
+	dp[2] = 0 // 0A 2L
+	dp[3] = 1 // 1A 0L
+	dp[4] = 0 // 1A 1L
+	dp[5] = 0 // 1A 2L
+	for i := 2; i <= n; i++ {
+		temp := [6]int{}
+		temp[0] = (dp[0] + dp[1] + dp[2]) % mod                         // +P
+		temp[1] = dp[0]                                                 // +L
+		temp[2] = dp[1]                                                 // +L
+		temp[3] = (dp[0] + dp[1] + dp[2] + dp[3] + dp[4] + dp[5]) % mod // 0、1、2+A，3、4、5+P
+		temp[4] = dp[3]                                                 // +L
+		temp[5] = dp[4]                                                 // +L
+		dp = temp
+	}
+	res := 0
+	for i := 0; i < len(dp); i++ {
+		res = (res + dp[i]) % 1000000007
 	}
 	return res
 }

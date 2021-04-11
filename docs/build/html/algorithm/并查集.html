@@ -1,0 +1,709 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>并查集 &mdash; go-leetcode v1.0.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> go-leetcode
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../question/0001-0100.html">0001-0100-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0001-0100.html#medium">0001-0100-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0001-0100.html#hard">0001-1000-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0101-0200.html">0101-0200-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0101-0200.html#medium">0101-0200-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0101-0200.html#hard">0101-0200-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0201-0300.html">0201-0300-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0201-0300.html#medium">0201-0300-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0201-0300.html#hard">0201-0300-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0301-0400.html">0301-0400-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0301-0400.html#medium">0301-0400-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0301-0400.html#hard">0301-0400-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0401-0500.html">0401-0500-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0401-0500.html#medium">0401-0500-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0401-0500.html#hard">0401-0500-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0501-0600.html">0501-0600-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0501-0600.html#medium">0501-0600-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0501-0600.html#hard">0501-0600-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0601-0700.html">0601-0700-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0601-0700.html#medium">0601-0700-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0601-0700.html#hard">0601-0700-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0701-0800.html">0701-0800-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0701-0800.html#medium">0701-0800-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0701-0800.html#hard">0701-0800-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0801-0900.html">0801-0900-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0801-0900.html#medium">0801-0900-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0801-0900.html#hard">0801-0900-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0901-1000.html">0901-1000-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0901-1000.html#medium">0901-1000-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/0901-1000.html#hard">0901-1000-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1001-1100.html">1001-1100-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1001-1100.html#medium">1001-1100-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1001-1100.html#hard">1001-1100-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1101-1200.html">1101-1200-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1101-1200.html#medium">1101-1200-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1101-1200.html#hard">1101-1200-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1201-1300.html">1201-1300-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1201-1300.html#medium">1201-1300-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1201-1300.html#hard">1201-1300-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1301-1400.html">1301-1400-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1301-1400.html#medium">1301-1400-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1301-1400.html#hard">1301-1400-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1401-1500.html">1401-1500-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1401-1500.html#medium">1401-1500-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1401-1500.html#hard">1401-1500-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1501-1600.html">1501-1600-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1501-1600.html#medium">1501-1600-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1501-1600.html#hard">1501-1600-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1601-1700.html">1601-1700-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1601-1700.html#medium">1601-1700-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1601-1700.html#hard">1601-1700-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1701-1800.html">1701-1800-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1701-1800.html#medium">1701-1800-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1701-1800.html#hard">1701-1800-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1801-1900.html">1801-1900-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1801-1900.html#medium">1801-1900-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/1801-1900.html#hard">1801-1900-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/offer.html">剑指offer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/lcci.html">程序员面试金典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/lcp.html">LCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/mysql.html">Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/mysql.html#medium">Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/mysql.html#hard">Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../question/patB.html">PAT (Basic Level) Practice 乙级</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">go-leetcode</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>并查集</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/algorithm/并查集.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>并查集<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li>参考：https://blog.csdn.net/bjweimengshu/article/details/108332389</li>
+<li>https://zhuanlan.zhihu.com/p/93647900/</li>
+</ul>
+<div class="section" id="id2">
+<h2>1、定义<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>并查集是一种树型的数据结构，用于处理一些不相交集合（disjoint sets）的合并及查询问题。常常在使用中以森林来表示。</li>
+<li>并查集的思想是<strong>通过标记确定该顶点所在的组</strong>。</li>
+<li>1、<strong>应用</strong>：判断一个图中两个点是否联通；分组问题</li>
+<li>2、<strong>函数</strong>：初始化(init)、合并(Union)、查询(Find)</li>
+<li>3、<strong>初始化（init）：</strong> 初始化一个N大小的数组，初始值为下标</li>
+<li>4、<strong>合并</strong>（Union）：把两个不相交的集合合并为一个集合。</li>
+<li>5、<strong>查询</strong>（Find）：查询两个元素是否在同一个集合中。使用递归实现，访问父节点，直至根节点。<strong>要判断两个元素是否属于同一个集合，只需要看它们的根节点是否相同即可。</strong></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>2、实现<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// 隔代路径压缩</span>
+<span class="kd">func</span> <span class="nx">find</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="nx">x</span> <span class="o">!=</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">{</span>
+        <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]]</span>
+        <span class="nx">x</span> <span class="p">=</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">x</span>
+<span class="p">}</span>
+<span class="c1">// 彻底路径压缩</span>
+<span class="kd">func</span> <span class="nx">find</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">x</span> <span class="p">{</span>
+		<span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">])</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h3>不带秩<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fa</span> <span class="p">=</span> <span class="nx">Init</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+	<span class="nx">union</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="nx">union</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">find</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">query</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">query</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">fa</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">fa</span> <span class="p">[]</span><span class="kt">int</span>
+
+<span class="c1">// 初始化</span>
+<span class="kd">func</span> <span class="nx">Init</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">arr</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">arr</span>
+<span class="p">}</span>
+
+<span class="c1">// 查询</span>
+<span class="kd">func</span> <span class="nx">find</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">x</span> <span class="p">{</span>
+		<span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">])</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1">// 合并</span>
+<span class="kd">func</span> <span class="nx">union</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">fa</span><span class="p">[</span><span class="nx">find</span><span class="p">(</span><span class="nx">i</span><span class="p">)]</span> <span class="p">=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">query</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">find</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">==</span> <span class="nx">find</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>带秩<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fa</span><span class="p">,</span> <span class="nx">rank</span> <span class="p">=</span> <span class="nx">Init</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+	<span class="nx">union</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="nx">union</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">find</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">query</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">query</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">fa</span><span class="p">,</span> <span class="nx">rank</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">fa</span> <span class="p">[]</span><span class="kt">int</span>
+<span class="kd">var</span> <span class="nx">rank</span> <span class="p">[]</span><span class="kt">int</span>
+
+<span class="c1">// 初始化</span>
+<span class="kd">func</span> <span class="nx">Init</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span> <span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">arr</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span>
+	<span class="nx">r</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span>
+		<span class="nx">r</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="mi">1</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">arr</span><span class="p">,</span> <span class="nx">r</span>
+<span class="p">}</span>
+
+<span class="c1">// 查询</span>
+<span class="kd">func</span> <span class="nx">find</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">==</span> <span class="nx">x</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">x</span>
+	<span class="p">}</span>
+	<span class="c1">// 路径压缩</span>
+	<span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">])</span>
+	<span class="k">return</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1">// 合并</span>
+<span class="kd">func</span> <span class="nx">union</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// 按秩合并</span>
+	<span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">:=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">i</span><span class="p">),</span> <span class="nx">find</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">rank</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">rank</span><span class="p">[</span><span class="nx">y</span><span class="p">]</span> <span class="p">{</span>
+		<span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">y</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="nx">fa</span><span class="p">[</span><span class="nx">y</span><span class="p">]</span> <span class="p">=</span> <span class="nx">x</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="nx">rank</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">==</span> <span class="nx">rank</span><span class="p">[</span><span class="nx">y</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="nx">x</span> <span class="o">!=</span> <span class="nx">y</span> <span class="p">{</span>
+		<span class="nx">rank</span><span class="p">[</span><span class="nx">y</span><span class="p">]</span><span class="o">++</span> <span class="c1">// 如果深度相同且根节点不同，则新的根节点的深度+1</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">query</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">find</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">==</span> <span class="nx">find</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="map">
+<h3>map系列<a class="headerlink" href="#map" title="永久链接至标题">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&quot;fmt&quot;</span>
+	<span class="s">&quot;math&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fa</span> <span class="p">=</span> <span class="nx">Init</span><span class="p">([]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">})</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">fa</span><span class="p">)</span>
+	<span class="nx">union</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="nx">union</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">find</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">query</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">query</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">fa</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span>
+
+<span class="c1">// 初始化</span>
+<span class="kd">func</span> <span class="nx">Init</span><span class="p">(</span><span class="nx">data</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+	<span class="nx">arr</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">arr</span><span class="p">[</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]]</span> <span class="p">=</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">arr</span>
+<span class="p">}</span>
+
+<span class="c1">// 查询</span>
+<span class="kd">func</span> <span class="nx">find</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">];</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt32</span> <span class="c1">// 特殊处理</span>
+	<span class="p">}</span>
+	<span class="nx">res</span> <span class="o">:=</span> <span class="nx">x</span>
+	<span class="k">for</span> <span class="nx">res</span> <span class="o">!=</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">res</span><span class="p">]</span> <span class="p">{</span>
+		<span class="nx">res</span> <span class="p">=</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">res</span><span class="p">]</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+
+<span class="c1">// 合并</span>
+<span class="kd">func</span> <span class="nx">union</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">:=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">i</span><span class="p">),</span> <span class="nx">find</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="nx">y</span> <span class="p">{</span>
+		<span class="k">return</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">x</span> <span class="o">==</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt32</span> <span class="o">||</span> <span class="nx">y</span> <span class="o">==</span> <span class="nx">math</span><span class="p">.</span><span class="nx">MinInt32</span> <span class="p">{</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+	<span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">y</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">query</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">find</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">==</span> <span class="nx">find</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count">
+<h3>带count<a class="headerlink" href="#count" title="永久链接至标题">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fa</span> <span class="p">=</span> <span class="nx">Init</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">i</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+			<span class="nx">count</span><span class="o">++</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="nx">union</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+	<span class="nx">union</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">find</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">query</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">query</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">fa</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">fa</span> <span class="p">[]</span><span class="kt">int</span>
+<span class="kd">var</span> <span class="nx">count</span> <span class="kt">int</span>
+
+<span class="c1">// 初始化</span>
+<span class="kd">func</span> <span class="nx">Init</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">arr</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span>
+	<span class="p">}</span>
+	<span class="nx">count</span> <span class="p">=</span> <span class="nx">n</span>
+	<span class="k">return</span> <span class="nx">arr</span>
+<span class="p">}</span>
+
+<span class="c1">// 查询</span>
+<span class="kd">func</span> <span class="nx">find</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="o">==</span> <span class="nx">x</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">x</span>
+	<span class="p">}</span>
+	<span class="c1">// 路径压缩</span>
+	<span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">])</span>
+	<span class="k">return</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1">// 合并</span>
+<span class="kd">func</span> <span class="nx">union</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">:=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">i</span><span class="p">),</span> <span class="nx">find</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">x</span> <span class="o">!=</span> <span class="nx">y</span> <span class="p">{</span>
+		<span class="nx">fa</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span> <span class="p">=</span> <span class="nx">y</span>
+		<span class="nx">count</span><span class="o">--</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">query</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">find</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">==</span> <span class="nx">find</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">getCount</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">count</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>传参数<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">n</span> <span class="o">:=</span> <span class="mi">200</span>
+	<span class="nx">fa</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">fa</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">i</span>
+	<span class="p">}</span>
+	<span class="nx">union</span><span class="p">(</span><span class="nx">fa</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+	<span class="nx">union</span><span class="p">(</span><span class="nx">fa</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">find</span><span class="p">(</span><span class="nx">fa</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="nx">find</span><span class="p">(</span><span class="nx">fa</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">union</span><span class="p">(</span><span class="nx">fa</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">fa</span><span class="p">[</span><span class="nx">find</span><span class="p">(</span><span class="nx">fa</span><span class="p">,</span> <span class="nx">a</span><span class="p">)]</span> <span class="p">=</span> <span class="nx">find</span><span class="p">(</span><span class="nx">fa</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">find</span><span class="p">(</span><span class="nx">fa</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">a</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span> <span class="o">!=</span> <span class="nx">a</span> <span class="p">{</span>
+		<span class="nx">fa</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span> <span class="p">=</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">fa</span><span class="p">[</span><span class="nx">a</span><span class="p">]]</span>
+		<span class="nx">a</span> <span class="p">=</span> <span class="nx">fa</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">a</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="leetcode">
+<h2>3、Leetcode<a class="headerlink" href="#leetcode" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>并查集不带权<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Title</th>
+<th>Tag</th>
+<th>难度</th>
+<th>完成情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/longest-consecutive-sequence/">128.最长连续序列</a></td>
+<td>并查集、数组</td>
+<td>Hard</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/surrounded-regions/">130.被围绕的区域</a></td>
+<td>深度优先搜索、广度优先搜索、并查集</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/number-of-islands/">200.岛屿数量</a></td>
+<td>深度优先搜索、广度优先搜索、并查集</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/battleships-in-a-board/">419.甲板上的战舰</a></td>
+<td></td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/friend-circles/">547.朋友圈</a></td>
+<td>深度优先搜索、并查集</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/redundant-connection/">684.冗余连接</a></td>
+<td>树、并查集、图</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/couples-holding-hands/">765.情侣牵手</a></td>
+<td>贪心算法、并查集、图</td>
+<td>Hard</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/">947.移除最多的同行或同列石头</a></td>
+<td>深度优先搜索、并查集</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/satisfiability-of-equality-equations/">990.等式方程的可满足性</a></td>
+<td>并查集、图</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/smallest-string-with-swaps/">1202.交换字符串中的元素</a></td>
+<td>并查集、数组</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/">1319.连通网络的操作次数</a></td>
+<td>深度优先搜索、<br />广度优先搜索、并查集</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/minimum-number-of-days-to-disconnect-island/">1568.使陆地分离的最少天数</a></td>
+<td>贪心算法</td>
+<td>Medium</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/minimize-hamming-distance-after-swap-operations/">1722.执行交换操作后的最小汉明距离</a></td>
+<td>贪心算法、深度优先搜索、并查集</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id8">
+<h3>并查集带权<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Title</th>
+<th>Tag</th>
+<th>难度</th>
+<th>完成情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>399</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>685</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>721</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>985</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/baby-names-lcci/">面试题17.07.婴儿名字</a></td>
+<td>深度优先搜索、广度优先搜索、并茶查集</td>
+<td>Medium</td>
+<td>完成</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, willshang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

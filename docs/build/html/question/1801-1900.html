@@ -1,0 +1,1403 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1801-1900-Easy &mdash; go-leetcode v1.0.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="剑指offer" href="offer.html" />
+    <link rel="prev" title="1701-1800-Easy" href="1701-1800.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> go-leetcode
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html">0001-0100-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#medium">0001-0100-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0001-0100.html#hard">0001-1000-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0101-0200.html">0101-0200-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0101-0200.html#medium">0101-0200-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0101-0200.html#hard">0101-0200-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html">0201-0300-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#medium">0201-0300-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0201-0300.html#hard">0201-0300-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html">0301-0400-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#medium">0301-0400-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0301-0400.html#hard">0301-0400-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html">0401-0500-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#medium">0401-0500-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0401-0500.html#hard">0401-0500-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html">0501-0600-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#medium">0501-0600-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0501-0600.html#hard">0501-0600-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html">0601-0700-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#medium">0601-0700-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0601-0700.html#hard">0601-0700-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html">0701-0800-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#medium">0701-0800-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0701-0800.html#hard">0701-0800-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html">0801-0900-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#medium">0801-0900-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0801-0900.html#hard">0801-0900-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html">0901-1000-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#medium">0901-1000-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0901-1000.html#hard">0901-1000-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html">1001-1100-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#medium">1001-1100-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1001-1100.html#hard">1001-1100-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html">1101-1200-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#medium">1101-1200-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1101-1200.html#hard">1101-1200-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html">1201-1300-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#medium">1201-1300-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1201-1300.html#hard">1201-1300-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html">1301-1400-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#medium">1301-1400-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1301-1400.html#hard">1301-1400-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html">1401-1500-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#medium">1401-1500-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1401-1500.html#hard">1401-1500-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1501-1600.html">1501-1600-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1501-1600.html#medium">1501-1600-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1501-1600.html#hard">1501-1600-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1601-1700.html">1601-1700-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1601-1700.html#medium">1601-1700-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1601-1700.html#hard">1601-1700-Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1701-1800.html">1701-1800-Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1701-1800.html#medium">1701-1800-Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1701-1800.html#hard">1701-1800-Hard</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1801-1900-Easy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1805.字符串中不同整数的数目(2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1812.判断国际象棋棋盘中一个格子的颜色(2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1816.截断句子(2)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#medium">1801-1900-Medium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1801.积压订单中的订单总数(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">1802.有界数组中指定下标处的最大值(2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">1806.还原排列的最少操作步数(3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">1807.替换字符串中的括号内容(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iii">1813.句子相似性III</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">题目</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">解题思路</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">1814.统计一个数组中好对子的数目(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">1817.查找用户活跃分钟数(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">1818.绝对差值和(1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#hard">1801-1900-Hard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id13">1808.好因子的最大数目(1)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="offer.html">剑指offer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcci.html">程序员面试金典</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcp.html">LCP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html">Easy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html#medium">Medium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html#hard">Hard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patB.html">PAT (Basic Level) Practice 乙级</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">go-leetcode</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>1801-1900-Easy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/question/1801-1900.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="easy">
+<h1>1801-1900-Easy<a class="headerlink" href="#easy" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>1805.字符串中不同整数的数目(2)<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你一个字符串 word ，该字符串由数字和小写英文字母组成。
+请你用空格替换每个不是数字的字符。例如，&quot;a123bc34d8ef34&quot; 将会变成 &quot; 123  34 8  34&quot; 。
+注意，剩下的这些整数为（相邻彼此至少有一个空格隔开）：&quot;123&quot;、&quot;34&quot;、&quot;8&quot; 和 &quot;34&quot; 。
+返回对 word 完成替换后形成的 不同 整数的数目。
+只有当两个整数的 不含前导零 的十进制表示不同， 才认为这两个整数也不同。
+示例 1：输入：word = &quot;a123bc34d8ef34&quot; 输出：3
+解释：不同的整数有 &quot;123&quot;、&quot;34&quot; 和 &quot;8&quot; 。注意，&quot;34&quot; 只计数一次。
+示例 2：输入：word = &quot;leet1234code234&quot; 输出：2
+示例 3：输入：word = &quot;a1b01c001&quot; 输出：1
+解释：&quot;1&quot;、&quot;01&quot; 和 &quot;001&quot; 视为同一个整数的十进制表示，因为在比较十进制值时会忽略前导零的存在。
+提示：1 &lt;= word.length &lt;= 1000
+word 由数字和小写英文字母组成
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>内置函数</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>遍历</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span>func numDifferentIntegers(word string) int {
+	m := make(map[string]bool)
+	arr := strings.FieldsFunc(word, func(r rune) bool {
+		return &#39;a&#39; &lt;= r &amp;&amp; r &lt;= &#39;z&#39;
+	})
+	for i := 0; i &lt; len(arr); i++ {
+		s := strings.Trim(arr[i], &quot; &quot;)
+		for len(s) &gt; 0 &amp;&amp; s[0] == &#39;0&#39; {
+			s = s[1:]
+		}
+		m[s] = true
+	}
+	return len(m)
+}
+
+# 2
+func numDifferentIntegers(word string) int {
+	m := make(map[int]bool)
+	for i := 0; i &lt; len(word); i++ {
+		if &#39;0&#39; &lt;= word[i] &amp;&amp; word[i] &lt;= &#39;9&#39; {
+			value := int(word[i] - &#39;0&#39;)
+			for i+1 &lt; len(word) &amp;&amp; &#39;0&#39; &lt;= word[i+1] &amp;&amp; word[i+1] &lt;= &#39;9&#39; {
+				i++
+				value = value*10 + int(word[i]-&#39;0&#39;)
+			}
+			m[value] = true
+		}
+	}
+	return len(m)
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>1812.判断国际象棋棋盘中一个格子的颜色(2)<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你一个坐标 coordinates ，它是一个字符串，表示国际象棋棋盘中一个格子的坐标。下图是国际象棋棋盘示意图。
+如果所给格子的颜色是白色，请你返回 true，如果是黑色，请返回 false 。
+给定坐标一定代表国际象棋棋盘上一个存在的格子。坐标第一个字符是字母，第二个字符是数字。
+示例 1：输入：coordinates = &quot;a1&quot; 输出：false
+解释：如上图棋盘所示，&quot;a1&quot; 坐标的格子是黑色的，所以返回 false 。
+示例 2：输入：coordinates = &quot;h3&quot; 输出：true
+解释：如上图棋盘所示，&quot;h3&quot; 坐标的格子是白色的，所以返回 true 。
+示例 3：输入：coordinates = &quot;c7&quot; 输出：false
+提示：coordinates.length == 2
+&#39;a&#39; &lt;= coordinates[0] &lt;= &#39;h&#39;
+&#39;1&#39; &lt;= coordinates[1] &lt;= &#39;8&#39;
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>计算</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>计算</td>
+<td>O(1)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span>func squareIsWhite(coordinates string) bool {
+	a := int(coordinates[0] - &#39;a&#39;)
+	b := int(coordinates[1] - &#39;1&#39;)
+	return (a+b)%2 != 0
+}
+
+# 2
+func squareIsWhite(coordinates string) bool {
+	// a =&gt; 97  1 =&gt; 49
+	return (coordinates[0]+coordinates[1])%2 != 0
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>1816.截断句子(2)<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>句子 是一个单词列表，列表中的单词之间用单个空格隔开，且不存在前导或尾随空格。
+每个单词仅由大小写英文字母组成（不含标点符号）。
+例如，&quot;Hello World&quot;、&quot;HELLO&quot; 和 &quot;hello world hello world&quot; 都是句子。
+给你一个句子 s和一个整数 k，请你将 s截断 ，使截断后的句子仅含 前 k个单词。
+返回 截断 s后得到的句子。
+示例 1：输入：s = &quot;Hello how are you Contestant&quot;, k = 4 输出：&quot;Hello how are you&quot;
+解释：s 中的单词为 [&quot;Hello&quot;, &quot;how&quot; &quot;are&quot;, &quot;you&quot;, &quot;Contestant&quot;]
+前 4 个单词为 [&quot;Hello&quot;, &quot;how&quot;, &quot;are&quot;, &quot;you&quot;]
+因此，应当返回 &quot;Hello how are you&quot;
+示例 2：输入：s = &quot;What is the solution to this problem&quot;, k = 4
+输出：&quot;What is the solution&quot;
+解释：s 中的单词为 [&quot;What&quot;, &quot;is&quot; &quot;the&quot;, &quot;solution&quot;, &quot;to&quot;, &quot;this&quot;, &quot;problem&quot;]
+前 4 个单词为 [&quot;What&quot;, &quot;is&quot;, &quot;the&quot;, &quot;solution&quot;]
+因此，应当返回 &quot;What is the solution&quot;
+示例 3：输入：s = &quot;chopper is not a tanuki&quot;, k = 5 输出：&quot;chopper is not a tanuki&quot;
+提示：1 &lt;= s.length &lt;= 500
+k 的取值范围是 [1,  s 中单词的数目]
+s 仅由大小写英文字母和空格组成
+s 中的单词之间由单个空格隔开
+不存在前导或尾随空格
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>内置函数</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>遍历</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span>func truncateSentence(s string, k int) string {
+	arr := strings.Split(s, &quot; &quot;)
+	if k &lt; len(arr) {
+		return strings.Join(arr[:k], &quot; &quot;)
+	}
+	return s
+}
+
+# 2
+func truncateSentence(s string, k int) string {
+	count := 0
+	for i := 0; i &lt; len(s); i++ {
+		if s[i] == &#39; &#39; {
+			count++
+			if count == k {
+				return s[:i]
+			}
+		}
+	}
+	return s
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="medium">
+<h1>1801-1900-Medium<a class="headerlink" href="#medium" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id4">
+<h2>1801.积压订单中的订单总数(1)<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你一个二维整数数组 orders ，其中每个 orders[i] = [pricei, amounti, orderTypei] 
+表示有 amounti 笔类型为 orderTypei 、价格为 pricei 的订单。
+订单类型 orderTypei 可以分为两种：
+0 表示这是一批采购订单 buy
+1 表示这是一批销售订单 sell
+注意，orders[i] 表示一批共计 amounti 笔的独立订单，这些订单的价格和类型相同。
+对于所有有效的 i ，由 orders[i] 表示的所有订单提交时间均早于 orders[i+1] 表示的所有订单。
+存在由未执行订单组成的 积压订单 。积压订单最初是空的。提交订单时，会发生以下情况：
+如果该订单是一笔采购订单 buy ，则可以查看积压订单中价格 最低 的销售订单 sell 。
+如果该销售订单 sell 的价格 低于或等于 当前采购订单 buy 的价格，
+则匹配并执行这两笔订单，并将销售订单 sell 从积压订单中删除。否则，采购订单 buy 将会添加到积压订单中。
+反之亦然，如果该订单是一笔销售订单 sell ，则可以查看积压订单中价格 最高 的采购订单 buy 。
+如果该采购订单 buy 的价格 高于或等于 当前销售订单 sell 的价格，
+则匹配并执行这两笔订单，并将采购订单 buy 从积压订单中删除。否则，销售订单 sell 将会添加到积压订单中。
+输入所有订单后，返回积压订单中的 订单总数 。由于数字可能很大，所以需要返回对 109 + 7 取余的结果。
+示例 1：输入：orders = [[10,5,0],[15,2,1],[25,1,1],[30,4,0]] 输出：6
+解释：输入订单后会发生下述情况：
+- 提交 5 笔采购订单，价格为 10 。没有销售订单，所以这 5 笔订单添加到积压订单中。
+- 提交 2 笔销售订单，价格为 15 。没有采购订单的价格大于或等于 15 ，所以这 2 笔订单添加到积压订单中。
+- 提交 1 笔销售订单，价格为 25 。没有采购订单的价格大于或等于 25 ，所以这 1 笔订单添加到积压订单中。
+- 提交 4 笔采购订单，价格为 30 。前 2 笔采购订单与价格最低（价格为 15）的 2 笔销售订单匹配，
+从积压订单中删除这 2 笔销售订单。第 3 笔采购订单与价格最低的 1 笔销售订单匹配，销售订单价格为 25 ，
+从积压订单中删除这 1 笔销售订单。积压订单中不存在更多销售订单，所以第 4 笔采购订单需要添加到积压订单中。
+最终，积压订单中有 5 笔价格为 10 的采购订单，和 1 笔价格为 30 的采购订单。
+所以积压订单中的订单总数为 6 。
+示例 2：输入：orders = [[7,1000000000,1],[15,3,0],[5,999999995,0],[5,1,1]] 输出：999999984
+解释：输入订单后会发生下述情况：
+- 提交 109 笔销售订单，价格为 7 。没有采购订单，所以这 109 笔订单添加到积压订单中。
+- 提交 3 笔采购订单，价格为 15 。这些采购订单与价格最低（价格为 7 ）的 3 笔销售订单匹配，
+从积压订单中删除这 3 笔销售订单。
+- 提交 999999995 笔采购订单，价格为 5 。销售订单的最低价为 7 ，
+所以这 999999995 笔订单添加到积压订单中。
+- 提交 1 笔销售订单，价格为 5 。这笔销售订单与价格最高（价格为 5 ）的 1 笔采购订单匹配，
+从积压订单中删除这 1 笔采购订单。
+最终，积压订单中有 (1000000000-3) 笔价格为 7 的销售订单，和 (999999995-1) 笔价格为 5 的采购订单。
+所以积压订单中的订单总数为 1999999991 ，等于 999999984 % (109 + 7) 。
+提示：1 &lt;= orders.length &lt;= 105
+orders[i].length == 3
+1 &lt;= pricei, amounti &lt;= 109
+orderTypei 为 0 或 1
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>双堆</td>
+<td>O(nlog(n))</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">getNumberOfBacklogOrders</span><span class="p">(</span><span class="nx">orders</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="nx">buyHeap</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="nx">BuyHeap</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="nx">sellHeap</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="nx">SellHeap</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="nx">heap</span><span class="p">.</span><span class="nx">Init</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buyHeap</span><span class="p">)</span>
+	<span class="nx">heap</span><span class="p">.</span><span class="nx">Init</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">sellHeap</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">orders</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">price</span> <span class="o">:=</span> <span class="nx">orders</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+		<span class="nx">count</span> <span class="o">:=</span> <span class="nx">orders</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+		<span class="nx">typeInt</span> <span class="o">:=</span> <span class="nx">orders</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nx">typeInt</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span> <span class="c1">// sell</span>
+			<span class="k">for</span> <span class="nx">buyHeap</span><span class="p">.</span><span class="nx">Len</span><span class="p">()</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+				<span class="nx">node</span> <span class="o">:=</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">Pop</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buyHeap</span><span class="p">).(</span><span class="nx">Node</span><span class="p">)</span>
+				<span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">price</span> <span class="p">&lt;</span> <span class="nx">price</span> <span class="p">{</span>
+					<span class="nx">heap</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buyHeap</span><span class="p">,</span> <span class="nx">node</span><span class="p">)</span>
+					<span class="k">break</span>
+				<span class="p">}</span>
+				<span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">count</span> <span class="p">&gt;</span> <span class="nx">count</span> <span class="p">{</span> <span class="c1">// 数量大于</span>
+					<span class="nx">node</span><span class="p">.</span><span class="nx">count</span> <span class="p">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">count</span> <span class="o">-</span> <span class="nx">count</span>
+					<span class="nx">count</span> <span class="p">=</span> <span class="mi">0</span>
+					<span class="nx">heap</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buyHeap</span><span class="p">,</span> <span class="nx">node</span><span class="p">)</span>
+					<span class="k">break</span>
+				<span class="p">}</span>
+				<span class="nx">count</span> <span class="p">=</span> <span class="nx">count</span> <span class="o">-</span> <span class="nx">node</span><span class="p">.</span><span class="nx">count</span>
+			<span class="p">}</span>
+			<span class="k">if</span> <span class="nx">count</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+				<span class="nx">heap</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">sellHeap</span><span class="p">,</span> <span class="nx">Node</span><span class="p">{</span>
+					<span class="nx">count</span><span class="p">:</span> <span class="nx">count</span><span class="p">,</span>
+					<span class="nx">price</span><span class="p">:</span> <span class="nx">price</span><span class="p">,</span>
+				<span class="p">})</span>
+			<span class="p">}</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// buy</span>
+			<span class="k">for</span> <span class="nx">sellHeap</span><span class="p">.</span><span class="nx">Len</span><span class="p">()</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+				<span class="nx">node</span> <span class="o">:=</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">Pop</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">sellHeap</span><span class="p">).(</span><span class="nx">Node</span><span class="p">)</span>
+				<span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">price</span> <span class="p">&gt;</span> <span class="nx">price</span> <span class="p">{</span>
+					<span class="nx">heap</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">sellHeap</span><span class="p">,</span> <span class="nx">node</span><span class="p">)</span>
+					<span class="k">break</span>
+				<span class="p">}</span>
+				<span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">count</span> <span class="p">&gt;</span> <span class="nx">count</span> <span class="p">{</span> <span class="c1">// 数量小于</span>
+					<span class="nx">node</span><span class="p">.</span><span class="nx">count</span> <span class="p">=</span> <span class="nx">node</span><span class="p">.</span><span class="nx">count</span> <span class="o">-</span> <span class="nx">count</span>
+					<span class="nx">count</span> <span class="p">=</span> <span class="mi">0</span>
+					<span class="nx">heap</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">sellHeap</span><span class="p">,</span> <span class="nx">node</span><span class="p">)</span>
+					<span class="k">break</span>
+				<span class="p">}</span>
+				<span class="nx">count</span> <span class="p">=</span> <span class="nx">count</span> <span class="o">-</span> <span class="nx">node</span><span class="p">.</span><span class="nx">count</span>
+			<span class="p">}</span>
+			<span class="k">if</span> <span class="nx">count</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+				<span class="nx">heap</span><span class="p">.</span><span class="nx">Push</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buyHeap</span><span class="p">,</span> <span class="nx">Node</span><span class="p">{</span>
+					<span class="nx">count</span><span class="p">:</span> <span class="nx">count</span><span class="p">,</span>
+					<span class="nx">price</span><span class="p">:</span> <span class="nx">price</span><span class="p">,</span>
+				<span class="p">})</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">for</span> <span class="nx">buyHeap</span><span class="p">.</span><span class="nx">Len</span><span class="p">()</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="nx">node</span> <span class="o">:=</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">Pop</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buyHeap</span><span class="p">).(</span><span class="nx">Node</span><span class="p">)</span>
+		<span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span> <span class="o">+</span> <span class="nx">node</span><span class="p">.</span><span class="nx">count</span>
+	<span class="p">}</span>
+	<span class="k">for</span> <span class="nx">sellHeap</span><span class="p">.</span><span class="nx">Len</span><span class="p">()</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="nx">node</span> <span class="o">:=</span> <span class="nx">heap</span><span class="p">.</span><span class="nx">Pop</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">sellHeap</span><span class="p">).(</span><span class="nx">Node</span><span class="p">)</span>
+		<span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span> <span class="o">+</span> <span class="nx">node</span><span class="p">.</span><span class="nx">count</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">res</span> <span class="o">%</span> <span class="mi">1000000007</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Node</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">count</span> <span class="kt">int</span>
+	<span class="nx">price</span> <span class="kt">int</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">SellHeap</span> <span class="p">[]</span><span class="nx">Node</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="nx">SellHeap</span><span class="p">)</span> <span class="nx">Len</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nx">h</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 小根堆&lt;,大根堆变换方向&gt;</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="nx">SellHeap</span><span class="p">)</span> <span class="nx">Less</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">h</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">price</span> <span class="p">&lt;</span> <span class="nx">h</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">price</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="nx">SellHeap</span><span class="p">)</span> <span class="nx">Swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">h</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">h</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">h</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">h</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="o">*</span><span class="nx">SellHeap</span><span class="p">)</span> <span class="nx">Push</span><span class="p">(</span><span class="nx">x</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
+	<span class="o">*</span><span class="nx">h</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">,</span> <span class="nx">x</span><span class="p">.(</span><span class="nx">Node</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="o">*</span><span class="nx">SellHeap</span><span class="p">)</span> <span class="nx">Pop</span><span class="p">()</span> <span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
+	<span class="nx">value</span> <span class="o">:=</span> <span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="o">*</span><span class="nx">h</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">)[:</span><span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="k">return</span> <span class="nx">value</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">BuyHeap</span> <span class="p">[]</span><span class="nx">Node</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="nx">BuyHeap</span><span class="p">)</span> <span class="nx">Len</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nx">h</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 小根堆&lt;,大根堆变换方向&gt;</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="nx">BuyHeap</span><span class="p">)</span> <span class="nx">Less</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">h</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">price</span> <span class="p">&gt;</span> <span class="nx">h</span><span class="p">[</span><span class="nx">j</span><span class="p">].</span><span class="nx">price</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="nx">BuyHeap</span><span class="p">)</span> <span class="nx">Swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">h</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">h</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="p">=</span> <span class="nx">h</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="nx">h</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="o">*</span><span class="nx">BuyHeap</span><span class="p">)</span> <span class="nx">Push</span><span class="p">(</span><span class="nx">x</span> <span class="kd">interface</span><span class="p">{})</span> <span class="p">{</span>
+	<span class="o">*</span><span class="nx">h</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">,</span> <span class="nx">x</span><span class="p">.(</span><span class="nx">Node</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="o">*</span><span class="nx">BuyHeap</span><span class="p">)</span> <span class="nx">Pop</span><span class="p">()</span> <span class="kd">interface</span><span class="p">{}</span> <span class="p">{</span>
+	<span class="nx">value</span> <span class="o">:=</span> <span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="o">*</span><span class="nx">h</span> <span class="p">=</span> <span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">)[:</span><span class="nb">len</span><span class="p">(</span><span class="o">*</span><span class="nx">h</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="k">return</span> <span class="nx">value</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>1802.有界数组中指定下标处的最大值(2)<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你三个正整数 n、index 和 maxSum 。
+你需要构造一个同时满足下述所有条件的数组 nums（下标 从 0 开始 计数）：
+nums.length == n
+nums[i] 是 正整数 ，其中 0 &lt;= i &lt; n
+abs(nums[i] - nums[i+1]) &lt;= 1 ，其中 0 &lt;= i &lt; n-1
+nums 中所有元素之和不超过 maxSum
+nums[index] 的值被 最大化
+返回你所构造的数组中的 nums[index] 。
+注意：abs(x) 等于 x 的前提是 x &gt;= 0 ；否则，abs(x) 等于 -x 。
+示例 1：输入：n = 4, index = 2,  maxSum = 6 输出：2
+解释：数组 [1,1,2,1] 和 [1,2,2,1] 满足所有条件。不存在其他在指定下标处具有更大值的有效数组。
+示例 2：输入：n = 6, index = 1,  maxSum = 10 输出：3
+提示：1 &lt;= n &lt;= maxSum &lt;= 109
+0 &lt;= index &lt; n
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>二分查找</td>
+<td>O(log(n))</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>二分查找</td>
+<td>O(log(n))</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span>func maxValue(n int, index int, maxSum int) int {
+	if n == 1 {
+		return maxSum
+	}
+	res := 1
+	leftTotal, rightTotal := index, n-index-1
+	left, right := 1, maxSum
+	for left &lt; right {
+		mid := left + (right-left)/2
+		l := getTotal(mid, leftTotal)
+		r := getTotal(mid, rightTotal)
+		if l+r+mid &lt;= maxSum {
+			left = mid + 1
+			res = mid
+		} else {
+			right = mid
+		}
+	}
+	return res
+}
+
+func getTotal(high int, total int) int {
+	need := high - 1
+	if need &gt;= total {
+		return total * (need + high - total) / 2
+	}
+	return need*(1+need)/2 + total - need
+}
+
+# 2
+func maxValue(n int, index int, maxSum int) int {
+	res := 1
+	leftTotal, rightTotal := index, n-index-1
+	left, right := 1, maxSum+1
+	for left &lt; right {
+		mid := left + (right-left)/2
+		l := getTotal(mid, leftTotal)
+		r := getTotal(mid, rightTotal)
+		if l+r+mid &lt;= maxSum {
+			left = mid + 1
+			res = mid
+		} else {
+			right = mid
+		}
+	}
+	return res
+}
+
+func getTotal(high int, total int) int {
+	need := high - 1
+	if need &gt;= total {
+		return total * (need + high - total) / 2
+	}
+	return need*(1+need)/2 + total - need
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>1806.还原排列的最少操作步数(3)<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你一个偶数 n，已知存在一个长度为 n 的排列 perm ，其中 perm[i] == i（下标 从 0 开始 计数）。
+一步操作中，你将创建一个新数组 arr ，对于每个 i ：
+如果 i % 2 == 0 ，那么 arr[i] = perm[i / 2]
+如果 i % 2 == 1 ，那么 arr[i] = perm[n / 2 + (i - 1) / 2]
+然后将 arr赋值给 perm 。
+要想使 perm 回到排列初始值，至少需要执行多少步操作？返回最小的 非零 操作步数。
+示例 1：输入：n = 2 输出：1
+解释：最初，perm = [0,1]
+第 1 步操作后，perm = [0,1]
+所以，仅需执行 1 步操作
+示例 2：输入：n = 4 输出：2
+解释：最初，perm = [0,1,2,3]
+第 1 步操作后，perm = [0,2,1,3]
+第 2 步操作后，perm = [0,1,2,3]
+所以，仅需执行 2 步操作
+示例 3：输入：n = 6 输出：4
+提示：2 &lt;= n &lt;= 1000
+n是一个偶数
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>暴力法</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>02</td>
+<td>暴力法</td>
+<td>O(n^2)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>03</td>
+<td>循环</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span>func reinitializePermutation(n int) int {
+	res := 0
+	target := make([]int, n)
+	perm := make([]int, n)
+	arr := make([]int, n)
+	for i := 0; i &lt; n; i++ {
+		perm[i] = i
+	}
+	copy(target, perm)
+	for {
+		for i := 0; i &lt; n; i++ {
+			if i%2 == 0 {
+				arr[i] = perm[i/2]
+			} else {
+				arr[i] = perm[n/2+(i-1)/2]
+			}
+		}
+		res++
+		if reflect.DeepEqual(target, arr) {
+			break
+		}
+		copy(perm, arr)
+	}
+	return res
+}
+
+# 2
+func reinitializePermutation(n int) int {
+	res := 0
+	target := make([]int, n)
+	perm := make([]int, n)
+	arr := make([]int, n)
+	for i := 0; i &lt; n; i++ {
+		perm[i] = i
+	}
+	copy(target, perm)
+	for {
+		for i := 0; i &lt; n; i++ {
+			if i%2 == 0 {
+				arr[i] = perm[i/2]
+			} else {
+				arr[i] = perm[n/2+(i-1)/2]
+			}
+		}
+		res++
+		flag := true
+		for i := 0; i &lt; n; i++ {
+			if arr[i] != target[i] {
+				flag = false
+				break
+			}
+		}
+		if flag == true {
+			break
+		}
+		copy(perm, arr)
+	}
+	return res
+}
+
+# 3
+func reinitializePermutation(n int) int {
+	res := 0
+	target := 1
+	// 反向思路，只考虑1的变换
+	for {
+		if target*2 &lt; n {
+			target = target * 2
+		} else {
+			target = target*2 + 1 - n
+		}
+		res++
+		if target == 1 {
+			break
+		}
+	}
+	return res
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>1807.替换字符串中的括号内容(1)<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你一个字符串 s ，它包含一些括号对，每个括号中包含一个 非空 的键。
+比方说，字符串 &quot;(name)is(age)yearsold&quot; 中，有 两个 括号对，分别包含键 &quot;name&quot; 和 &quot;age&quot; 。
+你知道许多键对应的值，这些关系由二维字符串数组 knowledge 表示，
+其中 knowledge[i] = [keyi, valuei] ，表示键 keyi 对应的值为 valuei 。
+你需要替换 所有 的括号对。当你替换一个括号对，且它包含的键为 keyi 时，你需要：
+将 keyi 和括号用对应的值 valuei 替换。
+如果从 knowledge 中无法得知某个键对应的值，你需要将 keyi 和括号用问号 &quot;?&quot; 替换（不需要引号）。
+knowledge 中每个键最多只会出现一次。s 中不会有嵌套的括号。
+请你返回替换 所有 括号对后的结果字符串。
+示例 1：输入：s = &quot;(name)is(age)yearsold&quot;, knowledge = [[&quot;name&quot;,&quot;bob&quot;],[&quot;age&quot;,&quot;two&quot;]]
+输出：&quot;bobistwoyearsold&quot;
+解释：键 &quot;name&quot; 对应的值为 &quot;bob&quot; ，所以将 &quot;(name)&quot; 替换为 &quot;bob&quot; 。
+键 &quot;age&quot; 对应的值为 &quot;two&quot; ，所以将 &quot;(age)&quot; 替换为 &quot;two&quot; 。
+示例 2：输入：s = &quot;hi(name)&quot;, knowledge = [[&quot;a&quot;,&quot;b&quot;]] 输出：&quot;hi?&quot;
+解释：由于不知道键 &quot;name&quot; 对应的值，所以用 &quot;?&quot; 替换 &quot;(name)&quot; 。
+示例 3：输入：s = &quot;(a)(a)(a)aaa&quot;, knowledge = [[&quot;a&quot;,&quot;yes&quot;]] 输出：&quot;yesyesyesaaa&quot;
+解释：相同的键在 s 中可能会出现多次。
+键 &quot;a&quot; 对应的值为 &quot;yes&quot; ，所以将所有的 &quot;(a)&quot; 替换为 &quot;yes&quot; 。
+注意，不在括号里的 &quot;a&quot; 不需要被替换。
+示例 4：输入：s = &quot;(a)(b)&quot;, knowledge = [[&quot;a&quot;,&quot;b&quot;],[&quot;b&quot;,&quot;a&quot;]] 输出：&quot;ba&quot;
+提示：1 &lt;= s.length &lt;= 105
+0 &lt;= knowledge.length &lt;= 105
+knowledge[i].length == 2
+1 &lt;= keyi.length, valuei.length &lt;= 10
+s 只包含小写英文字母和圆括号 &#39;(&#39; 和 &#39;)&#39; 。
+s 中每一个左圆括号 &#39;(&#39; 都有对应的右圆括号 &#39;)&#39; 。
+s 中每对括号内的键都不会为空。
+s 中不会有嵌套括号对。
+keyi 和 valuei 只包含小写英文字母。
+knowledge 中的 keyi 不会重复。
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>哈希辅助</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">evaluate</span><span class="p">(</span><span class="nx">s</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">knowledge</span> <span class="p">[][]</span><span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+	<span class="nx">m</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">knowledge</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="o">:=</span> <span class="nx">knowledge</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">knowledge</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+		<span class="nx">m</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span> <span class="p">=</span> <span class="nx">b</span>
+	<span class="p">}</span>
+	<span class="nx">res</span> <span class="o">:=</span> <span class="s">&quot;&quot;</span>
+	<span class="nx">left</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">1</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;(&#39;</span> <span class="p">{</span>
+			<span class="nx">left</span> <span class="p">=</span> <span class="nx">i</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;)&#39;</span> <span class="p">{</span>
+			<span class="nx">str</span> <span class="o">:=</span> <span class="nx">s</span><span class="p">[</span><span class="nx">left</span><span class="o">+</span><span class="mi">1</span> <span class="p">:</span> <span class="nx">i</span><span class="p">]</span>
+			<span class="k">if</span> <span class="nx">v</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">[</span><span class="nx">str</span><span class="p">];</span> <span class="nx">ok</span> <span class="p">{</span>
+				<span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span> <span class="o">+</span> <span class="nx">v</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+				<span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span> <span class="o">+</span> <span class="s">&quot;?&quot;</span>
+			<span class="p">}</span>
+			<span class="nx">left</span> <span class="p">=</span> <span class="o">-</span><span class="mi">1</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">left</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="p">{</span>
+			<span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span> <span class="o">+</span> <span class="nb">string</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="iii">
+<h2>1813.句子相似性III<a class="headerlink" href="#iii" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id8">
+<h3>题目<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>一个句子是由一些单词与它们之间的单个空格组成，且句子的开头和结尾没有多余空格。
+比方说，&quot;Hello World&quot; ，&quot;HELLO&quot; ，&quot;hello world hello world&quot; 都是句子。
+每个单词都 只 包含大写和小写英文字母。
+如果两个句子 sentence1 和 sentence2 ，
+可以通过往其中一个句子插入一个任意的句子（可以是空句子）而得到另一个句子，那么我们称这两个句子是 相似的 。
+比方说，sentence1 = &quot;Hello my name is Jane&quot; 且 sentence2 = &quot;Hello Jane&quot; ，
+我们可以往 sentence2 中 &quot;Hello&quot; 和 &quot;Jane&quot; 之间插入 &quot;my name is&quot; 得到 sentence1 。
+给你两个句子 sentence1 和 sentence2 ，如果 sentence1 和 sentence2 是相似的，
+请你返回 true ，否则返回 false 。
+示例 1：输入：sentence1 = &quot;My name is Haley&quot;, sentence2 = &quot;My Haley&quot; 输出：true
+解释：可以往 sentence2 中 &quot;My&quot; 和 &quot;Haley&quot; 之间插入 &quot;name is&quot; ，得到 sentence1 。
+示例 2：输入：sentence1 = &quot;of&quot;, sentence2 = &quot;A lot of words&quot; 输出：false
+解释：没法往这两个句子中的一个句子只插入一个句子就得到另一个句子。
+示例 3：输入：sentence1 = &quot;Eating right now&quot;, sentence2 = &quot;Eating&quot; 输出：true
+解释：可以往 sentence2 的结尾插入 &quot;right now&quot; 得到 sentence1 。
+示例 4：输入：sentence1 = &quot;Luky&quot;, sentence2 = &quot;Lucccky&quot; 输出：false
+提示：1 &lt;= sentence1.length, sentence2.length &lt;= 100
+sentence1 和 sentence2 都只包含大小写英文字母和空格。
+sentence1 和 sentence2 中的单词都只由单个空格隔开。
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>解题思路<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>遍历</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>1814.统计一个数组中好对子的数目(1)<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你一个数组 nums ，数组中只包含非负整数。定义 rev(x) 的值为将整数 x 各个数字位反转得到的结果。
+比方说 rev(123) = 321 ， rev(120) = 21 。我们称满足下面条件的下标对 (i, j) 是 好的 ：
+0 &lt;= i &lt; j &lt; nums.length
+nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])
+请你返回好下标对的数目。由于结果可能会很大，请将结果对 109 + 7 取余 后返回。
+示例 1：输入：nums = [42,11,1,97] 输出：2
+解释：两个坐标对为：
+ - (0,3)：42 + rev(97) = 42 + 79 = 121, 97 + rev(42) = 97 + 24 = 121 。
+ - (1,2)：11 + rev(1) = 11 + 1 = 12, 1 + rev(11) = 1 + 11 = 12 。
+示例 2：输入：nums = [13,10,35,24,76] 输出：4
+提示：1 &lt;= nums.length &lt;= 105
+0 &lt;= nums[i] &lt;= 109
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>哈希辅助</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">countNicePairs</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">m</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">m</span><span class="p">[</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">-</span><span class="nx">reverse</span><span class="p">(</span><span class="nx">nums</span><span class="p">[</span><span class="nx">i</span><span class="p">])]</span><span class="o">++</span>
+	<span class="p">}</span>
+	<span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">m</span> <span class="p">{</span>
+		<span class="nx">res</span> <span class="p">=</span> <span class="p">(</span><span class="nx">res</span> <span class="o">+</span> <span class="nx">v</span><span class="o">*</span><span class="p">(</span><span class="nx">v</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000000007</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">reverse</span><span class="p">(</span><span class="nx">num</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="nx">num</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="nx">num</span><span class="o">%</span><span class="mi">10</span>
+		<span class="nx">num</span> <span class="p">=</span> <span class="nx">num</span> <span class="o">/</span> <span class="mi">10</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>1817.查找用户活跃分钟数(1)<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你用户在 LeetCode 的操作日志，和一个整数 k 。日志用一个二维整数数组 logs 表示，
+其中每个 logs[i] = [IDi, timei] 表示 ID 为 IDi 的用户在 timei 分钟时执行了某个操作。
+多个用户 可以同时执行操作，单个用户可以在同一分钟内执行 多个操作 。
+指定用户的 用户活跃分钟数（user active minutes，UAM） 定义为用户对 LeetCode 执行操作的 唯一分钟数 。
+即使一分钟内执行多个操作，也只能按一分钟计数。
+请你统计用户活跃分钟数的分布情况，统计结果是一个长度为 k 且 下标从 1 开始计数 的数组 answer ，
+对于每个 j（1 &lt;= j &lt;= k），answer[j] 表示 用户活跃分钟数 等于 j 的用户数。
+返回上面描述的答案数组 answer 。
+示例 1：输入：logs = [[0,5],[1,2],[0,2],[0,5],[1,3]], k = 5 输出：[0,2,0,0,0]
+解释：
+ID=0 的用户执行操作的分钟分别是：5 、2 和 5 。因此，该用户的用户活跃分钟数为 2（分钟 5 只计数一次）
+ID=1 的用户执行操作的分钟分别是：2 和 3 。因此，该用户的用户活跃分钟数为 2
+2 个用户的用户活跃分钟数都是 2 ，answer[2] 为 2 ，其余 answer[j] 的值都是 0
+示例 2：输入：logs = [[1,1],[2,2],[2,3]], k = 4 输出：[1,1,0,0]
+解释： ID=1 的用户仅在分钟 1 执行单个操作。因此，该用户的用户活跃分钟数为 1
+ID=2 的用户执行操作的分钟分别是：2 和 3 。因此，该用户的用户活跃分钟数为 2
+1 个用户的用户活跃分钟数是 1 ，1 个用户的用户活跃分钟数是 2 
+因此，answer[1] = 1 ，answer[2] = 1 ，其余的值都是 0
+提示：1 &lt;= logs.length &lt;= 104
+0 &lt;= IDi &lt;= 109
+1 &lt;= timei &lt;= 105
+k 的取值范围是 [用户的最大用户活跃分钟数, 105]
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>哈希辅助</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">findingUsersActiveMinutes</span><span class="p">(</span><span class="nx">logs</span> <span class="p">[][]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">k</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">m</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">logs</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span><span class="p">{</span>
+		<span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="o">:=</span> <span class="nx">logs</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nx">logs</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">[</span><span class="nx">a</span><span class="p">];</span> <span class="nx">ok</span> <span class="o">==</span> <span class="kc">false</span><span class="p">{</span>
+			<span class="nx">m</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+		<span class="p">}</span>
+		<span class="nx">m</span><span class="p">[</span><span class="nx">a</span><span class="p">][</span><span class="nx">b</span><span class="p">]</span><span class="o">++</span>
+	<span class="p">}</span>
+	<span class="nx">res</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">m</span><span class="p">{</span>
+		<span class="nx">value</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+		<span class="nx">res</span><span class="p">[</span><span class="nx">value</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">++</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>1818.绝对差值和(1)<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你两个正整数数组 nums1 和 nums2 ，数组的长度都是 n 。
+数组 nums1 和 nums2 的 绝对差值和 定义为所有 |nums1[i] - nums2[i]|（0 &lt;= i &lt; n）的 
+总和（下标从 0 开始）。
+你可以选用 nums1 中的 任意一个 元素来替换 nums1 中的 至多 一个元素，以 最小化 绝对差值和。
+在替换数组 nums1 中最多一个元素 之后 ，返回最小绝对差值和。
+因为答案可能很大，所以需要对 109 + 7 取余 后返回。
+|x| 定义为：如果 x &gt;= 0 ，值为 x ，或者
+如果 x &lt;= 0 ，值为 -x
+示例 1：输入：nums1 = [1,7,5], nums2 = [2,3,5] 输出：3
+解释：有两种可能的最优方案：
+- 将第二个元素替换为第一个元素：[1,7,5] =&gt; [1,1,5] ，或者
+- 将第二个元素替换为第三个元素：[1,7,5] =&gt; [1,5,5]
+两种方案的绝对差值和都是 |1-2| + (|1-3| 或者 |5-3|) + |5-5| = 3
+示例 2：输入：nums1 = [2,4,6,8,10], nums2 = [2,4,6,8,10] 输出：0
+解释：nums1 和 nums2 相等，所以不用替换元素。绝对差值和为 0
+示例 3：输入：nums1 = [1,10,4,4,2,7], nums2 = [9,3,5,1,7,4] 输出：20
+解释：将第一个元素替换为第二个元素：[1,10,4,4,2,7] =&gt; [10,10,4,4,2,7]
+绝对差值和为 |10-9| + |10-3| + |4-5| + |4-1| + |2-7| + |7-4| = 20
+提示：n == nums1.length
+n == nums2.length
+1 &lt;= n &lt;= 105
+1 &lt;= nums1[i], nums2[i] &lt;= 105
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>排序+二分查找</td>
+<td>O(nlog(n))</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="kd">func</span> <span class="nx">minAbsoluteSumDiff</span><span class="p">(</span><span class="nx">nums1</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">nums2</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">arr</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums1</span><span class="p">))</span>
+	<span class="nx">sum</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums1</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">=</span> <span class="nx">nums1</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+		<span class="nx">sum</span> <span class="p">=</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">+</span> <span class="nx">abs</span><span class="p">(</span><span class="nx">nums1</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">-</span><span class="nx">nums2</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span> <span class="o">%</span> <span class="mi">1000000007</span>
+	<span class="p">}</span>
+	<span class="nx">sort</span><span class="p">.</span><span class="nx">Ints</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
+	<span class="nx">maxValue</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">nums1</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="nx">nums2</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">{</span>
+			<span class="k">continue</span>
+		<span class="p">}</span>
+		<span class="nx">b</span> <span class="o">:=</span> <span class="nx">nums2</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+		<span class="nx">target</span> <span class="o">:=</span> <span class="nx">search</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+		<span class="nx">maxValue</span> <span class="p">=</span> <span class="nx">max</span><span class="p">(</span><span class="nx">maxValue</span><span class="p">,</span> <span class="nx">abs</span><span class="p">(</span><span class="nx">nums1</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">-</span><span class="nx">b</span><span class="p">)</span><span class="o">-</span><span class="nx">abs</span><span class="p">(</span><span class="nx">target</span><span class="o">-</span><span class="nx">b</span><span class="p">))</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="p">(</span><span class="nx">sum</span> <span class="o">-</span> <span class="nx">maxValue</span><span class="o">+</span> <span class="mi">1000000007</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000000007</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">search</span><span class="p">(</span><span class="nx">arr</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">target</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="k">if</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">target</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="nx">arr</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">target</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">arr</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="p">}</span>
+	<span class="nx">left</span><span class="p">,</span> <span class="nx">right</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+	<span class="k">for</span> <span class="nx">left</span> <span class="o">&lt;=</span> <span class="nx">right</span> <span class="p">{</span>
+		<span class="nx">mid</span> <span class="o">:=</span> <span class="nx">left</span> <span class="o">+</span> <span class="p">(</span><span class="nx">right</span><span class="o">-</span><span class="nx">left</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+		<span class="k">if</span> <span class="nx">target</span> <span class="p">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="p">{</span>
+			<span class="nx">right</span> <span class="p">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span>
+			<span class="k">if</span> <span class="nx">abs</span><span class="p">(</span><span class="nx">res</span><span class="o">-</span><span class="nx">target</span><span class="p">)</span> <span class="p">&gt;</span> <span class="nx">abs</span><span class="p">(</span><span class="nx">target</span><span class="o">-</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">])</span> <span class="p">{</span>
+				<span class="nx">res</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span>
+			<span class="p">}</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">target</span> <span class="o">==</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="nx">target</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">target</span> <span class="p">&gt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="p">{</span>
+			<span class="nx">left</span> <span class="p">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span>
+			<span class="k">if</span> <span class="nx">abs</span><span class="p">(</span><span class="nx">res</span><span class="o">-</span><span class="nx">target</span><span class="p">)</span> <span class="p">&gt;</span> <span class="nx">abs</span><span class="p">(</span><span class="nx">target</span><span class="o">-</span><span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">])</span> <span class="p">{</span>
+				<span class="nx">res</span> <span class="p">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">max</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">a</span> <span class="p">&gt;</span> <span class="nx">b</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">a</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">b</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">abs</span><span class="p">(</span><span class="nx">a</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">a</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="o">-</span><span class="nx">a</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">a</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hard">
+<h1>1801-1900-Hard<a class="headerlink" href="#hard" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id13">
+<h2>1808.好因子的最大数目(1)<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>题目</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>给你一个正整数 primeFactors 。你需要构造一个正整数 n ，它满足以下条件：
+n 质因数（质因数需要考虑重复的情况）的数目 不超过 primeFactors 个。
+n 好因子的数目最大化。如果 n 的一个因子可以被 n 的每一个质因数整除，我们称这个因子是 好因子 。
+比方说，如果 n = 12 ，那么它的质因数为 [2,2,3] ，那么 6 和 12 是好因子，但 3 和 4 不是。
+请你返回 n 的好因子的数目。由于答案可能会很大，请返回答案对 109 + 7 取余 的结果。
+请注意，一个质数的定义是大于 1 ，且不能被分解为两个小于该数的自然数相乘。
+一个数 n 的质因子是将 n 分解为若干个质因子，且它们的乘积为 n 。
+示例 1：输入：primeFactors = 5 输出：6
+解释：200 是一个可行的 n 。
+它有 5 个质因子：[2,2,2,5,5] ，且有 6 个好因子：[10,20,40,50,100,200] 。
+不存在别的 n 有至多 5 个质因子，且同时有更多的好因子。
+示例 2：输入：primeFactors = 8 输出：18
+提示：1 &lt;= primeFactors &lt;= 109
+</pre></div>
+</div>
+<ul class="simple">
+<li>解题思路</li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>No.</th>
+<th>思路</th>
+<th>时间复杂度</th>
+<th>空间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>快速幂</td>
+<td>O(log(n))</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table><div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">由题意有: n=a1^k1 * a2^k2 *...*an^kn(如12=2^2 * 3^1)</span>
+<span class="cm">其中</span>
+<span class="cm">1、a1,a2,...,an是不同的质数(2,3不重复)</span>
+<span class="cm">2、k1+k2+...+kn &lt;=primeFactors</span>
+<span class="cm">3、n的好因子,要能被每一个质因数(a1,a2,a3,...,an)整除，即好因子必须含有a1*a2*...*an作为因数</span>
+<span class="cm">=&gt;好因子的个数 k = k1*k2*...*kn =&gt;求k最大，其中k1+..kn=primeFactors</span>
+<span class="cm">等价于343题，整数拆分</span>
+<span class="cm">*/</span>
+
+<span class="kd">var</span> <span class="nx">mod</span> <span class="p">=</span> <span class="mi">1000000007</span>
+
+<span class="kd">func</span> <span class="nx">maxNiceDivisors</span><span class="p">(</span><span class="nx">primeFactors</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">n</span> <span class="o">:=</span> <span class="nx">primeFactors</span>
+	<span class="k">if</span> <span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">n</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="nx">n</span><span class="o">%</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nx">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">%</span> <span class="nx">mod</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">n</span><span class="o">%</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="nx">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="nx">n</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">%</span> <span class="nx">mod</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nx">n</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">%</span> <span class="nx">mod</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">pow</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">res</span> <span class="o">:=</span> <span class="mi">1</span>
+	<span class="k">for</span> <span class="nx">b</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">b</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">{</span>
+			<span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span> <span class="o">*</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">mod</span>
+		<span class="p">}</span>
+		<span class="nx">a</span> <span class="p">=</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">a</span> <span class="o">%</span> <span class="nx">mod</span>
+		<span class="nx">b</span> <span class="p">=</span> <span class="nx">b</span> <span class="o">/</span> <span class="mi">2</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="offer.html" class="btn btn-neutral float-right" title="剑指offer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="1701-1800.html" class="btn btn-neutral float-left" title="1701-1800-Easy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2021, willshang.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
