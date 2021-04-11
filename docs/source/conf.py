@@ -33,6 +33,7 @@ release = 'v1.0.0' # 版本
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'recommonmark'
     'sphinx_rtd_theme',
     'sphinx_markdown_tables'
 ]
