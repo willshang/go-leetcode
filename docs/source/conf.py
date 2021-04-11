@@ -14,17 +14,25 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import sphinx_markdown_tables
+import sphinx_rtd_theme
 
-# -- Project information -----------------------------------------------------
-
-project = 'go-leetcode'
-copyright = '2021, willshang'
-author = 'willshang'
+# -- 项目信息 -----------------------------------------------------
+project = 'go-leetcode' # 项目名称
+copyright = '2021, willshang' # 版权
+author = 'willshang' # 作者
 
 # The full version, including alpha/beta/rc tags
-release = 'v1.0.0'
+release = 'v1.0.0' # 版本
 
 # -- General configuration ---------------------------------------------------
+
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
+extensions = [
+    'sphinx_markdown_tables',
+]
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -35,6 +43,7 @@ templates_path = ['_templates']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
+# 语言
 language = 'zh_CN'
 
 # List of patterns, relative to source directory, that match files and
@@ -62,13 +71,6 @@ source_parsers = {
 }
 source_suffix = ['.rst', '.md']
 
-
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-extensions = [
-    'sphinx_markdown_tables',
-]
 
 #
 master_doc = 'index'
