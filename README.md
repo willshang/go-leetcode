@@ -1,5 +1,5 @@
 # go-Leetcode
-- readthedoc [![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/en/latest/?badge=latest)
+- readthedoc [![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/zh/latest/?badge=latest)
 - PDF下载：https://go-leetcode.readthedocs.io/_/downloads/zh/latest/pdf/
 - gitbook [gitbook](https://willshang.github.io/go-leetcode/)
 - 剑指offer [剑指offer](https://willshang.github.io/go-leetcode/docs/source/question/offer.html) 
