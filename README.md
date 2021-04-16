@@ -453,6 +453,7 @@
 | | [1805.字符串中不同整数的数目](https://leetcode-cn.com/problems/number-of-different-integers-in-a-string/) | 字符串 | Easy | 完成 |
 | | [1812.判断国际象棋棋盘中一个格子的颜色](https://leetcode-cn.com/problems/determine-color-of-a-chessboard-square/) | 字符串 | Easy | 完成 |
 | | [1816.截断句子](https://leetcode-cn.com/problems/truncate-sentence/) | 字符串 | Easy | 完成 |
+| | [1822.数组元素积的符号](https://leetcode-cn.com/problems/sign-of-the-product-of-an-array/) | 数学 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1093,6 +1094,8 @@
 |      | [1814.统计一个数组中好对子的数目](https://leetcode-cn.com/problems/count-nice-pairs-in-an-array/) | 数字、哈希表                                   | Medium | 完成     |
 |      | [1817.查找用户活跃分钟数](https://leetcode-cn.com/problems/finding-the-users-active-minutes/) | 哈希表                                         | Medium | 完成     |
 |      | [1818.绝对差值和](https://leetcode-cn.com/problems/minimum-absolute-sum-difference/) | 贪心算法、二分查找                             | Medium | 完成     |
+|      | [1823.找出游戏的获胜者](https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/) | 数组                                           | Medium | 完成     |
+|      | [1824.最少侧跳次数](https://leetcode-cn.com/problems/minimum-sideway-jumps/) | 广度优先搜索、动态规划                         | Medium | 完成     |
 
 ### Hard系列
 
@@ -1198,11 +1201,16 @@
 |      | [968.监控二叉树](https://leetcode-cn.com/problems/binary-tree-cameras/) | 树、深度优先搜索、动态规划                       | Hard | 完成     |
 |      | [1028.从先序遍历还原二叉树](https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/) | 树、深度优先搜索                                 | Hard |          |
 |      | [1235.规划兼职工作](https://leetcode-cn.com/problems/maximum-profit-in-job-scheduling/) | 排序、二分查找、动态规划                         | Hard | 完成     |
+|      | [1326.灌溉花园的最少水龙头数目](https://leetcode-cn.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) | 贪心算法、动态规划                               | Hard | 完成     |
 |      | [1340.跳跃游戏V](https://leetcode-cn.com/problems/jump-game-v/) | 动态规划                                         | Hard | 完成     |
+|      | [1359.有效的快递序列数目](https://leetcode-cn.com/problems/count-all-valid-pickup-and-delivery-options/) | 数学、动态规划                                   | Hard | 完成     |
 |      | [1363.形成三的最大倍数](https://leetcode-cn.com/problems/largest-multiple-of-three/) | 数学、动态规划                                   | Hard | 完成     |
+|      | [1373.二叉搜索子树的最大键值和](https://leetcode-cn.com/problems/maximum-sum-bst-in-binary-tree/) | 二叉搜索树、动态规划                             | Hard | 完成     |
 |      | [1383.最大的团队表现值](https://leetcode-cn.com/problems/maximum-performance-of-a-team/) | 贪心算法、排序                                   | Hard | 完成     |
 |      | [1402.做菜顺序](https://leetcode-cn.com/problems/reducing-dishes/) | 动态规划                                         | Hard | 完成     |
+|      | [1420.生成数组](https://leetcode-cn.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/) | 动态规划                                         | Hard | 完成     |
 |      | [1425.带限制的子序列和](https://leetcode-cn.com/problems/constrained-subsequence-sum/) | 动态规划                                         | Hard | 完成     |
+|      | [1458.两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 动态规划                                         | Hard | 完成     |
 |      | [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                                         | Hard | 完成     |
 |      | [1526.形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/) | 线段树                                           | Hard | 完成     |
 |      | [1537.最大得分](https://leetcode-cn.com/problems/get-the-maximum-score/) | 动态规划                                         | Hard | 完成     |
