@@ -48,7 +48,7 @@
 * [算法](docs/source/question/readme.md)
     - [查找](docs/source/algorithm/查找算法.md)
     - [排序](docs/source/algorithm/排序算法.md)
-    - [排序-堆](docs/source/algorithm/排序-堆.md)
+    - [排序-堆](docs/source/algorithm/排序算法-堆.md)
     - [Trie树(前缀树/字典树)](docs/source/algorithm/trie.md)
     - [并查集](docs/source/algorithm/并查集.md)
     - [数组-树状数组](docs/source/algorithm/数组-树状数组.md)
