@@ -459,6 +459,7 @@
 | | [1837.K进制表示下的各位数字总和](https://leetcode-cn.com/problems/sum-of-digits-in-base-k/) | 位运算、数学 | Easy | 完成 |
 | | [1844.将所有数字用字符替换](https://leetcode-cn.com/problems/replace-all-digits-with-characters/) | 字符串 | Easy | 完成 |
 | | [1848.到目标元素的最小距离](https://leetcode-cn.com/problems/minimum-distance-to-the-target-element/) | 数组 | Easy | 完成 |
+| | [1854.人口最多的年份](https://leetcode-cn.com/problems/maximum-population-year/) | 数组 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1114,6 +1115,7 @@
 |      | [1846.减小和重新排列数组后的最大元素](https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/) | 贪心算法、排序                                 | Medium | 完成     |
 |      | [1849.将字符串拆分为递减的连续值](https://leetcode-cn.com/problems/splitting-a-string-into-descending-consecutive-values/) | 递归、字符串、回溯算法                         | Medium | 完成     |
 |      | [1850.邻位交换的最小次数](https://leetcode-cn.com/problems/minimum-adjacent-swaps-to-reach-the-kth-smallest-number/) | 贪心算法、字符串                               | Medium |          |
+|      | [1855.下标对中的最大距离](https://leetcode-cn.com/problems/maximum-distance-between-a-pair-of-values/) | 贪心算法、双指针、二分查找                     | Medium | 完成     |
 
 ### Hard系列
 
