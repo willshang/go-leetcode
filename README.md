@@ -5,15 +5,30 @@
 - 剑指offer [剑指offer](https://willshang.github.io/go-leetcode/docs/source/question/offer.html) 
 - 程序员面试金典 [程序员面试金典](https://willshang.github.io/go-leetcode/docs/source/question/lcci.html)
 ## 0.参考
-- https://leetcode-cn.com/ 
-- 3 k https://github.com/kylesliu/awesome-golang-leetcode
-- 2.6 k https://github.com/aQuaYi/LeetCode-in-Go
-- 11.5 k https://github.com/greyireland/algorithm-pattern
-- 17.3 k https://github.com/halfrost/LeetCode-Go
-- 88.9 k https://github.com/labuladong/fucking-algorithm
-- https://github.com/ldeng7/go-leetcode 
+- leetcode中文：https://leetcode-cn.com/ 
 - https://oi-wiki.org/
 - https://cp-wiki.vercel.app/
+- star 13、1600+题解、Go语言、最后更新：2021-02、
+  github：https://github.com/ldeng7/go-leetcode 
+- star 66、Go语言、最后更新：2021-05、
+  github：https://github.com/EndlessCheng/codeforces-go、
+  leetcode：https://leetcode-cn.com/u/endlesscheng/
+- star 3k 、200+题解、Go语言、最后更新：2020-12、
+  github：https://github.com/kylesliu/awesome-golang-leetcode、
+  gitbook：https://a.gin.sh/
+- star 2.7k、900+题解、Go语言、最后更新：2020-09、
+  github：https://github.com/aQuaYi/LeetCode-in-Go、
+  leetcode：https://leetcode.com/aQuaYi/
+- start 11.8k、10+文章、Go语言、最后更新：2021-05、
+  github：https://github.com/greyireland/algorithm-pattern、
+  gitbook：https://greyireland.gitbook.io/algorithm-pattern/
+- star 17.3k、600+题解、Go语言、最后更新：2021-05、
+  github：https://github.com/halfrost/LeetCode-Go、
+  online：https://books.halfrost.com/leetcode/、
+  leetcode：https://leetcode.com/halfrost/
+- star 89.9k、60+文章、100+题解、多语言、最后更新：2021-05、
+  github：https://github.com/labuladong/fucking-algorithm、
+  gitbook：https://labuladong.gitbook.io/algo/
 ## 1.完成的题目
 ### Easy系列
 
@@ -460,6 +475,8 @@
 | | [1844.将所有数字用字符替换](https://leetcode-cn.com/problems/replace-all-digits-with-characters/) | 字符串 | Easy | 完成 |
 | | [1848.到目标元素的最小距离](https://leetcode-cn.com/problems/minimum-distance-to-the-target-element/) | 数组 | Easy | 完成 |
 | | [1854.人口最多的年份](https://leetcode-cn.com/problems/maximum-population-year/) | 数组 | Easy | 完成 |
+| | [1859.将句子排序](https://leetcode-cn.com/problems/sorting-the-sentence/) | 排序、字符串 | Easy | 完成 |
+| | [1863.找出所有子集的异或总和再求和](https://leetcode-cn.com/problems/sum-of-all-subset-xor-totals/) | 递归、回溯算法 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1116,6 +1133,10 @@
 |      | [1849.将字符串拆分为递减的连续值](https://leetcode-cn.com/problems/splitting-a-string-into-descending-consecutive-values/) | 递归、字符串、回溯算法                         | Medium | 完成     |
 |      | [1850.邻位交换的最小次数](https://leetcode-cn.com/problems/minimum-adjacent-swaps-to-reach-the-kth-smallest-number/) | 贪心算法、字符串                               | Medium |          |
 |      | [1855.下标对中的最大距离](https://leetcode-cn.com/problems/maximum-distance-between-a-pair-of-values/) | 贪心算法、双指针、二分查找                     | Medium | 完成     |
+|      | [1860.增长的内存泄露](https://leetcode-cn.com/problems/incremental-memory-leak/) | 数学                                           | Medium | 完成     |
+|      | [1861.旋转盒子](https://leetcode-cn.com/problems/rotating-the-box/) | 数组、双指针                                   | Medium | 完成     |
+|      | [1864.构成交替字符串需要的最小交换次数](https://leetcode-cn.com/problems/minimum-number-of-swaps-to-make-the-binary-string-alternating/) | 贪心算法                                       | Medium | 完成     |
+|      | [1865.找出和为指定值的下标对](https://leetcode-cn.com/problems/finding-pairs-with-a-certain-sum/) | 设计、哈希表、Ordered Map                      | Medium | 完成     |
 
 ### Hard系列
 
@@ -1253,4 +1274,6 @@
 |      | [1793.好子数组的最大分数](https://leetcode-cn.com/problems/maximum-score-of-a-good-subarray/) | 贪心算法                                         | Hard | 完成     |
 |      | [1799.N次操作后的最大分数和](https://leetcode-cn.com/problems/maximize-score-after-n-operations/) | 递归、动态规划、回溯算法                         | Hard |          |
 |      | [1808.好因子的最大数目](https://leetcode-cn.com/problems/maximize-number-of-nice-divisors/) | 数学                                             | Hard | 完成     |
+|      | [1862.向下取整数对和](https://leetcode-cn.com/problems/sum-of-floored-pairs/) | 数学                                             | Hard | 完成     |
+|      | [1866.恰有K根木棍可以看到的排列数目](https://leetcode-cn.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/) | 动态规划                                         | Hard | 完成     |
 
