@@ -116,7 +116,6 @@
 | [646.最长数对链](https://leetcode-cn.com/problems/maximum-length-of-pair-chain/) | 动态规划                     | Medium | 完成     |
 | [1332.删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | 字符串                       | Easy   | 完成     |
 | [1403.非递增顺序的最小子序列](https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order/) | 贪心算法、排序               | Easy   | 完成     |
-|                                                              |                              |        |          |
 
 ## 3.链表
 
@@ -272,6 +271,7 @@
 | [503.下一个更大元素II](https://leetcode-cn.com/problems/next-greater-element-ii/) | 栈                         | Medium | 完成     |
 | [739.每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | 栈、哈希表                 | Medium | 完成     |
 | [901.股票价格跨度](https://leetcode-cn.com/problems/online-stock-span/) | 栈                         | Medium | 完成     |
+| [962.最大宽度坡](https://leetcode-cn.com/problems/maximum-width-ramp/) | 数组                       | Medium | 完成     |
 | [1081.不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) | 字符串                     | Medium | 完成     |
 
 ### 多源广度优先搜索
