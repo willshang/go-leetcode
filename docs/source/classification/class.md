@@ -240,15 +240,16 @@
 
 #### 跳跃游戏系列
 
-| Title                                                        | Tag                    | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
-| [45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) | 贪心算法、数组         | Hard   | 完成     |
-| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组         | Medium | 完成     |
-| [403.青蛙过河](https://leetcode-cn.com/problems/frog-jump/)  | 动态规划               | Hard   | 完成     |
-| [1306.跳跃游戏III](https://leetcode-cn.com/problems/jump-game-iii/) | 广度优先搜索、图       | Medium | 完成     |
-| [1340.跳跃游戏V](https://leetcode-cn.com/problems/jump-game-v/) | 动态规划               | Hard   | 完成     |
-| [1654.到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | 广度优先搜索、动态规划 | Medium | 完成     |
-| [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) |                        | Medium | 完成     |
+| Title                                                        | Tag                                      | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------------------------- | ------ | -------- |
+| [45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) | 贪心算法、数组                           | Hard   | 完成     |
+| [55.跳跃游戏](https://leetcode-cn.com/problems/jump-game/)   | 贪心算法、数组                           | Medium | 完成     |
+| [403.青蛙过河](https://leetcode-cn.com/problems/frog-jump/)  | 动态规划                                 | Hard   | 完成     |
+| [1306.跳跃游戏III](https://leetcode-cn.com/problems/jump-game-iii/) | 广度优先搜索、图                         | Medium | 完成     |
+| [1340.跳跃游戏V](https://leetcode-cn.com/problems/jump-game-v/) | 动态规划                                 | Hard   | 完成     |
+| [1654.到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | 广度优先搜索、动态规划                   | Medium | 完成     |
+| [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) |                                          | Medium | 完成     |
+| [1871.跳跃游戏VII](https://leetcode-cn.com/problems/jump-game-vii/) | 贪心算法、广度优先搜索、<br />Line Sweep | Medium |          |
 
 ### 灯泡问题
 
@@ -318,6 +319,7 @@
 | [1482.制作m束花所需的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/) | 数组、二分查找     | Medium | 完成     |
 | [1552.两球之间的磁力](https://leetcode-cn.com/problems/magnetic-force-between-two-balls/) | 数组、二分查找     | Medium | 完成     |
 | [1760.袋子里最少数目的球](https://leetcode-cn.com/problems/minimum-limit-of-balls-in-a-bag/) | 堆、二分查找       | Medium | 完成     |
+| [1870.准时到达的列车最小时速](https://leetcode-cn.com/problems/minimum-speed-to-arrive-on-time/) | 数学、二分查找     | Medium | 完成     |
 | [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) |                    | Medium | 完成     |
 
 ### 滑动窗口

@@ -116,4 +116,7 @@
 | 112 | [1823.找出游戏的获胜者](https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/) Medium | [ 面试题62.圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) Easy |
 | 113(相似) | [1326.灌溉花园的最少水龙头数目](https://leetcode-cn.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) Hard | [1024.视频拼接](https://leetcode-cn.com/problems/video-stitching/) Medium<br />[45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) Hard |
 | 114 | 546 | [664.奇怪的打印机](https://leetcode-cn.com/problems/strange-printer/) Hard |
+| 115(相似) | [327.区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/) Hard | [493.翻转对](https://leetcode-cn.com/problems/reverse-pairs/) Hard |
+| 116(相似) | [315.计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) Hard | [ 面试题51.数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) Hard |
+| 117(相似) | [ 1834.单线程CPU](https://leetcode-cn.com/problems/single-threaded-cpu/) Medium | [1882.使用服务器处理任务](https://leetcode-cn.com/problems/process-tasks-using-servers/) Medium |
 
