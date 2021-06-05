@@ -113,10 +113,11 @@
 | 109(相似) | [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) Medium | [1314.矩阵区域和](https://leetcode-cn.com/problems/matrix-block-sum/) Medium |
 | 110(相似) | [392.判断子序列](https://leetcode-cn.com/problems/is-subsequence/) Easy | [792.匹配子序列的单词数](https://leetcode-cn.com/problems/number-of-matching-subsequences/) Medium |
 | 111(相似) | [84.柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) Hard | [1793.好子数组的最大分数](https://leetcode-cn.com/problems/maximum-score-of-a-good-subarray/) Hard |
-| 112 | [1823.找出游戏的获胜者](https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/) Medium | [ 面试题62.圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) Easy |
+| 112 | [1823.找出游戏的获胜者](https://leetcode-cn.com/problems/find-the-winner-of-the-circular-game/) Medium | [面试题62.圆圈中最后剩下的数字](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/) Easy |
 | 113(相似) | [1326.灌溉花园的最少水龙头数目](https://leetcode-cn.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) Hard | [1024.视频拼接](https://leetcode-cn.com/problems/video-stitching/) Medium<br />[45.跳跃游戏II](https://leetcode-cn.com/problems/jump-game-ii/) Hard |
 | 114 | 546 | [664.奇怪的打印机](https://leetcode-cn.com/problems/strange-printer/) Hard |
 | 115(相似) | [327.区间和的个数](https://leetcode-cn.com/problems/count-of-range-sum/) Hard | [493.翻转对](https://leetcode-cn.com/problems/reverse-pairs/) Hard |
 | 116(相似) | [315.计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) Hard | [ 面试题51.数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/) Hard |
 | 117(相似) | [ 1834.单线程CPU](https://leetcode-cn.com/problems/single-threaded-cpu/) Medium | [1882.使用服务器处理任务](https://leetcode-cn.com/problems/process-tasks-using-servers/) Medium |
+| 118(相似) | [31.下一个排列](https://leetcode-cn.com/problems/next-permutation/) Medium | [556.下一个更大元素III](https://leetcode-cn.com/problems/next-greater-element-iii/) Medium<br />[1850.邻位交换的最小次数](https://leetcode-cn.com/problems/minimum-adjacent-swaps-to-reach-the-kth-smallest-number/) Medium |
 

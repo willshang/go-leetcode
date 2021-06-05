@@ -8,8 +8,6 @@
 
 ## 2、Go实现
 
-## 3、Leetcode
-
 ```go
 for(int len = 1; len <= n; len++)          //区间长度
     for(int i = 1; i + len - 1 <= n; i++)  //枚举起点
@@ -24,8 +22,9 @@ for(int len = 1; len <= n; len++)          //区间长度
 
 ## 3、Leetcode
 
-| Title                                                        | Tag                    | 难度 | 完成情况 |
-| ------------------------------------------------------------ | ---------------------- | ---- | -------- |
-| [312.戳气球](https://leetcode-cn.com/problems/burst-balloons/) | 分治算法、动态规划     | Hard | 完成     |
-| [664.奇怪的打印机](https://leetcode-cn.com/problems/strange-printer/) | 深度优先搜索、动态规划 | Hard | 完成     |
-| [1547.切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/) | 动态规划               | Hard | 完成     |
+| Title                                                        | Tag                    | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
+| [312.戳气球](https://leetcode-cn.com/problems/burst-balloons/) | 分治算法、动态规划     | Hard   | 完成     |
+| [664.奇怪的打印机](https://leetcode-cn.com/problems/strange-printer/) | 深度优先搜索、动态规划 | Hard   | 完成     |
+| [1039.多边形三角剖分的最低得分](https://leetcode-cn.com/problems/minimum-score-triangulation-of-polygon/) | 动态规划               | Medium | 完成     |
+| [1547.切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/) | 动态规划               | Hard   | 完成     |
