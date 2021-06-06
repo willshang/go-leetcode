@@ -1,0 +1,37 @@
+package main
+
+import (
+	"sort"
+)
+
+func main() {
+
+}
+
+// leetcode436_寻找右区间
+func findRightInterval(intervals [][]int) []int {
+	m := make(map[int]int)
+	n := len(intervals)
+	res := make([]int, n)
+	for i := 0; i < n; i++ {
+		res[i] = -1
+		m[intervals[i][0]] = i // 存储start对应的下标，因为起点都不相同
+	}
+	sort.Slice(intervals, func(i, j int) bool {
+		if intervals[i][0] == intervals[j][0] {
+			return intervals[i][1] < intervals[j][1]
+		}
+		return intervals[i][0] < intervals[j][0]
+	})
+	for i := 0; i < n; i++ {
+		for j := i; j < n; j++ { //  有坑注意：可以跟自己相比 [[1,1],[3,4]] => [0,-1]
+			// 满足startj >= endi的取最小值
+			if intervals[i][1] <= intervals[j][0] {
+				index := m[intervals[i][0]]
+				res[index] = m[intervals[j][0]]
+				break
+			}
+		}
+	}
+	return res
+}
