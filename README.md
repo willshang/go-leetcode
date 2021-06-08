@@ -484,6 +484,7 @@
 | | [1869.哪种连续子字符串更长](https://leetcode-cn.com/problems/longer-contiguous-segments-of-ones-than-zeros/) | 数组、双指针 | Easy | 完成 |
 | | [1876.长度为三且各字符不同的子字符串](https://leetcode-cn.com/problems/substrings-of-size-three-with-distinct-characters/) | 字符串 | Easy | 完成 |
 | | [1880.检查某单词是否等于两单词之和](https://leetcode-cn.com/problems/check-if-word-equals-summation-of-two-words/) | 字符串 | Easy | 完成 |
+| | [1886.判断矩阵经轮转后是否一致](https://leetcode-cn.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/) | 数组 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1184,6 +1185,7 @@
 |      | [1878.矩阵中最大的三个菱形和](https://leetcode-cn.com/problems/get-biggest-three-rhombus-sums-in-a-grid/) | 数组、数学                                     | Medium | 完成     |
 |      | [1881.插入后的最大值](https://leetcode-cn.com/problems/maximum-value-after-insertion/) | 贪心算法                                       | Medium | 完成     |
 |      | [1882.使用服务器处理任务](https://leetcode-cn.com/problems/process-tasks-using-servers/) | 堆                                             | Medium | 完成     |
+|      | [1887.使数组元素相等的减少操作次数](https://leetcode-cn.com/problems/reduction-operations-to-make-the-array-elements-equal/) | 贪心算法、排序                                 | Medium | 完成     |
 
 ### Hard系列
 
@@ -1287,15 +1289,24 @@
 |      | [765.情侣牵手](https://leetcode-cn.com/problems/couples-holding-hands/) | 贪心算法、并查集、图                             | Hard | 完成     |
 |      | [829.连续整数求和](https://leetcode-cn.com/problems/consecutive-numbers-sum/) | 数学                                             | Hard | 完成     |
 |      | [857.雇佣K名工人的最低成本](https://leetcode-cn.com/problems/minimum-cost-to-hire-k-workers/) | 堆                                               | Hard |          |
+|      | [862.和至少为K的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/) | 队列、二分查找                                   | Hard | 完成     |
 |      | [871.最低加油次数](https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/) | 堆、动态规划                                     | Hard | 完成     |
 |      | [887.鸡蛋掉落](https://leetcode-cn.com/problems/super-egg-drop/) | 数学、二分查找、动态规划                         | Hard | 完成     |
 |      | [927.三等分](https://leetcode-cn.com/problems/three-equal-parts/) | 贪心算法、数学、二分查找                         | Hard | 完成     |
+|      | [940.不同的子序列II](https://leetcode-cn.com/problems/distinct-subsequences-ii/) | 动态规划                                         | Hard | 完成     |
 |      | [956.最高的广告牌](https://leetcode-cn.com/problems/tallest-billboard/) | 动态规划                                         | Hard | 完成     |
 |      | [968.监控二叉树](https://leetcode-cn.com/problems/binary-tree-cameras/) | 树、深度优先搜索、动态规划                       | Hard | 完成     |
+|      | [992.K个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/) | 哈希表、双指针、Sliding Window                   | Hard | 完成     |
+|      | [995.K连续位的最小翻转次数](https://leetcode-cn.com/problems/minimum-number-of-k-consecutive-bit-flips/) | 贪心算法、Sliding Window                         | Hard | 完成     |
 |      | [1028.从先序遍历还原二叉树](https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/) | 树、深度优先搜索                                 | Hard |          |
+|      | [1074.元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/) | 数组、动态规划、Sliding Window                   | Hard |          |
 |      | [1095.山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/) | 二分查找                                         | Hard |          |
+|      | [1147.段式回文](https://leetcode-cn.com/problems/longest-chunked-palindrome-decomposition/) | 动态规划                                         | Hard | 完成     |
 |      | [1235.规划兼职工作](https://leetcode-cn.com/problems/maximum-profit-in-job-scheduling/) | 排序、二分查找、动态规划                         | Hard | 完成     |
 |      | [1269.停在原地的方案数](https://leetcode-cn.com/problems/number-of-ways-to-stay-in-the-same-place-after-some-steps/) | 动态规划                                         | Hard | 完成     |
+|      | [1289.下降路径最小和II](https://leetcode-cn.com/problems/minimum-falling-path-sum-ii/) | 动态规划                                         | Hard | 完成     |
+|      | [1301.最大得分的路径数目](https://leetcode-cn.com/problems/number-of-paths-with-max-score/) | 动态规划                                         | Hard | 完成     |
+|      | [1312.让字符串成为回文串的最少插入次数](https://leetcode-cn.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/) | 动态规划                                         | Hard | 完成     |
 |      | [1326.灌溉花园的最少水龙头数目](https://leetcode-cn.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) | 贪心算法、动态规划                               | Hard | 完成     |
 |      | [1340.跳跃游戏V](https://leetcode-cn.com/problems/jump-game-v/) | 动态规划                                         | Hard | 完成     |
 |      | [1354.多次求和构造目标数组](https://leetcode-cn.com/problems/construct-target-array-with-multiple-sums/) | 贪心算法                                         | Hard | 完成     |
@@ -1328,4 +1339,5 @@
 |      | [1862.向下取整数对和](https://leetcode-cn.com/problems/sum-of-floored-pairs/) | 数学                                             | Hard | 完成     |
 |      | [1866.恰有K根木棍可以看到的排列数目](https://leetcode-cn.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/) | 动态规划                                         | Hard | 完成     |
 |      | [1872.石子游戏VIII](https://leetcode-cn.com/problems/stone-game-viii/) | 动态规划                                         | Hard |          |
+|      | [1889.装包裹的最小浪费空间](https://leetcode-cn.com/problems/minimum-space-wasted-from-packaging/) | 二分查找                                         | Hard |          |
 

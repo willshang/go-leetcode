@@ -117,6 +117,14 @@
 | [1332.删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | 字符串                       | Easy   | 完成     |
 | [1403.非递增顺序的最小子序列](https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order/) | 贪心算法、排序               | Easy   | 完成     |
 
+### 回文子序列
+
+| Title                                                        | Tag      | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------- | ------ | -------- |
+| [516.最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 动态规划 | Medium | 完成     |
+| [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 动态规划 | Medium | 完成     |
+| [1312.让字符串成为回文串的最少插入次数](https://leetcode-cn.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/) | 动态规划 | Hard   | 完成     |
+
 ## 3.链表
 
 ### 有序链表删除重复元素
@@ -337,6 +345,7 @@
 | [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 双指针、Sliding Window                       | Medium | 完成     |
 | 632                                                          |                                              |        |          |
 | 727                                                          |                                              |        |          |
+| [992.K个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/) | 哈希表、双指针、Sliding Window               | Hard   | 完成     |
 | [1004.最大连续1的个数III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | 双指针、Sliding Window                       | Medium | 完成     |
 | [1052.爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 数组、Sliding Window                         | Medium | 完成     |
 
