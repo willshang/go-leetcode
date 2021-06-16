@@ -1,5 +1,6 @@
 # ACM题目输入问题
 
+- https://ac.nowcoder.com/acm/contest/5652#description
 - 一般校招技术会有笔试，通常在nowcoder上，而题目通常是采用ACM模式，掌握ACM模式的输入很重要
 
 | No.  | 描述                         |      |
