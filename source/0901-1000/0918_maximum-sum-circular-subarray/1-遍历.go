@@ -8,7 +8,7 @@ func main() {
 
 func maxSubarraySumCircular(A []int) int {
 	n := len(A)
-	if n == 1{
+	if n == 1 {
 		return A[0]
 	}
 	total := 0 // 总和
@@ -54,4 +54,3 @@ func min(a, b int) int {
 	}
 	return a
 }
-

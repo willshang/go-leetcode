@@ -121,4 +121,7 @@
 | 117(相似) | [ 1834.单线程CPU](https://leetcode-cn.com/problems/single-threaded-cpu/) Medium | [1882.使用服务器处理任务](https://leetcode-cn.com/problems/process-tasks-using-servers/) Medium |
 | 118(相似) | [31.下一个排列](https://leetcode-cn.com/problems/next-permutation/) Medium | [556.下一个更大元素III](https://leetcode-cn.com/problems/next-greater-element-iii/) Medium<br />[1850.邻位交换的最小次数](https://leetcode-cn.com/problems/minimum-adjacent-swaps-to-reach-the-kth-smallest-number/) Medium |
 | 119(相似) | [622.设计循环队列](https://leetcode-cn.com/problems/design-circular-queue/) Medium |  |
+| 120(相似) | [ 200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) Medium | [1905.统计子岛屿](https://leetcode-cn.com/problems/count-sub-islands/) Medium |
+| 121(相似) | [427.建立四叉树](https://leetcode-cn.com/problems/construct-quad-tree/) Medium | [558.四叉树交集](https://leetcode-cn.com/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/) Medium |
+| 122(相似) | [497.非重叠矩形中的随机点](https://leetcode-cn.com/problems/random-point-in-non-overlapping-rectangles/) Medium | [528.按权重随机选择](https://leetcode-cn.com/problems/random-pick-with-weight/) Medium |
 
