@@ -124,4 +124,7 @@
 | 120(相似) | [ 200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) Medium | [1905.统计子岛屿](https://leetcode-cn.com/problems/count-sub-islands/) Medium |
 | 121(相似) | [427.建立四叉树](https://leetcode-cn.com/problems/construct-quad-tree/) Medium | [558.四叉树交集](https://leetcode-cn.com/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/) Medium |
 | 122(相似) | [497.非重叠矩形中的随机点](https://leetcode-cn.com/problems/random-point-in-non-overlapping-rectangles/) Medium | [528.按权重随机选择](https://leetcode-cn.com/problems/random-pick-with-weight/) Medium |
+| 123(相似) | [122.买卖股票的最佳时机II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) Easy | [1911.最大子序列交替和](https://leetcode-cn.com/problems/maximum-alternating-subsequence-sum/) Medium |
+| 124(相似) | [1542.找出最长的超赞子字符串](https://leetcode-cn.com/problems/find-longest-awesome-substring/) Hard | [1915.最美子字符串的数目](https://leetcode-cn.com/problems/number-of-wonderful-substrings/) Medium |
+| 125 | [871.最低加油次数](https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/) Hard | [1201.丑数III](https://leetcode-cn.com/problems/ugly-number-iii/) Medium |
 

@@ -488,6 +488,8 @@
 | | [1893.检查是否区域内所有整数都被覆盖](https://leetcode-cn.com/problems/check-if-all-the-integers-in-a-range-are-covered/) | 贪心算法 | Easy | 完成 |
 | | [1897.重新分配字符使所有字符串都相等](https://leetcode-cn.com/problems/redistribute-characters-to-make-all-strings-equal/) | 贪心算法、字符串 | Easy | 完成 |
 | | [1903.字符串中的最大奇数](https://leetcode-cn.com/problems/largest-odd-number-in-string/) | 贪心算法 | Easy | 完成 |
+| | [1909.删除一个元素使数组严格递增](https://leetcode-cn.com/problems/remove-one-element-to-make-the-array-strictly-increasing/) | 数组 | Easy | 完成 |
+| | [1913.两个数对之间的最大乘积差](https://leetcode-cn.com/problems/maximum-product-difference-between-two-pairs/) | 排序 | Easy | 完成 |
 
 ### Medium系列
 
@@ -732,7 +734,7 @@
 |      | [519.随机翻转矩阵](https://leetcode-cn.com/problems/random-flip-matrix/) | 随机                                                     | Medium | 完成     |
 |      | [522.最长特殊序列II](https://leetcode-cn.com/problems/longest-uncommon-subsequence-ii/) | 字符串                                                   | Medium | 完成     |
 |      | [523.连续的子数组和](https://leetcode-cn.com/problems/continuous-subarray-sum/) | 数学、动态规划                                           | Medium | 完成     |
-|      | [524.通过删除字母匹配到字典里最长单词](https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/) | 数组、双指针、<br />字符串、排序                         | Medium |          |
+|      | [524.通过删除字母匹配到字典里最长单词](https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/) | 数组、双指针、<br />字符串、排序                         | Medium | 完成     |
 |      | [525.连续数组](https://leetcode-cn.com/problems/contiguous-array/) | 哈希表                                                   | Medium | 完成     |
 |      | [526.优美的排列](https://leetcode-cn.com/problems/beautiful-arrangement/) | 深度优先搜索、回溯算法                                   | Medium | 完成     |
 |      | [528.按权重随机选择](https://leetcode-cn.com/problems/random-pick-with-weight/) | 二分查找、随机                                           | Medium | 完成     |
@@ -961,6 +963,7 @@
 |      | [1186.删除一次得到子数组最大和](https://leetcode-cn.com/problems/maximum-subarray-sum-with-one-deletion/) | 动态规划                                                 | Medium | 完成     |
 |      | [1190.反转每对括号间的子串](https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/) | 栈                                                       | Medium | 完成     |
 |      | [1191.K次串联后最大子数组之和](https://leetcode-cn.com/problems/k-concatenation-maximum-sum/) | 动态规划                                                 | Medium | 完成     |
+|      | [1201.丑数III](https://leetcode-cn.com/problems/ugly-number-iii/) | 数学、二分查找、数论                                     | Medium | 完成     |
 |      | [1202.交换字符串中的元素](https://leetcode-cn.com/problems/smallest-string-with-swaps/) | 并查集、数组                                             | Medium | 完成     |
 |      | [1208.尽可能使字符串相等](https://leetcode-cn.com/problems/get-equal-substrings-within-budget/) | 数组、Sliding Window                                     | Medium | 完成     |
 |      | [1209.删除字符串中的所有相邻重复项II](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string-ii/) | 栈                                                       | Medium | 完成     |
@@ -1014,6 +1017,7 @@
 |      | [1353.最多可以参加的会议数目](https://leetcode-cn.com/problems/maximum-number-of-events-that-can-be-attended/) | 贪心算法、排序、线段树                                   | Medium |          |
 |      | [1357.每隔n个顾客打折](https://leetcode-cn.com/problems/apply-discount-every-n-orders/) | 设计                                                     | Medium | 完成     |
 |      | [1358.包含所有三种字符的子字符串数目](https://leetcode-cn.com/problems/number-of-substrings-containing-all-three-characters/) | 字符串                                                   | Medium | 完成     |
+|      | [1361.验证二叉树](https://leetcode-cn.com/problems/validate-binary-tree-nodes/) | 树、深度优先搜索、广度优先搜索、<br />并查集、图、二叉树 | Medium |          |
 |      | [1362.最接近的因数](https://leetcode-cn.com/problems/closest-divisors/) | 数学                                                     | Medium | 完成     |
 |      | [1366.通过投票对团队排名](https://leetcode-cn.com/problems/rank-teams-by-votes/) | 排序、数组                                               | Medium | 完成     |
 |      | [1367.二叉树中的列表](https://leetcode-cn.com/problems/linked-list-in-binary-tree/) | 树、链表、动态规划                                       | Medium | 完成     |
@@ -1211,6 +1215,9 @@
 |      | [1904.你完成的完整对局数](https://leetcode-cn.com/problems/the-number-of-full-rounds-you-have-played/) | 贪心算法、字符串                                         | Medium | 完成     |
 |      | [1905.统计子岛屿](https://leetcode-cn.com/problems/count-sub-islands/) | 深度优先搜索、并查集                                     | Medium | 完成     |
 |      | [1906.查询差绝对值的最小值](https://leetcode-cn.com/problems/minimum-absolute-difference-queries/) | 数组                                                     | Medium | 完成     |
+|      | [1910.删除一个字符串中所有出现的给定子字符串](https://leetcode-cn.com/problems/remove-all-occurrences-of-a-substring/) | 字符串                                                   | Medium | 完成     |
+|      | [1911.最大子序列交替和](https://leetcode-cn.com/problems/maximum-alternating-subsequence-sum/) | 动态规划                                                 | Medium | 完成     |
+|      | [1915.最美子字符串的数目](https://leetcode-cn.com/problems/number-of-wonderful-substrings/) | 位运算、字符串                                           | Medium | 完成     |
 
 ### Hard系列
 
@@ -1316,6 +1323,7 @@
 |      | [857.雇佣K名工人的最低成本](https://leetcode-cn.com/problems/minimum-cost-to-hire-k-workers/) | 堆                                               | Hard |          |
 |      | [862.和至少为K的最短子数组](https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/) | 队列、二分查找                                   | Hard | 完成     |
 |      | [871.最低加油次数](https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/) | 堆、动态规划                                     | Hard | 完成     |
+|      | [878. 第N个神奇数字](https://leetcode-cn.com/problems/nth-magical-number/) | 数学、二分查找                                   | Hard | 完成     |
 |      | [879.盈利计划](https://leetcode-cn.com/problems/profitable-schemes/) | 动态规划                                         | Hard | 完成     |
 |      | [887.鸡蛋掉落](https://leetcode-cn.com/problems/super-egg-drop/) | 数学、二分查找、动态规划                         | Hard | 完成     |
 |      | [927.三等分](https://leetcode-cn.com/problems/three-equal-parts/) | 贪心算法、数学、二分查找                         | Hard | 完成     |
@@ -1346,9 +1354,11 @@
 |      | [1425.带限制的子序列和](https://leetcode-cn.com/problems/constrained-subsequence-sum/) | 动态规划                                         | Hard | 完成     |
 |      | [1434.每个人戴不同帽子的方案数](https://leetcode-cn.com/problems/number-of-ways-to-wear-different-hats-to-each-other/) | 位运算、动态规划                                 | Hard | 完成     |
 |      | [1458.两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 动态规划                                         | Hard | 完成     |
+|      | [1478.安排邮筒](https://leetcode-cn.com/problems/allocate-mailboxes/) | 数组、数学、动态规划、排序                       | Hard |          |
 |      | [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                                         | Hard | 完成     |
 |      | [1526.形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/) | 线段树                                           | Hard | 完成     |
 |      | [1537.最大得分](https://leetcode-cn.com/problems/get-the-maximum-score/) | 动态规划                                         | Hard | 完成     |
+|      | [1542.找出最长的超赞子字符串](https://leetcode-cn.com/problems/find-longest-awesome-substring/) | 位运算、哈希表、字符串                           | Hard | 完成     |
 |      | [1547.切棍子的最小成本](https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/) | 动态规划                                         | Hard | 完成     |
 |      | [1553.吃掉N个橘子的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-eat-n-oranges/) | 动态规划                                         | Hard | 完成     |
 |      | [1559.二维网格图中探测环](https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/) | 深度优先搜索                                     | Hard | 完成     |
