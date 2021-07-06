@@ -490,6 +490,7 @@
 | | [1903.字符串中的最大奇数](https://leetcode-cn.com/problems/largest-odd-number-in-string/) | 贪心算法 | Easy | 完成 |
 | | [1909.删除一个元素使数组严格递增](https://leetcode-cn.com/problems/remove-one-element-to-make-the-array-strictly-increasing/) | 数组 | Easy | 完成 |
 | | [1913.两个数对之间的最大乘积差](https://leetcode-cn.com/problems/maximum-product-difference-between-two-pairs/) | 排序 | Easy | 完成 |
+| | [1920.基于排列构建数组](https://leetcode-cn.com/problems/build-array-from-permutation/) |  | Easy | 完成 |
 
 ### Medium系列
 
@@ -960,6 +961,7 @@
 |      | [1162.地图分析](https://leetcode-cn.com/problems/as-far-from-land-as-possible/) | 广度优先搜索、图                                         | Medium | 完成     |
 |      | [1169.查询无效交易](https://leetcode-cn.com/problems/invalid-transactions/) | 数组、字符串                                             | Medium | 完成     |
 |      | [1171.从链表中删去总和值为零的连续节点](https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/) | 链表                                                     | Medium | 完成     |
+|      | [1177.构建回文串检测](https://leetcode-cn.com/problems/can-make-palindrome-from-substring/) | 位运算、哈希表、字符串、前缀和                           | Medium | 完成     |
 |      | [1186.删除一次得到子数组最大和](https://leetcode-cn.com/problems/maximum-subarray-sum-with-one-deletion/) | 动态规划                                                 | Medium | 完成     |
 |      | [1190.反转每对括号间的子串](https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/) | 栈                                                       | Medium | 完成     |
 |      | [1191.K次串联后最大子数组之和](https://leetcode-cn.com/problems/k-concatenation-maximum-sum/) | 动态规划                                                 | Medium | 完成     |
@@ -1218,6 +1220,8 @@
 |      | [1910.删除一个字符串中所有出现的给定子字符串](https://leetcode-cn.com/problems/remove-all-occurrences-of-a-substring/) | 字符串                                                   | Medium | 完成     |
 |      | [1911.最大子序列交替和](https://leetcode-cn.com/problems/maximum-alternating-subsequence-sum/) | 动态规划                                                 | Medium | 完成     |
 |      | [1915.最美子字符串的数目](https://leetcode-cn.com/problems/number-of-wonderful-substrings/) | 位运算、字符串                                           | Medium | 完成     |
+|      | [1921.消灭怪物的最大数量](https://leetcode-cn.com/problems/eliminate-maximum-number-of-monsters/) |                                                          | Medium | 完成     |
+|      | [1922.统计好数字的数目](https://leetcode-cn.com/problems/count-good-numbers/) |                                                          | Medium | 完成     |
 
 ### Hard系列
 
@@ -1259,7 +1263,7 @@
 |      | 第4期                                                        |                                                  |      |          |
 | 0031 | [140.单词拆分II](https://leetcode-cn.com/problems/word-break-ii/) | 动态规划、回溯算法                               | Hard | 完成     |
 | 0032 | [145.二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/) | 栈、树                                           | Hard | 完成     |
-| 0033 | [149.直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line/) | 哈希表、数学                                     | Hard |          |
+| 0033 | [149.直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line/) | 哈希表、数学                                     | Hard | 完成     |
 | 0034 | [154.寻找旋转排序数组中的最小值II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/) | 数组、二分查找                                   | Hard | 完成     |
 | 0035 | [164.最大间距](https://leetcode-cn.com/problems/maximum-gap/) | 排序                                             | Hard | 完成     |
 | 0036 | [174.地下城游戏](https://leetcode-cn.com/problems/dungeon-game/) | 二分查找、动态规划                               | Hard | 完成     |

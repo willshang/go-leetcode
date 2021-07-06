@@ -75,11 +75,13 @@ func (this *Trie) StartsWith(prefix string) bool {
 
 ## 3、Leetcode
 
-| Title                                                        | Tag                    | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------------- | ------ | -------- |
-| [14.最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix) | 字符串                 | Easy   | 完成     |
-| [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树           | Medium | 完成     |
-| [211.添加与搜索单词-数据结构设计](https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/) | 设计、字典树、回溯算法 | Medium | 完成     |
-| [648.单词替换](https://leetcode-cn.com/problems/replace-words/) | 字典树、哈希表         | Medium | 完成     |
-| [720.词典中最长的单词](https://leetcode-cn.com/problems/longest-word-in-dictionary/) | 字典树、哈希表         | Easy   | 完成     |
+| Title                                                        | Tag                                                          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
+| [14.最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix) | 字符串                                                       | Easy   | 完成     |
+| [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树                                                 | Medium | 完成     |
+| [211.添加与搜索单词-数据结构设计](https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/) | 设计、字典树、回溯算法                                       | Medium | 完成     |
+| [648.单词替换](https://leetcode-cn.com/problems/replace-words/) | 字典树、哈希表                                               | Medium | 完成     |
+| [720.词典中最长的单词](https://leetcode-cn.com/problems/longest-word-in-dictionary/) | 字典树、哈希表                                               | Easy   | 完成     |
+| [面试题17.13.恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) | 字典树、数组、哈希表、字符串、<br />动态规划、哈希函数、滚动哈希 | Medium | 完成     |
+| [面试题17.17.多次搜索](https://leetcode-cn.com/problems/multi-search-lcci/) | 字典树、数组、哈希表、字符串、<br />字符串匹配、滑动窗口     | Medium | 完成     |
 

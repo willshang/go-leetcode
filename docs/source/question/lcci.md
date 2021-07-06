@@ -3316,6 +3316,61 @@ func exchangeBits(num int) int {
 }
 ```
 
+## 面试题05.08.绘制直线(2)
+
+- 题目
+
+```
+绘制直线。
+有个单色屏幕存储在一个一维数组中，使得32个连续像素可以存放在一个 int 里。
+屏幕宽度为w，且w可被32整除（即一个 int 不会分布在两行上），屏幕高度可由数组长度及屏幕宽度推算得出。
+请实现一个函数，绘制从点(x1, y)到点(x2, y)的水平线。
+给出数组的长度 length，宽度 w（以比特为单位）、直线开始位置 x1（比特为单位）、直线结束位置 x2（比特为单位）、直线所在行数 y。
+返回绘制过后的数组。
+示例1:输入：length = 1, w = 32, x1 = 30, x2 = 31, y = 0 输出：[3]
+说明：在第0行的第30位到第31为画一条直线，屏幕表示为[0b000000000000000000000000000000011]
+示例2:输入：length = 3, w = 96, x1 = 0, x2 = 95, y = 0 输出：[-1, -1, -1]
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n)       | O(n)       |
+| 02   | 遍历 | O(n)       | O(n)       |
+
+```go
+func drawLine(length int, w int, x1 int, x2 int, y int) []int {
+	res := make([]int, length)
+	for i := 0; i < length; i++ {
+		start := i * 32
+		var value int32
+		for j := 0; j < 32; j++ {
+			if x1+y*w <= start+j && start+j <= x2+y*w {
+				value = value ^ (1 << (31 - j)) // 画线：把第31-j位变为1
+			}
+		}
+		res[i] = int(value)
+	}
+	return res
+}
+
+# 2
+func drawLine(length int, w int, x1 int, x2 int, y int) []int {
+	arr := make([]int32, length)
+	width := w / 32
+	for i := x1; i <= x2; i++ {
+		index := width*y + (i / 32)
+		arr[index] = arr[index] ^ (1 << (31 - (i % 32)))
+	}
+	res := make([]int, length)
+	for i := 0; i < length; i++ {
+		res[i] = int(arr[i])
+	}
+	return res
+}
+```
+
 ## 面试题08.01.三步问题(2)
 
 - 题目
@@ -5011,6 +5066,122 @@ func searchMatrix(matrix [][]int, target int) bool {
 }
 ```
 
+## 面试题10.10.数字流的秩(3)
+
+- 题目
+
+```
+假设你正在读取一串整数。每隔一段时间，你希望能找出数字 x 的秩(小于或等于 x 的值的个数)。
+请实现数据结构和算法来支持这些操作，也就是说：
+实现 track(int x) 方法，每读入一个数字都会调用该方法；
+实现 getRankOfNumber(int x) 方法，返回小于或等于 x 的值的个数。
+注意：本题相对原题稍作改动
+示例:输入: ["StreamRank", "getRankOfNumber", "track", "getRankOfNumber"] [[], [1], [0], [0]]
+输出: [null,0,null,1]
+提示：x <= 50000
+track 和 getRankOfNumber 方法的调用次数均不超过 2000 次
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 树状数组 | O(nlog(n)) | O(n)       |
+| 02   | 暴力法   | O(n^2)     | O(n)       |
+| 03   | 内置函数 | O(nlog(n)) | O(n)       |
+
+```go
+type StreamRank struct {
+	length int
+	c      []int
+}
+
+func Constructor() StreamRank {
+	return StreamRank{
+		length: 50002,
+		c:      make([]int, 50003),
+	}
+}
+
+func (this *StreamRank) Track(x int) {
+	this.upData(x+1, 1)
+}
+
+func (this *StreamRank) GetRankOfNumber(x int) int {
+	return this.getSum(x + 1)
+}
+
+func (this *StreamRank) lowBit(x int) int {
+	return x & (-x)
+}
+
+// 单点修改
+func (this *StreamRank) upData(i, k int) { // 在i位置加上k
+	for i <= this.length {
+		this.c[i] = this.c[i] + k
+		i = i + this.lowBit(i) // i = i + 2^k
+	}
+}
+
+// 区间查询
+func (this *StreamRank) getSum(i int) int {
+	res := 0
+	for i > 0 {
+		res = res + this.c[i]
+		i = i - this.lowBit(i)
+	}
+	return res
+}
+
+# 2
+type StreamRank struct {
+	m map[int]int
+}
+
+func Constructor() StreamRank {
+	return StreamRank{m: make(map[int]int)}
+}
+
+func (this *StreamRank) Track(x int) {
+	this.m[x]++
+}
+
+func (this *StreamRank) GetRankOfNumber(x int) int {
+	res := 0
+	for k, v := range this.m {
+		if k <= x {
+			res = res + v
+		}
+	}
+	return res
+}
+
+# 3
+type StreamRank struct {
+	arr []int
+}
+
+func Constructor() StreamRank {
+	return StreamRank{arr: make([]int, 0)}
+}
+
+func (this *StreamRank) Track(x int) {
+	index := sort.Search(len(this.arr), func(i int) bool {
+		return x <= this.arr[i]
+	})
+	temp := append([]int{}, this.arr[:index]...)
+	temp = append(temp, x)
+	temp = append(temp, this.arr[index:]...)
+	this.arr = temp
+}
+
+func (this *StreamRank) GetRankOfNumber(x int) int {
+	return sort.Search(len(this.arr), func(i int) bool {
+		return x < this.arr[i]
+	})
+}
+```
+
 ## 面试题10.11.峰与谷(2)
 
 - 题目
@@ -5171,6 +5342,90 @@ func (this *WordsFrequency) Insert(word string) {
 		temp = temp.next[nextWord]
 	}
 	temp.ending = temp.ending + 1
+}
+```
+
+## 面试题16.04.井字游戏(1)
+
+- 题目
+
+```
+设计一个算法，判断玩家是否赢了井字游戏。输入是一个 N x N 的数组棋盘，由字符" "，"X"和"O"组成，其中字符" "代表一个空位。
+以下是井字游戏的规则：
+玩家轮流将字符放入空位（" "）中。
+第一个玩家总是放字符"O"，且第二个玩家总是放字符"X"。
+"X"和"O"只允许放置在空位中，不允许对已放有字符的位置进行填充。
+当有N个相同（且非空）的字符填充任何行、列或对角线时，游戏结束，对应该字符的玩家获胜。
+当所有位置非空时，也算为游戏结束。
+如果游戏结束，玩家不允许再放置字符。
+如果游戏存在获胜者，就返回该游戏的获胜者使用的字符（"X"或"O"）；
+如果游戏以平局结束，则返回 "Draw"；
+如果仍会有行动（游戏未结束），则返回 "Pending"。
+示例 1：输入： board = ["O X"," XO","X O"] 输出： "X"
+示例 2：输入： board = ["OOX","XXO","OXO"] 输出： "Draw"
+解释： 没有玩家获胜且不存在空位
+示例 3：输入： board = ["OOX","XXO","OX "] 输出： "Pending"
+解释： 没有玩家获胜且仍存在空位
+提示：1 <= board.length == board[i].length <= 100
+输入一定遵循井字棋规则
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n^2)     | O(n)       |
+
+```go
+func tictactoe(board []string) string {
+	n := len(board)
+	flag := false                     // 有没有空格
+	rows := make([][2]int, n)         // 行
+	cols := make([][2]int, n)         // 列
+	left, right := [2]int{}, [2]int{} // 对角线
+	for i := 0; i < n; i++ {
+		for j := 0; j < n; j++ {
+			if board[i][j] == ' ' {
+				flag = true
+			} else if board[i][j] == 'X' {
+				rows[i][0]++
+				cols[j][0]++
+				if i == j {
+					left[0]++
+				}
+				if i == n-1-j {
+					right[0]++
+				}
+			} else if board[i][j] == 'O' {
+				rows[i][1]++
+				cols[j][1]++
+				if i == j {
+					left[1]++
+				}
+				if i == n-1-j {
+					right[1]++
+				}
+			}
+		}
+	}
+	for i := 0; i < n; i++ { // 行列判断
+		if rows[i][0] == n || cols[i][0] == n {
+			return "X"
+		}
+		if rows[i][1] == n || cols[i][1] == n {
+			return "O"
+		}
+	}
+	if left[0] == n || right[0] == n { // 对角线判断
+		return "X"
+	}
+	if left[1] == n || right[1] == n {
+		return "O"
+	}
+	if flag == true {
+		return "Pending"
+	}
+	return "Draw"
 }
 ```
 
@@ -5628,6 +5883,96 @@ func divingBoard(shorter int, longer int, k int) []int {
 		res = append(res, start+i*diff)
 	}
 	return res
+}
+```
+
+## 面试题16.14.最佳直线(2)
+
+- 题目
+
+```
+给定一个二维平面及平面上的 N 个点列表Points，其中第i个点的坐标为Points[i]=[Xi,Yi]。请找出一条直线，其通过的点的数目最多。
+设穿过最多点的直线所穿过的全部点编号从小到大排序的列表为S，你仅需返回[S[0],S[1]]作为答案，
+若有多条直线穿过了相同数量的点，则选择S[0]值较小的直线返回，S[0]相同则选择S[1]值较小的直线返回。
+示例：输入： [[0,0],[1,1],[1,0],[2,0]] 输出： [0,2]
+解释： 所求直线穿过的3个点的编号为[0,2,3]
+提示：2 <= len(Points) <= 300
+len(Points[i]) = 2
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 暴力法 | O(n^3)     | O(1)       |
+| 02   | 哈希   | O(n^2)     | O(n^2)     |
+
+```go
+func bestLine(points [][]int) []int {
+	res := []int{0, 1}
+	maxCount := 0
+	n := len(points)
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			count := 2
+			x1 := points[i][0] - points[j][0]
+			y1 := points[i][1] - points[j][1]
+			for k := j + 1; k < n; k++ {
+				x2 := points[i][0] - points[k][0]
+				y2 := points[i][1] - points[k][1]
+				if x1*y2 == x2*y1 { // 斜率相同+1
+					count++
+				}
+			}
+			if count > maxCount {
+				maxCount = count
+				res[0] = i
+				res[1] = j
+			}
+		}
+	}
+	return res
+}
+
+# 2
+func bestLine(points [][]int) []int {
+	res := []int{0, 1}
+	maxCount := 0
+	n := len(points)
+	m := make(map[[3]int]int)
+	mToKey := make(map[[3]int][]int)
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			// AX+BY+C=0
+			A := points[j][1] - points[i][1]
+			B := points[i][0] - points[j][0]
+			C := points[i][1]*points[j][0] - points[i][0]*points[j][1]
+			com := gcd(gcd(A, B), C)
+			A, B, C = A/com, B/com, C/com
+			node := [3]int{A, B, C}
+			if m[node] == 0 {
+				mToKey[node] = []int{i, j}
+			}
+			m[node]++
+			if m[node] > maxCount {
+				maxCount = m[node]
+				res = mToKey[node]
+			} else if m[node] == maxCount {
+				if mToKey[node][0] < res[0] ||
+					(mToKey[node][0] == res[0] && mToKey[node][1] < res[1]) {
+					res = mToKey[node]
+				}
+			}
+		}
+	}
+	return res
+}
+
+func gcd(a, b int) int {
+	for a != 0 {
+		a, b = b%a, a
+	}
+	return b
 }
 ```
 
@@ -7343,6 +7688,129 @@ func convertBiNode(root *TreeNode) *TreeNode {
 }
 ```
 
+## 面试题17.13.恢复空格(2)
+
+- 题目
+
+```
+哦，不！你不小心把一个长篇文章中的空格、标点都删掉了，并且大写也弄成了小写。
+像句子"I reset the computer. It still didn’t boot!"已经变成了"iresetthecomputeritstilldidntboot"。
+在处理标点符号和大小写之前，你得先把它断成词语。
+当然了，你有一本厚厚的词典dictionary，不过，有些词没在词典里。
+假设文章用sentence表示，设计一个算法，把文章断开，要求未识别的字符最少，返回未识别的字符数。
+注意：本题相对原题稍作改动，只需返回未识别的字符数
+示例：输入： dictionary = ["looked","just","like","her","brother"]
+sentence = "jesslookedjustliketimherbrother"
+输出： 7
+解释： 断句后为"jess looked just like tim her brother"，共7个未识别字符。
+提示：0 <= len(sentence) <= 1000
+dictionary中总字符数不超过 150000。
+你可以认为dictionary和sentence中只包含小写字母。
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 动态规划+字典树 | O(n^2)     | O(n)       |
+| 02   | 动态规划+哈希   | O(n^2)     | O(n)       |
+
+```go
+func respace(dictionary []string, sentence string) int {
+	n := len(sentence)
+	root := &Trie{
+		next: [26]*Trie{},
+	}
+	for i := 0; i < len(dictionary); i++ {
+		root.Insert(reverse(dictionary[i])) // 反序插入
+	}
+	dp := make([]int, n+1)
+	for i := 1; i <= n; i++ {
+		dp[i] = dp[i-1] + 1 // 上一个长度+1
+		cur := root
+		for j := i; j >= 1; j-- {
+			value := int(sentence[j-1] - 'a')
+			if cur.next[value] == nil {
+				break
+			} else if cur.next[value].ending > 0 { // 找到，更新
+				dp[i] = min(dp[i], dp[j-1])
+			}
+			if dp[i] == 0 {
+				break
+			}
+			cur = cur.next[value]
+		}
+	}
+	return dp[n]
+}
+
+func reverse(s string) string {
+	arr := []byte(s)
+	for i := 0; i < len(s)/2; i++ {
+		arr[i], arr[len(s)-1-i] = arr[len(s)-1-i], arr[i]
+	}
+	return string(arr)
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+type Trie struct {
+	next   [26]*Trie // 下一级指针，如不限于小写字母，[26]=>[256]
+	ending int       // 次数（可以改为bool）
+}
+
+// 插入word
+func (this *Trie) Insert(word string) {
+	temp := this
+	for _, v := range word {
+		value := v - 'a'
+		if temp.next[value] == nil {
+			temp.next[value] = &Trie{
+				next:   [26]*Trie{},
+				ending: 0,
+			}
+		}
+		temp = temp.next[value]
+	}
+	temp.ending++
+}
+
+# 2
+func respace(dictionary []string, sentence string) int {
+	n := len(sentence)
+	m := make(map[string]bool)
+	for i := 0; i < len(dictionary); i++ {
+		m[dictionary[i]] = true
+	}
+	dp := make([]int, n+1)
+	for i := 1; i <= n; i++ {
+		dp[i] = dp[i-1] + 1 // 上一个长度+1
+		for j := i; j >= 1; j-- {
+			str := sentence[j-1 : i]
+			if m[str] == true {
+				dp[i] = min(dp[i], dp[j-1])
+			}
+			if dp[i] == 0 {
+				break
+			}
+		}
+	}
+	return dp[n]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
 ## 面试题17.14.最小K个数(3)
 
 - 题目
@@ -7440,6 +7908,107 @@ func partition(arr []int, left, right int) int {
 func smallestK(arr []int, k int) []int {
 	sort.Ints(arr)
 	return arr[:k]
+}
+```
+
+## 面试题17.15.最长单词(2)
+
+- 题目
+
+```
+给定一组单词words，编写一个程序，找出其中的最长单词，且该单词由这组单词中的其他单词组合而成。
+若有多个长度相同的结果，返回其中字典序最小的一项，若没有符合要求的单词则返回空字符串。
+示例：输入： ["cat","banana","dog","nana","walk","walker","dogwalker"] 输出： "dogwalker"
+解释： "dogwalker"可由"dog"和"walker"组成。
+提示：0 <= len(words) <= 200
+1 <= len(words[i]) <= 100
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 排序+递归     | O(n^2)     | O(n)       |
+| 02   | 排序+动态规划 | O(n^3)     | O(n)       |
+
+```go
+var m map[string]bool
+
+func longestWord(words []string) string {
+	m = make(map[string]bool)
+	n := len(words)
+	for i := 0; i < n; i++ {
+		m[words[i]] = true
+	}
+	sort.Slice(words, func(i, j int) bool {
+		if len(words[i]) == len(words[j]) {
+			return words[i] < words[j]
+		}
+		return len(words[i]) > len(words[j])
+	})
+	for i := 0; i < n; i++ { // 从最长最小字典序的开始找
+		m[words[i]] = false
+		if dfs(words[i]) == true {
+			return words[i]
+		}
+	}
+	return ""
+}
+
+func dfs(str string) bool {
+	if len(str) == 0 || m[str] == true {
+		return true
+	}
+	for i := 1; i <= len(str); i++ {
+		subStr := str[:i]
+		if m[subStr] == true {
+			if dfs(str[i:]) == true {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+# 2
+var m map[string]bool
+
+func longestWord(words []string) string {
+	m = make(map[string]bool)
+	n := len(words)
+	for i := 0; i < n; i++ {
+		m[words[i]] = true
+	}
+	sort.Slice(words, func(i, j int) bool {
+		if len(words[i]) == len(words[j]) {
+			return words[i] < words[j]
+		}
+		return len(words[i]) > len(words[j])
+	})
+	// 从最长最小字典序的开始找
+	for i := 0; i < n; i++ {
+		m[words[i]] = false
+		if judge(words[i]) == true {
+			return words[i]
+		}
+	}
+	return ""
+}
+
+// leetcode 139.单词拆分
+func judge(s string) bool {
+	dp := make([]bool, len(s)+1)
+	dp[0] = true
+	n := len(s)
+	for i := 1; i <= n; i++ {
+		for j := 0; j < i; j++ {
+			if dp[j] == true && m[s[j:i]] == true {
+				dp[i] = true
+				break
+			}
+		}
+	}
+	return dp[n]
 }
 ```
 
@@ -7568,6 +8137,121 @@ func max(a, b int) int {
 		return a
 	}
 	return b
+}
+```
+
+## 面试题17.17.多次搜索(3)
+
+- 题目
+
+```
+给定一个较长字符串big和一个包含较短字符串的数组smalls，设计一个方法，根据smalls中的每一个较短字符串，对big进行搜索。
+输出smalls中的字符串在big里出现的所有位置positions，其中positions[i]为smalls[i]出现的所有位置。
+示例：输入：big = "mississippi" smalls = ["is","ppi","hi","sis","i","ssippi"]
+输出： [[1,4],[8],[],[3],[1,4,7,10],[5]]
+提示：0 <= len(big) <= 1000
+0 <= len(smalls[i]) <= 1000
+smalls的总字符数不会超过 100000。
+你可以认为smalls中没有重复字符串。
+所有出现的字符均为英文小写字母。
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度   | 空间复杂度 |
+| ---- | -------- | ------------ | ---------- |
+| 01   | 内置函数 | O(n^2log(n)) | O(n^2)     |
+| 02   | 暴力法   | O(n^3)       | O(n^2)     |
+| 03   | 字典树   | O(n^2)       | O(n^2)     |
+
+```go
+func multiSearch(big string, smalls []string) [][]int {
+	n := len(smalls)
+	res := make([][]int, n)
+	arr := suffixarray.New([]byte(big)) // 创建后缀树
+	for i := 0; i < n; i++ {
+		target := []byte(smalls[i])
+		temp := arr.Lookup(target, -1) // 返回arr中所有target出现的位置，从后往前
+		sort.Ints(temp)
+		res[i] = temp
+	}
+	return res
+}
+
+# 2
+func multiSearch(big string, smalls []string) [][]int {
+	n := len(smalls)
+	res := make([][]int, n)
+	for i := 0; i < n; i++ {
+		arr := make([]int, 0)
+		if smalls[i] == "" {
+			res[i] = arr
+			continue
+		}
+		for j := 0; j+len(smalls[i]) <= len(big); j++ {
+			if big[j:j+len(smalls[i])] == smalls[i] {
+				arr = append(arr, j)
+			}
+		}
+		res[i] = arr
+	}
+	return res
+}
+
+# 3
+func multiSearch(big string, smalls []string) [][]int {
+	n := len(smalls)
+	res := make([][]int, n)
+	root := &Trie{
+		next: [26]*Trie{},
+	}
+	for i := 0; i < n; i++ {
+		root.Insert(smalls[i], i+1)
+	}
+	for i := 0; i < len(big); i++ {
+		temp := root.Search(big[i:])
+		for j := 0; j < len(temp); j++ {
+			res[temp[j]] = append(res[temp[j]], i)
+		}
+	}
+	return res
+}
+
+type Trie struct {
+	next   [26]*Trie // 下一级指针，如不限于小写字母，[26]=>[256]
+	ending int       // 下标，从1开始
+}
+
+// 插入word
+func (this *Trie) Insert(word string, index int) {
+	temp := this
+	for _, v := range word {
+		value := v - 'a'
+		if temp.next[value] == nil {
+			temp.next[value] = &Trie{
+				next:   [26]*Trie{},
+				ending: 0,
+			}
+		}
+		temp = temp.next[value]
+	}
+	temp.ending = index
+}
+
+// 查找
+func (this *Trie) Search(word string) []int {
+	arr := make([]int, 0) // 存放匹配到的下标列表
+	temp := this
+	for _, v := range word {
+		value := v - 'a'
+		if temp = temp.next[value]; temp == nil {
+			return arr
+		}
+		if temp.ending > 0 {
+			arr = append(arr, temp.ending-1)
+		}
+	}
+	return arr
 }
 ```
 
@@ -7984,9 +8668,9 @@ func trap(height []int) int {
 }
 ```
 
-## 面试题17.22.单词转换
+## 面试题17.22.单词转换(2)
 
-### 题目
+- 题目
 
 ```
 给定字典中的两个词，长度相等。写一个方法，把一个词转换成另一个词， 但是一次只能改变一个字符。
@@ -8001,14 +8685,102 @@ wordList = ["hot","dot","dog","lot","log"]
 解释: endWord "cog" 不在字典中，所以不存在符合要求的转换序列。
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路   | 时间复杂度 | 空间复杂度 |
-| ---- | ------ | ---------- | ---------- |
-| 01   | 暴力法 | O(n^2)     | O(1)       |
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+| 02   | 广度优先搜索 | O(n^2)     | O(n^2)     |
 
 ```go
+func findLadders(beginWord string, endWord string, wordList []string) []string {
+	m, preMap := make(map[string]int), make(map[string][]string)
+	for i := 0; i < len(wordList); i++ {
+		m[wordList[i]] = 1
+	}
+	if m[endWord] == 0 {
+		return nil
+	}
+	for i := 0; i < len(wordList); i++ {
+		for j := 0; j < len(wordList[i]); j++ {
+			newStr := wordList[i][:j] + "*" + wordList[i][j+1:]
+			preMap[newStr] = append(preMap[newStr], wordList[i])
+		}
+	}
+	visited := make(map[string]bool)
+	queue, path := make([]string, 0), make([][]string, 0)
+	queue, path = append(queue, beginWord), append(path, []string{beginWord})
+	for len(queue) > 0 {
+		length := len(queue)
+		for i := 0; i < length; i++ {
+			for j := 0; j < len(beginWord); j++ {
+				newStr := queue[i][:j] + "*" + queue[i][j+1:]
+				temp := make([]string, len(path[i]))
+				copy(temp, path[i])
+				for _, word := range preMap[newStr] {
+					if word == endWord {
+						return append(temp, endWord)
+					} else if visited[word] == false {
+						visited[word] = true
+						queue, path = append(queue, word), append(path, append(temp, word))
+					}
+				}
+			}
+		}
+		queue, path = queue[length:], path[length:]
+	}
+	return nil
+}
 
+# 2
+func findLadders(beginWord string, endWord string, wordList []string) []string {
+	m := make(map[string]int)
+	for i := 0; i < len(wordList); i++ {
+		m[wordList[i]] = 1
+	}
+	if m[endWord] == 0 {
+		return nil
+	}
+	preMap := make(map[string][]string)
+	for i := 0; i < len(wordList); i++ {
+		for j := 0; j < len(wordList[i]); j++ {
+			newStr := wordList[i][:j] + "*" + wordList[i][j+1:]
+			if _, ok := preMap[newStr]; !ok {
+				preMap[newStr] = make([]string, 0)
+			}
+			preMap[newStr] = append(preMap[newStr], wordList[i])
+		}
+	}
+	visited := make(map[string]bool)
+	count := 0
+	queue := make([]string, 0)
+	queue = append(queue, beginWord)
+	path := make([][]string, 0)
+	path = append(path, []string{beginWord})
+	for len(queue) > 0 {
+		count++
+		node := queue[0]
+		queue = queue[1:]
+		arr := path[0]
+		path = path[1:]
+		for j := 0; j < len(beginWord); j++ {
+			newStr := node[:j] + "*" + node[j+1:]
+			temp := make([]string, len(arr))
+			copy(temp, arr)
+			for _, word := range preMap[newStr] {
+				if word == endWord {
+					return append(temp, endWord)
+				}
+				if visited[word] == false {
+					visited[word] = true
+					queue = append(queue, word)
+					path = append(path, append(temp, word))
+				}
+			}
+		}
+	}
+	return nil
+}
 ```
 
 ## 面试题17.23.最大黑方阵

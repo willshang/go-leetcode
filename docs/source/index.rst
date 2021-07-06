@@ -33,6 +33,7 @@ Welcome to go-leetcode's documentation!
    question/offer
    question/lcci
    question/lcp
+   question/lcs
    question/patB
 
 
