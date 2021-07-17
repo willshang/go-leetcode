@@ -81,10 +81,10 @@
 
 ## 8.数学(2)
 
-| Title                                                        | Tag  | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---- | ------ | -------- |
-| [179.最大数](https://leetcode-cn.com/problems/largest-number/) | 排序 | Medium | 完成     |
-| 149                                                          |      |        |          |
+| Title                                                        | Tag          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------ | ------ | -------- |
+| [179.最大数](https://leetcode-cn.com/problems/largest-number/) | 排序         | Medium | 完成     |
+| [149.直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line/) | 哈希表、数学 | Hard   | 完成     |
 
 ## 9.其他(4)
 

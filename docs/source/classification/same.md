@@ -129,5 +129,6 @@
 | 125(相似) | [871.最低加油次数](https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/) Hard | [1201.丑数III](https://leetcode-cn.com/problems/ugly-number-iii/) Medium |
 | 126(相似) | [139.单词拆分](https://leetcode-cn.com/problems/word-break/) Medium | [面试题17.13.恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) Medium<br />[面试题17.15.最长单词](https://leetcode-cn.com/problems/longest-word-lcci/) Medium |
 | 127(相似) | [149.直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line/) Hard | [面试题16.14.最佳直线](https://leetcode-cn.com/problems/best-line-lcci/) Medium |
-| 128(相似) | [1275.找出井字棋的获胜者](https://leetcode-cn.com/problems/find-winner-on-a-tic-tac-toe-game/) Easy | [面试题16.04.井字游戏](https://leetcode-cn.com/problems/tic-tac-toe-lcci/) Medium |
+| 128(相似) | [1275.找出井字棋的获胜者](https://leetcode-cn.com/problems/find-winner-on-a-tic-tac-toe-game/) Easy | [794.有效的井字游戏](https://leetcode-cn.com/problems/valid-tic-tac-toe-state/) Medium<br />[面试题16.04.井字游戏](https://leetcode-cn.com/problems/tic-tac-toe-lcci/) Medium |
+| 129(相似) | [1254.统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/) Medium | [LCS03.主题空间](https://leetcode-cn.com/problems/YesdPw/) Medium |
 

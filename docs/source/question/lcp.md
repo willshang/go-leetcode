@@ -1372,9 +1372,9 @@ func (h *IntHeap) Pop() interface{} {
 }
 ```
 
-## LCP34.二叉树染色
+## LCP34.二叉树染色(1)
 
-### 题目
+- 题目
 
 ```
 小扣有一个根结点为 root 的二叉树模型，初始所有结点均为白色，可以用蓝色染料给模型结点染色，
@@ -1390,13 +1390,48 @@ func (h *IntHeap) Pop() interface{} {
 1 <= 结点数量 <= 10000
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路 | 时间复杂度 | 空间复杂度 |
-| ---- | ---- | ---------- | ---------- |
-| 01   | 枚举 | O(n^2)     | O(1)       |
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-递归 | O(n^3)     | O(n^2)     |
 
 ```go
+func maxValue(root *TreeNode, k int) int {
+	dp := dfs(root, k)
+	return maxArr(dp)
+}
+
+func dfs(root *TreeNode, k int) []int {
+	dp := make([]int, k+1) // dp[i]表示，染色数为i的最大值
+	if root == nil {
+		return dp
+	}
+	left := dfs(root.Left, k)
+	right := dfs(root.Right, k)
+	dp[0] = maxArr(left) + maxArr(right) // 当前节点不染色
+	for i := 1; i <= k; i++ {            // 当前节点染色
+		for j := 0; j < i; j++ {
+			dp[i] = max(dp[i], left[j]+right[i-1-j]+root.Val)
+		}
+	}
+	return dp
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func maxArr(arr []int) int {
+	res := 0
+	for i := 0; i < len(arr); i++ {
+		res = max(res, arr[i])
+	}
+	return res
+}
 
 ```
 
