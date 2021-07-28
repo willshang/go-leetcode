@@ -12,7 +12,7 @@
 | 0008 | [LCP08.剧情触发时间](https://leetcode-cn.com/problems/ju-qing-hong-fa-shi-jian/) | 数组、二分查找、排序                     | Medium | 完成     |
 | 0009 |                                                              |                                          |        |          |
 | 0010 |                                                              |                                          |        |          |
-| 0011 | [LCP11.期望个数统计](https://leetcode-cn.com/problems/qi-wang-ge-shu-tong-ji/) |                                          | Easy   | 完成     |
+| 0011 | [LCP11.期望个数统计](https://leetcode-cn.com/problems/qi-wang-ge-shu-tong-ji/) | 数组、哈希表、数学、概率与统计           | Easy   | 完成     |
 | 0012 | [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) | 数组、二分查找                           | Medium | 完成     |
 | 0013 |                                                              |                                          |        |          |
 | 0014 |                                                              |                                          |        |          |
@@ -35,4 +35,4 @@
 | 0031 |                                                              |                                          |        |          |
 | 0032 |                                                              |                                          |        |          |
 | 0033 | [LCP33.蓄水](https://leetcode-cn.com/problems/o8SXZn/)       | 贪心、数组、堆（优先队列）               | Easy   | 完成     |
-| 0034 | [LCP 34.二叉树染色](https://leetcode-cn.com/problems/er-cha-shu-ran-se-UGC/) | 树、动态规划、二叉树                     | Medium | 完成     |
+| 0034 | [LCP34.二叉树染色](https://leetcode-cn.com/problems/er-cha-shu-ran-se-UGC/) | 树、动态规划、二叉树                     | Medium | 完成     |

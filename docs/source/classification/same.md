@@ -131,4 +131,7 @@
 | 127(相似) | [149.直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line/) Hard | [面试题16.14.最佳直线](https://leetcode-cn.com/problems/best-line-lcci/) Medium |
 | 128(相似) | [1275.找出井字棋的获胜者](https://leetcode-cn.com/problems/find-winner-on-a-tic-tac-toe-game/) Easy | [794.有效的井字游戏](https://leetcode-cn.com/problems/valid-tic-tac-toe-state/) Medium<br />[面试题16.04.井字游戏](https://leetcode-cn.com/problems/tic-tac-toe-lcci/) Medium |
 | 129(相似) | [1254.统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/) Medium | [LCS03.主题空间](https://leetcode-cn.com/problems/YesdPw/) Medium |
+| 130(相似) | [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) Medium | [1914.循环轮转矩阵](https://leetcode-cn.com/problems/cyclically-rotating-a-grid/) Medium |
+| 131(相似) | [378.有序矩阵中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) Medium | [668.乘法表中第k小的数](https://leetcode-cn.com/problems/kth-smallest-number-in-multiplication-table/) Hard |
+| 132(相似) | [785.判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) Medium | [886.可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) Medium |
 
