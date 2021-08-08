@@ -10,7 +10,7 @@
 | 0006 | [LCP06.拿硬币](https://leetcode-cn.com/problems/na-ying-bi/) | 数组、数学                               | Easy   | 完成     |
 | 0007 | [LCP07.传递信息](https://leetcode-cn.com/problems/chuan-di-xin-xi/) | 深度优先搜索、广度优先搜索、图、动态规划 | Easy   | 完成     |
 | 0008 | [LCP08.剧情触发时间](https://leetcode-cn.com/problems/ju-qing-hong-fa-shi-jian/) | 数组、二分查找、排序                     | Medium | 完成     |
-| 0009 |                                                              |                                          |        |          |
+| 0009 | [LCP09.最小跳跃次数](https://leetcode-cn.com/problems/zui-xiao-tiao-yue-ci-shu/) | 广度优先搜索、线段树、数组、动态规划     | Hard   |          |
 | 0010 |                                                              |                                          |        |          |
 | 0011 | [LCP11.期望个数统计](https://leetcode-cn.com/problems/qi-wang-ge-shu-tong-ji/) | 数组、哈希表、数学、概率与统计           | Easy   | 完成     |
 | 0012 | [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) | 数组、二分查找                           | Medium | 完成     |

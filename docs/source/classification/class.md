@@ -357,6 +357,7 @@
 | [57.插入区间](https://leetcode-cn.com/problems/insert-interval/) | 排序、数组                 | Hard   | 完成     |
 | [435.无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/) | 贪心算法                   | Medium | 完成     |
 | [452.用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/) | 贪心算法、排序             | Medium | 完成     |
+| [757.设置交集大小至少为2](https://leetcode-cn.com/problems/set-intersection-size-at-least-two/) | 贪心、数组、排序           | Hard   | 完成     |
 | [986.区间列表的交集](https://leetcode-cn.com/problems/interval-list-intersections/) | 双指针                     | Medium | 完成     |
 | [1024.视频拼接](https://leetcode-cn.com/problems/video-stitching/) | 动态规划                   | Medium | 完成     |
 | [1288.删除被覆盖区间](https://leetcode-cn.com/problems/remove-covered-intervals/) | 贪心算法、排序、Line Sweep | Medium | 完成     |

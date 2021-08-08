@@ -99,7 +99,7 @@
 | 95(相似) | [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) Medium<br />[126.单词接龙II](https://leetcode-cn.com/problems/word-ladder-ii/) Hard | [面试题17.22.单词转换](https://leetcode-cn.com/problems/word-transformer-lcci/) Medium |
 | 96(相似) | [321.拼接最大数](https://leetcode-cn.com/problems/create-maximum-number/) Hard | [ 1754.构造字典序最大的合并字符串](https://leetcode-cn.com/problems/largest-merge-of-two-strings/) Medium |
 | 97(相似) | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) Medium<br />[673.最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/) Medium | [354.俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/) Hard<br />[1626.无矛盾的最佳球队](https://leetcode-cn.com/problems/best-team-with-no-conflicts/) Medium<br />[1671.得到山形数组的最少删除次数](https://leetcode-cn.com/problems/minimum-number-of-removals-to-make-mountain-array/) Hard<br />[1691.堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/) Hard<br />[1713.得到子序列的最少操作次数](https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/) Hard<br />[面试题08.13.堆箱子](https://leetcode-cn.com/problems/pile-box-lcci/) Hard<br />[面试题17.08.马戏团人塔](https://leetcode-cn.com/problems/circus-tower-lcci/) Medium |
-| 98(相似) | [767.重构字符串](https://leetcode-cn.com/problems/reorganize-string/) Medium | [1054.距离相等的条形码](https://leetcode-cn.com/problems/distant-barcodes/) Medium |
+| 98(相似) | [767.重构字符串](https://leetcode-cn.com/problems/reorganize-string/) Medium | [1054.距离相等的条形码](https://leetcode-cn.com/problems/distant-barcodes/) Medium<br />[1953.你可以工作的最大周数](https://leetcode-cn.com/problems/maximum-number-of-weeks-for-which-you-can-work/) Medium |
 | 99(相似) | [402.移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/) Medium | [1673.找出最具竞争力的子序列](https://leetcode-cn.com/problems/find-the-most-competitive-subsequence/) Medium |
 | 100 | [865.具有所有最深节点的最小子树](https://leetcode-cn.com/problems/smallest-subtree-with-all-the-deepest-nodes/) Medium | [1123.最深叶节点的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-deepest-leaves/) Medium |
 | 101(相似) | [306.累加数](https://leetcode-cn.com/problems/additive-number/) Medium | [842.将数组拆分成斐波那契序列](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/) Medium |
@@ -134,4 +134,7 @@
 | 130(相似) | [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) Medium | [1914.循环轮转矩阵](https://leetcode-cn.com/problems/cyclically-rotating-a-grid/) Medium |
 | 131(相似) | [378.有序矩阵中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) Medium | [668.乘法表中第k小的数](https://leetcode-cn.com/problems/kth-smallest-number-in-multiplication-table/) Hard |
 | 132(相似) | [785.判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) Medium | [886.可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) Medium |
+|  | 631 | [1675.数组的最小偏移量](https://leetcode-cn.com/problems/minimize-deviation-in-array/) Hard |
+|  | [768.最多能完成排序的块II](https://leetcode-cn.com/problems/max-chunks-to-make-sorted-ii/) | [ 769.最多能完成排序的块](https://leetcode-cn.com/problems/max-chunks-to-make-sorted/) Medium |
+|  | [213.打家劫舍II](https://leetcode-cn.com/problems/house-robber-ii/) Medium | [1388.3n块披萨](https://leetcode-cn.com/problems/pizza-with-3n-slices/) Hard |
 
