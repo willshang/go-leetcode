@@ -4,6 +4,6 @@ func main() {
 
 }
 
-func primePalindrome(N int) int {
+func minFlips(s string) int {
 
 }
