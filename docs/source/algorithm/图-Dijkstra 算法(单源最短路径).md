@@ -9,14 +9,23 @@
 
 ## 2、Go实现
 
+- 不加堆实现
+
+```go
+
+```
+
+- 堆实现
+
 ```go
 
 ```
 
 ## 3、Leetcode
 
-| Title                                                        | Tag  | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---- | ------ | -------- |
-| 743                                                          |      |        |          |
-| [1514.概率最大的路径](https://leetcode-cn.com/problems/path-with-maximum-probability/) | 图   | Medium | 完成     |
-| 1584                                                         |      |        |          |
+| Title                                                        | Tag                                                          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
+| [743.网络延迟时间](https://leetcode-cn.com/problems/network-delay-time/) | 堆、深度优先搜索、<br />广度优先搜索、图                     | Medium | 完成     |
+| [1514.概率最大的路径](https://leetcode-cn.com/problems/path-with-maximum-probability/) | 图                                                           | Medium | 完成     |
+| [1631.最小体力消耗路径](https://leetcode-cn.com/problems/path-with-minimum-effort/) | 深度优先搜索、广度优先搜索、并查集、<br />数组、二分查找、矩阵、堆（优先队列） | Medium | 完成     |
+| [1976.到达目的地的方案数](https://leetcode-cn.com/problems/number-of-ways-to-arrive-at-destination/) | 图、拓扑排序、动态规划、最短路                               | Medium | 完成     |

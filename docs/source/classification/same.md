@@ -134,8 +134,10 @@
 | 130(相似) | [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) Medium | [1914.循环轮转矩阵](https://leetcode-cn.com/problems/cyclically-rotating-a-grid/) Medium |
 | 131(相似) | [378.有序矩阵中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) Medium | [668.乘法表中第k小的数](https://leetcode-cn.com/problems/kth-smallest-number-in-multiplication-table/) Hard |
 | 132(相似) | [785.判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) Medium | [886.可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) Medium |
-|  | 631 | [1675.数组的最小偏移量](https://leetcode-cn.com/problems/minimize-deviation-in-array/) Hard |
-|  | [768.最多能完成排序的块II](https://leetcode-cn.com/problems/max-chunks-to-make-sorted-ii/) | [ 769.最多能完成排序的块](https://leetcode-cn.com/problems/max-chunks-to-make-sorted/) Medium |
-|  | [213.打家劫舍II](https://leetcode-cn.com/problems/house-robber-ii/) Medium | [1388.3n块披萨](https://leetcode-cn.com/problems/pizza-with-3n-slices/) Hard |
-| | 719 | 786 |
+| 133(相似) | 631 | [1675.数组的最小偏移量](https://leetcode-cn.com/problems/minimize-deviation-in-array/) Hard |
+| 134(相似) | [768.最多能完成排序的块II](https://leetcode-cn.com/problems/max-chunks-to-make-sorted-ii/) | [ 769.最多能完成排序的块](https://leetcode-cn.com/problems/max-chunks-to-make-sorted/) Medium |
+| 135(相似) | [213.打家劫舍II](https://leetcode-cn.com/problems/house-robber-ii/) Medium | [1388.3n块披萨](https://leetcode-cn.com/problems/pizza-with-3n-slices/) Hard |
+| 136(相似) | [719.找出第k小的距离对](https://leetcode-cn.com/problems/find-k-th-smallest-pair-distance/) Hard | 786 |
+| 137(相似) | [778.水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) Hard | [1631.最小体力消耗路径](https://leetcode-cn.com/problems/path-with-minimum-effort/) Medium |
+| 138(相似) | [787.K站中转内最便宜的航班](https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/) Medium | [1928.规定时间内到达终点的最小花费](https://leetcode-cn.com/problems/minimum-cost-to-reach-destination-in-time/) Hard |
 
