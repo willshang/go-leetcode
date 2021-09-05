@@ -12,7 +12,7 @@
 | 06   | 1118                                                         |                                         | Easy   |          |
 | 07   | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 动态规划                                | Medium | 完成     |
 | 08   | [130.被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 深度优先搜索、广度优先搜索、并查集      | Medium | 完成     |
-| 09   | 1312                                                         |                                         |        |          |
+| 09   | [1312.让字符串成为回文串的最少插入次数](https://leetcode-cn.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/) | 动态规划                                | Hard   | 完成     |
 | 10   | [141.环形链表](https://leetcode-cn.com/problems/linked-list-cycle) | 链表、双指针                            | Easy   | 完成     |
 |      | 第2期                                                        |                                         |        |          |
 | 11   | [146.LRU缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 设计                                    | Medium | 完成     |

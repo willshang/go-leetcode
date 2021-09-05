@@ -106,7 +106,7 @@
 | 102 | [538.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) Easy | [1038.把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/) Medium |
 | 103 | [846.一手顺子](https://leetcode-cn.com/problems/hand-of-straights/) Medium | [1296.划分数组为连续数字的集合](https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) Medium |
 | 104(相似) | [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) Medium | [1425.带限制的子序列和](https://leetcode-cn.com/problems/constrained-subsequence-sum/) Hard |
-| 105(相似) | [473.火柴拼正方形](https://leetcode-cn.com/problems/matchsticks-to-square/) Medium | 698 |
+| 105(相似) | [473.火柴拼正方形](https://leetcode-cn.com/problems/matchsticks-to-square/) Medium | [698.划分为k个相等的子集](https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets/) Medium |
 | 106(相似) | [516.最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) Medium | [1771.由子序列构造的最长回文串的长度](https://leetcode-cn.com/problems/maximize-palindrome-length-from-subsequences/) Hard |
 | 107(相似) | [416.分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) Medium | [1049.最后一块石头的重量II](https://leetcode-cn.com/problems/last-stone-weight-ii/) Medium |
 | 108(相似) | [205.同构字符串](https://leetcode-cn.com/problems/isomorphic-strings/) Easy | [890.查找和替换模式](https://leetcode-cn.com/problems/find-and-replace-pattern/) Medium |
@@ -140,4 +140,5 @@
 | 136(相似) | [719.找出第k小的距离对](https://leetcode-cn.com/problems/find-k-th-smallest-pair-distance/) Hard | 786 |
 | 137(相似) | [778.水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) Hard | [1631.最小体力消耗路径](https://leetcode-cn.com/problems/path-with-minimum-effort/) Medium |
 | 138(相似) | [787.K站中转内最便宜的航班](https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/) Medium | [1928.规定时间内到达终点的最小花费](https://leetcode-cn.com/problems/minimum-cost-to-reach-destination-in-time/) Hard |
+| 139(相似) | [1723.完成所有工作的最短时间](https://leetcode-cn.com/problems/find-minimum-time-to-finish-all-jobs/) Hard | [1986.完成任务的最少工作时间段](https://leetcode-cn.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/) Medium |
 

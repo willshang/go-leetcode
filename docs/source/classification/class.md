@@ -257,7 +257,7 @@
 | [1340.跳跃游戏V](https://leetcode-cn.com/problems/jump-game-v/) | 动态规划                                 | Hard   | 完成     |
 | [1654.到家的最少跳跃次数](https://leetcode-cn.com/problems/minimum-jumps-to-reach-home/) | 广度优先搜索、动态规划                   | Medium | 完成     |
 | [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) |                                          | Medium | 完成     |
-| [1871.跳跃游戏VII](https://leetcode-cn.com/problems/jump-game-vii/) | 贪心算法、广度优先搜索、<br />Line Sweep | Medium |          |
+| [1871.跳跃游戏VII](https://leetcode-cn.com/problems/jump-game-vii/) | 贪心算法、广度优先搜索、<br />Line Sweep | Medium | 完成     |
 
 ### 灯泡问题
 
@@ -332,22 +332,22 @@
 
 ### 滑动窗口
 
-| Title                                                        | Tag                                          | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------------------------------------- | ------ | -------- |
-| [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window   | Medium | 完成     |
-| [30.串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 哈希表、双指针、字符串                       | Hard   | 完成     |
-| [76.最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 哈希表、双指针、字符串、<br />Sliding Window | Hard   | 完成     |
-| 159                                                          |                                              |        |          |
-| [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                       | Medium | 完成     |
-| [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window                           | Hard   | 完成     |
-| 340                                                          |                                              |        |          |
-| [438.找到字符串中所有字母异位词](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/) | 哈希表                                       | Medium | 完成     |
-| [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 双指针、Sliding Window                       | Medium | 完成     |
-| 632                                                          |                                              |        |          |
-| 727                                                          |                                              |        |          |
-| [992.K个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/) | 哈希表、双指针、Sliding Window               | Hard   | 完成     |
-| [1004.最大连续1的个数III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | 双指针、Sliding Window                       | Medium | 完成     |
-| [1052.爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 数组、Sliding Window                         | Medium | 完成     |
+| Title                                                        | Tag                                                 | 难度   | 完成情况 |
+| ------------------------------------------------------------ | --------------------------------------------------- | ------ | -------- |
+| [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) | 哈希表、双指针、字符串<br />Sliding Window          | Medium | 完成     |
+| [30.串联所有单词的子串](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/) | 哈希表、双指针、字符串                              | Hard   | 完成     |
+| [76.最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 哈希表、双指针、字符串、<br />Sliding Window        | Hard   | 完成     |
+| 159                                                          |                                                     |        |          |
+| [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) | 数组、双指针、二分查找                              | Medium | 完成     |
+| [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) | 堆、Sliding Window                                  | Hard   | 完成     |
+| 340                                                          |                                                     |        |          |
+| [438.找到字符串中所有字母异位词](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/) | 哈希表                                              | Medium | 完成     |
+| [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | 双指针、Sliding Window                              | Medium | 完成     |
+| [ 632.最小区间](https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/) | 贪心、数组、哈希表、排序、 滑动窗口、堆（优先队列） | Hard   | 完成     |
+| 727                                                          |                                                     |        |          |
+| [992.K个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/) | 哈希表、双指针、Sliding Window                      | Hard   | 完成     |
+| [1004.最大连续1的个数III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | 双指针、Sliding Window                              | Medium | 完成     |
+| [1052.爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | 数组、Sliding Window                                | Medium | 完成     |
 
 ### 区间问题
 
