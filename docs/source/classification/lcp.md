@@ -36,3 +36,11 @@
 | 0032 |                                                              |                                          |        |          |
 | 0033 | [LCP33.蓄水](https://leetcode-cn.com/problems/o8SXZn/)       | 贪心、数组、堆（优先队列）               | Easy   | 完成     |
 | 0034 | [LCP34.二叉树染色](https://leetcode-cn.com/problems/er-cha-shu-ran-se-UGC/) | 树、动态规划、二叉树                     | Medium | 完成     |
+| 0035 |                                                              |                                          |        |          |
+| 0036 |                                                              |                                          |        |          |
+| 0037 |                                                              |                                          |        |          |
+| 0038 |                                                              |                                          |        |          |
+| 0039 | [LCP39.无人机方阵](https://leetcode-cn.com/problems/0jQkd0/) |                                          | Easy   | 完成     |
+| 0040 | [LCP40.心算挑战](https://leetcode-cn.com/problems/uOAnQW/)   |                                          | Easy   | 完成     |
+| 0041 | [LCP41.黑白翻转棋](https://leetcode-cn.com/problems/fHi6rV/) |                                          | Medium | 完成     |
+| 0042 | [LCP42.玩具套圈](https://leetcode-cn.com/problems/vFjcfV/)   |                                          | Hard   |          |

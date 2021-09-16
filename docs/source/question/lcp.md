@@ -1456,6 +1456,315 @@ func maxArr(arr []int) int {
 	}
 	return res
 }
+```
 
+## LCP39.无人机方阵(1)
+
+- 题目
+
+```
+在 「力扣挑战赛」 开幕式的压轴节目 「无人机方阵」中，每一架无人机展示一种灯光颜色。 无人机方阵通过两种操作进行颜色图案变换：
+调整无人机的位置布局
+切换无人机展示的灯光颜色
+给定两个大小均为 N*M 的二维数组 source 和 target 表示无人机方阵表演的两种颜色图案，
+由于无人机切换灯光颜色的耗能很大，请返回从 source 到 target 最少需要多少架无人机切换灯光颜色。
+注意： 调整无人机的位置布局时无人机的位置可以随意变动。
+示例 1：输入：source = [[1,3],[5,4]], target = [[3,1],[6,5]] 输出：1
+解释：最佳方案为
+将 [0,1] 处的无人机移动至 [0,0] 处；
+将 [0,0] 处的无人机移动至 [0,1] 处；
+将 [1,0] 处的无人机移动至 [1,1] 处；
+将 [1,1] 处的无人机移动至 [1,0] 处，其灯光颜色切换为颜色编号为 6 的灯光；
+因此从source 到 target 所需要的最少灯光切换次数为 1。
+示例 2：输入：source = [[1,2,3],[3,4,5]], target = [[1,3,5],[2,3,4]]输出：0
+解释：仅需调整无人机的位置布局，便可完成图案切换。因此不需要无人机切换颜色
+提示：n == source.length == target.length
+m == source[i].length == target[i].length
+1 <= n, m <=100
+1 <= source[i][j], target[i][j] <=10^4
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n^2)     | O(n^2)     |
+
+ ```go
+ func minimumSwitchingTimes(source [][]int, target [][]int) int {
+ 	temp := make(map[int]int)
+ 	n, m := len(source), len(source[0])
+ 	for i := 0; i < n; i++ {
+ 		for j := 0; j < m; j++ {
+ 			temp[source[i][j]]++
+ 			temp[target[i][j]]--
+ 		}
+ 	}
+ 	res := 0
+ 	for _, v := range temp {
+ 		if v > 0 {
+ 			res = res + v
+ 		}
+ 	}
+ 	return res
+ }
+ ```
+
+## LCP40.心算挑战(3)
+
+- 题目
+
+```
+「力扣挑战赛」心算项目的挑战比赛中，要求选手从 N 张卡牌中选出 cnt 张卡牌，若这 cnt 张卡牌数字总和为偶数，
+则选手成绩「有效」且得分为 cnt 张卡牌数字总和。
+给定数组 cards 和 cnt，其中 cards[i] 表示第 i 张卡牌上的数字。 请帮参赛选手计算最大的有效得分。
+若不存在获取有效得分的卡牌方案，则返回 0。
+示例 1：输入：cards = [1,2,8,9], cnt = 3 输出：18
+解释：选择数字为 1、8、9 的这三张卡牌，此时可获得最大的有效得分 1+8+9=18。
+示例 2：输入：cards = [3,3,1], cnt = 1 输出：0
+解释：不存在获取有效得分的卡牌方案。
+提示：1 <= cnt <= cards.length <= 10^5
+1 <= cards[i] <= 1000
+```
+
+- 解题思路
+
+| No.  | 思路      | 时间复杂度 | 空间复杂度 |
+| ---- | --------- | ---------- | ---------- |
+| 01   | 排序+枚举 | O(nlog(n)) | O(n)       |
+| 02   | 排序+枚举 | O(nlog(n)) | O(n)       |
+| 03   | 贪心      | O(nlog(n)) | O(1)       |
+
+ ```go
+ func maxmiumScore(cards []int, cnt int) int {
+ 	a, b := make([]int, 0), make([]int, 0)
+ 	for i := 0; i < len(cards); i++ {
+ 		if cards[i]%2 == 0 {
+ 			a = append(a, cards[i])
+ 		} else {
+ 			b = append(b, cards[i])
+ 		}
+ 	}
+ 	sort.Slice(a, func(i, j int) bool {
+ 		return a[i] > a[j]
+ 	})
+ 	sort.Slice(b, func(i, j int) bool {
+ 		return b[i] > b[j]
+ 	})
+ 	x, y := len(a), len(b)
+ 	arrA, arrB := make([]int, x+1), make([]int, y+1)
+ 	for i := 0; i < x; i++ {
+ 		arrA[i+1] = arrA[i] + a[i]
+ 	}
+ 	for i := 0; i < y; i++ {
+ 		arrB[i+1] = arrB[i] + b[i]
+ 	}
+ 	res := 0
+ 	for i := 0; i <= cnt; i++ { // 枚举奇数的个数
+ 		n, m := cnt-i, i
+ 		if n <= x && m <= y && (arrA[n]+arrB[m])%2 == 0 {
+ 			res = max(res, arrA[n]+arrB[m])
+ 		}
+ 	}
+ 	return res
+ }
+ 
+ func max(a, b int) int {
+ 	if a > b {
+ 		return a
+ 	}
+ 	return b
+ }
+ 
+ # 2
+ func maxmiumScore(cards []int, cnt int) int {
+ 	sort.Slice(cards, func(i, j int) bool {
+ 		return cards[i] > cards[j]
+ 	})
+ 	a, b := make([]int, 1), make([]int, 1)
+ 	for i := 0; i < len(cards); i++ {
+ 		if cards[i]%2 == 0 {
+ 			a = append(a, cards[i]+a[len(a)-1])
+ 		} else {
+ 			b = append(b, cards[i]+b[len(b)-1])
+ 		}
+ 	}
+ 	res := 0
+ 	for i := 0; i <= cnt; i++ { // 枚举奇数的个数
+ 		n, m := cnt-i, i
+ 		if n < len(a) && m < len(b) && (a[n]+b[m])%2 == 0 {
+ 			res = max(res, a[n]+b[m])
+ 		}
+ 	}
+ 	return res
+ }
+ 
+ func max(a, b int) int {
+ 	if a > b {
+ 		return a
+ 	}
+ 	return b
+ }
+ 
+ # 3
+ func maxmiumScore(cards []int, cnt int) int {
+ 	sort.Slice(cards, func(i, j int) bool {
+ 		return cards[i] > cards[j]
+ 	})
+ 	res := 0
+ 	sum := 0
+ 	for i := 0; i < cnt; i++ {
+ 		sum = sum + cards[i]
+ 	}
+ 	if sum%2 == 0 { // 偶数直接返回
+ 		return sum
+ 	}
+ 	// 使用不同奇偶性的数替换：
+ 	// 1、找个一个较小的数替换：cards[cnt-1]
+ 	// 2、找到一个较小的数替换：跟cards[cnt-1]不同的较小的数
+ 	for i := cnt; i < len(cards); i++ { // 情况1：在后面找1个数替换前cnt个最大数的最后1个数
+ 		if cards[i]%2 != cards[cnt-1]%2 {
+ 			res = max(res, sum-cards[cnt-1]+cards[i])
+ 			break
+ 		}
+ 	}
+ 	for i := cnt - 2; i >= 0; i-- { // 情况2：尝试找到1个奇偶性不同于cards[cnt-1]的数，然后替换掉
+ 		if cards[i]%2 != cards[cnt-1]%2 {
+ 			for j := cnt; j < len(cards); j++ {
+ 				if cards[j]%2 != cards[i]%2 {
+ 					res = max(res, sum-cards[i]+cards[j])
+ 				}
+ 			}
+ 			break
+ 		}
+ 	}
+ 	return res
+ }
+ 
+ func max(a, b int) int {
+ 	if a > b {
+ 		return a
+ 	}
+ 	return b
+ }
+ ```
+
+## LCP41.黑白翻转棋(1)
+
+- 题目
+
+```
+在 n*m 大小的棋盘中，有黑白两种棋子，黑棋记作字母 "X", 白棋记作字母 "O"，空余位置记作 "."。
+当落下的棋子与其他相同颜色的棋子在行、列或对角线完全包围（中间不存在空白位置）另一种颜色的棋子，则可以翻转这些棋子的颜色。
+「力扣挑战赛」黑白翻转棋项目中，将提供给选手一个未形成可翻转棋子的棋盘残局，其状态记作 chessboard。
+若下一步可放置一枚黑棋，请问选手最多能翻转多少枚白棋。
+注意：若翻转白棋成黑棋后，棋盘上仍存在可以翻转的白棋，将可以 继续 翻转白棋
+输入数据保证初始棋盘状态无可以翻转的棋子且存在空余位置
+示例 1：输入：chessboard = ["....X.","....X.","XOOO..","......","......"] 输出：3
+解释：可以选择下在 [2,4] 处，能够翻转白方三枚棋子。
+示例 2：输入：chessboard = [".X.",".O.","XO."] 输出：2
+解释：可以选择下在 [2,2] 处，能够翻转白方两枚棋子。
+示例 3：输入：chessboard = [".......",".......",".......","X......",".O.....","..O....","....OOX"] 输出：4
+解释： 可以选择下在 [6,3] 处，能够翻转白方四枚棋子。
+提示：1 <= chessboard.length, chessboard[i].length <= 8
+chessboard[i] 仅包含 "."、"O" 和 "X"
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 枚举+深度优先搜索 | O(n^4)     | O(n^2)     |
+
+```go
+var res int
+var n, m int
+var dx = []int{-1, 1, 0, 0, 1, 1, -1, -1}
+var dy = []int{0, 0, -1, 1, 1, -1, -1, 1}
+
+func flipChess(chessboard []string) int {
+	res = 0
+	n, m = len(chessboard), len(chessboard[0])
+	temp := make([][]byte, n)
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if chessboard[i][j] == '.' {
+				for a := 0; a < n; a++ {
+					temp[a] = []byte(chessboard[a])
+				}
+				temp[i][j] = 'X'
+				dfs(temp, i, j) // 尝试在i,j位置下黑棋
+				count := 0
+				for a := 0; a < n; a++ { // 统计结果
+					for b := 0; b < m; b++ {
+						if temp[a][b] == 'X' && chessboard[a][b] == 'O' {
+							count++
+						}
+					}
+				}
+				res = max(res, count) // 更新结果
+			}
+		}
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func dfs(arr [][]byte, i, j int) {
+	arr[i][j] = 'X'
+	for k := 0; k < 8; k++ {
+		if ok, path := judge(arr, i, j, 'X', dx[k], dy[k]); ok == true {
+			for c := 0; c < len(path); c++ {
+				a, b := path[c][0], path[c][1]
+				arr[a][b] = 'X'
+				dfs(arr, a, b)
+			}
+		}
+	}
+}
+
+// leetcode1958.检查操作是否合法
+func judge(board [][]byte, rMove int, cMove int, color byte, dirX, dirY int) (res bool, path [][]int) {
+	x, y := rMove+dirX, cMove+dirY
+	count := 1
+	for 0 <= x && x < n && 0 <= y && y < m {
+		if board[x][y] == '.' {
+			return false, nil
+		}
+		path = append(path, []int{x, y})
+		if count == 1 {
+			if board[x][y] == color {
+				return false, nil
+			}
+		} else {
+			if board[x][y] == color {
+				return true, path
+			}
+		}
+		count++
+		x = x + dirX
+		y = y + dirY
+	}
+	return false, nil
+}
+```
+
+## LCP42.玩具套圈
+
+### 题目
+
+```
+
+```
+
+### 解题思路
+
+```go
 ```
 
