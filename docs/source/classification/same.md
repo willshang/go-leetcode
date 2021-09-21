@@ -142,4 +142,5 @@
 | 138(相似) | [787.K站中转内最便宜的航班](https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/) Medium | [1928.规定时间内到达终点的最小花费](https://leetcode-cn.com/problems/minimum-cost-to-reach-destination-in-time/) Hard |
 | 139(相似) | [1723.完成所有工作的最短时间](https://leetcode-cn.com/problems/find-minimum-time-to-finish-all-jobs/) Hard | [1986.完成任务的最少工作时间段](https://leetcode-cn.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/) Medium |
 | 140(相似) | [1958.检查操作是否合法](https://leetcode-cn.com/problems/check-if-move-is-legal/) Medium | [LCP41.黑白翻转棋](https://leetcode-cn.com/problems/fHi6rV/) Medium |
+| 141(相似) | [ 1235.规划兼职工作](https://leetcode-cn.com/problems/maximum-profit-in-job-scheduling/) Hard | [2008.出租车的最大盈利](https://leetcode-cn.com/problems/maximum-earnings-from-taxi/) Medium |
 

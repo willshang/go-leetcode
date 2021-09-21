@@ -360,6 +360,7 @@
 | [757.设置交集大小至少为2](https://leetcode-cn.com/problems/set-intersection-size-at-least-two/) | 贪心、数组、排序           | Hard   | 完成     |
 | [986.区间列表的交集](https://leetcode-cn.com/problems/interval-list-intersections/) | 双指针                     | Medium | 完成     |
 | [1024.视频拼接](https://leetcode-cn.com/problems/video-stitching/) | 动态规划                   | Medium | 完成     |
+| [1235.规划兼职工作](https://leetcode-cn.com/problems/maximum-profit-in-job-scheduling/) | 排序、二分查找、动态规划   | Hard   | 完成     |
 | [1288.删除被覆盖区间](https://leetcode-cn.com/problems/remove-covered-intervals/) | 贪心算法、排序、Line Sweep | Medium | 完成     |
 
 ### 最大矩形面积问题
