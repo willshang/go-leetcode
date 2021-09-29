@@ -1768,3 +1768,296 @@ func judge(board [][]byte, rMove int, cMove int, color byte, dirX, dirY int) (re
 ```go
 ```
 
+## LCP44.开幕式焰火(1)
+
+- 题目
+
+```
+「力扣挑战赛」开幕式开始了，空中绽放了一颗二叉树形的巨型焰火。
+给定一棵二叉树 root 代表焰火，节点值表示巨型焰火这一位置的颜色种类。请帮小扣计算巨型焰火有多少种不同的颜色。
+示例 1：输入：root = [1,3,2,1,null,2] 输出：3
+解释：焰火中有 3 个不同的颜色，值分别为 1、2、3
+示例 2：输入：root = [3,3,3] 输出：1
+解释：焰火中仅出现 1 个颜色，值为 3
+提示：1 <= 节点个数 <= 1000
+1 <= Node.val <= 1000
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 哈希 | O(n)       | O(n)       |
+
+```go
+var m map[int]int
+
+func numColor(root *TreeNode) int {
+	m = make(map[int]int)
+	dfs(root)
+	return len(m)
+}
+
+func dfs(root *TreeNode) {
+	if root != nil {
+		m[root.Val] = 1
+		dfs(root.Left)
+		dfs(root.Right)
+	}
+}
+```
+
+## LCP45.自行车炫技赛场(2)
+
+- 题目
+
+```
+「力扣挑战赛」中 N*M 大小的自行车炫技赛场的场地由一片连绵起伏的上下坡组成，
+场地的高度值记录于二维数组 terrain 中，场地的减速值记录于二维数组 obstacle 中。
+若选手骑着自行车从高度为 h1 且减速值为 o1 的位置到高度为 h2 且减速值为 o2 的相邻位置（上下左右四个方向），
+速度变化值为 h1-h2-o2（负值减速，正值增速）。
+选手初始位于坐标 position 处且初始速度为 1，请问选手可以刚好到其他哪些位置时速度依旧为 1。
+请以二维数组形式返回这些位置。若有多个位置则按行坐标升序排列，若有多个位置行坐标相同则按列坐标升序排列。
+注意： 骑行过程中速度不能为零或负值
+示例 1：输入：position = [0,0], terrain = [[0,0],[0,0]], obstacle = [[0,0],[0,0]] 输出：[[0,1],[1,0],[1,1]]
+解释：由于当前场地属于平地，根据上面的规则，选手从[0,0]的位置出发都能刚好在其他处的位置速度为 1。
+示例 2：输入：position = [1,1], terrain = [[5,0],[0,6]], obstacle = [[0,6],[7,0]] 输出：[[0,1]]
+解释：选手从 [1,1] 处的位置出发，到 [0,1] 处的位置时恰好速度为 1。
+提示：n == terrain.length == obstacle.length
+m == terrain[i].length == obstacle[i].length
+1 <= n <= 100
+1 <= m <= 100
+0 <= terrain[i][j], obstacle[i][j] <= 100
+position.length == 2
+0 <= position[0] < n
+0 <= position[1] < m
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先搜索 | O(n^2)     | O(n^2)     |
+| 02   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+
+```go
+var dx = []int{0, 1, 0, -1}
+var dy = []int{1, 0, -1, 0}
+var res [][]int
+var visited map[[3]int]bool
+var n, m int
+var originX, originY int
+
+func bicycleYard(position []int, terrain [][]int, obstacle [][]int) [][]int {
+	res = make([][]int, 0)
+	n, m = len(terrain), len(terrain[0])
+	originX, originY = position[0], position[1]
+	visited = make(map[[3]int]bool)
+	visited[[3]int{originX, originY, 1}] = true
+	dfs(terrain, obstacle, originX, originY, 1)
+	sort.Slice(res, func(i, j int) bool {
+		if res[i][0] == res[j][0] {
+			return res[i][1] < res[j][1]
+		}
+		return res[i][0] < res[j][0]
+	})
+	return res
+}
+
+func dfs(terrain [][]int, obstacle [][]int, i, j int, speed int) {
+	if speed == 1 && (i == originX && j == originY) == false {
+		res = append(res, []int{i, j})
+	}
+	for k := 0; k < 4; k++ {
+		x, y := i+dx[k], j+dy[k]
+		if 0 <= x && x < n && 0 <= y && y < m {
+			// next = speed + h1-h2-o2
+			next := speed + (terrain[i][j] - terrain[x][y] - obstacle[x][y])
+			if next > 0 && visited[[3]int{x, y, next}] == false {
+				visited[[3]int{x, y, next}] = true
+				dfs(terrain, obstacle, x, y, next)
+			}
+		}
+	}
+}
+
+# 2
+var dx = []int{0, 1, 0, -1}
+var dy = []int{1, 0, -1, 0}
+
+func bicycleYard(position []int, terrain [][]int, obstacle [][]int) [][]int {
+	res := make([][]int, 0)
+	n, m := len(terrain), len(terrain[0])
+	originX, originY := position[0], position[1]
+	visited := make(map[[3]int]bool)
+	visited[[3]int{originX, originY, 1}] = true
+	queue := make([][3]int, 0)
+	queue = append(queue, [3]int{originX, originY, 1})
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		i, j, speed := node[0], node[1], node[2]
+		if speed == 1 && (i == originX && j == originY) == false {
+			res = append(res, []int{i, j})
+		}
+		for k := 0; k < 4; k++ {
+			x, y := i+dx[k], j+dy[k]
+			if 0 <= x && x < n && 0 <= y && y < m {
+				// next = speed + h1-h2-o2
+				next := speed + (terrain[i][j] - terrain[x][y] - obstacle[x][y])
+				if next > 0 && visited[[3]int{x, y, next}] == false {
+					visited[[3]int{x, y, next}] = true
+					queue = append(queue, [3]int{x, y, next})
+				}
+			}
+		}
+	}
+	sort.Slice(res, func(i, j int) bool {
+		if res[i][0] == res[j][0] {
+			return res[i][1] < res[j][1]
+		}
+		return res[i][0] < res[j][0]
+	})
+	return res
+}
+```
+
+## LCP46.志愿者调配(1)
+
+- 题目
+
+```
+「力扣挑战赛」有 n 个比赛场馆（场馆编号从 0 开始），场馆之间的通道分布情况记录于二维数组 edges 中，
+edges[i]= [x, y] 表示第 i 条通道连接场馆 x 和场馆 y(即两个场馆相邻)。
+初始每个场馆中都有一定人数的志愿者（不同场馆人数可能不同），后续 m 天每天均会根据赛事热度进行志愿者人数调配。
+调配方案分为如下三种：
+将编号为 idx 的场馆内的志愿者人数减半；
+将编号为 idx 的场馆相邻的场馆的志愿者人数都加上编号为 idx 的场馆的志愿者人数；
+将编号为 idx 的场馆相邻的场馆的志愿者人数都减去编号为 idx 的场馆的志愿者人数。
+所有的调配信息记录于数组 plans 中，plans[i] = [num,idx] 表示第 i 天对编号 idx 的场馆执行了第 num 种调配方案。
+在比赛结束后对调配方案进行复盘时，不慎将第 0 个场馆的最终志愿者人数丢失，只保留了初始所有场馆的志愿者总人数 totalNum ，
+以及记录了第 1 ~ n-1 个场馆的最终志愿者人数的一维数组 finalCnt。
+请你根据现有的信息求出初始每个场馆的志愿者人数，并按场馆编号顺序返回志愿者人数列表。
+注意：测试数据保证当某场馆进行第一种调配时，该场馆的志愿者人数一定为偶数；
+测试数据保证当某场馆进行第三种调配时，该场馆的相邻场馆志愿者人数不为负数；
+测试数据保证比赛开始时每个场馆的志愿者人数都不超过 10^9；
+测试数据保证给定的场馆间的道路分布情况中不会出现自环、重边的情况。
+示例 1：输入：finalCnt = [1,16], totalNum = 21, edges = [[0,1],[1,2]], 
+plans = [[2,1],[1,0],[3,0]] 输出：[5,7,9]
+解释：
+示例 2 ：输入：finalCnt = [4,13,4,3,8], totalNum = 54, edges = [[0,3],[1,3],[4,3],[2,3],[2,5]], 
+plans = [[1,1],[3,3],[2,5],[1,0]] 输出：[10,16,9,4,7,8]
+提示：2 <= n <= 5*10^4
+1 <= edges.length <= min((n * (n - 1)) / 2, 5*10^4)
+0 <= edges[i][0], edges[i][1] < n
+1 <= plans.length <= 10
+1 <= plans[i][0] <=3
+0 <= plans[i][1] < n
+finalCnt.length = n-1
+0 <= finalCnt[i] < 10^9
+0 <= totalNum < 5*10^13
+```
+
+- 解题思路
+
+| No.  | 思路        | 时间复杂度 | 空间复杂度 |
+| ---- | ----------- | ---------- | ---------- |
+| 01   | 模拟-解方程 | O(n)       | O(n)       |
+
+```go
+type Node struct {
+	a float64 // 未知final[0] x的系数
+	b int     // 已知的系数
+}
+
+func volunteerDeployment(finalCnt []int, totalNum int64, edges [][]int, plans [][]int) []int {
+	n := len(finalCnt) + 1
+	arr := make([][]int, n) // 邻接表
+	for i := 0; i < len(edges); i++ {
+		a, b := edges[i][0], edges[i][1]
+		arr[a] = append(arr[a], b)
+		arr[b] = append(arr[b], a)
+	}
+	final := make([]Node, 0)
+	final = append(final, Node{a: 1, b: 0}) // final为最终的结果，a为final[0]未知x的系数
+	for i := 0; i < len(finalCnt); i++ {
+		final = append(final, Node{a: 0, b: finalCnt[i]})
+	}
+	for i := len(plans) - 1; i >= 0; i-- { // 倒推
+		a, b := plans[i][0], plans[i][1]
+		if a == 1 {
+			final[b] = Node{
+				a: final[b].a * 2,
+				b: final[b].b * 2,
+			}
+		} else if a == 2 {
+			for j := 0; j < len(arr[b]); j++ {
+				next := arr[b][j]
+				final[next] = Node{
+					a: final[next].a - final[b].a,
+					b: final[next].b - final[b].b,
+				}
+			}
+		} else if a == 3 {
+			for j := 0; j < len(arr[b]); j++ {
+				next := arr[b][j]
+				final[next] = Node{
+					a: final[next].a + final[b].a,
+					b: final[next].b + final[b].b,
+				}
+			}
+		}
+	}
+	a, b := float64(0), int64(0)
+	for i := 0; i < len(final); i++ {
+		a = a + final[i].a
+		b = b + int64(final[i].b)
+	}
+	per := float64(totalNum-b) / a // 求x的值
+	res := make([]int, n)
+	for i := 0; i < n; i++ {
+		res[i] = int(final[i].a*per) + final[i].b
+	}
+	return res
+}
+```
+
+## LCP47.入场安检
+
+### 题目
+
+```
+「力扣挑战赛」 的入场仪式马上就要开始了，由于安保工作的需要，
+设置了可容纳人数总和为 M 的 N 个安检室，capacities[i] 记录第 i 个安检室可容纳人数。安检室拥有两种类型：
+先进先出：在安检室中的所有观众中，最早进入安检室的观众最先离开
+后进先出：在安检室中的所有观众中，最晚进入安检室的观众最先离开
+恰好 M+1 位入场的观众（编号从 0 开始）需要排队依次入场安检， 入场安检的规则如下：
+观众需要先进入编号 0 的安检室
+当观众将进入编号 i 的安检室时（0 <= i < N)，
+若安检室未到达可容纳人数上限，该观众可直接进入；
+若安检室已到达可容纳人数上限，在该观众进入安检室之前需根据当前安检室类型选择一位观众离开后才能进入；
+当观众离开编号 i 的安检室时 （0 <= i < N-1)，将进入编号 i+1 的安检室接受安检。
+若可以任意设定每个安检室的类型，请问有多少种设定安检室类型的方案可以使得编号 k 的观众第一个通过最后一个安检室入场。
+注意：观众不可主动离开安检室，只有当安检室容纳人数达到上限，且又有新观众需要进入时，才可根据安检室的类型选择一位观众离开；
+由于方案数可能过大，请将答案对 1000000007 取模后返回。
+示例 1：输入：capacities = [2,2,3], k = 2 输出：2
+解释：存在两种设定的 2 种方案：
+方案 1：将编号为 0 、1 的实验室设置为 后进先出 的类型，编号为 2 的实验室设置为 先进先出 的类型；
+方案 2：将编号为 0 、1 的实验室设置为 先进先出 的类型，编号为 2 的实验室设置为 后进先出 的类型。
+以下是方案 1 的示意图：
+示例 2：输入：capacities = [3,3], k = 3 输出：0
+示例 3：输入：capacities = [4,3,2,2], k = 6 输出：2
+提示:1 <= capacities.length <= 200
+1 <= capacities[i] <= 200
+0 <= k <= sum(capacities)
+```
+
+### 解题思路
+
+| No.  | 思路        | 时间复杂度 | 空间复杂度 |
+| ---- | ----------- | ---------- | ---------- |
+| 01   | 模拟-解方程 | O(n)       | O(n)       |
+
+```go
+```
+

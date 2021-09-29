@@ -8,6 +8,7 @@ func main() {
 	fmt.Println(singleNumber([]int{2, 2, -3, 2}))
 }
 
+// 剑指OfferII004.只出现一次的数字
 func singleNumber(nums []int) int {
 	var res int
 	for i := 0; i < 64; i++ {

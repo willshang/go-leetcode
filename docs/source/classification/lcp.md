@@ -44,3 +44,8 @@
 | 0040 | [LCP40.心算挑战](https://leetcode-cn.com/problems/uOAnQW/)   |                                          | Easy   | 完成     |
 | 0041 | [LCP41.黑白翻转棋](https://leetcode-cn.com/problems/fHi6rV/) |                                          | Medium | 完成     |
 | 0042 | [LCP42.玩具套圈](https://leetcode-cn.com/problems/vFjcfV/)   |                                          | Hard   |          |
+| 0043 |                                                              |                                          |        |          |
+| 0044 | [LCP44.开幕式焰火](https://leetcode-cn.com/problems/sZ59z6/) |                                          | Easy   | 完成     |
+| 0045 | [LCP45.自行车炫技赛场](https://leetcode-cn.com/problems/kplEvH/) |                                          | Medium | 完成     |
+| 0046 | [LCP46.志愿者调配](https://leetcode-cn.com/problems/05ZEDJ/) |                                          | Medium | 完成     |
+| 0047 | [LCP47.入场安检](https://leetcode-cn.com/problems/oPs9Bm/)   |                                          | Hard   |          |

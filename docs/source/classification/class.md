@@ -370,7 +370,7 @@
 | [84.柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 栈、数组                   | Hard   | 完成     |
 | [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 栈、数组、哈希表、动态规划 | Hard   | 完成     |
 | [221.最大正方形](https://leetcode-cn.com/problems/maximal-square/) | 动态规划                   | Medium | 完成     |
-| 1277                                                         |                            |        |          |
+| [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 数组、动态规划、矩阵       | Medium | 完成     |
 | 1504                                                         |                            |        |          |
 | [1727.重新排列后的最大子矩阵](https://leetcode-cn.com/problems/largest-submatrix-with-rearrangements/) | 贪心算法、排序             | Medium | 完成     |
 

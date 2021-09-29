@@ -33,6 +33,7 @@
     - [重复问题](docs/source/classification/same.md)
     - [系列问题](docs/source/classification/class.md)
     - [书籍-剑指offer-完成](docs/source/classification/offer.md)
+    - [书籍-剑指offer](docs/source/classification/offer2.md)
     - [书籍-程序员面试金典](docs/source/classification/lcci.md)
     - [lcp](docs/source/classification/lcp.md)
     - [leetcode-竞赛](docs/source/classification/leetcode_contest.md)

@@ -8820,6 +8820,129 @@ func findLadders(beginWord string, endWord string, wordList []string) []string {
 
 ```
 
+## 面试题17.24.最大子矩阵(3)
+
+- 题目
+
+```
+给定一个正整数、负整数和 0 组成的 N × M 矩阵，编写代码找出元素总和最大的子矩阵。
+返回一个数组 [r1, c1, r2, c2]，其中 r1, c1 分别代表子矩阵左上角的行号和列号，r2, c2 分别代表右下角的行号和列号。
+若有多个满足条件的子矩阵，返回任意一个均可。
+注意：本题相对书上原题稍作改动
+示例：输入：
+[
+   [-1,0],
+   [0,-1]
+]
+输出：[0,1,0,1]
+解释：输入中标粗的元素即为输出所表示的矩阵
+说明：1 <= matrix.length, matrix[0].length <= 200
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 前缀和+最大子序和 | O(n^3)     | O(n^2)     |
+| 02   | 前缀和+最大子序和 | O(n^3)     | O(n^2)     |
+| 03   | 最大子序和        | O(n^3)     | O(n)       |
+
+```go
+func getMaxMatrix(matrix [][]int) []int {
+	n, m := len(matrix), len(matrix[0])
+	arr := make([][]int, n+1)
+	for i := 0; i <= n; i++ {
+		arr[i] = make([]int, m+1)
+	}
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			arr[i+1][j+1] = matrix[i][j] + arr[i+1][j] + arr[i][j+1] - arr[i][j]
+		}
+	}
+	maxValue := math.MinInt32
+	res := make([]int, 0)
+	for a := 1; a <= n; a++ { // 上边界
+		for b := a; b <= n; b++ { // 下边界
+			left := 1
+			value := 0
+			for right := 1; right <= m; right++ {
+				value = arr[b][right] - arr[b][left-1] - arr[a-1][right] + arr[a-1][left-1]
+				if value > maxValue {
+					maxValue = value
+					res = []int{a - 1, left - 1, b - 1, right - 1}
+				}
+				if value < 0 {
+					value = 0
+					left = right + 1
+				}
+			}
+		}
+	}
+	return res
+}
+
+# 2
+func getMaxMatrix(matrix [][]int) []int {
+	n, m := len(matrix), len(matrix[0])
+	arr := make([][]int, n+1)
+	for i := 0; i <= n; i++ {
+		arr[i] = make([]int, m+1)
+	}
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			arr[i+1][j+1] = matrix[i][j] + arr[i+1][j] + arr[i][j+1] - arr[i][j]
+		}
+	}
+	maxValue := math.MinInt32
+	res := make([]int, 0)
+	for a := 0; a < n; a++ { // 上边界
+		for b := a; b < n; b++ { // 下边界
+			left := 0
+			value := 0
+			for right := 0; right < m; right++ {
+				value = arr[b+1][right+1] - arr[b+1][left] - arr[a][right+1] + arr[a][left]
+				if value > maxValue {
+					maxValue = value
+					res = []int{a, left, b, right}
+				}
+				if value < 0 {
+					value = 0
+					left = right + 1
+				}
+			}
+		}
+	}
+	return res
+}
+
+# 3
+func getMaxMatrix(matrix [][]int) []int {
+	n, m := len(matrix), len(matrix[0])
+	maxValue := math.MinInt32
+	res := make([]int, 0)
+	for a := 0; a < n; a++ { // 上边界
+		arr := make([]int, m)
+		for b := a; b < n; b++ { // 下边界
+			left := 0
+			value := 0
+			for right := 0; right < m; right++ {
+				arr[right] = arr[right] + matrix[b][right]
+				value = value + arr[right]
+				if value > maxValue {
+					maxValue = value
+					res = []int{a, left, b, right}
+				}
+				if value < 0 {
+					value = 0
+					left = right + 1
+				}
+			}
+		}
+	}
+	return res
+}
+```
+
 ## 面试题17.26.稀疏相似度(1)
 
 - 题目

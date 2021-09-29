@@ -23,7 +23,7 @@
 | 19       | [946.验证栈序列](https://leetcode-cn.com/problems/validate-stack-sequences/) Medium | [面试题31. 栈的压入弹出序列](https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/) Medium |
 | 20       | [102.二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/) Medium | [面试题32-II.从上到下打印二叉树II](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/) Easy |
 | 21(相似)   | [169.多数元素](https://leetcode-cn.com/problems/majority-element) Easy | [面试题39.数组中出现次数超过一半的数字](https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/) Easy<br />[面试题17.10.主要元素](https://leetcode-cn.com/problems/find-majority-element-lcci/) Easy |
-| 22       | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) Easy | [面试题42.连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/) Easy<br />[面试题16.17.连续数列](https://leetcode-cn.com/problems/contiguous-sequence-lcci/) Easy |
+| 22(相似)   | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) Easy | [面试题42.连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/) Easy<br />[面试题16.17.连续数列](https://leetcode-cn.com/problems/contiguous-sequence-lcci/) Easy<br />[面试题17.24.最大子矩阵](https://leetcode-cn.com/problems/max-submatrix-lcci/) Hard |
 | 23(相似)   | [233.数字1的个数](https://leetcode-cn.com/problems/number-of-digit-one/) Hard | [面试题43.1～n整数中1出现的次数](https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/) Medium<br />[面试题17.06.2出现的次数](https://leetcode-cn.com/problems/number-of-2s-in-range-lcci/) Hard |
 | 24(相似) | [387.字符串中的第一个唯一字符](https://leetcode-cn.com/problems/first-unique-character-in-a-string/) Easy | [面试题50.第一个只出现一次的字符](https://leetcode-cn.com/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof/) Easy |
 | 25       | [160.相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists) Easy | [面试题52.两个链表的第一个公共节点](https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/) Easy<br />[面试题02.07.链表相交](https://leetcode-cn.com/problems/intersection-of-two-linked-lists-lcci/) Easy |
@@ -34,7 +34,7 @@
 | 30       | [110.平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree) Easy | [面试题55-II.平衡二叉树](https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/) Easy<br />[面试题04.04.检查平衡性](https://leetcode-cn.com/problems/check-balance-lcci/) Easy |
 | 31       | [151.翻转字符串里的单词](https://leetcode-cn.com/problems/reverse-words-in-a-string/) Medium | [面试题58-I.翻转单词顺序](https://leetcode-cn.com/problems/fan-zhuan-dan-ci-shun-xu-lcof/) Easy |
 | 32       | [239.滑动窗口最大值](https://leetcode-cn.com/problems/sliding-window-maximum/) Hard | [面试题59-I.滑动窗口的最大值](https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/) Easy |
-| 33       | [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) Easy | [面试题63.股票的最大利润](https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/) Medium |
+| 33(相似)   | [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) Easy<br />[2016.增量元素之间的最大差值](https://leetcode-cn.com/problems/maximum-difference-between-increasing-elements/) Easy | [面试题63.股票的最大利润](https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/) Medium |
 | 34       | [371.两整数之和](https://leetcode-cn.com/problems/sum-of-two-integers/) Easy | [面试题65.不用加减乘除做加法](https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/) Easy<br />[面试题17.01.不用加号的加法](https://leetcode-cn.com/problems/add-without-plus-lcci/) Easy |
 | 35       | [8.字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) Medium | [面试题67.把字符串转换成整数](https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/) Medium |
 | 36       | [235.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) Easy | [面试题68-I.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/) [Easy] |
@@ -143,4 +143,8 @@
 | 139(相似) | [1723.完成所有工作的最短时间](https://leetcode-cn.com/problems/find-minimum-time-to-finish-all-jobs/) Hard | [1986.完成任务的最少工作时间段](https://leetcode-cn.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/) Medium |
 | 140(相似) | [1958.检查操作是否合法](https://leetcode-cn.com/problems/check-if-move-is-legal/) Medium | [LCP41.黑白翻转棋](https://leetcode-cn.com/problems/fHi6rV/) Medium |
 | 141(相似) | [ 1235.规划兼职工作](https://leetcode-cn.com/problems/maximum-profit-in-job-scheduling/) Hard | [2008.出租车的最大盈利](https://leetcode-cn.com/problems/maximum-earnings-from-taxi/) Medium |
+| 142(相似) | [221.最大正方形](https://leetcode-cn.com/problems/maximal-square/) Medium | [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) Medium |
+| 143(相似) | [137.只出现一次的数字II](https://leetcode-cn.com/problems/single-number-ii/) Medium | [剑指OfferII004.只出现一次的数字](https://leetcode-cn.com/problems/WGki4K/) Medium |
+| 144(相似) | [ 167.两数之和II-输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted) Easy | [剑指OfferII006.排序数组中两个数字之和](https://leetcode-cn.com/problems/kLl5u1/) Easy |
+| 145 | [338.比特位计数](https://leetcode-cn.com/problems/counting-bits/) Medium | [剑指OfferII003.前n个数字二进制中1的个数](https://leetcode-cn.com/problems/w3tCBm/) Easy |
 

@@ -32,6 +32,7 @@ Welcome to go-leetcode's documentation!
    question/1901-2000
    question/2001-2100
    question/offer
+   question/offer2
    question/lcci
    question/lcp
    question/lcs
