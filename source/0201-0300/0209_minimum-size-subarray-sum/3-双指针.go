@@ -10,13 +10,13 @@ func main() {
 }
 
 // leetcode209_长度最小的子数组
-func minSubArrayLen(s int, nums []int) int {
+func minSubArrayLen(target int, nums []int) int {
 	res := math.MaxInt32
 	i, j := 0, 0
 	sum := 0
 	for ; j < len(nums); j++ {
 		sum = sum + nums[j]
-		for sum >= s {
+		for sum >= target {
 			if res > j-i+1 {
 				res = j - i + 1
 			}

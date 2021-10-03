@@ -7,11 +7,11 @@ func main() {
 }
 
 // leetcode739_每日温度
-func dailyTemperatures(T []int) []int {
-	res := make([]int, len(T))
+func dailyTemperatures(temperatures []int) []int {
+	res := make([]int, len(temperatures))
 	stack := make([]int, 0) // 栈保存递减数据的下标
-	for i := 0; i < len(T); i++ {
-		for len(stack) > 0 && T[i] > T[stack[len(stack)-1]] {
+	for i := 0; i < len(temperatures); i++ {
+		for len(stack) > 0 && temperatures[i] > temperatures[stack[len(stack)-1]] {
 			last := stack[len(stack)-1]
 			stack = stack[:len(stack)-1]
 			res[last] = i - last
