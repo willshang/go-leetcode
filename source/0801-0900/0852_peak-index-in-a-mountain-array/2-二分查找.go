@@ -18,7 +18,7 @@ func peakIndexInMountainArray(A []int) int {
 		if A[mid] > A[mid-1] {
 			left = mid + 1
 		} else {
-			right = mid - 1
+			right = mid
 		}
 	}
 }

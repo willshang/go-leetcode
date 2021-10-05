@@ -7,7 +7,7 @@ func main() {
 	fmt.Println(peakIndexInMountainArray(arr))
 }
 
-// leetcode852_山脉数组的峰顶索引
+// 剑指OfferII069.山峰数组的顶部
 func peakIndexInMountainArray(A []int) int {
 	left, right := 0, len(A)-1
 	for {
@@ -18,7 +18,7 @@ func peakIndexInMountainArray(A []int) int {
 		if A[mid] > A[mid-1] {
 			left = mid + 1
 		} else {
-			right = mid - 1
+			right = mid
 		}
 	}
 }

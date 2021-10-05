@@ -1,3 +1,5 @@
+# 剑指OfferII
+
 # Easy
 
 ## 剑指OfferII001.整数除法(2)
@@ -1600,9 +1602,9 @@ func searchInsert(nums []int, target int) int {
 }
 ```
 
-## 剑指OfferII069.山峰数组的顶部
+## 剑指OfferII069.山峰数组的顶部(3)
 
-### 题目
+- 题目
 
 ```
 符合下列属性的数组 arr 称为 山峰数组（山脉数组） ：
@@ -1624,16 +1626,395 @@ arr[0] < arr[1] < ... arr[i - 1] < arr[i] > arr[i + 1] > ... > arr[arr.length - 
 注意：本题与主站 852 题相同
 ```
 
-### 解题思路
+- 解题思路
 
 | No.  | 思路     | 时间复杂度 | 空间复杂度 |
 | ---- | -------- | ---------- | ---------- |
 | 01   | 遍历     | O(n)       | O(1)       |
 | 02   | 二分查找 | O(log(n))  | O(1)       |
+| 03   | 内置函数 | O(log(n))  | O(1)       |
 
 ```go
+func peakIndexInMountainArray(A []int) int {
+	n := len(A)
+	for i := 0; i < n-1; i++ {
+		if A[i] > A[i+1] {
+			return i
+		}
+	}
+	return 0
+}
+
+#
+func peakIndexInMountainArray(A []int) int {
+	left, right := 0, len(A)-1
+	for {
+		mid := left + (right-left)/2
+		if A[mid] > A[mid+1] && A[mid] > A[mid-1] {
+			return mid
+		}
+		if A[mid] > A[mid-1] {
+			left = mid + 1
+		} else {
+			right = mid 
+		}
+	}
+}
+
+# 3
+func peakIndexInMountainArray(arr []int) int {
+	n := len(arr)
+	return sort.Search(n-1, func(i int) bool {
+		return arr[i] > arr[i+1]
+	})
+}
+```
+
+## 剑指OfferII072.求平方根(5)
+
+- 题目
 
 ```
+给定一个非负整数 x ，计算并返回 x 的平方根，即实现 int sqrt(int x) 函数。
+正数的平方根有两个，只输出其中的正数平方根。
+如果平方根不是整数，输出只保留整数的部分，小数部分将被舍去。
+示例 1:输入: x = 4 输出: 2
+示例 2:输入: x = 8 输出: 2
+解释: 8 的平方根是 2.82842...，由于小数部分将被舍去，所以返回 2
+提示:0 <= x <= 231 - 1
+注意：本题与主站 69 题相同： 
+```
+
+- 解题思路
+
+| No.      | 思路        | 时间复杂度 | 空间复杂度 |
+| -------- | ----------- | ---------- | ---------- |
+| 01       | 系统函数    | O(log(n))  | O(1)       |
+| 02       | 系统函数    | O(log(n))  | O(1)       |
+| 03(最优) | 牛顿迭代法  | O(log(n))  | O(1)       |
+| 04       | 二分查找法  | O(log(n))  | O(1)       |
+| 05       | 暴力法:遍历 | O(n)       | O(1)       |
+
+```go
+// 系统函数
+func mySqrt(x int) int {
+	result := int(math.Sqrt(float64(x)))
+	return result
+}
+
+// 系统函数
+func mySqrt(x int) int {
+	result := math.Floor(math.Sqrt(float64(x)))
+	return int(result)
+}
+
+// 牛顿迭代法
+func mySqrt(x int) int {
+	result := x
+	for result*result > x {
+		result = (result + x/result) / 2
+	}
+	return result
+}
+
+// 二分查找法
+func mySqrt(x int) int {
+	left := 1
+	right := x
+	for left <= right {
+		mid := (left + right) / 2
+		if mid == x/mid {
+			return mid
+		} else if mid < x/mid {
+			left = mid + 1
+		} else {
+			right = mid - 1
+		}
+	}
+	if left * left <= x{
+		return left
+	}else {
+		return left-1
+	}
+}
+
+// 暴力法:遍历
+func mySqrt(x int) int {
+	result := 0
+	for i := 1; i <= x/i; i++ {
+		if i*i == x {
+			return i
+		}
+		result = i
+	}
+	return result
+}
+```
+
+## 剑指OfferII075.数组相对排序(3)
+
+- 题目
+
+```
+给定两个数组，arr1 和 arr2，
+arr2 中的元素各不相同
+arr2 中的每个元素都出现在 arr1 中
+对 arr1 中的元素进行排序，使 arr1 中项的相对顺序和 arr2 中的相对顺序相同。
+未在 arr2 中出现过的元素需要按照升序放在 arr1 的末尾。
+示例：输入：arr1 = [2,3,1,3,2,4,6,7,9,2,19], arr2 = [2,1,4,3,9,6] 输出：[2,2,2,1,4,3,3,9,6,7,19]
+提示：1 <= arr1.length, arr2.length <= 1000
+0 <= arr1[i], arr2[i] <= 1000
+arr2 中的元素 arr2[i] 各不相同
+arr2 中的每个元素 arr2[i] 都出现在 arr1 中
+注意：本题与主站 1122 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(nlog(n)) | O(n)       |
+| 02   | 暴力法   | O(n^2)     | O(1)       |
+| 03   | 数组辅助 | O(n)       | O(1)       |
+
+```go
+func relativeSortArray(arr1 []int, arr2 []int) []int {
+	if len(arr2) == 0 {
+		sort.Ints(arr1)
+		return arr1
+	}
+	res := make([]int, 0)
+	m := make(map[int]int)
+	for i := range arr1 {
+		m[arr1[i]]++
+	}
+	for i := 0; i < len(arr2); i++ {
+		for j := 0; j < m[arr2[i]]; j++ {
+			res = append(res, arr2[i])
+		}
+		m[arr2[i]] = 0
+	}
+	tempArr := make([]int, 0)
+	for key, value := range m {
+		for value > 0 {
+			tempArr = append(tempArr, key)
+			value--
+		}
+	}
+	sort.Ints(tempArr)
+	res = append(res, tempArr...)
+	return res
+}
+ 
+# 2
+func relativeSortArray(arr1 []int, arr2 []int) []int {
+	count := 0
+	for i := 0; i < len(arr2); i++ {
+		for j := count; j < len(arr1); j++ {
+			if arr2[i] == arr1[j] {
+				arr1[count], arr1[j] = arr1[j], arr1[count]
+				count++
+			}
+		}
+	}
+	sort.Ints(arr1[count:])
+	return arr1
+}
+
+# 3
+func relativeSortArray(arr1 []int, arr2 []int) []int {
+	temp := make([]int, 1001)
+	for i := range arr1 {
+		temp[arr1[i]]++
+	}
+	count := 0
+	for i := range arr2 {
+		for temp[arr2[i]] > 0 {
+			arr1[count] = arr2[i]
+			temp[arr2[i]]--
+			count++
+		}
+	}
+	for i := 0; i < len(temp); i++ {
+		for temp[i] > 0 {
+			arr1[count] = i
+			temp[i]--
+			count++
+		}
+	}
+	return arr1
+}
+```
+
+## 剑指OfferII088.爬楼梯的最少成本(3)
+
+- 题目
+
+```
+数组的每个下标作为一个阶梯，第 i 个阶梯对应着一个非负数的体力花费值 cost[i]（下标从 0 开始）。
+每当爬上一个阶梯都要花费对应的体力值，一旦支付了相应的体力值，就可以选择向上爬一个阶梯或者爬两个阶梯。
+请找出达到楼层顶部的最低花费。在开始时，你可以选择从下标为 0 或 1 的元素作为初始阶梯。
+示例 1：输入：cost = [10, 15, 20] 输出：15
+解释：最低花费是从 cost[1] 开始，然后走两步即可到阶梯顶，一共花费 15 。
+示例 2：输入：cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1] 输出：6
+解释：最低花费方式是从 cost[0] 开始，逐个经过那些 1 ，跳过 cost[3] ，一共花费 6 。
+提示：2 <= cost.length <= 1000
+0 <= cost[i] <= 999
+注意：本题与主站 746 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 动态规划-一维数组 | O(n)       | O(n)       |
+| 02   | 动态规划          | O(n)       | O(1)       |
+| 03   | 递归              | O(n)       | O(n)       |
+
+```go
+/*
+用dp[i]表示爬i个台阶所需要的成本，所以dp[0]=0，dp[1]=0
+每次爬i个楼梯，计算的都是从倒数第一个结束，还是从倒数第二个结束
+动态转移方程为:
+dp[i] = min{dp[i-2]+cost[i-2] , dp[i-1]+cost[i-1]};
+*/
+func minCostClimbingStairs(cost []int) int {
+	n := len(cost)
+	dp := make([]int, n+1)
+	dp[0] = 0
+	dp[1] = 0
+	for i := 2; i <= n; i++ {
+		dp[i] = min(dp[i-1]+cost[i-1], dp[i-2]+cost[i-2])
+	}
+	return dp[n]
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+# 2
+func minCostClimbingStairs(cost []int) int {
+	a := 0
+	b := 0
+	for i := 2; i <= len(cost); i++ {
+		a, b = b, min(b+cost[i-1], a+cost[i-2])
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+# 3
+var arr []int
+
+func minCostClimbingStairs(cost []int) int {
+	arr = make([]int, len(cost)+1)
+	return ClimbingStais(cost, len(cost))
+}
+
+func ClimbingStais(cost []int, i int) int {
+	if i == 0 || i == 1 {
+		return 0
+	}
+	if arr[i] == 0 {
+		arr[i] = min(ClimbingStais(cost, i-1)+cost[i-1], 
+			ClimbingStais(cost, i-2)+cost[i-2])
+	}
+	return arr[i]
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+```
+
+## 剑指OfferII101.分割等和子集(2)
+
+- 题目
+
+```
+给定一个非空的正整数数组 nums ，请判断能否将这些数字分成元素和相等的两部分。
+示例 1：输入：nums = [1,5,11,5] 输出：true
+解释：nums 可以分割成 [1, 5, 5] 和 [11] 。
+示例 2：输入：nums = [1,2,3,5] 输出：false
+解释：nums 不可以分为和相等的两部分
+提示：1 <= nums.length <= 200
+1 <= nums[i] <= 100
+注意：本题与主站 416 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划 | O(n^2)     | O(n)       |
+
+```go
+func canPartition(nums []int) bool {
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+	}
+	if sum%2 == 1 {
+		return false
+	}
+	target := sum / 2
+	// 题目转换为0-1背包问题，容量为sum/2
+	dp := make([][]bool, len(nums)+1)
+	for i := 0; i <= len(nums); i++ {
+		dp[i] = make([]bool, target+1)
+		dp[i][0] = true
+	}
+	for i := 1; i <= len(nums); i++ {
+		for j := 1; j <= target; j++ {
+			if j-nums[i-1] < 0 {
+				dp[i][j] = dp[i-1][j]
+			} else {
+				dp[i][j] = dp[i-1][j] || dp[i-1][j-nums[i-1]]
+			}
+		}
+	}
+	return dp[len(nums)][target]
+}
+
+# 2 
+func canPartition(nums []int) bool {
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+	}
+	if sum%2 == 1 {
+		return false
+	}
+	target := sum / 2
+	// 题目转换为0-1背包问题，容量为sum/2
+	dp := make([]bool, target+1)
+	dp[0] = true
+	for i := 0; i < len(nums); i++ {
+		for j := target; j >= 0; j-- {
+			if j-nums[i] >= 0 && dp[j-nums[i]] == true {
+				dp[j] = true
+			}
+		}
+	}
+	return dp[target]
+}
+```
+
+
 
 # Medium
 
@@ -5639,7 +6020,3951 @@ func max(a, b int) int {
 }
 ```
 
+## 剑指OfferII070.排序数组中只出现一次的数字(3)
 
+- 题目
+
+```
+给定一个只包含整数的有序数组 nums ，每个元素都会出现两次，唯有一个数只会出现一次，请找出这个唯一的数字。
+示例 1:输入: nums = [1,1,2,3,3,4,4,8,8] 输出: 2
+示例 2:输入: nums =  [3,3,7,7,10,11,11] 输出: 10
+提示:1 <= nums.length <= 105
+0 <= nums[i] <= 105
+进阶: 采用的方案可以在 O(log n) 时间复杂度和 O(1) 空间复杂度中运行吗？
+注意：本题与主站 540 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 遍历     | O(n)       | O(1)       |
+| 02   | 二分查找 | O(log(n))  | O(1)       |
+| 03   | 异或     | O(n)       | O(1)       |
+
+```go
+func singleNonDuplicate(nums []int) int {
+	for i := 0; i < len(nums)-1; i = i + 2 {
+		if nums[i] != nums[i+1] {
+			return nums[i]
+		}
+	}
+	return nums[len(nums)-1]
+}
+
+# 2
+func singleNonDuplicate(nums []int) int {
+	n := len(nums)
+	left, right := 0, n-1
+	for left < right {
+		mid := left + (right-left)/2
+		if mid%2 == 1 {
+			mid--
+		}
+		if nums[mid] == nums[mid+1] {
+			left = mid + 2
+		} else {
+			right = mid
+		}
+	}
+	return nums[left]
+}
+
+# 3
+func singleNonDuplicate(nums []int) int {
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		res = res ^ nums[i]
+	}
+	return res
+}
+```
+
+## 剑指OfferII071.按权重生成随机数(1)
+
+- 题目
+
+```
+给定一个正整数数组 w ，其中 w[i] 代表下标 i 的权重（下标从 0 开始），
+请写一个函数 pickIndex ，它可以随机地获取下标 i，选取下标 i 的概率与 w[i] 成正比。
+例如，对于 w = [1, 3]，挑选下标 0 的概率为 1 / (1 + 3) = 0.25 （即，25%），
+而选取下标 1 的概率为 3 / (1 + 3) = 0.75（即，75%）。
+也就是说，选取下标 i 的概率为 w[i] / sum(w) 。
+示例 1：输入：inputs = ["Solution","pickIndex"] inputs = [[[1]],[]] 输出：[null,0]
+解释：Solution solution = new Solution([1]);
+solution.pickIndex(); // 返回 0，因为数组中只有一个元素，所以唯一的选择是返回下标 0。
+示例 2：输入：inputs = ["Solution","pickIndex","pickIndex","pickIndex","pickIndex","pickIndex"]
+inputs = [[[1,3]],[],[],[],[],[]]
+输出：[null,1,1,1,1,0]
+解释：Solution solution = new Solution([1, 3]);
+solution.pickIndex(); // 返回 1，返回下标 1，返回该下标概率为 3/4 。
+solution.pickIndex(); // 返回 1
+solution.pickIndex(); // 返回 1
+solution.pickIndex(); // 返回 1
+solution.pickIndex(); // 返回 0，返回下标 0，返回该下标概率为 1/4 。
+由于这是一个随机问题，允许多个答案，因此下列输出都可以被认为是正确的:
+[null,1,1,1,1,0]
+[null,1,1,1,1,1]
+[null,1,1,1,0,0]
+[null,1,1,1,0,1]
+[null,1,0,1,0,0]
+......
+诸若此类。
+提示：1 <= w.length <= 10000
+1 <= w[i] <= 10^5
+pickIndex 将被调用不超过 10000 次
+注意：本题与主站 528 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 前缀和+二分查找 | O(n)       | O(n)       |
+
+```go
+type Solution struct {
+	nums  []int
+	total int
+}
+
+func Constructor(w []int) Solution {
+	total := 0
+	arr := make([]int, len(w)) // 前缀和
+	for i := 0; i < len(w); i++ {
+		total = total + w[i]
+		arr[i] = total
+	}
+	return Solution{
+		nums:  arr,
+		total: total,
+	}
+}
+
+func (this *Solution) PickIndex() int {
+	target := rand.Intn(this.total)
+	left, right := 0, len(this.nums)
+	for left < right {
+		mid := left + (right-left)/2
+		if this.nums[mid] <= target {
+			left = mid + 1
+		} else {
+			right = mid
+		}
+	}
+	return left
+}
+```
+
+## 剑指OfferII073.狒狒吃香蕉(2)
+
+- 题目
+
+```
+狒狒喜欢吃香蕉。这里有 N 堆香蕉，第 i 堆中有 piles[i] 根香蕉。警卫已经离开了，将在 H 小时后回来。
+狒狒可以决定她吃香蕉的速度 K （单位：根/小时）。每个小时，她将会选择一堆香蕉，从中吃掉 K 根。
+如果这堆香蕉少于 K 根，她将吃掉这堆的所有香蕉，然后这一小时内不会再吃更多的香蕉，下一个小时才会开始吃另一堆的香蕉。  
+狒狒喜欢慢慢吃，但仍然想在警卫回来前吃掉所有的香蕉。
+返回她可以在 H 小时内吃掉所有香蕉的最小速度 K（K 为整数）。
+示例 1：输入: piles = [3,6,7,11], H = 8 输出: 4
+示例 2：输入: piles = [30,11,23,4,20], H = 5 输出: 30
+示例 3：输入: piles = [30,11,23,4,20], H = 6 输出: 23
+提示：1 <= piles.length <= 10^4
+piles.length <= H <= 10^9
+1 <= piles[i] <= 10^9
+注意：本题与主站 875 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(nlog(n)) | O(1)       |
+| 02   | 内置函数 | O(nlog(n)) | O(1)       |
+
+```go
+func minEatingSpeed(piles []int, h int) int {
+	maxValue := piles[0]
+	for i := 1; i < len(piles); i++ {
+		maxValue = max(maxValue, piles[i])
+	}
+	left, right := 1, maxValue
+	for left < right {
+		mid := left + (right-left)/2
+		if judge(piles, mid, h) == true {
+			left = mid + 1
+		} else {
+			right = mid
+		}
+	}
+	return left
+}
+
+func judge(piles []int, speed int, H int) bool {
+	total := 0
+	for i := 0; i < len(piles); i++ {
+		total = total + piles[i]/speed
+		if piles[i]%speed > 0 {
+			total = total + 1
+		}
+	}
+	return total > H
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func minEatingSpeed(piles []int, h int) int {
+	maxValue := piles[0]
+	for i := 1; i < len(piles); i++ {
+		maxValue = max(maxValue, piles[i])
+	}
+	return sort.Search(maxValue, func(speed int) bool {
+		if speed == 0 { // 避免除0
+			return false
+		}
+		total := 0
+		for i := 0; i < len(piles); i++ {
+			total = total + piles[i]/speed
+			if piles[i]%speed > 0 {
+				total = total + 1
+			}
+		}
+		return total <= h
+	})
+
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 剑指OfferII074.合并区间(2)
+
+- 题目
+
+```
+以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。
+请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
+示例 1：输入：intervals = [[1,3],[2,6],[8,10],[15,18]] 输出：[[1,6],[8,10],[15,18]]
+解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+示例 2：输入：intervals = [[1,4],[4,5]] 输出：[[1,5]]
+解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。
+提示：1 <= intervals.length <= 104
+intervals[i].length == 2
+0 <= starti <= endi <= 104
+注意：本题与主站 56 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路        | 时间复杂度 | 空间复杂度 |
+| ---- | ----------- | ---------- | ---------- |
+| 01   | 排序遍历    | O(nlog(n)) | O(n)       |
+| 02   | 排序-双指针 | O(nlog(n)) | O(n)       |
+
+```go
+func merge(intervals [][]int) [][]int {
+	res := make([][]int, 0)
+	if len(intervals) == 0 {
+		return nil
+	}
+	sort.Slice(intervals, func(i, j int) bool {
+		return intervals[i][0] < intervals[j][0]
+	})
+	res = append(res, intervals[0])
+	for i := 1; i < len(intervals); i++ {
+		arr := res[len(res)-1]
+		if intervals[i][0] > arr[1] {
+			res = append(res, intervals[i])
+		} else if intervals[i][1] > arr[1] {
+			res[len(res)-1][1] = intervals[i][1]
+		}
+	}
+	return res
+}
+
+# 2
+func merge(intervals [][]int) [][]int {
+	res := make([][]int, 0)
+	if len(intervals) == 0 {
+		return nil
+	}
+	sort.Slice(intervals, func(i, j int) bool {
+		return intervals[i][0] < intervals[j][0]
+	})
+	for i := 0; i < len(intervals); {
+		end := intervals[i][1]
+		j := i + 1
+		for j < len(intervals) && intervals[j][0] <= end {
+			if intervals[j][1] > end {
+				end = intervals[j][1]
+			}
+			j++
+		}
+		res = append(res, []int{intervals[i][0], end})
+		i = j
+	}
+	return res
+}
+```
+
+## 剑指OfferII076.数组中的第k大的数字(3)
+
+- 题目
+
+```
+给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
+请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+示例 1:输入: [3,2,1,5,6,4] 和 k = 2 输出: 5
+示例 2:输入: [3,2,3,1,2,4,5,5,6] 和 k = 4 输出: 4
+提示：1 <= k <= nums.length <= 104
+-104 <= nums[i] <= 104
+注意：本题与主站 215 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 排序   | O(nlog(n)) | O(1)       |
+| 02   | 堆排序 | O(nlog(n)) | O(log(n))  |
+| 03   | 快排   | O(n)       | O(log(n))  |
+
+```go
+func findKthLargest(nums []int, k int) int {
+	sort.Ints(nums)
+	return nums[len(nums)-k]
+}
+
+# 2
+func findKthLargest(nums []int, k int) int {
+	heapSize := len(nums)
+	buildMaxHeap(nums, heapSize)
+	for i := len(nums) - 1; i >= len(nums)-k+1; i-- {
+		nums[0], nums[i] = nums[i], nums[0]
+		heapSize--
+		maxHeapify(nums, 0, heapSize)
+	}
+	return nums[0]
+}
+
+func buildMaxHeap(a []int, heapSize int) {
+	for i := heapSize / 2; i >= 0; i-- {
+		maxHeapify(a, i, heapSize)
+	}
+}
+
+func maxHeapify(a []int, i, heapSize int) {
+	l, r, largest := i*2+1, i*2+2, i
+	if l < heapSize && a[l] > a[largest] {
+		largest = l
+	}
+	if r < heapSize && a[r] > a[largest] {
+		largest = r
+	}
+	if largest != i {
+		a[i], a[largest] = a[largest], a[i]
+		maxHeapify(a, largest, heapSize)
+	}
+}
+
+# 3
+func findKthLargest(nums []int, k int) int {
+	return findK(nums, 0, len(nums)-1, k)
+}
+
+func findK(nums []int, start, end int, k int) int {
+	if start >= end {
+		return nums[end]
+	}
+	index := partition(nums, start, end)
+	if index+1 == k {
+		return nums[index]
+	} else if index+1 < k {
+		return findK(nums, index+1, end, k)
+	}
+	return findK(nums, start, index-1, k)
+}
+
+func partition(nums []int, start, end int) int {
+	temp := nums[end]
+	i := start
+	for j := start; j < end; j++ {
+		if nums[j] > temp {
+			if i != j {
+				nums[i], nums[j] = nums[j], nums[i]
+			}
+			i++
+		}
+	}
+	nums[i], nums[end] = nums[end], nums[i]
+	return i
+}
+```
+
+## 剑指OfferII077.链表排序(3)
+
+- 题目
+
+```
+给定链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
+示例 1：输入：head = [4,2,1,3] 输出：[1,2,3,4]
+示例 2：输入：head = [-1,5,3,4,0] 输出：[-1,0,3,4,5]
+示例 3：输入：head = [] 输出：[]
+提示：链表中节点的数目在范围 [0, 5 * 104] 内
+-105 <= Node.val <= 105
+进阶：你可以在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
+注意：本题与主站 148 题相同
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 快排 | O(nlog(n)) | O(log(n))  |
+| 02   | 归并 | O(nlog(n)) | O(log(n))  |
+| 03   | 归并 | O(nlog(n)) | O(1)       |
+
+```go
+func sortList(head *ListNode) *ListNode {
+	quickSort(head, nil)
+	return head
+}
+
+func quickSort(head, end *ListNode) {
+	if head == end || head.Next == end {
+		return
+	}
+	temp := head.Val
+	fast, slow := head.Next, head
+	for fast != end {
+		if fast.Val < temp {
+			slow = slow.Next
+			slow.Val, fast.Val = fast.Val, slow.Val
+		}
+		fast = fast.Next
+	}
+	slow.Val, head.Val = head.Val, slow.Val
+	quickSort(head, slow)
+	quickSort(slow.Next, end)
+}
+
+# 2
+func sortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	slow, fast := head, head.Next
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	right := sortList(slow.Next)
+	slow.Next = nil
+	left := sortList(head)
+	return mergeTwoLists(left, right)
+}
+
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	res := &ListNode{}
+	temp := res
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			temp.Next = l1
+			l1 = l1.Next
+		} else {
+			temp.Next = l2
+			l2 = l2.Next
+		}
+		temp = temp.Next
+	}
+	if l1 != nil {
+		temp.Next = l1
+	} else {
+		temp.Next = l2
+	}
+	return res.Next
+}
+
+# 3
+func sortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	res := &ListNode{Next: head}
+	cur := head
+	var left, right *ListNode
+	length := 0
+	for cur != nil {
+		length++
+		cur = cur.Next
+	}
+	for i := 1; i < length; i = i * 2 {
+		cur = res.Next
+		tail := res
+		for cur != nil {
+			left = cur
+			right = split(left, i)
+			cur = split(right, i)
+			tail.Next = mergeTwoLists(left, right)
+			for tail.Next != nil {
+				tail = tail.Next
+			}
+		}
+	}
+	return res.Next
+}
+
+func split(head *ListNode, length int) *ListNode {
+	cur := head
+	var right *ListNode
+	length--
+	for length > 0 && cur != nil {
+		length--
+		cur = cur.Next
+	}
+	if cur == nil {
+		return nil
+	}
+	right = cur.Next
+	cur.Next = nil
+	return right
+}
+
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	res := &ListNode{}
+	temp := res
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			temp.Next = l1
+			l1 = l1.Next
+		} else {
+			temp.Next = l2
+			l2 = l2.Next
+		}
+		temp = temp.Next
+	}
+	if l1 != nil {
+		temp.Next = l1
+	} else {
+		temp.Next = l2
+	}
+	return res.Next
+}
+```
+
+## 剑指OfferII079.所有子集(4)
+
+- 题目
+
+```
+给定一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
+解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
+示例 1：输入：nums = [1,2,3] 输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
+示例 2：输入：nums = [0] 输出：[[],[0]]
+提示：1 <= nums.length <= 10
+-10 <= nums[i] <= 10
+nums 中的所有元素 互不相同
+注意：本题与主站 78 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 回溯   | O(n*2^n)   | O(n*2^n)   |
+| 02   | 迭代   | O(n*2^n)   | O(n*2^n)   |
+| 03   | 位运算 | O(n*2^n)   | O(n*2^n)   |
+| 04   | 回溯   | O(n*2^n)   | O(n*2^n)   |
+
+```go
+var res [][]int
+
+func subsets(nums []int) [][]int {
+	res = make([][]int, 0)
+	dfs(nums, make([]int, 0), 0)
+	return res
+}
+
+func dfs(nums []int, arr []int, level int) {
+	temp := make([]int, len(arr))
+	copy(temp, arr)
+	res = append(res, temp)
+	for i := level; i < len(nums); i++ {
+		dfs(nums, append(arr, nums[i]), i+1)
+	}
+}
+
+# 2
+func subsets(nums []int) [][]int {
+	res := make([][]int, 0)
+	res = append(res, []int{})
+	for i := 0; i < len(nums); i++ {
+		temp := make([][]int, len(res))
+		for key, value := range res {
+			value = append(value, nums[i])
+			temp[key] = append(temp[key], value...)
+		}
+		for _, v := range temp {
+			res = append(res, v)
+		}
+	}
+	return res
+}
+
+# 3
+func subsets(nums []int) [][]int {
+	res := make([][]int, 0)
+	n := len(nums)
+	left := 1 << n
+	right := 1 << (n + 1)
+	for i := left; i < right; i++ {
+		temp := make([]int, 0)
+		for j := 0; j < n; j++ {
+			if i&(1<<j) != 0 {
+				temp = append(temp, nums[j])
+			}
+		}
+		res = append(res, temp)
+	}
+	return res
+}
+
+# 4
+var res [][]int
+
+func subsets(nums []int) [][]int {
+	res = make([][]int, 0)
+	dfs(nums, make([]int, 0), 0)
+	return res
+}
+
+func dfs(nums []int, arr []int, level int) {
+	if level >= len(nums) {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	dfs(nums, arr, level+1)
+	dfs(nums, append(arr, nums[level]), level+1)
+}
+```
+
+## 剑指OfferII080.含有k个元素的组合(5)
+
+- 题目
+
+```
+给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
+示例 1:输入: n = 4, k = 2 输出:
+[
+  [2,4],
+  [3,4],
+  [2,3],
+  [1,2],
+  [1,3],
+  [1,4],
+]
+示例 2:输入: n = 1, k = 1 输出: [[1]]
+提示:1 <= n <= 20
+1 <= k <= n
+注意：本题与主站 77 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路      | 时间复杂度 | 空间复杂度 |
+| ---- | --------- | ---------- | ---------- |
+| 01   | 回溯-递归 | O(kC(n,k)) | O(C(n,k))  |
+| 02   | 回溯      | O(kC(n,k)) | O(C(n,k))  |
+| 03   | 回溯      | O(kC(n,k)) | O(C(n,k))  |
+| 04   | 迭代      | O(kC(n,k)) | O(C(n,k))  |
+| 05   | 回溯      | O(kC(n,k)) | O(C(n,k))  |
+
+```go
+var res [][]int
+
+func combine(n int, k int) [][]int {
+	res = make([][]int, 0)
+	nums := make([]int, 0)
+	for i := 1; i <= n; i++ {
+		nums = append(nums, i)
+	}
+	dfs(nums, 0, k)
+	return res
+}
+
+func dfs(nums []int, index, k int) {
+	if index == k {
+		temp := make([]int, k)
+		copy(temp, nums[:k])
+		res = append(res, temp)
+		return
+	}
+	for i := index; i < len(nums); i++ {
+		if index == 0 || nums[i] > nums[index-1] {
+			nums[i], nums[index] = nums[index], nums[i]
+			dfs(nums, index+1, k)
+			nums[i], nums[index] = nums[index], nums[i]
+		}
+	}
+}
+
+# 2
+var res [][]int
+
+func combine(n int, k int) [][]int {
+	res = make([][]int, 0)
+	dfs(n, k, 1, make([]int, 0))
+	return res
+}
+
+func dfs(n, k, index int, arr []int) {
+	if len(arr) == k {
+		temp := make([]int, k)
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := index; i <= n; i++ {
+		arr = append(arr, i)
+		dfs(n, k, i+1, arr)
+		arr = arr[:len(arr)-1]
+	}
+}
+
+# 3
+var res [][]int
+
+func combine(n int, k int) [][]int {
+	res = make([][]int, 0)
+	nums := make([]int, 0)
+	for i := 1; i <= n; i++ {
+		nums = append(nums, i)
+	}
+	dfs(nums, 0, k, make([]int, 0))
+	return res
+}
+
+func dfs(nums []int, index, k int, arr []int) {
+	if len(arr) == k {
+		temp := make([]int, k)
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := index; i < len(nums); i++ {
+		arr = append(arr, nums[i])
+		dfs(nums, i+1, k, arr)
+		arr = arr[:len(arr)-1]
+	}
+}
+
+# 4
+func combine(n int, k int) [][]int {
+	res := make([][]int, 0)
+	arr := make([]int, 0)
+	for i := 1; i <= k; i++ {
+		arr = append(arr, 0)
+	}
+	i := 0
+	for i >= 0 {
+		arr[i]++
+		if arr[i] > n {
+			i--
+		} else if i == k-1 {
+			temp := make([]int, k)
+			copy(temp, arr)
+			res = append(res, temp)
+		} else {
+			i++
+			arr[i] = arr[i-1]
+		}
+	}
+	return res
+}
+
+# 5
+var res [][]int
+
+func combine(n int, k int) [][]int {
+	res = make([][]int, 0)
+	dfs(n, k, 1, make([]int, 0))
+	return res
+}
+
+func dfs(n, k, index int, arr []int) {
+	if index > n+1 {
+		return
+	}
+	if len(arr) == k {
+		temp := make([]int, k)
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	dfs(n, k, index+1, arr)
+	arr = append(arr, index)
+	dfs(n, k, index+1, arr)
+}
+```
+
+## 剑指OfferII081.允许重复选择元素的组合(2)
+
+- 题目
+
+```
+给定一个无重复元素的正整数数组 candidates 和一个正整数 target ，
+找出 candidates 中所有可以使数字和为目标数 target 的唯一组合。
+candidates 中的数字可以无限制重复被选取。如果至少一个所选数字数量不同，则两种组合是唯一的。 
+对于给定的输入，保证和为 target 的唯一组合数少于 150 个。
+示例 1：输入: candidates = [2,3,6,7], target = 7 输出: [[7],[2,2,3]]
+示例 2：输入: candidates = [2,3,5], target = 8 输出: [[2,2,2,2],[2,3,3],[3,5]]
+示例 3：输入: candidates = [2], target = 1 输出: []
+示例 4：输入: candidates = [1], target = 1 输出: [[1]]
+示例 5：输入: candidates = [1], target = 2 输出: [[1,1]]
+提示：1 <= candidates.length <= 30
+1 <= candidates[i] <= 200
+candidate 中的每个元素都是独一无二的。
+1 <= target <= 500
+注意：本题与主站 39 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(2^n)     | O(2^n)     |
+| 02   | 递归 | O(2^n)     | O(2^n)     |
+
+```go
+var res [][]int
+
+func combinationSum(candidates []int, target int) [][]int {
+	res = make([][]int, 0)
+	sort.Ints(candidates)
+	dfs(candidates, target, []int{}, 0)
+	return res
+}
+
+func dfs(candidates []int, target int, arr []int, index int) {
+	if target == 0 {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	if target < 0{
+		return
+	}
+	for i := index; i < len(candidates); i++ {
+		arr = append(arr, candidates[i])
+		dfs(candidates, target-candidates[i], arr, i)
+		arr = arr[:len(arr)-1]
+	}
+}
+
+# 2
+var res [][]int
+
+func combinationSum(candidates []int, target int) [][]int {
+	res = make([][]int, 0)
+	sort.Ints(candidates)
+	dfs(candidates, target, []int{}, 0)
+	return res
+}
+
+func dfs(candidates []int, target int, arr []int, index int) {
+	if target == 0 {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := index; i < len(candidates); i++ {
+		if target < candidates[i] {
+			return
+		}
+		dfs(candidates, target-candidates[i], append(arr, candidates[i]), i)
+	}
+}
+```
+
+## 剑指OfferII082.含有重复元素集合的组合(2)
+
+- 题目
+
+```
+给定一个可能有重复数字的整数数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+candidates 中的每个数字在每个组合中只能使用一次，解集不能包含重复的组合。 
+示例 1:输入: candidates = [10,1,2,7,6,1,5], target = 8, 输出:
+[
+[1,1,6],
+[1,2,5],
+[1,7],
+[2,6]
+]
+示例 2:输入: candidates = [2,5,2,1,2], target = 5, 输出:
+[
+[1,2,2],
+[5]
+]
+提示:1 <= candidates.length <= 100
+1 <= candidates[i] <= 50
+1 <= target <= 30
+注意：本题与主站 40 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 递归 | O(n!)      | O(n!)      |
+| 02   | 递归 | O(n!)      | O(n!)      |
+
+```go
+var res [][]int
+
+func combinationSum2(candidates []int, target int) [][]int {
+	res = make([][]int, 0)
+	sort.Ints(candidates)
+	dfs(candidates, target, []int{}, 0)
+	return res
+}
+
+func dfs(candidates []int, target int, arr []int, index int) {
+	if target == 0 {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	if target < 0 {
+		return
+	}
+	for i := index; i < len(candidates); i++ {
+		origin := i
+		for i < len(candidates)-1 && candidates[i] == candidates[i+1] {
+			i++
+		}
+		arr = append(arr, candidates[i])
+		dfs(candidates, target-candidates[i], arr, origin+1)
+		arr = arr[:len(arr)-1]
+	}
+}
+
+# 2
+var res [][]int
+
+func combinationSum2(candidates []int, target int) [][]int {
+	res = make([][]int, 0)
+	sort.Ints(candidates)
+	dfs(candidates, target, []int{}, 0)
+	return res
+}
+
+func dfs(candidates []int, target int, arr []int, index int) {
+	if target == 0 {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := index; i < len(candidates); i++ {
+		if i != index && candidates[i] == candidates[i-1] {
+			continue
+		}
+		if target < 0 {
+			return
+		}
+		arr = append(arr, candidates[i])
+		dfs(candidates, target-candidates[i], arr, i+1)
+		arr = arr[:len(arr)-1]
+	}
+}
+```
+
+## 剑指OfferII083.没有重复元素集合的全排列(3)
+
+- 题目
+
+```
+给定一个不含重复数字的整数数组 nums ，返回其 所有可能的全排列 。可以 按任意顺序 返回答案。
+示例 1：输入：nums = [1,2,3] 输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+示例 2：输入：nums = [0,1] 输出：[[0,1],[1,0]]
+示例 3：输入：nums = [1] 输出：[[1]]
+提示：1 <= nums.length <= 6
+-10 <= nums[i] <= 10
+nums 中的所有整数 互不相同
+注意：本题与主站 46 题相同
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 回溯 | O(n^n)     | O(n*n!)    |
+| 02   | 递归 | O(n!)      | O(n*n!)    |
+| 03   | 回溯 | O(n!)      | O(n*n!)    |
+
+```go
+var res [][]int
+
+func permute(nums []int) [][]int {
+	res = make([][]int, 0)
+	arr := make([]int, 0)
+	visited := make(map[int]bool)
+	dfs(nums, 0, arr, visited)
+	return res
+}
+
+func dfs(nums []int, index int, arr []int, visited map[int]bool) {
+	if index == len(nums) {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := 0; i < len(nums); i++ {
+		if visited[i] == false {
+			arr = append(arr, nums[i])
+			visited[i] = true
+			dfs(nums, index+1, arr, visited)
+			arr = arr[:len(arr)-1]
+			visited[i] = false
+		}
+	}
+}
+
+# 2
+func permute(nums []int) [][]int {
+	if len(nums) == 1 {
+		return [][]int{nums}
+	}
+	res := make([][]int, 0)
+	for i := 0; i < len(nums); i++ {
+		tempArr := make([]int, len(nums)-1)
+		copy(tempArr[0:], nums[:i])
+		copy(tempArr[i:], nums[i+1:])
+		arr := permute(tempArr)
+		for _, v := range arr {
+			res = append(res, append(v, nums[i]))
+		}
+	}
+	return res
+}
+
+# 3
+var res [][]int
+
+func permute(nums []int) [][]int {
+	res = make([][]int, 0)
+	arr := make([]int, len(nums))
+	dfs(nums, 0, arr)
+	return res
+}
+
+func dfs(nums []int, index int, arr []int) {
+	if index == len(nums) {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := index; i < len(nums); i++ {
+		arr[index] = nums[i]
+		nums[i], nums[index] = nums[index], nums[i]
+		dfs(nums, index+1, arr)
+		nums[i], nums[index] = nums[index], nums[i]
+	}
+}
+```
+
+## 剑指OfferII084.含有重复元素集合的全排列(3)
+
+- 题目
+
+```
+给定一个可包含重复数字的整数集合 nums ，按任意顺序 返回它所有不重复的全排列。
+示例 1：输入：nums = [1,1,2]
+输出：[[1,1,2],
+ [1,2,1],
+ [2,1,1]]
+示例 2：输入：nums = [1,2,3] 输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+提示：1 <= nums.length <= 8
+-10 <= nums[i] <= 10
+注意：本题与主站 47 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 回溯 | O(n!)      | O(n!)      |
+| 02   | 回溯 | O(n!)      | O(n!)      |
+| 03   | 回溯 | O(n!)      | O(n!)      |
+
+```go
+var res [][]int
+
+func permuteUnique(nums []int) [][]int {
+	res = make([][]int, 0)
+	sort.Ints(nums)
+	dfs(nums, 0, make([]int, len(nums)), make([]int, 0))
+	return res
+}
+
+func dfs(nums []int, index int, visited []int, arr []int) {
+	if len(nums) == index {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := 0; i < len(nums); i++ {
+		if visited[i] == 1 {
+			continue
+		}
+		// visited[i-1] == 0 或者 visited[i-1] == 1都可以
+		if i > 0 && nums[i] == nums[i-1] && visited[i-1] == 0 {
+			// if i > 0 && nums[i] == nums[i-1] && visited[i-1] == 1 {
+			continue
+		}
+		arr = append(arr, nums[i])
+		visited[i] = 1
+		dfs(nums, index+1, visited, arr)
+		visited[i] = 0
+		arr = arr[:len(arr)-1]
+	}
+}
+
+# 2
+var res [][]int
+
+func permuteUnique(nums []int) [][]int {
+	res = make([][]int, 0)
+	sort.Ints(nums)
+	dfs(nums, 0)
+	return res
+}
+
+func dfs(nums []int, index int) {
+	if index == len(nums) {
+		temp := make([]int, len(nums))
+		copy(temp, nums)
+		res = append(res, temp)
+		return
+	}
+	m := make(map[int]int)
+	for i := index; i < len(nums); i++ {
+		if _, ok := m[nums[i]]; ok {
+			continue
+		}
+		m[nums[i]] = 1
+		nums[i], nums[index] = nums[index], nums[i]
+		dfs(nums, index+1)
+		nums[i], nums[index] = nums[index], nums[i]
+	}
+}
+
+# 3
+var res [][]int
+
+func permuteUnique(nums []int) [][]int {
+	res = make([][]int, 0)
+	sort.Ints(nums)
+	dfs(nums, make([]int, 0))
+	return res
+}
+
+func dfs(nums []int, arr []int) {
+	if len(nums) == 0 {
+		temp := make([]int, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := 0; i < len(nums); i++ {
+		if i != 0 && nums[i] == nums[i-1] {
+			continue
+		}
+		tempArr := make([]int, len(nums))
+		copy(tempArr, nums)
+		arr = append(arr, nums[i])
+		dfs(append(tempArr[:i], tempArr[i+1:]...), arr)
+		arr = arr[:len(arr)-1]
+	}
+}
+```
+
+## 剑指OfferII085.生成匹配的括号(3)
+
+- 题目
+
+```
+正整数 n 代表生成括号的对数，请设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。
+示例 1：输入：n = 3 输出：["((()))","(()())","(())()","()(())","()()()"]
+示例 2：输入：n = 1 输出：["()"]
+提示：1 <= n <= 8
+注意：本题与主站 22 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度     | 空间复杂度     |
+| ---- | ------------ | -------------- | -------------- |
+| 01   | 全排列-递归  | O(4^n/n^(1/2)) | O(4^n/n^(1/2)) |
+| 02   | 动态规划     | O(4^n/n^(1/2)) | O(4^n/n^(1/2)) |
+| 03   | 广度优先搜索 | O(4^n/n^(1/2)) | O(4^n/n^(1/2)) |
+
+```go
+var res []string
+
+func generateParenthesis(n int) []string {
+	res = make([]string, 0)
+	dfs(0, 0, n, "")
+	return res
+}
+
+func dfs(left, right, max int, str string) {
+	if left == right && left == max {
+		res = append(res, str)
+		return
+	}
+	if left < max {
+		dfs(left+1, right, max, str+"(")
+	}
+	if right < left {
+		dfs(left, right+1, max, str+")")
+	}
+}
+
+# 2
+/*
+dp[i]表示n=i时括号的组合
+dp[i]="(" + dp[j] + ")"+dp[i-j-1] (j<i)
+dp[0] = ""
+*/
+func generateParenthesis(n int) []string {
+	dp := make([][]string, n+1)
+	dp[0] = make([]string, 0)
+	if n == 0 {
+		return dp[0]
+	}
+	dp[0] = append(dp[0], "")
+	for i := 1; i <= n; i++ {
+		dp[i] = make([]string, 0)
+		for j := 0; j < i; j++ {
+			for _, a := range dp[j] {
+				for _, b := range dp[i-j-1] {
+					str := "(" + a + ")" + b
+					dp[i] = append(dp[i], str)
+				}
+			}
+		}
+	}
+	return dp[n]
+}
+
+# 3
+type Node struct {
+	str   string
+	left  int
+	right int
+}
+
+func generateParenthesis(n int) []string {
+	res := make([]string, 0)
+	if n == 0 {
+		return res
+	}
+	queue := make([]*Node, 0)
+	queue = append(queue, &Node{
+		str:   "",
+		left:  n,
+		right: n,
+	})
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		if node.left == 0 && node.right == 0 {
+			res = append(res, node.str)
+		}
+		if node.left > 0 {
+			queue = append(queue, &Node{
+				str:   node.str + "(",
+				left:  node.left - 1,
+				right: node.right,
+			})
+		}
+		if node.right > 0 && node.left < node.right {
+			queue = append(queue, &Node{
+				str:   node.str + ")",
+				left:  node.left,
+				right: node.right - 1,
+			})
+		}
+	}
+	return res
+}
+```
+
+## 剑指OfferII086.分割回文子字符串(2)
+
+- 题目
+
+```
+给定一个字符串 s ，请将 s 分割成一些子串，使每个子串都是 回文串 ，返回 s 所有可能的分割方案。
+回文串 是正着读和反着读都一样的字符串。
+示例 1：输入：s = "google" 输出：[["g","o","o","g","l","e"],["g","oo","g","l","e"],["goog","l","e"]]
+示例 2：输入：s = "aab" 输出：[["a","a","b"],["aa","b"]]
+示例 3：输入：s = "a" 输出：[["a"] 
+提示：1 <= s.length <= 16
+s 仅由小写英文字母组成
+注意：本题与主站 131 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 回溯          | O(n*2^n)   | O(n*2^n)   |
+| 02   | 动态规划+回溯 | O(n*2^n)   | O(n*2^n)   |
+
+```go
+var res [][]string
+
+func partition(s string) [][]string {
+	res = make([][]string, 0)
+	arr := make([]string, 0)
+	dfs(s, 0, arr)
+	return res
+}
+
+func dfs(s string, level int, arr []string) {
+	if level == len(s) {
+		temp := make([]string, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := level; i < len(s); i++ {
+		str := s[level : i+1]
+		if judge(str) == true {
+			dfs(s, i+1, append(arr, str))
+		}
+	}
+}
+
+func judge(s string) bool {
+	for i := 0; i < len(s)/2; i++ {
+		if s[i] != s[len(s)-1-i] {
+			return false
+		}
+	}
+	return true
+}
+
+# 2
+var res [][]string
+var dp [][]bool
+
+func partition(s string) [][]string {
+	res = make([][]string, 0)
+	arr := make([]string, 0)
+	dp = make([][]bool, len(s))
+	for r := 0; r < len(s); r++ {
+		dp[r] = make([]bool, len(s))
+		dp[r][r] = true
+		for l := 0; l < r; l++ {
+			if s[l] == s[r] && (r-l <= 2 || dp[l+1][r-1] == true) {
+				dp[l][r] = true
+			} else {
+				dp[l][r] = false
+			}
+		}
+	}
+	dfs(s, 0, arr)
+	return res
+}
+
+func dfs(s string, level int, arr []string) {
+	if level == len(s) {
+		temp := make([]string, len(arr))
+		copy(temp, arr)
+		res = append(res, temp)
+		return
+	}
+	for i := level; i < len(s); i++ {
+		str := s[level : i+1]
+		if dp[level][i] == true {
+			dfs(s, i+1, append(arr, str))
+		}
+	}
+}
+```
+
+## 剑指OfferII087.复原IP(2)
+
+- 题目
+
+```
+给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能从 s 获得的 有效 IP 地址 。你可以按任何顺序返回答案。
+有效 IP 地址 正好由四个整数（每个整数位于 0 到 255 之间组成，且不能含有前导 0），整数之间用 '.' 分隔。
+例如："0.1.2.201" 和 "192.168.1.1" 是 有效 IP 地址，
+但是 "0.011.255.245"、"192.168.1.312" 和 "192.168@1.1" 是 无效 IP 地址。
+示例 1：输入：s = "25525511135" 输出：["255.255.11.135","255.255.111.35"]
+示例 2：输入：s = "0000" 输出：["0.0.0.0"]
+示例 3：输入：s = "1111" 输出：["1.1.1.1"]
+示例 4：输入：s = "010010" 输出：["0.10.0.10","0.100.1.0"]
+示例 5：输入：s = "10203040" 输出：["10.20.30.40","102.0.30.40","10.203.0.40"]
+提示：0 <= s.length <= 3000
+s 仅由数字组成
+注意：本题与主站 93 题相同
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 回溯   | O(1)       | O(1)       |
+| 02   | 暴力法 | O(1)       | O(1)       |
+
+```go
+var res []string
+
+func restoreIpAddresses(s string) []string {
+	res = make([]string, 0)
+	if len(s) < 4 || len(s) > 12 {
+		return nil
+	}
+	dfs(s, make([]string, 0), 0)
+	return res
+}
+
+func dfs(s string, arr []string, level int) {
+	if level == 4 {
+		if len(s) == 0 {
+			str := strings.Join(arr, ".")
+			res = append(res, str)
+		}
+		return
+	}
+	for i := 1; i <= 3; i++ {
+		if i <= len(s) {
+			value, _ := strconv.Atoi(s[:i])
+			if value <= 255 {
+				str := s[i:]
+				dfs(str, append(arr, s[:i]), level+1)
+			}
+			if value == 0 {
+				// 避免出现001,01这种情况
+				break
+			}
+		}
+	}
+}
+
+# 2
+func restoreIpAddresses(s string) []string {
+	res := make([]string, 0)
+	if len(s) < 4 || len(s) > 12 {
+		return nil
+	}
+	for i := 1; i <= 3 && i < len(s)-2; i++ {
+		for j := i + 1; j <= i+3 && j < len(s)-1; j++ {
+			for k := j + 1; k <= j+3 && k < len(s); k++ {
+				if judge(s[:i]) && judge(s[i:j]) &&
+					judge(s[j:k]) && judge(s[k:]) {
+					res = append(res, s[:i]+"."+s[i:j]+"."+s[j:k]+"."+s[k:])
+				}
+			}
+		}
+	}
+	return res
+}
+
+func judge(s string) bool {
+	if len(s) > 1 && s[0] == '0' {
+		return false
+	}
+	value, _ := strconv.Atoi(s)
+	if value > 255 {
+		return false
+	}
+	return true
+}
+```
+
+## 剑指OfferII089.房屋偷盗(4)
+
+- 题目
+
+```
+一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，
+影响小偷偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
+给定一个代表每个房屋存放金额的非负整数数组 nums ，请计算 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。
+示例 1：输入：nums = [1,2,3,1] 输出：4
+解释：偷窃 1 号房屋 (金额 = 1) ，然后偷窃 3 号房屋 (金额 = 3)。
+     偷窃到的最高金额 = 1 + 3 = 4 。
+示例 2：输入：nums = [2,7,9,3,1] 输出：12
+解释：偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。
+     偷窃到的最高金额 = 2 + 9 + 1 = 12 。
+提示：1 <= nums.length <= 100
+0 <= nums[i] <= 400
+注意：本题与主站 198 题相同： 
+```
+
+- 解题思路
+
+| No.      | 思路              | 时间复杂度 | 空间复杂度 |
+| -------- | ----------------- | ---------- | ---------- |
+| 01(最优) | 动态规划          | O(n)       | O(1)       |
+| 02       | 动态规划+一维数组 | O(n)       | O(n)       |
+| 03       | 动态规划+二维数组 | O(n)       | O(n)       |
+| 04       | 奇偶法            | O(n)       | O(1)       |
+
+```go
+func rob(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	if len(nums) == 1 {
+		return nums[0]
+	}
+	a := nums[0]
+	b := max(a, nums[1])
+
+	for i := 2; i < len(nums); i++ {
+		a, b = b, max(a+nums[i], b)
+	}
+	return b
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func rob(nums []int) int {
+	n := len(nums)
+	if n == 0 {
+		return 0
+	}
+	if n == 1 {
+		return nums[0]
+	}
+	dp := make([]int, n)
+	dp[0] = nums[0]
+	if nums[0] > nums[1] {
+		dp[1] = nums[0]
+	} else {
+		dp[1] = nums[1]
+	}
+	for i := 2; i < n; i++ {
+		dp[i] = max(dp[i-1], dp[i-2]+nums[i])
+	}
+	return dp[n-1]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 3
+func rob(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	if len(nums) == 1 {
+		return nums[0]
+	}
+	n := len(nums)
+	dp := make([][]int, n)
+	for n := range dp {
+		dp[n] = make([]int, 2)
+	}
+	dp[0][0], dp[0][1] = 0, nums[0]
+	for i := 1; i < n; i++ {
+		dp[i][0] = max(dp[i-1][0], dp[i-1][1])
+		dp[i][1] = dp[i-1][0] + nums[i]
+	}
+	return max(dp[n-1][0], dp[n-1][1])
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 4
+func rob(nums []int) int {
+	var a, b int
+	for i, v := range nums {
+		if i%2 == 0 {
+			a = max(a+v, b)
+		} else {
+			b = max(a, b+v)
+		}
+	}
+	return max(a, b)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 剑指OfferII090.环形房屋偷盗(3)
+
+- 题目
+
+```
+一个专业的小偷，计划偷窃一个环形街道上沿街的房屋，每间房内都藏有一定的现金。
+这个地方所有的房屋都 围成一圈 ，这意味着第一个房屋和最后一个房屋是紧挨着的。
+同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警 。
+给定一个代表每个房屋存放金额的非负整数数组 nums ，请计算 在不触动警报装置的情况下 ，今晚能够偷窃到的最高金额。
+示例 1：输入：nums = [2,3,2] 输出：3
+解释：你不能先偷窃 1 号房屋（金额 = 2），然后偷窃 3 号房屋（金额 = 2）, 因为他们是相邻的。
+示例 2：输入：nums = [1,2,3,1] 输出：4
+解释：你可以先偷窃 1 号房屋（金额 = 1），然后偷窃 3 号房屋（金额 = 3）。
+     偷窃到的最高金额 = 1 + 3 = 4 。
+示例 3：输入：nums = [0] 输出：0
+提示：1 <= nums.length <= 100
+0 <= nums[i] <= 1000
+注意：本题与主站 213 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n)       | O(n)       |
+| 02   | 动态规划 | O(n)       | O(n)       |
+| 03   | 动态规划 | O(n)       | O(1)       |
+
+```go
+func rob(nums []int) int {
+	n := len(nums)
+	if n == 0 {
+		return 0
+	} else if n == 1 {
+		return nums[0]
+	}
+	dp1 := make([]int, n) // 从第一家开始打劫，最后一家不可选
+	dp2 := make([]int, n) // 从第二家开始打劫，最后一家可以选
+	dp1[0] = nums[0]
+	dp1[1] = max(nums[0], nums[1])
+	dp2[0] = 0
+	dp2[1] = nums[1]
+	for i := 2; i < n; i++ {
+		dp1[i] = max(dp1[i-1], dp1[i-2]+nums[i])
+		dp2[i] = max(dp2[i-1], dp2[i-2]+nums[i])
+	}
+	return max(dp1[n-2], dp2[n-1])
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func rob(nums []int) int {
+	n := len(nums)
+	if n == 0 {
+		return 0
+	} else if n == 1 {
+		return nums[0]
+	} else if n == 2 {
+		return max(nums[0], nums[1])
+	}
+	return max(getMax(nums[:n-1]), getMax(nums[1:]))
+}
+
+func getMax(nums []int) int {
+	n := len(nums)
+	dp := make([]int, n+1)
+	dp[0] = nums[0]
+	dp[1] = max(nums[0], nums[1])
+	for i := 2; i < n; i++ {
+		dp[i] = max(dp[i-1], dp[i-2]+nums[i])
+	}
+	return dp[n-1]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 3
+func rob(nums []int) int {
+	n := len(nums)
+	if n == 0 {
+		return 0
+	} else if n == 1 {
+		return nums[0]
+	} else if n == 2 {
+		return max(nums[0], nums[1])
+	}
+	return max(getMax(nums[:n-1]), getMax(nums[1:]))
+}
+
+func getMax(nums []int) int {
+	var a, b int
+	for i, v := range nums {
+		if i%2 == 0 {
+			a = max(a+v, b)
+		} else {
+			b = max(a, b+v)
+		}
+	}
+	return max(a, b)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 剑指OfferII091.粉刷房子
+
+### 题目
+
+```
+
+```
+
+### 解题思路
+
+```go
+```
+
+## 剑指OfferII092.翻转字符(3)
+
+- 题目
+
+```
+如果一个由 '0' 和 '1' 组成的字符串，是以一些 '0'（可能没有 '0'）后面跟着一些 '1'（也可能没有 '1'）的形式组成的，
+那么该字符串是 单调递增 的。
+我们给出一个由字符 '0' 和 '1' 组成的字符串 s，我们可以将任何 '0' 翻转为 '1' 或者将 '1' 翻转为 '0'。
+返回使 s 单调递增 的最小翻转次数。
+示例 1：输入：s = "00110" 输出：1
+解释：我们翻转最后一位得到 00111.
+示例 2：输入：s = "010110" 输出：2
+解释：我们翻转得到 011111，或者是 000111。
+示例 3：输入：s = "00011000" 输出：2
+解释：我们翻转得到 00000000。
+提示：1 <= s.length <= 20000
+s 中只包含字符 '0' 和 '1'
+注意：本题与主站 926 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n)       | O(n)       |
+| 02   | 动态规划 | O(n)       | O(1)       |
+| 03   | 前缀和   | O(n)       | O(n)       |
+
+```go
+func minFlipsMonoIncr(S string) int {
+   n := len(S)
+   dpA := make([]int, n) // 0 结尾
+   dpB := make([]int, n) // 1 结尾
+   if S[0] == '1' {
+   	dpA[0] = 1
+   } else {
+   	dpB[0] = 1
+   }
+   for i := 1; i < n; i++ {
+   	if S[i] == '1' {
+   		dpA[i] = dpA[i-1] + 1            // 需要改为0
+   		dpB[i] = min(dpB[i-1], dpA[i-1]) // 1结尾和0结尾的最小值
+   	} else {
+   		dpA[i] = dpA[i-1]                    // 不需要改为0
+   		dpB[i] = min(dpB[i-1], dpA[i-1]) + 1 // 1结尾和0结尾的最小值+1
+   	}
+   }
+   return min(dpA[n-1], dpB[n-1])
+}
+
+func min(a, b int) int {
+   if a > b {
+   	return b
+   }
+   return a
+}
+
+# 2
+func minFlipsMonoIncr(S string) int {
+   n := len(S)
+   a := 0 // 0 结尾
+   b := 0 // 1 结尾
+   if S[0] == '1' {
+   	a = 1
+   } else {
+   	b = 1
+   }
+   for i := 1; i < n; i++ {
+   	if S[i] == '1' {
+   		a, b = a+1, min(a, b)
+   	} else {
+   		a, b = a, min(a, b)+1
+   	}
+   }
+   return min(a, b)
+}
+
+func min(a, b int) int {
+   if a > b {
+   	return b
+   }
+   return a
+}
+
+# 3
+func minFlipsMonoIncr(S string) int {
+   n := len(S)
+   arr := make([]int, n+1)
+   for i := 1; i <= n; i++ {
+   	arr[i] = arr[i-1]
+   	if S[i-1] == '1' {
+   		arr[i]++
+   	}
+   }
+   res := n
+   for i := 0; i <= n; i++ {
+   	left := arr[i]
+   	right := n - i - (arr[n] - arr[i])
+   	res = min(res, left+right)
+   }
+   return res
+}
+
+func min(a, b int) int {
+   if a > b {
+   	return b
+   }
+   return a
+}
+```
+
+## 剑指OfferII093.最长斐波那契数列(2)
+
+- 题目
+
+```
+如果序列 X_1, X_2, ..., X_n 满足下列条件，就说它是 斐波那契式 的：
+n >= 3
+对于所有 i + 2 <= n，都有 X_i + X_{i+1} = X_{i+2}
+给定一个严格递增的正整数数组形成序列 arr ，找到 arr 中最长的斐波那契式的子序列的长度。如果一个不存在，返回  0 。
+（回想一下，子序列是从原序列  arr 中派生出来的，它从 arr 中删掉任意数量的元素（也可以不删），而不改变其余元素的顺序。
+例如， [3, 5, 8] 是 [3, 4, 5, 6, 7, 8] 的一个子序列）
+示例 1：输入: arr = [1,2,3,4,5,6,7,8] 输出: 5
+解释: 最长的斐波那契式子序列为 [1,2,3,5,8] 。
+示例 2：输入: arr = [1,3,7,11,12,14,18] 输出: 3
+解释: 最长的斐波那契式子序列有 [1,11,12]、[3,11,14] 以及 [7,11,18] 。
+提示：3 <= arr.length <= 1000
+1 <= arr[i] < arr[i + 1] <= 10^9
+注意：本题与主站 873 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 暴力法   | O(n^3)     | O(n)       |
+| 02   | 动态规划 | O(n^2)     | O(n^2)     |
+
+```go
+func lenLongestFibSubseq(arr []int) int {
+	n := len(arr)
+	m := make(map[int]bool)
+	for i := 0; i < n; i++ {
+		m[arr[i]] = true
+	}
+	res := 0
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			count := 2
+			a, b := arr[i], arr[j]
+			for m[a+b] == true {
+				count++
+				a, b = b, a+b
+			}
+			if count > res && count > 2 {
+				res = count
+			}
+		}
+	}
+	return res
+}
+
+# 2
+func lenLongestFibSubseq(arr []int) int {
+	n := len(arr)
+	m := make(map[int]int)
+	for i := 0; i < n; i++ {
+		m[arr[i]] = i
+	}
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, n)
+	}
+	res := 0
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			dp[i][j] = 2
+		}
+	}
+	for i := 0; i < n; i++ {
+		for j := 0; j < i; j++ {
+			index, ok := m[arr[i]-arr[j]]
+			if ok && arr[index] < arr[j] {
+				dp[j][i] = dp[index][j] + 1
+				if dp[j][i] > 2 && dp[j][i] > res {
+					res = dp[j][i]
+				}
+			}
+		}
+	}
+	return res
+}
+```
+
+## 剑指OfferII095.最长公共子序列(3)
+
+- 题目
+
+```
+给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。
+一个字符串的 子序列 是指这样一个新的字符串：
+它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。
+例如，"ace" 是 "abcde" 的子序列，但 "aec" 不是 "abcde" 的子序列。
+两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。
+示例 1：输入：text1 = "abcde", text2 = "ace"  输出：3  
+解释：最长公共子序列是 "ace" ，它的长度为 3 。
+示例 2：输入：text1 = "abc", text2 = "abc" 输出：3
+解释：最长公共子序列是 "abc" ，它的长度为 3 。
+示例 3：输入：text1 = "abc", text2 = "def" 输出：0
+解释：两个字符串没有公共子序列，返回 0 。
+提示：1 <= text1.length, text2.length <= 1000
+text1 和 text2 仅由小写英文字符组成。
+注意：本题与主站 1143 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-二维 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划-一维 | O(n^2)     | O(n)       |
+| 03   | 动态规划-一维 | O(n^2)     | O(n)       |
+
+```go
+func longestCommonSubsequence(text1 string, text2 string) int {
+	n, m := len(text1), len(text2)
+	dp := make([][]int, n+1)
+	for i := 0; i < n+1; i++ {
+		dp[i] = make([]int, m+1)
+	}
+	for i := 1; i <= n; i++ {
+		for j := 1; j <= m; j++ {
+			if text1[i-1] == text2[j-1] {
+				dp[i][j] = dp[i-1][j-1] + 1
+			} else {
+				dp[i][j] = max(dp[i][j-1], dp[i-1][j])
+			}
+		}
+	}
+	return dp[n][m]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func longestCommonSubsequence(text1 string, text2 string) int {
+	n, m := len(text1), len(text2)
+	prev := make([]int, m+1)
+	cur := make([]int, m+1)
+	for i := 1; i <= n; i++ {
+		for j := 1; j <= m; j++ {
+			if text1[i-1] == text2[j-1] {
+				cur[j] = prev[j-1] + 1
+			} else {
+				cur[j] = max(prev[j], cur[j-1])
+			}
+		}
+		copy(prev, cur)
+	}
+	return cur[m]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 3
+func longestCommonSubsequence(text1 string, text2 string) int {
+	n, m := len(text1), len(text2)
+	cur := make([]int, m+1)
+	for i := 1; i <= n; i++ {
+		pre := cur[0]
+		for j := 1; j <= m; j++ {
+			temp := cur[j]
+			if text1[i-1] == text2[j-1] {
+				cur[j] = pre + 1
+			} else {
+				cur[j] = max(cur[j], cur[j-1])
+			}
+			pre = temp
+		}
+	}
+	return cur[m]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## 剑指OfferII096.字符串交织(2)
+
+- 题目
+
+```
+给定三个字符串 s1、s2、s3，请判断 s3 能不能由 s1 和 s2 交织（交错） 组成。
+两个字符串 s 和 t 交织 的定义与过程如下，其中每个字符串都会被分割成若干 非空 子字符串：
+s = s1 + s2 + ... + sn
+t = t1 + t2 + ... + tm
+|n - m| <= 1
+交织 是 s1 + t1 + s2 + t2 + s3 + t3 + ... 或者 t1 + s1 + t2 + s2 + t3 + s3 + ...
+提示：a + b 意味着字符串 a 和 b 连接。
+示例 1：输入：s1 = "aabcc", s2 = "dbbca", s3 = "aadbbcbcac" 输出：true
+示例 2：输入：s1 = "aabcc", s2 = "dbbca", s3 = "aadbbbaccc"  输出：false
+示例 3：输入：s1 = "", s2 = "", s3 = "" 输出：true
+提示：0 <= s1.length, s2.length <= 100
+0 <= s3.length <= 200
+s1、s2、和 s3 都由小写英文字母组成
+注意：本题与主站 97 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划      | O(n^2)     | O(n^2)     |
+| 02   | 动态规划-一维 | O(n^2)     | O(n)       |
+
+```go
+func isInterleave(s1 string, s2 string, s3 string) bool {
+	n, m, t := len(s1), len(s2), len(s3)
+	if n+m != t {
+		return false
+	}
+	// dp[i][j]表示s1的前i个元素和s2的前j个元素是否能交错组成s3的前i+j个元素
+	dp := make([][]bool, n+1)
+	for i := 0; i <= n; i++ {
+		dp[i] = make([]bool, m+1)
+	}
+	dp[0][0] = true
+	for i := 0; i <= n; i++ {
+		for j := 0; j <= m; j++ {
+			total := i + j - 1
+			if i > 0 && dp[i-1][j] == true && s1[i-1] == s3[total] {
+				dp[i][j] = true
+			}
+			if j > 0 && dp[i][j-1] == true && s2[j-1] == s3[total] {
+				dp[i][j] = true
+			}
+		}
+	}
+	return dp[n][m]
+}
+
+# 2
+func isInterleave(s1 string, s2 string, s3 string) bool {
+	n, m, t := len(s1), len(s2), len(s3)
+	if n+m != t {
+		return false
+	}
+	// dp[j]表示s1的前i个元素和s2的前j个元素是否能交错组成s3的前i+j个元素
+	dp := make([]bool, m+1)
+	dp[0] = true
+	for i := 0; i <= n; i++ {
+		for j := 0; j <= m; j++ {
+			total := i + j - 1
+			if i > 0 {
+				if dp[j] == true && s1[i-1] == s3[total] {
+					dp[j] = true
+				} else {
+					dp[j] = false
+				}
+			}
+			if j > 0 {
+				if dp[j] == true || (dp[j-1] == true && s2[j-1] == s3[total]) {
+					dp[j] = true
+				} else {
+					dp[j] = false
+				}
+			}
+		}
+	}
+	return dp[m]
+}
+```
+
+## 剑指OfferII098.路径的数目(4)
+
+- 题目
+
+```
+一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。
+机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。
+问总共有多少条不同的路径？
+示例 1：输入：m = 3, n = 7 输出：28
+示例 2：输入：m = 3, n = 2 输出：3
+解释：从左上角开始，总共有 3 条路径可以到达右下角。
+1. 向右 -> 向下 -> 向下
+2. 向下 -> 向下 -> 向右
+3. 向下 -> 向右 -> 向下
+示例 3：输入：m = 7, n = 3 输出：28
+示例 4：输入：m = 3, n = 3 输出：6
+提示：1 <= m, n <= 100
+题目数据保证答案小于等于 2 * 109
+注意：本题与主站 62 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划 | O(n^2)     | O(n)       |
+| 03   | 数学     | O(n)       | O(1)       |
+| 04   | 递归     | O(n^2)     | O(n^2)     |
+
+```go
+// dp[i][j] = dp[i-1][j] + dp[i][j-1]
+func uniquePaths(m int, n int) int {
+	if m <= 0 || n <= 0 {
+		return 0
+	}
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, m)
+		dp[i][0] = 1
+	}
+	for i := 0; i < m; i++ {
+		dp[0][i] = 1
+	}
+	for i := 1; i < n; i++ {
+		for j := 1; j < m; j++ {
+			dp[i][j] = dp[i-1][j] + dp[i][j-1]
+		}
+	}
+	return dp[n-1][m-1]
+}
+
+#
+// dp[i]= dp[i-1] + dp[i]
+func uniquePaths(m int, n int) int {
+	if m <= 0 || n <= 0 {
+		return 0
+	}
+	dp := make([]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = 1
+	}
+	for i := 1; i < m; i++ {
+		for j := 1; j < n; j++ {
+			dp[j] = dp[j] + dp[j-1]
+		}
+	}
+	return dp[n-1]
+}
+
+# 3
+func uniquePaths(m int, n int) int {
+	if m == 1 || n == 1 {
+		return 1
+	}
+	if m > n {
+		m, n = n, m
+	}
+	a := 1
+	for i := 1; i <= m-1; i++ {
+		a = a * i
+	}
+	b := 1
+	for i := n; i <= m+n-2; i++ {
+		b = b * i
+	}
+	return b / a
+}
+
+# 4
+var arr [][]int
+
+func uniquePaths(m int, n int) int {
+	arr = make([][]int, n+1)
+	for i := 0; i <= n; i++ {
+		arr[i] = make([]int, m+1)
+	}
+	return dfs(m, n)
+}
+
+func dfs(m, n int) int {
+	if m <= 0 || n <= 0 {
+		return 0
+	}
+	if m == 1 || n == 1 {
+		return 1
+	}
+	if arr[n][m] > 0 {
+		return arr[n][m]
+	}
+	arr[n][m] = dfs(m, n-1) + dfs(m-1, n)
+	return arr[n][m]
+}
+```
+
+## 剑指OfferII099.最小路径之和(4)
+
+- 题目
+
+```
+给定一个包含非负整数的 m x n 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
+说明：一个机器人每次只能向下或者向右移动一步。
+示例 1：输入：grid = [[1,3,1],[1,5,1],[4,2,1]] 输出：7
+解释：因为路径 1→3→1→1→1 的总和最小。
+示例 2：输入：grid = [[1,2,3],[4,5,6]] 输出：12
+提示：m == grid.length
+n == grid[i].length
+1 <= m, n <= 200
+0 <= grid[i][j] <= 100
+注意：本题与主站 64 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划 | O(n^2)     | O(1)       |
+| 03   | 动态规划 | O(n^2)     | O(n)       |
+| 04   | 递归     | O(n^2)     | O(n^2)     |
+
+```go
+func minPathSum(grid [][]int) int {
+	n := len(grid)
+	if n == 0 {
+		return 0
+	}
+	m := len(grid[0])
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, m)
+	}
+	dp[0][0] = grid[0][0]
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if i == 0 && j != 0 {
+				dp[i][j] = dp[i][j-1] + grid[i][j]
+			} else if i != 0 && j == 0 {
+				dp[i][j] = dp[i-1][j] + grid[i][j]
+			} else if i != 0 && j != 0 {
+				dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
+			}
+		}
+	}
+	return dp[n-1][m-1]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+#
+func minPathSum(grid [][]int) int {
+	n := len(grid)
+	if n == 0 {
+		return 0
+	}
+	m := len(grid[0])
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if i == 0 && j != 0 {
+				grid[i][j] = grid[i][j-1] + grid[i][j]
+			} else if i != 0 && j == 0 {
+				grid[i][j] = grid[i-1][j] + grid[i][j]
+			} else if i != 0 && j != 0 {
+				grid[i][j] = min(grid[i-1][j], grid[i][j-1]) + grid[i][j]
+			}
+		}
+	}
+	return grid[n-1][m-1]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 3
+func minPathSum(grid [][]int) int {
+	n := len(grid)
+	if n == 0 {
+		return 0
+	}
+	m := len(grid[0])
+	dp := make([]int, m)
+	dp[0] = grid[0][0]
+
+	for i := 1; i < m; i++ {
+		dp[i] = dp[i-1] + grid[0][i]
+	}
+	for i := 1; i < n; i++ {
+		dp[0] = dp[0] + grid[i][0]
+		for j := 1; j < m; j++ {
+			dp[j] = min(dp[j-1], dp[j]) + grid[i][j]
+		}
+	}
+	return dp[m-1]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 4
+var arr [][]int
+
+func minPathSum(grid [][]int) int {
+	n := len(grid)
+	if n == 0 {
+		return 0
+	}
+	m := len(grid[0])
+	arr = make([][]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = make([]int, m)
+	}
+	return dfs(grid, n-1, m-1)
+}
+
+func dfs(grid [][]int, n, m int) int {
+	if m == 0 && n == 0 {
+		arr[0][0] = grid[0][0]
+		return grid[0][0]
+	}
+	if n == 0 {
+		return grid[0][m] + dfs(grid, 0, m-1)
+	}
+	if m == 0 {
+		return grid[n][0] + dfs(grid, n-1, 0)
+	}
+	if arr[n][m] > 0 {
+		return arr[n][m]
+	}
+	arr[n][m] = min(dfs(grid, n-1, m), dfs(grid, n, m-1)) + grid[n][m]
+	return arr[n][m]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
+## 剑指OfferII100.三角形中最小路径之和(5)
+
+- 题目
+
+```
+给定一个三角形 triangle ，找出自顶向下的最小路径和。
+每一步只能移动到下一行中相邻的结点上。
+相邻的结点 在这里指的是 下标 与 上一层结点下标 相同或者等于 上一层结点下标 + 1 的两个结点。
+也就是说，如果正位于当前行的下标 i ，那么下一步可以移动到下一行的下标 i 或 i + 1 。
+示例 1：输入：triangle = [[2],[3,4],[6,5,7],[4,1,8,3]] 输出：11
+解释：如下面简图所示：
+   2
+  3 4
+ 6 5 7
+4 1 8 3
+自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 = 11）。
+示例 2：输入：triangle = [[-10]] 输出：-10
+提示：1 <= triangle.length <= 200
+triangle[0].length == 1
+triangle[i].length == triangle[i - 1].length + 1
+-104 <= triangle[i][j] <= 104
+进阶：你可以只使用 O(n) 的额外空间（n 为三角形的总行数）来解决这个问题吗？
+注意：本题与主站 120 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划 | O(n^2)     | O(n)       |
+| 03   | 动态规划 | O(n^2)     | O(n)       |
+| 04   | 遍历     | O(n^2)     | O(1)       |
+| 05   | 递归     | O(n^2)     | O(n^2)     |
+
+```go
+func minimumTotal(triangle [][]int) int {
+	n := len(triangle)
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, n)
+	}
+	dp[0][0] = triangle[0][0]
+	for i := 1; i < n; i++ {
+		dp[i][0] = dp[i-1][0] + triangle[i][0]
+		for j := 1; j < i; j++ {
+			dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j]
+		}
+		dp[i][i] = dp[i-1][i-1] + triangle[i][i]
+	}
+	res := dp[n-1][0]
+	for i := 1; i < n; i++ {
+		res = min(res, dp[n-1][i])
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+func minimumTotal(triangle [][]int) int {
+	n := len(triangle)
+	dp := [2][]int{}
+	for i := 0; i < 2; i++ {
+		dp[i] = make([]int, n)
+	}
+	dp[0][0] = triangle[0][0]
+	for i := 1; i < n; i++ {
+		cur := i % 2
+		prev := 1 - cur
+		dp[cur][0] = dp[prev][0] + triangle[i][0]
+		for j := 1; j < i; j++ {
+			dp[cur][j] = min(dp[prev][j-1], dp[prev][j]) + triangle[i][j]
+		}
+		dp[cur][i] = dp[prev][i-1] + triangle[i][i]
+	}
+	res := dp[(n-1)%2][0]
+	for i := 1; i < n; i++ {
+		res = min(res, dp[(n-1)%2][i])
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 3
+func minimumTotal(triangle [][]int) int {
+	n := len(triangle)
+	dp := make([]int, n)
+	dp[0] = triangle[0][0]
+	for i := 1; i < n; i++ {
+		dp[i] = dp[i-1] + triangle[i][i]
+		for j := i - 1; j > 0; j-- {
+			dp[j] = min(dp[j-1], dp[j]) + triangle[i][j]
+		}
+		dp[0] = dp[0] + triangle[i][0]
+	}
+	res := dp[0]
+	for i := 1; i < n; i++ {
+		res = min(res, dp[i])
+	}
+	return res
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 4
+func minimumTotal(triangle [][]int) int {
+	n := len(triangle)
+	for i := n - 2; i >= 0; i-- {
+		for j := 0; j < len(triangle[i]); j++ {
+			triangle[i][j] = min(triangle[i+1][j], triangle[i+1][j+1]) + triangle[i][j]
+		}
+	}
+	return triangle[0][0]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 5
+var dp [][]int
+
+func minimumTotal(triangle [][]int) int {
+	dp = make([][]int, len(triangle))
+	for i := 0; i < len(triangle); i++ {
+		dp[i] = make([]int, len(triangle))
+	}
+	return dfs(triangle, 0, 0)
+}
+
+func dfs(triangle [][]int, i, j int) int {
+	if i == len(triangle) {
+		return 0
+	}
+	if dp[i][j] != 0 {
+		return dp[i][j]
+	}
+	dp[i][j] = min(dfs(triangle, i+1, j), dfs(triangle, i+1, j+1)) + triangle[i][j]
+	return dp[i][j]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
+## 剑指OfferII102.加减的目标值(5)
+
+- 题目
+
+```
+给定一个正整数数组 nums 和一个整数 target 。
+向数组中的每个整数前添加 '+' 或 '-' ，然后串联起所有整数，可以构造一个 表达式 ：
+例如，nums = [2, 1] ，可以在 2 之前添加 '+' ，在 1 之前添加 '-' ，然后串联起来得到表达式 "+2-1" 。
+返回可以通过上述方法构造的、运算结果等于 target 的不同 表达式 的数目。
+示例 1：输入：nums = [1,1,1,1,1], target = 3 输出：5
+解释：一共有 5 种方法让最终目标和为 3 。
+-1 + 1 + 1 + 1 + 1 = 3
++1 - 1 + 1 + 1 + 1 = 3
++1 + 1 - 1 + 1 + 1 = 3
++1 + 1 + 1 - 1 + 1 = 3
++1 + 1 + 1 + 1 - 1 = 3
+示例 2：输入：nums = [1], target = 1 输出：1
+提示：1 <= nums.length <= 20
+0 <= nums[i] <= 1000
+0 <= sum(nums[i]) <= 1000
+-1000 <= target <= 1000
+注意：本题与主站 494 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度 | 空间复杂度 |
+| ---- | --------------- | ---------- | ---------- |
+| 01   | 递归            | O(2^n)     | O(n)       |
+| 02   | 动态规划        | O(2^n)     | O(n)       |
+| 03   | 回溯            | O(2^n)     | O(n)       |
+| 04   | 动态规划-01背包 | O(n^2)     | O(n)       |
+| 05   | 动态规划        | O(n^2)     | O(n^2)     |
+
+```go
+func findTargetSumWays(nums []int, S int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	if len(nums) == 1 {
+		if nums[0] == 0 && S == 0 {
+			return 2
+		}
+		if nums[0] == S || nums[0] == -S {
+			return 1
+		}
+	}
+	value := nums[0]
+	nums = nums[1:]
+	return findTargetSumWays(nums, S-value) + findTargetSumWays(nums, S+value)
+}
+
+# 2
+func findTargetSumWays(nums []int, S int) int {
+	dp := make(map[int]int)
+	dp[nums[0]]++
+	dp[-nums[0]]++
+	for i := 1; i < len(nums); i++ {
+		temp := make(map[int]int)
+		for k, v := range dp {
+			temp[k-nums[i]] = temp[k-nums[i]] + v
+			temp[k+nums[i]] = temp[k+nums[i]] + v
+		}
+		dp = temp
+	}
+	return dp[S]
+}
+
+# 3
+var res int
+
+func findTargetSumWays(nums []int, S int) int {
+	res = 0
+	dfs(nums, 0, S)
+	return res
+}
+
+func dfs(nums []int, index int, target int) {
+	if index == len(nums) {
+		if target == 0 {
+			res++
+		}
+		return
+	}
+	dfs(nums, index+1, target+nums[index])
+	dfs(nums, index+1, target-nums[index])
+}
+
+# 4
+func findTargetSumWays(nums []int, S int) int {
+	sum := 0
+	// 非负整数数组
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+	}
+	if sum < int(math.Abs(float64(S))) || (sum+S)%2 == 1 {
+		return 0
+	}
+	// 一个正数x,一个负数背包y => x+y=sum, x-y=S => (sum+S)/2=x
+	target := (sum + S) / 2
+	dp := make([]int, target+1)
+	dp[0] = 1
+	for i := 1; i <= len(nums); i++ {
+        // 从后往前，避免覆盖
+		for j := target; j >= 0; j-- {
+			if j >= nums[i-1] {
+				// 背包足够大，都选
+				dp[j] = dp[j] + dp[j-nums[i-1]]
+			} else {
+				// 容量不够，不选
+				dp[j] = dp[j]
+			}
+		}
+	}
+	return dp[target]
+}
+
+# 5
+func findTargetSumWays(nums []int, S int) int {
+	sum := 0
+	// 非负整数数组
+	for i := 0; i < len(nums); i++ {
+		sum = sum + nums[i]
+	}
+	if sum < int(math.Abs(float64(S))) || (sum+S)%2 == 1 {
+		return 0
+	}
+	// 一个正数x,一个负数背包y => x+y=sum, x-y=S => (sum+S)/2=x
+	target := (sum + S) / 2
+	// 在前i个物品中选择，若当前背包的容量为j，则最多有x种方法可以恰好装满背包。
+	dp := make([][]int, len(nums)+1)
+	for i := 0; i <= len(nums); i++ {
+		dp[i] = make([]int, target+1)
+		dp[i][0] = 1 // 容量为0， 只有都不选
+	}
+	for i := 1; i <= len(nums); i++ {
+		for j := 0; j <= target; j++ {
+			if j >= nums[i-1] {
+				// 背包足够大，都选
+				dp[i][j] = dp[i-1][j] + dp[i-1][j-nums[i-1]]
+			} else {
+				// 容量不够，不选
+				dp[i][j] = dp[i-1][j]
+			}
+		}
+	}
+	return dp[len(nums)][target]
+}
+```
+
+## 剑指OfferII103.最少的硬币数目(3)
+
+- 题目
+
+```
+给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。
+如果没有任何一种硬币组合能组成总金额，返回 -1。
+你可以认为每种硬币的数量是无限的。
+示例 1：输入：coins = [1, 2, 5], amount = 11 输出：3 
+解释：11 = 5 + 5 + 1
+示例 2：输入：coins = [2], amount = 3 输出：-1
+示例 3：输入：coins = [1], amount = 0 输出：0
+示例 4：输入：coins = [1], amount = 1 输出：1
+示例 5：输入：coins = [1], amount = 2 输出：2
+提示：1 <= coins.length <= 12
+1 <= coins[i] <= 231 - 1
+0 <= amount <= 104
+注意：本题与主站 322 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 动态规划     | O(n^2)     | O(n)       |
+| 02   | 动态规划     | O(n^2)     | O(n)       |
+| 03   | 广度优先搜索 | O(n)       | O(n)       |
+
+```go
+func coinChange(coins []int, amount int) int {
+	dp := make([]int, amount+1)
+	for i := 1; i <= amount; i++ {
+		dp[i] = -1
+		for j := 0; j < len(coins); j++ {
+			prev := i - coins[j]
+			if i < coins[j] || dp[prev] == -1 {
+				continue
+			}
+			if dp[i] == -1 || dp[i] > dp[prev]+1 {
+				dp[i] = dp[prev] + 1
+			}
+		}
+	}
+	return dp[amount]
+}
+
+# 2
+func coinChange(coins []int, amount int) int {
+	dp := make([]int, amount+1)
+	for i := 0; i <= amount; i++ {
+		dp[i] = amount + 1
+	}
+	dp[0] = 0
+	for i := 0; i < len(coins); i++ {
+		for j := coins[i]; j < amount+1; j++ {
+			dp[j] = min(dp[j], dp[j-coins[i]]+1)
+		}
+	}
+	if dp[amount] == amount+1 {
+		return -1
+	}
+	return dp[amount]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 3
+func coinChange(coins []int, amount int) int {
+	if amount == 0 {
+		return 0
+	}
+	res := 1
+	sort.Ints(coins)
+	list := make([]int, 0)
+	list = append(list, amount)
+	arr := make([]bool, amount+1)
+	arr[amount] = true
+	for len(list) > 0 {
+		length := len(list)
+		for i := 0; i < length; i++ {
+			value := list[i]
+			for j := 0; j < len(coins); j++ {
+				next := value - coins[j]
+				if next == 0 {
+					return res
+				}
+				if next < 0 {
+					break
+				}
+				if arr[next] == false {
+					list = append(list, next)
+					arr[next] = true
+				}
+			}
+		}
+		list = list[length:]
+		res++
+	}
+	return -1
+}
+```
+
+## 剑指OfferII104.排列的数目(2)
+
+- 题目
+
+```
+给定一个由 不同 正整数组成的数组 nums ，和一个目标整数 target 。
+请从 nums 中找出并返回总和为 target 的元素组合的个数。
+数组中的数字可以在一次排列中出现任意次，但是顺序不同的序列被视作不同的组合。
+题目数据保证答案符合 32 位整数范围。
+示例 1：输入：nums = [1,2,3], target = 4 输出：7
+解释：所有可能的组合为：
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
+请注意，顺序不同的序列被视作不同的组合。
+示例 2：输入：nums = [9], target = 3 输出：0
+提示：1 <= nums.length <= 200
+1 <= nums[i] <= 1000
+nums 中的所有元素 互不相同
+1 <= target <= 1000
+进阶：如果给定的数组中含有负数会发生什么？问题会产生何种变化？如果允许负数出现，需要向题目中添加哪些限制条件？
+注意：本题与主站 377 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n^2)     | O(n)       |
+| 02   | 递归     | O(n^2)     | O(n)       |
+
+```go
+func combinationSum4(nums []int, target int) int {
+	// 等价于：
+	// 假设你正在爬楼梯。需要n阶你才能到达楼顶。
+	// 每次你可以爬num(num in nums)级台阶。
+	// 你有多少种不同的方法可以爬到楼顶呢？
+	dp := make([]int, target+1)
+	dp[0] = 1 // 爬0楼1种解法
+	for i := 1; i <= target; i++ {
+		for j := 0; j < len(nums); j++ {
+			if i-nums[j] >= 0 {
+				dp[i] = dp[i] + dp[i-nums[j]]
+			}
+		}
+	}
+	return dp[target]
+}
+
+# 2
+var m map[int]int
+
+func combinationSum4(nums []int, target int) int {
+	m = make(map[int]int)
+	res := dfs(nums, target)
+	if res == -1 {
+		return 0
+	}
+	return res
+}
+
+func dfs(nums []int, target int) int {
+	if target == 0 {
+		return 1
+	}
+	if target < 0 {
+		return -1
+	}
+	if v, ok := m[target]; ok {
+		return v
+	}
+	temp := 0
+	for i := 0; i < len(nums); i++ {
+		if dfs(nums, target-nums[i]) != -1 {
+			temp = temp + dfs(nums, target-nums[i])
+		}
+	}
+	m[target] = temp
+	return temp
+}
+```
+
+## 剑指OfferII105.岛屿的最大面积(2)
+
+- 题目
+
+```
+给定一个由 0 和 1 组成的非空二维数组 grid ，用来表示海洋岛屿地图。
+一个 岛屿 是由一些相邻的 1 (代表土地) 构成的组合，这里的「相邻」要求两个 1 必须在水平或者竖直方向上相邻。
+你可以假设 grid 的四个边缘都被 0（代表水）包围着。
+找到给定的二维数组中最大的岛屿面积。如果没有岛屿，则返回面积为 0 。
+示例 1:输入: grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],
+[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],
+[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]
+输出: 6
+解释: 对于上面这个给定矩阵应返回 6。注意答案不应该是 11 ，因为岛屿只能包含水平或垂直的四个方向的 1 。
+示例 2:输入: grid = [[0,0,0,0,0,0,0,0]] 输出: 0
+提示：m == grid.length
+n == grid[i].length
+1 <= m, n <= 50
+grid[i][j] is either 0 or 1
+注意：本题与主站 695 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先搜索 | O(n^2)     | O(n)       |
+| 02   | 深度优先搜索 | O(n^2)     | O(n)       |
+
+ ```go
+ func maxAreaOfIsland(grid [][]int) int {
+ 	maxArea := 0
+ 	for i := range grid {
+ 		for j := range grid[i] {
+ 			maxArea = max(maxArea, getArea(grid, i, j))
+ 		}
+ 	}
+ 	return maxArea
+ }
+ 
+ func getArea(grid [][]int, i, j int) int {
+ 	if grid[i][j] == 0 {
+ 		return 0
+ 	}
+ 	grid[i][j] = 0
+ 	area := 1
+ 	if i != 0 {
+ 		area = area + getArea(grid, i-1, j)
+ 	}
+ 	if j != 0 {
+ 		area = area + getArea(grid, i, j-1)
+ 	}
+ 	if i != len(grid)-1 {
+ 		area = area + getArea(grid, i+1, j)
+ 	}
+ 	if j != len(grid[0])-1 {
+ 		area = area + getArea(grid, i, j+1)
+ 	}
+ 	return area
+ }
+ 
+ func max(a, b int) int {
+ 	if a > b {
+ 		return a
+ 	}
+ 	return b
+ }
+ 
+ # 2
+ func maxAreaOfIsland(grid [][]int) int {
+ 	res := 0
+ 	for i := 0; i < len(grid); i++ {
+ 		for j := 0; j < len(grid[i]); j++ {
+ 			if grid[i][j] == 1 {
+ 				value := dfs(grid, i, j)
+ 				if value > res {
+ 					res = value
+ 				}
+ 			}
+ 		}
+ 	}
+ 	return res
+ }
+ 
+ func dfs(grid [][]int, i, j int) int {
+ 	if i < 0 || j < 0 || i >= len(grid) || j >= len(grid[0]) ||
+ 		grid[i][j] == 0 {
+ 		return 0
+ 	}
+ 	grid[i][j] = 0
+ 	res := 1
+ 	res = res + dfs(grid, i+1, j)
+ 	res = res + dfs(grid, i-1, j)
+ 	res = res + dfs(grid, i, j+1)
+ 	res = res + dfs(grid, i, j-1)
+ 	return res
+ }
+ ```
+
+## 剑指OfferII106.二分图(3)
+
+- 题目
+
+```
+存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。
+给定一个二维数组 graph ，表示图，其中 graph[u] 是一个节点数组，由节点 u 的邻接节点组成。
+形式上，对于 graph[u] 中的每个 v ，都存在一条位于节点 u 和节点 v 之间的无向边。该无向图同时具有以下属性：
+不存在自环（graph[u] 不包含 u）。
+不存在平行边（graph[u] 不包含重复值）。
+如果 v 在 graph[u] 内，那么 u 也应该在 graph[v] 内（该图是无向图）
+这个图可能不是连通图，也就是说两个节点 u 和 v 之间可能不存在一条连通彼此的路径。
+二分图 定义：如果能将一个图的节点集合分割成两个独立的子集 A 和 B ，并使图中的每一条边的两个节点一个来自 A 集合，
+一个来自 B 集合，就将这个图称为 二分图 。
+如果图是二分图，返回 true ；否则，返回 false 。
+示例 1：输入：graph = [[1,2,3],[0,2],[0,1,3],[0,2]] 输出：false
+解释：不能将节点分割成两个独立的子集，以使每条边都连通一个子集中的一个节点与另一个子集中的一个节点。
+示例 2：输入：graph = [[1,3],[0,2],[1,3],[0,2]] 输出：true
+解释：可以将节点分成两组: {0, 2} 和 {1, 3} 。
+提示：graph.length == n
+1 <= n <= 100
+0 <= graph[u].length < n
+0 <= graph[u][i] <= n - 1
+graph[u] 不会包含 u
+graph[u] 的所有值 互不相同
+如果 graph[u] 包含 v，那么 graph[v] 也会包含 u
+注意：本题与主站 785 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先搜索 | O(n)       | O(n)       |
+| 02   | 广度优先搜索 | O(n)       | O(n)       |
+| 03   | 并查集       | O(n)       | O(n)       |
+
+```go
+// 思路同leetcode886.可能的二分法
+var m map[int]int
+
+func isBipartite(graph [][]int) bool {
+	n := len(graph)
+	m = make(map[int]int) // 分组： 0一组，1一组
+	for i := 0; i < n; i++ {
+		// 没有被分配过，分配到0一组
+		if _, ok := m[i]; ok == false && dfs(graph, i, 0) == false {
+			return false
+		}
+	}
+	return true
+}
+
+func dfs(arr [][]int, index int, value int) bool {
+	if v, ok := m[index]; ok {
+		return v == value // 已经分配，查看是否同一组
+	}
+	m[index] = value
+	for i := 0; i < len(arr[index]); i++ {
+		target := arr[index][i]
+		if dfs(arr, target, 1-value) == false { // 不喜欢的人，分配到对立组：1-value
+			return false
+		}
+	}
+	return true
+}
+
+# 2
+func isBipartite(graph [][]int) bool {
+	n := len(graph)
+	m := make(map[int]int) // 分组： 0一组，1一组
+	for i := 0; i < n; i++ {
+		// 没有被分配过，分配到0一组
+		if _, ok := m[i]; ok == true {
+			continue
+		}
+		m[i] = 0
+		queue := make([]int, 0)
+		queue = append(queue, i)
+		for len(queue) > 0 {
+			node := queue[0]
+			queue = queue[1:]
+			for i := 0; i < len(graph[node]); i++ {
+				target := graph[node][i]
+				if _, ok := m[target]; ok == false {
+					m[target] = 1 - m[node] // 相反一组
+					queue = append(queue, target)
+				} else if m[node] == m[target] { // 已经分配，查看是否同一组
+					return false
+				}
+			}
+		}
+	}
+	return true
+}
+
+# 3
+func isBipartite(graph [][]int) bool {
+	n := len(graph)
+	fa = Init(n)
+	for i := 0; i < n; i++ {
+		for j := 0; j < len(graph[i]); j++ {
+			target := graph[i][j]
+			if find(i) == find(target) { // 和不喜欢的人在相同组，失败
+				return false
+			}
+			union(graph[i][0], target) // 不喜欢的人在同一组
+		}
+	}
+	return true
+}
+
+var fa []int
+
+// 初始化
+func Init(n int) []int {
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = i
+	}
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	for x != fa[x] {
+		fa[x] = fa[fa[x]]
+		x = fa[x]
+	}
+	return x
+}
+
+// 合并
+func union(i, j int) {
+	fa[find(i)] = find(j)
+}
+```
+
+## 剑指OfferII107.矩阵中的距离(3)
+
+- 题目
+
+```
+给定一个由 0 和 1 组成的矩阵 mat ，请输出一个大小相同的矩阵，其中每一个格子是 mat 中对应位置元素到最近的 0 的距离。
+两个相邻元素间的距离为 1 。
+示例 1：输入：mat = [[0,0,0],[0,1,0],[0,0,0]] 输出：[[0,0,0],[0,1,0],[0,0,0]]
+示例 2：输入：mat = [[0,0,0],[0,1,0],[1,1,1]] 输出：[[0,0,0],[0,1,0],[1,2,1]]
+提示：m == mat.length
+n == mat[i].length
+1 <= m, n <= 104
+1 <= m * n <= 104
+mat[i][j] is either 0 or 1.
+mat 中至少有一个 0 
+注意：本题与主站 542 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 动态规划     | O(n^2)     | O(n^2)     |
+| 02   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+| 03   | 动态规划     | O(n^2)     | O(1)       |
+
+```go
+func updateMatrix(matrix [][]int) [][]int {
+	n := len(matrix)
+	m := len(matrix[0])
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			if matrix[i][j] == 1 {
+				dp[i][j] = math.MaxInt32 / 10
+				if i > 0 {
+					dp[i][j] = min(dp[i][j], dp[i-1][j]+1)
+				}
+				if j > 0 {
+					dp[i][j] = min(dp[i][j], dp[i][j-1]+1)
+				}
+			} else {
+				dp[i][j] = 0
+			}
+		}
+	}
+	for i := n - 1; i >= 0; i-- {
+		for j := m - 1; j >= 0; j-- {
+			if dp[i][j] > 1 {
+				if i < n-1 {
+					dp[i][j] = min(dp[i][j], dp[i+1][j]+1)
+				}
+				if j < m-1 {
+					dp[i][j] = min(dp[i][j], dp[i][j+1]+1)
+				}
+			}
+		}
+	}
+	return dp
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+var dx = []int{-1, 1, 0, 0}
+var dy = []int{0, 0, -1, 1}
+
+func updateMatrix(matrix [][]int) [][]int {
+	n := len(matrix)
+	m := len(matrix[0])
+	queue := make([][2]int, 0)
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if matrix[i][j] == 0 {
+				queue = append(queue, [2]int{i, j})
+			} else {
+				matrix[i][j] = -1
+			}
+		}
+	}
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		for i := 0; i < 4; i++ {
+			x := node[0] + dx[i]
+			y := node[1] + dy[i]
+			if 0 <= x && x < n && 0 <= y && y < m && matrix[x][y] == -1 {
+				matrix[x][y] = matrix[node[0]][node[1]] + 1
+				queue = append(queue, [2]int{x, y})
+			}
+		}
+	}
+	return matrix
+}
+
+# 3
+func updateMatrix(matrix [][]int) [][]int {
+	n := len(matrix)
+	m := len(matrix[0])
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			if matrix[i][j] == 1 {
+				matrix[i][j] = math.MaxInt32 / 10
+				if i > 0 {
+					matrix[i][j] = min(matrix[i][j], matrix[i-1][j]+1)
+				}
+				if j > 0 {
+					matrix[i][j] = min(matrix[i][j], matrix[i][j-1]+1)
+				}
+			} else {
+				matrix[i][j] = 0
+			}
+		}
+	}
+	for i := n - 1; i >= 0; i-- {
+		for j := m - 1; j >= 0; j-- {
+			if matrix[i][j] > 1 {
+				if i < n-1 {
+					matrix[i][j] = min(matrix[i][j], matrix[i+1][j]+1)
+				}
+				if j < m-1 {
+					matrix[i][j] = min(matrix[i][j], matrix[i][j+1]+1)
+				}
+			}
+		}
+	}
+	return matrix
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
+## 剑指OfferII109.开密码锁(1)
+
+- 题目
+
+```
+一个密码锁由 4 个环形拨轮组成，每个拨轮都有 10 个数字： '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' 。
+每个拨轮可以自由旋转：例如把 '9' 变为 '0'，'0' 变为 '9' 。每次旋转都只能旋转一个拨轮的一位数字。
+锁的初始数字为 '0000' ，一个代表四个拨轮的数字的字符串。
+列表 deadends 包含了一组死亡数字，一旦拨轮的数字和列表里的任何一个元素相同，这个锁将会被永久锁定，无法再被旋转。
+字符串 target 代表可以解锁的数字，请给出解锁需要的最小旋转次数，如果无论如何不能解锁，返回 -1 。
+示例 1:输入：deadends = ["0201","0101","0102","1212","2002"], target = "0202" 输出：6
+解释：可能的移动序列为 "0000" -> "1000" -> "1100" -> "1200" -> "1201" -> "1202" -> "0202"。
+注意 "0000" -> "0001" -> "0002" -> "0102" -> "0202" 这样的序列是不能解锁的，因为当拨动到 "0102" 时这个锁就会被锁定。
+示例 2:输入: deadends = ["8888"], target = "0009" 输出：1
+解释：把最后一位反向旋转一次即可 "0000" -> "0009"。
+示例 3:输入: deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"], target = "8888" 输出：-1
+解释：无法旋转到目标数字且不被锁定。
+示例 4:输入: deadends = ["0000"], target = "8888" 输出：-1
+提示：1 <= deadends.length <= 500
+deadends[i].length == 4
+target.length == 4
+target 不在 deadends 之中
+target 和 deadends[i] 仅由若干位数字组成
+注意：本题与主站 752 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n)       | O(n)       |
+
+```go
+func openLock(deadends []string, target string) int {
+	m := make(map[string]int)
+	m["0000"] = 0
+	for i := 0; i < len(deadends); i++ {
+		if deadends[i] == "0000" {
+			return -1
+		}
+		m[deadends[i]] = 0
+	}
+	if target == "0000" {
+		return 0
+	}
+	if _, ok := m[target]; ok {
+		return -1
+	}
+	queue := make([]string, 0)
+	queue = append(queue, "0000")
+	res := 0
+	dir := []int{1, -1}
+	for len(queue) > 0 {
+		res++
+		length := len(queue)
+		for i := 0; i < length; i++ {
+			str := queue[i]
+			for j := 0; j < 4; j++ {
+				for k := 0; k < len(dir); k++ {
+					char := string((int(str[j]-'0')+10+dir[k])%10 + '0')
+					newStr := str[:j] + char + str[j+1:]
+					if _, ok := m[newStr]; ok {
+						continue
+					}
+					queue = append(queue, newStr)
+					m[newStr] = 1
+					if newStr == target {
+						return res
+					}
+				}
+			}
+		}
+		queue = queue[length:]
+	}
+	return -1
+}
+```
+
+## 剑指OfferII110.所有路径(1)
+
+- 题目
+
+```
+给定一个有 n 个节点的有向无环图，用二维数组 graph 表示，请找到所有从 0 到 n-1 的路径并输出（不要求按顺序）。
+graph 的第 i 个数组中的单元都表示有向图中 i 号节点所能到达的下一些结点
+（译者注：有向图是有方向的，即规定了 a→b 你就不能从 b→a ），若为空，就是没有下一个节点了。
+示例 1：输入：graph = [[1,2],[3],[3],[]] 输出：[[0,1,3],[0,2,3]]
+解释：有两条路径 0 -> 1 -> 3 和 0 -> 2 -> 3
+示例 2：输入：graph = [[4,3,1],[3,2,4],[3],[4],[]] 输出：[[0,4],[0,3,4],[0,1,3,4],[0,1,2,3,4],[0,1,4]]
+示例 3：输入：graph = [[1],[]] 输出：[[0,1]]
+示例 4：输入：graph = [[1,2,3],[2],[3],[]] 输出：[[0,1,2,3],[0,2,3],[0,3]]
+示例 5：输入：graph = [[1,3],[2],[3],[]] 输出：[[0,1,2,3],[0,3]]
+提示：n == graph.length
+2 <= n <= 15
+0 <= graph[i][j] < n
+graph[i][j] != i 
+保证输入为有向无环图 (GAD)
+注意：本题与主站 797 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 深度优先搜索 | O(2^n*n^2) | O(2^n*n)   |
+
+```go
+var res [][]int
+
+func allPathsSourceTarget(graph [][]int) [][]int {
+	res = make([][]int, 0)
+	dfs(graph, 0, len(graph)-1, make([]int, 0))
+	return res
+}
+
+func dfs(graph [][]int, cur, target int, path []int) {
+	if cur == target {
+		path = append(path, cur)
+		temp := make([]int, len(path))
+		copy(temp, path)
+		res = append(res, temp)
+		return
+	}
+	for i := 0; i < len(graph[cur]); i++ {
+		dfs(graph, graph[cur][i], target, append(path, cur))
+	}
+}
+```
+
+## 剑指OfferII111.计算除法
+
+### 题目
+
+### 解题思路
+
+```go
+```
+
+## 剑指OfferII113.课程顺序(2)
+
+- 题目
+
+```
+现在总共有 numCourses 门课需要选，记为 0 到 numCourses-1。
+给定一个数组 prerequisites ，它的每一个元素 prerequisites[i] 表示两门课程之间的先修顺序。 
+例如 prerequisites[i] = [ai, bi] 表示想要学习课程 ai ，需要先完成课程 bi 。
+请根据给出的总课程数  numCourses 和表示先修顺序的 prerequisites 得出一个可行的修课序列。
+可能会有多个正确的顺序，只要任意返回一种就可以了。如果不可能完成所有课程，返回一个空数组。
+示例 1:输入: numCourses = 2, prerequisites = [[1,0]]  输出: [0,1]
+解释: 总共有 2 门课程。要学习课程 1，你需要先完成课程 0。因此，正确的课程顺序为 [0,1] 。
+示例 2:输入: numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]] 输出: [0,1,2,3] or [0,2,1,3]
+解释: 总共有 4 门课程。要学习课程 3，你应该先完成课程 1 和课程 2。并且课程 1 和课程 2 都应该排在课程 0 之后。
+因此，一个正确的课程顺序是 [0,1,2,3] 。另一个正确的排序是 [0,2,1,3] 。
+示例 3:输入: numCourses = 1, prerequisites = []  输出: [0]
+解释: 总共 1 门课，直接修第一门课就可。
+提示:1 <= numCourses <= 2000
+0 <= prerequisites.length <= numCourses * (numCourses - 1)
+prerequisites[i].length == 2
+0 <= ai, bi < numCourses
+ai != bi
+prerequisites 中不存在重复元素
+注意：本题与主站 210 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路                  | 时间复杂度 | 空间复杂度 |
+| ---- | --------------------- | ---------- | ---------- |
+| 01   | 深度优先搜索          | O(n)       | O(n)       |
+| 02   | 广度优先搜索-拓扑排序 | O(n)       | O(n)       |
+
+```go
+var res bool
+var visited []int
+var path []int
+var edges [][]int
+
+func findOrder(numCourses int, prerequisites [][]int) []int {
+	res = true
+	edges = make([][]int, numCourses) // 邻接表
+	visited = make([]int, numCourses)
+	path = make([]int, 0)
+	for i := 0; i < len(prerequisites); i++ {
+		// prev->cur
+		prev := prerequisites[i][1]
+		cur := prerequisites[i][0]
+		edges[prev] = append(edges[prev], cur)
+	}
+	for i := 0; i < numCourses; i++ {
+		if visited[i] == 0 {
+			dfs(i)
+		}
+		if res == false {
+			return nil
+		}
+	}
+	for i := 0; i < len(path)/2; i++ {
+		path[i], path[len(path)-1-i] = path[len(path)-1-i], path[i]
+	}
+	return path
+}
+
+func dfs(start int) {
+	// 0 未搜索
+	// 1 搜索中
+	// 2 已完成
+	visited[start] = 1
+	for i := 0; i < len(edges[start]); i++ {
+		out := edges[start][i]
+		if visited[out] == 0 {
+			dfs(out)
+			if res == false {
+				return
+			}
+		} else if visited[out] == 1 {
+			res = false
+			return
+		}
+	}
+	visited[start] = 2
+	path = append(path, start)
+}
+
+# 2
+func findOrder(numCourses int, prerequisites [][]int) []int {
+	edges := make([][]int, numCourses)
+	path := make([]int, 0)
+	inEdges := make([]int, numCourses)
+	for i := 0; i < len(prerequisites); i++ {
+		// prev->cur
+		prev := prerequisites[i][1]
+		cur := prerequisites[i][0]
+		edges[prev] = append(edges[prev], cur)
+		inEdges[cur]++ // 入度
+	}
+	// 入度为0
+	queue := make([]int, 0)
+	for i := 0; i < numCourses; i++ {
+		if inEdges[i] == 0 {
+			queue = append(queue, i)
+		}
+	}
+	for len(queue) > 0 {
+		start := queue[0]
+		queue = queue[1:]
+		path = append(path, start)
+		for i := 0; i < len(edges[start]); i++ {
+			out := edges[start][i]
+			inEdges[out]--
+			if inEdges[out] == 0 {
+				queue = append(queue, out)
+			}
+		}
+	}
+	if len(path) != numCourses {
+		return nil
+	}
+	return path
+}
+```
+
+## 剑指OfferII115.重建序列
+
+### 题目
+
+```
+
+```
+
+### 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 滑动窗口 | O(n^2)     | O(n)       |
+
+ ```go
+ ```
+
+## 剑指OfferII116.省份数量(3)
+
+- 题目
+
+```
+有 n 个城市，其中一些彼此相连，另一些没有相连。
+如果城市 a 与城市 b 直接相连，且城市 b 与城市 c 直接相连，那么城市 a 与城市 c 间接相连。
+省份 是一组直接或间接相连的城市，组内不含其他没有相连的城市。
+给你一个 n x n 的矩阵 isConnected ，其中 isConnected[i][j] = 1 表示第 i 个城市和第 j 个城市直接相连，
+而 isConnected[i][j] = 0 表示二者不直接相连。
+返回矩阵中 省份 的数量。
+示例 1：输入：isConnected = [[1,1,0],[1,1,0],[0,0,1]] 输出：2
+示例 2：输入：isConnected = [[1,0,0],[0,1,0],[0,0,1]] 输出：3
+提示：1 <= n <= 200
+n == isConnected.length
+n == isConnected[i].length
+isConnected[i][j] 为 1 或 0
+isConnected[i][i] == 1
+isConnected[i][j] == isConnected[j][i]
+注意：本题与主站 547 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 并查集       | O(n^2)     | O(n)       |
+| 02   | 递归         | O(n^2)     | O(n)       |
+| 03   | 广度优先搜索 | O(n^2)     | O(n)       |
+
+```go
+func findCircleNum(M [][]int) int {
+	n := len(M)
+	fa = Init(n)
+	count = n
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			if M[i][j] == 1 {
+				union(i, j)
+			}
+		}
+	}
+	return getCount()
+}
+
+var fa []int
+var count int
+
+// 初始化
+func Init(n int) []int {
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = i
+	}
+	count = n
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	if fa[x] == x {
+		return x
+	}
+	// 路径压缩
+	fa[x] = find(fa[x])
+	return fa[x]
+}
+
+// 合并
+func union(i, j int) {
+	x, y := find(i), find(j)
+	if x != y {
+		fa[x] = y
+		count--
+	}
+}
+
+func query(i, j int) bool {
+	return find(i) == find(j)
+}
+
+func getCount() int {
+	return count
+}
+
+# 2
+var arr []bool
+
+func findCircleNum(M [][]int) int {
+	n := len(M)
+	arr = make([]bool, n)
+	res := 0
+	for i := 0; i < n; i++ {
+		if arr[i] == false {
+			dfs(M, i)
+			res++
+		}
+	}
+	return res
+}
+
+func dfs(M [][]int, index int) {
+	for i := 0; i < len(M); i++ {
+		if arr[i] == false && M[index][i] == 1 {
+			arr[i] = true
+			dfs(M, i)
+		}
+	}
+}
+
+# 3
+func findCircleNum(M [][]int) int {
+	n := len(M)
+	arr := make([]bool, n)
+	res := 0
+	queue := make([]int, 0)
+	for i := 0; i < n; i++ {
+		if arr[i] == false {
+			queue = append(queue, i)
+			for len(queue) > 0 {
+				node := queue[0]
+				queue = queue[1:]
+				arr[node] = true
+				for j := 0; j < n; j++ {
+					if M[node][j] == 1 && arr[j] == false {
+						queue = append(queue, j)
+					}
+				}
+			}
+			res++
+		}
+	}
+	return res
+}
+```
+
+## 剑指OfferII118.多余的边(1)
+
+- 题目
+
+```
+树可以看成是一个连通且 无环 的 无向 图。
+给定往一棵 n 个节点 (节点值 1～n) 的树中添加一条边后的图。
+添加的边的两个顶点包含在 1 到 n 中间，且这条附加的边不属于树中已存在的边。
+图的信息记录于长度为 n 的二维数组 edges ，edges[i] = [ai, bi] 表示图中在 ai 和 bi 之间存在一条边。
+请找出一条可以删去的边，删除后可使得剩余部分是一个有着 n 个节点的树。如果有多个答案，则返回数组 edges 中最后出现的边。
+示例 1：输入: edges = [[1,2],[1,3],[2,3]] 输出: [2,3]
+示例 2：输入: edges = [[1,2],[2,3],[3,4],[1,4],[1,5]] 输出: [1,4]
+提示:n == edges.length
+3 <= n <= 1000
+edges[i].length == 2
+1 <= ai < bi <= edges.length
+ai != bi
+edges 中无重复元素
+给定的图是连通的 
+注意：本题与主站 684 题相同
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 并查集 | O(n)       | O(n)       |
+
+```go
+func findRedundantConnection(edges [][]int) []int {
+	n := len(edges) + 1
+	fa := make([]int, n)
+	for i := 0; i < n; i++ {
+		fa[i] = i
+	}
+	for i := 0; i < len(edges); i++ {
+		a, b := edges[i][0], edges[i][1]
+		if find(fa, a) == find(fa, b) {
+			return edges[i]
+		}
+		union(fa, a, b)
+	}
+	return nil
+}
+
+func union(fa []int, a, b int) {
+	fa[find(fa, a)] = find(fa, b)
+}
+
+func find(fa []int, a int) int {
+	for fa[a] != a {
+		fa[a] = fa[fa[a]]
+		a = fa[a]
+	}
+	return a
+}
+```
+
+## 剑指OfferII119.最长连续序列(4)
+
+- 题目
+
+```
+给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。
+示例 1：输入：nums = [100,4,200,1,3,2] 输出：4
+解释：最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。
+示例 2：输入：nums = [0,3,7,2,5,8,4,6,0,1] 输出：9
+提示：0 <= nums.length <= 104
+-109 <= nums[i] <= 109
+进阶：可以设计并实现时间复杂度为 O(n) 的解决方案吗？
+注意：本题与主站 128 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n)       | O(n)       |
+| 02   | 排序遍历 | O(nlog(n)) | O(1)       |
+| 03   | 哈希辅助 | O(n)       | O(n)       |
+| 04   | 并查集   | O(n)       | O(n)       |
+
+```go
+func longestConsecutive(nums []int) int {
+	m := make(map[int]bool)
+	for i := 0; i < len(nums); i++ {
+		m[nums[i]] = true
+	}
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		if _, ok := m[nums[i]-1]; !ok {
+			cur := nums[i]
+			count := 1
+			for m[cur+1] == true {
+				count = count + 1
+				cur = cur + 1
+			}
+			res = max(res, count)
+		}
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+func longestConsecutive(nums []int) int {
+	if len(nums) <= 1 {
+		return len(nums)
+	}
+	sort.Ints(nums)
+	res := 1
+	count := 1
+	for i := 1; i < len(nums); i++ {
+		if nums[i] == nums[i-1] {
+			continue
+		} else if nums[i] == nums[i-1]+1 {
+			count++
+		} else {
+			res = max(res, count)
+			count = 1
+		}
+	}
+	res = max(res, count)
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 3
+func longestConsecutive(nums []int) int {
+	m := make(map[int]int)
+	res := 0
+	for i := 0; i < len(nums); i++ {
+		if m[nums[i]] > 0 {
+			continue
+		}
+		left := m[nums[i]-1]
+		right := m[nums[i]+1]
+		sum := left + 1 + right
+		res = max(res, sum)
+		m[nums[i]] = sum
+		m[nums[i]-left] = sum
+		m[nums[i]+right] = sum
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 4
+func longestConsecutive(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	m := make(map[int]int)
+	res := 1
+	fa = Init(nums)
+	for i := 0; i < len(nums); i++ {
+		union(nums[i], nums[i]+1)
+		m[nums[i]]++
+	}
+	for i := 0; i < len(nums); i++ {
+		res = max(res, find(nums[i])-nums[i]+1)
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+var fa map[int]int
+
+// 初始化
+func Init(data []int) map[int]int {
+	n := len(data)
+	arr := make(map[int]int)
+	for i := 0; i < n; i++ {
+		arr[data[i]] = data[i]
+	}
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	if _, ok := fa[x]; !ok {
+		return math.MinInt32 // 特殊处理
+	}
+	res := x
+	for res != fa[res] {
+		res = fa[res]
+	}
+	return res
+}
+
+// 合并
+func union(i, j int) {
+	x, y := find(i), find(j)
+	if x == y {
+		return
+	} else if x == math.MinInt32 || y == math.MinInt32 {
+		return
+	}
+	fa[x] = y
+}
+
+func query(i, j int) bool {
+	return find(i) == find(j)
+}
+```
 
 # Hard
 
@@ -6233,6 +10558,578 @@ func max(a, b int) int {
 		return a
 	}
 	return b
+}
+```
+
+## 剑指OfferII078.合并排序链表(4)
+
+- 题目
+
+```
+给定一个链表数组，每个链表都已经按升序排列。
+请将所有链表合并到一个升序链表中，返回合并后的链表。
+示例 1：输入：lists = [[1,4,5],[1,3,4],[2,6]] 输出：[1,1,2,3,4,4,5,6]
+解释：链表数组如下：
+[
+  1->4->5,
+  1->3->4,
+  2->6
+]
+将它们合并到一个有序链表中得到。
+1->1->2->3->4->4->5->6
+示例 2：输入：lists = [] 输出：[]
+示例 3：输入：lists = [[]] 输出：[]
+提示：k == lists.length
+0 <= k <= 10^4
+0 <= lists[i].length <= 500
+-10^4 <= lists[i][j] <= 10^4
+lists[i] 按 升序 排列
+lists[i].length 的总和不超过 10^4
+注意：本题与主站 23 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路           | 时间复杂度 | 空间复杂度 |
+| ---- | -------------- | ---------- | ---------- |
+| 01   | 顺序合并       | O(n^2)     | O(1)       |
+| 02   | 归并(分治)合并 | O(nlog(n)) | O(log(n))  |
+| 03   | 堆辅助         | O(nlog(n)) | O(log(n))  |
+| 04   | 自定义排序     | O(nlog(n)) | O(n)       |
+
+```go
+func mergeKLists(lists []*ListNode) *ListNode {
+	if len(lists) == 0 {
+		return nil
+	}
+	temp := &ListNode{}
+	for i := 0; i < len(lists); i++ {
+		temp.Next = mergeTwoLists(temp.Next, lists[i])
+	}
+	return temp.Next
+}
+
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	res := &ListNode{}
+	temp := res
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			temp.Next = l1
+			l1 = l1.Next
+		} else {
+			temp.Next = l2
+			l2 = l2.Next
+		}
+		temp = temp.Next
+	}
+	if l1 != nil {
+		temp.Next = l1
+	} else {
+		temp.Next = l2
+	}
+	return res.Next
+}
+
+# 2
+func mergeKLists(lists []*ListNode) *ListNode {
+	if len(lists) == 0 {
+		return nil
+	}
+	if len(lists) == 1 {
+		return lists[0]
+	}
+	first := mergeKLists(lists[:len(lists)/2])
+	second := mergeKLists(lists[len(lists)/2:])
+	return mergeTwoLists(first, second)
+}
+
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	res := &ListNode{}
+	temp := res
+	for l1 != nil && l2 != nil {
+		if l1.Val < l2.Val {
+			temp.Next = l1
+			l1 = l1.Next
+		} else {
+			temp.Next = l2
+			l2 = l2.Next
+		}
+		temp = temp.Next
+	}
+	if l1 != nil {
+		temp.Next = l1
+	} else {
+		temp.Next = l2
+	}
+	return res.Next
+}
+
+# 3
+func mergeKLists(lists []*ListNode) *ListNode {
+	if len(lists) == 0 {
+		return nil
+	}
+	var h IntHeap
+	heap.Init(&h)
+	for i := 0; i < len(lists); i++ {
+		if lists[i] != nil {
+			heap.Push(&h, lists[i])
+		}
+	}
+	res := &ListNode{}
+	temp := res
+	for h.Len() > 0 {
+		minItem := heap.Pop(&h).(*ListNode)
+		temp.Next = minItem
+		temp = temp.Next
+		if minItem.Next != nil {
+			heap.Push(&h, minItem.Next)
+		}
+	}
+	return res.Next
+}
+
+type IntHeap []*ListNode
+
+func (h IntHeap) Len() int            { return len(h) }
+func (h IntHeap) Less(i, j int) bool  { return h[i].Val < h[j].Val }
+func (h IntHeap) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
+func (h *IntHeap) Push(x interface{}) { *h = append(*h, x.(*ListNode)) }
+func (h *IntHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+
+# 4
+func mergeKLists(lists []*ListNode) *ListNode {
+	if len(lists) == 0 {
+		return nil
+	}
+	arr := make([]*ListNode, 0)
+	for i := 0; i < len(lists); i++ {
+		temp := lists[i]
+		for temp != nil {
+			arr = append(arr, temp)
+			temp = temp.Next
+		}
+	}
+	if len(arr) == 0 {
+		return nil
+	}
+	sort.Slice(arr, func(i, j int) bool {
+		return arr[i].Val < arr[j].Val
+	})
+	for i := 0; i < len(arr)-1; i++ {
+		arr[i].Next = arr[i+1]
+	}
+	arr[len(arr)-1].Next = nil
+	return arr[0]
+}
+```
+
+## 剑指OfferII094.最少回文分割(2)
+
+- 题目
+
+```
+给定一个字符串 s，请将 s 分割成一些子串，使每个子串都是回文串。
+返回符合要求的 最少分割次数 。
+示例 1：输入：s = "aab" 输出：1
+解释：只需一次分割就可将 s 分割成 ["aa","b"] 这样两个回文子串。
+示例 2：输入：s = "a" 输出：0
+示例 3：输入：s = "ab" 输出：1
+提示：1 <= s.length <= 2000
+s 仅由小写英文字母组成
+注意：本题与主站 132 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路              | 时间复杂度 | 空间复杂度 |
+| ---- | ----------------- | ---------- | ---------- |
+| 01   | 动态规划          | O(n^3)     | O(n)       |
+| 02   | 动态规划+动态规划 | O(n^2)     | O(n^2)     |
+
+```go
+func minCut(s string) int {
+	if len(s) == 0 || len(s) == 1 {
+		return 0
+	}
+	dp := make([]int, len(s)+1)
+	dp[0] = -1
+	dp[1] = 1
+	for i := 1; i <= len(s); i++ {
+		dp[i] = i - 1 // 长度N切分n-1次
+		for j := 0; j < i; j++ {
+			if judge(s[j:i]) {
+				dp[i] = min(dp[i], dp[j]+1)
+			}
+		}
+	}
+	return dp[len(s)]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func judge(s string) bool {
+	for i := 0; i < len(s)/2; i++ {
+		if s[i] != s[len(s)-1-i] {
+			return false
+		}
+	}
+	return true
+}
+
+# 2
+func minCut(s string) int {
+	if len(s) == 0 || len(s) == 1 {
+		return 0
+	}
+	dp := make([]int, len(s)+1)
+	dp[0] = -1
+	dp[1] = 1
+	arr := getDP(s)
+	for i := 1; i <= len(s); i++ {
+		dp[i] = i - 1 // 长度N切分n-1次
+		for j := 0; j < i; j++ {
+			if arr[j][i-1] == true {
+				dp[i] = min(dp[i], dp[j]+1)
+			}
+		}
+	}
+	return dp[len(s)]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func getDP(s string) [][]bool {
+	dp := make([][]bool, len(s))
+	for r := 0; r < len(s); r++ {
+		dp[r] = make([]bool, len(s))
+		dp[r][r] = true
+		for l := 0; l < r; l++ {
+			if s[l] == s[r] && (r-l <= 2 || dp[l+1][r-1] == true) {
+				dp[l][r] = true
+			} else {
+				dp[l][r] = false
+			}
+		}
+	}
+	return dp
+}
+```
+
+## 剑指OfferII097.子序列的数目(2)
+
+- 题目
+
+```
+给定一个字符串 s 和一个字符串 t ，计算在 s 的子序列中 t 出现的个数。
+字符串的一个 子序列 是指，通过删除一些（也可以不删除）字符且不干扰剩余字符相对位置所组成的新字符串。
+（例如，"ACE" 是 "ABCDE" 的一个子序列，而 "AEC" 不是）
+题目数据保证答案符合 32 位带符号整数范围。
+示例 1：输入：s = "rabbbit", t = "rabbit" 输出：3
+解释：如下图所示, 有 3 种可以从 s 中得到 "rabbit" 的方案。
+rabbbit
+rabbbit
+rabbbit
+示例 2：输入：s = "babgbag", t = "bag" 输出：5
+解释：如下图所示, 有 5 种可以从 s 中得到 "bag" 的方案。 
+babgbag
+babgbag
+babgbag
+babgbag
+babgbag
+提示：0 <= s.length, t.length <= 1000
+s 和 t 由英文字母组成
+注意：本题与主站 115 题相同
+```
+
+- 解题思路
+
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-一维 | O(n^2)     | O(n)       |
+| 02   | 动态规划-二维 | O(n^2)     | O(n^2)     |
+
+```go
+func numDistinct(s string, t string) int {
+	dp := make([]int, len(t)+1)
+	dp[0] = 1
+	for i := 1; i <= len(s); i++ {
+		for j := len(t); j >= 1; j-- {
+			if s[i-1] == t[j-1] {
+				dp[j] = dp[j] + dp[j-1]
+			}
+		}
+	}
+	return dp[len(t)]
+}
+
+# 2
+func numDistinct(s string, t string) int {
+	// dp[i][j]为使用s的前i个字符能够最多组成多少个t的前j个字符
+	dp := make([][]int, len(s)+1)
+	for i := 0; i <= len(s); i++ {
+		dp[i] = make([]int, len(t)+1)
+	}
+	for i := 0; i <= len(s); i++ {
+		dp[i][0] = 1
+	}
+	for i := 1; i <= len(s); i++ {
+		for j := 1; j <= len(t); j++ {
+			if s[i-1] == t[j-1] {
+				// s用最后一位的 +不用最后一位
+				dp[i][j] = dp[i-1][j-1] + dp[i-1][j]
+			} else {
+				dp[i][j] = dp[i-1][j]
+			}
+		}
+	}
+	return dp[len(s)][len(t)]
+}
+```
+
+## 剑指OfferII108.单词演变(2)
+
+- 题目
+
+```
+在字典（单词列表） wordList 中，从单词 beginWord 和 endWord 的 转换序列 是一个按下述规格形成的序列：
+序列中第一个单词是 beginWord 。
+序列中最后一个单词是 endWord 。
+每次转换只能改变一个字母。
+转换过程中的中间单词必须是字典 wordList 中的单词。
+给定两个长度相同但内容不同的单词 beginWord 和 endWord 和一个字典 wordList ，
+找到从 beginWord 到 endWord 的 最短转换序列 中的 单词数目 。如果不存在这样的转换序列，返回 0。
+示例 1：输入：beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"] 输出：5
+解释：一个最短转换序列是 "hit" -> "hot" -> "dot" -> "dog" -> "cog", 返回它的长度 5。
+示例 2：输入：beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"] 输出：0
+解释：endWord "cog" 不在字典中，所以无法进行转换。
+提示：1 <= beginWord.length <= 10
+endWord.length == beginWord.length
+1 <= wordList.length <= 5000
+wordList[i].length == beginWord.length
+beginWord、endWord 和 wordList[i] 由小写英文字母组成
+beginWord != endWord
+wordList 中的所有字符串 互不相同
+注意：本题与主站 127 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+| 02   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+
+```go
+func ladderLength(beginWord string, endWord string, wordList []string) int {
+	m := make(map[string]int)
+	for i := 0; i < len(wordList); i++ {
+		m[wordList[i]] = 1
+	}
+	if m[endWord] == 0 {
+		return 0
+	}
+	preMap := make(map[string][]string)
+	for i := 0; i < len(wordList); i++ {
+		for j := 0; j < len(wordList[i]); j++ {
+			newStr := wordList[i][:j] + "*" + wordList[i][j+1:]
+			if _, ok := preMap[newStr]; !ok {
+				preMap[newStr] = make([]string, 0)
+			}
+			preMap[newStr] = append(preMap[newStr], wordList[i])
+		}
+	}
+	visited := make(map[string]bool)
+	count := 0
+	queue := make([]string, 0)
+	queue = append(queue, beginWord)
+	for len(queue) > 0 {
+		count++
+		length := len(queue)
+		for i := 0; i < length; i++ {
+			for j := 0; j < len(beginWord); j++ {
+				newStr := queue[i][:j] + "*" + queue[i][j+1:]
+				for _, word := range preMap[newStr] {
+					if word == endWord {
+						return count + 1
+					}
+					if visited[word] == false {
+						visited[word] = true
+						queue = append(queue, word)
+					}
+				}
+			}
+		}
+		queue = queue[length:]
+	}
+	return 0
+}
+
+# 2
+func ladderLength(beginWord string, endWord string, wordList []string) int {
+	m := make(map[string]int)
+	for i := 0; i < len(wordList); i++ {
+		m[wordList[i]] = 1
+	}
+	if m[endWord] == 0 {
+		return 0
+	}
+	queue := make([]string, 0)
+	queue = append(queue, beginWord)
+	count := 0
+	for len(queue) > 0 {
+		count++
+		length := len(queue)
+		for i := 0; i < length; i++ {
+			for _, word := range wordList {
+				diff := 0
+				for j := 0; j < len(queue[i]); j++ {
+					if queue[i][j] != word[j] {
+						diff++
+					}
+					if diff > 1 {
+						break
+					}
+				}
+				if diff == 1 && m[word] != 2 {
+					if word == endWord {
+						return count + 1
+					}
+					m[word] = 2
+					queue = append(queue, word)
+				}
+			}
+		}
+		queue = queue[length:]
+	}
+	return 0
+}
+```
+
+## 剑指OfferII112.最长递增路径
+
+### 题目
+
+### 解题思路
+
+```go
+```
+
+## 剑指OfferII114.外星文字典
+
+### 题目
+
+### 解题思路
+
+```go
+```
+
+## 剑指OfferII117.相似的字符串(1)
+
+- 题目
+
+```
+如果交换字符串 X 中的两个不同位置的字母，使得它和字符串 Y 相等，那么称 X 和 Y 两个字符串相似。
+如果这两个字符串本身是相等的，那它们也是相似的。
+例如，"tars" 和 "rats" 是相似的 (交换 0 与 2 的位置)； 
+"rats" 和 "arts" 也是相似的，但是 "star" 不与 "tars"，"rats"，或 "arts" 相似。
+总之，它们通过相似性形成了两个关联组：{"tars", "rats", "arts"} 和 {"star"}。
+注意，"tars" 和 "arts" 是在同一组中，即使它们并不相似。
+形式上，对每个组而言，要确定一个单词在组中，只需要这个词和该组中至少一个单词相似。
+给定一个字符串列表 strs。列表中的每个字符串都是 strs 中其它所有字符串的一个 字母异位词 。
+请问 strs 中有多少个相似字符串组？
+字母异位词（anagram），一种把某个字符串的字母的位置（顺序）加以改换所形成的新词。
+示例 1：输入：strs = ["tars","rats","arts","star"] 输出：2
+示例 2：输入：strs = ["omv","ovm"] 输出：1
+提示：1 <= strs.length <= 300
+1 <= strs[i].length <= 300
+strs[i] 只包含小写字母。
+strs 中的所有单词都具有相同的长度，且是彼此的字母异位词。
+注意：本题与主站 839 题相同：
+```
+
+- 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 并查集 | O(n^3)     | O(n)       |
+
+```go
+func numSimilarGroups(strs []string) int {
+	n := len(strs)
+	fa = Init(n)
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			if judge(strs[i], strs[j]) == true { // 满足条件，连通
+				union(i, j)
+			}
+		}
+	}
+	return count
+}
+
+func judge(a, b string) bool {
+	if a == b {
+		return true
+	}
+	count := 0
+	for i := 0; i < len(a); i++ {
+		if a[i] != b[i] {
+			count++
+			if count > 2 {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+var fa []int
+var count int
+
+// 初始化
+func Init(n int) []int {
+	arr := make([]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = i
+	}
+	count = n
+	return arr
+}
+
+// 查询
+func find(x int) int {
+	if fa[x] == x {
+		return x
+	}
+	// 路径压缩
+	fa[x] = find(fa[x])
+	return fa[x]
+}
+
+// 合并
+func union(i, j int) {
+	x, y := find(i), find(j)
+	if x != y {
+		fa[x] = y
+		count--
+	}
 }
 ```
 

@@ -58,7 +58,7 @@
 | 54 | [796.旋转字符串](https://leetcode-cn.com/problems/rotate-string/) Easy | [面试题01.09.字符串轮转](https://leetcode-cn.com/problems/string-rotation-lcci/) Easy |
 | 55(相似) | [287.寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/) Medium | [面试题03.数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/) Easy |
 | 56 | [88.合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array) Easy | [面试题10.01.合并排序的数组](https://leetcode-cn.com/problems/sorted-merge-lcci/) Easy |
-| 57 | [198.打家劫舍](https://leetcode-cn.com/problems/house-robber) Easy<br />[740.删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) Medium | [面试题17.16.按摩师](https://leetcode-cn.com/problems/the-masseuse-lcci/) Easy |
+| 57(相似) | [198.打家劫舍](https://leetcode-cn.com/problems/house-robber) Easy<br />[740.删除与获得点数](https://leetcode-cn.com/problems/delete-and-earn/) Medium | [面试题17.16.按摩师](https://leetcode-cn.com/problems/the-masseuse-lcci/) Easy<br />[剑指OfferII089.房屋偷盗](https://leetcode-cn.com/problems/Gu0c2T/) Medium |
 | 58 | [2.两数相加](https://leetcode-cn.com/problems/add-two-numbers/) Medium | [面试题02.05.链表求和](https://leetcode-cn.com/problems/sum-lists-lcci/) Medium |
 | 59 | [86.分隔链表](https://leetcode-cn.com/problems/partition-list/) Medium | [面试题02.04.分割链表](https://leetcode-cn.com/problems/partition-list-lcci/) Medium |
 | 60 | [234.回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/) Easy | [面试题02.06.回文链表](https://leetcode-cn.com/problems/palindrome-linked-list-lcci/) Easy<br />[剑指OfferII027.回文链表](https://leetcode-cn.com/problems/aMhZSa/) Easy |
@@ -69,9 +69,9 @@
 | 65(相似) | [面试题02.02.返回倒数第k个节点](https://leetcode-cn.com/problems/kth-node-from-end-of-list-lcci/) Easy | [面试题22.链表中倒数第k个节点](https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/) Easy |
 | 66(相似) | [572.另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/) Easy<br />[1367.二叉树中的列表](https://leetcode-cn.com/problems/linked-list-in-binary-tree/) Medium | [面试题26.树的子结构](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/) Medium<br />[面试题04.10.检查子树](https://leetcode-cn.com/problems/check-subtree-lcci/) Medium |
 | 67 | [437.路径总和III](https://leetcode-cn.com/problems/path-sum-iii/) Easy | [面试题04.12.求和路径](https://leetcode-cn.com/problems/paths-with-sum-lcci/) Medium<br />[剑指OfferII050.向下的路径节点之和](https://leetcode-cn.com/problems/6eUYwP/) Medium |
-| 68 | [22.括号生成](https://leetcode-cn.com/problems/generate-parentheses/) Medium | [面试题08.09.括号](https://leetcode-cn.com/problems/bracket-lcci/) Medium |
-| 69(相似) | [46.全排列](https://leetcode-cn.com/problems/permutations/) Medium | [面试题08.07.无重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-i-lcci/) Medium |
-| 70(相似) | [47.全排列II](https://leetcode-cn.com/problems/permutations-ii/) Medium | [面试题08.08.有重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-ii-lcci/) Medium |
+| 68 | [22.括号生成](https://leetcode-cn.com/problems/generate-parentheses/) Medium | [面试题08.09.括号](https://leetcode-cn.com/problems/bracket-lcci/) Medium<br />[剑指OfferII085.生成匹配的括号](https://leetcode-cn.com/problems/IDBivT/) Medium |
+| 69(相似) | [46.全排列](https://leetcode-cn.com/problems/permutations/) Medium | [面试题08.07.无重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-i-lcci/) Medium<br />[剑指OfferII083.没有重复元素集合的全排列](https://leetcode-cn.com/problems/VvJkup/) Medium |
+| 70(相似) | [47.全排列II](https://leetcode-cn.com/problems/permutations-ii/) Medium | [面试题08.08.有重复字符串的排列组合](https://leetcode-cn.com/problems/permutation-ii-lcci/) Medium<br />[剑指OfferII084.含有重复元素集合的全排列](https://leetcode-cn.com/problems/7p8L0Z/) Medium |
 | 71(相似) | [81.搜索旋转排序数组II](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/) Medium<br />[33.搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/) Medium | [面试题10.03.搜索旋转数组](https://leetcode-cn.com/problems/search-rotate-array-lcci/) Medium |
 | 72(相似) | [461.汉明距离](https://leetcode-cn.com/problems/hamming-distance/) Easy | [面试题05.06.整数转换](https://leetcode-cn.com/problems/convert-integer-lcci/) Easy |
 | 73 | [42.接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) Hard | [面试题17.21.直方图的水量](https://leetcode-cn.com/problems/volume-of-histogram-lcci/) Hard |
@@ -79,24 +79,24 @@
 | 75(相似) | [779.第K个语法符号](https://leetcode-cn.com/problems/k-th-symbol-in-grammar/) Medium | [1545.找出第N个二进制字符串中的第K位](https://leetcode-cn.com/problems/find-kth-bit-in-nth-binary-string/) Medium |
 | 76(相似) | [560.和为K的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) Medium | [1546.和为目标值的最大数目不重叠非空子数组数目](https://leetcode-cn.com/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/) Medium<br />[剑指OfferII010.和为k的子数组](https://leetcode-cn.com/problems/QTMn0o/) Medium |
 | 77(相似) | [51.N皇后](https://leetcode-cn.com/problems/n-queens/) Hard<br />[52.N皇后II](https://leetcode-cn.com/problems/n-queens-ii/) Hard | [面试题08.12.八皇后](https://leetcode-cn.com/problems/eight-queens-lcci/) Hard |
-| 78(相似) | [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) Medium | [207.课程表](https://leetcode-cn.com/problems/course-schedule/) Medium |
+| 78(相似) | [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) Medium<br />[剑指OfferII113.课程顺序](https://leetcode-cn.com/problems/QA2IGt/) Medium | [207.课程表](https://leetcode-cn.com/problems/course-schedule/) Medium |
 | 79 | [146.LRU缓存机制](https://leetcode-cn.com/problems/lru-cache/) Medium | [面试题16.25.LRU缓存](https://leetcode-cn.com/problems/lru-cache-lcci/) Medium<br />[剑指OfferII031.最近最少使用缓存](https://leetcode-cn.com/problems/OrIXps/) Medium |
 | 80(相似) | [1493.删掉一个元素以后全为1的最长子数组](https://leetcode-cn.com/problems/longest-subarray-of-1s-after-deleting-one-element/) Medium | [面试题05.03.翻转数位](https://leetcode-cn.com/problems/reverse-bits-lcci/) Easy |
-| 81(相似) | [62.不同路径](https://leetcode-cn.com/problems/unique-paths/) Medium[<br />63.不同路径II](https://leetcode-cn.com/problems/unique-paths-ii/) Medium | [面试题08.02.迷路的机器人](https://leetcode-cn.com/problems/robot-in-a-grid-lcci/) Medium |
+| 81(相似) | [62.不同路径](https://leetcode-cn.com/problems/unique-paths/) Medium[<br />63.不同路径II](https://leetcode-cn.com/problems/unique-paths-ii/) Medium | [面试题08.02.迷路的机器人](https://leetcode-cn.com/problems/robot-in-a-grid-lcci/) Medium<br />[剑指OfferII098.路径的数目](https://leetcode-cn.com/problems/2AoeFn/) Medium |
 | 82 | [108.将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree) Easy | [面试题04.02.最小高度树](https://leetcode-cn.com/problems/minimum-height-tree-lcci/) Easy |
 | 83 | [232.用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) Easy | [面试题03.04.化栈为队](https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/) Easy |
 | 84(相似) | [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) Medium | [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) Medium<br />[剑指OfferII020.回文子字符串的个数](https://leetcode-cn.com/problems/a7VOhD/) Medium |
-| 85(相似) | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) Medium<br />[583.两个字符串的删除操作](https://leetcode-cn.com/problems/delete-operation-for-two-strings/) Medium<br />[712.两个字符串的最小ASCII删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/) Medium<br />[1048.最长字符串链](https://leetcode-cn.com/problems/longest-string-chain/) Medium | [1035.不相交的线](https://leetcode-cn.com/problems/uncrossed-lines/) Medium |
-| 86(相似) | [78.子集](https://leetcode-cn.com/problems/subsets/) Medium | [面试题08.04.幂集](https://leetcode-cn.com/problems/power-set-lcci/) Medium<br />[1239.串联字符串的最大长度](https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/) Medium<br />[1863.找出所有子集的异或总和再求和](https://leetcode-cn.com/problems/sum-of-all-subset-xor-totals/) Easy |
-| 87(相似) | [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) Medium | [面试题16.19.水域大小](https://leetcode-cn.com/problems/pond-sizes-lcci/) Medium |
+| 85(相似) | [1143.最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) Medium<br />[583.两个字符串的删除操作](https://leetcode-cn.com/problems/delete-operation-for-two-strings/) Medium<br />[712.两个字符串的最小ASCII删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/) Medium<br />[1048.最长字符串链](https://leetcode-cn.com/problems/longest-string-chain/) Medium | [1035.不相交的线](https://leetcode-cn.com/problems/uncrossed-lines/) Medium<br />[剑指OfferII095.最长公共子序列](https://leetcode-cn.com/problems/qJnOS7/) Medium |
+| 86(相似) | [78.子集](https://leetcode-cn.com/problems/subsets/) Medium | [面试题08.04.幂集](https://leetcode-cn.com/problems/power-set-lcci/) Medium<br />[1239.串联字符串的最大长度](https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/) Medium<br />[1863.找出所有子集的异或总和再求和](https://leetcode-cn.com/problems/sum-of-all-subset-xor-totals/) Easy<br />[剑指OfferII079.所有子集](https://leetcode-cn.com/problems/TVdhkn/) Medium |
+| 87(相似) | [695.岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) Medium | [面试题16.19.水域大小](https://leetcode-cn.com/problems/pond-sizes-lcci/) Medium<br />[剑指OfferII105.岛屿的最大面积](https://leetcode-cn.com/problems/ZL6zAn/) Medium |
 | 88 | [49.字母异位词分组](https://leetcode-cn.com/problems/group-anagrams/) Medium | [面试题10.02.变位词组](https://leetcode-cn.com/problems/group-anagrams-lcci/) Medium<br />[剑指OfferII033.变位词组](https://leetcode-cn.com/problems/sfvd7V/) Medium |
 | 89(相似) | [888.公平的糖果交换](https://leetcode-cn.com/problems/fair-candy-swap/) Easy | [面试题16.21.交换和](https://leetcode-cn.com/problems/sum-swap-lcci/) Medium |
 | 90 | [316.去除重复字母](https://leetcode-cn.com/problems/remove-duplicate-letters/) Hard | [1081.不同字符的最小子序列](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) Medium |
 | 91(相似) | [486.预测赢家](https://leetcode-cn.com/problems/predict-the-winner/) Medium | [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) Medium |
 | 92 | [273.整数转换英文表示](https://leetcode-cn.com/problems/integer-to-english-words/) Hard | [面试题16.08.整数的英语表示](https://leetcode-cn.com/problems/english-int-lcci/) Hard |
 | 93 | [227.基本计算器II](https://leetcode-cn.com/problems/basic-calculator-ii/) Medium | [面试题16.26.计算器](https://leetcode-cn.com/problems/calculator-lcci/) Medium |
-| 94(相似) | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) Medium<br />[322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) Medium | [面试题08.11.硬币](https://leetcode-cn.com/problems/coin-lcci/) Medium |
-| 95(相似) | [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) Medium<br />[126.单词接龙II](https://leetcode-cn.com/problems/word-ladder-ii/) Hard | [面试题17.22.单词转换](https://leetcode-cn.com/problems/word-transformer-lcci/) Medium |
+| 94(相似) | [518.零钱兑换II](https://leetcode-cn.com/problems/coin-change-2/) Medium<br />[322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) Medium | [面试题08.11.硬币](https://leetcode-cn.com/problems/coin-lcci/) Medium<br />[剑指OfferII103.最少的硬币数目](https://leetcode-cn.com/problems/gaM7Ch/) Medium |
+| 95(相似) | [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) Medium<br />[126.单词接龙II](https://leetcode-cn.com/problems/word-ladder-ii/) Hard | [面试题17.22.单词转换](https://leetcode-cn.com/problems/word-transformer-lcci/) Medium<br />[剑指OfferII108.单词演变](https://leetcode-cn.com/problems/om3reC/) Hard |
 | 96(相似) | [321.拼接最大数](https://leetcode-cn.com/problems/create-maximum-number/) Hard | [ 1754.构造字典序最大的合并字符串](https://leetcode-cn.com/problems/largest-merge-of-two-strings/) Medium |
 | 97(相似) | [300.最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) Medium<br />[673.最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/) Medium | [354.俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/) Hard<br />[1626.无矛盾的最佳球队](https://leetcode-cn.com/problems/best-team-with-no-conflicts/) Medium<br />[1671.得到山形数组的最少删除次数](https://leetcode-cn.com/problems/minimum-number-of-removals-to-make-mountain-array/) Hard<br />[1691.堆叠长方体的最大高度](https://leetcode-cn.com/problems/maximum-height-by-stacking-cuboids/) Hard<br />[1713.得到子序列的最少操作次数](https://leetcode-cn.com/problems/minimum-operations-to-make-a-subsequence/) Hard<br />[1964.找出到每个位置为止最长的有效障碍赛跑路线](https://leetcode-cn.com/problems/find-the-longest-valid-obstacle-course-at-each-position/) Hard<br />[面试题08.13.堆箱子](https://leetcode-cn.com/problems/pile-box-lcci/) Hard<br />[面试题17.08.马戏团人塔](https://leetcode-cn.com/problems/circus-tower-lcci/) Medium |
 | 98(相似) | [767.重构字符串](https://leetcode-cn.com/problems/reorganize-string/) Medium | [1054.距离相等的条形码](https://leetcode-cn.com/problems/distant-barcodes/) Medium<br />[1953.你可以工作的最大周数](https://leetcode-cn.com/problems/maximum-number-of-weeks-for-which-you-can-work/) Medium |
@@ -108,7 +108,7 @@
 | 104(相似) | [1696.跳跃游戏VI](https://leetcode-cn.com/problems/jump-game-vi/) Medium | [1425.带限制的子序列和](https://leetcode-cn.com/problems/constrained-subsequence-sum/) Hard |
 | 105(相似) | [473.火柴拼正方形](https://leetcode-cn.com/problems/matchsticks-to-square/) Medium | [698.划分为k个相等的子集](https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets/) Medium |
 | 106(相似) | [516.最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) Medium | [1771.由子序列构造的最长回文串的长度](https://leetcode-cn.com/problems/maximize-palindrome-length-from-subsequences/) Hard |
-| 107(相似) | [416.分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) Medium | [1049.最后一块石头的重量II](https://leetcode-cn.com/problems/last-stone-weight-ii/) Medium |
+| 107(相似) | [416.分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) Medium<br />[剑指OfferII101.分割等和子集](https://leetcode-cn.com/problems/NUPfPr/) Easy | [1049.最后一块石头的重量II](https://leetcode-cn.com/problems/last-stone-weight-ii/) Medium |
 | 108(相似) | [205.同构字符串](https://leetcode-cn.com/problems/isomorphic-strings/) Easy | [890.查找和替换模式](https://leetcode-cn.com/problems/find-and-replace-pattern/) Medium |
 | 109(相似) | [304.二维区域和检索-矩阵不可变](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/) Medium | [1314.矩阵区域和](https://leetcode-cn.com/problems/matrix-block-sum/) Medium<br />[剑指OfferII013.二维子矩阵的和](https://leetcode-cn.com/problems/O4NDxx/) Medium |
 | 110(相似) | [392.判断子序列](https://leetcode-cn.com/problems/is-subsequence/) Easy | [792.匹配子序列的单词数](https://leetcode-cn.com/problems/number-of-matching-subsequences/) Medium |
@@ -123,7 +123,7 @@
 | 119(相似) | [622.设计循环队列](https://leetcode-cn.com/problems/design-circular-queue/) Medium |  |
 | 120(相似) | [ 200.岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) Medium | [1905.统计子岛屿](https://leetcode-cn.com/problems/count-sub-islands/) Medium |
 | 121(相似) | [427.建立四叉树](https://leetcode-cn.com/problems/construct-quad-tree/) Medium | [558.四叉树交集](https://leetcode-cn.com/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/) Medium |
-| 122(相似) | [497.非重叠矩形中的随机点](https://leetcode-cn.com/problems/random-point-in-non-overlapping-rectangles/) Medium | [528.按权重随机选择](https://leetcode-cn.com/problems/random-pick-with-weight/) Medium |
+| 122(相似) | [497.非重叠矩形中的随机点](https://leetcode-cn.com/problems/random-point-in-non-overlapping-rectangles/) Medium | [528.按权重随机选择](https://leetcode-cn.com/problems/random-pick-with-weight/) Medium<br />[剑指OfferII071.按权重生成随机数](https://leetcode-cn.com/problems/cuyjEf/) Medium |
 | 123(相似) | [122.买卖股票的最佳时机II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) Easy | [1911.最大子序列交替和](https://leetcode-cn.com/problems/maximum-alternating-subsequence-sum/) Medium |
 | 124(相似) | [1542.找出最长的超赞子字符串](https://leetcode-cn.com/problems/find-longest-awesome-substring/) Hard<br />[1177.构建回文串检测](https://leetcode-cn.com/problems/can-make-palindrome-from-substring/) Medium | [1915.最美子字符串的数目](https://leetcode-cn.com/problems/number-of-wonderful-substrings/) Medium |
 | 125(相似) | [871.最低加油次数](https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/) Hard | [1201.丑数III](https://leetcode-cn.com/problems/ugly-number-iii/) Medium |
@@ -133,10 +133,10 @@
 | 129(相似) | [1254.统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/) Medium | [LCS03.主题空间](https://leetcode-cn.com/problems/YesdPw/) Medium |
 | 130(相似) | [54.螺旋矩阵](https://leetcode-cn.com/problems/spiral-matrix/) Medium | [1914.循环轮转矩阵](https://leetcode-cn.com/problems/cyclically-rotating-a-grid/) Medium |
 | 131(相似) | [378.有序矩阵中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/) Medium | [668.乘法表中第k小的数](https://leetcode-cn.com/problems/kth-smallest-number-in-multiplication-table/) Hard |
-| 132(相似) | [785.判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) Medium | [886.可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) Medium |
+| 132(相似) | [785.判断二分图](https://leetcode-cn.com/problems/is-graph-bipartite/) Medium<br />[剑指OfferII106.二分图](https://leetcode-cn.com/problems/vEAB3K/) Medium | [886.可能的二分法](https://leetcode-cn.com/problems/possible-bipartition/) Medium |
 | 133(相似) | 631 | [1675.数组的最小偏移量](https://leetcode-cn.com/problems/minimize-deviation-in-array/) Hard |
 | 134(相似) | [768.最多能完成排序的块II](https://leetcode-cn.com/problems/max-chunks-to-make-sorted-ii/) | [ 769.最多能完成排序的块](https://leetcode-cn.com/problems/max-chunks-to-make-sorted/) Medium |
-| 135(相似) | [213.打家劫舍II](https://leetcode-cn.com/problems/house-robber-ii/) Medium | [1388.3n块披萨](https://leetcode-cn.com/problems/pizza-with-3n-slices/) Hard |
+| 135(相似) | [213.打家劫舍II](https://leetcode-cn.com/problems/house-robber-ii/) Medium | [1388.3n块披萨](https://leetcode-cn.com/problems/pizza-with-3n-slices/) Hard<br />[剑指OfferII090.环形房屋偷盗](https://leetcode-cn.com/problems/PzWKhm/) Medium |
 | 136(相似) | [719.找出第k小的距离对](https://leetcode-cn.com/problems/find-k-th-smallest-pair-distance/) Hard | 786 |
 | 137(相似) | [778.水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) Hard | [1631.最小体力消耗路径](https://leetcode-cn.com/problems/path-with-minimum-effort/) Medium |
 | 138(相似) | [787.K站中转内最便宜的航班](https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/) Medium | [1928.规定时间内到达终点的最小花费](https://leetcode-cn.com/problems/minimum-cost-to-reach-destination-in-time/) Hard |
@@ -197,6 +197,34 @@
 | 193 | [677.键值映射](https://leetcode-cn.com/problems/map-sum-pairs/) Medium | [剑指OfferII066.单词之和](https://leetcode-cn.com/problems/z1R5dt/) Medium |
 | 194 | [421.数组中两个数的最大异或值](https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/) Medium | [剑指OfferII067.最大的异或](https://leetcode-cn.com/problems/ms70jA/) Medium |
 | 195 | [35.搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) Easy | [剑指OfferII068.查找插入位置](https://leetcode-cn.com/problems/N6YdxV/) Easy |
-| 196 |  |  |
-| 197 |  |  |
+| 196 | [852.山脉数组的峰顶索引](https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/) Easy | [剑指OfferII069.山峰数组的顶部](https://leetcode-cn.com/problems/B1IidL/) Easy |
+| 197 | [540.有序数组中的单一元素](https://leetcode-cn.com/problems/single-element-in-a-sorted-array/) Medium | [剑指OfferII070.排序数组中只出现一次的数字](https://leetcode-cn.com/problems/skFtm2/) Medium |
+| 198 | [69.x的平方根](https://leetcode-cn.com/problems/sqrtx) Easy | [剑指OfferII072.求平方根](https://leetcode-cn.com/problems/jJ0w9p/) Easy |
+| 199 | [875.爱吃香蕉的珂珂](https://leetcode-cn.com/problems/koko-eating-bananas/) Medium | [剑指OfferII073.狒狒吃香蕉](https://leetcode-cn.com/problems/nZZqjQ/) Medium |
+| 200 | [56.合并区间](https://leetcode-cn.com/problems/merge-intervals/) Medium | [剑指OfferII074.合并区间](https://leetcode-cn.com/problems/SsGoHC/) Medium |
+| 201 | [1122.数组的相对排序](https://leetcode-cn.com/problems/relative-sort-array/) Easy | [剑指OfferII075.数组相对排序](https://leetcode-cn.com/problems/0H97ZC/) Easy |
+| 202 | [215.数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) Medium | [剑指OfferII076.数组中的第k大的数字](https://leetcode-cn.com/problems/xx4gT2/) Medium |
+| 203 | [148.排序链表](https://leetcode-cn.com/problems/sort-list/) Medium | [剑指OfferII077.链表排序](https://leetcode-cn.com/problems/7WHec2/) Medium |
+| 204 | [23.合并K个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) Hard | [剑指OfferII078.合并排序链表](https://leetcode-cn.com/problems/vvXgSW/) Hard |
+| 205 | [39.组合总和](https://leetcode-cn.com/problems/combination-sum/) Medium | [剑指OfferII081.允许重复选择元素的组合](https://leetcode-cn.com/problems/Ygoe9J/) Medium |
+| 206 | [40.组合总和II](https://leetcode-cn.com/problems/combination-sum-ii/) Medium | [剑指OfferII082.含有重复元素集合的组合](https://leetcode-cn.com/problems/4sjJUc/) Medium |
+| 207 | [131.分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/) Medium | [剑指OfferII086.分割回文子字符串](https://leetcode-cn.com/problems/M99OJA/) Medium |
+| 208 | [93.复原IP地址](https://leetcode-cn.com/problems/restore-ip-addresses/) Medium | [剑指OfferII087.复原IP](https://leetcode-cn.com/problems/0on3uN/) Medium |
+| 209 | [746.使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) Easy | [剑指OfferII088.爬楼梯的最少成本](https://leetcode-cn.com/problems/GzCJIP/) Easy |
+| 210 | [926.将字符串翻转到单调递增](https://leetcode-cn.com/problems/flip-string-to-monotone-increasing/) Medium | [剑指OfferII092.翻转字符](https://leetcode-cn.com/problems/cyJERH/) Medium |
+| 211 | [873.最长的斐波那契子序列的长度](https://leetcode-cn.com/problems/length-of-longest-fibonacci-subsequence/) Medium | [剑指OfferII093.最长斐波那契数列](https://leetcode-cn.com/problems/Q91FMA/) Medium |
+| 212 | [132.分割回文串II](https://leetcode-cn.com/problems/palindrome-partitioning-ii/) Hard | [剑指OfferII094.最少回文分割](https://leetcode-cn.com/problems/omKAoA/) Hard |
+| 213 | [97.交错字符串](https://leetcode-cn.com/problems/interleaving-string/) Hard | [剑指OfferII096.字符串交织](https://leetcode-cn.com/problems/IY6buf/) Medium |
+| 214 | [115.不同的子序列](https://leetcode-cn.com/problems/distinct-subsequences/) Hard | [剑指OfferII097.子序列的数目](https://leetcode-cn.com/problems/21dk04/) Hard |
+| 215 | [64.最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) Medium | [剑指OfferII099.最小路径之和](https://leetcode-cn.com/problems/0i0mDW/) Medium |
+| 216 | [120.三角形最小路径和](https://leetcode-cn.com/problems/triangle/) Medium | [剑指OfferII100.三角形中最小路径之和](https://leetcode-cn.com/problems/IlPe0q/) Medium |
+| 217 | [494.目标和](https://leetcode-cn.com/problems/target-sum/) Medium | [剑指OfferII102.加减的目标值](https://leetcode-cn.com/problems/YaVDxD/) Medium |
+| 218 | [377.组合总和Ⅳ](https://leetcode-cn.com/problems/combination-sum-iv/) Medium | [剑指OfferII104.排列的数目](https://leetcode-cn.com/problems/D0F0SV/) Medium |
+| 219 | [542.01矩阵](https://leetcode-cn.com/problems/01-matrix/) Medium | [剑指OfferII107.矩阵中的距离](https://leetcode-cn.com/problems/2bCMpM/) Medium |
+| 220 | [752.打开转盘锁](https://leetcode-cn.com/problems/open-the-lock/) Medium | [剑指OfferII109.开密码锁](https://leetcode-cn.com/problems/zlDJc7/) Medium |
+| 221 | [547.省份数量](https://leetcode-cn.com/problems/number-of-provinces/) Medium | [剑指OfferII116.省份数量](https://leetcode-cn.com/problems/bLyHh0/) Medium |
+| 222 | [839.相似字符串组](https://leetcode-cn.com/problems/similar-string-groups/) Hard | [剑指OfferII117.相似的字符串](https://leetcode-cn.com/problems/H6lPxb/) Hard |
+| 223 | [684.冗余连接](https://leetcode-cn.com/problems/redundant-connection/) Medium | [剑指OfferII118.多余的边](https://leetcode-cn.com/problems/7LpjUW/) Medium |
+| 224 | [128.最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) Hard | [剑指OfferII119.最长连续序列](https://leetcode-cn.com/problems/WhsWhI/) Medium |
+| 225 |  |  |
 

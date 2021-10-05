@@ -84,7 +84,60 @@
 | 0066 | [剑指OfferII066.单词之和](https://leetcode-cn.com/problems/z1R5dt/) | 设计、字典树、哈希表、字符串                                 | Medium | 完成     | 677           |
 | 0067 | [剑指OfferII067.最大的异或](https://leetcode-cn.com/problems/ms70jA/) | 位运算、字典树、数组、哈希表                                 | Medium | 完成     | 421           |
 | 0068 | [剑指OfferII068.查找插入位置](https://leetcode-cn.com/problems/N6YdxV/) | 数组、二分查找                                               | Easy   | 完成     | 35            |
-| 0069 | [剑指OfferII069.山峰数组的顶部](https://leetcode-cn.com/problems/B1IidL/) | 数组、二分查找                                               | Easy   |          | 852           |
-| 0070 |                                                              |                                                              |        |          |               |
+| 0069 | [剑指OfferII069.山峰数组的顶部](https://leetcode-cn.com/problems/B1IidL/) | 数组、二分查找                                               | Easy   | 完成     | 852           |
+| 0070 | [剑指OfferII070.排序数组中只出现一次的数字](https://leetcode-cn.com/problems/skFtm2/) | 数组、二分查找                                               | Medium | 完成     | 540           |
 |      | 第8期                                                        |                                                              |        |          |               |
+| 0071 | [剑指OfferII071.按权重生成随机数](https://leetcode-cn.com/problems/cuyjEf/) | 数学、二分查找、前缀和、随机化                               | Medium | 完成     | 528           |
+| 0072 | [剑指OfferII072.求平方根](https://leetcode-cn.com/problems/jJ0w9p/) | 数学、二分查找                                               | Easy   | 完成     | 69            |
+| 0073 | [剑指OfferII073.狒狒吃香蕉](https://leetcode-cn.com/problems/nZZqjQ/) | 数组、二分查找                                               | Medium | 完成     | 875           |
+| 0074 | [剑指OfferII074.合并区间](https://leetcode-cn.com/problems/SsGoHC/) | 数组、排序                                                   | Medium | 完成     | 56            |
+| 0075 | [剑指OfferII075.数组相对排序](https://leetcode-cn.com/problems/0H97ZC/) | 数组、哈希表、计数排序、排序                                 | Easy   | 完成     | 1122          |
+| 0076 | [剑指OfferII076.数组中的第k大的数字](https://leetcode-cn.com/problems/xx4gT2/) | 数组、分治、快速选择、<br />排序、堆（优先队列）             | Medium | 完成     | 215           |
+| 0077 | [剑指OfferII077.链表排序](https://leetcode-cn.com/problems/7WHec2/) | 链表、双指针、分治、排序、归并排序                           | Medium | 完成     | 148           |
+| 0078 | [剑指OfferII078.合并排序链表](https://leetcode-cn.com/problems/vvXgSW/) | 链表、分治、堆（优先队列）、归并排序                         | Hard   | 完成     | 23            |
+| 0079 | [剑指OfferII079.所有子集](https://leetcode-cn.com/problems/TVdhkn/) | 位运算、数组、回溯                                           | Medium | 完成     | 78            |
+| 0080 | [剑指OfferII080.含有k个元素的组合](https://leetcode-cn.com/problems/uUsW3B/) | 数组、回溯                                                   | Medium | 完成     | 77            |
+|      | 第9期                                                        |                                                              |        |          |               |
+| 0081 | [剑指OfferII081.允许重复选择元素的组合](https://leetcode-cn.com/problems/Ygoe9J/) | 数组、回溯                                                   | Medium | 完成     | 39            |
+| 0082 | [剑指OfferII082.含有重复元素集合的组合](https://leetcode-cn.com/problems/4sjJUc/) | 数组、回溯                                                   | Medium | 完成     | 40            |
+| 0083 | [剑指OfferII083.没有重复元素集合的全排列](https://leetcode-cn.com/problems/VvJkup/) | 数组、回溯                                                   | Medium | 完成     | 46            |
+| 0084 | [剑指OfferII084.含有重复元素集合的全排列](https://leetcode-cn.com/problems/7p8L0Z/) | 数组、回溯                                                   | Medium | 完成     | 47            |
+| 0085 | [剑指OfferII085.生成匹配的括号](https://leetcode-cn.com/problems/IDBivT/) | 字符串、动态规划、回溯                                       | Medium | 完成     | 22            |
+| 0086 | [剑指OfferII086.分割回文子字符串](https://leetcode-cn.com/problems/M99OJA/) | 字符串、动态规划、回溯                                       | Medium | 完成     | 131           |
+| 0087 | [剑指OfferII087.复原IP](https://leetcode-cn.com/problems/0on3uN/) | 字符串、回溯                                                 | Medium | 完成     | 93            |
+| 0088 | [剑指OfferII088.爬楼梯的最少成本](https://leetcode-cn.com/problems/GzCJIP/) | 数组、动态规划                                               | Easy   | 完成     | 746           |
+| 0089 | [剑指OfferII089.房屋偷盗](https://leetcode-cn.com/problems/Gu0c2T/) | 数组、动态规划                                               | Medium | 完成     | 198           |
+| 0090 | [剑指OfferII090.环形房屋偷盗](https://leetcode-cn.com/problems/PzWKhm/) | 数组、动态规划                                               | Medium | 完成     | 213           |
+|      | 第10期                                                       |                                                              |        |          |               |
+| 0091 | [剑指OfferII091.粉刷房子](https://leetcode-cn.com/problems/JEj789/) | 数组、动态规划                                               | Medium |          | 256           |
+| 0092 | [剑指OfferII092.翻转字符](https://leetcode-cn.com/problems/cyJERH/) | 字符串、动态规划                                             | Medium | 完成     | 926           |
+| 0093 | [剑指OfferII093.最长斐波那契数列](https://leetcode-cn.com/problems/Q91FMA/) | 数组、哈希表、动态规划                                       | Medium | 完成     | 873           |
+| 0094 | [剑指OfferII094.最少回文分割](https://leetcode-cn.com/problems/omKAoA/) | 字符串、动态规划                                             | Hard   | 完成     | 132           |
+| 0095 | [剑指OfferII095.最长公共子序列](https://leetcode-cn.com/problems/qJnOS7/) | 字符串、动态规划                                             | Medium | 完成     | 1143          |
+| 0096 | [剑指OfferII096.字符串交织](https://leetcode-cn.com/problems/IY6buf/) | 字符串、动态规划                                             | Medium | 完成     | 97            |
+| 0097 | [剑指OfferII097.子序列的数目](https://leetcode-cn.com/problems/21dk04/) | 字符串、动态规划                                             | Hard   | 完成     | 115           |
+| 0098 | [剑指OfferII098.路径的数目](https://leetcode-cn.com/problems/2AoeFn/) | 数组、动态规划、组合数学                                     | Medium | 完成     | 62            |
+| 0099 | [剑指OfferII099.最小路径之和](https://leetcode-cn.com/problems/0i0mDW/) | 数组、动态规划、矩阵                                         | Medium | 完成     | 64            |
+| 0100 | [剑指OfferII100.三角形中最小路径之和](https://leetcode-cn.com/problems/IlPe0q/) | 数组、动态规划                                               | Medium | 完成     | 120           |
+|      | 第11期                                                       |                                                              |        |          |               |
+| 0101 | [剑指OfferII101.分割等和子集](https://leetcode-cn.com/problems/NUPfPr/) | 数学、字符串、模拟                                           | Easy   | 完成     | 416           |
+| 0102 | [剑指OfferII102.加减的目标值](https://leetcode-cn.com/problems/YaVDxD/) | 数组、动态规划、回溯                                         | Medium | 完成     | 494           |
+| 0103 | [剑指OfferII103.最少的硬币数目](https://leetcode-cn.com/problems/gaM7Ch/) | 广度优先搜索、数组、动态规划                                 | Medium | 完成     | 322           |
+| 0104 | [剑指OfferII104.排列的数目](https://leetcode-cn.com/problems/D0F0SV/) | 数组、动态规划                                               | Medium | 完成     | 377           |
+| 0105 | [剑指OfferII105.岛屿的最大面积](https://leetcode-cn.com/problems/ZL6zAn/) | 深度优先搜索、广度优先搜索、<br />并查集、数组、矩阵         | Medium | 完成     | 695           |
+| 0106 | [剑指OfferII106.二分图](https://leetcode-cn.com/problems/vEAB3K/) | 深度优先搜索、广度优先搜索、<br />并查集、图                 | Medium | 完成     | 785           |
+| 0107 | [剑指OfferII107.矩阵中的距离](https://leetcode-cn.com/problems/2bCMpM/) | 广度优先搜索、数组、动态规划、矩阵                           | Medium | 完成     | 542           |
+| 0108 | [剑指OfferII108.单词演变](https://leetcode-cn.com/problems/om3reC/) | 广度优先搜索、哈希表、字符串                                 | Hard   | 完成     | 127           |
+| 0109 | [剑指OfferII109.开密码锁](https://leetcode-cn.com/problems/zlDJc7/) | 广度优先搜索、数组、哈希表、字符串                           | Medium | 完成     | 752           |
+| 0110 | [剑指OfferII110.所有路径](https://leetcode-cn.com/problems/bP4bmD/) | 深度优先搜索、广度优先搜索、图、回溯                         | Medium | 完成     | 797           |
+|      | 第12期                                                       |                                                              |        |          |               |
+| 0111 | [剑指OfferII111.计算除法](https://leetcode-cn.com/problems/vlzXQL/) | 深度优先搜索、广度优先搜索、<br />并查集、图、数组、最短路   | Medium |          | 399           |
+| 0112 | [剑指OfferII112.最长递增路径](https://leetcode-cn.com/problems/fpTFWP/) | 深度优先搜索、广度优先搜索、图、<br />拓扑排序、记忆化搜索、动态规划 | Hard   |          | 329           |
+| 0113 | [剑指OfferII113.课程顺序](https://leetcode-cn.com/problems/QA2IGt/) | 深度优先搜索、广度优先搜索、<br />图、拓扑排序               | Medium | 完成     | 210           |
+| 0114 | [剑指OfferII114.外星文字典](https://leetcode-cn.com/problems/Jf1JuT/) | 深度优先搜索、广度优先搜索、图、<br />拓扑排序、数组、字符串 | Hard   |          | 269           |
+| 0115 | [剑指OfferII115.重建序列](https://leetcode-cn.com/problems/ur2n8P/) | 图、拓扑排序、数组                                           | Medium |          | 444           |
+| 0116 | [剑指OfferII116.省份数量](https://leetcode-cn.com/problems/bLyHh0/) | 深度优先搜索、广度优先搜索、<br />并查集、图                 | Medium | 完成     | 547           |
+| 0117 | [剑指OfferII117.相似的字符串](https://leetcode-cn.com/problems/H6lPxb/) | 深度优先搜索、广度优先搜索、<br />并查集、字符串             | Hard   | 完成     | 839           |
+| 0118 | [剑指OfferII118.多余的边](https://leetcode-cn.com/problems/7LpjUW/) | 深度优先搜索、广度优先搜索、并查集、图                       | Medium | 完成     | 684           |
+| 0119 | [剑指OfferII119.最长连续序列](https://leetcode-cn.com/problems/WhsWhI/) | 并查集、数组、哈希表                                         | Medium | 完成     | 128           |
 
