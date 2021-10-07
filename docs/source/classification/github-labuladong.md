@@ -44,7 +44,7 @@
 | 35   | [322.零钱兑换](https://leetcode-cn.com/problems/coin-change/) | 动态规划                                | Medium | 完成     |
 | 36   | [337.打家劫舍III](https://leetcode-cn.com/problems/house-robber-iii/) | 树、深度优先搜索                        | Medium | 完成     |
 | 37   | [34.在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | 数组、二分查找                          | Medium | 完成     |
-| 38   | [ 341.扁平化嵌套列表迭代器](https://leetcode-cn.com/problems/flatten-nested-list-iterator/) | 栈、设计                                | Medium | 完成     |
+| 38   | [341.扁平化嵌套列表迭代器](https://leetcode-cn.com/problems/flatten-nested-list-iterator/) | 栈、设计                                | Medium | 完成     |
 | 39   | [354.俄罗斯套娃信封问题](https://leetcode-cn.com/problems/russian-doll-envelopes/) | 二分查找、动态规划                      | Hard   | 完成     |
 | 40   | [37.解数独](https://leetcode-cn.com/problems/sudoku-solver/) | 哈希表、回溯算法                        | Hard   | 完成     |
 |      | 第5期                                                        |                                         |        |          |
@@ -79,7 +79,7 @@
 | 67   | [76.最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/) | 哈希表、双指针、字符串、 Sliding Window | Hard   | 完成     |
 | 68   | [77.组合](https://leetcode-cn.com/problems/combinations/)    | 回溯算法                                | Medium | 完成     |
 | 69   | 772                                                          |                                         |        |          |
-| 70   | 773                                                          |                                         |        |          |
+| 70   | [773.滑动谜题](https://leetcode-cn.com/problems/sliding-puzzle/) | 广度优先搜索、数组、矩阵                | Hard   |          |
 |      | 第8期                                                        |                                         |        |          |
 | 71   | [78.子集](https://leetcode-cn.com/problems/subsets/)         | 位运算、数组、回溯算法                  | Medium | 完成     |
 | 72   | [83.删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list) | 链表                                    | Easy   | 完成     |

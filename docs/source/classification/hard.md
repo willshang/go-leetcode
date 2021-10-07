@@ -29,17 +29,17 @@
 
 ## 3.树和图(9)
 
-| Title                                                        | Tag                                              | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ------------------------------------------------ | ------ | -------- |
-| [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) | 广度优先搜索                                     | Medium | 完成     |
-| [130.被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 深度优先搜索、广度优先搜索、并查集               | Medium | 完成     |
-| [236.二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 树                                               | Medium | 完成     |
-| [124.二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) | 树、深度优先搜索                                 | Hard   | 完成     |
-| [547.朋友圈](https://leetcode-cn.com/problems/friend-circles/) | 深度优先搜索、并查集                             | Medium | 完成     |
-| [207.课程表](https://leetcode-cn.com/problems/course-schedule/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序   | Medium | 完成     |
-| [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序   | Medium | 完成     |
-| 矩阵中的最长递增路径329                                      |                                                  |        |          |
-| [315.计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) | 排序、树状数组、线段树、<br />二分查找、分治算法 | Hard   | 完成     |
+| Title                                                        | Tag                                                          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
+| [127.单词接龙](https://leetcode-cn.com/problems/word-ladder/) | 广度优先搜索                                                 | Medium | 完成     |
+| [130.被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | 深度优先搜索、广度优先搜索、并查集                           | Medium | 完成     |
+| [236.二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) | 树                                                           | Medium | 完成     |
+| [124.二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) | 树、深度优先搜索                                             | Hard   | 完成     |
+| [547.朋友圈](https://leetcode-cn.com/problems/friend-circles/) | 深度优先搜索、并查集                                         | Medium | 完成     |
+| [207.课程表](https://leetcode-cn.com/problems/course-schedule/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序               | Medium | 完成     |
+| [210.课程表II](https://leetcode-cn.com/problems/course-schedule-ii/) | 深度优先搜索、<br />广度优先搜索、图、拓扑排序               | Medium | 完成     |
+| [329.矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) | 深度优先搜索、广度优先搜索、图、<br />拓扑排序、记忆化搜索、动态规划 | Hard   | 完成     |
+| [315.计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) | 排序、树状数组、线段树、<br />二分查找、分治算法             | Hard   | 完成     |
 
 ## 4.回溯算法(5)
 

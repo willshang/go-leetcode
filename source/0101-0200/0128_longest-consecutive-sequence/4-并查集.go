@@ -21,7 +21,6 @@ func longestConsecutive(nums []int) int {
 		union(nums[i], nums[i]+1)
 		m[nums[i]]++
 	}
-	fmt.Println(fa)
 	for i := 0; i < len(nums); i++ {
 		res = max(res, find(nums[i])-nums[i]+1)
 	}

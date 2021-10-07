@@ -81,8 +81,10 @@ func (this *Trie) StartsWith(prefix string) bool {
 | [208.实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) | 设计、字典树                                                 | Medium | 完成     |
 | [211.添加与搜索单词-数据结构设计](https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/) | 设计、字典树、回溯算法                                       | Medium | 完成     |
 | [648.单词替换](https://leetcode-cn.com/problems/replace-words/) | 字典树、哈希表                                               | Medium | 完成     |
+| [676.实现一个魔法字典](https://leetcode-cn.com/problems/implement-magic-dictionary/) | 设计、字典树、哈希表、字符串                                 | Medium | 完成     |
 | [720.词典中最长的单词](https://leetcode-cn.com/problems/longest-word-in-dictionary/) | 字典树、哈希表                                               | Easy   | 完成     |
 | [1268.搜索推荐系统](https://leetcode-cn.com/problems/search-suggestions-system/) | 字典树、数组、字符串                                         | Medium | 完成     |
 | [面试题17.13.恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) | 字典树、数组、哈希表、字符串、<br />动态规划、哈希函数、滚动哈希 | Medium | 完成     |
 | [面试题17.17.多次搜索](https://leetcode-cn.com/problems/multi-search-lcci/) | 字典树、数组、哈希表、字符串、<br />字符串匹配、滑动窗口     | Medium | 完成     |
+| [剑指OfferII064.神奇的字典](https://leetcode-cn.com/problems/US1pGT/) | 设计、字典树、哈希表、字符串                                 | Medium | 完成     |
 

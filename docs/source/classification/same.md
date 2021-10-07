@@ -192,7 +192,7 @@
 | 188 | [373.查找和最小的K对数字](https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/) Medium | [剑指OfferII061.和最小的k个数对](https://leetcode-cn.com/problems/qn8gGX/) Medium |
 | 189 | [208.实现Trie(前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/) Medium | [剑指OfferII062.实现前缀树](https://leetcode-cn.com/problems/QC3q1f/) Medium |
 | 190 | [648.单词替换](https://leetcode-cn.com/problems/replace-words/) Medium | [剑指OfferII063.替换单词](https://leetcode-cn.com/problems/UhWRSj/) Medium |
-| 191 | 676 todo | [剑指OfferII064.神奇的字典](https://leetcode-cn.com/problems/US1pGT/) Medium |
+| 191 | [676.实现一个魔法字典](https://leetcode-cn.com/problems/implement-magic-dictionary/) Medium | [剑指OfferII064.神奇的字典](https://leetcode-cn.com/problems/US1pGT/) Medium |
 | 192 | [820.单词的压缩编码](https://leetcode-cn.com/problems/short-encoding-of-words/) Medium | [剑指OfferII065.最短的单词编码](https://leetcode-cn.com/problems/iSwD2y/) Medium |
 | 193 | [677.键值映射](https://leetcode-cn.com/problems/map-sum-pairs/) Medium | [剑指OfferII066.单词之和](https://leetcode-cn.com/problems/z1R5dt/) Medium |
 | 194 | [421.数组中两个数的最大异或值](https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/) Medium | [剑指OfferII067.最大的异或](https://leetcode-cn.com/problems/ms70jA/) Medium |
@@ -226,5 +226,7 @@
 | 222 | [839.相似字符串组](https://leetcode-cn.com/problems/similar-string-groups/) Hard | [剑指OfferII117.相似的字符串](https://leetcode-cn.com/problems/H6lPxb/) Hard |
 | 223 | [684.冗余连接](https://leetcode-cn.com/problems/redundant-connection/) Medium | [剑指OfferII118.多余的边](https://leetcode-cn.com/problems/7LpjUW/) Medium |
 | 224 | [128.最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) Hard | [剑指OfferII119.最长连续序列](https://leetcode-cn.com/problems/WhsWhI/) Medium |
-| 225 |  |  |
+| 225(相似) | [1004.最大连续1的个数III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) Medium | [2024.考试的最大困扰度](https://leetcode-cn.com/problems/maximize-the-confusion-of-an-exam/) Medium |
+| 226 | [399.除法求值](https://leetcode-cn.com/problems/evaluate-division/) Medium | [剑指OfferII111.计算除法](https://leetcode-cn.com/problems/vlzXQL/) Medium |
+| 227 | [329.矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) Hard | [剑指OfferII112.最长递增路径](https://leetcode-cn.com/problems/fpTFWP/) Hard |
 

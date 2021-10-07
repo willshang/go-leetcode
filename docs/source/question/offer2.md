@@ -1,6 +1,4 @@
-# 剑指OfferII
-
-# Easy
+# 剑指OfferII-Easy
 
 ## 剑指OfferII001.整数除法(2)
 
@@ -2016,7 +2014,7 @@ func canPartition(nums []int) bool {
 
 
 
-# Medium
+# 剑指OfferII-Medium
 
 ## 剑指OfferII004.只出现一次的数字(5)
 
@@ -5656,22 +5654,186 @@ func (this *Trie) Search(word string) string {
 }
 ```
 
-## 剑指OfferII064.神奇的字典
+## 剑指OfferII064.神奇的字典(3)
 
-### 题目
-
-```
+- 题目
 
 ```
+设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 
+如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于已构建的神奇字典中。
+实现 MagicDictionary 类：
+MagicDictionary() 初始化对象
+void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同
+bool search(String searchWord) 给定一个字符串 searchWord ，
+判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。
+如果可以，返回 true ；否则，返回 false 。
+示例：输入inputs = ["MagicDictionary", "buildDict", "search", "search", "search", "search"]
+inputs = [[], [["hello", "leetcode"]], ["hello"], ["hhllo"], ["hell"], ["leetcoded"]]
+输出[null, null, false, true, false, false]
+解释MagicDictionary magicDictionary = new MagicDictionary();
+magicDictionary.buildDict(["hello", "leetcode"]);
+magicDictionary.search("hello"); // 返回 False
+magicDictionary.search("hhllo"); // 将第二个 'h' 替换为 'e' 可以匹配 "hello" ，所以返回 True
+magicDictionary.search("hell"); // 返回 False
+magicDictionary.search("leetcoded"); // 返回 False
+提示：1 <= dictionary.length <= 100
+1 <= dictionary[i].length <= 100
+dictionary[i] 仅由小写英文字母组成
+dictionary 中的所有字符串 互不相同
+1 <= searchWord.length <= 100
+searchWord 仅由小写英文字母组成
+buildDict 仅在 search 之前调用一次
+最多调用 100 次 search
+注意：本题与主站 676 题相同： 
+```
 
-### 解题思路
+- 解题思路
 
 | No.  | 思路     | 时间复杂度 | 空间复杂度 |
 | ---- | -------- | ---------- | ---------- |
-| 01   | 滑动窗口 | O(n^2)     | O(n)       |
+| 01   | 哈希辅助 | O(n^2)     | O(n)       |
+| 02   | 暴力法   | O(n^2)     | O(n)       |
+| 03   | trie树   | O(n^2)     | O(n)       |
 
 ```go
+type MagicDictionary struct {
+	m map[int][]string
+}
 
+func Constructor() MagicDictionary {
+	return MagicDictionary{m: map[int][]string{}}
+}
+
+func (this *MagicDictionary) BuildDict(dictionary []string) {
+	for i := 0; i < len(dictionary); i++ {
+		this.m[len(dictionary[i])] = append(this.m[len(dictionary[i])], dictionary[i])
+	}
+}
+
+func (this *MagicDictionary) Search(searchWord string) bool {
+	if len(this.m[len(searchWord)]) == 0 {
+		return false
+	}
+	for i := 0; i < len(this.m[len(searchWord)]); i++ {
+		word := this.m[len(searchWord)][i]
+		count := 0
+		for j := 0; j < len(searchWord); j++ {
+			if word[j] != searchWord[j] {
+				count++
+				if count > 1 {
+					break
+				}
+			}
+		}
+		if count == 1 {
+			return true
+		}
+	}
+	return false
+}
+
+# 2
+type MagicDictionary struct {
+	arr []string
+}
+
+func Constructor() MagicDictionary {
+	return MagicDictionary{arr: make([]string, 0)}
+}
+
+func (this *MagicDictionary) BuildDict(dictionary []string) {
+	this.arr = dictionary
+}
+
+func (this *MagicDictionary) Search(searchWord string) bool {
+	for i := 0; i < len(this.arr); i++ {
+		word := this.arr[i]
+		if len(word) != len(searchWord) {
+			continue
+		}
+		count := 0
+		for j := 0; j < len(searchWord); j++ {
+			if word[j] != searchWord[j] {
+				count++
+				if count > 1 {
+					break
+				}
+			}
+		}
+		if count == 1 {
+			return true
+		}
+	}
+	return false
+}
+
+# 3
+type MagicDictionary struct {
+	next   [26]*MagicDictionary // 下一级指针，如不限于小写字母，[26]=>[256]
+	ending int                  // 次数（可以改为bool）
+}
+
+func Constructor() MagicDictionary {
+	return MagicDictionary{
+		next:   [26]*MagicDictionary{},
+		ending: 0,
+	}
+}
+
+func (this *MagicDictionary) BuildDict(dictionary []string) {
+	for i := 0; i < len(dictionary); i++ {
+		word := dictionary[i]
+		temp := this
+		for _, v := range word {
+			value := v - 'a'
+			if temp.next[value] == nil {
+				temp.next[value] = &MagicDictionary{
+					next:   [26]*MagicDictionary{},
+					ending: 0,
+				}
+			}
+			temp = temp.next[value]
+		}
+		temp.ending++
+	}
+}
+
+func (this *MagicDictionary) Search(searchWord string) bool {
+	cur := this
+	arr := []byte(searchWord)
+	for i := 0; i < len(searchWord); i++ {
+		b := searchWord[i]
+		for j := 0; j < 26; j++ {
+			if j+'a' == int(b) {
+				continue
+			}
+			arr[i] = byte('a' + j)
+			if cur.SearchWord(string(arr[i:])) == true {
+				return true
+			}
+		}
+		arr[i] = b
+		if cur.next[int(b-'a')] == nil {
+			return false
+		}
+		cur = cur.next[int(b-'a')]
+	}
+	return false
+}
+
+func (this *MagicDictionary) SearchWord(word string) bool {
+	temp := this
+	for _, v := range word {
+		value := v - 'a'
+		if temp = temp.next[value]; temp == nil {
+			return false
+		}
+	}
+	if temp.ending > 0 {
+		return true
+	}
+	return false
+}
 ```
 
 ## 剑指OfferII065.最短的单词编码(3)
@@ -9451,13 +9613,212 @@ func dfs(graph [][]int, cur, target int, path []int) {
 }
 ```
 
-## 剑指OfferII111.计算除法
+## 剑指OfferII111.计算除法(3)
 
-### 题目
+- 题目
 
-### 解题思路
+```
+给定一个变量对数组 equations 和一个实数值数组 values 作为已知条件，
+其中 equations[i] = [Ai, Bi] 和 values[i] 共同表示等式 Ai / Bi = values[i] 。
+每个 Ai 或 Bi 是一个表示单个变量的字符串。
+另有一些以数组 queries 表示的问题，其中 queries[j] = [Cj, Dj] 表示第 j 个问题，
+请你根据已知条件找出 Cj / Dj = ? 的结果作为答案。
+返回 所有问题的答案 。如果存在某个无法确定的答案，则用 -1.0 替代这个答案。
+如果问题中出现了给定的已知条件中没有出现的字符串，也需要用 -1.0 替代这个答案。
+注意：输入总是有效的。可以假设除法运算中不会出现除数为 0 的情况，且不存在任何矛盾的结果。
+示例 1：输入：equations = [["a","b"],["b","c"]], values = [2.0,3.0], 
+queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
+输出：[6.00000,0.50000,-1.00000,1.00000,-1.00000]
+解释：条件：a / b = 2.0, b / c = 3.0
+问题：a / c = ?, b / a = ?, a / e = ?, a / a = ?, x / x = ?
+结果：[6.0, 0.5, -1.0, 1.0, -1.0 ]
+示例 2：输入：equations = [["a","b"],["b","c"],["bc","cd"]], 
+values = [1.5,2.5,5.0], queries = [["a","c"],["c","b"],["bc","cd"],["cd","bc"]]
+输出：[3.75000,0.40000,5.00000,0.20000]
+示例 3：输入：equations = [["a","b"]], values = [0.5], queries = [["a","b"],["b","a"],["a","c"],["x","y"]]
+输出：[0.50000,2.00000,-1.00000,-1.00000]
+提示：1 <= equations.length <= 20
+equations[i].length == 2
+1 <= Ai.length, Bi.length <= 5
+values.length == equations.length
+0.0 < values[i] <= 20.0
+1 <= queries.length <= 20
+queries[i].length == 2
+1 <= Cj.length, Dj.length <= 5
+Ai, Bi, Cj, Dj 由小写英文字母与数字组成
+注意：本题与主站 399 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+| 02   | Floyd        | O(n^3)     | O(n^2)     |
+| 03   | 并查集       | O(nlog(n)) | O(n)       |
 
 ```go
+type Node struct {
+	to    int
+	value float64
+}
+
+func calcEquation(equations [][]string, values []float64, queries [][]string) []float64 {
+	m := make(map[string]int) // 计算对应的id
+	for i := 0; i < len(equations); i++ {
+		a, b := equations[i][0], equations[i][1]
+		if _, ok := m[a]; ok == false {
+			m[a] = len(m)
+		}
+		if _, ok := m[b]; ok == false {
+			m[b] = len(m)
+		}
+	}
+	arr := make([][]Node, len(m)) // 邻接表
+	for i := 0; i < len(equations); i++ {
+		a, b := m[equations[i][0]], m[equations[i][1]]
+		arr[a] = append(arr[a], Node{to: b, value: values[i]})
+		arr[b] = append(arr[b], Node{to: a, value: 1 / values[i]}) // 除以
+	}
+	res := make([]float64, len(queries))
+	for i := 0; i < len(queries); i++ {
+		a, okA := m[queries[i][0]]
+		b, okB := m[queries[i][1]]
+		if okA == false || okB == false {
+			res[i] = -1
+		} else {
+			res[i] = bfs(arr, a, b) // 广度优先查找
+		}
+	}
+	return res
+}
+
+func bfs(arr [][]Node, start, end int) float64 {
+	temp := make([]float64, len(arr)) // 结果的比例
+	temp[start] = 1
+	queue := make([]int, 0)
+	queue = append(queue, start)
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		if node == end {
+			return temp[node]
+		}
+		for i := 0; i < len(arr[node]); i++ {
+			next := arr[node][i].to
+			if temp[next] == 0 {
+				temp[next] = temp[node] * arr[node][i].value
+				queue = append(queue, next)
+			}
+		}
+	}
+	return -1
+}
+
+# 2
+func calcEquation(equations [][]string, values []float64, queries [][]string) []float64 {
+	m := make(map[string]int) // 计算对应的id
+	for i := 0; i < len(equations); i++ {
+		a, b := equations[i][0], equations[i][1]
+		if _, ok := m[a]; ok == false {
+			m[a] = len(m)
+		}
+		if _, ok := m[b]; ok == false {
+			m[b] = len(m)
+		}
+	}
+	arr := make([][]float64, len(m)) // 邻接矩阵
+	for i := 0; i < len(m); i++ {
+		arr[i] = make([]float64, len(m))
+	}
+	for i := 0; i < len(equations); i++ {
+		a, b := m[equations[i][0]], m[equations[i][1]]
+		arr[a][b] = values[i]
+		arr[b][a] = 1 / values[i]
+	}
+	for k := 0; k < len(arr); k++ { // Floyd
+		for i := 0; i < len(arr); i++ {
+			for j := 0; j < len(arr); j++ {
+				if arr[i][k] > 0 && arr[k][j] > 0 {
+					arr[i][j] = arr[i][k] * arr[k][j]
+				}
+			}
+		}
+	}
+	res := make([]float64, len(queries))
+	for i := 0; i < len(queries); i++ {
+		a, okA := m[queries[i][0]]
+		b, okB := m[queries[i][1]]
+		if okA == false || okB == false || arr[a][b] == 0 {
+			res[i] = -1
+		} else {
+			res[i] = arr[a][b]
+		}
+	}
+	return res
+}
+
+# 3
+func calcEquation(equations [][]string, values []float64, queries [][]string) []float64 {
+	m := make(map[string]int) // 计算对应的id
+	for i := 0; i < len(equations); i++ {
+		a, b := equations[i][0], equations[i][1]
+		if _, ok := m[a]; ok == false {
+			m[a] = len(m)
+		}
+		if _, ok := m[b]; ok == false {
+			m[b] = len(m)
+		}
+	}
+	fa, rank = Init(len(m))
+	for i := 0; i < len(equations); i++ {
+		a, b := m[equations[i][0]], m[equations[i][1]]
+		union(a, b, values[i])
+	}
+	res := make([]float64, len(queries))
+	for i := 0; i < len(queries); i++ {
+		a, okA := m[queries[i][0]]
+		b, okB := m[queries[i][1]]
+		if okA == true && okB == true && find(a) == find(b) {
+			res[i] = rank[a] / rank[b]
+		} else {
+			res[i] = -1
+		}
+	}
+	return res
+}
+
+var fa []int
+var rank []float64
+
+// 初始化
+func Init(n int) ([]int, []float64) {
+	arr := make([]int, n)
+	r := make([]float64, n)
+	for i := 0; i < n; i++ {
+		arr[i] = i
+		r[i] = 1
+	}
+	return arr, r
+}
+
+// 查询
+func find(x int) int {
+	// 彻底路径压缩
+	if fa[x] != x {
+		origin := fa[x]
+		fa[x] = find(fa[x])
+		rank[x] = rank[x] * rank[origin] // 秩处理是难点
+	}
+	return fa[x]
+}
+
+// 合并
+func union(i, j int, value float64) {
+	x, y := find(i), find(j)
+	rank[x] = value * rank[j] / rank[i] // 秩处理是难点
+	fa[x] = y
+}
 ```
 
 ## 剑指OfferII113.课程顺序(2)
@@ -9966,7 +10327,7 @@ func query(i, j int) bool {
 }
 ```
 
-# Hard
+# 剑指OfferII-Hard
 
 ## 剑指OfferII017.含有所有字符的最短字符串(2)
 
@@ -11022,13 +11383,158 @@ func ladderLength(beginWord string, endWord string, wordList []string) int {
 }
 ```
 
-## 剑指OfferII112.最长递增路径
+## 剑指OfferII112.最长递增路径(3)
 
-### 题目
+- 题目
 
-### 解题思路
+```
+给定一个 m x n 整数矩阵 matrix ，找出其中 最长递增路径 的长度。
+对于每个单元格，你可以往上，下，左，右四个方向移动。 不能 在 对角线 方向上移动或移动到 边界外（即不允许环绕）。
+示例 1：输入：matrix = [[9,9,4],[6,6,8],[2,1,1]] 输出：4 
+解释：最长递增路径为 [1, 2, 6, 9]。
+示例 2：输入：matrix = [[3,4,5],[3,2,6],[2,2,1]] 输出：4 
+解释：最长递增路径是 [3, 4, 5, 6]。注意不允许在对角线方向上移动。
+示例 3：输入：matrix = [[1]] 输出：1
+提示：m == matrix.length
+n == matrix[i].length
+1 <= m, n <= 200
+0 <= matrix[i][j] <= 231 - 1
+注意：本题与主站 329 题相同： 
+```
+
+- 解题思路
+
+| No.  | 思路                  | 时间复杂度    | 空间复杂度 |
+| ---- | --------------------- | ------------- | ---------- |
+| 01   | 深度优先搜索          | O(n^2)        | O(n^2)     |
+| 02   | 广度优先搜索+拓扑排序 | O(n^2)        | O(n^2)     |
+| 03   | 排序+动态规划         | O(n^2*log(n)) | O(n^2)     |
 
 ```go
+var dx = []int{0, 1, 0, -1}
+var dy = []int{1, 0, -1, 0}
+var n, m int
+var arr [][]int
+
+func longestIncreasingPath(matrix [][]int) int {
+	n, m = len(matrix), len(matrix[0])
+	arr = make([][]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = make([]int, m)
+	}
+	res := 0
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			res = max(res, dfs(matrix, i, j))
+		}
+	}
+	return res
+}
+
+func dfs(matrix [][]int, i, j int) int {
+	if arr[i][j] != 0 {
+		return arr[i][j]
+	}
+	arr[i][j]++ // 长度为1
+	for k := 0; k < 4; k++ {
+		x, y := i+dx[k], j+dy[k]
+		if 0 <= x && x < n && 0 <= y && y < m && matrix[x][y] > matrix[i][j] {
+			arr[i][j] = max(arr[i][j], dfs(matrix, x, y)+1)
+		}
+	}
+	return arr[i][j]
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+var dx = []int{0, 1, 0, -1}
+var dy = []int{1, 0, -1, 0}
+
+func longestIncreasingPath(matrix [][]int) int {
+	n, m := len(matrix), len(matrix[0])
+	arr := make([][]int, n)
+	for i := 0; i < n; i++ {
+		arr[i] = make([]int, m)
+	}
+	queue := make([][2]int, 0) // 从最大数开始广度优先搜索
+	for i := 0; i < n; i++ {
+		for j := 0; j < m; j++ {
+			for k := 0; k < 4; k++ {
+				x, y := i+dx[k], j+dy[k]
+				if 0 <= x && x < n && 0 <= y && y < m && matrix[x][y] > matrix[i][j] {
+					arr[i][j]++ // 四周大于当前的个数
+				}
+			}
+			if arr[i][j] == 0 { // 四周没有大于当前的数
+				queue = append(queue, [2]int{i, j})
+			}
+		}
+	}
+	res := 0
+	for len(queue) > 0 {
+		res++
+		length := len(queue)
+		for i := 0; i < length; i++ {
+			a, b := queue[i][0], queue[i][1]
+			for k := 0; k < 4; k++ {
+				x, y := a+dx[k], b+dy[k]
+				if 0 <= x && x < n && 0 <= y && y < m && matrix[a][b] > matrix[x][y] {
+					arr[x][y]--
+					if arr[x][y] == 0 { // 个数为0，加入队列
+						queue = append(queue, [2]int{x, y})
+					}
+				}
+			}
+		}
+		queue = queue[length:]
+	}
+	return res
+}
+
+# 3
+var dx = []int{0, 1, 0, -1}
+var dy = []int{1, 0, -1, 0}
+
+func longestIncreasingPath(matrix [][]int) int {
+	n, m := len(matrix), len(matrix[0])
+	dp := make([][]int, n)
+	temp := make([][3]int, 0)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			dp[i][j] = 1
+			temp = append(temp, [3]int{i, j, matrix[i][j]})
+		}
+	}
+	sort.Slice(temp, func(i, j int) bool {
+		return temp[i][2] < temp[j][2]
+	})
+	res := 1 // 一个数的时候，没有周围4个数，此时为1
+	for i := 0; i < len(temp); i++ {
+		a, b := temp[i][0], temp[i][1]
+		for k := 0; k < 4; k++ {
+			x, y := a+dx[k], b+dy[k]
+			if 0 <= x && x < n && 0 <= y && y < m && matrix[x][y] > matrix[a][b] {
+				dp[x][y] = max(dp[x][y], dp[a][b]+1) // 更新长度
+				res = max(res, dp[x][y])
+			}
+		}
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
 ```
 
 ## 剑指OfferII114.外星文字典

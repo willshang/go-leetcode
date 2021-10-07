@@ -238,6 +238,7 @@
 | [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划                   | Hard   | 完成     |
 | [1686.石子游戏VI](https://leetcode-cn.com/problems/stone-game-vi/) | 贪心算法                   | Medium | 完成     |
 | [1690.石子游戏VII](https://leetcode-cn.com/problems/stone-game-vii/) | 动态规划                   | Medium | 完成     |
+| [2029.石子游戏IX](https://leetcode-cn.com/problems/stone-game-ix/) |                            | Medium | 完成     |
 
 #### Nim游戏-极小化极大
 
