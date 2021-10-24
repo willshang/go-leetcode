@@ -40,7 +40,7 @@
 | 0026 | [剑指OfferII026.重排链表](https://leetcode-cn.com/problems/LGjMqU/) | 栈、递归、链表、双指针                                       | Medium | 完成     | 143           |
 | 0027 | [剑指OfferII027.回文链表](https://leetcode-cn.com/problems/aMhZSa/) | 栈、递归、链表、双指针                                       | Easy   | 完成     | 234           |
 | 0028 | [剑指OfferII028.展平多级双向链表](https://leetcode-cn.com/problems/Qv1Da2/) | 深度优先搜索、链表、双向链表                                 | Medium | 完成     | 430           |
-| 0029 | [剑指OfferII029.排序的循环链表](https://leetcode-cn.com/problems/4ueAj6/) | 链表                                                         | Medium |          | 708           |
+| 0029 | [剑指OfferII029.排序的循环链表](https://leetcode-cn.com/problems/4ueAj6/) | 链表                                                         | Medium | 完成     | 708           |
 | 0030 | [剑指OfferII030.插入、删除和随机访问都是O(1)的容器](https://leetcode-cn.com/problems/FortPu/) | 设计、数组、哈希表、数学、随机化                             | Medium | 完成     | 380           |
 |      | 第4期                                                        |                                                              |        |          |               |
 | 0031 | [剑指OfferII031.最近最少使用缓存](https://leetcode-cn.com/problems/OrIXps/) | 设计、哈希表、链表、双向链表                                 | Medium | 完成     | 146           |
@@ -54,7 +54,7 @@
 | 0039 | [剑指OfferII039.直方图最大矩形面积](https://leetcode-cn.com/problems/0ynMMM/) | 栈、数组、单调栈                                             | Hard   | 完成     | 84            |
 | 0040 | [剑指OfferII040.矩阵中最大的矩形](https://leetcode-cn.com/problems/PLYXKQ/) | 栈、数组、动态规划、矩阵、单调栈                             | Hard   | 完成     | 85            |
 |      | 第5期                                                        |                                                              |        |          |               |
-| 0041 | [剑指OfferII041.滑动窗口的平均值](https://leetcode-cn.com/problems/qIsx9U/) | 设计、队列、数组、数据流                                     | Easy   |          | 346           |
+| 0041 | [剑指OfferII041.滑动窗口的平均值](https://leetcode-cn.com/problems/qIsx9U/) | 设计、队列、数组、数据流                                     | Easy   | 完成     | 346           |
 | 0042 | [剑指OfferII042.最近请求次数](https://leetcode-cn.com/problems/H8086Q/) | 设计、队列、数据流                                           | Easy   | 完成     | 933           |
 | 0043 | [剑指OfferII043.往完全二叉树添加节点](https://leetcode-cn.com/problems/NaqhDT/) | 树、广度优先搜索、设计、二叉树                               | Medium | 完成     | 919           |
 | 0044 | [剑指OfferII044.二叉树每层的最大值](https://leetcode-cn.com/problems/hPov7L/) | 树、深度优先搜索、<br />广度优先搜索、二叉树                 | Medium | 完成     | 515           |
@@ -67,7 +67,7 @@
 |      | 第6期                                                        |                                                              |        |          |               |
 | 0051 | [剑指OfferII051.节点之和最大的路径](https://leetcode-cn.com/problems/jC7MId/) | 树、深度优先搜索、<br />动态规划、二叉树                     | Hard   | 完成     | 124           |
 | 0052 | [剑指OfferII052.展平二叉搜索树](https://leetcode-cn.com/problems/NYBBNL/) | 栈、树、深度优先搜索、<br />二叉搜索树、二叉树               | Easy   | 完成     | 897           |
-| 0053 | [剑指OfferII053.二叉搜索树中的中序后继](https://leetcode-cn.com/problems/P5rCT8/) | 树、深度优先搜索、<br />二叉搜索树、二叉树                   | Medium |          | 285           |
+| 0053 | [剑指OfferII053.二叉搜索树中的中序后继](https://leetcode-cn.com/problems/P5rCT8/) | 树、深度优先搜索、<br />二叉搜索树、二叉树                   | Medium | 完成     | 285           |
 | 0054 | [剑指OfferII054.所有大于等于节点的值之和](https://leetcode-cn.com/problems/w6cpku/) | 树、深度优先搜索、<br />二叉搜索树、二叉树                   | Medium | 完成     | 538<br />1038 |
 | 0055 | [剑指OfferII055.二叉搜索树迭代器](https://leetcode-cn.com/problems/kTOapQ/) | 栈、树、设计、<br />二叉搜索树、二叉树、迭代器               | Medium | 完成     | 173           |
 | 0056 | [剑指OfferII056.二叉搜索树中两个节点之和](https://leetcode-cn.com/problems/opLdQZ/) | 树、深度优先搜索、广度优先搜索、<br />二叉搜索树、哈希表、双指针、二叉树 | Easy   | 完成     | 653           |
@@ -109,7 +109,7 @@
 | 0089 | [剑指OfferII089.房屋偷盗](https://leetcode-cn.com/problems/Gu0c2T/) | 数组、动态规划                                               | Medium | 完成     | 198           |
 | 0090 | [剑指OfferII090.环形房屋偷盗](https://leetcode-cn.com/problems/PzWKhm/) | 数组、动态规划                                               | Medium | 完成     | 213           |
 |      | 第10期                                                       |                                                              |        |          |               |
-| 0091 | [剑指OfferII091.粉刷房子](https://leetcode-cn.com/problems/JEj789/) | 数组、动态规划                                               | Medium |          | 256           |
+| 0091 | [剑指OfferII091.粉刷房子](https://leetcode-cn.com/problems/JEj789/) | 数组、动态规划                                               | Medium | 完成     | 256           |
 | 0092 | [剑指OfferII092.翻转字符](https://leetcode-cn.com/problems/cyJERH/) | 字符串、动态规划                                             | Medium | 完成     | 926           |
 | 0093 | [剑指OfferII093.最长斐波那契数列](https://leetcode-cn.com/problems/Q91FMA/) | 数组、哈希表、动态规划                                       | Medium | 完成     | 873           |
 | 0094 | [剑指OfferII094.最少回文分割](https://leetcode-cn.com/problems/omKAoA/) | 字符串、动态规划                                             | Hard   | 完成     | 132           |

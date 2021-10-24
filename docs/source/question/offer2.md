@@ -1042,22 +1042,59 @@ func isAlienSorted(words []string, order string) bool {
 }
 ```
 
-## 剑指OfferII041.滑动窗口的平均值
+## 剑指OfferII041.滑动窗口的平均值(1)
 
-### 题目
-
-```
+- 题目
 
 ```
+给定一个整数数据流和一个窗口大小，根据该滑动窗口的大小，计算滑动窗口里所有数字的平均值。
+实现 MovingAverage 类：
+MovingAverage(int size) 用窗口大小 size 初始化对象。
+double next(int val) 成员函数 next 每次调用的时候都会往滑动窗口增加一个整数，
+请计算并返回数据流中最后 size 个值的移动平均值，即滑动窗口里所有数字的平均值。
+示例：输入：inputs = ["MovingAverage", "next", "next", "next", "next"] inputs = [[3], [1], [10], [3], [5]]
+输出：[null, 1.0, 5.5, 4.66667, 6.0]
+解释： MovingAverage movingAverage = new MovingAverage(3);
+movingAverage.next(1); // 返回 1.0 = 1 / 1
+movingAverage.next(10); // 返回 5.5 = (1 + 10) / 2
+movingAverage.next(3); // 返回 4.66667 = (1 + 10 + 3) / 3
+movingAverage.next(5); // 返回 6.0 = (10 + 3 + 5) / 3
+提示：1 <= size <= 1000
+-105 <= val <= 105
+最多调用 next 方法 104 次
+注意：本题与主站 346 题相同：
+```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路     | 时间复杂度 | 空间复杂度 |
-| ---- | -------- | ---------- | ---------- |
-| 01   | 哈希辅助 | O(n)       | O(n)       |
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 数组 | O(1)       | O(n)       |
 
 ```go
+type MovingAverage struct {
+	sum  int
+	size int
+	arr  []int
+}
 
+func Constructor(size int) MovingAverage {
+	return MovingAverage{
+		sum:  0,
+		size: size,
+		arr:  make([]int, 0),
+	}
+}
+
+func (this *MovingAverage) Next(val int) float64 {
+	this.sum = this.sum + val
+	this.arr = append(this.arr, val)
+	if len(this.arr) > this.size {
+		this.sum = this.sum - this.arr[0]
+		this.arr = this.arr[1:]
+	}
+	return float64(this.sum) / float64(len(this.arr))
+}
 ```
 
 ## 剑指OfferII042.最近请求次数(2)
@@ -3630,18 +3667,54 @@ func flatten(root *Node) *Node {
 }
 ```
 
-## 剑指OfferII029.排序的循环链表
+## 剑指OfferII029.排序的循环链表(1)
 
-### 题目
-
-```
+- 题目
 
 ```
+给定循环升序列表中的一个点，写一个函数向这个列表中插入一个新元素 insertVal ，使这个列表仍然是循环升序的。
+给定的可以是这个列表中任意一个顶点的指针，并不一定是这个列表中最小元素的指针。
+如果有多个满足条件的插入位置，可以选择任意一个位置插入新的值，插入后整个列表仍然保持有序。
+如果列表为空（给定的节点是 null），需要创建一个循环有序列表并返回这个节点。否则。请返回原先给定的节点。
+示例 1：输入：head = [3,4,1], insertVal = 2 输出：[3,4,1,2]
+解释：在上图中，有一个包含三个元素的循环有序列表，你获得值为 3 的节点的指针，我们需要向表中插入元素 2 。
+新插入的节点应该在 1 和 3 之间，插入之后，整个列表如上图所示，最后返回节点 3 。
+示例 2：输入：head = [], insertVal = 1 输出：[1]
+解释：列表为空（给定的节点是 null），创建一个循环有序列表并返回这个节点。
+示例 3：输入：head = [1], insertVal = 0 输出：[1,0]
+提示：0 <= Number of Nodes <= 5 * 10^4
+-10^6 <= Node.val <= 10^6
+-10^6 <= insertVal <= 10^6
+注意：本题与主站 708 题相同： 
+```
 
-### 解题思路
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n)       | O(1)       |
 
 ```go
-
+func insert(aNode *Node, x int) *Node {
+	if aNode == nil {
+		res := &Node{Val: x}
+		res.Next = res
+		return res
+	}
+	cur := aNode
+	for cur.Next != aNode {
+		if (cur.Val <= x && x <= cur.Next.Val) || // a<x<b
+			(cur.Val > cur.Next.Val && (cur.Val <= x || x <= cur.Next.Val)) { // 插入最大值或者最小值
+			break
+		}
+		cur = cur.Next
+	}
+	cur.Next = &Node{
+		Val:  x,
+		Next: cur.Next,
+	}
+	return aNode
+}
 ```
 
 ## 剑指OfferII030.插入、删除和随机访问都是O(1)的容器(2)
@@ -4807,18 +4880,59 @@ func pathSum(root *TreeNode, targetSum int) int {
 }
 ```
 
-## 剑指OfferII053.二叉搜索树中的中序后继
+## 剑指OfferII053.二叉搜索树中的中序后继(2)
 
-### 题目
-
-```
+- 题目
 
 ```
+给定一棵二叉搜索树和其中的一个节点 p ，找到该节点在树中的中序后继。如果节点没有中序后继，请返回 null 。
+节点 p 的后继是值比 p.val 大的节点中键值最小的节点，即按中序遍历的顺序节点 p 的下一个节点。
+示例 1：输入：root = [2,1,3], p = 1 输出：2
+解释：这里 1 的中序后继是 2。请注意 p 和返回值都应是 TreeNode 类型。
+示例 2：输入：root = [5,3,6,2,4,null,null,1], p = 6 输出：null
+解释：因为给出的节点没有中序后继，所以答案就返回 null 了。
+提示：树中节点的数目在范围 [1, 104] 内。
+-105 <= Node.val <= 105
+树中各节点的值均保证唯一。
+注意：本题与主站 285 题相同：
+```
 
-### 解题思路
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 迭代 | O(log(n))  | O(1)       |
+| 02   | 递归 | O(log(n))  | O(log(n))  |
 
 ```go
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+	var res *TreeNode
+	for root != nil {
+		if root.Val > p.Val {
+			res = root
+			root = root.Left
+		} else {
+			root = root.Right
+		}
+	}
+	return res
+}
 
+# 2
+func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+	if root == nil {
+		return nil
+	}
+	if root.Val > p.Val {
+		res := inorderSuccessor(root.Left, p)
+		if res == nil {
+			return root
+		}
+		return res
+	} else {
+		return inorderSuccessor(root.Right, p)
+	}
+}
 ```
 
 ## 剑指OfferII054.所有大于等于节点的值之和(2)
@@ -7919,17 +8033,73 @@ func max(a, b int) int {
 }
 ```
 
-## 剑指OfferII091.粉刷房子
+## 剑指OfferII091.粉刷房子(2)
 
-### 题目
-
-```
+- 题目
 
 ```
+假如有一排房子，共 n 个，每个房子可以被粉刷成红色、蓝色或者绿色这三种颜色中的一种，
+你需要粉刷所有的房子并且使其相邻的两个房子颜色不能相同。
+当然，因为市场上不同颜色油漆的价格不同，所以房子粉刷成不同颜色的花费成本也是不同的。
+每个房子粉刷成不同颜色的花费是以一个 n x 3 的正整数矩阵 costs 来表示的。
+例如，costs[0][0] 表示第 0 号房子粉刷成红色的成本花费；costs[1][2] 表示第 1 号房子粉刷成绿色的花费，以此类推。
+请计算出粉刷完所有房子最少的花费成本。
+示例 1：输入: costs = [[17,2,17],[16,16,5],[14,3,19]] 输出: 10
+解释: 将 0 号房子粉刷成蓝色，1 号房子粉刷成绿色，2 号房子粉刷成蓝色。
+     最少花费: 2 + 5 + 3 = 10。
+示例 2：输入: costs = [[7,6,2]] 输出: 2
+提示:costs.length == n
+costs[i].length == 3
+1 <= n <= 100
+1 <= costs[i][j] <= 20
+注意：本题与主站 256 题相同：
+```
 
-### 解题思路
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 动态规划 | O(n)       | O(n)       |
+| 02   | 动态规划 | O(n)       | O(1)       |
 
 ```go
+func minCost(costs [][]int) int {
+	n := len(costs)
+	dp := make([][3]int, n) // dp[i][j] 表示涂前i间房子的最小成本
+	for j := 0; j < 3; j++ {
+		dp[0][j] = costs[0][j]
+	}
+	for i := 1; i < n; i++ {
+		dp[i][0] = min(dp[i-1][1], dp[i-1][2]) + costs[i][0]
+		dp[i][1] = min(dp[i-1][0], dp[i-1][2]) + costs[i][1]
+		dp[i][2] = min(dp[i-1][0], dp[i-1][1]) + costs[i][2]
+	}
+	return min(dp[n-1][0], min(dp[n-1][1], dp[n-1][2]))
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+func minCost(costs [][]int) int {
+	n := len(costs)
+	a, b, c := costs[0][0], costs[0][1], costs[0][2]
+	for i := 1; i < n; i++ {
+		a, b, c = min(b, c)+costs[i][0], min(a, c)+costs[i][1], min(a, b)+costs[i][2]
+	}
+	return min(a, min(b, c))
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
 ```
 
 ## 剑指OfferII092.翻转字符(3)
@@ -9949,7 +10119,21 @@ func findOrder(numCourses int, prerequisites [][]int) []int {
 ### 题目
 
 ```
-
+请判断原始的序列 org 是否可以从序列集 seqs 中唯一地 重建 。
+序列 org 是 1 到 n 整数的排列，其中 1 ≤ n ≤ 104。
+重建 是指在序列集 seqs 中构建最短的公共超序列，即  seqs 中的任意序列都是该最短序列的子序列。
+示例 1：输入: org = [1,2,3], seqs = [[1,2],[1,3]] 输出: false
+解释：[1,2,3] 不是可以被重建的唯一的序列，因为 [1,3,2] 也是一个合法的序列。
+示例 2：输入: org = [1,2,3], seqs = [[1,2]] 输出: false
+解释：可以重建的序列只有 [1,2]。
+示例 3：输入: org = [1,2,3], seqs = [[1,2],[1,3],[2,3]] 输出: true
+解释：序列 [1,2], [1,3] 和 [2,3] 可以被唯一地重建为原始的序列 [1,2,3]。
+示例 4：输入: org = [4,1,5,2,6,3], seqs = [[5,2,6,3],[4,1,5,2]] 输出: true
+提示：1 <= n <= 104
+org 是数字 1 到 n 的一个排列
+1 <= segs[i].length <= 105
+seqs[i][j] 是 32 位有符号整数
+注意：本题与主站 444 题相同：
 ```
 
 ### 解题思路
@@ -11541,7 +11725,29 @@ func max(a, b int) int {
 
 ### 题目
 
+```
+现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。
+给定一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。
+请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 "" 。
+若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。
+字符串 s 字典顺序小于 字符串 t 有两种情况：
+在第一个不同字母处，如果 s 中的字母在这门外星语言的字母顺序中位于 t 中字母之前，那么 s 的字典顺序小于 t 。
+如果前面 min(s.length, t.length) 字母都相同，那么 s.length < t.length 时，s 的字典顺序也小于 t 。
+示例 1：输入：words = ["wrt","wrf","er","ett","rftt"] 输出："wertf"
+示例 2：输入：words = ["z","x"] 输出："zx"
+示例 3：输入：words = ["z","x","z"] 输出：""
+解释：不存在合法字母顺序，因此返回 "" 。
+提示：1 <= words.length <= 100
+1 <= words[i].length <= 100
+words[i] 仅由小写英文字母组成
+注意：本题与主站 269 题相同：
+```
+
 ### 解题思路
+
+| No.  | 思路   | 时间复杂度 | 空间复杂度 |
+| ---- | ------ | ---------- | ---------- |
+| 01   | 并查集 | O(n^3)     | O(n)       |
 
 ```go
 ```

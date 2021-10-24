@@ -229,4 +229,9 @@
 | 225(相似) | [1004.最大连续1的个数III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) Medium | [2024.考试的最大困扰度](https://leetcode-cn.com/problems/maximize-the-confusion-of-an-exam/) Medium |
 | 226 | [399.除法求值](https://leetcode-cn.com/problems/evaluate-division/) Medium | [剑指OfferII111.计算除法](https://leetcode-cn.com/problems/vlzXQL/) Medium |
 | 227 | [329.矩阵中的最长递增路径](https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/) Hard | [剑指OfferII112.最长递增路径](https://leetcode-cn.com/problems/fpTFWP/) Hard |
+| 228(相似) | [462.最少移动次数使数组元素相等II](https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements-ii/) Medium | [2033.获取单值网格的最小操作数](https://leetcode-cn.com/problems/minimum-operations-to-make-a-uni-value-grid/) Medium |
+| 229 | 285 | [剑指OfferII053.二叉搜索树中的中序后继](https://leetcode-cn.com/problems/P5rCT8/) Medium |
+| 230 | 256 | [剑指OfferII091.粉刷房子](https://leetcode-cn.com/problems/JEj789/) Medium |
+| 231 | 269 | [剑指OfferII114.外星文字典](https://leetcode-cn.com/problems/Jf1JuT/) Hard |
+| 232(相似) | [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) Medium | [1504.统计全1子矩形](https://leetcode-cn.com/problems/count-submatrices-with-all-ones/) Medium |
 

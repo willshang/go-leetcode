@@ -366,20 +366,21 @@
 
 ### 最大矩形面积问题
 
-| Title                                                        | Tag                        | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------------------- | ------ | -------- |
-| [84.柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 栈、数组                   | Hard   | 完成     |
-| [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 栈、数组、哈希表、动态规划 | Hard   | 完成     |
-| [221.最大正方形](https://leetcode-cn.com/problems/maximal-square/) | 动态规划                   | Medium | 完成     |
-| [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 数组、动态规划、矩阵       | Medium | 完成     |
-| 1504                                                         |                            |        |          |
-| [1727.重新排列后的最大子矩阵](https://leetcode-cn.com/problems/largest-submatrix-with-rearrangements/) | 贪心算法、排序             | Medium | 完成     |
+| Title                                                        | Tag                              | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------------------- | ------ | -------- |
+| [84.柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/) | 栈、数组                         | Hard   | 完成     |
+| [85.最大矩形](https://leetcode-cn.com/problems/maximal-rectangle/) | 栈、数组、哈希表、动态规划       | Hard   | 完成     |
+| [221.最大正方形](https://leetcode-cn.com/problems/maximal-square/) | 动态规划                         | Medium | 完成     |
+| [1139.最大的以1为边界的正方形](https://leetcode-cn.com/problems/largest-1-bordered-square/) | 数组、动态规划、矩阵             | Medium | 完成     |
+| [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) | 数组、动态规划、矩阵             | Medium | 完成     |
+| [1504.统计全1子矩形](https://leetcode-cn.com/problems/count-submatrices-with-all-ones/) | 栈、数组、动态规划、矩阵、单调栈 | Medium | 完成     |
+| [1727.重新排列后的最大子矩阵](https://leetcode-cn.com/problems/largest-submatrix-with-rearrangements/) | 贪心算法、排序                   | Medium | 完成     |
 
 ### 连续数组
 
 | Title                                                        | Tag            | 难度   | 完成情况 |
 | ------------------------------------------------------------ | -------------- | ------ | -------- |
-| [659.分割数组为连续子序列](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/) | 堆、贪心算法   | Medium |          |
+| [659.分割数组为连续子序列](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/) | 堆、贪心算法   | Medium | 完成     |
 | [846.一手顺子](https://leetcode-cn.com/problems/hand-of-straights/) | Ordered Map    | Medium | 完成     |
 | [1296.划分数组为连续数字的集合](https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/) | 贪心算法、数组 | Medium | 完成     |
 
