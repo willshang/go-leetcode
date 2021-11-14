@@ -329,7 +329,8 @@
 | [1552.两球之间的磁力](https://leetcode-cn.com/problems/magnetic-force-between-two-balls/) | 数组、二分查找     | Medium | 完成     |
 | [1760.袋子里最少数目的球](https://leetcode-cn.com/problems/minimum-limit-of-balls-in-a-bag/) | 堆、二分查找       | Medium | 完成     |
 | [1870.准时到达的列车最小时速](https://leetcode-cn.com/problems/minimum-speed-to-arrive-on-time/) | 数学、二分查找     | Medium | 完成     |
-| [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) |                    | Medium | 完成     |
+| [2064.分配给商店的最多商品的最小值](https://leetcode-cn.com/problems/minimized-maximum-of-products-distributed-to-any-store/) | 数组、二分查找     | Medium | 完成     |
+| [LCP12.小张刷题计划](https://leetcode-cn.com/problems/xiao-zhang-shua-ti-ji-hua/) | 数组、二分查找     | Medium | 完成     |
 
 ### 滑动窗口
 

@@ -14,7 +14,7 @@ var dy = []int{1, 0, -1, 0}
 func surfaceArea(grid [][]int) int {
 	sum := 0
 	for i, rows := range grid {
-		for j, _ := range rows {
+		for j := range rows {
 			sum = sum + grid[i][j]*6
 			if grid[i][j] > 1 {
 				sum = sum - (grid[i][j]-1)*2

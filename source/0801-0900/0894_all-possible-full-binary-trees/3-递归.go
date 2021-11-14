@@ -12,7 +12,7 @@ type TreeNode struct {
 
 func allPossibleFBT(n int) []*TreeNode {
 	if n == 1 {
-		return []*TreeNode{&TreeNode{Val: 0}}
+		return []*TreeNode{{Val: 0}}
 	}
 	res := make([]*TreeNode, 0)
 	for i := 1; i < n; i = i + 2 {

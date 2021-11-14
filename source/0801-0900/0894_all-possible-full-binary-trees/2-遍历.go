@@ -13,7 +13,7 @@ type TreeNode struct {
 // leetcode894_所有可能的满二叉树
 func allPossibleFBT(n int) []*TreeNode {
 	res := make(map[int][]*TreeNode)
-	res[1] = []*TreeNode{&TreeNode{Val: 0}}
+	res[1] = []*TreeNode{{Val: 0}}
 	for index := 3; index <= n; index = index + 2 {
 		for i := 1; i < index; i = i + 2 {
 			j := index - 1 - i

@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	m := 3
 	n := 3
-	operations := [][]int{[]int{2, 2}, []int{3, 3}}
+	operations := [][]int{{2, 2}, {3, 3}}
 	fmt.Println(maxCount(m, n, operations))
 }
 

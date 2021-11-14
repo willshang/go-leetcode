@@ -29,7 +29,7 @@ type Snap struct {
 func Constructor(length int) SnapshotArray {
 	nums := make([][]Snap, length)
 	for i := 0; i < length; i++ {
-		nums[i] = []Snap{Snap{ // 填充0
+		nums[i] = []Snap{{ // 填充0
 			id:    0,
 			value: 0,
 		}}

@@ -16,7 +16,7 @@ func findTheDifference(s string, t string) byte {
 	for _, v := range bytess {
 		m[v]--
 	}
-	for k, _ := range m {
+	for k := range m {
 		if m[k] == 1 {
 			return k
 		}

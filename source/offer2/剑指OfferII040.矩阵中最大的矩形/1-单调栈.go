@@ -1,7 +1,5 @@
 package main
 
-import ()
-
 func main() {
 	//arr := [][]byte{
 	//	{'1', '0', '1', '0', '0'},

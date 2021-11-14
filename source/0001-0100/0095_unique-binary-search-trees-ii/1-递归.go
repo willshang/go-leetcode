@@ -26,7 +26,7 @@ func dfs(left, right int) []*TreeNode {
 	}
 	if left == right {
 		return []*TreeNode{
-			&TreeNode{Val: left},
+			{Val: left},
 		}
 	}
 	arr := make([]*TreeNode, 0)

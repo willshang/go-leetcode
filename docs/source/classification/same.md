@@ -234,4 +234,5 @@
 | 230 | 256 | [剑指OfferII091.粉刷房子](https://leetcode-cn.com/problems/JEj789/) Medium |
 | 231 | 269 | [剑指OfferII114.外星文字典](https://leetcode-cn.com/problems/Jf1JuT/) Hard |
 | 232(相似) | [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) Medium | [1504.统计全1子矩形](https://leetcode-cn.com/problems/count-submatrices-with-all-ones/) Medium |
+| 233(相似) | [828.统计子串中的唯一字符](https://leetcode-cn.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/) Hard | [2063.所有子字符串中的元音](https://leetcode-cn.com/problems/vowels-of-all-substrings/) Medium |
 
