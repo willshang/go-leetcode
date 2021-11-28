@@ -514,6 +514,7 @@
 | | [2062.统计字符串中的元音子字符串](https://leetcode-cn.com/problems/count-vowel-substrings-of-a-string/) | 哈希表、字符串 | Easy | 完成 |
 | | [2068.检查两个字符串是否几乎相等](https://leetcode-cn.com/problems/check-whether-two-strings-are-almost-equivalent/) | 哈希表、字符串、计数 | Easy | 完成 |
 | | [2073.买票需要的时间](https://leetcode-cn.com/problems/time-needed-to-buy-tickets/) | 队列、数组、模拟 | Easy | 完成 |
+| | [2078.两栋颜色不同且距离最远的房子](https://leetcode-cn.com/problems/two-furthest-houses-with-different-colors/) | 贪心、数组 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1339,6 +1340,8 @@
 |      | [2070.每一个查询的最大美丽值](https://leetcode-cn.com/problems/most-beautiful-item-for-each-query/) | 数组、二分查找、排序                                         | Medium | 完成     |
 |      | [2074.反转偶数长度组的节点](https://leetcode-cn.com/problems/reverse-nodes-in-even-length-groups/) | 链表                                                         | Medium | 完成     |
 |      | [2075.解码斜向换位密码](https://leetcode-cn.com/problems/decode-the-slanted-ciphertext/) | 字符串、模拟                                                 | Medium | 完成     |
+|      | [2079.给植物浇水](https://leetcode-cn.com/problems/watering-plants/) | 数组                                                         | Medium | 完成     |
+|      | [2080.区间内查询数字的频率](https://leetcode-cn.com/problems/range-frequency-queries/) | 设计、线段树、数组、哈希表、二分查找                         | Medium | 完成     |
 
 ### Hard系列
 
@@ -1472,6 +1475,7 @@
 |      | [980.不同路径III](https://leetcode-cn.com/problems/unique-paths-iii/) | 位运算、数组、回溯、矩阵                                     | Hard | 完成     |
 |      | [992.K个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/) | 哈希表、双指针、Sliding Window                               | Hard | 完成     |
 |      | [995.K连续位的最小翻转次数](https://leetcode-cn.com/problems/minimum-number-of-k-consecutive-bit-flips/) | 贪心算法、Sliding Window                                     | Hard | 完成     |
+|      | [996.正方形数组的数目](https://leetcode-cn.com/problems/number-of-squareful-arrays/) | 位运算、数组、数学、动态规划、<br />回溯、状态压缩           | Hard |          |
 |      | [1028.从先序遍历还原二叉树](https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/) | 树、深度优先搜索                                             | Hard |          |
 |      | [1074.元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/) | 数组、动态规划、Sliding Window                               | Hard | 完成     |
 |      | [1095.山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/) | 二分查找                                                     | Hard |          |
@@ -1501,6 +1505,7 @@
 |      | [1449.数位成本和为目标值的最大数字](https://leetcode-cn.com/problems/form-largest-integer-with-digits-that-add-up-to-target/) | 数组、动态规划                                               | Hard | 完成     |
 |      | [1458.两个子序列的最大点积](https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/) | 动态规划                                                     | Hard | 完成     |
 |      | [1478.安排邮筒](https://leetcode-cn.com/problems/allocate-mailboxes/) | 数组、数学、动态规划、排序                                   | Hard |          |
+|      | [1483.树节点的第K个祖先](https://leetcode-cn.com/problems/kth-ancestor-of-a-tree-node/) | 树、深度优先搜索、广度优先搜索、设计、<br />二分查找、动态规划 | Hard | 完成     |
 |      | [1494.并行课程II](https://leetcode-cn.com/problems/parallel-courses-ii/) | 位运算、图、动态规划、状态压缩                               | Hard |          |
 |      | [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                                                     | Hard | 完成     |
 |      | [1526.形成目标数组的子数组最少增加次数](https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/) | 线段树                                                       | Hard | 完成     |

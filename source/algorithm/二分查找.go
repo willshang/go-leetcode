@@ -1,16 +1,16 @@
-# template
+package main
 
-- 参考：
+import "fmt"
 
-## 0、定义
+func main() {
+	arr := []int{1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10}
+	fmt.Println(len(arr))
+	fmt.Println(leftSearch(arr, 7))
+	fmt.Println(rightSearch(arr, 7))
+	fmt.Println(upperBound(arr, 9))
+	fmt.Println(upperBound(arr, 11))
+}
 
-## 1、操作
-
-## 2、Go实现
-
-### 二分查找-在里面
-
-```go
 // 1、寻找目标值
 // 寻找目标值
 func binarySearch(arr []int, target int) int {
@@ -65,13 +65,9 @@ func rightSearch(arr []int, target int) int {
 	}
 	return right
 }
-```
 
-### 二分查找-边界
-
-```go
 // 2、查找边界
-// 返回第一个大于target的位置
+// 返回第一个大于等于target的位置
 func lowerBound(arr []int, target int) int {
 	left, right := 0, len(arr)
 	for left < right {
@@ -87,7 +83,7 @@ func lowerBound(arr []int, target int) int {
 	return left
 }
 
-// 返回第一个大于等于target的位置
+// 返回第一个大于target的位置
 func upperBound(arr []int, target int) int {
 	left, right := 0, len(arr)
 	for left < right {
@@ -102,15 +98,3 @@ func upperBound(arr []int, target int) int {
 	}
 	return left
 }
-```
-
-### 二分查找-
-
-### 内置函数
-
-```go
-
-```
-
-## 3、Leetcode
-
