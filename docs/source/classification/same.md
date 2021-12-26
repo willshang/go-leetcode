@@ -37,7 +37,7 @@
 | 33(相似)   | [121.买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) Easy<br />[2016.增量元素之间的最大差值](https://leetcode-cn.com/problems/maximum-difference-between-increasing-elements/) Easy | [面试题63.股票的最大利润](https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/) Medium |
 | 34       | [371.两整数之和](https://leetcode-cn.com/problems/sum-of-two-integers/) Easy | [面试题65.不用加减乘除做加法](https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/) Easy<br />[面试题17.01.不用加号的加法](https://leetcode-cn.com/problems/add-without-plus-lcci/) Easy |
 | 35       | [8.字符串转换整数 (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) Medium | [面试题67.把字符串转换成整数](https://leetcode-cn.com/problems/ba-zi-fu-chuan-zhuan-huan-cheng-zheng-shu-lcof/) Medium |
-| 36       | [235.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) Easy | [面试题68-I.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/) [todo Easy] |
+| 36(相似)   | [235.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) Easy | [面试题68-I.二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-lcof/) [todo Easy]<br />[2096.从二叉树一个节点到另一个节点每一步的方向](https://leetcode-cn.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/) Medium |
 | 37       | [236.二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/) Medium | [面试题68-II.二叉树的最近公共祖先](https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof/) [todo Easy]<br />[面试题04.08.首个共同祖先](https://leetcode-cn.com/problems/first-common-ancestor-lcci/) Medium |
 | 38       | [3.无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) Medium | [面试题48.最长不含重复字符的子字符串](https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/) Medium<br />[剑指OfferII016.不含重复字符的最长子字符串](https://leetcode-cn.com/problems/wtcaE1/) Medium |
 | 39       | [400.第N个数字](https://leetcode-cn.com/problems/nth-digit/) Medium | [面试题44.数字序列中某一位的数字](https://leetcode-cn.com/problems/shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi-lcof/) Medium |
@@ -235,4 +235,5 @@
 | 231 | 269 | [剑指OfferII114.外星文字典](https://leetcode-cn.com/problems/Jf1JuT/) Hard |
 | 232(相似) | [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) Medium | [1504.统计全1子矩形](https://leetcode-cn.com/problems/count-submatrices-with-all-ones/) Medium |
 | 233(相似) | [828.统计子串中的唯一字符](https://leetcode-cn.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/) Hard | [2063.所有子字符串中的元音](https://leetcode-cn.com/problems/vowels-of-all-substrings/) Medium |
+| 234(相似) | [907.子数组的最小值之和](https://leetcode-cn.com/problems/sum-of-subarray-minimums/) Medium | [2104.子数组范围和](https://leetcode-cn.com/problems/sum-of-subarray-ranges/) Medium |
 
