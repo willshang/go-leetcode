@@ -195,7 +195,7 @@
 | 191 | [676.实现一个魔法字典](https://leetcode-cn.com/problems/implement-magic-dictionary/) Medium | [剑指OfferII064.神奇的字典](https://leetcode-cn.com/problems/US1pGT/) Medium |
 | 192 | [820.单词的压缩编码](https://leetcode-cn.com/problems/short-encoding-of-words/) Medium | [剑指OfferII065.最短的单词编码](https://leetcode-cn.com/problems/iSwD2y/) Medium |
 | 193 | [677.键值映射](https://leetcode-cn.com/problems/map-sum-pairs/) Medium | [剑指OfferII066.单词之和](https://leetcode-cn.com/problems/z1R5dt/) Medium |
-| 194 | [421.数组中两个数的最大异或值](https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/) Medium | [剑指OfferII067.最大的异或](https://leetcode-cn.com/problems/ms70jA/) Medium |
+| 194(相似) | [421.数组中两个数的最大异或值](https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/) Medium | [剑指OfferII067.最大的异或](https://leetcode-cn.com/problems/ms70jA/) Medium<br />[1803.统计异或值在范围内的数对有多少](https://leetcode-cn.com/problems/count-pairs-with-xor-in-a-range/) Hard |
 | 195 | [35.搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) Easy | [剑指OfferII068.查找插入位置](https://leetcode-cn.com/problems/N6YdxV/) Easy |
 | 196 | [852.山脉数组的峰顶索引](https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/) Easy | [剑指OfferII069.山峰数组的顶部](https://leetcode-cn.com/problems/B1IidL/) Easy |
 | 197 | [540.有序数组中的单一元素](https://leetcode-cn.com/problems/single-element-in-a-sorted-array/) Medium | [剑指OfferII070.排序数组中只出现一次的数字](https://leetcode-cn.com/problems/skFtm2/) Medium |
@@ -236,4 +236,8 @@
 | 232(相似) | [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) Medium | [1504.统计全1子矩形](https://leetcode-cn.com/problems/count-submatrices-with-all-ones/) Medium |
 | 233(相似) | [828.统计子串中的唯一字符](https://leetcode-cn.com/problems/count-unique-characters-of-all-substrings-of-a-given-string/) Hard | [2063.所有子字符串中的元音](https://leetcode-cn.com/problems/vowels-of-all-substrings/) Medium |
 | 234(相似) | [907.子数组的最小值之和](https://leetcode-cn.com/problems/sum-of-subarray-minimums/) Medium | [2104.子数组范围和](https://leetcode-cn.com/problems/sum-of-subarray-ranges/) Medium |
+| 235(相似) | [678.有效的括号字符串](https://leetcode-cn.com/problems/valid-parenthesis-string/) Medium | [2116.判断一个括号字符串是否有效](https://leetcode-cn.com/problems/check-if-a-parentheses-string-can-be-valid/) Medium |
+| 236(相似) | [1685.有序数组中差绝对值之和](https://leetcode-cn.com/problems/sum-of-absolute-differences-in-a-sorted-array/) Medium | [2121.相同元素的间隔之和](https://leetcode-cn.com/problems/intervals-between-identical-elements/) Medium |
+| 237(相似) | [954.二倍数对数组](https://leetcode-cn.com/problems/array-of-doubled-pairs/) Medium | [2007.从双倍数组中还原原数组](https://leetcode-cn.com/problems/find-original-array-from-doubled-array/) Medium<br />[2122.还原原数组](https://leetcode-cn.com/problems/recover-the-original-array/) Hard |
+| 238(相似) | [172.阶乘后的零](https://leetcode-cn.com/problems/factorial-trailing-zeroes) Easy | [793.阶乘函数后K个零](https://leetcode-cn.com/problems/preimage-size-of-factorial-zeroes-function/) Hard |
 

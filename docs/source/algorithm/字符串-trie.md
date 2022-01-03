@@ -73,7 +73,71 @@ func (this *Trie) StartsWith(prefix string) bool {
 }
 ```
 
+- 二进制版本
+
+```go
+type Trie struct {
+	next []*Trie // 0或者1
+	size int     // 次数
+}
+
+// 插入num
+func (t *Trie) Insert(num int) {
+	temp := t
+	for i := 31; i >= 0; i-- {
+		value := (num >> i) & 1
+		if temp.next[value] == nil {
+			temp.next[value] = &Trie{
+				next: make([]*Trie, 2),
+			}
+		}
+		temp = temp.next[value]
+		temp.size++
+	}
+}
+
+// 查找小于target的数量
+func (t *Trie) Search(num int, target int) int {
+	res := 0
+	temp := t
+	for i := 31; i >= 0; i-- {
+		if temp == nil { // 直接返回
+			return res
+		}
+		value := (num >> i) & 1
+		targetValue := (target >> i) & 1
+		if targetValue > 0 { // target该位为1
+			if temp.next[value] != nil {
+				res = res + temp.next[value].size
+			}
+			temp = temp.next[1-value] // value ^ (1-value) = 1 => 往1-value走
+		} else {
+			temp = temp.next[value] // value ^ value = 0 // 往value走
+		}
+	}
+	return res
+}
+
+// 查找异或对应的最大值
+func (t *Trie) getMaxValue(num int) int {
+	res := 0
+	temp := t
+	for i := 31; i >= 0; i-- {
+		value := (num >> i) & 1
+		if temp.next[1-value] != nil { // 能取到1
+			res = res | (1 << i) // 结果在该位可以为1，该为置为1
+			temp = temp.next[1-value]
+		} else {
+			temp = temp.next[value]
+		}
+	}
+	return res
+}
+```
+
 ## 3、Leetcode
+
+- 非二进制版本
 
 | Title                                                        | Tag                                                          | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
@@ -88,3 +152,10 @@ func (this *Trie) StartsWith(prefix string) bool {
 | [面试题17.17.多次搜索](https://leetcode-cn.com/problems/multi-search-lcci/) | 字典树、数组、哈希表、字符串、<br />字符串匹配、滑动窗口     | Medium | 完成     |
 | [剑指OfferII064.神奇的字典](https://leetcode-cn.com/problems/US1pGT/) | 设计、字典树、哈希表、字符串                                 | Medium | 完成     |
 
+- 二进制版本
+
+| Title                                                        | Tag                  | 难度   | 完成情况 |
+| ------------------------------------------------------------ | -------------------- | ------ | -------- |
+| [421.数组中两个数的最大异或值](https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/) | 位运算、字典树       | Medium | 完成     |
+| [1707.与数组中元素的最大异或值](https://leetcode-cn.com/problems/maximum-xor-with-an-element-from-array/) | 位运算、字典树、数组 | Hard   | 完成     |
+| [1803.统计异或值在范围内的数对有多少](https://leetcode-cn.com/problems/count-pairs-with-xor-in-a-range/) | 位运算、字典树、数组 | Hard   | 完成     |
