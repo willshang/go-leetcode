@@ -19,7 +19,7 @@ func minimumOperations(leaves string) int {
 	for i := 1; i < n; i++ {
 		if leaves[i] == 'r' {
 			dp[i][0] = dp[i-1][0]     // 不需要改变，同前一个
-			dp[i][1] = dp[i-1][0] + 1 // 全r+当前r，需要改变一个y，步数+1
+			dp[i][1] = dp[i-1][0] + 1 // 全r + 当前r，需要改变一个y，步数+1
 			if i > 1 {
 				dp[i][1] = min(dp[i][1], dp[i-1][1]+1)
 				dp[i][2] = dp[i-1][1]
@@ -29,13 +29,13 @@ func minimumOperations(leaves string) int {
 			}
 		} else {
 			dp[i][0] = dp[i-1][0] + 1 // 需要改变，步数+1
-			dp[i][1] = dp[i-1][0]     // 前一个全r+当前y,不需要改变
+			dp[i][1] = dp[i-1][0]     // 前一个全r + 当前y,不需要改变
 			if i > 1 {
-				dp[i][1] = min(dp[i][1], dp[i-1][1])
-				dp[i][2] = dp[i-1][1] + 1
+				dp[i][1] = min(dp[i][1], dp[i-1][1]) // 同前一个不变
+				dp[i][2] = dp[i-1][1] + 1            // 调整+1
 			}
 			if i > 2 {
-				dp[i][2] = min(dp[i][2], dp[i-1][2]+1)
+				dp[i][2] = min(dp[i][2], dp[i-1][2]+1) // 在前一个基础上调整
 			}
 		}
 	}

@@ -818,9 +818,9 @@ func binarySearch(arr []int, target int) int {
 }
 ```
 
-## LCP19.秋叶收藏集
+## LCP19.秋叶收藏集(2)
 
-### 题目
+- 题目
 
 ```
 小扣出去秋游，途中收集了一些红叶和黄叶，他利用这些叶子初步整理了一份秋叶收藏集 leaves， 
@@ -837,12 +837,12 @@ func binarySearch(arr []int, target int) int {
     leaves 中只包含字符 'r' 和字符 'y'
 ```
 
-### 解题思路
+- 解题思路
 
 | No.  | 思路          | 时间复杂度 | 空间复杂度 |
 | ---- | ------------- | ---------- | ---------- |
 | 01   | 动态规划-二维 | O(n)       | O(n)       |
-| 02   | 动态规划-一维 | O(n)       | O(1)       |
+| 02   | 动态规划-二维 | O(n)       | O(n)       |
 
 ```go
 func minimumOperations(leaves string) int {
@@ -858,7 +858,7 @@ func minimumOperations(leaves string) int {
 	for i := 1; i < n; i++ {
 		if leaves[i] == 'r' {
 			dp[i][0] = dp[i-1][0]     // 不需要改变，同前一个
-			dp[i][1] = dp[i-1][0] + 1 // 全r+当前r，需要改变一个y，步数+1
+			dp[i][1] = dp[i-1][0] + 1 // 全r + 当前r，需要改变一个y，步数+1
 			if i > 1 {
 				dp[i][1] = min(dp[i][1], dp[i-1][1]+1)
 				dp[i][2] = dp[i-1][1]
@@ -868,17 +868,202 @@ func minimumOperations(leaves string) int {
 			}
 		} else {
 			dp[i][0] = dp[i-1][0] + 1 // 需要改变，步数+1
-			dp[i][1] = dp[i-1][0]     // 前一个全r+当前y,不需要改变
+			dp[i][1] = dp[i-1][0]     // 前一个全r + 当前y,不需要改变
 			if i > 1 {
-				dp[i][1] = min(dp[i][1], dp[i-1][1])
-				dp[i][2] = dp[i-1][1] + 1
+				dp[i][1] = min(dp[i][1], dp[i-1][1]) // 同前一个不变
+				dp[i][2] = dp[i-1][1] + 1            // 调整+1
 			}
 			if i > 2 {
-				dp[i][2] = min(dp[i][2], dp[i-1][2]+1)
+				dp[i][2] = min(dp[i][2], dp[i-1][2]+1) // 在前一个基础上调整
 			}
 		}
 	}
 	return dp[n-1][2]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+# 2
+func minimumOperations(leaves string) int {
+	n := len(leaves)
+	// 长度i+1
+	// dp[i][0] 全部变成r的步数
+	// dp[i][1] 变成r...ry...y的步数
+	// dp[i][2] 变成r...ry...yr...r的步数
+	dp := make([][3]int, n)
+	maxValue := math.MaxInt32 / 10
+	if leaves[0] == 'y' {
+		dp[0][0] = 1 // 1个y变为r需要1步
+		dp[0][1] = maxValue
+		dp[0][2] = maxValue
+	}
+	for i := 1; i < n; i++ {
+		dp[i][2] = maxValue
+		dp[i][1] = maxValue
+		if leaves[i] == 'r' {
+			dp[i][0] = dp[i-1][0]                      // 不需要改变，同前一个
+			dp[i][1] = min(dp[i-1][0]+1, dp[i-1][1]+1) // 前一个r+1，前一个y+1
+			if i >= 2 {
+				dp[i][2] = min(dp[i-1][1], dp[i-1][2]) // 前一个y不变，前一个r不变
+			}
+		} else {
+			dp[i][0] = dp[i-1][0] + 1              // 需要改变，步数+1
+			dp[i][1] = min(dp[i-1][0], dp[i-1][1]) // 前一个r不变，前一个y不变
+			if i >= 2 {
+				dp[i][2] = min(dp[i-1][1]+1, dp[i-1][2]+1) // 前一个y+1, 前一个r+1
+			}
+		}
+	}
+	return dp[n-1][2]
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
+## LCP20.快速公交(1)
+
+- 题目
+
+```
+小扣打算去秋日市集，由于游客较多，小扣的移动速度受到了人流影响：
+小扣从 x 号站点移动至 x + 1 号站点需要花费的时间为 inc；
+小扣从 x 号站点移动至 x - 1 号站点需要花费的时间为 dec。
+现有 m 辆公交车，编号为 0 到 m-1。小扣也可以通过搭乘编号为 i 的公交车，从 x 号站点移动至 jump[i]*x 号站点，
+耗时仅为 cost[i]。小扣可以搭乘任意编号的公交车且搭乘公交次数不限。
+假定小扣起始站点记作 0，秋日市集站点记作 target，请返回小扣抵达秋日市集最少需要花费多少时间。
+由于数字较大，最终答案需要对 1000000007 (1e9 + 7) 取模。
+注意：小扣可在移动过程中到达编号大于 target 的站点。
+示例 1：输入：target = 31, inc = 5, dec = 3, jump = [6], cost = [10] 输出：33
+解释：小扣步行至 1 号站点，花费时间为 5；
+小扣从 1 号站台搭乘 0 号公交至 6 * 1 = 6 站台，花费时间为 10；
+小扣从 6 号站台步行至 5 号站台，花费时间为 3；
+小扣从 5 号站台搭乘 0 号公交至 6 * 5 = 30 站台，花费时间为 10；
+小扣从 30 号站台步行至 31 号站台，花费时间为 5；
+最终小扣花费总时间为 33。
+示例 2：输入：target = 612, inc = 4, dec = 5, jump = [3,6,8,11,5,10,4], cost = [4,7,6,3,7,6,4] 输出：26
+解释：小扣步行至 1 号站点，花费时间为 4；
+小扣从 1 号站台搭乘 0 号公交至 3 * 1 = 3 站台，花费时间为 4；
+小扣从 3 号站台搭乘 3 号公交至 11 * 3 = 33 站台，花费时间为 3；
+小扣从 33 号站台步行至 34 站台，花费时间为 4；
+小扣从 34 号站台搭乘 0 号公交至 3 * 34 = 102 站台，花费时间为 4；
+小扣从 102 号站台搭乘 1 号公交至 6 * 102 = 612 站台，花费时间为 7；
+最终小扣花费总时间为 26。
+提示：1 <= target <= 10^9
+1 <= jump.length, cost.length <= 10
+2 <= jump[i] <= 10^6
+1 <= inc, dec, cost[i] <= 10^6
+```
+
+- 解题思路
+
+| No.  | 思路            | 时间复杂度   | 空间复杂度 |
+| ---- | --------------- | ------------ | ---------- |
+| 01   | 堆+广度优先搜索 | O(n^2log(n)) | O(n)       |
+| 02   | 深度优先搜索    | O(n^2)       | O(n)       |
+
+```go
+var mod = 1000000007
+
+var res int
+
+func busRapidTransit(target int, inc int, dec int, jump []int, cost []int) int {
+	res = target * inc // 最坏的情况：全+1
+	n := len(jump)
+	intHeap := make(IntHeap, 0)
+	heap.Init(&intHeap)
+	visited := make(map[int]bool)
+	heap.Push(&intHeap, []int{0, target}) // 时间+当前位置：从后往前走
+	for intHeap.Len() > 0 {
+		node := heap.Pop(&intHeap).([]int)
+		t, cur := node[0], node[1]
+		if t >= res { // 跳过
+			continue
+		}
+		res = min(res, t+cur*inc) // 用+1补
+		for i := 0; i < n; i++ {
+			diff, next := cur%jump[i], cur/jump[i]
+			if diff == 0 { // 直接坐公交
+				if visited[next] == false {
+					heap.Push(&intHeap, []int{t + cost[i], next})
+				}
+			} else {
+				if visited[next] == false { // 向左走坐公交
+					heap.Push(&intHeap, []int{t + cost[i] + diff*inc, next})
+				}
+				if visited[next+1] == false { // 向右走坐公交
+					heap.Push(&intHeap, []int{t + cost[i] + (jump[i]-diff)*dec, next + 1})
+				}
+			}
+		}
+	}
+	return res % mod
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+type IntHeap [][]int
+
+func (h IntHeap) Len() int            { return len(h) }
+func (h IntHeap) Less(i, j int) bool  { return h[i][0] < h[j][0] }
+func (h IntHeap) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
+func (h *IntHeap) Push(x interface{}) { *h = append(*h, x.([]int)) }
+func (h *IntHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+
+# 2
+var mod = 1000000007
+
+var visited map[int]int
+
+func busRapidTransit(target int, inc int, dec int, jump []int, cost []int) int {
+	visited = make(map[int]int)
+	return dfs(inc, dec, jump, cost, target) % mod
+}
+
+func dfs(inc int, dec int, jump []int, cost []int, cur int) int {
+	if cur == 0 {
+		return 0
+	}
+	if cur == 1 {
+		return inc
+	}
+	if visited[cur] > 0 {
+		return visited[cur]
+	}
+	res := cur * inc // 最坏的情况：全+1
+	for i := 0; i < len(jump); i++ {
+		diff, next := cur%jump[i], cur/jump[i]
+		if diff == 0 { // 直接坐公交
+			res = min(res, dfs(inc, dec, jump, cost, next)+cost[i])
+		} else {
+			// 向左走坐公交
+			res = min(res, dfs(inc, dec, jump, cost, next)+cost[i]+diff*inc)
+			// 向右走坐公交
+			res = min(res, dfs(inc, dec, jump, cost, next+1)+cost[i]+(jump[i]-diff)*dec)
+		}
+	}
+	visited[cur] = res
+	return res
 }
 
 func min(a, b int) int {
@@ -952,6 +1137,89 @@ func C(n, m int) int {
 		b = b * i
 	}
 	return a / b
+}
+```
+
+## LCP23.魔术排列(1)
+
+- 题目
+
+```
+秋日市集上，魔术师邀请小扣与他互动。魔术师的道具为分别写有数字 1~N 的 N 张卡牌，然后请小扣思考一个 N 张卡牌的排列 target。
+魔术师的目标是找到一个数字 k（k >= 1），使得初始排列顺序为 1~N 的卡牌经过特殊的洗牌方式最终变成小扣所想的排列 target，
+特殊的洗牌方式为：
+第一步，魔术师将当前位于 偶数位置 的卡牌（下标自 1 开始），保持 当前排列顺序 放在位于 奇数位置 的卡牌之前。
+例如：将当前排列 [1,2,3,4,5] 位于偶数位置的 [2,4] 置于奇数位置的 [1,3,5] 前，排列变为 [2,4,1,3,5]；
+第二步，若当前卡牌数量小于等于 k，则魔术师按排列顺序取走全部卡牌；
+若当前卡牌数量大于 k，则取走前 k 张卡牌，剩余卡牌继续重复这两个步骤，直至所有卡牌全部被取走；
+卡牌按照魔术师取走顺序构成的新排列为「魔术取数排列」，请返回是否存在这个数字 k 使得「魔术取数排列」恰好就是 target，
+从而让小扣感到大吃一惊。
+示例 1：输入：target = [2,4,3,1,5] 输出：true
+解释：排列 target 长度为 5，初始排列为：1,2,3,4,5。我们选择 k = 2：
+第一次：将当前排列 [1,2,3,4,5] 位于偶数位置的 [2,4] 置于奇数位置的 [1,3,5] 前，排列变为 [2,4,1,3,5]。
+取走前 2 张卡牌 2,4，剩余 [1,3,5]；
+第二次：将当前排列 [1,3,5] 位于偶数位置的 [3] 置于奇数位置的 [1,5] 前，排列变为 [3,1,5]。
+取走前 2 张 3,1，剩余 [5]；
+第三次：当前排列为 [5]，全部取出。
+最后，数字按照取出顺序构成的「魔术取数排列」2,4,3,1,5 恰好为 target。
+示例 2：输入：target = [5,4,3,2,1] 出：false
+解释：无法找到一个数字 k 可以使「魔术取数排列」恰好为 target。
+提示：1 <= target.length = N <= 5000
+题目保证 target 是 1~N 的一个排列。
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 模拟 | O(n^2)     | O(n)       |
+
+```go
+func isMagic(target []int) bool {
+	n := len(target)
+	arr := make([]int, n) // 构建初始数组
+	for i := 0; i < n; i++ {
+		arr[i] = i + 1
+	}
+	arr = Shuffle(arr)
+	k := 0 // 找到k：可以证明只能正好匹配到k个；其中1~N不重复
+	for ; k < n && arr[k] == target[k]; k++ {
+	}
+	if k == 0 { // 不满足
+		return false
+	}
+	for { // 按规则模拟
+		if k >= len(arr) {
+			return judge(arr, target, len(arr))
+		}
+		if judge(arr, target, k) == false {
+			return false
+		}
+		arr = arr[k:]
+		arr = Shuffle(arr)
+		target = target[k:]
+	}
+	return false
+}
+
+func Shuffle(arr []int) []int {
+	temp := make([]int, 0)
+	for i := 1; i < len(arr); i = i + 2 {
+		temp = append(temp, arr[i])
+	}
+	for i := 0; i < len(arr); i = i + 2 {
+		temp = append(temp, arr[i])
+	}
+	return temp
+}
+
+func judge(a, b []int, k int) bool {
+	for i := 0; i < k; i++ {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
 }
 ```
 
@@ -1456,6 +1724,138 @@ func maxArr(arr []int) int {
 	}
 	return res
 }
+```
+
+## LCP35.电动车游城市(1)
+
+- 题目
+
+```
+小明的电动车电量充满时可行驶距离为 cnt，每行驶 1 单位距离消耗 1 单位电量，且花费 1 单位时间。
+小明想选择电动车作为代步工具。地图上共有 N 个景点，景点编号为 0 ~ N-1。
+他将地图信息以 [城市 A 编号,城市 B 编号,两城市间距离] 格式整理在在二维数组 paths，表示城市 A、B 间存在双向通路。
+初始状态，电动车电量为 0。每个城市都设有充电桩，charge[i] 表示第 i 个城市每充 1 单位电量需要花费的单位时间。
+请返回小明最少需要花费多少单位时间从起点城市 start 抵达终点城市 end。
+示例 1：输入：paths = [[1,3,3],[3,2,1],[2,1,3],[0,1,4],[3,0,5]], cnt = 6, 
+start = 1, end = 0, charge = [2,10,4,1] 输出：43
+解释：最佳路线为：1->3->0。
+在城市 1 仅充 3 单位电至城市 3，然后在城市 3 充 5 单位电，行驶至城市 5。
+充电用时共 3*10 + 5*1= 35
+行驶用时 3 + 5 = 8，此时总用时最短 43。
+示例 2：输入：paths = [[0,4,2],[4,3,5],[3,0,5],[0,1,5],[3,2,4],[1,2,8]], cnt = 8, 
+start = 0, end = 2, charge = [4,1,1,3,2] 输出：38
+解释：最佳路线为：0->4->3->2。
+城市 0 充电 2 单位，行驶至城市 4 充电 8 单位，行驶至城市 3 充电 1 单位，最终行驶至城市 2。
+充电用时 4*2+2*8+3*1 = 27
+行驶用时 2+5+4 = 11，总用时最短 38。
+提示：1 <= paths.length <= 200
+paths[i].length == 3
+2 <= charge.length == n <= 100
+0 <= path[i][0],path[i][1],start,end < n
+1 <= cnt <= 100
+1 <= path[i][2] <= cnt
+1 <= charge[i] <= 100
+题目保证所有城市相互可以到达
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | Dijkstra | O(n^2)     | O(n^2)     |
+
+```go
+func electricCarPlan(paths [][]int, cnt int, start int, end int, charge []int) int {
+	n := len(charge)
+	arr := make([][][]int, n) // 邻接表
+	for i := 0; i < len(paths); i++ {
+		a, b, c := paths[i][0], paths[i][1], paths[i][2] // a<=>b
+		arr[a] = append(arr[a], []int{b, c})
+		arr[b] = append(arr[b], []int{a, c})
+	}
+	dis := make([][]int, n) // start到i点在j电量下的花费
+	for i := 0; i < n; i++ {
+		dis[i] = make([]int, cnt+1)
+		for j := 0; j < cnt+1; j++ {
+			dis[i][j] = math.MaxInt32
+		}
+	}
+	dis[start][0] = 0 // 开始花费为0
+	intHeap := make(IntHeap, 0)
+	heap.Init(&intHeap)
+	heap.Push(&intHeap, []int{0, start, 0}) // 时间+位置+电量：按时间堆排序
+	for intHeap.Len() > 0 {
+		node := heap.Pop(&intHeap).([]int)
+		t, cur, value := node[0], node[1], node[2]
+		if t > dis[cur][value] { // 大于跳过
+			continue
+		}
+		if cur == end { // 终点，直接返回
+			return t
+		}
+		// 核心点：可以在一个城市充满电，可以不需要在其它城市充电；
+		// 这样可以尝试在一个城市充满一定电量后往下走；不一定非要完全充满电或者只充到达下一个城市所需的电量
+		// 因为每个城市的充电单价不一样
+		if value < cnt { // 去第cur城市充电1单位；入堆后可以继续充电1单位
+			nextTime := t + charge[cur]
+			if nextTime < dis[cur][value+1] {
+				dis[cur][value+1] = nextTime
+				heap.Push(&intHeap, []int{nextTime, cur, value + 1})
+			}
+		}
+		// 电量满足到达下一个城市后可以开往下一个城市
+		for i := 0; i < len(arr[cur]); i++ {
+			next, nextDis := arr[cur][i][0], arr[cur][i][1]
+			if value >= nextDis && t+nextDis < dis[next][value-nextDis] {
+				dis[next][value-nextDis] = t + nextDis
+				heap.Push(&intHeap, []int{t + nextDis, next, value - nextDis})
+			}
+		}
+	}
+	return -1
+}
+
+type IntHeap [][]int
+
+func (h IntHeap) Len() int            { return len(h) }
+func (h IntHeap) Less(i, j int) bool  { return h[i][0] < h[j][0] }
+func (h IntHeap) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
+func (h *IntHeap) Push(x interface{}) { *h = append(*h, x.([]int)) }
+func (h *IntHeap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+```
+
+## LCP36.最多牌组数
+
+### 题目
+
+```
+麻将的游戏规则中，共有两种方式凑成「一组牌」：
+顺子：三张牌面数字连续的麻将，例如 [4,5,6]
+刻子：三张牌面数字相同的麻将，例如 [10,10,10]
+给定若干数字作为麻将牌的数值（记作一维数组 tiles），请返回所给 tiles 最多可组成的牌组数。
+注意：凑成牌组时，每张牌仅能使用一次。
+示例 1：输入：tiles = [2,2,2,3,4] 输出：1
+解释：最多可以组合出 [2,2,2] 或者 [2,3,4] 其中一组牌。
+示例 2：输入：tiles = [2,2,2,3,4,1,3] 输出：2
+解释：最多可以组合出 [1,2,3] 与 [2,3,4] 两组牌。
+提示：1 <= tiles.length <= 10^5
+1 <= tiles[i] <= 10^9
+```
+
+### 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 哈希辅助 | O(n^2)     | O(n^2)     |
+
+```go
+
 ```
 
 ## LCP39.无人机方阵(1)
@@ -2022,9 +2422,9 @@ func volunteerDeployment(finalCnt []int, totalNum int64, edges [][]int, plans []
 }
 ```
 
-## LCP47.入场安检
+## LCP47.入场安检(2)
 
-### 题目
+- 题目
 
 ```
 「力扣挑战赛」 的入场仪式马上就要开始了，由于安保工作的需要，
@@ -2052,12 +2452,56 @@ func volunteerDeployment(finalCnt []int, totalNum int64, edges [][]int, plans []
 0 <= k <= sum(capacities)
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路        | 时间复杂度 | 空间复杂度 |
-| ---- | ----------- | ---------- | ---------- |
-| 01   | 模拟-解方程 | O(n)       | O(n)       |
+| No.  | 思路          | 时间复杂度 | 空间复杂度 |
+| ---- | ------------- | ---------- | ---------- |
+| 01   | 动态规划-二维 | O(n^2)     | O(n^2)     |
+| 02   | 动态规划-一维 | O(n^2)     | O(n)       |
 
 ```go
+var mod = 1000000007
+
+func securityCheck(capacities []int, k int) int {
+	n := len(capacities)
+	dp := make([][]int, n+1) // dp[i][j] => 使得i个实验室的情况下第j个人 第1个离开的方案数量
+	for i := 0; i <= n; i++ {
+		dp[i] = make([]int, k+1)
+	}
+	dp[0][0] = 1
+	for i := 1; i <= n; i++ {
+		// 先进先出不改变 入场顺序
+		// 改变为 后进先出 的入场顺序：会留住 capacities[i]-1 个人
+		// 把c（capacities[i]-1）看成物品大小, k看成背包容量，等价求 01背包 的方案数。
+		// 从后向前遍历
+		c := capacities[i-1] - 1
+		for j := 0; j <= k; j++ {
+			dp[i][j] = dp[i-1][j]
+			if j >= c {
+				dp[i][j] = (dp[i][j] + dp[i-1][j-c]) % mod
+			}
+		}
+	}
+	return dp[n][k]
+}
+
+# 2
+var mod = 1000000007
+
+func securityCheck(capacities []int, k int) int {
+	dp := make([]int, k+1) // dp[i] => 使得第i个人 第1个离开的方案数量
+	dp[0] = 1
+	for i := 0; i < len(capacities); i++ {
+		// 先进先出不改变 入场顺序
+		// 改变为 后进先出 的入场顺序：会留住 capacities[i]-1 个人
+		// 把c（capacities[i]-1）看成物品大小, k看成背包容量，等价求 01背包 的方案数。
+		// 从后向前遍历
+		c := capacities[i] - 1
+		for j := k; j >= c; j-- {
+			dp[j] = (dp[j] + dp[j-c]) % mod
+		}
+	}
+	return dp[k]
+}
 ```
 

@@ -89,7 +89,7 @@
 |      | 第8期                                                        |                                                              |        |          |
 | 0071 | [面试题16.10.生存人数](https://leetcode-cn.com/problems/living-people-lcci/) | 数组                                                         | Medium | 完成     |
 | 0072 | [面试题16.11.跳水板](https://leetcode-cn.com/problems/diving-board-lcci/) | 递归、记忆化                                                 | Easy   | 完成     |
-| 0073 | 13                                                           |                                                              |        |          |
+| 0073 | [面试题16.13.平分正方形](https://leetcode-cn.com/problems/bisect-squares-lcci/) | 几何、数学                                                   | Medium | 完成     |
 | 0074 | [面试题16.14.最佳直线](https://leetcode-cn.com/problems/best-line-lcci/) | 几何、数组、哈希表、数学                                     | Medium | 完成     |
 | 0075 | [面试题16.15.珠玑妙算](https://leetcode-cn.com/problems/master-mind-lcci/) | 数组                                                         | Easy   | 完成     |
 | 0076 | [面试题16.16.部分排序](https://leetcode-cn.com/problems/sub-sort-lcci/) | 排序、数字                                                   | Medium | 完成     |

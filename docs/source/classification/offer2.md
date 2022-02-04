@@ -134,8 +134,8 @@
 | 0111 | [剑指OfferII111.计算除法](https://leetcode-cn.com/problems/vlzXQL/) | 深度优先搜索、广度优先搜索、<br />并查集、图、数组、最短路   | Medium | 完成     | 399           |
 | 0112 | [剑指OfferII112.最长递增路径](https://leetcode-cn.com/problems/fpTFWP/) | 深度优先搜索、广度优先搜索、图、<br />拓扑排序、记忆化搜索、动态规划 | Hard   | 完成     | 329           |
 | 0113 | [剑指OfferII113.课程顺序](https://leetcode-cn.com/problems/QA2IGt/) | 深度优先搜索、广度优先搜索、<br />图、拓扑排序               | Medium | 完成     | 210           |
-| 0114 | [剑指OfferII114.外星文字典](https://leetcode-cn.com/problems/Jf1JuT/) | 深度优先搜索、广度优先搜索、图、<br />拓扑排序、数组、字符串 | Hard   |          | 269           |
-| 0115 | [剑指OfferII115.重建序列](https://leetcode-cn.com/problems/ur2n8P/) | 图、拓扑排序、数组                                           | Medium |          | 444           |
+| 0114 | [剑指OfferII114.外星文字典](https://leetcode-cn.com/problems/Jf1JuT/) | 深度优先搜索、广度优先搜索、图、<br />拓扑排序、数组、字符串 | Hard   | 完成     | 269           |
+| 0115 | [剑指OfferII115.重建序列](https://leetcode-cn.com/problems/ur2n8P/) | 图、拓扑排序、数组                                           | Medium | 完成     | 444           |
 | 0116 | [剑指OfferII116.省份数量](https://leetcode-cn.com/problems/bLyHh0/) | 深度优先搜索、广度优先搜索、<br />并查集、图                 | Medium | 完成     | 547           |
 | 0117 | [剑指OfferII117.相似的字符串](https://leetcode-cn.com/problems/H6lPxb/) | 深度优先搜索、广度优先搜索、<br />并查集、字符串             | Hard   | 完成     | 839           |
 | 0118 | [剑指OfferII118.多余的边](https://leetcode-cn.com/problems/7LpjUW/) | 深度优先搜索、广度优先搜索、并查集、图                       | Medium | 完成     | 684           |

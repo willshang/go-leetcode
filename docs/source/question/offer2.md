@@ -10114,9 +10114,9 @@ func findOrder(numCourses int, prerequisites [][]int) []int {
 }
 ```
 
-## 剑指OfferII115.重建序列
+## 剑指OfferII115.重建序列(1)
 
-### 题目
+- 题目
 
 ```
 请判断原始的序列 org 是否可以从序列集 seqs 中唯一地 重建 。
@@ -10136,13 +10136,67 @@ seqs[i][j] 是 32 位有符号整数
 注意：本题与主站 444 题相同：
 ```
 
-### 解题思路
+- 解题思路
 
 | No.  | 思路     | 时间复杂度 | 空间复杂度 |
 | ---- | -------- | ---------- | ---------- |
-| 01   | 滑动窗口 | O(n^2)     | O(n)       |
+| 01   | 拓扑排序 | O(n^2)     | O(n^2)     |
 
  ```go
+ func sequenceReconstruction(org []int, seqs [][]int) bool {
+ 	n := len(org)
+ 	degree := make(map[int]int) // 入度
+ 	arr := make([][]bool, n+1)  // 邻接矩阵
+ 	for i := 0; i < n+1; i++ {
+ 		arr[i] = make([]bool, n+1)
+ 	}
+ 	for i := 0; i < len(seqs); i++ {
+ 		for j := 0; j < len(seqs[i]); j++ {
+ 			if seqs[i][j] < 1 || seqs[i][j] > n { // 范围不对
+ 				return false
+ 			}
+ 			if _, ok := degree[seqs[i][j]]; ok == false {
+ 				degree[seqs[i][j]] = 0 // 入度设置为0
+ 			}
+ 			if 0 < j {
+ 				if arr[seqs[i][j-1]][seqs[i][j]] == false {
+ 					arr[seqs[i][j-1]][seqs[i][j]] = true // a=>b：seqs[i][j-1] => seqs[i][j]
+ 					degree[seqs[i][j]]++
+ 				}
+ 			}
+ 		}
+ 	}
+ 	if len(degree) != n { // 数量不对
+ 		return false
+ 	}
+ 	queue := make([]int, 0) // 拓扑排序：入度=0进队列
+ 	for i := 1; i <= n; i++ {
+ 		if v, ok := degree[i]; ok == true && v == 0 {
+ 			queue = append(queue, i)
+ 		}
+ 	}
+ 	index := 0 // 依次对比数据
+ 	for len(queue) > 0 {
+ 		length := len(queue)
+ 		if length > 1 { // 多个入度=0不能唯一重建
+ 			return false
+ 		}
+ 		if org[index] != queue[0] { // 序列不对
+ 			return false
+ 		}
+ 		for i := 0; i < len(arr[queue[0]]); i++ {
+ 			if arr[queue[0]][i] == true {
+ 				degree[i]--
+ 				if degree[i] == 0 {
+ 					queue = append(queue, i)
+ 				}
+ 			}
+ 		}
+ 		queue = queue[1:]
+ 		index++
+ 	}
+ 	return index == n
+ }
  ```
 
 ## 剑指OfferII116.省份数量(3)
@@ -11721,9 +11775,9 @@ func max(a, b int) int {
 }
 ```
 
-## 剑指OfferII114.外星文字典
+## 剑指OfferII114.外星文字典(1)
 
-### 题目
+- 题目
 
 ```
 现有一种使用英语字母的外星文语言，这门语言的字母顺序与英语顺序不同。
@@ -11743,13 +11797,80 @@ words[i] 仅由小写英文字母组成
 注意：本题与主站 269 题相同：
 ```
 
-### 解题思路
+- 解题思路
 
-| No.  | 思路   | 时间复杂度 | 空间复杂度 |
-| ---- | ------ | ---------- | ---------- |
-| 01   | 并查集 | O(n^3)     | O(n)       |
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 拓扑排序 | O(n^3)     | O(n)       |
 
 ```go
+func alienOrder(words []string) string {
+	n := len(words)
+	degree := make(map[int]int) // 入度
+	arr := [26][]int{}
+	for i := 0; i < n; i++ {
+		for j := 0; j < len(words[i]); j++ {
+			degree[int(words[i][j]-'a')] = 0
+		}
+	}
+	for i := 0; i < n; i++ {
+		for j := i + 1; j < n; j++ {
+			length := min(len(words[i]), len(words[j]))
+			for k := 0; k < length; k++ {
+				a, b := int(words[i][k]-'a'), int(words[j][k]-'a')
+				if a == b {
+					if k == length-1 && len(words[i]) > len(words[j]) { // 不合法
+						return ""
+					}
+					continue
+				}
+				arr[a] = append(arr[a], b) // 有序关系：a < b => a=>b
+				degree[b]++
+				break // 已经有有序关系，退出
+			}
+		}
+	}
+	// 拓扑排序
+	res := make([]byte, 0)
+	queue := make([]int, 0) // 入度=0 入队
+	for i := 0; i < 26; i++ {
+		if v, ok := degree[i]; ok && v == 0 {
+			queue = append(queue, i)
+		}
+	}
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		res = append(res, byte('a'+node))
+		for i := 0; i < len(arr[node]); i++ {
+			next := arr[node][i]
+			degree[next]--
+			if degree[next] == 0 {
+				queue = append(queue, next)
+			}
+		}
+	}
+	/*
+		// 通过判断长度来判断拓扑排序完成
+		if len(res) != len(degree) {
+			return ""
+		}
+	*/
+	// 通过判断度数来判断拓扑排序完成
+	for i := 0; i < 26; i++ {
+		if degree[i] > 0 {
+			return ""
+		}
+	}
+	return string(res)
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
 ```
 
 ## 剑指OfferII117.相似的字符串(1)

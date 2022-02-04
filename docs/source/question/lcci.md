@@ -5886,6 +5886,82 @@ func divingBoard(shorter int, longer int, k int) []int {
 }
 ```
 
+## 面试题16.13.平分正方形(1)
+
+- 题目
+
+```
+给定两个正方形及一个二维平面。请找出将这两个正方形分割成两半的一条直线。假设正方形顶边和底边与 x 轴平行。
+每个正方形的数据square包含3个数值，正方形的左下顶点坐标[X,Y] = [square[0],square[1]]，以及正方形的边长square[2]。
+所求直线穿过两个正方形会形成4个交点，请返回4个交点形成线段的两端点坐标（两个端点即为4个交点中距离最远的2个点，
+这2个点所连成的线段一定会穿过另外2个交点）。2个端点坐标[X1,Y1]和[X2,Y2]的返回格式为{X1,Y1,X2,Y2}，
+要求若X1 != X2，需保证X1 < X2，否则需保证Y1 <= Y2。
+若同时有多条直线满足要求，则选择斜率最大的一条计算并返回（与Y轴平行的直线视为斜率无穷大）。
+示例：输入：square1 = {-1, -1, 2} square2 = {0, -1, 2} 输出： {-1,0,2,0}
+解释： 直线 y = 0 能将两个正方形同时分为等面积的两部分，返回的两线段端点为[-1,0]和[2,0]
+提示：square.length == 3
+square[2] > 0
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 几何 | O(1)       | O(1)       |
+
+```go
+func cutSquares(square1 []int, square2 []int) []float64 {
+	// 2个正方形的中点坐标
+	x1, y1, z1 := float64(square1[0])+float64(square1[2])/2, float64(square1[1])+float64(square1[2])/2, float64(square1[2])
+	x2, y2, z2 := float64(square2[0])+float64(square2[2])/2, float64(square2[1])+float64(square2[2])/2, float64(square2[2])
+	var a, b, c, d float64
+	if x1 == x2 { // 1、垂直
+		a, b, c, d = x1, min(float64(square1[1]), float64(square2[1])), x1, max(float64(square1[1])+z1, float64(square2[1])+z2)
+		return []float64{a, b, c, d}
+	}
+	// 2、有斜率: y = kx + b1
+	k := (y1 - y2) / (x1 - x2)
+	b1 := y1 - k*x1
+	if abs(k) > 1 { // 斜率大于1，交点通过正方形的上边+下边（根据纵坐标求横坐标）
+		b = min(float64(square1[1]), float64(square2[1]))
+		d = max(float64(square1[1])+z1, float64(square2[1])+z2)
+		a = (b - b1) / k
+		c = (d - b1) / k
+	} else { // 斜率小于等于1，交点通过正方形的左边+右边（根据横坐标求纵坐标）
+		a = min(float64(square1[0]), float64(square2[0]))
+		c = max(float64(square1[0])+z1, float64(square2[0])+z2)
+		b = a*k + b1
+		d = c*k + b1
+	}
+	if a > c {
+		a, c = c, a
+		b, d = d, b
+	}
+	return []float64{a, b, c, d}
+}
+
+func abs(a float64) float64 {
+	if a < 0 {
+		return -a
+	}
+	return a
+}
+
+func max(a, b float64) float64 {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b float64) float64 {
+	if a > b {
+		return b
+	}
+	return a
+}
+```
+
 ## 面试题16.14.最佳直线(2)
 
 - 题目

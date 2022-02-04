@@ -20,11 +20,11 @@
 | 0016 |                                                              |                                          |        |          |
 | 0017 | [LCP17.速算机器人](https://leetcode-cn.com/problems/nGK0Fy/) | 数学、字符串、模拟                       | Easy   | 完成     |
 | 0018 | [LCP18.早餐组合](https://leetcode-cn.com/problems/2vYnGI/)   | 数组、双指针、二分查找、排序             | Easy   | 完成     |
-| 0019 | [LCP19.秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/) | 字符串、动态规划                         | Medium | 【】     |
-| 0020 |                                                              |                                          |        |          |
+| 0019 | [LCP19.秋叶收藏集](https://leetcode-cn.com/problems/UlBDOe/) | 字符串、动态规划                         | Medium | 完成     |
+| 0020 | [LCP20.快速公交](https://leetcode-cn.com/problems/meChtZ/)   | 记忆化搜索、数组、动态规划               | Hard   | 完成     |
 | 0021 |                                                              |                                          |        |          |
 | 0022 | [LCP22.黑白方格画](https://leetcode-cn.com/problems/ccw6C7/) | 数学                                     | Easy   | 完成     |
-| 0023 |                                                              |                                          |        |          |
+| 0023 | [LCP23.魔术排列](https://leetcode-cn.com/problems/er94lq/)   | 队列、数组、模拟                         | Medium | 完成     |
 | 0024 |                                                              |                                          |        |          |
 | 0025 |                                                              |                                          |        |          |
 | 0026 |                                                              |                                          |        |          |
@@ -36,8 +36,8 @@
 | 0032 |                                                              |                                          |        |          |
 | 0033 | [LCP33.蓄水](https://leetcode-cn.com/problems/o8SXZn/)       | 贪心、数组、堆（优先队列）               | Easy   | 完成     |
 | 0034 | [LCP34.二叉树染色](https://leetcode-cn.com/problems/er-cha-shu-ran-se-UGC/) | 树、动态规划、二叉树                     | Medium | 完成     |
-| 0035 |                                                              |                                          |        |          |
-| 0036 |                                                              |                                          |        |          |
+| 0035 | [LCP35.电动车游城市](https://leetcode-cn.com/problems/DFPeFJ/) | 图、最短路、堆（优先队列）               | Hard   | 完成     |
+| 0036 | [LCP36.最多牌组数](https://leetcode-cn.com/problems/Up5XYM/) | 数组、动态规划、排序                     | Hard   |          |
 | 0037 |                                                              |                                          |        |          |
 | 0038 |                                                              |                                          |        |          |
 | 0039 | [LCP39.无人机方阵](https://leetcode-cn.com/problems/0jQkd0/) |                                          | Easy   | 完成     |
@@ -48,4 +48,4 @@
 | 0044 | [LCP44.开幕式焰火](https://leetcode-cn.com/problems/sZ59z6/) |                                          | Easy   | 完成     |
 | 0045 | [LCP45.自行车炫技赛场](https://leetcode-cn.com/problems/kplEvH/) |                                          | Medium | 完成     |
 | 0046 | [LCP46.志愿者调配](https://leetcode-cn.com/problems/05ZEDJ/) |                                          | Medium | 完成     |
-| 0047 | [LCP47.入场安检](https://leetcode-cn.com/problems/oPs9Bm/)   |                                          | Hard   |          |
+| 0047 | [LCP47.入场安检](https://leetcode-cn.com/problems/oPs9Bm/)   | 数组、动态规划                           | Hard   | 完成     |

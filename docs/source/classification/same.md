@@ -240,4 +240,6 @@
 | 236(相似) | [1685.有序数组中差绝对值之和](https://leetcode-cn.com/problems/sum-of-absolute-differences-in-a-sorted-array/) Medium | [2121.相同元素的间隔之和](https://leetcode-cn.com/problems/intervals-between-identical-elements/) Medium |
 | 237(相似) | [954.二倍数对数组](https://leetcode-cn.com/problems/array-of-doubled-pairs/) Medium | [2007.从双倍数组中还原原数组](https://leetcode-cn.com/problems/find-original-array-from-doubled-array/) Medium<br />[2122.还原原数组](https://leetcode-cn.com/problems/recover-the-original-array/) Hard |
 | 238(相似) | [172.阶乘后的零](https://leetcode-cn.com/problems/factorial-trailing-zeroes) Easy | [793.阶乘函数后K个零](https://leetcode-cn.com/problems/preimage-size-of-factorial-zeroes-function/) Hard |
+| 239 | 269 | [剑指OfferII114.外星文字典](https://leetcode-cn.com/problems/Jf1JuT/) Hard |
+| 240 | 444 | [剑指OfferII115.重建序列](https://leetcode-cn.com/problems/ur2n8P/) Medium |
 

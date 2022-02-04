@@ -1,6 +1,6 @@
 # SPFA
 
-- 参考：
+- 参考：Shortest Path Faster Algorithm
 
 ## 0、定义
 
