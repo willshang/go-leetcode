@@ -529,7 +529,10 @@
 | | [2138.将字符串拆分为若干长度为k的组](https://leetcode-cn.com/problems/divide-a-string-into-groups-of-size-k/) | 字符串、模拟 | Easy | 完成 |
 | | [2144.打折购买糖果的最小开销](https://leetcode-cn.com/problems/minimum-cost-of-buying-candies-with-discount/) | 贪心、数组、排序 | Easy | 完成 |
 | | [2148.元素计数](https://leetcode-cn.com/problems/count-elements-with-strictly-smaller-and-greater-elements/) | 数组、排序 | Easy | 完成 |
-| | [2154.将找到的值乘以2](https://leetcode-cn.com/problems/keep-multiplying-found-values-by-two/) |  | Easy | 完成 |
+| | [2154.将找到的值乘以2](https://leetcode-cn.com/problems/keep-multiplying-found-values-by-two/) | 数组、哈希表、排序、模拟 | Easy | 完成 |
+| | [2160.拆分数位后四位数字的最小和](https://leetcode-cn.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/) | 贪心、数学、排序 | Easy | 完成 |
+| | [2164.对奇偶下标分别排序](https://leetcode-cn.com/problems/sort-even-and-odd-indices-independently/) | 数组、排序 | Easy | 完成 |
+| | [2169.得到0的操作数](https://leetcode-cn.com/problems/count-operations-to-obtain-zero/) | 数学、模拟 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1386,8 +1389,13 @@
 |      | [2146.价格范围内最高排名的K样物品](https://leetcode-cn.com/problems/k-highest-ranked-items-within-a-price-range/) | 广度优先搜索、数组、矩阵、<br />排序、堆（优先队列）         | Medium | 完成     |
 |      | [2149.按符号重排数组](https://leetcode-cn.com/problems/rearrange-array-elements-by-sign/) | 数组、双指针、模拟                                           | Medium | 完成     |
 |      | [2150.找出数组中的所有孤独数字](https://leetcode-cn.com/problems/find-all-lonely-numbers-in-the-array/) | 数组、哈希表、计数                                           | Medium | 完成     |
-|      | [2155.分组得分最高的所有下标](https://leetcode-cn.com/problems/all-divisions-with-the-highest-score-of-a-binary-array/) |                                                              | Medium | 完成     |
-|      | [2156.查找给定哈希值的子串](https://leetcode-cn.com/problems/find-substring-with-given-hash-value/) |                                                              | Medium | 完成     |
+|      | [2155.分组得分最高的所有下标](https://leetcode-cn.com/problems/all-divisions-with-the-highest-score-of-a-binary-array/) | 数组                                                         | Medium | 完成     |
+|      | [2156.查找给定哈希值的子串](https://leetcode-cn.com/problems/find-substring-with-given-hash-value/) | 字符串、滑动窗口、哈希函数、滚动哈希                         | Medium | 完成     |
+|      | [2161.根据给定数字划分数组](https://leetcode-cn.com/problems/partition-array-according-to-given-pivot/) | 数组、双指针、模拟                                           | Medium | 完成     |
+|      | [2165.重排数字的最小值](https://leetcode-cn.com/problems/smallest-value-of-the-rearranged-number/) | 数学、排序                                                   | Medium | 完成     |
+|      | [2166.设计位集](https://leetcode-cn.com/problems/design-bitset/) | 设计、数组、哈希表                                           | Medium | 完成     |
+|      | [2170.使数组变成交替数组的最少操作数](https://leetcode-cn.com/problems/minimum-operations-to-make-the-array-alternating/) | 贪心、数组、哈希表、计数                                     | Medium | 完成     |
+|      | [2171.拿出最少数目的魔法豆](https://leetcode-cn.com/problems/removing-minimum-number-of-magic-beans/) | 数组、前缀和、排序                                           | Medium | 完成     |
 
 ### Hard系列
 
@@ -1627,4 +1635,5 @@
 |      | [2141.同时运行N台电脑的最长时间](https://leetcode-cn.com/problems/maximum-running-time-of-n-computers/) | 贪心、数组、二分查找、排序                                   | Hard | 完成     |
 |      | [2147.分隔长廊的方案数](https://leetcode-cn.com/problems/number-of-ways-to-divide-a-long-corridor/) | 数学、字符串、动态规划                                       | Hard | 完成     |
 |      | [2157.字符串分组](https://leetcode-cn.com/problems/groups-of-strings/) |                                                              | Hard |          |
+|      | [2167.移除所有载有违禁货物车厢所需的最少时间](https://leetcode-cn.com/problems/minimum-time-to-remove-all-cars-containing-illegal-goods/) | 字符串、动态规划                                             | Hard | 完成     |
 
