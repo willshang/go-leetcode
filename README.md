@@ -14,6 +14,7 @@
 - http://board.cruelcoding.com/
 - 残酷刷题群-rank：https://rank.cruelcoding.com/
 - leetcode赛后rating预测：http://lcpredictor.herokuapp.com/
+- zerotrac题目评分：https://zerotrac.github.io/leetcode_problem_rating/
 
 | star   | 语言       | github/leetcode                                              |                   |
 | ------ | ---------- | ------------------------------------------------------------ | ----------------- |
