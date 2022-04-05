@@ -10,7 +10,7 @@
   ],
   "pluginsConfig": {
     "tbfed-pagefooter": {
-      "copyright": "Copyright &copy Zhi2014 2020",
+      "copyright": "Copyright &copy Zhi2014 2022",
       "modify_label": "该文件修订时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     },
