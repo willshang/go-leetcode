@@ -544,6 +544,7 @@
 | | [2206.将数组划分成相等数对](https://leetcode-cn.com/problems/divide-array-into-equal-pairs/) | 位运算、数组、哈希表、计数 | Easy | 完成 |
 | | [2210.统计数组中峰和谷的数量](https://leetcode-cn.com/problems/count-hills-and-valleys-in-an-array/) | 数组 | Easy | 完成 |
 | | [2215.找出两数组的不同](https://leetcode-cn.com/problems/find-the-difference-of-two-arrays/) | 数组、哈希表 | Easy | 完成 |
+| | [2220.转换数字的最少位翻转次数](https://leetcode-cn.com/problems/minimum-bit-flips-to-convert-number/) | 位运算 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1425,6 +1426,8 @@
 |      | [2212.射箭比赛中的最大得分](https://leetcode-cn.com/problems/maximum-points-in-an-archery-competition/) | 位运算、递归、数组、枚举                                     | Medium | 完成     |
 |      | [2216.美化数组的最少删除数](https://leetcode-cn.com/problems/minimum-deletions-to-make-array-beautiful/) | 栈、贪心、数组                                               | Medium | 完成     |
 |      | [2217.找到指定长度的回文数](https://leetcode-cn.com/problems/find-palindrome-with-fixed-length/) | 数组、数学                                                   | Medium | 完成     |
+|      | [2221.数组的三角和](https://leetcode-cn.com/problems/find-triangular-sum-of-an-array/) | 数组、数学、组合数学、模拟                                   | Medium | 完成     |
+|      | [2222.选择建筑的方案数](https://leetcode-cn.com/problems/number-of-ways-to-select-buildings/) | 字符串、动态规划、前缀和                                     | Medium | 完成     |
 
 ### Hard系列
 
@@ -1671,4 +1674,5 @@
 |      | [2209.用地毯覆盖后的最少白色砖块](https://leetcode-cn.com/problems/minimum-white-tiles-after-covering-with-carpets/) | 字符串、动态规划、前缀和                                     | Hard | 完成     |
 |      | [2213.由单个字符重复的最长子字符串](https://leetcode-cn.com/problems/longest-substring-of-one-repeating-character/) | 线段树、数组、字符串、有序集合                               | Hard |          |
 |      | [2218.从栈中取出K个硬币的最大面值和](https://leetcode-cn.com/problems/maximum-value-of-k-coins-from-piles/) | 数组、动态规划、前缀和                                       | Hard | 完成     |
+|      | [2223.构造字符串的总得分和](https://leetcode-cn.com/problems/sum-of-scores-of-built-strings/) | 字符串、二分查找、字符串匹配、<br />后缀数组、哈希函数、滚动哈希 | Hard |          |
 
