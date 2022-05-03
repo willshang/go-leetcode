@@ -1609,7 +1609,7 @@
 |      | [1354.多次求和构造目标数组](https://leetcode-cn.com/problems/construct-target-array-with-multiple-sums/) | 贪心算法                                                     | Hard | 完成     |
 |      | [1359.有效的快递序列数目](https://leetcode-cn.com/problems/count-all-valid-pickup-and-delivery-options/) | 数学、动态规划                                               | Hard | 完成     |
 |      | [1363.形成三的最大倍数](https://leetcode-cn.com/problems/largest-multiple-of-three/) | 数学、动态规划                                               | Hard | 完成     |
-|      | [1368.使网格图至少有一条有效路径的最小代价](https://leetcode-cn.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/) | 广度优先搜索、图、数组、矩阵、<br />最短路、堆（优先队列）   | Hard |          |
+|      | [1368.使网格图至少有一条有效路径的最小代价](https://leetcode-cn.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/) | 广度优先搜索、图、数组、矩阵、<br />最短路、堆（优先队列）   | Hard | 完成     |
 |      | [1373.二叉搜索子树的最大键值和](https://leetcode-cn.com/problems/maximum-sum-bst-in-binary-tree/) | 二叉搜索树、动态规划                                         | Hard | 完成     |
 |      | [1377.T秒后青蛙的位置](https://leetcode-cn.com/problems/frog-position-after-t-seconds/) | 树、深度优先搜索、广度优先搜索、图                           | Hard | 完成     |
 |      | [1383.最大的团队表现值](https://leetcode-cn.com/problems/maximum-performance-of-a-team/) | 贪心算法、排序                                               | Hard | 完成     |
