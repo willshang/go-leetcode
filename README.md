@@ -545,6 +545,15 @@
 | | [2210.统计数组中峰和谷的数量](https://leetcode-cn.com/problems/count-hills-and-valleys-in-an-array/) | 数组 | Easy | 完成 |
 | | [2215.找出两数组的不同](https://leetcode-cn.com/problems/find-the-difference-of-two-arrays/) | 数组、哈希表 | Easy | 完成 |
 | | [2220.转换数字的最少位翻转次数](https://leetcode-cn.com/problems/minimum-bit-flips-to-convert-number/) | 位运算 | Easy | 完成 |
+| | [2224.转化时间需要的最少操作数](https://leetcode-cn.com/problems/minimum-number-of-operations-to-convert-time/) | 贪心、字符串 | Easy | 完成 |
+| | [2231.按奇偶性交换后的最大数字](https://leetcode-cn.com/problems/largest-number-after-digit-swaps-by-parity/) | 排序、堆（优先队列） | Easy | 完成 |
+| | [2235.两整数相加](https://leetcode-cn.com/problems/add-two-integers/) | 数学 | Easy | 完成 |
+| | [2236.判断根结点是否等于子结点之和](https://leetcode-cn.com/problems/root-equals-sum-of-children/) | 树、二叉树 | Easy | 完成 |
+| | [2239.找到最接近0的数字](https://leetcode-cn.com/problems/find-closest-number-to-zero/) | 数组 | Easy | 完成 |
+| | [2243.计算字符串的数字和](https://leetcode-cn.com/problems/calculate-digit-sum-of-a-string/) | 字符串、模拟 | Easy | 完成 |
+| | [2248.多个数组求交集](https://leetcode-cn.com/problems/intersection-of-multiple-arrays/) | 数组、哈希表、计数 | Easy | 完成 |
+| | [2255.统计是给定字符串前缀的字符串数目](https://leetcode-cn.com/problems/count-prefixes-of-a-given-string/) |  | Easy | 完成 |
+| | [2259.移除指定数字得到的最大结果](https://leetcode-cn.com/problems/remove-digit-from-number-to-maximize-result/) |  | Easy | 完成 |
 
 ### Medium系列
 
@@ -1428,6 +1437,19 @@
 |      | [2217.找到指定长度的回文数](https://leetcode-cn.com/problems/find-palindrome-with-fixed-length/) | 数组、数学                                                   | Medium | 完成     |
 |      | [2221.数组的三角和](https://leetcode-cn.com/problems/find-triangular-sum-of-an-array/) | 数组、数学、组合数学、模拟                                   | Medium | 完成     |
 |      | [2222.选择建筑的方案数](https://leetcode-cn.com/problems/number-of-ways-to-select-buildings/) | 字符串、动态规划、前缀和                                     | Medium | 完成     |
+|      | [2225.找出输掉零场或一场比赛的玩家](https://leetcode-cn.com/problems/find-players-with-zero-or-one-losses/) | 数组、哈希表、计数、排序                                     | Medium | 完成     |
+|      | [2226.每个小孩最多能分到多少糖果](https://leetcode-cn.com/problems/maximum-candies-allocated-to-k-children/) | 数组、二分查找                                               | Medium | 完成     |
+|      | [2232.向表达式添加括号后的最小结果](https://leetcode-cn.com/problems/minimize-result-by-adding-parentheses-to-expression/) | 字符串、枚举                                                 | Medium | 完成     |
+|      | [2233.K次增加后的最大乘积](https://leetcode-cn.com/problems/maximum-product-after-k-increments/) | 贪心、数组、堆（优先队列）                                   | Medium | 完成     |
+|      | [2240.买钢笔和铅笔的方案数](https://leetcode-cn.com/problems/number-of-ways-to-buy-pens-and-pencils/) | 数学、枚举                                                   | Medium | 完成     |
+|      | [2241.设计一个ATM机器](https://leetcode-cn.com/problems/design-an-atm-machine/) | 贪心、设计、数组                                             | Medium | 完成     |
+|      | [2244.完成所有任务需要的最少轮数](https://leetcode-cn.com/problems/minimum-rounds-to-complete-all-tasks/) | 贪心、数组、哈希表、计数                                     | Medium | 完成     |
+|      | [2245.转角路径的乘积中最多能有几个尾随零](https://leetcode-cn.com/problems/maximum-trailing-zeros-in-a-cornered-path/) | 数组、矩阵、前缀和                                           | Medium |          |
+|      | [2249.统计圆内格点数目](https://leetcode-cn.com/problems/count-lattice-points-inside-a-circle/) | 几何、数组、哈希表、数学、枚举                               | Medium | 完成     |
+|      | [2256.最小平均差](https://leetcode-cn.com/problems/minimum-average-difference/) |                                                              | Medium | 完成     |
+|      | [2257.统计网格图中没有被保卫的格子数](https://leetcode-cn.com/problems/count-unguarded-cells-in-the-grid/) |                                                              | Medium | 完成     |
+|      | [2260.必须拿起的最小连续卡牌数](https://leetcode-cn.com/problems/minimum-consecutive-cards-to-pick-up/) |                                                              | Medium | 完成     |
+|      | [2261.含最多K个可整除元素的子数组](https://leetcode-cn.com/problems/k-divisible-elements-subarrays/) |                                                              | Medium | 完成     |
 
 ### Hard系列
 
@@ -1587,6 +1609,7 @@
 |      | [1354.多次求和构造目标数组](https://leetcode-cn.com/problems/construct-target-array-with-multiple-sums/) | 贪心算法                                                     | Hard | 完成     |
 |      | [1359.有效的快递序列数目](https://leetcode-cn.com/problems/count-all-valid-pickup-and-delivery-options/) | 数学、动态规划                                               | Hard | 完成     |
 |      | [1363.形成三的最大倍数](https://leetcode-cn.com/problems/largest-multiple-of-three/) | 数学、动态规划                                               | Hard | 完成     |
+|      | [1368.使网格图至少有一条有效路径的最小代价](https://leetcode-cn.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/) | 广度优先搜索、图、数组、矩阵、<br />最短路、堆（优先队列）   | Hard |          |
 |      | [1373.二叉搜索子树的最大键值和](https://leetcode-cn.com/problems/maximum-sum-bst-in-binary-tree/) | 二叉搜索树、动态规划                                         | Hard | 完成     |
 |      | [1377.T秒后青蛙的位置](https://leetcode-cn.com/problems/frog-position-after-t-seconds/) | 树、深度优先搜索、广度优先搜索、图                           | Hard | 完成     |
 |      | [1383.最大的团队表现值](https://leetcode-cn.com/problems/maximum-performance-of-a-team/) | 贪心算法、排序                                               | Hard | 完成     |
@@ -1674,5 +1697,9 @@
 |      | [2209.用地毯覆盖后的最少白色砖块](https://leetcode-cn.com/problems/minimum-white-tiles-after-covering-with-carpets/) | 字符串、动态规划、前缀和                                     | Hard | 完成     |
 |      | [2213.由单个字符重复的最长子字符串](https://leetcode-cn.com/problems/longest-substring-of-one-repeating-character/) | 线段树、数组、字符串、有序集合                               | Hard |          |
 |      | [2218.从栈中取出K个硬币的最大面值和](https://leetcode-cn.com/problems/maximum-value-of-k-coins-from-piles/) | 数组、动态规划、前缀和                                       | Hard | 完成     |
-|      | [2223.构造字符串的总得分和](https://leetcode-cn.com/problems/sum-of-scores-of-built-strings/) | 字符串、二分查找、字符串匹配、<br />后缀数组、哈希函数、滚动哈希 | Hard |          |
+|      | [2223.构造字符串的总得分和](https://leetcode-cn.com/problems/sum-of-scores-of-built-strings/) | 字符串、二分查找、字符串匹配、<br />后缀数组、哈希函数、滚动哈希 | Hard | 【】     |
+|      | [2227.加密解密字符串](https://leetcode-cn.com/problems/encrypt-and-decrypt-strings/) | 设计、字典树、数组、哈希表、字符串                           | Hard | 完成     |
+|      | [2246.相邻字符不同的最长路径](https://leetcode-cn.com/problems/longest-path-with-different-adjacent-characters/) | 树、深度优先搜索、图、<br />拓扑排序、数组、字符串           | Hard | 完成     |
+|      | [2251.花期内花的数目](https://leetcode-cn.com/problems/number-of-flowers-in-full-bloom/) | 数组、哈希表、二分查找、<br />有序集合、前缀和、排序         | Hard |          |
+|      | [2262.字符串的总引力](https://leetcode-cn.com/problems/total-appeal-of-a-string/) |                                                              | Hard | 完成     |
 

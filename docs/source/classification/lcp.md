@@ -49,3 +49,13 @@
 | 0045 | [LCP45.自行车炫技赛场](https://leetcode-cn.com/problems/kplEvH/) |                                          | Medium | 完成     |
 | 0046 | [LCP46.志愿者调配](https://leetcode-cn.com/problems/05ZEDJ/) |                                          | Medium | 完成     |
 | 0047 | [LCP47.入场安检](https://leetcode-cn.com/problems/oPs9Bm/)   | 数组、动态规划                           | Hard   | 完成     |
+| 0048 |                                                              |                                          |        |          |
+| 0049 |                                                              |                                          |        |          |
+| 0050 | [LCP50.宝石补给](https://leetcode-cn.com/problems/WHnhjV/)   |                                          | Easy   | 完成     |
+| 0051 | [LCP51.烹饪料理](https://leetcode-cn.com/problems/UEcfPD/)   |                                          | Easy   | 完成     |
+| 0052 | [LCP52.二叉搜索树染色](https://leetcode-cn.com/problems/QO5KpG/) |                                          | Medium | 完成     |
+| 0053 |                                                              |                                          |        |          |
+| 0054 |                                                              |                                          |        |          |
+| 0055 | [LCP55.采集果实](https://leetcode-cn.com/problems/PTXy4P/)   |                                          | Easy   | 完成     |
+| 0056 | [LCP56.信物传送](https://leetcode-cn.com/problems/6UEx57/)   |                                          | Medium | 完成     |
+| 0057 | [LCP57.打地鼠](https://leetcode-cn.com/problems/ZbAuEH/)     |                                          | Hard   |          |

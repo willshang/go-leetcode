@@ -2505,3 +2505,516 @@ func securityCheck(capacities []int, k int) int {
 }
 ```
 
+## LCP50.宝石补给(1)
+
+- 题目
+
+```
+欢迎各位勇者来到力扣新手村，在开始试炼之前，请各位勇者先进行「宝石补给」。
+每位勇者初始都拥有一些能量宝石， gem[i] 表示第 i 位勇者的宝石数量。现在这些勇者们进行了一系列的赠送，
+operations[j] = [x, y] 表示在第 j 次的赠送中 第 x 位勇者将自己一半的宝石（需向下取整）赠送给第 y 位勇者。
+在完成所有的赠送后，请找到拥有最多宝石的勇者和拥有最少宝石的勇者，并返回他们二者的宝石数量之差。
+注意：赠送将按顺序逐步进行。
+示例 1：输入：gem = [3,1,2], operations = [[0,2],[2,1],[2,0]]输出：2
+解释：第 1 次操作，勇者 0 将一半的宝石赠送给勇者 2， gem = [2,1,3]
+第 2 次操作，勇者 2 将一半的宝石赠送给勇者 1， gem = [2,2,2]
+第 3 次操作，勇者 2 将一半的宝石赠送给勇者 0， gem = [3,2,1]
+返回 3 - 1 = 2
+示例 2：输入：gem = [100,0,50,100], operations = [[0,2],[0,1],[3,0],[3,0]] 输出：75
+解释：第 1 次操作，勇者 0 将一半的宝石赠送给勇者 2， gem = [50,0,100,100]
+第 2 次操作，勇者 0 将一半的宝石赠送给勇者 1， gem = [25,25,100,100]
+第 3 次操作，勇者 3 将一半的宝石赠送给勇者 0， gem = [75,25,100,50]
+第 4 次操作，勇者 3 将一半的宝石赠送给勇者 0， gem = [100,25,100,25]
+返回 100 - 25 = 75
+示例 3：输入：gem = [0,0,0,0], operations = [[1,2],[3,1],[1,2]] 输出：0
+提示：2 <= gem.length <= 10^3
+0 <= gem[i] <= 10^3
+0 <= operations.length <= 10^4
+operations[i].length == 2
+0 <= operations[i][0], operations[i][1] < gem.length
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 模拟 | O(n)       | O(1)       |
+
+```go
+func giveGem(gem []int, operations [][]int) int {
+	for i := 0; i < len(operations); i++ {
+		a, b := operations[i][0], operations[i][1]
+		v := gem[a] / 2
+		gem[a] = gem[a] - v
+		gem[b] = gem[b] + v
+	}
+	maxValue, minValue := math.MinInt32, math.MaxInt32
+	for i := 0; i < len(gem); i++ {
+		maxValue = max(maxValue, gem[i])
+		minValue = min(minValue, gem[i])
+	}
+	return maxValue - minValue
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## LCP51.烹饪料理(2)
+
+- 题目
+
+```
+欢迎各位勇者来到力扣城，城内设有烹饪锅供勇者制作料理，为自己恢复状态。
+勇者背包内共有编号为 0 ~ 4 的五种食材，其中 materials[j] 表示第 j 种食材的数量。
+通过这些食材可以制作若干料理，cookbooks[i][j] 表示制作第 i 种料理需要第 j 种食材的数量，
+而 attribute[i] = [x,y] 表示第 i 道料理的美味度 x 和饱腹感 y。
+在饱腹感不小于 limit 的情况下，请返回勇者可获得的最大美味度。如果无法满足饱腹感要求，则返回 -1。
+注意：每种料理只能制作一次。
+示例 1：输入：materials = [3,2,4,1,2] cookbooks = [[1,1,0,1,2],[2,1,4,0,0],[3,2,4,1,0]]
+attribute = [[3,2],[2,4],[7,6]]  limit = 5  输出：7
+解释：食材数量可以满足以下两种方案：
+方案一：制作料理 0 和料理 1，可获得饱腹感 2+4、美味度 3+2
+方案二：仅制作料理 2， 可饱腹感为 6、美味度为 7
+因此在满足饱腹感的要求下，可获得最高美味度 7
+示例 2：输入：materials = [10,10,10,10,10] cookbooks = [[1,1,1,1,1],[3,3,3,3,3],[10,10,10,10,10]]
+attribute = [[5,5],[6,6],[10,10]] limit = 1 输出：11
+解释：通过制作料理 0 和 1，可满足饱腹感，并获得最高美味度 11
+提示：materials.length == 5
+1 <= cookbooks.length == attribute.length <= 8
+cookbooks[i].length == 5
+attribute[i].length == 2
+0 <= materials[i], cookbooks[i][j], attribute[i][j] <= 20
+1 <= limit <= 100
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 回溯 | O(2^n)     | O(1)       |
+| 02   | 回溯 | O(2^n)     | O(1)       |
+
+```go
+var res int
+
+func perfectMenu(materials []int, cookbooks [][]int, attribute [][]int, limit int) int {
+	res = -1
+	arr := make([]int, 5)
+	dfs(materials, cookbooks, attribute, limit, 0, 0, arr, 0)
+	return res
+}
+
+func dfs(materials []int, cookbooks [][]int, attribute [][]int, limit int, sumX, sumY int, arr []int, index int) {
+	flag := true
+	for i := 0; i < 5; i++ {
+		if arr[i] > materials[i] {
+			flag = false
+			break
+		}
+	}
+	if flag == false {
+		return
+	}
+	if sumY >= limit {
+		res = max(res, sumX)
+	}
+	if index >= len(cookbooks) {
+		return
+	}
+	tempA, tempB := make([]int, 5), make([]int, 5)
+	copy(tempA, arr)
+	copy(tempB, arr)
+	for i := 0; i < 5; i++ {
+		tempA[i] = tempA[i] + cookbooks[index][i]
+	}
+	dfs(materials, cookbooks, attribute, limit, sumX+attribute[index][0], sumY+attribute[index][1], tempA, index+1) // 加上
+	dfs(materials, cookbooks, attribute, limit, sumX, sumY, tempB, index+1)                                         // 不加上
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+# 2
+var res int
+
+func perfectMenu(materials []int, cookbooks [][]int, attribute [][]int, limit int) int {
+	res = -1
+	arr := make([]int, 5)
+	dfs(materials, cookbooks, attribute, limit, 0, 0, arr, 0)
+	return res
+}
+
+func dfs(materials []int, cookbooks [][]int, attribute [][]int, limit int, sumX, sumY int, arr []int, index int) {
+	if sumY >= limit {
+		res = max(res, sumX)
+	}
+	if index >= len(cookbooks) {
+		return
+	}
+	tempA, tempB := make([]int, 5), make([]int, 5)
+	copy(tempA, arr)
+	copy(tempB, arr)
+	dfs(materials, cookbooks, attribute, limit, sumX, sumY, tempB, index+1) // 不加上
+	for i := 0; i < 5; i++ {
+		tempA[i] = tempA[i] + cookbooks[index][i]
+		if tempA[i] > materials[i] {
+			return
+		}
+	}
+	dfs(materials, cookbooks, attribute, limit, sumX+attribute[index][0], sumY+attribute[index][1], tempA, index+1) // 加上
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+```
+
+## LCP52.二叉搜索树染色(2)
+
+- 题目
+
+```
+欢迎各位勇者来到力扣城，本次试炼主题为「二叉搜索树染色」。
+每位勇士面前设有一个二叉搜索树的模型，模型的根节点为 root，树上的各个节点值均不重复。初始时，所有节点均为蓝色。
+现在按顺序对这棵二叉树进行若干次操作， ops[i] = [type, x, y] 表示第 i 次操作为：
+type 等于 0 时，将节点值范围在 [x, y] 的节点均染蓝
+type 等于 1 时，将节点值范围在 [x, y] 的节点均染红
+请返回完成所有染色后，该二叉树中红色节点的数量。
+注意：题目保证对于每个操作的 x、y 值定出现在二叉搜索树节点中
+示例 1：输入：root = [1,null,2,null,3,null,4,null,5], ops = [[1,2,4],[1,1,3],[0,3,5]] 输出：2
+解释：第 0 次操作，将值为 2、3、4 的节点染红；
+第 1 次操作，将值为 1、2、3 的节点染红；
+第 2 次操作，将值为 3、4、5 的节点染蓝；
+因此，最终值为 1、2 的节点为红色节点，返回数量 2
+示例 2：输入：root = [4,2,7,1,null,5,null,null,null,null,6] ops = [[0,2,2],[1,1,5],[0,4,5],[1,5,7]]
+输出：5
+解释：第 0 次操作，将值为 2 的节点染蓝；
+第 1 次操作，将值为 1、2、4、5 的节点染红；
+第 2 次操作，将值为 4、5 的节点染蓝；
+第 3 次操作，将值为 5、6、7 的节点染红；
+因此，最终值为 1、2、5、6、7 的节点为红色节点，返回数量 5
+提示：1 <= 二叉树节点数量 <= 10^5
+1 <= ops.length <= 10^5
+ops[i].length == 3
+ops[i][0] 仅为 0 or 1
+0 <= ops[i][1] <= ops[i][2] <= 10^9
+0 <= 节点值 <= 10^9
+```
+
+- 解题思路
+
+| No.  | 思路     | 时间复杂度 | 空间复杂度 |
+| ---- | -------- | ---------- | ---------- |
+| 01   | 二分查找 | O(nlog(n)) | O(n)       |
+| 02   | 遍历     | O(n^2)     | O(n)       |
+
+```go
+var arr []int
+
+func getNumber(root *TreeNode, ops [][]int) int {
+	res := 0 // 蓝色的数量
+	n := len(arr)
+	arr = make([]int, 0)
+	dfs(root)
+	for i := len(ops) - 1; i >= 0; i-- {
+		if len(arr) == 0 {
+			break
+		}
+		t, left, right := ops[i][0], ops[i][1], ops[i][2]
+		index := sort.Search(len(arr), func(j int) bool {
+			return arr[j] >= left
+		})
+		temp := make([]int, index)
+		copy(temp, arr[:index])
+		var k int
+		for k = index; k < len(arr) && arr[k] <= right; k++ {
+			if t == 0 { // 染蓝
+				res++
+			}
+		}
+		temp = append(temp, arr[k:]...)
+		arr = temp
+	}
+	res = res + len(arr) // 染蓝的数量+开始蓝色的数量
+	return n - res       // 红色数量
+}
+
+func dfs(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	dfs(root.Left)
+	arr = append(arr, root.Val)
+	dfs(root.Right)
+}
+
+# 2
+var arr []int
+
+func getNumber(root *TreeNode, ops [][]int) int {
+	res := 0 // 红色数量
+	arr = make([]int, 0)
+	dfs(root)
+	for i := 0; i < len(arr); i++ {
+		for j := len(ops) - 1; j >= 0; j-- {
+			t, left, right := ops[j][0], ops[j][1], ops[j][2]
+			if left <= arr[i] && arr[i] <= right {
+				res = res + t // 红色+1，蓝色+0
+				break
+			}
+		}
+	}
+	return res // 红色数量
+}
+
+func dfs(root *TreeNode) {
+	if root == nil {
+		return
+	}
+	dfs(root.Left)
+	arr = append(arr, root.Val)
+	dfs(root.Right)
+}
+```
+
+## LCP55.采集果实(1)
+
+- 题目
+
+```
+欢迎各位勇者来到力扣新手村，本次训练内容为「采集果实」。
+在新手村中，各位勇者需要采集一些果实来制作药剂。time[i] 
+表示勇者每次采集 1～limit 颗第 i 种类型的果实需要的时间（即每次最多可以采集 limit 颗果实）。
+当前勇者需要完成「采集若干批果实」的任务， fruits[j] = [type, num] 表示第 j 批需要采集 num 颗 type 类型的果实。
+采集规则如下：
+按 fruits 给定的顺序依次采集每一批次
+采集完当前批次的果实才能开始采集下一批次
+勇者完成当前批次的采集后将清空背包（即多余的果实将清空）
+请计算并返回勇者完成采集任务最少需要的时间。
+示例 1：输入：time = [2,3,2], fruits = [[0,2],[1,4],[2,1]], limit = 3 输出：10
+解释： 由于单次最多采集 3 颗
+第 0 批需要采集 2 颗第 0 类型果实，需要采集 1 次，耗时为 2*1=2
+第 1 批需要采集 4 颗第 1 类型果实，需要采集 2 次，耗时为 3*2=6
+第 2 批需要采集 1 颗第 2 类型果实，需要采集 1 次，耗时为 2*1=2
+返回总耗时 2+6+2=10
+示例 2：输入：time = [1], fruits = [[0,3],[0,5]], limit = 2 输出：5
+解释： 由于单次最多采集 2 颗
+第 0 批需要采集 3 颗第 0 类型果实，需要采集 2 次，耗时为 1*2=2
+第 1 批需要采集 5 颗第 0 类型果实，需要采集 3 次，耗时为 1*3=3
+需按照顺序依次采集，返回 2+3=5
+提示：1 <= time.length <= 100
+1 <= time[i] <= 100
+1 <= fruits.length <= 10^3
+0 <= fruits[i][0] < time.length
+1 <= fruits[i][1] < 10^3
+1 <= limit <= 100
+```
+
+- 解题思路
+
+| No.  | 思路 | 时间复杂度 | 空间复杂度 |
+| ---- | ---- | ---------- | ---------- |
+| 01   | 遍历 | O(n)       | O(1)       |
+
+```go
+func getMinimumTime(time []int, fruits [][]int, limit int) int {
+	res := 0
+	for i := 0; i < len(fruits); i++ {
+		a, b := fruits[i][0], fruits[i][1]
+		res = res + ((b-1)/limit+1)*time[a]
+	}
+	return res
+}
+```
+
+## LCP56.信物传送(2)
+
+- 题目
+
+```
+欢迎各位勇者来到力扣城，本次试炼主题为「信物传送」。
+本次试炼场地设有若干传送带，matrix[i][j] 表示第 i 行 j 列的传送带运作方向，"^","v","<",">" 
+这四种符号分别表示 上、下、左、右 四个方向。
+信物会随传送带的方向移动。勇者每一次施法操作，可临时变更一处传送带的方向，在物品经过后传送带恢复原方向。
+通关信物初始位于坐标 start处，勇者需要将其移动到坐标 end 处，请返回勇者施法操作的最少次数。
+注意：start 和 end 的格式均为 [i,j]
+示例 1:输入：matrix = [">>v","v^<","<><"], start = [0,1], end = [2,0] 输出：1
+解释：如上图所示
+当信物移动到 [1,1] 时，勇者施法一次将 [1,1] 的传送方向 ^ 从变更为 <
+从而信物移动到 [1,0]，后续到达 end 位置
+因此勇者最少需要施法操作 1 次
+示例 2:输入：matrix = [">>v",">>v","^<<"], start = [0,0], end = [1,1] 输出：0
+解释：勇者无需施法，信物将自动传送至 end 位置
+示例 3:输入：matrix = [">^^>","<^v>","^v^<"], start = [0,0], end = [1,3] 输出：3
+提示：matrix 中仅包含 '^'、'v'、'<'、'>'
+0 < matrix.length <= 100
+0 < matrix[i].length <= 100
+0 <= start[0],end[0] < matrix.length
+0 <= start[1],end[1] < matrix[i].length
+```
+
+- 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+| 02   | 深度优先搜索 | O(n^2)     | O(n^2)     |
+
+```go
+// 顺时针：上右下左
+var dx = []int{0, 1, 0, -1}
+var dy = []int{1, 0, -1, 0}
+var dir = []byte{'>', 'v', '<', '^'} // 注意对准坐标方向
+
+func conveyorBelt(matrix []string, start []int, end []int) int {
+	n, m := len(matrix), len(matrix[0])
+	total := n * m
+	arr := make([][]int, n) // 到达下标i,j的最少次数
+	for i := 0; i < n; i++ {
+		arr[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			arr[i][j] = total
+		}
+	}
+	arr[start[0]][start[1]] = 0
+	queue := make([][2]int, 0)
+	queue = append(queue, [2]int{start[0], start[1]})
+	for len(queue) > 0 {
+		node := queue[0]
+		queue = queue[1:]
+		x, y := node[0], node[1]
+		for i := 0; i < 4; i++ {
+			newX, newY := x+dx[i], y+dy[i]
+			if 0 <= newX && newX < n && 0 <= newY && newY < m {
+				if matrix[x][y] == dir[i] { // 不变换方向
+					if arr[newX][newY] > arr[x][y] {
+						arr[newX][newY] = arr[x][y] // 更新次数
+						queue = append(queue, [2]int{newX, newY})
+					}
+				} else { // 变换方向，次数+1
+					if arr[newX][newY] > arr[x][y]+1 {
+						arr[newX][newY] = arr[x][y] + 1 // 更新次数
+						queue = append(queue, [2]int{newX, newY})
+					}
+				}
+			}
+		}
+	}
+	return arr[end[0]][end[1]]
+}
+
+# 2
+// 顺时针：上右下左
+var dx = []int{0, 1, 0, -1}
+var dy = []int{1, 0, -1, 0}
+var dir = []byte{'>', 'v', '<', '^'} // 注意对准坐标方向
+
+var arr [][]int
+var n, m int
+
+func conveyorBelt(matrix []string, start []int, end []int) int {
+	n, m = len(matrix), len(matrix[0])
+	total := n * m
+	arr = make([][]int, n) // 到达下标i,j的最少次数
+	for i := 0; i < n; i++ {
+		arr[i] = make([]int, m)
+		for j := 0; j < m; j++ {
+			arr[i][j] = total
+		}
+	}
+	dfs(matrix, start[0], start[1], 0)
+	return arr[end[0]][end[1]]
+}
+
+func dfs(matrix []string, x, y int, count int) {
+	if x < 0 || x >= n || y < 0 || y >= m {
+		return
+	}
+	if count >= arr[x][y] {
+		return
+	}
+	arr[x][y] = count
+	index := 0
+	for i := 0; i < 4; i++ {
+		if matrix[x][y] == dir[i] {
+			index = i
+			break
+		}
+	}
+	dfs(matrix, x+dx[index], y+dy[index], count) // 先走不变换方向：次数不变
+	for i := 0; i < 4; i++ {
+		newX, newY := x+dx[i], y+dy[i]
+		if matrix[x][y] == dir[i] {
+			continue
+		}
+		dfs(matrix, newX, newY, count+1) // 不同次数+1
+	}
+}
+```
+
+## LCP57.打地鼠
+
+### 题目
+
+```
+欢迎各位勇者来到力扣城，本次试炼主题为「打地鼠」。
+勇者面前有一个大小为 3*3 的打地鼠游戏机，地鼠将随机出现在各个位置，moles[i] = [t,x,y] 
+表示在第 t 秒会有地鼠出现在 (x,y) 位置上，并于第 t+1 秒该地鼠消失。
+勇者有一把可敲打地鼠的锤子，初始时刻（即第 0 秒）锤子位于正中间的格子 (1,1)，锤子的使用规则如下：
+锤子每经过 1 秒可以往上、下、左、右中的一个方向移动一格，也可以不移动
+锤子只可敲击所在格子的地鼠，敲击不耗时
+请返回勇者最多能够敲击多少只地鼠。
+注意：输入用例保证在相同时间相同位置最多仅有一只地鼠
+示例 1：输入： moles = [[1,1,0],[2,0,1],[4,2,2]] 输出： 2
+解释：第 0 秒，锤子位于 (1,1)
+第 1 秒，锤子移动至 (1,0) 并敲击地鼠
+第 2 秒，锤子移动至 (2,0)
+第 3 秒，锤子移动至 (2,1)
+第 4 秒，锤子移动至 (2,2) 并敲击地鼠
+因此勇者最多可敲击 2 只地鼠
+示例 2：输入：moles = [[2,0,2],[5,2,0],[4,1,0],[1,2,1],[3,0,2]] 输出：3
+解释：第 0 秒，锤子位于 (1,1)
+第 1 秒，锤子移动至 (2,1) 并敲击地鼠
+第 2 秒，锤子移动至 (1,1)
+第 3 秒，锤子移动至 (1,0)
+第 4 秒，锤子在 (1,0) 不移动并敲击地鼠
+第 5 秒，锤子移动至 (2,0) 并敲击地鼠
+因此勇者最多可敲击 3 只地鼠
+示例 3：输入：moles = [[0,1,0],[0,0,1]] 输出：0
+解释：第 0 秒，锤子初始位于 (1,1)，此时并不能敲击 (1,0)、(0,1) 位置处的地鼠
+提示：1 <= moles.length <= 10^5
+moles[i].length == 3
+0 <= moles[i][0] <= 10^9
+0 <= moles[i][1], moles[i][2] < 3
+```
+
+### 解题思路
+
+| No.  | 思路         | 时间复杂度 | 空间复杂度 |
+| ---- | ------------ | ---------- | ---------- |
+| 01   | 广度优先搜索 | O(n^2)     | O(n^2)     |
+
+```go
+```
+
+
+

@@ -242,4 +242,6 @@
 | 238(相似) | [172.阶乘后的零](https://leetcode-cn.com/problems/factorial-trailing-zeroes) Easy | [793.阶乘函数后K个零](https://leetcode-cn.com/problems/preimage-size-of-factorial-zeroes-function/) Hard |
 | 239 | 269 | [剑指OfferII114.外星文字典](https://leetcode-cn.com/problems/Jf1JuT/) Hard |
 | 240 | 444 | [剑指OfferII115.重建序列](https://leetcode-cn.com/problems/ur2n8P/) Medium |
+| 241(相似) | [543.二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/) Easy | [2246.相邻字符不同的最长路径](https://leetcode-cn.com/problems/longest-path-with-different-adjacent-characters/) Hard |
+| 242(相似) | [LCP56.信物传送](https://leetcode-cn.com/problems/6UEx57/) Medium | [1368.使网格图至少有一条有效路径的最小代价](https://leetcode-cn.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/) Hard |
 
