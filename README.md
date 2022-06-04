@@ -28,6 +28,7 @@
 | 105 k  | 多语言     | https://github.com/labuladong/fucking-algorithm<br />https://labuladong.gitbook.io/algo/ | 60+文章、100+题解 |
 | 2.4 k  | C++\Python | https://github.com/wisdompeak/LeetCode                       |                   |
 | 2.3 k  | C++        | https://github.com/liuyubobobo/Play-Leetcode<br />https://leetcode-cn.com/u/liuyubobobo/ | 1200+题解         |
+| 2.1k   |            | https://github.com/tianyicui/pack                            | 背包九讲          |
 
 ## 1.完成的题目
 
