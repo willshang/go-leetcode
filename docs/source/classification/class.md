@@ -229,16 +229,16 @@
 
 #### 石子游戏
 
-| Title                                                        | Tag                        | 难度   | 完成情况 |
-| ------------------------------------------------------------ | -------------------------- | ------ | -------- |
-| [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) | 极小化极大、数学、动态规划 | Medium | 完成     |
-| [1140.石子游戏II](https://leetcode-cn.com/problems/stone-game-ii/) | 动态规划                   | Medium | 完成     |
-| 1406                                                         |                            |        |          |
-| [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                   | Hard   | 完成     |
-| [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划                   | Hard   | 完成     |
-| [1686.石子游戏VI](https://leetcode-cn.com/problems/stone-game-vi/) | 贪心算法                   | Medium | 完成     |
-| [1690.石子游戏VII](https://leetcode-cn.com/problems/stone-game-vii/) | 动态规划                   | Medium | 完成     |
-| [2029.石子游戏IX](https://leetcode-cn.com/problems/stone-game-ix/) |                            | Medium | 完成     |
+| Title                                                        | Tag                          | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------------- | ------ | -------- |
+| [877.石子游戏](https://leetcode-cn.com/problems/stone-game/) | 极小化极大、数学、动态规划   | Medium | 完成     |
+| [1140.石子游戏II](https://leetcode-cn.com/problems/stone-game-ii/) | 动态规划                     | Medium | 完成     |
+| 1406                                                         |                              |        |          |
+| [1510.石子游戏IV](https://leetcode-cn.com/problems/stone-game-iv/) | 动态规划                     | Hard   | 完成     |
+| [1563.石子游戏V](https://leetcode-cn.com/problems/stone-game-v/) | 动态规划                     | Hard   | 完成     |
+| [1686.石子游戏VI](https://leetcode-cn.com/problems/stone-game-vi/) | 贪心算法                     | Medium | 完成     |
+| [1690.石子游戏VII](https://leetcode-cn.com/problems/stone-game-vii/) | 动态规划                     | Medium | 完成     |
+| [2029.石子游戏IX](https://leetcode-cn.com/problems/stone-game-ix/) | 贪心、数组、数学、计数、博弈 | Medium | 完成     |
 
 #### Nim游戏-极小化极大
 
@@ -262,11 +262,12 @@
 
 ### 灯泡问题
 
-| Title                                                        | Tag              | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------- | ------ | -------- |
-| [319.灯泡开关](https://leetcode-cn.com/problems/bulb-switcher/) | 脑筋急转弯、数学 | Medium | 完成     |
-| [1375.灯泡开关III](https://leetcode-cn.com/problems/bulb-switcher-iii/) | 数组             | Medium | 完成     |
-| [1529.灯泡开关IV](https://leetcode-cn.com/problems/bulb-switcher-iv/) | 字符串           | Medium | 完成     |
+| Title                                                        | Tag                                      | 难度   | 完成情况 |
+| ------------------------------------------------------------ | ---------------------------------------- | ------ | -------- |
+| [319.灯泡开关](https://leetcode-cn.com/problems/bulb-switcher/) | 脑筋急转弯、数学                         | Medium | 完成     |
+| [672.灯泡开关Ⅱ](https://leetcode.cn/problems/bulb-switcher-ii/) | 位运算、深度优先搜索、广度优先搜索、数学 | Medium | 完成     |
+| [1375.灯泡开关III](https://leetcode-cn.com/problems/bulb-switcher-iii/) | 数组                                     | Medium | 完成     |
+| [1529.灯泡开关IV](https://leetcode-cn.com/problems/bulb-switcher-iv/) | 字符串                                   | Medium | 完成     |
 
 ### 单调栈
 
@@ -392,7 +393,7 @@
 | Title                                                        | Tag                      | 难度   | 完成情况 |
 | ------------------------------------------------------------ | ------------------------ | ------ | -------- |
 | [53.最大子序和](https://leetcode-cn.com/problems/maximum-subarray) | 数组、分治算法、动态规划 | Easy   | 完成     |
-| [918.环形子数组的最大和](https://leetcode-cn.com/problems/maximum-sum-circular-subarray/) | 数组                     | Medium |          |
+| [918.环形子数组的最大和](https://leetcode-cn.com/problems/maximum-sum-circular-subarray/) | 数组                     | Medium | 完成     |
 | [1186.删除一次得到子数组最大和](https://leetcode-cn.com/problems/maximum-subarray-sum-with-one-deletion/) | 动态规划                 | Medium | 完成     |
 | [1191.K次串联后最大子数组之和](https://leetcode-cn.com/problems/k-concatenation-maximum-sum/) | 动态规划                 | Medium | 完成     |
 
