@@ -11,7 +11,7 @@
 - leetcode中文：https://leetcode-cn.com/ 
 - https://oi-wiki.org/
 - https://cp-wiki.vercel.app/
-- http://board.cruelcoding.com/
+- 残酷刷题群-borad：http://board.cruelcoding.com/
 - 残酷刷题群-rank：https://rank.cruelcoding.com/
 - leetcode赛后rating预测：http://lcpredictor.herokuapp.com/
 - zerotrac题目评分：https://zerotrac.github.io/leetcode_problem_rating/
@@ -19,14 +19,14 @@
 | star   | 语言       | github/leetcode                                              |                   |
 | ------ | ---------- | ------------------------------------------------------------ | ----------------- |
 | 15     | Go         | https://github.com/ldeng7/go-leetcode                        | 1600+题解         |
-| 685    | Go         | https://github.com/EndlessCheng/codeforces-go<br />https://leetcode-cn.com/u/endlesscheng/ | 推荐              |
+| 903    | Go         | https://github.com/EndlessCheng/codeforces-go<br />https://leetcode-cn.com/u/endlesscheng/ | 推荐              |
 | 3.2 k  | Go         | https://github.com/kylesliu/awesome-golang-leetcode<br />https://a.gin.sh/ | 200+题解          |
-| 2.9 k  | Go         | https://github.com/aQuaYi/LeetCode-in-Go<br />https://leetcode.com/aQuaYi/ | 900+题解          |
-| 13.3 k | Go         | https://github.com/greyireland/algorithm-pattern<br />https://greyireland.gitbook.io/algorithm-pattern/ | 10+文章           |
-| 24 k   | Go         | https://github.com/halfrost/LeetCode-Go<br />https://books.halfrost.com/leetcode/<br />https://leetcode.com/halfrost/ | 600+题解          |
-| 48.1 k | Python     | https://github.com/azl397985856/leetcode                     |                   |
-| 105 k  | 多语言     | https://github.com/labuladong/fucking-algorithm<br />https://labuladong.gitbook.io/algo/ | 60+文章、100+题解 |
-| 2.4 k  | C++\Python | https://github.com/wisdompeak/LeetCode                       |                   |
+| 3 k    | Go         | https://github.com/aQuaYi/LeetCode-in-Go<br />https://leetcode.com/aQuaYi/ | 900+题解          |
+| 13.5 k | Go         | https://github.com/greyireland/algorithm-pattern<br />https://greyireland.gitbook.io/algorithm-pattern/ | 10+文章           |
+| 25.6 k | Go         | https://github.com/halfrost/LeetCode-Go<br />https://books.halfrost.com/leetcode/<br />https://leetcode.com/halfrost/ | 600+题解          |
+| 48.5 k | Python     | https://github.com/azl397985856/leetcode                     |                   |
+| 107 k  | 多语言     | https://github.com/labuladong/fucking-algorithm<br />https://labuladong.gitbook.io/algo/ | 60+文章、100+题解 |
+| 3.4 k  | C++\Python | https://github.com/wisdompeak/LeetCode                       |                   |
 | 2.3 k  | C++        | https://github.com/liuyubobobo/Play-Leetcode<br />https://leetcode-cn.com/u/liuyubobobo/ | 1200+题解         |
 | 2.1k   |            | https://github.com/tianyicui/pack                            | 背包九讲          |
 
@@ -561,8 +561,12 @@
 | | [2269.找到一个数字的K美丽值](https://leetcode.cn/problems/find-the-k-beauty-of-a-number/) | 数学、字符串、滑动窗口 | Easy | 完成 |
 | | [2273.移除字母异位词后的结果数组](https://leetcode.cn/problems/find-resultant-array-after-removing-anagrams/) | 数组、哈希表、字符串、排序 | Easy | 完成 |
 | | [2278.字母在字符串中的百分比](https://leetcode.cn/problems/percentage-of-letter-in-string/) | 字符串 | Easy | 完成 |
-| | [2283.判断一个数的数字计数是否等于数位的值](https://leetcode.cn/problems/check-if-number-has-equal-digit-count-and-digit-value/) |  | Easy | 完成 |
-| | [2287.重排字符形成目标字符串](https://leetcode.cn/problems/rearrange-characters-to-make-target-string/) |  | Easy | 完成 |
+| | [2283.判断一个数的数字计数是否等于数位的值](https://leetcode.cn/problems/check-if-number-has-equal-digit-count-and-digit-value/) | 哈希表、字符串、计数 | Easy | 完成 |
+| | [2287.重排字符形成目标字符串](https://leetcode.cn/problems/rearrange-characters-to-make-target-string/) | 哈希表、字符串、计数 | Easy | 完成 |
+| | [2293.极大极小游戏](https://leetcode.cn/problems/min-max-game/) | 数组、模拟 | Easy | 完成 |
+| | [2299.强密码检验器II](https://leetcode.cn/problems/strong-password-checker-ii/) | 字符串 | Easy | 完成 |
+| | [2303.计算应缴税款总额](https://leetcode.cn/problems/calculate-amount-paid-in-taxes/) | 数组、模拟 | Easy | 完成 |
+| | [2309.兼具大小写的最好英文字母](https://leetcode.cn/problems/greatest-english-letter-in-upper-and-lower-case/) | 哈希表、字符串、枚举 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1472,9 +1476,17 @@
 |      | [2275.按位与结果大于零的最长组合](https://leetcode.cn/problems/largest-combination-with-bitwise-and-greater-than-zero/) | 位运算、数组、哈希表、计数                                   | Medium | 完成     |
 |      | [2279.装满石头的背包的最大数量](https://leetcode.cn/problems/maximum-bags-with-full-capacity-of-rocks/) | 贪心、数组、排序                                             | Medium | 完成     |
 |      | [2280.表示一个折线图的最少线段数](https://leetcode.cn/problems/minimum-lines-to-represent-a-line-chart/) | 几何、数组、数学、数论、排序                                 | Medium | 完成     |
-|      | [2284.最多单词数的发件人](https://leetcode.cn/problems/sender-with-largest-word-count/) |                                                              | Medium | 完成     |
-|      | [2285.道路的最大总重要性](https://leetcode.cn/problems/maximum-total-importance-of-roads/) |                                                              | Medium | 完成     |
-|      | [2288.价格减免](https://leetcode.cn/problems/apply-discount-to-prices/) |                                                              | Medium | 完成     |
+|      | [2284.最多单词数的发件人](https://leetcode.cn/problems/sender-with-largest-word-count/) | 数组、哈希表、字符串、计数                                   | Medium | 完成     |
+|      | [2285.道路的最大总重要性](https://leetcode.cn/problems/maximum-total-importance-of-roads/) | 贪心、图、排序、堆（优先队列）                               | Medium | 完成     |
+|      | [2288.价格减免](https://leetcode.cn/problems/apply-discount-to-prices/) | 字符串                                                       | Medium | 完成     |
+|      | [2289.使数组按非递减顺序排列](https://leetcode.cn/problems/steps-to-make-array-non-decreasing/) | 栈、数组、链表、单调栈                                       | Medium |          |
+|      | [2294.划分数组使最大差为K](https://leetcode.cn/problems/partition-array-such-that-maximum-difference-is-k/) | 贪心、数组、排序                                             | Medium | 完成     |
+|      | [2295.替换数组中的元素](https://leetcode.cn/problems/replace-elements-in-an-array/) | 数组、哈希表、模拟                                           | Medium | 完成     |
+|      | [2300.咒语和药水的成功对数](https://leetcode.cn/problems/successful-pairs-of-spells-and-potions/) | 数组、双指针、二分查找、排序                                 | Medium | 完成     |
+|      | [2304.网格中的最小路径代价](https://leetcode.cn/problems/minimum-path-cost-in-a-grid/) | 数组、动态规划、矩阵                                         | Medium | 完成     |
+|      | [2305.公平分发饼干](https://leetcode.cn/problems/fair-distribution-of-cookies/) | 位运算、数组、动态规划、回溯、状态压缩                       | Medium | 完成     |
+|      | [2310.个位数字为K的整数之和](https://leetcode.cn/problems/sum-of-numbers-with-units-digit-k/) | 贪心、数学、动态规划、枚举                                   | Medium | 完成     |
+|      | [2311.小于等于K的最长二进制子序列](https://leetcode.cn/problems/longest-binary-subsequence-less-than-or-equal-to-k/) | 贪心、记忆化搜索、字符串、动态规划                           | Medium | 完成     |
 
 ### Hard系列
 
@@ -1729,4 +1741,7 @@
 |      | [2262.字符串的总引力](https://leetcode-cn.com/problems/total-appeal-of-a-string/) |                                                              | Hard | 完成     |
 |      | [2276.统计区间中的整数数目](https://leetcode.cn/problems/count-integers-in-intervals/) | 设计、线段树、有序集合                                       | Hard | 【】     |
 |      | [2290.到达角落需要移除障碍物的最小数目](https://leetcode.cn/problems/minimum-obstacle-removal-to-reach-corner/) |                                                              | Hard | 【】     |
+|      | [2301.替换字符后匹配](https://leetcode.cn/problems/match-substring-after-replacement/) | 数组、哈希表、字符串、字符串匹配                             | Hard | 【】     |
+|      | [2302.统计得分小于K的子数组数目](https://leetcode.cn/problems/count-subarrays-with-score-less-than-k/) | 数组、二分查找、前缀和、滑动窗口                             | Hard | 完成     |
+|      | [2312.卖木头块](https://leetcode.cn/problems/selling-pieces-of-wood/) | 记忆化搜索、数组、动态规划                                   | Hard | 完成     |
 

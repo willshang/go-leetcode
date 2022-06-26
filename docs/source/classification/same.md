@@ -140,7 +140,7 @@
 | 136(相似) | [719.找出第k小的距离对](https://leetcode-cn.com/problems/find-k-th-smallest-pair-distance/) Hard | 786 |
 | 137(相似) | [778.水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) Hard | [1631.最小体力消耗路径](https://leetcode-cn.com/problems/path-with-minimum-effort/) Medium |
 | 138(相似) | [787.K站中转内最便宜的航班](https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/) Medium | [1928.规定时间内到达终点的最小花费](https://leetcode-cn.com/problems/minimum-cost-to-reach-destination-in-time/) Hard |
-| 139(相似) | [1723.完成所有工作的最短时间](https://leetcode-cn.com/problems/find-minimum-time-to-finish-all-jobs/) Hard | [1986.完成任务的最少工作时间段](https://leetcode-cn.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/) Medium |
+| 139(相似) | [1723.完成所有工作的最短时间](https://leetcode-cn.com/problems/find-minimum-time-to-finish-all-jobs/) Hard | [1986.完成任务的最少工作时间段](https://leetcode-cn.com/problems/minimum-number-of-work-sessions-to-finish-the-tasks/) Medium<br />[2305.公平分发饼干](https://leetcode.cn/problems/fair-distribution-of-cookies/) Medium |
 | 140(相似) | [1958.检查操作是否合法](https://leetcode-cn.com/problems/check-if-move-is-legal/) Medium | [LCP41.黑白翻转棋](https://leetcode-cn.com/problems/fHi6rV/) Medium |
 | 141(相似) | [ 1235.规划兼职工作](https://leetcode-cn.com/problems/maximum-profit-in-job-scheduling/) Hard | [2008.出租车的最大盈利](https://leetcode-cn.com/problems/maximum-earnings-from-taxi/) Medium |
 | 142(相似) | [221.最大正方形](https://leetcode-cn.com/problems/maximal-square/) Medium | [1277.统计全为1的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) Medium |
@@ -155,7 +155,7 @@
 | 151 | [15.三数之和](https://leetcode-cn.com/problems/3sum/) Medium | [剑指OfferII007.数组中和为0的三个数](https://leetcode-cn.com/problems/1fGaJU/) Medium |
 | 152 | [209.长度最小的子数组](https://leetcode-cn.com/problems/minimum-size-subarray-sum/) Medium | [剑指OfferII008.和大于等于target的最短子数组](https://leetcode-cn.com/problems/2VG8Kg/) Medium |
 | 153 | [67.二进制求和](https://leetcode-cn.com/problems/add-binary) Easy | [剑指OfferII002.二进制加法](https://leetcode-cn.com/problems/JFETK5/) Easy |
-| 154 | [713.乘积小于K的子数组](https://leetcode-cn.com/problems/subarray-product-less-than-k/) Medium | [剑指OfferII009.乘积小于K的子数组](https://leetcode-cn.com/problems/ZVAVXX/) Medium |
+| 154(相似) | [713.乘积小于K的子数组](https://leetcode-cn.com/problems/subarray-product-less-than-k/) Medium | [剑指OfferII009.乘积小于K的子数组](https://leetcode-cn.com/problems/ZVAVXX/) Medium<br />[2302.统计得分小于K的子数组数目](https://leetcode.cn/problems/count-subarrays-with-score-less-than-k/) Hard |
 | 155 | [525.连续数组](https://leetcode-cn.com/problems/contiguous-array/) Medium | [剑指OfferII011.0和1个数相同的子数组](https://leetcode-cn.com/problems/A1NYOS/) Medium |
 | 156 | [567.字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) Medium | [剑指OfferII014.字符串中的变位词](https://leetcode-cn.com/problems/MPnaiL/) Medium |
 | 157 | [438.找到字符串中所有字母异位词](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/) Medium | [剑指OfferII015.字符串中的所有变位词](https://leetcode-cn.com/problems/VabMRr/) Medium |
