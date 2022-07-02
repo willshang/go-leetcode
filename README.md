@@ -567,6 +567,8 @@
 | | [2299.强密码检验器II](https://leetcode.cn/problems/strong-password-checker-ii/) | 字符串 | Easy | 完成 |
 | | [2303.计算应缴税款总额](https://leetcode.cn/problems/calculate-amount-paid-in-taxes/) | 数组、模拟 | Easy | 完成 |
 | | [2309.兼具大小写的最好英文字母](https://leetcode.cn/problems/greatest-english-letter-in-upper-and-lower-case/) | 哈希表、字符串、枚举 | Easy | 完成 |
+| | [2315.统计星号](https://leetcode.cn/problems/count-asterisks/) | 字符串 | Easy | 完成 |
+| | [2319.判断矩阵是否是一个X矩阵](https://leetcode.cn/problems/check-if-matrix-is-x-matrix/) | 数组、矩阵 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1487,6 +1489,9 @@
 |      | [2305.公平分发饼干](https://leetcode.cn/problems/fair-distribution-of-cookies/) | 位运算、数组、动态规划、回溯、状态压缩                       | Medium | 完成     |
 |      | [2310.个位数字为K的整数之和](https://leetcode.cn/problems/sum-of-numbers-with-units-digit-k/) | 贪心、数学、动态规划、枚举                                   | Medium | 完成     |
 |      | [2311.小于等于K的最长二进制子序列](https://leetcode.cn/problems/longest-binary-subsequence-less-than-or-equal-to-k/) | 贪心、记忆化搜索、字符串、动态规划                           | Medium | 完成     |
+|      | [2316.统计无向图中无法互相到达点对数](https://leetcode.cn/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/) | 深度优先搜索、广度优先搜索、并查集、图                       | Medium | 完成     |
+|      | [2317.操作后的最大异或和](https://leetcode.cn/problems/maximum-xor-after-operations/) | 位运算、数组、数学                                           | Medium | 完成     |
+|      | [2320.统计放置房子的方式数](https://leetcode.cn/problems/count-number-of-ways-to-place-houses/) | 动态规划                                                     | Medium | 完成     |
 
 ### Hard系列
 
@@ -1744,4 +1749,5 @@
 |      | [2301.替换字符后匹配](https://leetcode.cn/problems/match-substring-after-replacement/) | 数组、哈希表、字符串、字符串匹配                             | Hard | 【】     |
 |      | [2302.统计得分小于K的子数组数目](https://leetcode.cn/problems/count-subarrays-with-score-less-than-k/) | 数组、二分查找、前缀和、滑动窗口                             | Hard | 完成     |
 |      | [2312.卖木头块](https://leetcode.cn/problems/selling-pieces-of-wood/) | 记忆化搜索、数组、动态规划                                   | Hard | 完成     |
+|      | [2321.拼接数组的最大分数](https://leetcode.cn/problems/maximum-score-of-spliced-array/) | 数组、动态规划                                               | Hard | 完成     |
 
