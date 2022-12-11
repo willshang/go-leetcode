@@ -1,0 +1,43 @@
+name: auto-generate-gitbook
+on:                                 #在master分支上进行push时触发
+  push:
+    branches:
+      - master
+
+jobs:
+  main-to-gh-pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout master（1、切换到master）
+        uses: actions/checkout@v2
+        with:
+          ref: master
+
+      - name: install nodejs（2、安装nodejs）
+        uses: actions/setup-node@v1
+
+      - name: configue gitbook（3、安装gitbook-cli，安装插件）
+        run: |
+          npm install -g gitbook-cli
+          gitbook install
+      - name: generate _book folder（4、使用build生成html）
+        run: |
+          gitbook build
+      - name: push _book to branch gh-pages（5、推送代码到指定分支）
+        env:
+          TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          REF: github.com/${{ github.repository }}.git
+          MYEMAIL: zhi1125272962@qq.com                  # ！！记得修改为自己github设置的邮箱
+          MYNAME: Zhi2014 # 如果是组织下面的仓库，不会读到正确的username
+        run: |
+          cd _book
+          git config --global init.defaultBranch master
+          git config --global user.email "${MYEMAIL}"
+          git config --global user.name "${MYNAME}"
+          git init
+          git remote add origin git@${REF}
+          git add .
+          git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
+          git branch -M master
+          git push --force --quiet "https://${TOKEN}@${REF}" master:gh-pages
