@@ -14,6 +14,8 @@
 - 残酷刷题群-borad：http://board.cruelcoding.com/
 - 残酷刷题群-rank：https://rank.cruelcoding.com/
 - leetcode赛后rating预测：http://lcpredictor.herokuapp.com/
+  - https://lccn.lbao.site/
+
 - zerotrac题目评分：https://zerotrac.github.io/leetcode_problem_rating/
 
 | star   | 语言       | github/leetcode                                              |                   |
@@ -569,6 +571,7 @@
 | | [2309.兼具大小写的最好英文字母](https://leetcode.cn/problems/greatest-english-letter-in-upper-and-lower-case/) | 哈希表、字符串、枚举 | Easy | 完成 |
 | | [2315.统计星号](https://leetcode.cn/problems/count-asterisks/) | 字符串 | Easy | 完成 |
 | | [2319.判断矩阵是否是一个X矩阵](https://leetcode.cn/problems/check-if-matrix-is-x-matrix/) | 数组、矩阵 | Easy | 完成 |
+| | [2325.解密消息](https://leetcode.cn/problems/decode-the-message/) | 哈希表、字符串 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1492,6 +1495,7 @@
 |      | [2316.统计无向图中无法互相到达点对数](https://leetcode.cn/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/) | 深度优先搜索、广度优先搜索、并查集、图                       | Medium | 完成     |
 |      | [2317.操作后的最大异或和](https://leetcode.cn/problems/maximum-xor-after-operations/) | 位运算、数组、数学                                           | Medium | 完成     |
 |      | [2320.统计放置房子的方式数](https://leetcode.cn/problems/count-number-of-ways-to-place-houses/) | 动态规划                                                     | Medium | 完成     |
+|      | [2326.螺旋矩阵IV](https://leetcode.cn/problems/spiral-matrix-iv/description/) | 数组、链表、矩阵、模拟                                       | Medium | 完成     |
 
 ### Hard系列
 
