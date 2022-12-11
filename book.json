@@ -1,6 +1,8 @@
 {
   "plugins": [
-    "-lunr", "-search", "search-pro",
+    "-lunr",
+    "-search",
+    "search-pro",
     "back-to-top-button",
     "chapter-fold",
     "code",
@@ -10,7 +12,7 @@
   ],
   "pluginsConfig": {
     "tbfed-pagefooter": {
-      "copyright": "Copyright &copy Zhi2014 2022",
+      "copyright": "Copyright &copy Zhi2014 2023",
       "modify_label": "该文件修订时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     },

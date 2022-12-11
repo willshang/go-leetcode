@@ -26,6 +26,7 @@
     - [2101-2200](docs/source/question/2101-2200.md)
     - [2201-2300](docs/source/question/2201-2300.md)
     - [2301-2400](docs/source/question/2301-2400.md)
+    - [2401-2500](docs/source/question/2401-2500.md)
     - [lcp](docs/source/question/lcp.md)
     - [lcs](docs/source/question/lcs.md)
     - [mysql](docs/source/question/mysql.md)
@@ -43,7 +44,7 @@
     - [leetcode-竞赛](docs/source/classification/leetcode_contest.md)
     - [初级算法(49)-完成](docs/source/classification/easy.md)
     - [中级算法(45)-完成](docs/source/classification/medium.md)
-    - [高级算法](docs/source/classification/hard.md)
+    - [高级算法(47)](docs/source/classification/hard.md)
     - [热题100(100)-完成](docs/source/classification/hot-100.md)
     - [腾讯精选练习50题(50)-完成](docs/source/classification/50.md)
     - [数据结构-数组与字符串(22)-完成](docs/source/classification/data-array_and_string.md)
@@ -72,6 +73,6 @@
 * [PAT](docs/source/question/readme.md)
     - [PAT-乙级](docs/source/question/patB.md)
 * [ACM在线笔试模式](docs/source/question/readme.md)
-    - [ACM-Go语言处理](docs/source/go/1-go语言acm刷题输入问题.md)
+    - [ACM-go语言处理](docs/source/go/1-go语言acm刷题输入问题.md)
     
     
