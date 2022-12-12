@@ -6,9 +6,11 @@
     "back-to-top-button",
     "chapter-fold",
     "code",
+    "copy-code-button",
     "splitter",
     "tbfed-pagefooter",
-    "page-toc-button"
+    "page-toc-button",
+    "theme-comscore"
   ],
   "pluginsConfig": {
     "tbfed-pagefooter": {
