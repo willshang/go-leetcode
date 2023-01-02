@@ -34,6 +34,7 @@
     - [剑指offer](docs/source/question/offer.md)
     - [剑指offer2](docs/source/question/offer2.md)
     - [程序员面试金典](docs/source/question/lcci.md)
+    - [acmcoder-基础系列](docs/source/question/acmcoder-基本算法.md)
 * [分类/书籍](docs/source/question/readme.md)
     - [重复问题](docs/source/classification/same.md)
     - [系列问题](docs/source/classification/class.md)
