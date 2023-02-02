@@ -20,17 +20,17 @@
 
 | star   | 语言       | github/leetcode                                              |                   |
 | ------ | ---------- | ------------------------------------------------------------ | ----------------- |
-| 15     | Go         | https://github.com/ldeng7/go-leetcode                        | 1600+题解         |
-| 903    | Go         | https://github.com/EndlessCheng/codeforces-go<br />https://leetcode-cn.com/u/endlesscheng/ | 推荐              |
-| 3.2 k  | Go         | https://github.com/kylesliu/awesome-golang-leetcode<br />https://a.gin.sh/ | 200+题解          |
-| 3 k    | Go         | https://github.com/aQuaYi/LeetCode-in-Go<br />https://leetcode.com/aQuaYi/ | 900+题解          |
-| 13.5 k | Go         | https://github.com/greyireland/algorithm-pattern<br />https://greyireland.gitbook.io/algorithm-pattern/ | 10+文章           |
-| 25.6 k | Go         | https://github.com/halfrost/LeetCode-Go<br />https://books.halfrost.com/leetcode/<br />https://leetcode.com/halfrost/ | 600+题解          |
-| 48.5 k | Python     | https://github.com/azl397985856/leetcode                     |                   |
-| 107 k  | 多语言     | https://github.com/labuladong/fucking-algorithm<br />https://labuladong.gitbook.io/algo/ | 60+文章、100+题解 |
-| 3.4 k  | C++\Python | https://github.com/wisdompeak/LeetCode                       |                   |
-| 2.3 k  | C++        | https://github.com/liuyubobobo/Play-Leetcode<br />https://leetcode-cn.com/u/liuyubobobo/ | 1200+题解         |
-| 2.1k   |            | https://github.com/tianyicui/pack                            | 背包九讲          |
+| 16     | Go         | https://github.com/ldeng7/go-leetcode                        | 1600+题解         |
+| 1.4k   | Go         | https://github.com/EndlessCheng/codeforces-go<br />https://leetcode-cn.com/u/endlesscheng/ | 推荐              |
+| 3.3 k  | Go         | https://github.com/kylesliu/awesome-golang-leetcode<br />https://a.gin.sh/ | 200+题解          |
+| 3.1 k  | Go         | https://github.com/aQuaYi/LeetCode-in-Go<br />https://leetcode.com/aQuaYi/ | 900+题解          |
+| 13.9 k | Go         | https://github.com/greyireland/algorithm-pattern<br />https://greyireland.gitbook.io/algorithm-pattern/ | 10+文章           |
+| 29 k   | Go         | https://github.com/halfrost/LeetCode-Go<br />https://books.halfrost.com/leetcode/<br />https://leetcode.com/halfrost/ | 600+题解          |
+| 50.3 k | Python     | https://github.com/azl397985856/leetcode                     |                   |
+| 113 k  | 多语言     | https://github.com/labuladong/fucking-algorithm<br />https://labuladong.gitbook.io/algo/ | 60+文章、100+题解 |
+| 4.4 k  | C++\Python | https://github.com/wisdompeak/LeetCode                       |                   |
+| 2.5 k  | C++        | https://github.com/liuyubobobo/Play-Leetcode<br />https://leetcode-cn.com/u/liuyubobobo/ | 1200+题解         |
+| 2.2 k  |            | https://github.com/tianyicui/pack                            | 背包九讲          |
 
 ## 1.完成的题目
 
@@ -572,6 +572,9 @@
 | | [2315.统计星号](https://leetcode.cn/problems/count-asterisks/) | 字符串 | Easy | 完成 |
 | | [2319.判断矩阵是否是一个X矩阵](https://leetcode.cn/problems/check-if-matrix-is-x-matrix/) | 数组、矩阵 | Easy | 完成 |
 | | [2325.解密消息](https://leetcode.cn/problems/decode-the-message/) | 哈希表、字符串 | Easy | 完成 |
+| | [2331.计算布尔二叉树的值](https://leetcode.cn/problems/evaluate-boolean-binary-tree/) | 树、深度优先搜索、二叉树 | Easy | 完成 |
+| | [2335.装满杯子需要的最短总时长](https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/) | 贪心、数组、排序、堆（优先队列） | Easy | 完成 |
+| | [2341.数组能形成多少数对](https://leetcode.cn/problems/maximum-number-of-pairs-in-array/) | 数组、哈希表、计数 | Easy | 完成 |
 
 ### Medium系列
 
@@ -1496,6 +1499,11 @@
 |      | [2317.操作后的最大异或和](https://leetcode.cn/problems/maximum-xor-after-operations/) | 位运算、数组、数学                                           | Medium | 完成     |
 |      | [2320.统计放置房子的方式数](https://leetcode.cn/problems/count-number-of-ways-to-place-houses/) | 动态规划                                                     | Medium | 完成     |
 |      | [2326.螺旋矩阵IV](https://leetcode.cn/problems/spiral-matrix-iv/description/) | 数组、链表、矩阵、模拟                                       | Medium | 完成     |
+|      | [2327.知道秘密的人数](https://leetcode.cn/problems/number-of-people-aware-of-a-secret/) | 队列、动态规划、模拟                                         | Medium |          |
+|      | [2332.坐上公交的最晚时间](https://leetcode.cn/problems/the-latest-time-to-catch-a-bus/) | 数组、双指针、二分查找、排序                                 | Medium |          |
+|      | [2336.无限集中的最小数字](https://leetcode.cn/problems/smallest-number-in-infinite-set/) | 设计、哈希表、堆（优先队列）                                 | Medium | 完成     |
+|      | [2337.移动片段得到字符串](https://leetcode.cn/problems/move-pieces-to-obtain-a-string/) | 双指针、字符串                                               | Medium | 【】     |
+|      | [2342.数位和相等数对的最大和](https://leetcode.cn/problems/max-sum-of-a-pair-with-equal-sum-of-digits/) | 数组、哈希表、排序、堆（优先队列）                           | Medium |          |
 
 ### Hard系列
 
