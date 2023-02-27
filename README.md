@@ -575,6 +575,10 @@
 | | [2331.计算布尔二叉树的值](https://leetcode.cn/problems/evaluate-boolean-binary-tree/) | 树、深度优先搜索、二叉树 | Easy | 完成 |
 | | [2335.装满杯子需要的最短总时长](https://leetcode.cn/problems/minimum-amount-of-time-to-fill-cups/) | 贪心、数组、排序、堆（优先队列） | Easy | 完成 |
 | | [2341.数组能形成多少数对](https://leetcode.cn/problems/maximum-number-of-pairs-in-array/) | 数组、哈希表、计数 | Easy | 完成 |
+| | [2351.第一个出现两次的字母](https://leetcode.cn/problems/first-letter-to-appear-twice/) | 哈希表、字符串、计数 | Easy | 【完成】 |
+| | [2357.使数组中所有元素都等于零](https://leetcode.cn/problems/make-array-zero-by-subtracting-equal-amounts/) | 贪心、数组、哈希表、排序、<br />模拟、堆（优先队列） | Easy | 【完成】 |
+| | [2363.合并相似的物品](https://leetcode.cn/problems/merge-similar-items/) | 数组、哈希表、有序集合、排序 | Easy | 【完成】 |
+| | [2367.算术三元组的数目](https://leetcode.cn/problems/number-of-arithmetic-triplets/) | 数组、哈希表、双指针、枚举 | Easy | 【完成】 |
 
 ### Medium系列
 
@@ -1503,7 +1507,12 @@
 |      | [2332.坐上公交的最晚时间](https://leetcode.cn/problems/the-latest-time-to-catch-a-bus/) | 数组、双指针、二分查找、排序                                 | Medium |          |
 |      | [2336.无限集中的最小数字](https://leetcode.cn/problems/smallest-number-in-infinite-set/) | 设计、哈希表、堆（优先队列）                                 | Medium | 完成     |
 |      | [2337.移动片段得到字符串](https://leetcode.cn/problems/move-pieces-to-obtain-a-string/) | 双指针、字符串                                               | Medium | 【】     |
-|      | [2342.数位和相等数对的最大和](https://leetcode.cn/problems/max-sum-of-a-pair-with-equal-sum-of-digits/) | 数组、哈希表、排序、堆（优先队列）                           | Medium |          |
+|      | [2342.数位和相等数对的最大和](https://leetcode.cn/problems/max-sum-of-a-pair-with-equal-sum-of-digits/) | 数组、哈希表、排序、堆（优先队列）                           | Medium | 【完成】 |
+|      | [2348.全0子数组的数目](https://leetcode.cn/problems/number-of-zero-filled-subarrays/) | 数组、数学                                                   | Medium | 【完成】 |
+|      | [2352.相等行列对](https://leetcode.cn/problems/equal-row-and-column-pairs/) | 数组、哈希表、矩阵、模拟                                     | Medium | 【完成】 |
+|      | [2358.分组的最大数量](https://leetcode.cn/problems/maximum-number-of-groups-entering-a-competition/) | 贪心、数组、数学、二分查找                                   | Medium | 【完成】 |
+|      | [2364.统计坏数对的数目](https://leetcode.cn/problems/count-number-of-bad-pairs/) | 数组、哈希表                                                 | Medium | 【完成】 |
+|      | [2365.任务调度器II](https://leetcode.cn/problems/task-scheduler-ii/) | 数组、哈希表、模拟                                           | Medium | 【完成】 |
 
 ### Hard系列
 
