@@ -31,6 +31,7 @@
 | 4.4 k  | C++\Python | https://github.com/wisdompeak/LeetCode                       |                   |
 | 2.5 k  | C++        | https://github.com/liuyubobobo/Play-Leetcode<br />https://leetcode-cn.com/u/liuyubobobo/ | 1200+题解         |
 | 2.2 k  |            | https://github.com/tianyicui/pack                            | 背包九讲          |
+| 36.1k  |            | https://github.com/youngyangyang04/leetcode-master<br />https://programmercarl.com/ | 《代码随想录》    |
 
 ## 1.完成的题目
 
@@ -579,6 +580,7 @@
 | | [2357.使数组中所有元素都等于零](https://leetcode.cn/problems/make-array-zero-by-subtracting-equal-amounts/) | 贪心、数组、哈希表、排序、<br />模拟、堆（优先队列） | Easy | 【完成】 |
 | | [2363.合并相似的物品](https://leetcode.cn/problems/merge-similar-items/) | 数组、哈希表、有序集合、排序 | Easy | 【完成】 |
 | | [2367.算术三元组的数目](https://leetcode.cn/problems/number-of-arithmetic-triplets/) | 数组、哈希表、双指针、枚举 | Easy | 【完成】 |
+| | [2373.矩阵中的局部最大值](https://leetcode.cn/problems/largest-local-values-in-a-matrix/) | 数组、矩阵 | Easy | 【完成】 |
 
 ### Medium系列
 
@@ -1513,6 +1515,9 @@
 |      | [2358.分组的最大数量](https://leetcode.cn/problems/maximum-number-of-groups-entering-a-competition/) | 贪心、数组、数学、二分查找                                   | Medium | 【完成】 |
 |      | [2364.统计坏数对的数目](https://leetcode.cn/problems/count-number-of-bad-pairs/) | 数组、哈希表                                                 | Medium | 【完成】 |
 |      | [2365.任务调度器II](https://leetcode.cn/problems/task-scheduler-ii/) | 数组、哈希表、模拟                                           | Medium | 【完成】 |
+|      | [2369.检查数组是否存在有效划分](https://leetcode.cn/problems/check-if-there-is-a-valid-partition-for-the-array/) | 数组、动态规划                                               | Medium | 【完成】 |
+|      | [2374.边积分最高的节点](https://leetcode.cn/problems/node-with-highest-edge-score/) | 图、哈希表                                                   | Medium | 【完成】 |
+|      | [2375.根据模式串构造最小数字](https://leetcode.cn/problems/construct-smallest-number-from-di-string/) | 栈、贪心、字符串、回溯                                       | Medium |          |
 
 ### Hard系列
 
