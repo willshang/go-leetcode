@@ -140,6 +140,6 @@ func (t *treap) max() (max *Node) {
 
 ## 3、Leetcode
 
-| Title                                                        | Tag                                                          | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| [1438.绝对差不超过限制的最长连续子数组](https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) | 队列、数组、有序集合、滑动窗口、<br />单调队列、堆（优先队列） | Medium | 完成     |
+| Title                                                                                                                                 | Tag                                | 难度     | 完成情况 |
+|---------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|--------|------|
+| [1438.绝对差不超过限制的最长连续子数组](https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) | 队列、数组、有序集合、滑动窗口、<br />单调队列、堆（优先队列） | Medium | 完成   |

@@ -1,11 +1,10 @@
-# template
+# Kruskal
 
 - 参考：
 
 ## 0、定义
 
 - 适合：稀疏图
-- 
 
 ## 1、操作
 
@@ -23,7 +22,7 @@ func main() {
 
 }
 
-// Kruskal
+// Kruskal 算法
 func Kruskal(n int, arr [][3]int) int {
 	res := 0
 	fa = Init(n)
@@ -44,7 +43,7 @@ func Kruskal(n int, arr [][3]int) int {
 
 var fa []int
 
-// 初始化
+// Init 初始化
 func Init(n int) []int {
 	arr := make([]int, n)
 	for i := 0; i < n; i++ {
@@ -73,6 +72,6 @@ func query(i, j int) bool {
 
 ## 3、Leetcode
 
-| Title                                                        | Tag                      | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ------------------------ | ------ | -------- |
-| [1584.连接所有点的最小费用](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/) | 并查集、数组、最小生成树 | Medium | 完成     |
+| Title                                                                               | Tag          | 难度     | 完成情况 |
+|-------------------------------------------------------------------------------------|--------------|--------|------|
+| [1584.连接所有点的最小费用](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/) | 并查集、数组、最小生成树 | Medium | 完成   |

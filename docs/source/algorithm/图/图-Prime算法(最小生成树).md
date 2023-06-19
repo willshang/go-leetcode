@@ -23,7 +23,7 @@ func main() {
 
 }
 
-// Prime：传入邻接矩阵
+// Prime 传入邻接矩阵
 func Prime(arr [][]int) int {
 	res := 0
 	n := len(arr)
@@ -69,7 +69,7 @@ func main() {
 
 }
 
-// Prime-堆优化-邻接表
+// Prime 堆优化-邻接表
 func Prime(arr [][]int) int {
 	res := 0
 	n := len(arr)
@@ -106,7 +106,7 @@ func (h IntHeap) Len() int {
 	return len(h)
 }
 
-// 小根堆<,大根堆变换方向>
+// Less 小根堆<,大根堆变换方向>
 func (h IntHeap) Less(i, j int) bool {
 	return h[i][0] < h[j][0]
 }
@@ -128,7 +128,6 @@ func (h *IntHeap) Pop() interface{} {
 
 ## 3、Leetcode
 
-| Title                                                        | Tag                      | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ------------------------ | ------ | -------- |
-| [1584.连接所有点的最小费用](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/) | 并查集、数组、最小生成树 | Medium | 完成     |
-
+| Title                                                                               | Tag          | 难度     | 完成情况 |
+|-------------------------------------------------------------------------------------|--------------|--------|------|
+| [1584.连接所有点的最小费用](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/) | 并查集、数组、最小生成树 | Medium | 完成   |
