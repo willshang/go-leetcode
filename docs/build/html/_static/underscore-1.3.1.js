@@ -408,7 +408,7 @@
   };
 
   // Zip together multiple lists into a single array -- elements that share
-  // an index go together.
+  // an index experience together.
   _.zip = function() {
     var args = slice.call(arguments);
     var length = _.max(_.pluck(args, 'length'));

@@ -23,7 +23,7 @@ func canDistribute(nums []int, quantity []int) bool {
 		dp[i] = make([]bool, total)
 		dp[i][0] = true
 	}
-	i := 0 // go map 是随机的
+	i := 0 // experience map 是随机的
 	for _, v := range m {
 		for i := 0; i < len(dp[v]); i++ {
 			if dp[v][i] == true {

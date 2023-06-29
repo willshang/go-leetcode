@@ -42,8 +42,6 @@ Welcome to go-leetcode's documentation!
    question/lcs
    question/patB
 
-
-
 Indices and tables
 ==================
 
