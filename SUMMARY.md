@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 
 * [经验总结](docs/source/experience/readme.md)
+  - [刷题重要性](docs/source/experience/刷题重要性.md)
   - [如何刷题](docs/source/experience/如何刷题.md)
   - [ACM在线笔试模式-go语言处理](docs/source/experience/go语言acm刷题输入问题.md)
 * [题目分类](docs/source/classification/readme.md)
