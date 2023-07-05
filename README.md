@@ -1,19 +1,26 @@
 # go-Leetcode
 
+- 直接阅读
+  - gitbook：[gitbook](https://willshang.github.io/go-leetcode)
+  - readthedoc：[![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/zh/latest/?badge=latest)
 - [![Go Report Card](https://goreportcard.com/badge/github.com/willshang/go-leetcode?style=flat-square)](https://goreportcard.com/report/github.com/willshang/go-leetcode)
-- gitbook（直接阅读）：[gitbook](https://willshang.github.io/go-leetcode)
-- readthedoc（直接阅读）：[![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/zh/latest/?badge=latest)
 
-## 0.参考
+## 0.参考列表
 
-- leetcode中文：https://leetcode.cn
-- https://oi-wiki.org
-- https://cp-wiki.vercel.app
-- 残酷刷题群-borad：http://board.cruelcoding.com
-- 残酷刷题群-rank：https://rank.cruelcoding.com
-- leetcode赛后rating预测：http://lcpredictor.herokuapp.com
+- leetcode中文：
+  - https://leetcode.cn
+- wiki:
+  - https://oi-wiki.org
+  - https://cp-wiki.vercel.app
+- 残酷刷题群-borad：
+  - http://board.cruelcoding.com
+- 残酷刷题群-rank：
+  - https://rank.cruelcoding.com
+- leetcode赛后rating预测：
   - https://lccn.lbao.site
-- zerotrac题目评分：https://zerotrac.github.io/leetcode_problem_rating
+  - http://lcpredictor.herokuapp.com
+- zerotrac题目评分：
+  - https://zerotrac.github.io/leetcode_problem_rating
 
 | star   | 语言         | github/leetcode                                                                                                      |              |
 |:-------|:-----------|:---------------------------------------------------------------------------------------------------------------------|--------------|

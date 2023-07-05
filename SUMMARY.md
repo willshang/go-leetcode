@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [介绍](README.md)
 
 * [经验总结](docs/source/experience/readme.md)
   - [刷题重要性](docs/source/experience/刷题重要性.md)
