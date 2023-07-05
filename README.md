@@ -1,12 +1,8 @@
 # go-Leetcode
 
 - [![Go Report Card](https://goreportcard.com/badge/github.com/willshang/go-leetcode?style=flat-square)](https://goreportcard.com/report/github.com/willshang/go-leetcode)
+- gitbook（直接阅读）：[gitbook](https://willshang.github.io/go-leetcode)
 - readthedoc（直接阅读）：[![Documentation Status](https://readthedocs.org/projects/go-leetcode/badge/?version=latest)](https://go-leetcode.readthedocs.io/zh/latest/?badge=latest)
-- PDF下载：https://go-leetcode.readthedocs.io/_/downloads/zh/latest/pdf
-- gitbook：[gitbook](https://willshang.github.io/go-leetcode)
-- 剑指offer：[剑指offer](https://willshang.github.io/go-leetcode/docs/source/question/offer.html) 
-- 剑指offer2：[剑指offer2](https://go-leetcode.readthedocs.io/zh/latest/question/offer2.html)
-- 程序员面试金典：[程序员面试金典](https://willshang.github.io/go-leetcode/docs/source/question/lcci.html)
 
 ## 0.参考
 
@@ -19,24 +15,25 @@
   - https://lccn.lbao.site
 - zerotrac题目评分：https://zerotrac.github.io/leetcode_problem_rating
 
-| star   | 语言         | github/leetcode                                                                                                     |              |
-|:-------|:-----------|:--------------------------------------------------------------------------------------------------------------------|--------------|
-| 16     | Go         | https://github.com/ldeng7/go-leetcode                                                                               | 1600+题解      |
-| 2.3 k  | Go         | https://github.com/EndlessCheng/codeforces-go<br />https://leetcode.cn/u/endlesscheng                               | 推荐           |
-| 3.4 k  | Go         | https://github.com/kylesliu/awesome-golang-leetcode<br />https://a.gin.sh                                           | 200+题解       |
-| 3.1 k  | Go         | https://github.com/aQuaYi/LeetCode-in-Go<br />https://leetcode.com/aQuaYi                                           | 900+题解       |
-| 14.1 k | Go         | https://github.com/greyireland/algorithm-pattern<br />https://greyireland.gitbook.io/algorithm-pattern              | 10+文章        |
-| 29.8 k | Go         | https://github.com/halfrost/LeetCode-Go<br />https://books.halfrost.com/leetcode<br />https://leetcode.com/halfrost | 600+题解       |
-| 51.5 k | Python     | https://github.com/azl397985856/leetcode                                                                            |              |
-| 117 k  | 多语言        | https://github.com/labuladong/fucking-algorithm<br />https://labuladong.gitbook.io/algo                             | 60+文章、100+题解 |
-| 4.8 k  | C++\Python | https://github.com/wisdompeak/LeetCode                                                                              |              |
-| 2.6 k  | C++        | https://github.com/liuyubobobo/Play-Leetcode<br />https://leetcode.cn/u/liuyubobobo                                 | 1200+题解      |
-| 2.3 k  |            | https://github.com/tianyicui/pack                                                                                   | 背包九讲         |
-| 39.8 k |            | https://github.com/youngyangyang04/leetcode-master<br />https://programmercarl.com                                  | 《代码随想录》      |
+| star   | 语言         | github/leetcode                                                                                                      |              |
+|:-------|:-----------|:---------------------------------------------------------------------------------------------------------------------|--------------|
+| 16     | Go         | https://github.com/ldeng7/go-leetcode                                                                                | 1600+题解      |
+| 2.3 k  | Go         | https://github.com/EndlessCheng/codeforces-go <br />lc: https://leetcode.cn/u/endlesscheng                           | lc_灵茶山艾府【推荐】 |
+| 3.4 k  | Go         | https://github.com/kylesliu/awesome-golang-leetcode <br />https://a.gin.sh                                           | 200+题解       |
+| 3.1 k  | Go         | https://github.com/aQuaYi/LeetCode-in-Go <br />https://leetcode.com/aQuaYi                                           | 900+题解       |
+| 14.1 k | Go         | https://github.com/greyireland/algorithm-pattern <br />https://greyireland.gitbook.io/algorithm-pattern              | 10+文章        |
+| 29.8 k | Go         | https://github.com/halfrost/LeetCode-Go <br />https://books.halfrost.com/leetcode <br/>https://leetcode.com/halfrost | 600+题解       |
+| 51.5 k | Python     | https://github.com/azl397985856/leetcode                                                                             |              |
+| 117 k  | 多语言        | https://github.com/labuladong/fucking-algorithm <br />https://labuladong.gitbook.io/algo                             | 60+文章、100+题解 |
+| 4.8 k  | C++\Python | https://github.com/wisdompeak/LeetCode                                                                               |              |
+| 2.6 k  | C++        | https://github.com/liuyubobobo/Play-Leetcode <br />lc: https://leetcode.cn/u/liuyubobobo                             | 1200+题解      |
+| 2.3 k  |            | https://github.com/tianyicui/pack                                                                                    | 背包九讲         |
+| 39.8 k |            | https://github.com/youngyangyang04/leetcode-master <br />https://programmercarl.com                                  | 《代码随想录》      |
+| -      | Java       | https://suanfa8.com  <br /> lc: https://leetcode.cn/u/liweiwei1419                                                   | lc_李威        |
 
-## 1.完成的题目
+## 完成的题目列表
 
-### Easy系列
+### Easy列表
 
 | No.  | Title                                                                                                               | Tag                           | 难度   | 完成情况       |
 |:-----|:--------------------------------------------------------------------------------------------------------------------|:------------------------------|:-----|:-----------|
@@ -583,7 +580,7 @@
 |      | [2367.算术三元组的数目](https://leetcode.cn/problems/number-of-arithmetic-triplets/)                                        | 数组、哈希表、双指针、枚举                 | Easy | 【完成】       |
 |      | [2373.矩阵中的局部最大值](https://leetcode.cn/problems/largest-local-values-in-a-matrix/)                                    | 数组、矩阵                         | Easy | 【完成】       |
 
-### Medium系列
+### Medium列表
 
 | No.  | Title                                                                                                                                          | Tag                                        | 难度     | 完成情况 |
 |:-----|:-----------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------|:-------|:-----|
@@ -1520,7 +1517,7 @@
 |      | [2374.边积分最高的节点](https://leetcode.cn/problems/node-with-highest-edge-score/)                                                                    | 图、哈希表                                      | Medium | 【完成】 |
 |      | [2375.根据模式串构造最小数字](https://leetcode.cn/problems/construct-smallest-number-from-di-string/)                                                     | 栈、贪心、字符串、回溯                                | Medium |      |
 
-### Hard系列
+### Hard列表
 
 | No.  | Title                                                                                                                           | Tag                                        | 难度   | 完成情况 |
 |:-----|:--------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------|:-----|:-----|
