@@ -1,9 +1,0 @@
-# 字符串-马拉车(manacher)算法
-
-## 3、Leetcode
-
-| Title                                                        | Tag              | 难度   | 完成情况 |
-| ------------------------------------------------------------ | ---------------- | ------ | -------- |
-| [5.最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串、动态规划 | Medium | 完成     |
-| [214.最短回文串](https://leetcode-cn.com/problems/shortest-palindrome/) | 字符串           | Hard   | 完成     |
-| [647.回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) | 字符串、动态规划 | Medium | 完成     |

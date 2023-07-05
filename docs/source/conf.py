@@ -21,7 +21,7 @@ from recommonmark.parser import CommonMarkParser
 
 # -- 项目信息 -----------------------------------------------------
 project = 'go-leetcode' # 项目名称
-copyright = '2022, willshang' # 版权
+copyright = '2023, willshang' # 版权
 author = 'willshang' # 作者
 
 # The full version, including alpha/beta/rc tags
