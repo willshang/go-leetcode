@@ -8,7 +8,7 @@
   - [程序员面试金典](docs/source/classification/lc_lcci.md)
   - [lc-重复问题](docs/source/classification/lc_same.md)
   - [lc-系列问题](docs/source/classification/class.md)
-  - [lc-热题100(100)-完成](docs/source/classification/lc_hot-100.md)
+  - [lc-热题100(100)-完成](docs/source/classification/lc_hot_100.md)
   - [lc-腾讯精选练习50题(50)-完成](docs/source/classification/lc_50.md)
   - [lc-初级算法(49)-完成](docs/source/classification/lc_easy.md)
   - [lc-中级算法(45)-完成](docs/source/classification/lc_medium.md)
