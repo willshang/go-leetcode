@@ -7,7 +7,7 @@
 ## 1-数组简介(3)
 
 | Title                                                             | Tag     | 难度     | 完成情况 |
-| :-------------------------------------------------------------------| :---------| :--------| :------|
+|:------------------------------------------------------------------|:--------|:-------|:-----|
 | [724.寻找数组的中心索引](https://leetcode.cn/problems/find-pivot-index/)   | 数组      | Easy   | 完成   |
 | [35.搜索插入位置](https://leetcode.cn/problems/search-insert-position/) | 数组、二分查找 | Easy   | 完成   |
 | [56.合并区间](https://leetcode.cn/problems/merge-intervals/)          | 排序、数组   | Medium | 完成   |
@@ -15,7 +15,7 @@
 ## 2-二维数组简介(3)
 
 | Title                                                          | Tag | 难度     | 完成情况 |
-| :----------------------------------------------------------------| :-----| :--------| :------|
+|:---------------------------------------------------------------|:----|:-------|:-----|
 | 旋转矩阵 [48.旋转图像](https://leetcode.cn/problems/rotate-image/)     | 数组  | Medium | 完成   |
 | 零矩阵 [73.矩阵置零](https://leetcode.cn/problems/set-matrix-zeroes/) | 数组  | Medium | 完成   |
 | [498.对角线遍历](https://leetcode.cn/problems/diagonal-traverse/)   |     | Medium | 完成   |
@@ -23,7 +23,7 @@
 ## 3-字符串简介(4)
 
 | Title                                                                    | Tag      | 难度     | 完成情况 |
-| :--------------------------------------------------------------------------| :----------| :--------| :------|
+|:-------------------------------------------------------------------------|:---------|:-------|:-----|
 | [14.最长公共前缀](https://leetcode.cn/problems/longest-common-prefix)          | 字符串      | Easy   | 完成   |
 | [5.最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)  | 字符串、动态规划 | Medium | 完成   |
 | [151.翻转字符串里的单词](https://leetcode.cn/problems/reverse-words-in-a-string/) | 字符串      | Medium | 完成   |

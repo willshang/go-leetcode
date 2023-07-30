@@ -1,14 +1,7 @@
 # ACM题目输入问题
 
-- https://ac.nowcoder.com/acm/contest/5652#description
-
-> 一般校招技术会有笔试，通常在nowcoder上，而题目通常是采用ACM模式，因此掌握ACM模式的输入很重要。
-
-| No. | 描述              |    |
-|:----|:----------------|:---|
-| 01  |                 |    |
-| 02  |                 |    |
-| 03  | 第一行输入N，第二行输入N个数 | 完成 |
+- 背景: 一般校招技术会有笔试，通常在牛客(nowcoder)上，**而题目通常是采用ACM模式，因此掌握ACM模式的输入很重要**。
+- OJ在线编程常见输入输出练习场: https://ac.nowcoder.com/acm/contest/5652#description
 
 ## 0.处理多个case
 
