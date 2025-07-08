@@ -1,9 +1,6 @@
 # Summary
 
 * [介绍](README.md)
-  - [easy](easy.md)
-  - [middle](middle.md)
-  - [hard](hard.md)
 * [题目分类](docs/source/classification/readme.md)
   - [剑指offer-完成](docs/source/classification/lc_offer.md)
   - [剑指offer(专项突击版)-完成](docs/source/classification/lc_offer2.md)
